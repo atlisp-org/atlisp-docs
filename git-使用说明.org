@@ -113,7 +113,9 @@ $ git push upstream main
    
 #+BEGIN_QUOTE
 本地仓库: 存储在本地电脑的代码仓库
+
 远程仓库: 存储在Gitee/github上你的帐号中的代码仓库
+
 上游仓库：存储在Gitee/github上你的 fork 的 *@lisp* 帐号中的代码仓库
 #+END_QUOTE
 * Git 日常功能
