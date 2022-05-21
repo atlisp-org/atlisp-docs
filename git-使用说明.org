@@ -36,7 +36,7 @@ $ git config --global user.name  "yourname"
 * Git fork 指南
   本文以 =@lisp/@lisp函数库= 为例，说明如何 fork =@lisp/@lisp函数库= 并作为贡献者提交代码
 
-** 克隆项目，增加代码，提交代码。
+** 克隆项目
    打开网址: https://gitee.com/atlisp/atlisp-lib
 
    在 Github/Gitee 上 *fork* (浏览器右上角)想要参与的项目仓库 =@lisp/@lisp函数库= (https://gitee.com/atlisp/atlisp-lib), 
@@ -64,24 +64,29 @@ $ git clone git@gitee.com:yourname/atlisp-lib.git
 $ cd atlisp-lib
 #+END_SRC
 
-   建立上游仓库地址。也就是 @lisp/@lisp函数库的 地址。
+** 建立上游仓库地址
+
+   也就是 @lisp/@lisp函数库的 地址。
 #+BEGIN_SRC 
 $ git remote -v
 $ git remote add upstream https://gitee.com/atlisp/atlisp-lib.git
 #+END_SRC
 
+** 增加代码，提交代码, 持续交付
    *以后从这里重复执行 持续开发与提交代码，为 @lisp 代码仓库做出贡献。*
-
-   将远程所有的分支fetch下来,并且合并到本地仓库
+   
+*** 拉取代码
+    
+    将远程仓库的所有的分支 *fetch* 下来,并且合并到本地仓库
 #+BEGIN_SRC 
 $ git fetch upstream 
 $ git merge upstream/main
 #+END_SRC
-   或合并执行
+   或合并执行，pull = fetch + merge
 #+BEGIN_SRC 
-$ git push upstream main 
+$ git pull upstream main 
 #+END_SRC
-
+*** 增加代码
    然后是你本地的一顿 编辑，改代码，调试等。感觉代码没什么问题了。就将改动的代码加入到你的本地仓库。
 
    =message= 是你本次改动的标记，用对你有意义的文字代替。
@@ -89,13 +94,13 @@ $ git push upstream main
 $  git add * 
 $  git commit -m "message" 
 #+END_SRC
-   
+*** 持续交付   
    提交推送到自己的远程仓库 =yourname/@lisp函数库=
 #+BEGIN_SRC 
 $ git push origin main 
 #+END_SRC
    
-   如果你有权限提交到上游仓库。提交推送到上游远程仓库 =@lisp/@lisp函数库=
+   如果你有权限提交到上游仓库。提交推送到上游仓库 =@lisp/@lisp函数库=
 #+BEGIN_SRC 
 $ git push upstream main 
 #+END_SRC
@@ -106,7 +111,11 @@ $ git push upstream main
 
    返回到  *以后从这里重复执行 持续开发与提交代码，为 @lisp 代码仓库做出贡献。* 重复执行。
    
-
+#+BEGIN_QUOTE
+本地仓库: 存储在本地电脑的代码仓库
+远程仓库: 存储在Gitee/github上你的帐号中的代码仓库
+上游仓库：存储在Gitee/github上你的 fork 的 *@lisp* 帐号中的代码仓库
+#+END_QUOTE
 * Git 日常功能
 ** 查看 代码更改记录
    按 空格 向后翻页 ， 按 q 退出。
