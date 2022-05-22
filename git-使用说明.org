@@ -47,6 +47,14 @@ http方式: https://gitee.com/yournmae/atlisp-lib.git
 SSH 方式: git@gitee.com:yourname/atlisp-lib.git
 #+END_QUOTE
 
+#+BEGIN_QUOTE
+本地仓库: 存储在本地电脑的代码仓库
+
+远程仓库: 存储在Gitee/github上你的帐号中的代码仓库
+
+上游仓库：存储在Gitee/github上你的 fork 的 @lisp 帐号中的代码仓库
+#+END_QUOTE
+
 ** 使用 git 交付代码为@lisp提供贡献 (无 fork)
 *** 首次使用：克隆 =clone= @lisp函数库
 
