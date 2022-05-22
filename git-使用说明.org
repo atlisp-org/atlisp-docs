@@ -1,10 +1,10 @@
 #+title: Git 使用说明-极简版
+#+author: VitalGG<vitalgg@gmail.com>
 
-* Git
+* Git 是什么
   Git（读音为/gɪt/）是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。
 * 下载安装
   链接：[[https://pan.baidu.com/s/1rpfm3pLYIU3wS1V4gXLN0w?pwd=zgl5]]
-  提取码：zgl5
 
   双击 PortableGit.7z.exe 安装 Git，记住安装位置。一般是解压到安装文件所在文件夹下的 PortableGit 这个文件夹下。
 * 准备 Git 环境
@@ -26,14 +26,14 @@ Administrator@XXX MINGW64 ~
 $
 #+END_SRC
 
-** 设置你的 Git 用户名和邮箱
+** 设置 Git 用户名和邮箱
 
 #+BEGIN_SRC 
 $ git config --global user.email "你的邮箱"
 $ git config --global user.name  "yourname"
 #+END_SRC
 
-* 使用 Git 贡献您的代码
+* 使用 Git 贡献代码
 
   本文以 =@lisp/@lisp函数库= 为例，说明如何 *fork* =@lisp/@lisp函数库= 并作为贡献者提交代码
   
@@ -55,8 +55,8 @@ SSH 方式: git@gitee.com:yourname/atlisp-lib.git
 上游仓库：存储在Gitee/github上你的 fork 的 @lisp 帐号中的代码仓库
 #+END_QUOTE
 
-** 使用 git 交付代码为@lisp提供贡献 (无 fork)
-*** 首次使用：克隆 =clone= @lisp函数库
+** 直接交付方式 no fork
+*** 首次使用 克隆 =clone= @lisp函数库
 
 #+BEGIN_SRC mermaid
 graph TD;
@@ -67,7 +67,7 @@ A[Gitee:atlisp/atlisp-lib]--> | git clone | C(本地仓库 atlisp-lib);
 git clone git@gitee.com:atlisp/atlisp-lib.git
 #+END_SRC
 
-*** 重复执行，持续贡献您的代码
+*** 重复执行 持续贡献您的代码
     拉取pull 写/改代码 提交 push
 
 #+BEGIN_SRC mermaid
@@ -88,7 +88,7 @@ git push
     push 后等待管理员 Pull Requets 你的提交。
 
 
-** 使用 git 交付代码为@lisp提供贡献 (fork)
+** 分支交付 (fork @lisp)
 *** 建立分支: fork @lisp函数库
 
 #+BEGIN_SRC mermaid
@@ -105,7 +105,7 @@ B --> | git clone | C(本地仓库 atlisp-lib);
    
    yourname 代指 您在 Gitee 上的账号名
    
-*** 首次使用：克隆 =clone= 你的 远程仓库中的 @lisp函数库
+*** 首次使用: 克隆 =clone= 你的 远程仓库中的 @lisp函数库
 
 #+BEGIN_SRC mermaid
 graph TD;
@@ -138,7 +138,7 @@ git commit -m "message"
 git push
 #+END_SRC
 
-*** 持续交付到上游仓库 Pull Requests
+*** Pull Request 到上游仓库
     本过程为交付 (Pull Requests) 到 @lisp 上游仓库 atlisp/atlisp-lib
 
 #+BEGIN_SRC mermaid
@@ -166,11 +166,12 @@ $ git log
 #+END_SRC
 
 ** =pull= 从网络更新代码版本
+   pull = fetch + merge
 #+BEGIN_SRC 
 $ git pull 
 #+END_SRC
 ** 更改代码
-打开 vscode, notepad++ 等编辑器，查改代码。保存。
+   打开 vscode, notepad++ 等编辑器，查改代码。保存。
 
 ** =status= 查看仓库状态
    查看更改的文件
@@ -189,7 +190,8 @@ $ git commit -m "更改内容说明"
 #+BEGIN_SRC 
 $ git push 
 #+END_SRC
-
+** =fetch= 
+** =merge=
 * 后记
   最后请记得 加星 star 收藏 代码仓库 以及 关注所有动态
 
