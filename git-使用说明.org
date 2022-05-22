@@ -180,3 +180,85 @@ $ git push
   最后请记得 加星 star 收藏 代码仓库 以及 关注所有动态
 
 
+
+* 以下为测试 orgmode graph 
+** 使用 git 交付代码为@lisp提供贡献 (无 fork)
+*** 首先 clone
+#+BEGIN_SRC bash
+git clone git@gitee.com:atlisp/atlisp-lib.git
+#+END_SRC
+#+BEGIN_SRC mermaid
+graph TD;
+A[Gitee:atlisp/atlisp-lib]--> | git clone | C(本地仓库 atlisp-lib);
+#+END_SRC
+
+*** 持续交付 pull 开发 push
+#+BEGIN_SRC sh
+cd atlisp-lib
+git pull 
+# 修改
+git add .
+git commit -m "message"
+git push
+#+END_SRC
+#+BEGIN_SRC mermaid
+graph TD;
+A[Gitee:atlisp/atlisp-lib]--> | git pull | C(本地仓库 atlisp-lib);
+C-->|git push|A;
+#+END_SRC
+
+** 使用 git 交付代码为@lisp提供贡献 (fork)
+*** fork me
+在 https://gitee.com/atlisp/atlisp-lib 右上角 fork .
+
+*** 首先 clone
+
+#+BEGIN_SRC 
+git clone git@gitee.com:yourname/atlisp-lib.git
+cd atlisp-lib
+git remote add upstream http://gitee.com/atlisp/atlisp-lib.git
+#+END_SRC
+
+
+#+BEGIN_SRC 
+graph TD;
+A[Gitee:atlisp/atlisp-lib]-->|fork|B[Gitee:yourname/atlisp-lib]
+B --> | git clone | C(本地仓库 atlisp-lib);
+#+END_SRC
+
+*** 持续交付  pull 开发 push 
+本过程为交付到你的 Gitee 远程仓库 yourname/atlisp-lib
+
+#+BEGIN_SRC shell
+cd atlisp-lib
+git pull 
+# 用编辑器修改代码
+git add .
+git commit -m "message"
+git push
+#+END_SRC
+
+#+BEGIN_SRC 
+graph TD;
+A[Gitee:yourname/atlisp-lib]--> | git pull | C(本地仓库 atlisp-lib);
+C-->|git push|A;
+#+END_SRC
+
+*** 持续交付 Pull Requests
+    本过程为交付 (Pull Requests) 到 @lisp 上游仓库 atlisp/atlisp-lib
+
+#+BEGIN_SRC 
+cd atlisp-lib
+git pull upstream main
+# 修改代码
+git add .
+git commit -m "message"
+git push upstream main
+#+END_SRC
+
+#+BEGIN_SRC 
+graph TD;
+A[Gitee:atlisp/atlisp-lib] --> | git pull upstream main| C(本地仓库 atlisp-lib);
+C-->|git push upstream main| A;
+#+END_SRC
+
