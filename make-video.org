@@ -1,0 +1,29 @@
+#+TITLE: 制作演示视频
+
+
+* 字幕
+  可移除的方式嵌入字幕
+  MP4
+  方法一:
+  
+  #+BEGIN_SRC 
+ffmpeg -i infile.mp4 -i infile.srt -c copy -c:s mov_text outfile.mp4
+  #+END_SRC
+  方法二:
+  
+  #+BEGIN_SRC 
+ffmpeg -i input.mp4 -sub_charenc 'UTF-8' -f srt -i input.srt -map 0:0 -map 0:1 -map 1:0 -c:v copy -c:a copy -c:s mov_text output.mp4
+  #+END_SRC
+  MKV
+  srt 格式字幕
+  #+BEGIN_SRC 
+ffmpeg -i input.mp4 -sub_charenc 'UTF-8' -f srt -i input.srt -map 0:0 -map 0:1 -map 1:0 -c:v copy -c:a copy -c:s srt  output.mkv
+  #+END_SRC
+  sub 格式字幕
+  #+BEGIN_SRC 
+ffmpeg -i infile.mp4 -i infile.idx -i infile.sub -map 0:v -map 0:a -c copy -map 1 -c:s:1 dvd_subtitle -metadata:s:s:1 language=ch outfile.mkv
+  #+END_SRC
+  不可移除的方式烧入字幕
+  #+BEGIN_SRC 
+ffmpeg -i mymovie.mp4 -vf subtitles=subtitles.srt mysubtitledmovie.mp4
+  #+END_SRC

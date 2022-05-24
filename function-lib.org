@@ -1,0 +1,177 @@
+#+TITLE: @lisp 函数库
+#+AUTHOR: VitalGG<vitalgg@gmail.com>
+
+* @lisp 函数库
+  @lisp 函数库是一个开源、共享、可云端加载的 autolisp 函数库。由像您一样热爱开源共享的爱好者所构筑并维护。可依据开放许可协议自由使用。
+
+  @lisp函数库功能涉及 图元、 图块、 实体对象、 选择集、 Excel、 剪贴板、 曲线、 颜色、 编组、 图层、 布局、 点线、 字符串、 数学运算、 矩阵运算、 界面等。更多内容持续迭代中 ... 
+
+** 社区驱动
+  @lisp 函数库是一个多元化的信息分享社区，它充满激情，并且每天都在成长。我们的参与者包括 lisp 程序共享爱好者、lisp开发编程人员、CAD从业人员、服务器维护工程师，以及其他很多各界人士。
+
+** 开放代码
+   @lisp 函数库是开源代码，只要您表明使用了 @lisp 函数库并承认其贡献者的工作，您就可以使用 @lisp函数库。如果您改变或者使用这些代码，您必须按照相同的版权协议发布结果。@lisp函数库 遵循 MIT 开源协议。
+
+** 法律
+   此网站和很多其他相关服务已由 @lisp-CAD应用云 正式代表社群运营。使用所有由  @lisp-CAD应用云 运营的服务均需符合我们的可接受使用方针和我们的隐私政策
+
+   如果您有许可协议、版权或其他法律问题，请联络@lisp-CAD应用云。
+   
+* 如何使用 @lisp函数库
+  使用@lisp函数库非常简单。只要你在CAD中安装了 [[http://atlisp.cn][*@lisp*]] ，在能访问互联网的情况下。就可以远程加载 @lisp函数库调用函数了。
+
+  当远程导入成功后，会提示 成功输入的函数 数量。生成函数列表到 lisp变量  @:*functions* 。
+  
+  @:*functions* 为最后一次成功导入的函数列表。
+
+#+BEGIN_SRC lisp
+  (require 'ui:*) ;;导入 ui 相关函数库
+  (require 'block:*) ;;导入 block 相关函数库
+  (require 'entity:*) ;;导入 entity 图关相关函数库
+  (require '(ui:* block:* entity:*)) ;; 一次导入多个库
+  (require 'ui:input) ;; 导入某类函数集合中的单个函数
+  (require '(ui:input block:insert)) ;; 导入某类函数集合中的单个函数
+  (import 'ui:*)   ;; import 与 require 用法相同
+  (import 'block:*) ;; import 为 require 别名
+  (import '(ui:* block:* entity:*) ;; import 与 require 用法相同
+  (import 'ui:input) ;; 导入某类函数集合中的单个函数
+  
+  (princ @:*functions*)  ;; @:*functions* 为最后一次成功导入的函数列表。
+  ;; 导入函数后，就可以使用这些函数了
+  (entity:make-line '(0 0 0) '(10 10 0)) ;; 使用库函数创建一条直线
+  (ui:select "请选择" '("张三" "李四" "王五")) ;; 使用库函数创建一个单选对话框
+
+#+END_SRC
+
+演示视频：
+
+#+BEGIN_HTML
+   <video class="pkg-video" controls="controls" height="360" >
+   <source src="/static/@lisp-function-lib.mp4"  type="video/mp4"/>
+   </video>
+#+END_HTML
+
+
+* 函数库帮助系统
+  以下lisp表达式中的函数名，可以是符号，也可以是字符串，如果函数定义已加载到 CAD 中，也可以直接输入函数名。如下所示。
+** 函数列表
+#+BEGIN_SRC lisp
+   (fun:list) ; 显示函数 
+#+END_SRC
+** 函数用法查询
+   在CAD命令行显示函数用法
+#+BEGIN_SRC lisp
+   (fun:usage 函数名) ; 显示函数用法
+   (fun:help 函数名) ; 显示函数用法
+   ;; 示例
+   (fun:usage 'string:to-list)
+   (fun:usage string:to-list)
+   (fun:usage "string:to-list")
+   (fun:help 'string:to-list)
+   (fun:help string:to-list)
+   (fun:help "string:to-list")
+
+#+END_SRC   
+** 查看函数源代码
+#+BEGIN_SRC lisp
+   (fun:src 函数名) ; 显示函数代码
+   ;; 示例
+   (fun:src string:to-list)
+   (fun:src 'string:to-list)
+   (fun:src "string:to-list")
+#+END_SRC
+** 搜索函数
+   funmatch 可以是符号，也可以是字符串
+#+BEGIN_SRC lisp
+   (fun:search funmatch)
+   ;; 示例 
+   (fun:search 'ui)
+   (fun:search "ui")
+   (fun:search "string:")
+   (fun:search 'string)
+#+END_SRC
+
+
+* 发布函数
+  如果你是一个热爱开源共享的爱好者、开发者。可以将自己认为有用的函数发布到 @lisp函数库 中。
+
+** 函数命名要求
+   一般情况下函数命名原则为 *函数类别* + : + *功能* 。
+   
+   如 *entity:make-line* 绘直线函数 entity 为图元类，make-line 为功能名。
+
+   如 *block:insert* 插入块 block 为块操作类，insert 为功能名。
+  
+   也可以以自己的人名特征命名类别  *类别* + : + *功能* 。
+   
+   如 *lee-mac:make-line*  *lee-mac:insert*  为 lee-mac 提供的系列相关函数。
+
+   如 *vitalgg:helloworld*  *vitalgg:test*  为 vitalgg 提供的系列相关函数。
+
+** 函数格式
+   定义函数用 *defun-q* ,不要使用 *defun* .否则不会上传到云端。
+   
+   然后跟平时用 *defun* 定义函数一样，使用参数变量及私有变量。
+
+   后面跟三个字符串。第一个是函数说明，第2个是返回值说明，第3个是示例。
+   可以全部省略。也可以只写第1个，或只写第1、第2个。
+
+   然后 (setq @:this (qoute 函数名)) . 该标记用于记录出错时的函数名，便于给出更多提示信息。
+   
+   
+#+BEGIN_SRC lisp 
+(defun-q vitalgg:helloworld ()
+   "函数功能说明，以及参数说明，作者等信息"
+   "返回值类型及说明"
+   "示例"
+   (setq @:this 'vitalgg:helloworld)
+   (alert "Hello autolisp!")
+   "注释文字会被清除掉。必要的文字，请直接写字符串，就像该行这样。"
+)
+(defun-q vitalgg:test (str)
+   "用于测试的函数，str 为字符串，by VitalGG"
+   "int: 参数字符串的第一个字母的 ascii 码"
+   "(vitalgg:test \"Match\")"
+   (setq @:this 'vitalgg:test)
+   "生成字符串的第一个ascii码。"
+   (ascii str)
+)
+#+END_SRC
+  
+   编码调试完成后，如果可以正常使用。就可以发布这个或这些函数了。
+
+   
+   发布函数需要使用 @lisp开发工具。所以首先安装 @lisp开发工具(dev-tools).
+
+   按 *@@@* 打开开发者命令面板，函数库->上传函数。在对话框中输入 
+
+#+BEGIN_SRC
+   vitalgg:*
+#+END_SRC
+   就可以上传上面定义的两个函数(vitalgg:helloword vitalgg:test) 了。
+
+
+
+
+   或者在 *CAD命令行* 使用代码上传
+
+#+BEGIN_SRC lisp
+(@dev:upload-fun 'vitalgg:*)    ;;发布一系列函数 
+(@dev:upload-fun "vitalgg:*")   ;;发布一系列函数 
+(@dev:upload-fun 'vitalgg:test) ;;  发布单个函数
+#+END_SRC
+
+然后，用户就可以输入
+
+#+BEGIN_SRC lisp
+(require-release 'vitalgg:*)  ;;加载未经审核的函数
+(require 'vitalgg:*)  ;;使用你发布的函数
+(vitalgg:test "Fu?? lisp")  
+#+END_SRC
+
+* 后记
+
+  更多功能,敬请期待 ... 
+
+   
+  
