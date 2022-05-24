@@ -8,44 +8,85 @@
   5. Init  初始化对话框各控件的值
   6. Show  显示对话框并进行交互
 
-* Model 数据模型
+* Model 建立数据模型
+
   初始化要显示的数据。
+
   以表格为例，假如有 1000条数据，每条数据有5项内容。
+
   需要初始化以下三个必要变量
-  总页数 total-page 
-  当前页 curr-page
-  表格数据 lst-table 
+
+  - 总页数 total-page 
+  - 当前页 curr-page
+  - 表格数据 lst-table 
   
 * View  建立视图 dcl文件
   使用 lisp 代码创建dcl文件。
+
   dcl 文件用于设置，各个控件(tile)的尺寸及布局方式。
+
   dcl 文件内容不包含Model中要显示数据。
+
   数据的显示将在 Init 中实现。
-  @lisp函数库提示了一些组合控件，如表格、多行文字、
-  翻页、Tabs、滚动条等。可以快速实现DCL设计。
+
+  @lisp函数库提示了一些组合控件，如表格、多行文字、翻页、Tabs、滚动条等。可以快速实现DCL设计。
 
 * Control 建立控制逻辑
-  在这里定义对话框的回调函数，回调函数命名一般以 cb-
-  或 callback- 开头，用于区别一般函数。
-  还以表格为例: 我们需要定义 cb-scrollbar 函数，用于
-  实现操作滚动条时，表格内的数据可以更新。
-  如果引入了 分页控件，则需要定义cb-flush-page来实现
-  表格数据的更新。
+  在这里定义对话框的回调函数，回调函数命名一般以 cb-  或 callback- 开头，用于区别一般函数。
+
+  以表格为例: 我们需要定义 cb-scrollbar 函数，用于  实现操作滚动条时，表格内的数据可以更新。
+
+  如果引入了 分页控件，则需要定义cb-flush-page来实现  表格数据的更新。
 
 * New   新建一个对话框对象
   以上 MVC 前三个步骤实现了DCL及业务逻辑的定义。
+
   现在可以载入DCL 到内存了。
+
   本步骤只需一行代码。
+#+BEGIN_SRC lisp 
   (dcl:new "name") ;; name 为 view 步骤中 dcl:dialog 
-  创建的对话框名，两者需一致。
+#+END_SRC
+  代码中 name 为 view 步骤中 dcl:dialog 创建的对话框名，两者需一致。
   
 * Init  初始化对话框各控件的值
   现在需要初始化一些显示值，比如当前页，表格数据的显示等。
+
   如分页控件的 (paging-init),显示页面 (cb-flush-page) 等。
   
 * Show  显示对话框并进行交互
   以上步骤完整无误，现在只需显示即可。也是一行搞定。
-  (dcl:show). 
+#+BEGIN_SRC lisp 
+(dcl:show)
+#+END_SRC
+
   不过我们还需要做后续的收尾工作。比如 关闭对话框后需要删除
   临时创建的dcl文件。返回给程序后续需要的结果。
-  示例代码见 http://atlisp.cn/function/example:dcl-dialog
+
+#+BEGIN_SRC lisp
+(defun example:dcl1 (/ *error* dcl-fp dcl-tmp)
+  "MVCNIS 法: 6 步进行动态 DCL 开发。"
+  ""
+  "(example:dcl-dialog)"
+  (require (quote dcl:*))
+  "1. Model 建立数据模型。"
+  "2. View 建立显示视图。"
+  (dcl:dialog "example")
+  (progn (dcl:hr 0.08)
+    (dcl:button "btn1" "按钮1" "")
+    (dcl:hr 0.08)
+    (dcl:button "btn2" "按钮2" "")
+    (dcl:hr 0.08))
+  (dcl:dialog-end-ok-cancel)
+  "3. Control 创建控制流程"
+  (defun cb-btn1 nil (alert "按下了按钮1"))
+  (defun cb-btn2 nil (alert "按下了按钮2"))
+  "4. New 一个新对话框对象。"
+  (dcl:new "example")
+  "5. Init 初始化对话框"
+  (set_tile "title"
+    "dcl示例1")
+  "6. Show dialog 显示并进行交互"
+  (dcl:show)
+  (princ))
+#+END_SRC
