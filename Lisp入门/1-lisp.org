@@ -124,7 +124,7 @@ Lisp 把 t 跟 nil 这两个值拿来表示“真”与“假”。一个最典�
 #+begin_src mermaid
   graph TD;   
   A[ a . b ]-->|car|B((5));
-  A-->|cdr|C[b];
+  A-->|cdr|C[ b . nil];
   C-->|car|D((6));
   C-->|cdr|E((nil));    
 #+end_src
@@ -165,7 +165,15 @@ car cdr 取出的 阴 或 阳 ，也是因 阴阳球组成的，可以一直分�
 > (cons 4 (cons 5 (cons 6 nil)))
 (4 5 6)  ;; 完整表示为 (4 . (5 . (6 . nil)))
 #+END_SRC
-
+#+begin_src mermaid
+  graph TD;   
+      A[ m . n ]-->|car|B((4));
+      A-->|cdr|C[ m . n ];
+      C-->|car|D((5));
+      C-->|cdr|E[ m . n ];
+      E-->|car|F((6));
+      E-->|cdr|G((nil));
+#+end_src
 最后的这个例子，其实跟直接调用函数 (list 4 5 6) 是等价的。
 
 注意 NIL 在这儿的含义就是没有包含任何元素的链表。比如说，包含两个元素的链表(a b)中，cdr是(b)，一个含有单个元素的链表；包含一个元素的链表(b)，cdr是nil，故此这里必然是一个没有元素的链表。 
