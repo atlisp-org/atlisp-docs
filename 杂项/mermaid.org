@@ -25,7 +25,7 @@ Typora是宇宙第一笔记软件，不接受反驳
 - 用户旅程图：使用journey关键字
 
 
-实例：朱元璋家谱简图，圆圈代表皇帝。
+*** 实例：朱元璋家谱简图，圆圈代表皇帝。
 
 
 #+begin_src 
@@ -82,7 +82,7 @@ pie
      "天气太热或太冷" : 20
      "穷" : 500
 #+end_src
-*** 流程图
+*** 流程图 flowchat
 实例
 #+begin_src 
 graph LR
@@ -151,7 +151,72 @@ graph
 	id6[\反向梯形/]
 #+end_src
 
-连线样式
+*** 时序图 sequence diagram
+#+begin_src
+  sequenceDiagram
+   participant Alice
+      participant Bob
+      Alice->John:Hello John, how are you?
+      loop Healthcheck
+          John->John:Fight against hypochondria
+      end
+      Note right of John:Rational thoughts <br/>prevail...
+      John-->Alice:Great!
+      John->Bob: How about you?
+      Bob-->John: Jolly good!
+#+end_src
+#+begin_src mermaid
+  sequenceDiagram
+   participant Alice
+      participant Bob
+      Alice->John:Hello John, how are you?
+      loop Healthcheck
+          John->John:Fight against hypochondria
+      end
+      Note right of John:Rational thoughts <br/>prevail...
+      John-->Alice:Great!
+      John->Bob: How about you?
+      Bob-->John: Jolly good!
+#+end_src
+
+*** 甘特图 gantt diagram
+#+begin_src
+  gantt
+        dateFormat  YYYY-MM-DD
+        title Adding GANTT diagram functionality to mermaid
+        section A section
+        Completed task            :done,    des1, 2014-01-06,2014-01-08
+        Active task               :active,  des2, 2014-01-09, 3d
+        Future task               :         des3, after des2, 5d
+        Future task2               :         des4, after des3, 5d
+        section Critical tasks
+        Completed task in the critical line :crit, done, 2014-01-06,24h
+        Implement parser and jison          :crit, done, after des1, 2d
+        Create tests for parser             :crit, active, 3d
+        Future task in critical line        :crit, 5d
+        Create tests for renderer           :2d
+        Add to mermaid                      :1d
+
+#+end_src
+#+begin_src mermaid
+  gantt
+        dateFormat  YYYY-MM-DD
+        title Adding GANTT diagram functionality to mermaid
+        section A section
+        Completed task            :done,    des1, 2014-01-06,2014-01-08
+        Active task               :active,  des2, 2014-01-09, 3d
+        Future task               :         des3, after des2, 5d
+        Future task2               :         des4, after des3, 5d
+        section Critical tasks
+        Completed task in the critical line :crit, done, 2014-01-06,24h
+        Implement parser and jison          :crit, done, after des1, 2d
+        Create tests for parser             :crit, active, 3d
+        Future task in critical line        :crit, 5d
+        Create tests for renderer           :2d
+        Add to mermaid                      :1d
+
+#+end_src
+*** 连线样式
 
 实线箭头：分为无文本箭头和有文本箭头，有文本箭头有2种书写格式
 #+begin_src 
