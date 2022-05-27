@@ -222,7 +222,10 @@ nil 的 car 跟 cdr 都定义成 nil。 (从 空 里 取出的依然是 空)
   13
 #+END_SRC
 
-上面的函数 foo 的表达式 链表 表示图
+函数 foo 的表达式 链表 表示图
+#+begin_src
+  (defun foo (x y) (+ x y 5)) 
+#+end_src
 #+begin_src mermaid
   graph TD;   
       A[ m . n ]-->|car|B((defun));
