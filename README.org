@@ -2,7 +2,7 @@
 
 * 建议的学习路线
 
-#+begin_src mermain
+#+begin_src mermaid
   graph LR;
   A(Lisp入门)-->B(AutoLisp);
   B-->C(DCL);
