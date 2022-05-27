@@ -3,11 +3,11 @@
 * 建议的学习路线
 
 #+begin_src mermaid
-  graph TD;
-      A(Lisp入门)-->B(AutoLisp);
+  graph LR
+      A(Lisp入门)-->B(AutoLisp | DXF);
       B-->C(DCL);
-      A-->D(VisualLisp);
-      D-->E(ActiveX);
+      A-->D(VisualLisp|ActiveX);
+      A-->E(Atlisp);
 #+end_src
 
 * 介绍
