@@ -97,10 +97,36 @@ Lisp 把 t 跟 nil 这两个值拿来表示“真”与“假”。一个最典�
 ** 点对 cons car cdr
 
 图中 方框表示点对；圆表示值，也就是地址上存放的数值，字符串，函数等。
+#+begin_src lisp
+  (setq a 5 b 6)
+  (cons a b)
+#+end_src
 #+begin_src mermaid
   graph TD;   
-  A[ a.b ]-->|car|B((5));
+  A[ a . b ]-->|car|B((5));
   A-->|cdr|C((6)); 
+#+end_src
+
+#+begin_src lisp
+  (setq a 5)
+  (cons a nil)
+#+end_src
+#+begin_src mermaid
+  graph TD;   
+  A[ a . nil ]-->|car|B((5));
+  A-->|cdr|C((nil)); 
+#+end_src
+
+#+begin_src lisp
+  (setq a 5 b (cons 6 nil))
+  (cons a b)
+#+end_src
+#+begin_src mermaid
+  graph TD;   
+  A[ a . b ]-->|car|B((5));
+  A-->|cdr|C[b];
+  C-->|car|D((6));
+  C-->|cdr|E((nil));    
 #+end_src
 点对 (cons) 就是一个有两个部分组成的数据单元。由于一些历史上的因素，这两个部分分别称作 "car" 跟 "cdr" 。
 
