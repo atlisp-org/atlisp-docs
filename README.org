@@ -4,10 +4,11 @@
 
 #+begin_src mermaid
   graph LR
-      A(Lisp入门)-->B(AutoLisp | DXF);
+      A(Lisp入门)-->B(AutoLisp DXF);
       B-->C(DCL);
-      A-->D(VisualLisp|ActiveX);
+      A-->D(VisualLisp ActiveX);
       A-->E(Atlisp);
+      
 #+end_src
 
 * 介绍
