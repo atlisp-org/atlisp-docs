@@ -230,8 +230,19 @@ nil 的 car 跟 cdr 都定义成 nil。 (从 空 里 取出的依然是 空)
       C-->|car|D((foo));
       C-->|cdr|E[ m . n ];
       E-->|car|F[ x y ];
+      F-->|car|M((x));
+      F-->|cdr|N[m.n];
+      N-->|car|O((y));
+      N-->|cdr|P((nil));    
       E-->|cdr|G[ add x y 5];
-
+      G-->|car|Q((add));
+      G-->|cdr|R[];
+      R-->|car|S((x));
+      R-->|cdr|T[ ];
+      T-->|car|U((y));
+      T-->|cdr|V[ ];
+      V-->|car|W((5));
+      V-->|cdr|X((nil));    
 #+end_src
 上面第一个定义 defun 例子中，我们在定义 foo 函数的时候，要求要两个传入值 x 及 y 。所以每当要调用 foo 时，都要恰好给它两个传入值，第一个传入值将会变成在 foo 函数里面的 x 变量值，而第二个传入值将会变成在 foo 函数里面的 y 变量值。
 
