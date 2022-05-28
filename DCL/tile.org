@@ -1,0 +1,185 @@
+#+title: Tile 控件
+
+* boxed_column
+有边框的竖向容器
+
+** 属性
+alignment, children_alignment, children_fixed_height, children_fixed_width, 
+fixed_height, fixed_width, height, label, width
+
+*  boxed_radio_column
+竖向无线按钮容器
+
+** 属性
+alignment, children_alignment, 
+children_fixed_height, children_fixed_width, 
+fixed_height, fixed_width, height, label, width 
+
+* boxed_radio_row
+水平无线按钮容器
+
+** 属性
+
+alignment, children_alignment, 
+children_fixed_height, children_fixed_width, 
+fixed_height, fixed_width, height, label, width 
+
+
+* boxed_row {
+有边框的水平容器
+** 属性
+
+
+   alignment, children_alignment, 
+   children_fixed_height, children_fixed_width, 
+   fixed_height, fixed_width, height, label, width 
+}
+
+* button {
+按钮
+** 属性
+  action, alignment, fixed_height, fixed_width 
+   height, is_cancel, is_default, is_enabled 
+   is_tab_stop, key, label, mnemonic, width 
+}
+* column {
+竖向容器
+** 属性
+alignment, children_alignment, 
+   children_fixed_height, children_fixed_width, 
+   fixed_height, fixed_width, height, label, width 
+}
+* concatenation {
+多行文本组
+}
+
+* dialog {
+对话框
+** 属性
+  initial_focus, label, value 
+}
+* edit_box {
+编辑框
+** 属性
+action, alignment, allow_accept, edit_limit, 
+   edit_width, fixed_height, fixed_width, height, 
+   is_enabled, is_tab_stop, key, label, mnemonic, 
+   value, width, password_char
+}
+
+* errtile
+
+* image {
+图像
+** 属性
+   action, alignment, aspect_ratio, color, 
+   fixed_height, fixed_width, height, is_enabled, 
+   is_tab_stop, key, mnemonic, value, width 
+}
+
+* image_button {
+图像按钮
+** 属性
+  action, alignment, allow_accept, aspect_ratio, 
+   color, fixed_height, fixed_width, height, 
+   is_enabled, is_tab_stop, key, mnemonic, width 
+}
+
+* list_box {
+列表框
+** 属性
+   action, alignment, allow_accept, fixed_height, 
+   fixed_width, fixed_width_font height, is_enabled, 
+   is_tab_stopkey, label, list, mnemonic, multiple_select
+   tab_truncate tabs value, width 
+}
+
+* ok_cancel;
+
+* ok_cancel_help;
+* ok_cancel_help_errtile
+* ok_cancel_help_info
+
+* paragraph
+
+* popup_list {
+弹出列表控件
+** 属性
+   action, alignment, edit_width, fixed_height, 
+   fixed_width, fixed_width_font height, , 
+   is_enabled is_tab_stop key, label, list
+   mnemonic tab_truncate tabs, value, width 
+}
+
+* radio_button {
+无线按钮
+** 属性
+   action, alignment, fixed_height, fixed_width, 
+   height, is_enabled, is_tab_stop, key, label, 
+   mnemonic, value, width 
+}
+
+* radio_column {
+竖向无线组
+** 属性
+   alignment, children_alignment, 
+   children_fixed_height, children_fixed_width, 
+   fixed_height, fixed_width, height, label, width 
+}
+* radio_row {
+水平无线组
+** 属性
+   alignment, children_alignment, 
+   children_fixed_height, children_fixed_width, 
+   fixed_height, fixed_width, height, label, width 
+}
+
+* row {
+行容器
+** 属性
+   alignment, children_alignment, 
+   children_fixed_height, children_fixed_width, 
+   fixed_height, fixed_width, height, label, width 
+}
+
+* slider {
+滑块控件
+** 属性
+   action, alignment, big_increment, fixed_height, 
+   fixed_width, height, key, label, layout, 
+   max_value, min_value, mnemonic, small_increment, 
+   value, width
+}
+
+* spacer {
+留白
+** 属性
+   alignment, fixed_height, fixed_width, 
+   height, width 
+}
+
+* spacer_0;
+* text 
+文本
+** 属性
+   alignment, fixed_height, fixed_width, height, 
+   is_bold, key, label, value, width
+
+* text_part 
+文本片段
+** 属性
+   label
+
+
+* toggle 
+开关按钮
+** 属性
+   action, alignment, fixed_height, fixed_width, 
+   height, is_enabled, is_tab_stop, label, width 
+
+* 控件共性
+** 用于所有可交互控件
+action, is_enabled, is_tab_stop, key, mnemonic
+
+** 用于所有控件的属性
+aligment, fixed_height, fixed_width, height, width
