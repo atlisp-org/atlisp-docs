@@ -3,19 +3,19 @@
 
 #+begin_src mermaid
   flowchart TB;
-  botton-->action
-  botton-->alignment
-  botton-->fixed_height
-  botton-->fixed_width
-  botton-->height
-  botton-->is_cancel
-  botton-->is_default
-  botton-->is_enabled
-  botton-->is_tab_stop
-  botton-->key
-  botton-->label
-  botton-->mnemonic
-  botton-->width 
+  button-->action
+  button-->alignment
+  button-->fixed_height
+  button-->fixed_width
+  button-->height
+  button-->is_cancel
+  button-->is_default
+  button-->is_enabled
+  button-->is_tab_stop
+  button-->key
+  button-->label
+  button-->mnemonic
+  button-->width 
   subgraph A_tile
       boxed_column
 
