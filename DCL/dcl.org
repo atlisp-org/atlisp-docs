@@ -17,7 +17,7 @@
   %% button-->label
   %% button-->mnemonic
   %% button-->width 
-     subgraph Tile
+     subgraph TB 
       boxed_column
 
       boxed_radio_column
@@ -81,7 +81,7 @@
       toggle
   end
 
-  subgraph Attr
+  subgraph TB
       action
       alignment
       allow_accept
