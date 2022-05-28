@@ -2,7 +2,7 @@
 * tile
 
 #+begin_src mermaid
-  flowchart TD;
+  flowchart TB;
   subgraph tile
 
     boxed_column
