@@ -2,121 +2,121 @@
 * tile
 
 #+begin_src mermaid
-  flowchart LR
+     flowchart LR
 
-       button-->action
-  %% button-->alignment
-  %% button-->fixed_height
-  %% button-->fixed_width
-  %% button-->height
-  %% button-->is_cancel
-  %% button-->is_default
-  %% button-->is_enabled
-  %% button-->is_tab_stop
-  %% button-->key
-  %% button-->label
-  %% button-->mnemonic
-  %% button-->width 
-     subgraph TB 
-      boxed_column
+     button-->action
+     button-->alignment
+     button-->fixed_height
+     button-->fixed_width
+     button-->height
+     button-->is_cancel
+     button-->is_default
+     button-->is_enabled
+     button-->is_tab_stop
+     button-->key
+     button-->label
+     button-->mnemonic
+     button-->width 
+     subgraph TB 			
+         boxed_column
 
-      boxed_radio_column
+         boxed_radio_column
 
-      boxed_radio_row
+         boxed_radio_row
 
-      boxed_row
+         boxed_row
 
-      button
+         button
 
-      column
+         column
 
-      concatenation
+         concatenation
 
-      dialog
+         dialog
 
-      edit_box
+         edit_box
 
-      errtile
+         errtile
 
-      image
+         image
 
-      image_button
+         image_button
 
-      list_box
+         list_box
 
-      ok_cancel
+         ok_cancel
 
-      ok_cancel_help
+         ok_cancel_help
 
-      ok_cancel_help_errtile
+         ok_cancel_help_errtile
 
-      ok_cancel_help_info
+         ok_cancel_help_info
 
-      ok_only
+         ok_only
 
-      paragraph
+         paragraph
 
-      popup_list
+         popup_list
 
-      radio_button
+         radio_button
 
-      radio_column
+         radio_column
 
-      radio_row
+         radio_row
 
-      row
+         row
 
-      slider
+         slider
 
-      spacer
+         spacer
 
-      spacer_0
+         spacer_0
 
-      spacer_1
+         spacer_1
 
-      text
+         text
 
-      text_part
+         text_part
 
-      toggle
-  end
+         toggle
+     end
 
-  subgraph TB
-      action
-      alignment
-      allow_accept
-      aspect_ratio
-      big_increment
-      children_alignment
-      children_fixed_height
-      children_fixed_width
-      color
-      edit_limit
-      edit_width
-      fixed_height
-      fixed_width
-      fixed_width_font
-      height
-      initial_focus
-      is_bold      
-      is_cancel
-      is_default
-      is_enabled
-      is_tab_stop
-      key
-      label
-      layout
-      list
-      max_value
-      min_value
-      mnemonic
-      multiple_select
-      password_char
-      small_increment
-      tabs
-      tab_truncate
-      value
-      width    
+     subgraph TB
+         action
+         alignment
+         allow_accept
+         aspect_ratio
+         big_increment
+         children_alignment
+         children_fixed_height
+         children_fixed_width
+         color
+         edit_limit
+         edit_width
+         fixed_height
+         fixed_width
+         fixed_width_font
+         height
+         initial_focus
+         is_bold      
+         is_cancel
+         is_default
+         is_enabled
+         is_tab_stop
+         key
+         label
+         layout
+         list
+         max_value
+         min_value
+         mnemonic
+         multiple_select
+         password_char
+         small_increment
+         tabs
+         tab_truncate
+         value
+         width    
 
-  end
+     end
 #+end_src
