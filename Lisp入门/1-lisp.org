@@ -415,5 +415,17 @@ Lisp 表示法另一个美丽的地方是：它就是如此简单。所有的 Li
 #+end_src
 
 
-* 表操作函数 member assoc subst 
+* 表操作函数
 
+** list
+** member
+** assoc
+** subst
+
+* 判断与逻辑函数
+
+** atom
+
+** listp
+
+** equal = 
