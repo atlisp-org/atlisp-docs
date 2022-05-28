@@ -38,11 +38,11 @@ VisualLisp 与 ActiveX 相关
 * @lisp
 ** @lisp 函数库相关
 
-- @lisp 函数库使用说明
-- @lisp 函数库开发说明
+- [[./@lisp/@lisp函数库使用说明.md][@lisp 函数库使用说明]]
+- [[./@lisp/@lisp函数库开发说明.md][@lisp 函数库开发说明]]
 
 ** @lisp 应用包开发说明
 
 * 其它相关文档
 
-[[Git 使用入门][Git使用指南]]
+[[./Git使用指南.org][Git使用指南]]
