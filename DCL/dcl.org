@@ -2,7 +2,7 @@
 * tile
 
 #+begin_src mermaid
-  flowchart TB
+  flowchart LR
 
        button-->action
   %% button-->alignment
