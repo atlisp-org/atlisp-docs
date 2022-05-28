@@ -21,7 +21,8 @@ Git 使用指南及示例
 
 * LISP
 ** LISP 入门
-- Lisp 基础知识[[./Lisp入门/1-lisp.org]]
+- [[./Lisp入门/1-lisp.org][Lisp 基础知识]]
+  建议学完这个就可以学 AutoLisp 了
 - Lisp 进阶
 - 高级一点的
 ** Lisp 进阶
