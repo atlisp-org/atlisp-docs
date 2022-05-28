@@ -3,7 +3,7 @@
 
 #+begin_src mermaid
   flowchart TB;
-  subgraph A_tile TB;
+     subgraph Tile
       boxed_column
 
       boxed_radio_column
@@ -65,28 +65,19 @@
       text_part
 
       toggle
-
   end
 
-  subgraph B_attr TB;
+  subgraph Attr
       action
       alignment
       allow_accept
       aspect_ratio
-
       big_increment
-
       children_alignment
-
-
       children_fixed_height
-
       children_fixed_width
-
       color
-
       edit_limit
-
       edit_width
       fixed_height
       fixed_width
@@ -94,16 +85,13 @@
       height
       initial_focus
       is_bold      
-
       is_cancel
       is_default
       is_enabled
       is_tab_stop
-
       key
       label
       layout
-
       list
       max_value
       min_value
@@ -118,17 +106,17 @@
 
   end
   button-->action
-  button-->alignment
-  button-->fixed_height
-  button-->fixed_width
-  button-->height
-  button-->is_cancel
-  button-->is_default
-  button-->is_enabled
-  button-->is_tab_stop
-  button-->key
-  button-->label
-  button-->mnemonic
-  button-->width 
+  %% button-->alignment
+  %% button-->fixed_height
+  %% button-->fixed_width
+  %% button-->height
+  %% button-->is_cancel
+  %% button-->is_default
+  %% button-->is_enabled
+  %% button-->is_tab_stop
+  %% button-->key
+  %% button-->label
+  %% button-->mnemonic
+  %% button-->width 
 
 #+end_src
