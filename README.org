@@ -21,7 +21,7 @@ Git 使用指南及示例
 
 * LISP
 ** LISP 入门
-Lisp 基础知识
+Lisp 基础知识 [[./Lisp入门/1-lisp.org]]
 Lisp 进阶
 高级一点的
 	
