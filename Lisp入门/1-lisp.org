@@ -43,7 +43,7 @@
   
 #+END_SRC
 
-** 特殊的符号
+*** 特殊的符号
 
 有两个比较特别的符号就是 t 跟 nil 。
 
@@ -415,14 +415,16 @@ Lisp 表示法另一个美丽的地方是：它就是如此简单。所有的 Li
 #+end_src
 
 
-* 表操作函数
+* TODO 表操作函数
+
+将移至 [[./LISP进阶/lisp.org]]
 
 ** list
 ** member
 ** assoc
 ** subst
 
-* 判断与逻辑函数
+* TODO 判断与逻辑函数
 
 ** atom
 
