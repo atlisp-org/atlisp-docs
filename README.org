@@ -21,23 +21,28 @@ Git 使用指南及示例
 
 * LISP
 ** LISP 入门
-Lisp 基础知识 [[./Lisp入门/1-lisp.org]]
-Lisp 进阶
-高级一点的
+- Lisp 基础知识[[./Lisp入门/1-lisp.org]]
+- Lisp 进阶
+- 高级一点的
 	
 * AutoLisp
-AutoLisp 与 Dcl Dxf 相关内容
-	
+
+AutoLisp 与 Dxf 相关内容
+
+** DCL
 * VisualLisp
+
 VisualLisp 与 ActiveX 相关
 
 
 * @lisp
 ** @lisp 函数库相关
 
-*** @lisp 函数库使用说明
-*** @lisp 函数库开发说明
+- @lisp 函数库使用说明
+- @lisp 函数库开发说明
 
 ** @lisp 应用包开发说明
 
 * 其它相关文档
+
+[[Git 使用入门][Git使用指南]]
