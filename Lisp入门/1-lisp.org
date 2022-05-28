@@ -367,7 +367,7 @@ Lisp 表示法另一个美丽的地方是：它就是如此简单。所有的 Li
 ** 分支 cond if
 分支给程序加上了判断的功能。
 
-当有满足的条件后，执行内部的表达式，不要对后面的条件进行判断。
+当有满足的条件后，执行内部的表达式，不再对后面的条件进行判断。
 
 #+begin_src lisp
   (cond
@@ -400,8 +400,20 @@ Lisp 表示法另一个美丽的地方是：它就是如此简单。所有的 Li
       B & C & E & F --> G[End];
 #+end_src
 
+** 循环 while foreach repeat
+
+#+begin_src lisp
+  (while condition ;; 当 condition 为 t 时，执行 exprs
+    exprs          ;; exprs 中应该有改变 condition 的值，当 condition 为 nil 时 即出循环。
+    )
+
+  (foreach each lst ;; 从表 lst 中依次取出 元素作为 each 的值 ， 执行 expr
+           exprs)
+
+  (repeat n         ;; 执行 n 次 exprs 
+          exprs)
+#+end_src
 
 
-
-
+* 表操作函数 member assoc subst 
 
