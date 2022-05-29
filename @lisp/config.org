@@ -8,6 +8,15 @@
 
 #+BEGIN_SRC lisp 
   (@:define-config 'test:projects-output "D:\\Output" "本地PDF输出目录")
+  (@:define-configs
+      '(test:projects-output "D:\\Output" "本地PDF输出目录"))
+
+  (@:define-configs
+      '((test:projects-output "D:\\Output" "本地PDF输出目录")
+        (test:option1 5  "配置项1")
+        (test:option2 "str"  "配置项2")
+        (test:option3 3.14  "配置项3")
+        ))
 #+END_SRC
 
 
