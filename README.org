@@ -54,17 +54,20 @@ VisualLisp 与 ActiveX 相关
 
 *** 交互设计
 
-@lisp 菜单系统
+[[./@lisp/menu.org][@lisp 菜单系统]]
 
-命令面板
+[[./@lisp/menu.org][命令面板]]
 
-短命令
+[[./@lisp/menu.org][短命令]]
 
 *** 配置管理
-
+[[./@lisp/config.org][配置开发方法]]
 *** 国际化与本地化
+[[./@lisp/i18n.org][i18n]]
 
 
 * 其它相关文档
 
 [[./Git使用指南.org][Git使用指南]]
+
+[[./杂项/mermaid.org][mermaid]]
