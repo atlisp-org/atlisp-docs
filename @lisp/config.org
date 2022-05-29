@@ -1,0 +1,37 @@
+#+title: @lisp 配置
+
+* 配置项的定义与使用
+
+在应用包中，如果配置内容较多，可以将配置内容集中写到 config.lsp 文件中。
+
+我们使用 =@:define-config= 来定义我们需要的配置项。
+
+#+BEGIN_SRC lisp 
+  (@:define-config 'test:projects-output "D:\\Output" "本地PDF输出目录")
+#+END_SRC
+
+
+在功能实现的函数定义中可以使用以下的函数来完成 配置的读取和设置
+#+BEGIN_SRC lisp
+  (@:set-config 'test:projects-output "D:\\PDF")
+  (@:get-config 'test:projects-output)
+  (@:list-config)
+#+END_SRC
+
+** 变量定义
+#+begin_src lisp
+  (@:define-config 可供用户修改的变量名(符号)  默认值  变量说明)
+#+end_src
+   
+** 变量设置及修改值
+#+begin_src lisp
+  (@:set-config 可供用户修改的变量名(符号)  用户设定值)
+#+end_src
+** 变量读值
+#+begin_src lisp
+   (@:get-config 可供用户修改的变量名(符号)  )
+#+end_src  
+** 列所有的变量
+#+begin_src lisp
+   (@:list-config)
+#+end_src
