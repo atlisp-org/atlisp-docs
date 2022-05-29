@@ -70,3 +70,24 @@
       ("功能6" (expr4)))
 
 #+end_src
+
+
+
+* 短命令
+
+@lisp 菜单和命令面板没有定义任何 命令行命令。
+
+对于喜欢用键盘操作的用户，@lisp 将命令定义的权利完全交给了用户，用户可以自己定义喜欢的字母组合来启动功能。
+
+#+begin_src lisp
+(@:define-hotkey "SHORT"  expr) ;; expr 可以不仅限于@lisp中的功能。
+#+end_src
+
+** TODO 编辑短命令 GUI 版本
+
+
+* 非开发者
+
+用户也可以添加自己的菜单
+
+只需在的 @lisp 主文件夹下的 custom.lsp 中加入 @:add-menu(s) 相应的语言即可。
