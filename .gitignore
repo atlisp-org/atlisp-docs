@@ -13,6 +13,8 @@
 .*.lb
 *~
 ## Intermediate documents:
+*\#
+.\#*
 *.dvi
 *.xdv
 *-converted-to.*
