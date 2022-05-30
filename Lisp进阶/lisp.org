@@ -1,9 +1,13 @@
 * lisp 风格的批量
 ** mapcar
 最常使用的是 mapcar ，接受一个函数以及一个或多个列表，并返回把函数应用至每个列表的元素的结果，直到有的列表没有元素为止
+
+#+begin_src
+  (mapcar '函数 参数表1 参数表2) ;; 返回 结果表
+#+end_src
 #+begin_src mermaid
   flowchart LR;
-     A(函数) -->P1
+     A(函数) -->P1 & P2 & P3 & Pn
      subgraph 参数表1
          P1(参数11)
          P2(参数12)
@@ -15,10 +19,18 @@
          P21(参数21)
          P22(参数22)
          P23(参数23)
-         P2(参数2n)      
+         P2n(参数2n)      
      end
-     P1-->P21
-     P2-->P22
-     P3-->P33   
+     subgraph 结果表
+         R1(结果1)
+         R2(结果2)
+         R3(结果3)
+         Rn(结果n)      
+     end
+     P1-->P21-->R1
+     P2-->P22-->R2
+     P3-->P23-->R3
+     Pn-->P2n-->Rn
      
+
 #+end_src
