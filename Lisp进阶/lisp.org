@@ -49,10 +49,10 @@ mapcar 后跟的 函数 需要几个参数，再后面就需要几个 作为参�
 ** apply
 
 #+begin_src lisp
-  (defun fun (para1 para2 para3 paran) ...) ;; 定义的 fun 有 n 个参数。
-  (apply 'fun '(para1 para2 para3 paran)) ;; apply fun 后面的表中 元素也需要 n 个， 与 fun 所需的参数一致。
+  (defun fun (para1 para2 para3) ...) ;; 假定定义的 fun 有 3 个参数。
+  (apply 'fun '(para1 para2 para3)) ;; apply fun 后面的表中 元素也需要 3 个， 与 fun 所需的参数一致。
   ;;等价于
-  (fun para1 para2 para3 paran)
+  (fun para1 para2 para3)
 #+end_src
 
 #+begin_src mermaid
