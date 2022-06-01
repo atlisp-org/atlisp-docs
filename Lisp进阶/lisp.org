@@ -65,3 +65,53 @@ autolisp 的 apply 接受两个参数 ，第一个是 quote 的 函数本体(类
   A --> para1
 
 #+end_src
+
+** progn
+
+ progn 的作用是将多个表达式集合到一起，形成一个大的表达式。
+
+ 一些函数或操作符的参数为一个表达式，但是我们一个表达式表述不清楚时，可以用 progn 将多个表达式包裹，传递给函数或操作符。
+
+ 如 while 的条件表达式，if 的 条件表达式以及真或假时的表达式。
+
+ #+begin_src lisp
+   (while expr-condition
+     exprs
+     )
+   ;; 以expr3 的求值结果为依据， T 继续 ，nil 跳出。
+
+   (while (progn expr1 expr2 expr3)
+     ....
+     )
+
+   ;; 示例 
+   (setq i 0)
+   (while (progn (princ i)(princ "\n") (< i 10))
+     (princ "aaa\n")
+     (setq i (1+ i))
+     )
+
+   ;; IF 
+   (if expr-condtion
+       exprs-true
+       exprs-false
+       )
+
+   (if (progn expr1 expr2 expr3);; 以expr3 的求值结果为依据， T 执行 expr-true ，nil 执行 expr-false。
+       (progn expr-true...)
+       (progn expr-false ...))
+   
+ #+end_src
+
+ #+begin_src mermaid
+
+   flowchart LR
+      if --> progn   
+      subgraph exprs
+          progn --> expr1       
+          expr1 --> expr2 --> expr3
+      end
+   expr3 -->|true| exprsT
+   expr3 -->|false| exprsF   
+
+ #+end_src
