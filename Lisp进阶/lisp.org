@@ -115,3 +115,16 @@ autolisp 的 apply 接受两个参数 ，第一个是 quote 的 函数本体(类
    expr3 -->|false| exprsF   
 
  #+end_src
+ 
+ #+begin_src mermaid
+
+   flowchart LR
+      while --> progn   
+      subgraph exprcondition
+          progn --> expr1       
+          expr1 --> expr2 --> expr3
+      end
+   expr3 -->|true| exprsT
+   expr3 -->|false| exprsF   
+   exprsT --> while   
+ #+end_src
