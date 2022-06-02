@@ -12,7 +12,7 @@
       E-->F(Atlisp函数库)
       F-->G(Atlisp应用开发)
       
-      click A "https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org"
+      click A "https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org";
 #+end_src
 
 * 介绍
