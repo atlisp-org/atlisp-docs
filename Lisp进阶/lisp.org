@@ -123,6 +123,9 @@ autolisp 的 apply 接受两个参数 ，第一个是 quote 的 函数本体(类
       subgraph exprcondition
           progn -->  expr1 --> expr2 --> expr3
       end
-      expr3 -->|true| Y(exprsT) --> A
+      subgraph loops
+          exprsT
+      end       
+      expr3 -->|true| loops --> A
       expr3 -->|false| Z(exprsF)  
  #+end_src
