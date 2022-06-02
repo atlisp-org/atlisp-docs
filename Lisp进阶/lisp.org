@@ -118,7 +118,7 @@ autolisp 的 apply 接受两个参数 ，第一个是 quote 的 函数本体(类
  
  #+begin_src mermaid
 
-   flowchart LR
+   flowchart TD
       Start --> A(while)   
       A --> progn   
       subgraph exprcondition
