@@ -10,11 +10,9 @@
       A-->D(VisualLisp ActiveX);
       A-->E(Atlisp);
       E-->F(Atlisp函数库)
-      F-->G(Atlisp应用开发)    
+      F-->G(Atlisp应用开发)
+      
       click A "https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org"
-      click B     "https://gitee.com/atlisp/atlisp-docs/blob/main/AutoLisp/learning-autolisp.md"
-      click F     "https://gitee.com/atlisp/atlisp-docs/blob/main/@lisp/@lisp%E5%87%BD%E6%95%B0%E5%BA%93%E5%BC%80%E5%8F%91%E8%AF%B4%E6%98%8E.md"
-      click G     "https://gitee.com/atlisp/atlisp-docs/blob/main/@lisp/@lisp-guide.org"
 #+end_src
 
 * 介绍
