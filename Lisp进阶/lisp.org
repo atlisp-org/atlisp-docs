@@ -128,5 +128,5 @@ autolisp 的 apply 接受两个参数 ，第一个是 quote 的 函数本体(类
           exprsT
       end       
       expr3 -->|true| loops --> A
-      expr3 -->|false| Z(exprsF)  
+      expr3 -->|false| Z(endloop)  
  #+end_src
