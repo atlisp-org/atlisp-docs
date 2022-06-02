@@ -121,10 +121,8 @@ autolisp 的 apply 接受两个参数 ，第一个是 quote 的 函数本体(类
    flowchart LR
       A(while) --> progn   
       subgraph exprcondition
-          progn --> expr1       
-          expr1 --> expr2 --> expr3
+          progn -->  expr1 --> expr2 --> expr3
       end
-   expr3 -->|true| ZexprsT
-   expr3 -->|false| ZexprsF   
-   ZexprsT --> A   
+      expr3 -->|true| Y(exprsT) --> A
+      expr3 -->|false| Z(exprsF)  
  #+end_src
