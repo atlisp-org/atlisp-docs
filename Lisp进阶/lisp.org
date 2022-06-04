@@ -104,6 +104,12 @@ autolisp 的 apply 接受两个参数 ，第一个是 quote 的 函数本体(类
  #+end_src
 
  #+begin_src mermaid
+   graph TD   
+       while --> condition -->|true| L(exprs-loop)
+       L --> condition
+       condition-->|false| E(endloop)    
+ #+end_src
+ #+begin_src mermaid
 
    flowchart LR
       if --> progn   
