@@ -16,6 +16,13 @@
 #+end_src
 
 * 介绍
+
+Lisp 基础知识
+
+AutoLisp 基础知识
+
+VisualLisp 基础知识
+
 @lisp 文档，帮助等
 
 Git 使用指南及示例
