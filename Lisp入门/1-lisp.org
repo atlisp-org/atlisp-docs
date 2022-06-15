@@ -430,4 +430,6 @@ Lisp 表示法另一个美丽的地方是：它就是如此简单。所有的 Li
 
 ** listp
 
-** equal = 
+** equal =
+
+* [[../Lisp进阶/lisp.org][Lisp进阶]]
