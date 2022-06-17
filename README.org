@@ -1,5 +1,7 @@
 #+title: @lisp 文档
 
+* 说明
+本仓库主要是为开发者所写，@lisp应用说明见各应用包内的 doc 文档。
 * 建议的学习路线
 
 图中 Atlisp 指 @ lisp.
@@ -16,13 +18,6 @@
 #+end_src
 
 * 介绍
-
-Lisp 基础知识
-
-AutoLisp 基础知识
-
-VisualLisp 基础知识
-
 @lisp 文档，帮助等
 
 Git 使用指南及示例
