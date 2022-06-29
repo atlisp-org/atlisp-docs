@@ -33,6 +33,13 @@ $ git config --global user.email "你的邮箱"
 $ git config --global user.name  "yourname"
 #+END_SRC
 
+** 配置 Git
+#+begin_src
+  # 提交的代码换行均按 LF 格式
+  git config --global core.autocrlf input
+  # 文件权限设置
+  git config --global core.fileMode false
+#+end_src
 * 使用 Git 贡献代码
 
   本文以 =@lisp/@lisp函数库= 为例，说明如何 *fork* =@lisp/@lisp函数库= 并作为贡献者提交代码
