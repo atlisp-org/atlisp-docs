@@ -1,0 +1,142 @@
+* 系统乱码
+项目中的编码统一设置为UTF-8编码。
+
+设置系统的语言设置为 zh_UTF-8，把
+#+begin_src 
+export LANG=zh_CN.UTF-8
+#+end_src
+
+保存到~/.profile文件里。
+#+begin_src 
+$ env|grep LANG
+LANG=zh_CN.UTF-8
+#+end_src
+使用 git add 命令加入文件名称含中文字符的文件时
+乱码类似：
+
+\316\304\261\276\316\304\265\265.txt
+解决方式：
+
+编辑C:\Git\etc\inputrc文件里相应的行。
+查找下面2行。并改动其值。
+原先：
+#+begin_src 
+set output-meta off set convert-meta on
+#+end_src
+改为：
+#+begin_src 
+set output-meta onset convert-meta off
+#+end_src
+使用git log查看含有中文的log信息时
+乱码类似：
+
+<E4><BF><AE><E6><94><B9><E6><96><87><E6><9C><AC><E6><96><87><E6><A1><A3>
+解决方式：
+
+在Bash提示符下输入：
+#+begin_src 
+git config --global i18n.commitencoding utf-8
+git config --global i18n.logoutputencoding gbk
+#+end_src
+注：设置commit提交时使用utf-8编码，可避免Linuxserver上乱码；同一时候设置在运行git log时将utf-8编码转换成gbk编码，以解决乱码问题。由于windows系统默认编码为gbk。
+
+
+编辑C:\Git\etc\profile文件，加入例如以下一行：
+#+begin_src 
+export LESSCHARSET=utf-8
+#+end_src
+注：以使git log能够正常显示中文（须要配合：i18n.logoutputencoding gbk）
+
+假设系统设置了：
+#+begin_src 
+export LANG=zh_CN.UTF-8
+#+end_src
+则日志输出编码设置为utf-8
+#+begin_src 
+git config --global i18n.logoutputencoding utf-8
+#+end_src
+使用ls命令查看含有中文的文件名称乱码时
+乱码类似：
+
+????
+.txt
+
+解决方式：
+
+使用 ls –show-control-chars 命令来强制使用控制台字符编码显示文件名称。就可以查看中文文件名称。
+
+
+为了方便使用。能够编辑 C:\Git\etc\git-completion.bash 文件，加入例如以下一行：
+#+begin_src 
+alias ls="ls --show-control-chars"
+#+end_src
+在Git Gui中查看UTF-8编码的文本文件时
+乱码类似：
+
+锘夸腑鏂囨枃妗￡
+解决方式：
+
+在Bash提示符下输入：
+#+begin_src 
+git config --global gui.encoding utf-8
+#+end_src
+注：通过上述设置。UTF-8编码的文本文件能够正常查看。可是GBK编码的文件将会乱码。所以还是没有从根本上解决这个问题。
+
+可行的方法之中的一个为：将全部文本文件的编码统一为UTF-8或GBK，然后设置对应的gui.encoding參数为utf-8或gbk。
+
+ 
+#+begin_src 
+git status乱码
+git config --global core.quotepath false
+#+end_src
+或者编辑git配置文件：vi ~/.gitconfig
+#+begin_src 
+[core]
+quotepath = false
+#+end_src
+作用：没有这一条。$git status输出中文会显示为UNICODE编码。
+
+回车符设置
+#+begin_src 
+git config --global core.autocrlf false
+
+git config --global core.safecrlf true
+#+end_src
+或者编辑git配置文件：vi ~/.gitconfig
+#+begin_src 
+[core]
+autocrlf = false
+safecrlf = true
+#+end_src
+
+用户信息设置
+#+begin_src 
+git config --global user.name KangLin
+git config --global user.email kl222@126.com
+#+end_src
+
+或者编辑git配置文件：vi ~/.gitconfig
+#+begin_src 
+[user]
+    name = KangLin
+    email = kl222@126.com
+#+end_src
+设置git默认编辑器
+#+begin_src 
+git config --global core.editor vim
+#+end_src
+
+或者编辑git配置文件：vi ~/.gitconfig
+#+begin_src 
+[core]
+      editor = vim
+#+end_src
+彩色的 git 输出：
+#+begin_src 
+git config  --global color.ui true
+#+end_src
+或者编辑git配置文件：vi ~/.gitconfig
+#+begin_src 
+[color]
+    ui = true
+#+end_src
