@@ -1,0 +1,253 @@
+#+TITLE: @lisp 开发指南
+
+* 开发 命令
+三生万物，所有开发相关命令均为以 @ 开头的 3 字符组成。
+
+如下表：
+| 命令 | 功能                 |
+|------+----------------------|
+| @@@  | 打开@开发面板        |
+| @@C  | 编译应用包           |
+| @@P  | 编译并发布应用包     |
+| @GS  | 打开 git bash 终端。 |
+
+* 如何开发@lisp应用包
+安装 *@lisp开发工具* 并输入个人信息就可以使用本网开发的 *开发工具* 创建应用、编译应用、上传和发布你的应用了。
+
+然后 点击菜单 开发工具(DevelopTools) -> 获取开发令牌 ，过程中根据提示输入用户信息及密码。如果你的 Email 和 手机号 没有被注册过的话，就可以注册新用户进行应用的创建和发布了。
+
+** 创建应用
+该功能可创建一个初始的空应用包，注意应用包的标识名(name)为全网唯一，不能与已有的应用名重复（英文标识）。
+   
+中文显示的名称(full name) 可以重复，但显示的作者不同。
+
+*应用包的标识名(name)* 与安装的文件夹 （目录）应完全一致。创建后它们是一致的，不得更改。
+
+英文标识名(pkg.lsp 文件中的 :name) 尽量采用有意义的单词，命令行安装时易于识别。
+
+中文名称(pkg.lsp 文件中的 :full-name)尽量能表明功能。这个可以更改为自己中意的名称。
+
+简介(pkg.lsp 文件中的 :description)对应用包的功能进行简述。
+
+请记住   *应用包的标识名* 在编译和发布时需要输入。
+
+** 编译应用
+当你创建了一个应用包，并完成功能代码的编写工作之后。就可以 *编译应用* 了， *编译应用* 可以将你的开发包定义中的 :files 中的可执行文件（不含扩展名的文件） 进行编译 生成 .fas 文件。
+
+** 上传和发布应用
+
+上传应用 是 将你编写的应用包上传到 *@lisp服务器* 的 *先行版数据池* 中，用于测试及公众测试 。
+
+发布应用 是 将你编写的应用包上传到 *@lisp服务器* 的 *稳定版数据池* 中，供一般用户使用 。
+   
+* 应用包的架构组成
+  
+@lisp 采用应用包的方式管理相对独立的程序。
+
+每个包有自己的目录结构。
+
+包目录文件结构： 
+
+- pkg.lsp :包定义文件
+- readme.md/readme.org 包功能及用法说明文档。
+- 代码 lsp 文件，在pkg.lsp中没有扩展名的多个文件。
+- 包定义中指定的其它文件，如 dwg dcl 等。
+- doc/ 文档（可选），建议写详细的使用文档和帮助系统。
+
+#+begin_src mermaid
+  graph LR;
+      A((应用包)) --> B[定义文件 pkg.lsp];
+      A --> C[README文件];
+      A --> D[代码lsp文件];
+      A --> E[其它如dwg,dcl等文件];
+      A --> F[doc文件夹及帮助文件];
+#+end_src
+
+首先需要对自己的程序进行包定义。用于定义包的名称，作者，下载网址及组成文件等。
+
+包定义文件命名方式为  pkg.lsp 。
+
+如 at-pm 包 ，其定义文件名为 pkg.lsp 
+
+其内容示例如下:
+#+BEGIN_SRC lisp 
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;; @lisp 工程管理
+  ;;; Author: VitalGG<vitalgg@gmail.com>
+  ;;; Description: 基于 AutoLisp/VisualLisp 开发的绘图工具集
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  (@:def-pkg '((:name . "at-pm")        
+               (:full-name . "工程管理")
+               (:author . "vitalGG")    
+               (:email  . "vitalgg@gmail.com")
+               (:version . "1.0.0")    
+               (:locale  . "CHS")       
+               (:description . "CAD 常用工具,图层、文本、基本数学运算、批量打印、业务逻辑化管理。") 
+               (:category . "通用") 
+               (:tags . ("批量打印"))
+               (:url . "http://atlisp.cn")
+               (:files . ("tools-anti-virus"
+                          "virus.lib"
+                          "tools-contents"
+                          "tools-layer"
+                          "tools-math"
+                          "tools-text"
+                          "tukuang.dwg" ))))
+#+END_SRC 
+
+在 files 点对中对应的文件列表，不带扩展名的文件均为 lsp 文件，编译上传后为 fas 文件。其它文件则需要带有扩展名，如病毒库文件 virus.lib,图框的dwg 文件等。 
+
+如果需要安装这个包，需在 CAD 命令行 输入
+#+BEGIN_SRC script
+  @I at-pm
+#+END_SRC
+
+或
+
+#+BEGIN_SRC lisp 
+  (@:package-install "at-pm")
+#+END_SRC
+
+即可完成下载及安装配置工作，并重新生成菜单。
+
+CAD 在启动加载的时候会按这个文件列表加载各个 fas 文件(用户)。
+
+* 包定义及开发主要函数
+  
+@:def-pkg    定义包 
+
+@:add-menu  菜单生成函数(用于在加载时生成菜单)
+
+@:add-menus  批量菜单生成函数(用于在加载时生成菜单)
+
+@:help      命令提示函数(用于运行前的功能用法提示)
+
+@:define-config 定义包中可供使用者修改的参数。
+
+@:set-config  使用者修改包中定义的变量。
+
+@:get-config  取包中定义的变量的值。
+
+
+* 界面：菜单及命令面板相关函数
+
+@lisp 可以在安装时生成相应的菜单。目前 所有的功能菜单均集中于 @lisp(A) 中。
+
+@:add-menu 函数用于生成菜单。 
+  
+格式如下：
+
+#+BEGIN_SRC lisp 
+  (@:add-menu "子菜单" "功能名称" "(功能函数)")
+  (defun 功能函数 ()
+    ...
+    )
+#+END_SRC
+
+示例(无参数)：
+#+BEGIN_SRC lisp 
+  (@:add-menu "大绘图" "附着签名" "(@:attach-sign)")
+  (defun @:attach-sign ( )
+    ... 
+    )
+#+END_SRC
+
+示例(有参数)：
+
+#+BEGIN_SRC lisp 
+  (@:add-menu "大绘图" "插入图框" "(@:insert-tukuang \"tukuang.dwg\" @:*tukuang*)")
+  (@:add-menu "变更及工程处理" "变更" "(@:insert-tukuang \"bg-tukuang.dwg\" @:*bg-tukuang*)")
+  (@:add-menu "变更及工程处理" "处理方案" "(@:insert-tukuang \"fa-tukuang.dwg\" @:*fa-tukuang*)")
+
+  (defun @:insert-tukuang (tk-file tk-dwg)
+    ...)
+
+#+END_SRC
+
+* 参数配置项的定义与使用
+
+#+BEGIN_SRC lisp 
+  (@:define-config 'vitaltools:projects-output "D:\\Output" "本地PDF输出目录")
+  (@:set-config 'vitaltools:projects-output "D:\\PDF")
+  (@:get-config 'vitaltools:projects-output)
+  (@:list-config)
+#+END_SRC
+说明：
+** 变量定义
+(@:define-config 可供用户修改的变量名(符号)  默认值  变量说明)
+** 变量设置及修改值
+(@:set-config 可供用户修改的变量名(符号)  用户设定值)
+** 变量读值
+(@:get-config 可供用户修改的变量名(符号)  )
+  
+** 列所有的变量
+(@:list-config)
+* 国际化与本地化支持
+@lisp 支持应用包的多国语言，不同语种的CAD环境，可以加载不同的语言包，显示用户使用的语言。
+
+在代码中使用 (_"string") 就可以将string 作为翻译标记，生成可翻译的文件。
+#+BEGIN_SRC lisp 
+  (_"语言字符串")
+#+END_SRC
+
+开发者可以自行制作翻译文件，文件名为 pkgname-locale.lang 将该文件放在 @lisp/locale/ 目录下就可以实现翻译了。
+
+*TODO* : 共享翻译 ，系统会收集未翻译的字符串，将未翻译的字符串，共享到 @lisp 网站，有翻译能力的 *使用者* 可以翻译这些内容让其他 *使用者* 使用。
+* 帮助及提示系统
+
+在函数定义体后跟提示内容. 在配置文件 @config.lsp 中设置提示方式。
+目前有两种提示方式, 1 是命令行提示方式， 2 是 alert 提示方式。
+#+BEGIN_SRC lisp 
+  (defun foobar  ()
+    (@:help "运行时提示该 foobar 函数的使用方法等。 ")
+    ...)
+
+#+END_SRC
+
+* Hello world 示例
+
+包定义：
+pkg.lsp :
+#+BEGIN_SRC lisp 
+  (@:def-pkg '((:name . "helloworld")
+               (:full-name . "hello world 示例")
+               (:author . "vitalGG")
+               (:email  . "vitalgg@gmail.com")
+               (:version . "1.0.0")
+               (:description . "第一个示例。")
+               (:url . "http://atlisp.cn")
+               (:files . ("helloworld"))))
+
+#+END_SRC 
+
+helloworld.lsp :
+
+#+BEGIN_SRC lisp 
+  (@:add-menu "Hello" "helloworld" "(helloworld)")
+  (defun helloworld ()
+    (@:help "输出hello world 到命令行及对话框提示。")
+    (princ "hello world.\n")
+    (alert "hello world.")
+    (princ)
+    )
+#+END_SRC 
+
+安装 helloworld 包
+
+#+BEGIN_SRC lisp 
+  (@:package-install "helloworld")
+#+END_SRC
+
+完成后会在 菜单中出现相应的 helloworld 项。点击会执行相应的代码功能.
+
+* 布署
+
+如果你有自己的服务器， 可将 包定义的的 url 改成你自己的网址，确保 files 中的文件能从你的网址中下载。
+下载地址为 *url/stable/* 下的文件。
+  
+然后把 包定义文件 pkg.lsp 分享到包数据库中即可。
+
+
+* @lisp 应用包开发说明
+见 [[https://gitee.com/atlisp/atlisp-docs/tree/main/@lisp][@lisp 文档]] 的 @lisp部分
