@@ -96,7 +96,7 @@ quotepath = false
 #+end_src
 作用：没有这一条。$git status输出中文会显示为UNICODE编码。
 
-回车符设置
+* 回车符设置
 #+begin_src 
 git config --global core.autocrlf false
 
@@ -109,7 +109,7 @@ autocrlf = false
 safecrlf = true
 #+end_src
 
-用户信息设置
+* 用户信息设置
 #+begin_src 
 git config --global user.name KangLin
 git config --global user.email kl222@126.com
@@ -121,7 +121,7 @@ git config --global user.email kl222@126.com
     name = KangLin
     email = kl222@126.com
 #+end_src
-设置git默认编辑器
+* 设置git默认编辑器
 #+begin_src 
 git config --global core.editor vim
 #+end_src
@@ -131,7 +131,7 @@ git config --global core.editor vim
 [core]
       editor = vim
 #+end_src
-彩色的 git 输出：
+* 彩色的 git 输出
 #+begin_src 
 git config  --global color.ui true
 #+end_src
