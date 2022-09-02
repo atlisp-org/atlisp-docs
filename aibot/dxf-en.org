@@ -249,18 +249,18 @@ Subclass tag (acdb3dsolid)
 Soft owner ID / handle of history object
 * ACAD_PROXY_ENTITY
 ** 100 DXF：AcDbProxyEntity
-**90 DXF: proxy primitive class ID (always 498)
-**91 DXF: class ID of application entity. The class ID is based on the order of the classes in the classes section. The ID of the first class is 500, the next is 501, and so on
-**92 DXF: size of drawing data (in bytes)
-**310 DXF: binary drawing data (multiple entries may occur) (optional)
-**93 DXF: size of entity data (in bits)
-**310 DXF: binary entity data (multiple entries may occur) (optional)
-**330, 340, 350 or 360 DXF: object ID (multiple entries may occur) (optional)
-**94 DXF: 0 (end of object ID segment)
-**95 DXF: object graphics format when an object becomes a proxy (32-bit unsigned integer): 
+** 90 DXF: proxy primitive class ID (always 498)
+** 91 DXF: class ID of application entity. The class ID is based on the order of the classes in the classes section. The ID of the first class is 500, the next is 501, and so on
+** 92 DXF: size of drawing data (in bytes)
+** 310 DXF: binary drawing data (multiple entries may occur) (optional)
+** 93 DXF: size of entity data (in bits)
+** 310 DXF: binary entity data (multiple entries may occur) (optional)
+** 330, 340, 350 or 360 DXF: object ID (multiple entries may occur) (optional)
+** 94 DXF: 0 (end of object ID segment)
+** 95 DXF: object graphics format when an object becomes a proxy (32-bit unsigned integer): 
 The lower word is acdbdwgversion
 The high word is maintenancerereleaseversion
-**70 DXF: original custom object data format: 
+** 70 DXF: original custom object data format: 
 0 = DWG format
 1 = DXF format
 * ARC
@@ -977,7 +977,8 @@ Stretch direction (optional; default = 0, 0, 1)
 DXF: x value; App: 3D vector
 ** 220, 230
 DXF: y and Z values of extrusion direction (optional)
-* LEADER
+
+*LEADER
 ** 100
 Subclass marker (acdbleader)
 ** 3
@@ -987,1831 +988,1867 @@ Arrow mark: 0 = disabled; 1 = enabled
 ** 72
 Leader path type: 0 = straight line segment; 1 = spline
 ** 73
-Leader creation flag (default = 3): 
+Leader creation flag (default = 3):
 0 = created using text notes
 1 = created using tolerance notes
 2 = create with block reference annotation
 3 = created without any annotation
 ** 74
-Baseline direction sign: 
+Baseline direction sign:
 0 = the baseline (or the tangent end of the spline leader) is opposite to the direction of the horizontal vector
 1 = the baseline (or tangent end of spline leader) is in the same direction as the horizontal vector (see code 75)
 ** 75
-Baseline mark: 
+Baseline mark:
 0 = no baseline
 1 = baseline
 ** 40
 Text note height
 ** 41
-文字注释宽度
+Text annotation width
 ** 76
-引线顶点数（如果为 OPEN，则忽略）
+Number of lead vertices (ignored if OPEN)
 ** 10
-顶点坐标（每个顶点一个条目）
-DXF：X 值；
-APP：三维点
+Vertex coordinates (one entry per vertex)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：顶点坐标的 Y 值和 Z 值
+DXF: Y and Z values ​​of vertex coordinates
+
 ** 77
-引线的 DIMCLRD = BYBLOCK时使用的颜色
+Color to use when DIMCLRD = BYBLOCK for the lead
+
 ** 340
-相关注释的硬参照（多行文字、公差或插入图元）
+Hard references to related annotations (multiline text, tolerances, or inserted elements)
+
 ** 210
-法向矢量
-DXF：X 值；
-APP：三维矢量
+normal vector
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：法向矢量的 Y 值和 Z 值
+DXF: Y and Z values ​​of the normal vector
 ** 211
-引线的“水平”方向
-DXF：X 值；
-APP：三维矢量
+The "horizontal" orientation of the leader
+DXF: X value;
+APP: 3D Vector
+
 ** 221, 231
-DXF：引线的“水平”方向的 Y 值和 Z 值
+DXF: Y and Z values ​​for the "horizontal" direction of the leader
+
 ** 212
-上一个引线顶点距块参照插入点的偏移
-DXF：X 值；
-APP：三维矢量
+The offset of the previous leader vertex from the block reference insertion point
+DXF: X value;
+APP: 3D Vector
+
 ** 222, 232
-DXF：偏移的 Y 值和 Z 值
+DXF: Offset Y and Z values
+
 ** 213
-上一个引线定点距注释位置点的偏移
-DXF：X 值；
-APP：三维矢量
+The offset of the previous leader point from the annotation location point
+DXF: X value;
+APP: 3D Vector
+
 ** 223, 233
-DXF：偏移的 Y 值和 Z 值
-* LIGHT
+DXF: Offset Y and Z values
+
+*LIGHT
 ** 100
-子类标记 (AcDbLight)
+Subclass Marker (AcDbLight)
 ** 90
-版本号
+version number
 ** 1
-光源名称
+light source name
 ** 70
-光源类型：
-1 = 平行光
-2 = 点光源
-3 = 聚光灯
+type of light source:
+1 = directional light
+2 = point light
+3 = Spotlight
 ** 290
-状态
+state
 ** 291
-打印轮廓
+print outline
 ** 40
-强度
+strength
 ** 10
-光源位置
-DXF：X 值；
-APP：三维点
+light source position
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：光源位置的 X、 Y 和 Z 值
+DXF: X, Y, and Z values ​​of the light source position
 ** 11
-目标位置
-DXF：X 值；
-APP：三维点
+target location
+DXF: X value;
+APP: 3D Point
 ** 21, 31
-DXF：目标位置的 X、 Y 和 Z 值
+DXF: X, Y, and Z values ​​of the target position
 ** 72
-衰减类型：
-0 = 无
-1 = 线性反比
-2 = 平方反比
+Attenuation Type:
+0 = none
+1 = Inverse Linear
+2 = inverse square
 ** 292
-使用衰减界限
+Use falloff bounds
 ** 41
-衰减起点界限
+Attenuation start limit
 ** 42
-衰减端点界限
+Falloff End Bounds
 ** 50
-聚光角角度
+Spot angle
 ** 51
-照射角角度
+Irradiation angle
 ** 293
-投射阴影
+cast shadows
 ** 73
-阴影类型
-0 = 光线跟踪阴影
-1 = 阴影贴图
+shade type
+0 = ray traced shadows
+1 = shadow map
 ** 91
-阴影贴图尺寸
+Shadow map size
 ** 280
-阴影贴图柔和度
-* LINE
+Shadow map softness
+
+*LINE
 ** 100
-子类标记 (AcDbLine)
+Subclass Marker (AcDbLine)
 ** 39
-厚度（可选；默认值 = 0）
+thickness (optional; default = 0)
 ** 10
-起点（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Starting point (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：起点的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the starting point (in WCS)
 ** 11
-端点（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Endpoint (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 21, 31
-DXF：端点的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of endpoints (in WCS)
 ** 210
-拉伸方向（可选；默认值 = 0, 0, 1）
-DXF：X 值；
-APP：三维矢量
+stretch direction (optional; default = 0, 0, 1)
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：拉伸方向的 Y 值和 Z 值（可选）
+DXF: Y and Z values ​​of the extrusion direction (optional)
+
 * LWPOLYLINE
 ** 100
-子类标记 (AcDbPolyline)
+Subclass Marker (AcDbPolyline)
 ** 90
-顶点数
+number of vertices
 ** 70
-多段线标志（按位编码）；
-默认值为 0：
-1 = 关闭；
+polyline flag (bitwise encoded);
+The default value is 0:
+1 = off;
 128 = Plinegen
 ** 43
-固定宽度（可选；默认值 = 0）。
-如果设定为可变宽度（代码 40 和/或 41），则不使用
+Fixed width (optional; default = 0).
+Not used if set to variable width (code 40 and/or 41)
 ** 38
-标高（可选；默认值 = 0）
+Elevation (optional; default = 0)
 ** 39
-厚度（可选；默认值 = 0）
+thickness (optional; default = 0)
 ** 10
-顶点坐标（在 OCS 中），多个条目；
-每个顶点一个条目
-DXF：X 值；
-APP：二维点
+vertex coordinates (in OCS), multiple entries;
+One entry per vertex
+DXF: X value;
+APP: 2D point
 ** 20
-DXF：顶点坐标的 Y 值（在 OCS 中），多个条目；
-每个顶点一个条目
+DXF: Y value of vertex coordinates (in OCS), multiple entries;
+One entry per vertex
 ** 91
-顶点标识符
+vertex identifier
 ** 40
-起点宽度（多个条目；每个顶点一个条目）（可选；默认值 = 0；多个条目）。
-如果设定为固定宽度（代码 43），则不使用
+Start width (multiple entries; one entry per vertex) (optional; default = 0; multiple entries).
+Not used if set to fixed width (code 43)
 ** 41
-端点宽度（多个条目；每个顶点一个条目）（可选；默认值 = 0；多个条目）。
-如果设定为固定宽度（代码 43），则不使用
+Endpoint width (multiple entries; one entry per vertex) (optional; default = 0; multiple entries).
+Not used if set to fixed width (code 43)
 ** 42
-凸度（多个条目；每个顶点一个条目）（可选；默认值 = 0）
+convexity (multiple entries; one entry per vertex) (optional; default = 0)
 ** 210
-拉伸方向（可选；默认值 = 0, 0, 1）
-DXF：X 值；
-APP：三维矢量
+stretch direction (optional; default = 0, 0, 1)
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：拉伸方向的 Y 值和 Z 值（可选）
-* mesh
+DXF: Y and Z values ​​of the extrusion direction (optional)
+*mesh
 ** 100
-子类标记 (AcDbSubDMesh)
+Subclass Marker (AcDbSubDMesh)
 ** 71
-版本号
+version number
 ** 72
-“光顺锐化”特性
-0 = 关闭
-1 = 打开
+Smooth Sharpening feature
+0 = off
+1 = On
 ** 91
-细分级别数目
+Number of subdivision levels
 ** 92
-0 级顶点数
+Level 0 Vertices
 ** 10
-顶点位置
+vertex position
 ** 93
-0 级面列表的大小
+Size of the level 0 face list
 ** 90
-面列表项目
+face list item
 ** 94
-0 级边数
+Level 0 Edges
 ** 90
-每条边的顶点索引
+vertex index for each edge
 ** 95
-0 级边锐化数
+Level 0 edge sharpening
 ** 140
-边创建值
+edge creation value
 ** 90
-特性已被替代的子图元数
+The number of sub-entities whose properties have been replaced
 ** 91
-子图元标记
+Sub-entity tag
 ** 92
-已替代特性数
+Number of replaced features
 ** 90
-特性类型
-0 = 颜色
-1 = 材质
-2 = 透明度
-3 = 材质贴图器
-* MLEADER
+Feature type
+0 = color
+1 = Material
+2 = Transparency
+3 = Material Mapper
+*MLEADER
 ** 340
-引线样式 ID
+Leader Style ID
 ** 90
-特性替代标志
+Feature Override Flag
 ** 170
-引线类型
+Lead Type
 ** 91
-引线颜色
+lead color
 ** 341
-引线类型 ID
+Lead Type ID
 ** 171
-引线线宽
+lead line width
 ** 290
-启用基线
+enable baseline
 ** 291
-启用基线
+enable baseline
 ** 41
-基线长度
+Baseline length
 ** 342
-箭头 ID
+Arrow ID
 ** 42
-箭头大小
+arrow size
 ** 172
-内容类型
+content type
 ** 343
-文字样式 ID
+Text Style ID
 ** 173
-文字左附着样式
+Text Left Attachment Style
 ** 95
-文字右附着类型
+Text Right Attachment Type
 ** 174
-文字角度类型
+Type of text angle
 ** 175
-文字对齐类型
+Type of text alignment
 ** 92
-文字颜色
+text color
 ** 292
-启用文字边框
+Enable text borders
 ** 344
-块内容 ID
+Block Content ID
 ** 93
-块内容颜色
+block content color
 ** 10
-块内容比例
+block content ratio
 ** 43
-块内容旋转
+block content rotation
 ** 176
-块内容连接类型
+block content connection type
 ** 293
-启用注释比例
+Enable annotation scale
 ** 94
-箭头索引
+arrow index
 ** 345
-箭头 ID
+Arrow ID
 ** 330
-块属性 ID
+Block attribute ID
 ** 177
-块属性索引
+block attribute index
 ** 44
-块属性宽度
+block attribute width
 ** 302
-块属性文字字符串
+block attribute literal string
 ** 294
-文字负方向
+negative text direction
 ** 178
-IPE 中的文字对齐
+Text alignment in IPE
 ** 179
-文字附着点
+text attachment point
 ** 271
-多行文字内容的文字附着方向：
-0 = 水平
-1 = 垂直
+Text attachment direction for MText content:
+0 = horizontal
+1 = vertical
 ** 272
-底部文字附着方向：
-9 = 居中
-10 = 下划线并居中
+Bottom text attachment direction:
+9 = Centered
+10 = underline and center
 ** 273
-顶部文字附着方向：
-9 = 居中
-10 = 上划线并居中
+Top text attachment direction:
+9 = Centered
+10 = overline and center
 * MLEADERSTYLE
 ** 170
-内容类型
+content type
 ** 171
-绘制多重引线次序类型
+Draw Multileader Order Types
 ** 172
-绘制引线次序类型
+Draw Leader Order Type
 ** 90
-最大引线线段点
+Maximum leader line segment point
 ** 40
-第一线段角度约束
+First Line Segment Angle Constraint
 ** 41
-第二线段角度约束
+Second line segment angle constraint
 ** 173
-引线类型
+Lead Type
 ** 91
-引线颜色
+lead color
 ** 340
-引线类型 ID
+Lead Type ID
 ** 92
-引线线宽
+lead line width
 ** 290
-启用基线
+enable baseline
 ** 42
-基线间隙
+Baseline gap
 ** 291
-启用基线
+enable baseline
 ** 43
-基线长度
+Baseline length
 ** 3
-多重引线样式说明
+Multileader Style Description
 ** 341
-箭头 ID
+Arrow ID
 ** 44
-箭头大小
+arrow size
 ** 300
-默认多行文字内容
+Default Mtext Content
 ** 342
-多行文字样式 ID
+Mtext style ID
 ** 174
-文字左附着样式
+Text Left Attachment Style
 ** 175
-文字角度类型
+Type of text angle
 ** 176
-文字对齐类型
+Type of text alignment
 ** 178
-文字连接位置类型 - 右
+Text Join Position Type - Right
 ** 93
-文字颜色
+text color
 ** 45
-文字高度
+text height
 ** 292
-启用文字边框
+Enable text borders
 ** 297
-文字始终左对齐
+Text is always left aligned
 ** 46
-对齐空间
+Align space
 ** 343
-块内容 ID
+Block Content ID
 ** 94
-块内容颜色
+block content color
 ** 47
-X 轴上的块内容比例
+block content scale on the x-axis
 ** 49
-Y 轴上的块内容比例
+Block content scale on the Y axis
 ** 140
-Z 轴上的块内容比例
+Block content scale on Z axis
 ** 293
-启用块内容比例
+Enable block content scale
 ** 141
-块内容旋转
+block content rotation
 ** 294
-启用块内容旋转
+Enable block content rotation
 ** 177
-块内容连接类型
+block content connection type
 ** 142
-比例
+Proportion
 ** 295
-覆盖特性值
+Override property values
 ** 296
-注释性
+Annotative
 ** 143
-打断间距大小
+Break spacing size
 ** 271
-多行文字内容的文字附着方向：
-0 = 水平
-1 = 垂直
+Text attachment direction for Mtext content:
+0 = horizontal
+1 = vertical
 ** 272
-底部文字附着方向：
-9 = 居中
-10 = 下划线并居中
+Bottom text attachment direction:
+9 = Centered
+10 = underline and center
 ** 273
-顶部文字附着方向：
-9 = 居中
-10 = 上划线并居中
-* mline
+Top text attachment direction:
+9 = Centered
+10 = overline and center
+*mline
 ** 100
-子类标记 (AcDbMline)
+Subclass Marker (AcDbMline)
 ** 2
-最大长度为 32 个字符的字符串。
-该多线使用的样式名。
-MLINESTYLE 词典中必须存在此样式的条目。
-如果不同时更新 MLINESTYLE 词典中的相关条目，则不要修改该字段。
+String with a maximum length of 32 characters.
+The style name to use for this multiline.
+An entry for this style must exist in the MLINESTYLE dictionary.
+Do not modify this field without also updating the related entry in the MLINESTYLE dictionary.
 ** 340
-MLINESTYLE 对象的指针句柄/ID
+Pointer handle/ID of the MLINESTYLE object
 ** 40
-比例因子
+Scale Factor
 ** 70
-对正：
-0 = 顶端对正
-1 = 无对正
-2 = 底端对正
+Positive:
+0 = top justified
+1 = no alignment
+2 = Bottom justified
 ** 71
-标志（按位编码值）：
-1 = 至少有一个顶点（代码 72 大于 0）
-2 = 关闭
-4 = 禁止起点封口
-8 = 禁止端点封口
+Flags (bit-encoded value):
+1 = At ​​least one vertex (code 72 is greater than 0)
+2 = off
+4 = start sealing prohibited
+8 = End capping disabled
 ** 72
-顶点数
+number of vertices
 ** 73
-MLINESTYLE 定义中的元素数
+The number of elements in the MLINESTYLE definition
 ** 10
-起点（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Starting point (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：起点的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the starting point (in WCS)
 ** 210
-拉伸方向（可选；默认值 = 0, 0, 1）
-DXF：X 值；
-APP：三维矢量
+stretch direction (optional; default = 0, 0, 1)
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：拉伸方向的 Y 值和 Z 值（可选）
+DXF: Y and Z values ​​of the extrusion direction (optional)
 ** 11
-顶点坐标（多个条目；每个顶点一个条目）DXF：X 值；
-APP：三维点
+vertex coordinates (multiple entries; one entry per vertex) DXF: X value;
+APP: 3D Point
 ** 21, 31
-DXF：顶点坐标的 Y 值和 Z 值
+DXF: Y and Z values ​​of vertex coordinates
 ** 12
-从该顶点开始的线段的方向矢量（多个条目；每个顶点一个条目）
-DXF：X 值；
-APP：三维矢量
+direction vector of the line segment starting from this vertex (multiple entries; one entry per vertex)
+DXF: X value;
+APP: 3D Vector
 ** 22, 32
-DXF：从此顶点开始的线段的方向矢量的 Y 值和 Z 值
+DXF: The Y and Z values ​​of the direction vector of the line segment starting from this vertex
 ** 13
-此顶点处的斜接方向矢量（多个条目；每个顶点一个条目）
-DXF：X 值；
-APP：三维矢量
+the miter direction vector at this vertex (multiple entries; one entry per vertex)
+DXF: X value;
+APP: 3D Vector
 ** 23, 33
-DXF：斜接方向矢量的 Y 值和 Z 值
+DXF: Y and Z values ​​of the miter direction vector
 ** 74
-该元素的参数数目（对线段中的每个元素重复）
+The number of arguments for this element (repeated for each element in the line segment)
 ** 41
-元素参数（根据上一个代码 74 重复）
+element parameter (repeated from previous code 74)
 ** 75
-该元素的区域填充参数的数目（对线段中的每个元素重复）
+The number of area fill parameters for this element (repeated for each element in the line segment)
 ** 42
-区域填充参数（根据前一个代码 75 重复）
-* MTEXT
+Area fill parameter (repeated from previous code 75)
+*MTEXT
 ** 100
-子类标记 (AcDbMText)
+Subclass Marker (AcDbMText)
 ** 10
-插入点
-DXF：X 值；
-APP：三维点
+insertion point
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：插入点的 Y 值和 Z 值
+DXF: Y and Z values ​​of the insertion point
 ** 40
-标称（初始）文字高度
+Nominal (initial) text height
 ** 41
-参照矩形宽度
+Reference rectangle width
 ** 71
-附着点：
-1 = 左上
-2 = 中上
-3 = 右上
-4 = 左中
-5 = 正中
-6 = 右中
-7 = 左下
-8 = 中下
-9 = 右下
+Attachment point:
+1 = top left
+2 = upper middle
+3 = top right
+4 = left center
+5 = Center
+6 = middle right
+7 = bottom left
+8 = middle and lower
+9 = bottom right
 ** 72
-图形方向：
-1 = 从左到右
-3 = 从上到下
-5 = 随样式（从相关文字样式继承走向）
+Graphic Orientation:
+1 = left to right
+3 = top to bottom
+5 = Follow style (inherit from related text style)
 ** 1
-字符串。
-如果字符串长度小于 250 个字符，所有字符均出现在组 1 中。
-如果字符串长度大于 250 个字符，该字符串将分成长度为 250 个字符的数据块，并显示在一个或多个组 3 代码中。
-如果使用组 3 代码，最后一个组将是组 1 并且字符数少于 250 个
+string.
+if
+
+String length is less than 250 characters, all characters appear in group 1.
+If the string is longer than 250 characters, the string is split into 250-character chunks and displayed in one or more Group 3 codes.
+If using group 3 codes, the last group will be group 1 and have less than 250 characters
 ** 3
-附加文字（始终在长度为 250 个字符的数据块中）（可选）
+Additional text (always in a 250-character block) (optional)
 ** 7
-文字样式名（如果未提供，则为“标准”）（可选）
+text style name ("standard" if not provided) (optional)
 ** 210
-拉伸方向（可选；默认值 = 0, 0, 1）
-DXF：X 值；
-APP：三维矢量
+stretch direction (optional; default = 0, 0, 1)
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：拉伸方向的 Y 值和 Z 值（可选）
+DXF: Y and Z values ​​of the extrusion direction (optional)
 ** 11
-X 轴方向矢量（在 WCS 中）
-DXF：X 值；
-APP：三维矢量
-将作为 DXF 输入传递的组码 50（以弧度为单位的旋转角）转换为相等的方向矢量（如果同时传递代码 50 和代码 11、21、31，则对最后一个代码进行转换）。
-这是从文字对象转换的一种简便方法。
+X-axis direction vector (in WCS)
+DXF: X value;
+APP: 3D Vector
+Converts group code 50 (rotation angle in radians) passed as DXF input to an equivalent orientation vector (if code 50 and codes 11, 21, 31 are passed at the same time, the last code is converted).
+This is an easy way to convert from literal objects.
 ** 21, 31
-DXF：X 轴方向矢量的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the X-axis direction vector (in WCS)
 ** 42
-构成多行文字图元的字符的水平宽度。
-该值始终等于或小于组码 41 的值（只读，如果提供则忽略）
+The horizontal width of the characters that make up the MText primitive.
+The value is always equal to or less than the value of group code 41 (read only, ignored if provided)
 ** 43
-多行文字图元的垂直高度（只读，如果提供则忽略）
+vertical height of mtext primitives (read-only, ignored if provided)
 ** 50
-以弧度为单位的旋转角度
+Rotation angle in radians
 ** 73
-多行文字的行距样式（可选）：
-1= 至少（将替代为较高的字符）
-2 = 精确（将不替代为较高的字符）
+Line spacing style for multiline text (optional):
+1= at least (will be substituted with higher character)
+2 = exact (will not substitute higher characters)
 ** 44
-多行文字的行距比例（可选）：
-要应用的行距的默认百分比（五分之三）。
-有效值的范围从 0.25 到 4.00
+Line spacing ratio for multiline text (optional):
+The default percentage of leading (three-fifths) to apply.
+Valid values ​​range from 0.25 to 4.00
 ** 90
-背景填充设置：
-0 = 背景填充关闭
-1 = 使用背景填充颜色
-2 = 使用图形窗口颜色作为背景填充颜色
+Background fill settings:
+0 = Background padding is off
+1 = use background fill color
+2 = Use the graphics window color as the background fill color
 ** 420 - 429
-背景色（RGB 颜色）
+Background color (RGB color)
 ** 430 - 439
-背景色（颜色名）
+background color (color name)
 ** 45
-填充框大小（可选）：
-确定文字周围的边框大小。
+Padding box size (optional):
+Determines the size of the border around the text.
 ** 63
-背景填充颜色（可选）：
-组码 90 为 1 时要用于背景填充的颜色。
+Background fill color (optional):
+The color to use for the background fill when group code 90 is 1.
 ** 441
-背景填充颜色的透明度（未实现）
+Transparency of the background fill color (not implemented)
 ** 75
-列类型
+column type
 ** 76
-列计数
+column count
 ** 78
-反转列走向
+Reverse column direction
 ** 79
-列自动高度
+Column auto height
 ** 48
-列宽
+column width
 ** 49
-列栏间距
+column spacing
 ** 50
-列高度；
-此代码后跟列计数 (Int16)，然后是列高度数
-* oleframe
+column height;
+This code is followed by the column count (Int16), then the column height number
+*oleframe
 ** 100
-子类标记 (AcDbOleFrame)
+Subclass Marker (AcDbOleFrame)
 ** 70
-OLE 版本号
+OLE version number
 ** 90
-二进制数据的长度
+length of binary data
 ** 310
-二进制数据（多行）
+binary data (multi-line)
 ** 1
-OLE 数据的结束（字符串“OLE”）
+End of OLE data (string "OLE")
 * ole2frame
 ** 100
-子类标记 (AcDbOle2Frame)
+Subclass Marker (AcDbOle2Frame)
 ** 70
-OLE 版本号
+OLE version number
 ** 3
-二进制数据的长度
+length of binary data
 ** 10
-左上角 (WCS)
-DXF：X 值；
-APP：三维点
+Top left corner (WCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：左上角的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​for the upper left corner (in WCS)
 ** 11
-右下角 (WCS)
-DXF：X 值；
-APP：三维点
+Bottom Right Corner (WCS)
+DXF: X value;
+APP: 3D Point
 ** 21, 31
-DXF：右下角的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​in the lower right corner (in WCS)
 ** 71
-OLE 对象类型，1 = 链接；
-2 = 嵌入；
-3 = 静态
+OLE object type, 1 = link;
+2 = embedded;
+3 = static
 ** 72
-平铺模式描述符：
-0 = 对象驻留在模型空间中
-1 = 对象驻留在图纸空间中
+Tile Mode Descriptor:
+0 = object resides in model space
+1 = Object resides in paper space
 ** 90
-二进制数据的长度
+length of binary data
 ** 310
-二进制数据（多行）
+binary data (multi-line)
 ** 1
-OLE 数据的结束（字符串“OLE”）
-* point
+End of OLE data (string "OLE")
+
+
+
+*point
 ** 100
-子类标记 (AcDbPoint)
+Subclass Marker (AcDbPoint)
 ** 10
-点位置（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Point location (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：点位置的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of point positions (in WCS)
 ** 39
-厚度（可选；默认值 = 0）
+thickness (optional; default = 0)
 ** 210
-拉伸方向（可选；默认值 = 0, 0, 1）
-DXF：X 值；
-APP：三维矢量
+stretch direction (optional; default = 0, 0, 1)
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：拉伸方向的 Y 值和 Z 值（可选）
+DXF: Y and Z values ​​of the extrusion direction (optional)
 ** 50
-绘制点时所使用的 UCS 的 X 轴的角度（可选；默认值 = 0）；
-当 PDMODE 非零时使用
+The angle of the X-axis of the UCS to use when drawing points (optional; default = 0);
+Used when PDMODE is non-zero
 * polyline
 ** 100
-子类标记（AcDb2dPolyline 或 AcDb3dPolyline）
+Subclass marker (AcDb2dPolyline or AcDb3dPolyline)
 ** 66
-已废弃；
-以前是“后跟图元标志”（可选；如果存在则忽略）
+obsolete;
+Previously "followed by entity flags" (optional; ignored if present)
 ** 10
-DXF：始终为 0
-APP：“虚拟”点；
-X 值和 Y 值始终为 0，Z 值是多段线的标高（二维时在 OCS 中，三维时在 WCS 中）
+DXF: always 0
+APP: "virtual" point;
+The X and Y values ​​are always 0, and the Z value is the level of the polyline (in OCS for 2D, WCS for 3D)
 ** 20
-DXF：始终为 0
+DXF: always 0
 ** 30
-DXF：多段线的标高（二维时在 OCS 中，三维时在 WCS 中）
+DXF: Elevation of the polyline (in OCS for 2D, in WCS for 3D)
 ** 39
-厚度（可选；默认值 = 0）
+thickness (optional; default = 0)
 ** 70
-多段线标志（按位编码；默认值 = 0）：
-1 = 这是一个闭合多段线（或按 M 方向闭合的多边形网格）
-2 = 已添加曲线拟合顶点
-4 = 已添加样条曲线拟合顶点
-8 = 这是一条三维多段线
-16 = 这是一个三维多边形网格
-32 = 多边形网格以 N 方向闭合
-64 = 多段线是一个多面网格
-128 = 线型图案在该多段线顶点的周围连续生成
+Polyline flags (bitwise encoded; default = 0):
+1 = This is a closed polyline (or a polygon mesh closed in the M direction)
+2 = Curve fit vertices added
+4 = Spline fit vertices added
+8 = This is a 3D polyline
+16 = This is a 3D polygon mesh
+32 = polygon mesh closed in N direction
+64 = The polyline is a faceted mesh
+128 = Linetype pattern is generated continuously around the vertices of this polyline
 ** 40
-默认起点宽度（可选；默认值 = 0）
+Default start width (optional; default = 0)
 ** 41
-默认端点宽度（可选；默认值 = 0）
+Default endpoint width (optional; default = 0)
 ** 71
-多边形网格 M 顶点计数（可选；默认值 = 0）
+polygon mesh M vertex count (optional; default = 0)
 ** 72
-多边形网格 N 顶点计数（可选；默认值 = 0）
+polygon mesh N vertex count (optional; default = 0)
 ** 73
-平滑曲面 M 密度（可选；默认值 = 0）
+Smooth Surface M Density (optional; default = 0)
 ** 74
-平滑曲面 N 密度（可选；默认值 = 0）
+Smooth Surface N Density (optional; default = 0)
 ** 75
-曲线和平滑曲面类型（可选；默认值 = 0）；
-整数代码，非按位编码：
-0 = 不拟合平滑曲面
-5 = 二次 B 样条曲面
-6 = 三次 B 样条曲面
-8 = Bezier 曲面
+Curve and smooth surface type (optional; default = 0);
+Integer code, not bitwise encoded:
+0 = do not fit smooth surfaces
+5 = Quadratic B-spline surface
+6 = cubic B-spline surface
+8 = Bezier surface
 ** 210
-拉伸方向（可选；默认值 = 0, 0, 1）
-DXF：X 值；
-APP：三维矢量
+stretch direction (optional; default = 0, 0, 1)
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：拉伸方向的 Y 值和 Z 值（可选）
-* ray
+DXF: Y and Z values ​​of the extrusion direction (optional)
+*ray
 ** 100
-子类标记 (AcDbRay)
+Subclass Marker (AcDbRay)
 ** 10
-起点（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Starting point (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：起点的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the starting point (in WCS)
 ** 11
-单位方向矢量（在 WCS 中）
-DXF：X 值；
-APP：三维矢量
+Unit Direction Vector (in WCS)
+DXF: X value;
+APP: 3D Vector
 ** 21, 31
-DXF：单位方向矢量的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the unit direction vector (in WCS)
 * region
 ** 100
-子类标记 (AcDbModelerGeometry)
+Subclass Marker (AcDbModelerGeometry)
 ** 70
-建模格式版本号（当前值 = 1）
+Modeling format version number (current value = 1)
 ** 1
-所有权数据（多行，每行 < 255 个字符）
+Ownership data (multiple lines, < 255 characters each)
 ** 3
-所有权数据的附加行（如果前一个组 1 的字符串长度大于 255 个字符）（可选）
-* section
+Additional line of ownership data (if the previous group 1 string was longer than 255 characters) (optional)
+*section
 ** 100
-子类标记 (AcDbSection)
+Subclass Marker (AcDbSection)
 ** 90
-截面状态
+Section state
 ** 91
-截面标志
+Sectional sign
 ** 1
-名称
+name
 ** 10, 20, 30
-垂直方向
+vertical direction
 ** 40
-顶部高度
+top height
 ** 41
-底部高度
+Bottom height
 ** 70
-指示器透明度
+Indicator transparency
 ** 63, 411
-指示器颜色
+Indicator color
 ** 92
-顶点数
+number of vertices
 ** 11, 21, 31
-顶点（根据顶点数重复）
+Vertices (repeated based on vertex count)
 ** 93
-背面线顶点数
+Backline Vertices
 ** 12, 22, 32
-背面线顶点（根据背面线顶点数重复）
+Back line vertices (repeated based on the number of back line vertices)
 ** 360
-几何图形设置对象的硬指针 ID/句柄
-* seqend
+Hard pointer ID/handle to geometry settings object
+*seqend
 **  -2
-APP：开始序列的图元的名称。
-该图元标记多段线顶点的结束（顶点类型名），或具有属性（由插入图元中出现的非零 66 组表示）的插入图元的属性图元的结束（属性类型名）。
-该代码不保存在 DXF 文件中。
+APP: The name of the primitive that starts the sequence.
+This primitive marks the end of a polyline vertex (vertex type name), or the end of an attribute primitive (attribute type name) of an inset primitive with attributes (represented by the non-zero 66 groups present in the inset primitive).
+The code is not saved in the DXF file.
 * shape
 ** 100
-子类标记 (AcDbShape)
+Subclass Marker (AcDbShape)
 ** 39
-厚度（可选；默认值 = 0）
+thickness (optional; default = 0)
 ** 10
-插入点（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Insertion point (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：插入点的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of insertion point (in WCS)
 ** 40
-大小
+size
 ** 2
-形名称
+shape name
 ** 50
-旋转角度（可选；默认值 = 0）
+rotation angle (optional; default = 0)
 ** 41
-X 相对缩放比例（可选；默认值 = 1）
+X relative scaling (optional; default = 1)
 ** 51
-倾斜角（可选；默认值 = 0）
+tilt angle (optional; default = 0)
 ** 210
-拉伸方向（可选；默认值 = 0, 0, 1）
-DXF：X 值；
-APP：三维矢量
+stretch direction (optional; default = 0, 0, 1)
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：拉伸方向的 Y 值和 Z 值（可选）
-* solid
+DXF: Y and Z values ​​of the extrusion direction (optional)
+*solid
 ** 100
-子类标记 (AcDbTrace)
+Subclass Marker (AcDbTrace)
 ** 10
-第一角点
-DXF：X 值；
-APP：三维点
+first corner
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：第一角点的 Y 值和 Z 值
+DXF: Y and Z values ​​of the first corner
 ** 11
-第二角点
-DXF：X 值；
-APP：三维点
+second corner
+DXF: X value;
+APP: 3D Point
 ** 21, 31
-DXF：第二角点的 Y 值和 Z 值
+DXF: Y and Z values ​​of the second corner
 ** 12
-第三角点
-DXF：X 值；
-APP：三维点
+third corner
+DXF: X value;
+APP: 3D Point
 ** 22, 32
-DXF：第三角点的 Y 值和 Z 值
+DXF: Y and Z values ​​of the third corner
 ** 13
-第四角点。
-如果只输入三个角点来定义 SOLID，则第四个角点坐标与第三个角点坐标相同。
-DXF：X 值；
-APP：三维点
+Fourth corner.
+If you enter only three corner points to define SOLID, the coordinates of the fourth corner point are the same as the coordinates of the third corner point.
+DXF: X value;
+APP: 3D Point
 ** 23, 33
-DXF：第四角点的 Y 值和 Z 值
+DXF: Y and Z values ​​of the fourth corner
 ** 39
-厚度（可选；默认值 = 0）
+thickness (optional; default = 0)
 ** 210
-拉伸方向（可选；默认值 = 0, 0, 1）
-DXF：X 值；
-APP：三维矢量
+stretch direction (optional; default = 0, 0, 1)
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：拉伸方向的 Y 值和 Z 值（可选）
-* spline
+DXF: Y and Z values ​​of the extrusion direction (optional)
+*spline
 ** 100
-子类标记 (AcDbSpline)
+Subclass Marker (AcDbSpline)
 ** 210
-法向矢量（如果样条曲线为非平面型，则省略）
-DXF：X 值；
-APP：三维矢量
+normal vector (omitted if spline is non-planar)
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：法向矢量的 Y 值和 Z 值（可选）
+DXF: Y and Z values ​​of the normal vector (optional)
 ** 70
-样条曲线标志（按位编码）：
-1 = 闭合样条曲线
-2 = 周期性样条曲线
-4 = 有理样条曲线
-8 = 平面
-16 = 线性（同时还设置平面位）
+Spline flags (bitwise encoded):
+1 = closed spline
+2 = Periodic spline
+4 = Rational spline
+8 = Flat
+16 = Linear (also sets the plane bit)
 71
-样条曲线的阶数
+order of the spline
 ** 72
-节点数
+number of nodes
 ** 73
-控制点数
+control points
 ** 74
-拟合点数（如果有）
+number of fitting points (if any)
 ** 42
-节点公差（默认值 = 0.0000001）
+Node tolerance (default = 0.0000001)
 ** 43
-控制点公差（默认值 = 0.0000001）
+Control point tolerance (default = 0.0000001)
 ** 44
-拟合公差（默认值 = 0.0000000001）
+Fit tolerance (default = 0.0000000001)
 ** 12
-起点切向 — 可以省略（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Start Tangent - can be omitted (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 22, 32
-DXF：起点切向的 Y 值和 Z 值 — 可以省略（在 WCS 中）
+DXF: Y and Z values ​​tangent to the start point - can be omitted (in WCS)
 ** 13
-端点切向 — 可以省略（在 WCS 中）
-DXF：X 值；
-APP：三维点
+End tangent - can be omitted (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 23, 33
-DXF：端点切向的 Y 值和 Z 值 — 可以省略（在 WCS 中）
+DXF: Y and Z values ​​for endpoint tangent - can be omitted (in WCS)
 ** 40
-节点值（每个节点一个条目）
+Node values ​​(one entry per node)
 ** 41
-权值（如果不为 1）；
-对于多组对，如果均不为 1，则出现。
+weight (if not 1);
+Occurs if neither is 1 for multiple pairs.
 ** 10
-控制点（在 WCS 中）；
-每个控制点一个条目
-DXF：X 值；
-APP：三维点
+control points (in WCS);
+One entry per control point
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：控制点的 Y 值和 Z 值（在 WCS 中）；
-每个控制点一个条目
+DXF: Y and Z values ​​of control points (in WCS);
+One entry per control point
 ** 11
-拟合点（在 WCS 中）；
-每个拟合点一个条目
-DXF：X 值；
-APP：三维点
+fit points (in WCS);
+One entry per fit point
+DXF: X value;
+APP: 3D Point
 ** 21, 31
-DXF：拟合点的 Y 值和 Z 值（在 WCS 中）；
-每个拟合点一个条目
+DXF: Y and Z values ​​of fitted points (in WCS);
+One entry per fit point
 * sun
 ** 100
-子类标记 (AcDbSun)
+Subclass Marker (AcDbSun)
 ** 90
-版本号
+version number
 ** 290
-状态
+state
 ** 63
-颜色
+color
 ** 40
-强度
+strength
 ** 291
-阴影
+shadow
 ** 91
-公历日期
+Gregorian date
 ** 92
-时间（以午夜过后的秒数表示）
+time (in seconds since midnight)
 ** 292
-夏令时时间
+daylight saving time
 ** 70
-阴影类型
-0 = 光线跟踪阴影
-1 = 阴影贴图
+shade type
+0 = ray traced shadows
+1 = shadow map
 ** 71
-阴影贴图尺寸
+Shadow map size
 ** 280
-阴影柔和度
+Shadow Softness
 * surface
 ** 100
-子类标记 (AcDbModelerGeometry)
+Subclass Marker (AcDbModelerGeometry)
 ** 70
-建模格式版本号（当前值 = 1）
+Modeling format version number (current value = 1)
 ** 1
-所有权数据（多行，每行 < 255 个字符）
+Ownership data (multiple lines, < 255 characters each)
 ** 3
-所有权数据的附加行（如果前一个组 1 的字符串长度大于 255 个字符）（可选）
+Additional line of ownership data (if the previous group 1 string was longer than 255 characters) (optional)
 ** 100
-子类标记 (AcDbSurface)
+Subclass Marker (AcDbSurface)
 ** 71
-U 素线数
+U prime lines
 ** 72
-V 素线数
+V prime lines
+
 * table
 ** 0
-图元名 (ACAD_TABLE)
+Entity Name (ACAD_TABLE)
 ** 5
-图元句柄
+entity handle
 ** 330
-所有者词典的软指针 ID
+Soft pointer ID of the owner dictionary
 ** 100
-子类标记。
+Subclass tag.
 (AcDbEntity)
 ** 92
-代理图元图形中的字节数
+Number of bytes in proxy primitive graphics
 ** 310
-代理图元图形的数据（多行；每行最多 256 个字符）
+Data for proxy primitive graphics (multi-line; up to 256 characters per line)
 ** 100
-子类标记。
+Subclass tag.
 (AcDbBlockReference)
 ** 2
-块名；
-无名块以 *T 值开始
+block name;
+Unnamed blocks start with a *T value
 ** 10,20,30
-插入点
+insertion point
 ** 100
-子类标记。
+Subclass tag.
 (AcDbTable)
 ** 280
-表格数据版本号：
+Form data version number:
 ** 0 = 2010
 ** 342
-TABLESTYLE 对象的硬指针 ID
+Hard pointer ID of the TABLESTYLE object
 ** 343
-属主 BLOCK 记录的硬指针 ID
+The hard pointer ID of the owner BLOCK record
 ** 11,21,31
-水平方向矢量
+horizontal vector
 ** 90
-标志的标志（无符号整数）
+flag flag (unsigned integer)
 ** 91
-行数
+Rows
 ** 92
-列数
+number of columns
 ** 93
-替代的标志
+alternative sign
 ** 94
-边框颜色的替代的标志
+Alternative flags for border color
 ** 95
-边框线宽的替代的标志
+Alternative flags for border line widths
 ** 96
-边框可见性的替代的标志
+Alternative flag for border visibility
 ** 141
-行高；
-此值不断重复，每行值为 1
+row height;
+This value keeps repeating, each row has a value of 1
 ** 142
-列高；
-此值不断重复，每列值为 1
+column height;
+This value keeps repeating and each column has a value of 1
 ** 171
-单元类型；
-此值不断重复，每单元值为 1：
-1 = 文字类型
-2 = 块类型
+unit type;
+This value repeats itself with a value of 1 per cell:
+1 = literal type
+2 = block type
 ** 172
-单元标志值；
-此值不断重复，每单元值为 1
+unit flag value;
+This value is repeated, and each cell has a value of 1
 ** 173
-单元合并值；
-此值不断重复，每单元值为 1
+unit merge value;
+This value is repeated, and each cell has a value of 1
 ** 174
-布尔标志指示是否为单元设定自动调整选项；
-此值不断重复，每单元值为 1
+boolean flag indicating whether autoscale options are set for the unit;
+This value is repeated, and each cell has a value of 1
 ** 175
-单元边框宽度（仅适用于合并单元）；
-此值不断重复，每单元值为 1
+cell border width (only for merged cells);
+This value is repeated, and each cell has a value of 1
 ** 176
-单元边框高度（适用于合并单元）；
-此值不断重复，每单元值为 1
+cell border height (for merged cells);
+This value is repeated, and each cell has a value of 1
 ** 91
-单元替代标志；
-此值不断重复，每单元值为 1（自 AutoCAD 2007 开始）
+unit substitution flag;
+This value repeats itself with a value of 1 per cell (since AutoCAD 2007)
 ** 178
-虚拟边的标志值
+Flag value of virtual edge
 ** 145
-旋转角度值（实数；适用于块类型单元和文字类型单元）
+Rotation angle value (real number; applies to block-type cells and text-type cells)
 ** 344
-FIELD 对象的硬指针 ID此 ID 仅适用于文字类型单元。
-如果单元中的文字包含一个或多个字段，则仅保存 FIELD 对象的 ID。
-忽略文字字符串（组码 1 和 3）
+The hard pointer ID of the FIELD object. This ID applies only to literal type units.
+If the text in the cell contains one or more fields, only the ID of the FIELD object is saved.
+Ignore literal strings (group codes 1 and 3)
 ** 1
-单元中的文字字符串。
-如果字符串长度小于 250 个字符，所有字符均显示在代码 1 中。
-如果字符串长度大于 250 个字符，该字符串将分成长度为 250 个字符的数据块。
-这些数据块将包含在一个或多个代码 2 代码中。
-如果使用代码 2 代码，最后一个组将为代码 1 并且长度小于 250 个字符。
-此值仅适用于文字类型单元并不断重复，每单元值为 1
+Literal string in the cell.
+If the string length is less than 250 characters, all characters are displayed in code 1.
+If the string is longer than 250 characters, the string is split into chunks of 250 characters in length.
+These data blocks will be contained in one or more Code 2 codes.
+If using Code 2 codes, the last group will be Code 1 and less than 250 characters long.
+This value applies only to literal type cells and repeats, with a value of 1 per cell
 ** 2
-单元中的文字字符串，在长度为 250 个字符的数据块中；
-可选。
-此值仅适用于文字类型单元并不断重复，每单元值为 1
+Literal strings in cells, in data blocks of length 250 characters;
+Optional.
+This value applies only to literal type cells and repeats, with a value of 1 per cell
 ** 340
-块表记录的硬指针 ID。
-此值仅适用于块类型单元并不断重复，每单元值为 1
+Hard pointer ID of the block table record.
+This value applies only to block type cells and repeats continuously, with a value of 1 per cell
 ** 144
-块的缩放比例（实数）。
-此值仅适用于块类型单元并不断重复，每单元值为 1
+The scale of the block (real number).
+This value applies only to block type cells and repeats continuously, with a value of 1 per cell
 ** 179
-块表记录中的属性定义数（仅适用于块类型单元）
+The number of attribute definitions in the block table record (for block type units only)
 ** 331
-块表记录中属性定义的软指针 ID，由组码 179 参照（仅适用于块类型单元）。
-每出现一个属性定义此值便重复一次
+The soft pointer ID of the attribute definition in the block table record, referenced by group code 179 (for block type units only).
+Repeats each time an attribute defines this value
 ** 300
-属性定义的文字字符串值，每出现一个属性定义便重复一次并仅适用于块类型单元
+The literal string value of the attribute definition, repeated for each occurrence of the attribute definition and only applicable to block-type units
 ** 7
-文字样式名（字符串）；
-应用于单元级别的替代
+textstylename(string);
+Overrides applied at the cell level
 ** 140
-文字高度值；
-应用于单元级别的替代
+text height value;
+Overrides applied at the cell level
 ** 170
-单元对齐值；
-应用于单元级别的替代
+cell alignment value;
+Overrides applied at the cell level
 ** 64
-单元内容的颜色值；
-应用于单元级别的替代
+the color value of the cell content;
+Overrides applied at the cell level
 ** 63
-单元内容的背景（填充）色的值；
-应用于单元级别的替代
+The value of the background (fill) color of the cell content;
+Overrides applied at the cell level
 ** 69
-单元上边框的真彩色值；
-应用于单元级别的替代
+The true color value of the border on the cell;
+Overrides applied at the cell level
 ** 65
-单元右边框的真彩色值；
-应用于单元级别的替代
+The true color value of the cell's right border;
+Overrides applied at the cell level
 ** 66
-单元下边框的真彩色值；
-应用于单元级别的替代
+The true color value of the lower border of the cell;
+Overrides applied at the cell level
 ** 68
-单元左边框的真彩色值；
-应用于单元级别的替代
+The true color value of the left border of the cell;
+Overrides applied at the cell level
 ** 279
-单元上边框的线宽；
-应用于单元级别的替代
+The line width of the upper border of the cell;
+Overrides applied at the cell level
 ** 275
-单元右边框的线宽；
-应用于单元级别的替代
+The line width of the cell's right border;
+Overrides applied at the cell level
 ** 276
-单元下边框的线宽；
-应用于单元级别的替代
+The line width of the lower border of the unit;
+Overrides applied at the cell level
 ** 278
-单元左边框的线宽；
-应用于单元级别的替代
+The line width of the cell's left border;
+Overrides applied at the cell level
 ** 283
-是否打开填充颜色的布尔标志；
-应用于单元级别的替代
+boolean flag whether to turn on fill color;
+Overrides applied at the cell level
 ** 289
-单元上边框可见性的布尔标志；
-应用于单元级别的替代
+Boolean flag for the visibility of the border on the cell;
+Overrides applied at the cell level
 ** 285
-单元右边框可见性的布尔标志；
-应用于单元级别的替代
+Boolean flag for the visibility of the cell's right border;
+Overrides applied at the cell level
 ** 286
-单元下边框可见性的布尔标志；
-应用于单元级别的替代
+Boolean flag for visibility of the cell's lower border;
+Overrides applied at the cell level
 ** 288
-单元左边框可见性的布尔标志；
-应用于单元级别的替代
+Boolean flag for the visibility of the cell's left border;
+Overrides applied at the cell level
 ** 70
-流向；
-应用于表图元级别的替代
+flow direction;
+Overrides applied at the table element level
 ** 40
-水平单元边距；
-应用于表图元级别的替代
+horizontal cell margins;
+Overrides applied at the table element level
 ** 41
-垂直单元边距；
-应用于表图元级别的替代
+vertical cell margins;
+Overrides applied at the table element level
 ** 280
-是否抑制标题的标志；
-应用于表图元级别的替代
+Whether to suppress the flag of the title;
+Overrides applied at the table element level
 ** 281
-是否抑制标题行的标志；
-应用于表图元级别的替代
+Whether to suppress the flag of the header row;
+Overrides applied at the table element level
 ** 7
-文字样式名（字符串）；
-应用于表图元级别的替代。
-每个单元类型可能有一个条目
+textstylename(string);
+Overrides applied at the table element level.
+There may be one entry per unit type
 ** 140
-文字高度（实数）；
-应用于表图元级别的替代。
-每个单元类型可能有一个条目
+text-height (real);
+Overrides applied at the table element level.
+There may be one entry per unit type
 ** 170
-单元对齐（整数）；
-应用于表图元级别的替代。
-每个单元类型可能有一个条目
+unit_align(integer);
+Overrides applied at the table element level.
+There may be one entry per unit type
 ** 63
-表的垂直左边框或单元背景的颜色值；
-应用于表图元级别的替代。
-每个单元类型可能有一个条目
+The color value of the vertical left border of the table or the cell background;
+Overrides applied at the table element level.
+There may be one entry per unit type
 ** 64
-表的水平上边框或单元内容的颜色值；
-应用于表图元级别的替代。
-每个单元类型可能有一个条目
+The color value of the table's horizontal top border or cell content;
+Overrides applied at the table element level.
+There may be one entry per unit type
 ** 65
-水平内部边框线的颜色值；
-应用于表图元级别的替代
+The color value of the horizontal inner border line;
+Overrides applied at the table element level
 ** 66
-水平下边框线的颜色值；
-应用于表图元级别的替代
+The color value of the horizontal lower border line;
+Overrides applied at the table element level
 ** 68
-垂直内部边框线的颜色值；
-应用于表图元级别的替代
+The color value of the vertical inner border line;
+Overrides applied at the table element level
 ** 69
-垂直右边框线的颜色值；
-应用于表图元级别的替代
+The color value of the vertical right border line;
+Overrides applied at the table element level
 ** 283
-是否启用背景色的标志（默认值 = 0）；
-应用于表图元级别的替代。
-每个单元类型可能有一个条目：
-0 = 禁用
-1 = 启用
+whether to enable the background color flag (default = 0);
+Overrides applied at the table element level.
+There may be one entry per unit type:
+0 = disabled
+1 = enabled
 ** 274-279
-每个单元边框类型的线宽（默认值 = kLnWtByBlock）；
-应用于表图元级别的替代。
-每个单元类型可能有一个组
+Line width per cell border type (default = kLnWtByBlock);
+Overrides applied at the table element level.
+There may be one group per unit type
 ** 284-289
-每个单元边框类型的可见性标志（默认值 = 1）；
-应用于表图元级别的替代。
-每个单元类型可能有一个组：
-0 = 不可见
-1 = 可见
+Visibility flag for each cell border type (default = 1);
+Overrides applied at the table element level.
+There may be one group per unit type:
+0 = not visible
+1 = visible
 ** 97
-标准/标题/表头行数据类型
+Standard/Title/Header Row Data Type
 ** 98
-标准/标题/表头行单位类型
+Standard/Title/Header Row Unit Type
 ** 4
-标准/标题/表头行格式字符串
+Standard/Title/Header Row Format String
 ** 177
-单元替代标志值（AutoCAD 2007 之前）
+Cell Substitution Flag Value (prior to AutoCAD 2007)
 ** 92
-延伸单元标志（自 AutoCAD 2007 开始）
+Extended Cell Flags (since AutoCAD 2007)
 ** 301
-单元值块开始（自 AutoCAD 2007 开始）
+Cell Value Block Start (since AutoCAD 2007)
 ** 302
-单元中的文字字符串。
-如果字符串长度小于 250 个字符，则所有字符均显示在代码 302 中。
-如果字符串长度大于 250 个字符，该字符串将分成长度为 250 个字符的数据块。
-这些数据块将包含在一个或多个代码 303 代码中。
-如果使用代码 393 代码，则最后一个组将为代码 1 并且长度小于 250 个字符。
-此值仅适用于文字类型单元并不断重复，每单元值为 1（自 AutoCAD 2007 开始）
+Literal string in the cell.
+If the string length is less than 250 characters, all characters are displayed in code 302.
+If the string is longer than 250 characters, the string is split into chunks of 250 characters in length.
+These data blocks will be contained in one or more Code 303 codes.
+If the code 393 code is used, the last group will be code 1 and less than 250 characters long.
+This value applies only to text type cells and repeats with a value of 1 per cell (since AutoCAD 2007)
 ** 303
-单元中的文字字符串，在长度为 250 个字符的数据块中；
-可选。
-此值仅适用于文字类型单元并不断重复，每单元值为 302（自 AutoCAD 2007 开始）
-* text
+Literal strings in cells, in data blocks of length 250 characters;
+Optional.
+This value applies only to text type cells and repeats, with a value of 302 per cell (since AutoCAD 2007)
+*text
 ** 100
-子类标记 (AcDbText)
+Subclass Marker (AcDbText)
 ** 39
-厚度（可选；默认值 = 0）
+thickness (optional; default = 0)
 ** 10
-第一对齐点（在 OCS 中）
-DXF：X 值；
-APP：三维点
+First alignment point (in OCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：第一对齐点的 Y 值和 Z 值（在 OCS 中）
+DXF: Y and Z values ​​of the first alignment point (in OCS)
 ** 40
-文字高度
+text height
 ** 1
-默认值（字符串本身）
+Default value (the string itself)
 ** 50
-文字旋转角度（可选；默认值 = 0）
+text rotation angle (optional; default = 0)
 ** 41
-相对 X 比例因子 — 宽度（可选；默认值 = 1）
-使用拟合类型的文字时，该值也将进行调整。
+relative X scale factor - width (optional; default = 1)
+This value will also be adjusted when using fit-type text.
 ** 51
-倾斜角（可选；默认值 = 0）
+tilt angle (optional; default = 0)
 ** 7
-文字样式名（可选；默认值 = 标准）
+text style name (optional; default = standard)
 ** 71
-文字生成标志（可选；默认值 = 0）：
-2 = 文字反向（在 X 轴方向镜像）
-4 = 文字倒置（在 Y 轴方向镜像）
+Text generation flag (optional; default = 0):
+2 = Text is reversed (mirrored in the X-axis direction)
+4 = Text upside down (mirror in Y direction)
 ** 72
-文字水平对正类型（可选；默认值 = 0）整数代码（非按位编码）：
-0 = 左对正
-1 = 居中对正
-2 = 右对正
-3 = 对齐（如果垂直对齐 = 0）
-4 = 中间（如果垂直对齐 = 0）
-5 = 拟合（如果垂直对齐 = 0）
-详细信息请参见组 72 和 73 整数代码表
+Text horizontal justification type (optional; default = 0) Integer code (not bitwise encoded):
+0 = left justified
+1 = Center justified
+2 = right justified
+3 = aligned (if vertical alignment = 0)
+4 = middle (if vertical alignment = 0)
+5 = fit (if vertical alignment = 0)
+See Group 72 and 73 Integer Code Table for details
 ** 11
-第二对齐点（在 OCS 中）（可选）
-DXF：X 值；
-APP：三维点
-只有当 72 或 73 组的值非零时，该值才有意义（如果对正不是基线对正/左对正）
+Second alignment point (in OCS) (optional)
+DXF: X value;
+APP: 3D Point
+The value is meaningful only if the value of the 72 or 73 group is non-zero (if the justification is not baseline justified/left justified)
 ** 21, 31
-DXF：第二对齐点的 Y 值和 Z 值（在 OCS 中）（可选）
+DXF: Y and Z values ​​of the second alignment point (in OCS) (optional)
 ** 210
-拉伸方向（可选；默认值 = 0, 0, 1）
-DXF：X 值；
-APP：三维矢量
+stretch direction (optional; default = 0, 0, 1)
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：拉伸方向的 Y 值和 Z 值（可选）
+DXF: Y and Z values ​​of the extrusion direction (optional)
 ** 100
-子类标记 (AcDbText)
+Subclass Marker (AcDbText)
 ** 73
-文字垂直对正类型（可选；默认值 = 0）整数代码（不是按位编码）
-0 = 基线对正
-1 = 底端对正
-2 = 居中对正
-3 = 顶端对正
-详细信息请参见组 72 和 73 整数代码表
+literal vertical justification type (optional; default = 0) integer code (not bitwise encoded)
+0 = Baseline justified
+1 = Bottom justified
+2 = Center justified
+3 = Top justified
+See Group 72 and 73 Integer Code Table for details
 * tolerance
 ** 100
-子类标记 (AcDbFcf)
+Subclass Marker (AcDbFcf)
 ** 3
-标注样式名
+dimension style name
 ** 10
-插入点（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Insertion point (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：插入点的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of insertion point (in WCS)
 ** 1
-表示公差的形象化表示的字符串
+a string representing a visual representation of the tolerance
 ** 210
-拉伸方向（可选；默认值 = 0, 0, 1）
-DXF：X 值；
-APP：三维矢量
+stretch direction (optional; default = 0, 0, 1)
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：拉伸方向的 Y 值和 Z 值（可选）
+DXF: Y and Z values ​​of the extrusion direction (optional)
 ** 11
-X 轴方向矢量（在 WCS 中）
-DXF：X 值；
-APP：三维矢量
+X-axis direction vector (in WCS)
+DXF: X value;
+APP: 3D Vector
 ** 21, 31
-DXF：X 轴方向矢量的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the X-axis direction vector (in WCS)
 * trace
 ** 100
-子类标记 (AcDbTrace)
+Subclass Marker (AcDbTrace)
 ** 10
-第一角点（在 OCS 中）
-DXF：X 值；
-APP：三维点
+First corner (in OCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：第一角点的 Y 值和 Z 值（在 OCS 中）
+DXF: Y and Z values ​​of the first corner (in OCS)
 ** 11
-第二角点（在 OCS 中）
-DXF：X 值；
-APP：三维点
+Second corner (in OCS)
+DXF: X value;
+APP: 3D Point
 ** 21, 31
-DXF：第二角点的 Y 值和 Z 值（在 OCS 中）
+DXF: Y and Z values ​​of the second corner (in OCS)
 ** 12
-第三角点（在 OCS 中）
-DXF：X 值；
-APP：三维点
+Third corner point (in OCS)
+DXF: X value;
+APP: 3D Point
 ** 22, 32
-DXF：第三角点的 Y 值和 Z 值（在 OCS 中）
+DXF: Y and Z values ​​of the third corner point (in OCS)
 ** 13
-第四角点（在 OCS 中）
-DXF：X 值；
-APP：三维点
+Fourth corner (in OCS)
+DXF: X value;
+APP: 3D Point
 ** 23, 33
-DXF：第四角点的 Y 值和 Z 值（在 OCS 中）
+DXF: Y and Z values ​​of the fourth corner (in OCS)
 ** 39
-厚度（可选；默认值 = 0）
+thickness (optional; default = 0)
 ** 210
-拉伸方向（可选；默认值 = 0, 0, 1）
-DXF：X 值；
-APP：三维矢量
+stretch direction (optional; default = 0, 0, 1)
+DXF: X value;
+APP: 3D Vector
 ** 220, 230
-DXF：拉伸方向的 Y 值和 Z 值（可选）
-* underlay
+DXF: Y and Z values ​​of the extrusion direction (optional)
+*underlay
 ** 0
-对象名称。
-DGNUNDERLAY - 附着的 DGN 文件
-DWFUNDERLAY - 附着的 DWF 文件
-PDFUNDERLAY - 附着的 PDF 文件
+object name.
+DGNUNDERLAY - Attached DGN file
+DWFUNDERLAY - Attached DWF file
+PDFUNDERLAY - Attached PDF file
 ** 100
-子类标记 (AcDbUnderlayReference)
+Subclass Marker (AcDbUnderlayReference)
 ** 340
-AcDbUnderlayDefinition 对象的 ID
+ID of the AcDbUnderlayDefinition object
 ** 10,20,30
-参考底图插入点的 X、Y 和 Z 坐标。
-这些是 OCS/ECS 坐标
+The X, Y, and Z coordinates of the underlay insertion point.
+These are the OCS/ECS coordinates
 ** 41,42,43
-DXF：X、Y 和 Z 比例因子
+DXF: X, Y, and Z scale factors
 ** 50
-旋转角度（在 OCS/ECS 中。从坐标系 X 轴开始绕 Z 轴逆时针旋转）
+Rotation angle (in OCS/ECS. Rotate around the Z axis counterclockwise from the X axis of the coordinate system)
 ** 210,220,230
-法向矢量（在 WCS 中）
+normal vector (in WCS)
 ** 280
-标志
-1 = 剪裁处于打开状态
-2 = 参考底图处于打开状态
-4 = 单色
-8 = 调整背景
-16 = 剪裁为内部模式
+logo
+1 = Clipping is on
+2 = Underlay is on
+4 = Monochrome
+8 =Adjust the background
+16 = clip to internal mode
 ** 281
-对比度（值介于 20 和 100 之间）
+Contrast (value between 20 and 100)
 ** 282
-淡入度（值介于 0 和 80 之间）
+Fade degree (value between 0 and 80)
 ** 11, 21
-重复：OCS/ECS 中的二维点。
-如果只有两个二维点，则它们就是剪裁矩形的左下角点和右上角点。
-如果多于两个二维点，则它们就是剪裁多边形的顶点
+Repeat: 2D points in OCS/ECS.
+If there are only two 2D points, they are the lower-left and upper-right corners of the clipping rectangle.
+If there are more than two 2D points, they are the vertices of the clipping polygon
 * vertex
 ** 100
-子类标记 (AcDbVertex)
+Subclass Marker (AcDbVertex)
 ** 100
-子类标记（AcDb2dVertex 或 AcDb3dPolylineVertex）
+Subclass tag (AcDb2dVertex or AcDb3dPolylineVertex)
 ** 10
-位置点（二维时在 OCS 中，三维时在 WCS 中）
-DXF：X 值；
-APP：三维点
+Location point (in OCS for 2D, WCS for 3D)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：位置点的 Y 值和 Z 值（二维时在 OCS 中，三维时在 WCS 中）
+DXF: Y and Z values ​​of the location point (in OCS for 2D, WCS for 3D)
 ** 40
-起点宽度（可选；默认值为 0）
+start width (optional; default is 0)
 ** 41
-端点宽度（可选；默认值为 0）
+endpoint width (optional; default is 0)
 ** 42
-凸度（可选；默认值为 0）。
-凸度是四分之一圆弧段角的切线，如果从起点到端点，圆弧为顺时针，则为负数。
-凸度为 0 表示一条直线段，凸度为 1 表示一个半圆
+convexity (optional; default is 0).
+Bulge is the tangent to the corner of a quarter arc segment, and is negative if the arc is clockwise from the start point to the end point.
+A convexity of 0 represents a straight line segment, and a convexity of 1 represents a semicircle
 ** 70
-顶点标志：
-1 = 由曲线拟合创建的额外顶点
-2 = 为该顶点定义的曲线拟合切线。
-如果曲线拟合切线方向为 0，则在 DXF 输出时被省略，但是如果设值了该位，则不能省略
-4 = 未使用
-8 = 由样条曲线拟合创建的样条曲线顶点
-16 = 样条曲线框架控制点
-32 = 三维多段线顶点
-64 = 三维多边形网格
-128 = 多面网格顶点
+Vertex Flags:
+1 = extra vertices created by curve fitting
+2 = Curve-fit tangents defined for this vertex.
+If the curve fit tangent direction is 0, it is omitted on DXF output, but cannot be omitted if this bit is set
+4 = not used
+8 = Spline vertices created by spline fit
+16 = Spline frame control points
+32 = 3D polyline vertex
+64 = 3D polygon mesh
+128 = faceted mesh vertices
 ** 50
-曲线拟合切线方向
+Curve Fit Tangent Direction
 ** 71
-多面网格顶点索引（可选；非零时出现）
+facet mesh vertex index (optional; appears if non-zero)
 ** 72
-多面网格顶点索引（可选；非零时出现）
+facet mesh vertex index (optional; appears if non-zero)
 ** 73
-多面网格顶点索引（可选；非零时出现）
+facet mesh vertex index (optional; appears if non-zero)
 ** 74
-多面网格顶点索引（可选；非零时出现）
+facet mesh vertex index (optional; appears if non-zero)
 ** 91
-顶点标识符
+vertex identifier
 * viewport
 ** 100
-子类标记 (AcDbViewport)
+Subclass Marker (AcDbViewport)
 ** 10
-中心点（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Center point (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：中心点的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the center point (in WCS)
 ** 40
-宽度，以图纸空间单位为测量单位
+Width, measured in paper space units
 ** 41
-高度，以图纸空间单位为测量单位
+Height, measured in paper space units
 ** 68
-视口状态字段：
--1 = 打开，但是在屏幕上完全不可见，或者因为当前已超出 $MAXACTVP 计数，而成为一个不活动的视口。
-0 = 关闭
-<正值> = 开并处于活动状态。
-该值表示视口堆栈的次序，其中 1 是活动视口，下一个是 2，依此类推
+Viewport state fields:
+-1 = On, but not visible at all on the screen, or an inactive viewport because the $MAXACTVP count has currently been exceeded.
+0 = off
+<positive value> = on and active.
+The value represents the order of the viewport stack, where 1 is the active viewport, the next is 2, and so on
 ** 69
-视口 ID
+Viewport ID
 ** 12
-视口中心点（在 DCS 中）
-DXF：X 值；
-APP：二维点
-** 22
-DXF：视口中心点的 Y 值（在 DCS 中）
+Viewport Center Point (in DCS)
+DXF: X value;
+APP: 2D point
+** twenty two
+DXF: Y value of viewport center point (in DCS)
 ** 13
-捕捉基点
-DXF：X 值；
-APP：二维点
-** 23
-DXF：捕捉基点的 Y 值
+snap base point
+DXF: X value;
+APP: 2D point
+** twenty three
+DXF: Snap to the Y value of the base point
 ** 14
-捕捉间距
-DXF：X 值；
-APP：二维点
-** 24
-DXF：捕捉间距的 Y 值
+Snap Spacing
+DXF: X value;
+APP: 2D point
+** twenty four
+DXF: Y value of snap spacing
 ** 15
-栅格间距
-DXF：X 值；
-APP：二维点
+grid spacing
+DXF: X value;
+APP: 2D point
 ** 25
-DXF：栅格间距的 Y 值
+DXF: Y value of grid spacing
 ** 16
-观察方向矢量（在 WCS 中）
-DXF：X 值；
-APP：三维矢量
+View direction vector (in WCS)
+DXF: X value;
+APP: 3D Vector
 ** 26, 36
-DXF：观察方向矢量的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the viewing direction vector (in WCS)
 ** 17
-观察目标点（在 WCS 中）
-DXF：X 值；
-APP：三维矢量
+Observe the target point (in WCS)
+DXF: X value;
+APP: 3D Vector
 ** 27, 37
-DXF：观察目标点的 Y 值和 Z 值（在 WCS 中）
+DXF: Observe the Y and Z values ​​of the target point (in WCS)
 ** 42
-透视焦距
+perspective focal length
 ** 43
-前向剪裁平面的 Z 值
+Z value of forward clipping plane
 ** 44
-后向剪裁平面的 Z 值
+Z value of the back clipping plane
 ** 45
-视图高度（以模型空间单位为测量单位）
+View height (measured in model space units)
 ** 50
-捕捉角度
+snap angle
 ** 51
-视图扭转角度
+View twist angle
 ** 72
-圆的缩放百分比
+The zoom percentage of the circle
 ** 331
-冻结图层对象 ID/句柄（可能存在多个条目）（可选）
+Freeze layer object ID/handle (multiple entries possible) (optional)
 ** 90
-视口状态按位编码标志：
-1 (0x1) = 启用透视模式
-2 (0x2) = 启用前向剪裁
-4 (0x4) = 启用后向剪裁
-8 (0x8) = 启用 UCS 跟随
-16 (0x10) = 如果不可见则启用前向剪裁
-32 (0x20) = 启用 UCS 图标可见性
-64 (0x40) = 启用 UCS 图标（位于原点）
-128 (0x80) = 启用快速缩放
-256 (0x100) = 启用捕捉模式
-512 (0x200) = 启用栅格模式
-1024 (0x400) = 启用等轴测捕捉样式
-2048 (0x800) = 启用隐藏打印模式
-4096 (0x1000) = kIsoPairTop。
-如果设定了 kIsoPairTop，但未设定 kIsoPairRight，则启用 isopair top。
-如果同时设定了 kIsoPairTop 和 kIsoPairRight，则启用 isopair left
-8192 (0x2000) = kIsoPairRight。
-如果设定了 kIsoPairRight，但未设定 kIsoPairTop，则启用 isopair right
-16384 (0x4000) = 启用视口缩放锁定
-32768 (0x8000) = 当前始终启用
-65536 (0x10000) = 启用非矩形剪裁
-131072 (0x20000) = 关闭视口
-262144 (0x40000) = 启用图形界限外部的栅格的显示
-524288 (0x80000) = 启用自适应栅格显示
-1048576 (0x100000) = 当栅格显示为自适应时，启用设定的栅格间距下的栅格细分
-2097152 (0x200000) = 允许栅格遵循工作平面切换
+Viewport state bitwise encoding flags:
+1 (0x1) = enable perspective mode
+2 (0x2) = enable forward clipping
+4 (0x4) = enable backward clipping
+8 (0x8) = enable UCS following
+16 (0x10) = enable forward clipping if not visible
+32 (0x20) = enable UCS icon visibility
+64 (0x40) = enable UCS icon (at origin)
+128 (0x80) = enable fast zoom
+256 (0x100) = enable capture mode
+512 (0x200) = enable grid mode
+1024 (0x400) = Enable isometric snapping style
+2048 (0x800) = enable hidden print mode
+4096 (0x1000) = kIsoPairTop.
+If kIsoPairTop is set, but kIsoPairRight is not set, isopair top is enabled.
+Enable isopair left if both kIsoPairTop and kIsoPairRight are set
+8192 (0x2000) = kIsoPairRight.
+If kIsoPairRight is set but kIsoPairTop is not set, isopair right is enabled
+16384 (0x4000) = Enable viewport zoom lock
+32768 (0x8000) = currently always enabled
+65536 (0x10000) = Enable non-rectangular clipping
+131072 (0x20000) = close viewport
+262144 (0x40000) = Enables display of grids outside drawing bounds
+524288 (0x80000) = Enable adaptive grid display
+1048576 (0x100000) = Enables grid subdivision at set grid spacing when grid is displayed as adaptive
+2097152 (0x200000) = Allow grid to follow work plane toggle
 ** 340
-用作视口剪裁边界的图元的硬指针 ID/句柄（仅当视口为非矩形时才出现）
+Hard pointer ID/handle of the primitive to use as the viewport clipping boundary (appears only if the viewport is non-rectangular)
 ** 1
-指定给该视口的打印样式表名
+the name of the plot style sheet assigned to this viewport
 ** 281
-渲染模式：
-0 = 二维优化（传统二维）
-1 = 线框
-2 = 隐藏线
-3 = 平面着色
-4 = 体着色
-5 = 带线框平面着色
-6 = 带线框体着色
-所有非二维优化渲染模式均使用新三维图形管道。
-这些值直接与 SHADEMODE 命令和 AcDbAbstractViewTableRecord::RenderMode 枚举相对应
+Render Mode:
+0 = 2D optimization (traditional 2D)
+1 = wireframe
+2 = hidden lines
+3 = Flat Shading
+4 = body shading
+5 = Flat shading with wireframe
+6 = Shaded with wireframe
+All non-2D optimized rendering modes use the new 3D graphics pipeline.
+These values ​​correspond directly to the SHADEMODE command and the AcDbAbstractViewTableRecord::RenderMode enumeration
 ** 71
-每个视口标志的 UCS：
-0 = 该视口处于活动状态时，UCS 不会改变。
-1 = 该视口存储自己的 UCS，只要视口被激活，UCS 将变成当前 UCS。
+UCS for each viewport flag:
+0 = UCS does not change while this viewport is active.
+1 = This viewport stores its own UCS, which will become the current UCS whenever the viewport is activated.
 ** 74
-在 UCS 原点标志处显示 UCS 图标：
-控制 UCS 图标表示视口 UCS 还是当前 UCS（如果 UCSVP 为 1 且视口不活动，则两者存在差别）。
-但是，该字段当前被忽略，且图标始终表示视口 UCS
+Display the UCS icon at the UCS origin marker:
+Controls whether the UCS icon represents the viewport UCS or the current UCS (a difference if UCSVP is 1 and the viewport is not active).
+However, this field is currently ignored and the icon always represents the viewport UCS
 ** 110
-UCS 原点
-DXF：X 值；
-APP：三维点
+UCS origin
+DXF: X value;
+APP: 3D Point
 ** 120, 130
-DXF：UCS 原点的 Y 值和 Z 值
+DXF: Y and Z values ​​of the UCS origin
 ** 111
-UCS X 轴
-DXF：X 值；
-APP：三维矢量
+UCS X-axis
+DXF: X value;
+APP: 3D Vector
 ** 121, 131
-DXF：UCS X 轴的 Y 值和 Z 值
+DXF: Y and Z values ​​of UCS X-axis
 ** 112
-UCS Y 轴
-DXF：X 值；
-APP：三维矢量
+UCS Y-axis
+DXF: X value;
+APP: 3D Vector
 ** 122, 132
-DXF：UCS Y 轴的 Y 值和 Z 值
+DXF: Y and Z values ​​of UCS Y-axis
 ** 345
-如果 UCS 是命名 UCS，则为 AcDbUCSTableRecord 的 ID/句柄。
-如果不存在，则为未命名 UCS
+If the UCS is a named UCS, the ID/handle of the AcDbUCSTableRecord.
+Unnamed UCS if not present
 ** 346
-如果 UCS 为正交 UCS，则为基准 UCS 的 AcDbUCSTableRecord 的 ID/句柄（代码 79 非零）。
-如果不存在，且代码 79 非零，则将基准 UCS 作为 WORLD
+ID/handle to the AcDbUCSTableRecord of the base UCS if the UCS is an orthogonal UCS (code 79 non-zero).
+If not present and code 79 is nonzero, base UCS as WORLD
 ** 79
-UCS 的正交类型：
-0 = UCS 为非正交视图
-1 = 俯视图；
-2 = 仰视图
-3 = 主视图；
-4 = 后视图
-5 = 左视图；
-6 = 右视图
+Orthogonal types of UCS:
+0 = UCS is a non-orthogonal view
+1 = top view;
+2 = bottom view
+3 = main view;
+4 = rear view
+5 = left view;
+6 = Right view
 ** 146
-标高
+elevation
 ** 170
-着色打印模式：
-0 = 按显示
-1 = 线框
-2 = 消隐
-3 = 渲染
+Shaded print mode:
+0 = press display
+1 = wireframe
+2 = blanking
+3 = render
 ** 61
-主栅格线与次栅格线比较的频率
+How often primary and secondary gridlines are compared
 ** 332
-背景 ID/句柄（可选）
+Background ID/handle (optional)
 ** 333
-着色打印 ID/句柄（可选）
+Shade print ID/handle (optional)
 ** 348
-视觉样式 ID/句柄（可选）
+Visual style ID/handle (optional)
 ** 292
-默认光源标志。
-没有指定用户光源时处于打开状态。
+Default light source flag.
+On when no user light source is specified.
 ** 282
-默认光源类型：
-0 = 一条平行光
-1 = 两条平行光
+Default light type:
+0 = a directional light
+1 = two parallel lights
 ** 141
-视图亮度
+View Brightness
 ** 142
-视图对比度
+View contrast
 ** 63,421,431
-环境光颜色。
-只有不是黑色时才为白色。
+Ambient light color.
+White only if it's not black.
 ** 361
-阳光 ID/句柄（可选）
+Sunshine ID/handle (optional)
 ** 335
-视口对象的软指针参照（用于图层视口特性替代）
+Soft pointer reference for viewport objects (for layer viewport property overrides)
 ** 343
-视口对象的软指针参照（用于图层视口特性替代）
+Soft pointer reference for viewport objects (for layer viewport property overrides)
 ** 344
-视口对象的软指针参照（用于图层视口特性替代）
+Soft pointer reference for viewport objects (for layer viewport property overrides)
 ** 91
-视口对象的软指针参照（用于图层视口特性替代）
+Soft pointer reference for viewport objects (for layer viewport property overrides)
 * wipeout
 ** 100
-子类标记 (AcDbRasterImage)
+Subclass Marker (AcDbRasterImage)
 ** 90
-类版本
+class version
 ** 10
-插入点（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Insertion point (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：插入点的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of insertion point (in WCS)
 ** 11
-单像素的 U 矢量（沿图像可见底部的点，从插入点开始）（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Single-pixel U vector (point along the visible bottom of the image, starting from the insertion point) (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 21, 31
-DXF：U 矢量的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of U vector (in WCS)
 ** 12
-单像素的 V 矢量（沿图像可见左侧的点，从插入点开始）（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Single-pixel V vector (point along the visible left of the image, from the insertion point) (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 22, 32
-DXF：V 矢量的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the V vector (in WCS)
 ** 13
-图像大小（像素）
-DXF：U 值；
-APP：二维点（U 值和 V 值）
-** 23
-DXF：图像大小（像素）的 V 值
+Image size (pixels)
+DXF: U value;
+APP: 2D point (U-value and V-value)
+** twenty three
+DXF: V value of image size (pixels)
 ** 340
-imagedef 对象的硬参照
+hard reference to the imagedef object
 ** 70
-图像显示特性：
-1 = 显示图像
-2 = 当与屏幕不对齐时显示图像
-4 = 使用剪裁边界
-8 = 透明度打开
+Image Display Features:
+1 = show image
+2 = Display image when not aligned with screen
+4 = use clipping boundaries
+8 = Transparency on
 ** 280
-剪裁状态：0 = 关闭；
-1 = 打开
+clipping state: 0 = off;
+1 = On
 ** 281
-亮度值（0-100；默认值 = 50）
+Brightness value (0-100; default = 50)
 ** 282
-对比度值（0-100；默认值 = 50）
+Contrast value (0-100; default = 50)
 ** 283
-淡入度值（0-100；默认值 = 0）
+Fade value (0-100; default = 0)
 ** 360
 imagedef_
-reactor 对象的硬参照
+hard reference to the reactor object
 ** 71
-剪裁边界类型。
-1 = 矩形；
-2 = 多边形
+Clipping boundary type.
+1 = rectangle;
+2 = Polygon
 ** 91
-后面的裁剪边界顶点数
+Number of clipping boundary vertices behind
 ** 14
-裁剪边界顶点（在 OCS 中）
-DXF：X 值；
-APP：二维点（多个条目）
-注意 1) 对于矩形剪裁边界类型，必须指定两个对角点。
-默认值为 (-0.5,-0.5)，(size.x-0.5,size.y-0.5)。
-2) 对于多边形剪裁边界类型，必须指定三个或更多顶点。
-   多边形顶点必须按顺序列出
-** 24
-DXF：剪裁边界顶点的 Y 值（在 OCS 中）（多个条目）
-* xline
+Clip Boundary Vertices (in OCS)
+DXF: X value;
+APP: 2D point (multiple entries)
+Note 1) For rectangular clipping boundary type, two opposite corners must be specified.
+The default values ​​are (-0.5,-0.5), (size.x-0.5,size.y-0.5).
+2) For polygon clipping boundary types, three or more vertices must be specified.
+   Polygon vertices must be listed in order
+** twenty four
+DXF: Clip Y values ​​of boundary vertices (in OCS) (multiple entries)
+*xline
 ** 100
-子类标记 (AcDbXline)
+Subclass Marker (AcDbXline)
 ** 10
-第一点（在 WCS 中）
-DXF：X 值；
-APP：三维点
+First point (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：第一点的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the first point (in WCS)
 ** 11
-单位方向矢量（在 WCS 中）
-DXF：X 值；
-APP：三维矢量
+Unit Direction Vector (in WCS)
+DXF: X value;
+APP: 3D Vector
 ** 21, 31
-DXF：单位方向矢量的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the unit direction vector (in WCS)
+
+
+
+
+*xline
+** 100
+Subclass Marker (AcDbXline)
+** 10
+First point (in WCS)
+DXF: X value;
+APP: 3D Point
+** 20, 30
+DXF: Y and Z values ​​of the first point (in WCS)
+** 11
+Unit Direction Vector (in WCS)
+DXF: X value;
+APP: 3D Vector
+** 21, 31
+DXF: Y and Z values ​​of the unit direction vector (in WCS)
 * datatype
 ** 0-9
-字符串（自在 AutoCAD 2000 中引入扩展符号名称开始，字数限制已由 255 个字符扩大到 2049 个单字节字符，不包括行末的换行符），有关更多信息，请参见“字符串值的存储”部分
+Strings (since the introduction of extended symbol names in AutoCAD 2000, the character limit has been extended from 255 characters to 2049 single-byte characters, excluding newlines at the end of lines), for more information see "Storage of String Values" "part
 ** 10-39
-双精度三维点值
+Double precision 3D point value
 ** 40-59
-双精度浮点值
+Double precision floating point value
 ** 60-79
-16 位整数值
+16-bit integer value
 ** 90-99
-32 位整数值
+32-bit integer value
 ** 100
-字符串（最多 255 个字符；对于 Unicode 字符串，字符数要少一些）；
-有关更多信息，请参见“字符串值的存储”部分
+String (up to 255 characters; less for Unicode strings);
+See the "Storage of String Values" section for more information
 ** 102
-字符串（最多 255 个字符；对于 Unicode 字符串，字符数要少一些）；
-有关更多信息，请参见“字符串值的存储”部分
+String (up to 255 characters; less for Unicode strings);
+See the "Storage of String Values" section for more information
 ** 105
-表示 16 进制 (hex) 句柄值的字符串
+A string representing the hexadecimal (hex) handle value
 ** 110-119
-双精度浮点值
+Double precision floating point value
 ** 120-129
-双精度浮点值
+Double precision floating point value
 ** 130-139
-双精度浮点值
+Double precision floating point value
 ** 140-149
-双精度标量浮点值
+Double-precision scalar floating-point value
 ** 160-169
-64 位整数值
+64-bit integer value
 ** 170-179
-16 位整数值
+16-bit integer value
 ** 210-239
-双精度浮点值
+Double precision floating point value
 ** 270-279
-16 位整数值
+16-bit integer value
 ** 280-289
-16 位整数值
+16-bit integer value
 ** 290-299
-布尔标志值
+boolean flag value
 ** 300-309
-任意字符串；
-有关更多信息，请参见“字符串值的存储”部分
+any string;
+See the "Storage of String Values" section for more information
 ** 310-319
-表示二进制数据块的十六进制值的字符串
+A string representing the hexadecimal value of the binary data block
 ** 320-329
-表示 16 进制句柄值的字符串
+String representing the hexadecimal handle value
 ** 330-369
-表示十六进制对象 ID 的字符串
+A string representing the hexadecimal object ID
 ** 370-379
-16 位整数值
+16-bit integer value
 ** 380-389
-16 位整数值
+16-bit integer value
 ** 390-399
-表示 16 进制句柄值的字符串
+String representing the hexadecimal handle value
 ** 400-409
-16 位整数值
+16-bit integer value
 ** 410-419
-字符串；
-有关更多信息，请参见“字符串值的存储”部分
+string;
+See the "Storage of String Values" section for more information
 ** 420-429
-32 位整数值
+32-bit integer value
 ** 430-439
-字符串；
-有关更多信息，请参见“字符串值的存储”部分
+string;
+See the "Storage of String Values" section for more information
 ** 440-449
-32 位整数值
+32-bit integer value
 ** 450-459
-长整数
+long integer
 ** 460-469
-双精度浮点值
+Double precision floating point value
 ** 470-479
-字符串；
-有关更多信息，请参见“字符串值的存储”部分
+string;
+See the "Storage of String Values" section for more information
 ** 480-481
-表示 16 进制句柄值的字符串
+String representing the hexadecimal handle value
 ** 999
-注释（字符串）；
-有关更多信息，请参见“字符串值的存储”部分
+comment(string);
+See the "Storage of String Values" section for more information
 ** 1000-1009
-字符串（与 0-9 代码范围的限制相同）；
-有关更多信息，请参见“字符串值的存储”部分
+String (same restrictions as 0-9 code range);
+See the "Storage of String Values" section for more information
 ** 1010-1059
-双精度浮点值
+Double precision floating point value
 ** 1060-1070
-16 位整数值
+16-bit integer value
 ** 1071
-32 位整数值
-* classes
+32-bit integer value
+*classes
 ** 0
-记录类型 (CLASS)。
-标识 CLASS 记录的开始
+Record Type (CLASS).
+Identifies the start of a CLASS record
 ** 1
-类 DXF 记录名；
-始终唯一
+DXF-like record name;
+always unique
 ** 2
-C++ 类名。
-用于与定义对象类行为的软件绑定；
-始终唯一
+C++ class name.
+Used to bind with software that defines the behavior of object classes;
+always unique
 ** 3
-应用程序名。
-当前未加载本段列出的某个类定义时出现在“警告”框中
+application name.
+Appears in the Warning box when one of the class definitions listed in this paragraph is not currently loaded
 ** 90
-代理功能标志。
-指示该对象作为代理时的功能的按位编码值：
-0 = 不允许操作 (0)
-1 = 允许删除 (0x1)
-2 = 允许转换 (0x2)
-4 = 允许更改颜色 (0x4)
-8 = 允许更改图层 (0x8)
-16 = 允许更改线型 (0x10)
-32 = 允许更改线型比例 (0x20)
-64 = 允许更改可见性 (0x40)
-128 = 允许克隆 (0x80)
-256 = 允许更改线宽 (0x100)
-512 = 允许更改打印样式名 (0x200)
-895 = 允许除克隆以外的所有操作 (0x37F)
-1023 = 允许所有操作 (0x3FF)
-1024 = 禁用代理警告对话框 (0x400)
-32768 = R13 格式代理 (0x8000)
+Proxy feature flag.
+A bitwise encoded value indicating the capability of this object as a proxy:
+0 = Operation not allowed (0)
+1 = Delete is allowed (0x1)
+2 = Conversion allowed (0x2)
+4 = Allow color change (0x4)
+8 = Allow layer changes (0x8)
+16 = Allow changing line type (0x10)
+32 = Allow changing linetype scale (0x20)
+64 = allow changing visibility (0x40)
+128 = allow cloning (0x80)
+256 = Allow changing line width (0x100)
+512 = Allow change of plot style name (0x200)
+895 = Allow all operations except clone (0x37F)
+1023 = All operations allowed (0x3FF)
+1024 = Disable proxy warning dialog (0x400)
+32768 = R13 format proxy (0x8000)
 ** 91
-自定义类的实例计数
+Instance count of custom class
 ** 280
-“是代理”标志。
-如果创建此 DXF 文件时未加载类，则设定为 1，否则设定为 0
+"is a proxy" flag.
+Set to 1 if no classes were loaded when this DXF file was created, otherwise set to 0
 ** 281
-“是图元”标志。
-如果类从 AcDbEntity 类派生并可能位于 BLOCKS 或 ENTITIES 段中，则设定为 1。
-如果设定为 0，则实例可能仅出现在 OBJECTS 段中
-* appid
+"is a primitive" flag.
+Set to 1 if the class is derived from the AcDbEntity class and may be in a BLOCKS or ENTITIES section.
+If set to 0, the instance may only appear in the OBJECTS section
+*appid
 ** 100
-子类标记 (AcDbRegAppTableRecord)
+Subclass Marker (AcDbRegAppTableRecord)
 ** 2
-用户提供（或应用程序提供）的应用程序名称（用于扩展数据）。
-这些表条目用于维护注册的所有应用程序的名称
+User-supplied (or application-supplied) application name (for extended data).
+These table entries are used to maintain the names of all registered applications
 ** 70
-标准标记值（按位编码值）：
-16 = 如果设定了此位，则表条目外部依赖于外部参照
-32 = 如果同时设定了此位和位 16，则表明已成功融入了外部依赖的外部参照
-64 = 如果设定了此位，则表明在上次编辑图形时，图形中至少有一个图元参照了表条目。
-（此标志对 AutoCAD 命令很有用。大多数读取 DXF 文件的程序都可以忽略它，并且无需由写入 DXF 文件的程序对其进行设定）
-* block_
+Standard tag values ​​(bit-encoded values):
+16 = If this bit is set, the table entry is externally dependent on the xref
+32 = If both this bit and bit 16 are set, the externally dependent xref has been successfully incorporated
+64 = If this bit is set, it indicates that at least one entity in the drawing referenced a table entry when the drawing was last edited.
+(This flag is useful for AutoCAD commands. It can be ignored by most programs that read DXF files and does not need to be set by programs that write DXF files)
+*block_
 record
 ** 100
-子类标记 (AcDbBlockTableRecord)
+Subclass Marker (AcDbBlockTableRecord)
 ** 2
-块名
+block name
 ** 340
-关联的 LAYOUT 对象的硬指针 ID/句柄
+Hard pointer ID/handle to the associated LAYOUT object
 ** 70
-块插入单位。
+Block insertion unit.
 ** 280
-块分解性
+block decomposability
 ** 281
-块可测量性
+block scalability
 ** 310
-DXF：位图预览的二进制数据（可选）
+DXF: binary data for bitmap preview (optional)
 ** 1001
-扩展数据应用程序名称“ACAD”（可选）
+Extended Data Application Name "ACAD" (optional)
 ** 1000
-扩展数据字符串数据“设计中心数据”（可选）
+Extended data string data "Design Center Data" (optional)
 ** 1002
-扩展数据的开始“{”（可选）
+start of extended data "{" (optional)
 ** 1070
-AutoCAD 设计中心版本号
+AutoCAD DesignCenter version number
 ** 1070
-插入单位：
-0 = 无单位
-1 = 英寸
-2 = 英尺
-3 = 英里
-4 = 毫米
-5 = 厘米
-6 = 米
-7 = 千米
-8 = 微英寸
-9 = 英里
-10 = 码
-11 = 埃
-12 = 毫微米
-13 = 微米
-14 = 分米
-15 = 十米
-16 = 百米
-17 = 百万公里
-18 = 天文单位
-19 = 光年
-20 = 秒差距
-21 = 美制测量英尺
-22 = 美制测量英寸
-23 = 美制测量码
-24 = 美制测量英里
+Insert unit:
+0 = no unit
+1 = inches
+2 = feet
+3 = miles
+4 = mm
+5 = cm
+6 = meters
+7 = kilometers
+8 = micro inches
+9 = miles
+10 = yards
+11 = Angstrom
+12 = nanometers
+13 = microns
+14 = decimeters
+15 = ten meters
+16 = 100 meters
+17 = million kilometers
+18 = Astronomical Units
+19 = light years
+20 = parsecs
+21 = US Survey Feet
+22 = US measurement inches
+23 = US measuring code
+24 = US Survey Miles
 ** 1002
-扩展数据的结束“}”
+End of extended data '}'
 * dimstyle
 ** 100
-子类标记 (AcDbDimStyleTableRecord)
+Subclass Marker (AcDbDimStyleTableRecord)
 ** 2
-标注样式名
+dimension style name
 ** 70
-标准标记值（按位编码值）：
-16 = 如果设定了此位，则表条目外部依赖于外部参照
-32 = 如果同时设定了此位和位 16，则表明已成功融入了外部依赖的外部参照
-64 = 如果设定了此位，则表明在上次编辑图形时，图形中至少有一个图元参照了表条目。
-（此标志对 AutoCAD 命令很有用。大多数读取 DXF 文件的程序都可以忽略它，并且无需由写入 DXF 文件的程序对其进行设定）
+Standard tag values ​​(bit-encoded values):
+16 = If this bit is set, the table entry is externally dependent on the xref
+32 = If both this bit and bit 16 are set, the externally dependent xref has been successfully incorporated
+64 = If this bit is set, it indicates that at least one entity in the drawing referenced a table entry when the drawing was last edited.
+(This flag is useful for AutoCAD commands. It can be ignored by most programs that read DXF files and does not need to be set by programs that write DXF files)
 ** 3
 DIMPOST
 ** 4
 DIMAPOST
 ** 5
-DIMBLK（已废弃，现在为对象 ID）
+DIMBLK (obsolete, now object ID)
 ** 6
-DIMBLK1（已废弃，现在为对象 ID）
+DIMBLK1 (obsolete, now object ID)
 ** 7
-DIMBLK2（已废弃，现在为对象 ID）
+DIMBLK2 (obsolete, now object ID)
 ** 40
 DIMSCALE
 ** 41
@@ -2847,7 +2884,7 @@ DIMTFAC
 ** 147
 DIMGAP
 ** 148
-DIMALTRND
+DIMATRND
 ** 71
 DIMTOL
 ** 72
@@ -2887,7 +2924,7 @@ DIMCLRT
 ** 179
 DIMADEC
 ** 270
-DIMUNIT（已废弃，现在使用 DIMLUNIT 和 DIMFRAC）
+DIMUNIT (obsolete, now use DIMLUNIT and DIMFRAC)
 ** 271
 DIMDEC
 ** 272
@@ -2921,465 +2958,470 @@ DIMALTZ
 ** 286
 DIMALTTZ
 ** 287
-DIMFIT（已废弃，现在使用 DIMATFIT 和 DIMTMOVE)
+DIMFIT (obsolete, now use DIMATFIT and DIMTMOVE)
 ** 288
 DIMUPT
 ** 289
 DIMATFIT
 ** 340
-DIMTXSTY（参照的 STYLE 的句柄）
+DIMTXSTY (handle to the referenced STYLE)
 ** 341
-DIMLDRBLK（参照的 BLOCK 的句柄）
+DIMLDRBLK (handle to the referenced BLOCK)
 ** 342
-DIMBLK（参照的 BLOCK 的句柄）
+DIMBLK (handle to the referenced BLOCK)
 ** 343
-DIMBLK1（参照的 BLOCK 的句柄）
+DIMBLK1 (handle of the referenced BLOCK)
 ** 344
-DIMBLK2（参照的 BLOCK 的句柄）
+DIMBLK2 (handle of the referenced BLOCK)
 ** 371
-DIMLWD（线宽枚举值）
+DIMLWD (line width enumeration value)
 ** 372
-DIMLWE（线宽枚举值）
+DIMLWE (line width enumeration value)
+
+
 * layer
 ** 100
-子类标记 (AcDbLayerTableRecord)
+Subclass Marker (AcDbLayerTableRecord)
 ** 2
-图层名
+layer name
 ** 70
-标准标记（按位编码值）：
-1 = 冻结图层，否则解冻图层
-2 = 默认情况下在新视口中冻结图层
-4 = 锁定图层
-16 = 如果设定了此位，则表条目外部依赖于外部参照
-32 = 如果同时设定了此位和位 16，则表明已成功融入了外部依赖的外部参照
-64 = 如果设定了此位，则表明在上次编辑图形时，图形中至少有一个图元参照了表条目。
-（此标志对 AutoCAD 命令很有用。大多数读取 DXF 文件的程序都可以忽略它，并且无需由写入 DXF 文件的程序对其进行设定）
+Standard flags (bit-encoded values):
+1 = Freeze the layer, otherwise unfreeze the layer
+2 = Freeze layers in new viewports by default
+4 = Lock layer
+16 = If this bit is set, the table entry is externally dependent on the xref
+32 = If both this bit and bit 16 are set, the externally dependent xref has been successfully incorporated
+64 = If this bit is set, it indicates that at least one entity in the drawing referenced a table entry when the drawing was last edited.
+(This flag is useful for AutoCAD commands. It can be ignored by most programs that read DXF files and does not need to be set by programs that write DXF files)
 ** 62
-颜色编号（如果为负值，则表明图层处于关闭状态）
+Color number (if negative, the layer is off)
 ** 6
-线型名
+Line type name
 ** 290
-打印标志。
-如果设定为 0，则不打印此图层
+print logo.
+If set to 0, this layer will not be printed
 ** 370
-线宽枚举值
+Line width enumeration value
 ** 390
-PlotStyleName 对象的硬指针 ID/句柄
+Hard pointer ID/handle to the PlotStyleName object
 ** 347
-Material 对象的硬指针 ID/句柄
+Hard pointer ID/handle to the Material object
 * ltype
 ** 100
-子类标记 (AcDbLinetypeTableRecord)
+Subclass Marker (AcDbLinetypeTableRecord)
 ** 2
-线型名
+Line type name
 ** 70
-标准标记值（按位编码值）：
-16 = 如果设定了此位，则表条目外部依赖于外部参照
-32 = 如果同时设定了此位和位 16，则表明已成功融入了外部依赖的外部参照
-64 = 如果设定了此位，则表明在上次编辑图形时，图形中至少有一个图元参照了表条目。
-（此标志对 AutoCAD 命令很有用。大多数读取 DXF 文件的程序都可以忽略它，并且无需由写入 DXF 文件的程序对其进行设定）
+Standard tag values ​​(bit-encoded values):
+16 = If this bit is set, the table entry is externally dependent on the xref
+32 = If both this bit and bit 16 are set, the externally dependent xref has been successfully incorporated
+64 = If this bit is set, it indicates that at least one entity in the drawing referenced a table entry when the drawing was last edited.
+(This flag is useful for AutoCAD commands. It can be ignored by most programs that read DXF files and does not need to be set by programs that write DXF files)
 ** 3
-线型的说明文字
+Linetype description text
 ** 72
-对齐代码；
-值通常为 65，A 的 ASCII 代码
+align code;
+The value is usually 65, the ASCII code for A
 ** 73
-线型元素的数目
+the number of linetype elements
 ** 40
-图案总长度
+Overall length of pattern
 ** 49
-虚线、点或空间长度（每个元素一个条目）
+dash, dot, or space length (one entry per element)
 ** 74
-复杂线型元素类型（每个元素一种类型）。
-默认值为 0（无嵌入的形/文字）
-以下代码是位值：
-1 = 如果设定了此位，则代码 50 指定绝对旋转；
-如果未设置此位，则代码 50 指定相对旋转
-2 = 嵌入元素是字符串
-4 = 嵌入元素是形
+Complex linetype element types (one type per element).
+Default is 0 (no embedded shape/text)
+The following codes are bit values:
+1 = If this bit is set, code 50 specifies absolute rotation;
+If this bit is not set, code 50 specifies relative rotation
+2 = embedded element is a string
+4 = Embedded element is a shape
 ** 75
-如果代码 74 指定嵌入的形，则表示形编号（每个元素一个编号）
-如果代码 74 指定嵌入的字符串，此值将设定为 0
-如果代码 74 设定为 0，则省略代码 75
+If code 74 specifies an embedded shape, the shape number (one number per element)
+If code 74 specifies an embedded string, this value will be set to 0
+Code 75 is omitted if code 74 is set to 0
 ** 340
-指向 STYLE 对象的指针（如果代码 74 > 0，则每个元素一个指针）
+pointers to STYLE objects (one pointer per element if code 74 > 0)
 ** 46
-S = 比例值（可选）；
-可存在多个条目
+S = scale value (optional);
+Multiple entries can exist
 ** 50
-R = 嵌入的形或文字的相对旋转值（以弧度为单位），A = 嵌入的形或文字的绝对旋转值（以弧度为单位）；
-如果代码 74 指定了嵌入的形或字符串，则每个元素一个
+R = relative rotation value (in radians) of the embedded shape or text, A = absolute rotation value (in radians) of the embedded shape or text;
+If code 74 specifies an embedded shape or string, one per element
 ** 44
-X = X 偏移值（可选）；
-可存在多个条目
+X = X offset value (optional);
+Multiple entries can exist
 ** 45
-Y = Y 偏移值（可选）；
-可存在多个条目
+Y = Y offset value (optional);
+Multiple entries can exist
 ** 9
-字符串（如果代码 74 = 2，则每个元素一个字符串）
+String (one string per element if code 74 = 2)
 * style
 ** 100
-子类标记 (AcDbTextStyleTableRecord)
+Subclass Marker (AcDbTextStyleTableRecord)
 ** 2
-样式名
+style name
 ** 70
-标准标记值（按位编码值）：
-1 = 如果设定了此位，则此条目用于说明形
-4 = 垂直文字
-16 = 如果设定了此位，则表条目外部依赖于外部参照
-32 = 如果同时设定了此位和位 16，则表明已成功融入了外部依赖的外部参照
-64 = 如果设定了此位，则表明在上次编辑图形时，图形中至少有一个图元参照了表条目。
-（此标志对 AutoCAD 命令很有用。大多数读取 DXF 文件的程序都可以忽略它，并且无需由写入 DXF 文件的程序对其进行设定）
+Standard tag values ​​(bit-encoded values):
+1 = If this bit is set, this entry is used to describe the form
+4 = vertical text
+16 = If this bit is set, the table entry is externally dependent on the xref
+32 = If both this bit and bit 16 are set, the externally dependent xref has been successfully incorporated
+64 = If this bit is set, it indicates that at least one entity in the drawing referenced a table entry when the drawing was last edited.
+(This flag is useful for AutoCAD commands. It can be ignored by most programs that read DXF files and does not need to be set by programs that write DXF files)
 ** 40
-固定的文字高度；
-如果文字高度未固定，则为 0
+fixed text height;
+0 if the text height is not fixed
 ** 41
-宽度因子
+width factor
 ** 50
-倾斜角度
+slope
 ** 71
-文字生成标志：
-2 = 文字反向（在 X 轴方向镜像）
-4 = 文字倒置（在 Y 轴方向镜像）
+Text generation flags:
+2 = Text is reversed (mirrored in the X-axis direction)
+4 = Text upside down (mirror in Y direction)
 ** 42
-上次使用的高度
+last used altitude
 ** 3
-主要字体文件名
+Primary font file name
 ** 4
-大字体文件名；
-如果无，则为空
+Large font file name;
+empty if none
 ** 1071
-包含 Truetype 字体的字宽与字族、字符集以及斜体和粗体标志的长值
-* ucs
+Contains the font width and font family, character set, and length values ​​of italic and bold flags for Truetype fonts
+*ucs
 ** 100
-子类标记 (AcDbUCSTableRecord)
+Subclass Marker (AcDbUCSTableRecord)
 ** 2
-UCS 名称
+UCS name
 ** 70
-标准标记值（按位编码值）：
-16 = 如果设定了此位，则表条目外部依赖于外部参照
-32 = 如果同时设定了此位和位 16，则表明已成功融入了外部依赖的外部参照
-64 = 如果设定了此位，则表明在上次编辑图形时，图形中至少有一个图元参照了表条目。
-（此标志对 AutoCAD 命令很有用。大多数读取 DXF 文件的程序都可以忽略它，并且无需由写入 DXF 文件的程序对其进行设定）
+Standard tag values ​​(bit-encoded values):
+16 = If this bit is set, the table entry is externally dependent on the xref
+32 = If both this bit and bit 16 are set, the externally dependent xref has been successfully incorporated
+64 = If this bit is set, it indicates that at least one entity in the drawing referenced a table entry when the drawing was last edited.
+(This flag is useful for AutoCAD commands. It can be ignored by most programs that read DXF files and does not need to be set by programs that write DXF files)
 ** 10
-原点（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Origin (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：原点的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the origin (in WCS)
 ** 11
-X 轴方向（在 WCS 中）
-DXF：X 值；
-APP：三维矢量
+X-axis direction (in WCS)
+DXF: X value;
+APP: 3D Vector
 ** 21, 31
-DXF：X 轴方向的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​in the X-axis direction (in WCS)
 ** 12
-Y 轴方向（在 WCS 中）
-DXF：X 值；
-APP：三维矢量
+Y-axis direction (in WCS)
+DXF: X value;
+APP: 3D Vector
 ** 22, 32
-DXF：Y 轴方向的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​in the Y-axis direction (in WCS)
 ** 79
-总是为 0
+always 0
 ** 146
-标高
+elevation
 ** 346
-基准 UCS 的 ID/句柄（如果为正交）。
-如果 79 代码为 0，则不显示此代码。
-如果未显示此代码，且 79 代码不为零，则假定基准 UCS 为 WORLD
+The ID/handle of the datum UCS (if orthogonal).
+If the 79 code is 0, this code is not displayed.
+If this code is not displayed and the 79 code is not zero, the base UCS is assumed to be WORLD
 ** 71
-正交类型（可选；通常与 13、23 和 33 代码成对出现）：
-1 = 俯视图；
-2 = 仰视图
-3 = 主视图；
-4 = 后视图
-5 = 左视图；
-6 = 右视图
+Orthogonal type (optional; usually paired with 13, 23, and 33 codes):
+1 = top view;
+2 = bottom view
+3 = main view;
+4 = rear view
+5 = left view;
+6 = Right view
 ** 13
-与此 UCS 相关的正交类型的原点
-DXF：原点的 X 值；
-APP：三维点
+the origin of the orthogonal type associated with this UCS
+DXF: the X value of the origin;
+APP: 3D Point
 ** 23, 33
-DXF：原点的 Y 值和 Y 值
+DXF: Y value and Y value of the origin
 * view
 ** 100
-子类标记 (AcDbViewTableRecord)
+Subclass Marker (AcDbViewTableRecord)
 ** 2
-视图名称
+view name
 ** 70
-标准标记值（按位编码值）：
-1 = 如果设定了此位，则为图纸空间视图
-16 = 如果设定了此位，则表条目外部依赖于外部参照
-32 = 如果同时设定了此位和位 16，则表明已成功融入了外部依赖的外部参照
-64 = 如果设定了此位，则表明在上次编辑图形时，图形中至少有一个图元参照了表条目。
-（此标志对 AutoCAD 命令很有用。大多数读取 DXF 文件的程序都可以忽略它，并且无需由写入 DXF 文件的程序对其进行设定）
+Standard tag values ​​(bit-encoded values):
+1 = Paper space view if this bit is set
+16 = If this bit is set, the table entry is externally dependent on the xref
+32 = If both this bit and bit 16 are set, the externally dependent xref has been successfully incorporated
+64 = If this bit is set, it indicates that at least one entity in the drawing referenced a table entry when the drawing was last edited.
+(This flag is useful for AutoCAD commands. It can be ignored by most programs that read DXF files and does not need to be set by programs that write DXF files)
 ** 40
-视图高度（在 DCS 中）
+View height (in DCS)
 ** 10
-视口中心点（在 DCS 中）
-DXF：X 值；
-APP：二维点
+Viewport Center Point (in DCS)
+DXF: X value;
+APP: 2D point
 ** 20
-DXF：视图中心点的 Y 值（在 DCS 中）
+DXF: Y value of view center point (in DCS)
 ** 41
-视图宽度（在 DCS 中）
+View width (in DCS)
 ** 11
-来自目标的观察方向（在 WCS 中）
-DXF：X 值；
-APP：三维矢量
+Viewing direction from target (in WCS)
+DXF: X value;
+APP: 3D Vector
 ** 21, 31
-DXF：来自目标的观察方向的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​from the viewing direction of the target (in WCS)
 ** 12
-目标点（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Target point (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 22, 32
-DXF：目标点的 Y 值和 Z 值（在 WCS 中）
+DXF: Y and Z values ​​of the target point (in WCS)
 ** 42
-焦距
+focal length
 ** 43
-前向剪裁平面（距目标点的偏移）
+Forward clipping plane (offset from target point)
 ** 44
-后向剪裁平面（距目标点的偏移）
+Back clipping plane (offset from target point)
 ** 50
-扭曲角度
+twist angle
 ** 71
-视图模式（参见 VIEWMODE 系统变量）
+view mode (see VIEWMODE system variable)
 ** 281
-渲染模式：
-0 = 二维优化（传统二维）
-1 = 线框
-2 = 隐藏线
-3 = 平面着色
-4 = 体着色
-5 = 带线框平面着色
-6 = 带线框体着色
-所有非二维优化渲染模式均使用新三维图形管道。
-这些值直接与 SHADEMODE 命令和 AcDbAbstractViewTableRecord::RenderMode 枚举相对应
+Render Mode:
+0 = 2D optimization (traditional 2D)
+1 = wireframe
+2 = hidden lines
+3 = Flat Shading
+4 = body shading
+5 = Flat shading with wireframe
+6 = Shaded with wireframe
+All non-2D optimized rendering modes use the new 3D graphics pipeline.
+These values ​​correspond directly to the SHADEMODE command and the AcDbAbstractViewTableRecord::RenderMode enumeration
 ** 72
-如果存在与此视图相关联的 UCS，则为 1；
-否则为 0
+1 if there is a UCS associated with this view;
+0 otherwise
 ** 73
-如果相机可打印，则为 1
+1 if the camera is printable
 ** 332
-背景对象的软指针 ID/句柄（可选）
+Soft pointer ID/handle of the background object (optional)
 ** 334
-活动剖切对象的软指针 ID/句柄（可选）
+Soft pointer ID/handle of the active section object (optional)
 ** 348
-视觉样式对象的硬指针 ID/句柄（可选）
+Hard pointer ID/handle to the visual style object (optional)
 ** 361
-Sun 硬所有权 ID
-* vport
+Sun Hard Title ID
+*vport
 ** 100
-子类标记 (AcDbViewportTableRecord)
+Subclass Marker (AcDbViewportTableRecord)
 ** 2
-视口名
+viewport name
 ** 70
-标准标记值（按位编码值）：
-16 = 如果设定了此位，则表条目外部依赖于外部参照
-32 = 如果同时设定了此位和位 16，则表明已成功融入了外部依赖的外部参照
-64 = 如果设定了此位，则表明在上次编辑图形时，图形中至少有一个图元参照了表条目。
-（此标志对 AutoCAD 命令很有用。大多数读取 DXF 文件的程序都可以忽略它，并且无需由写入 DXF 文件的程序对其进行设定）
+Standard tag values ​​(bit-encoded values):
+16 = If this bit is set, the table entry is externally dependent on the xref
+32 = If both this bit and bit 16 are set, the externally dependent xref has been successfully incorporated
+64 = If this bit is set, it indicates that at least one entity in the drawing referenced a table entry when the drawing was last edited.
+(This flag is useful for AutoCAD commands. It can be ignored by most programs that read DXF files and does not need to be set by programs that write DXF files)
 ** 10
-视口的左下角
-DXF：X 值；
-APP：二维点
+Bottom left corner of viewport
+DXF: X value;
+APP: 2D point
 ** 20
-DXF：视口左下角的 Y 值
+DXF: Y value of the lower left corner of the viewport
 ** 11
-视口右上角
-DXF：X 值；
-APP：二维点
-** 21
-DXF：视口右上角的 Y 值
+top right corner of viewport
+DXF: X value;
+APP: 2D point
+** twenty one
+DXF: Y value in the upper right corner of the viewport
 ** 12
-视口中心点（在 DCS 中）
-DXF：X 值；
-APP：二维点
-** 22
-DXF：视图中心点的 Y 值（在 DCS 中）
+Viewport Center Point (in DCS)
+DXF: X value;
+APP: 2D point
+** twenty two
+DXF: Y value of view center point (in DCS)
 ** 13
-捕捉基点（在 DCS 中）
-DXF：X 值；
-APP：二维点
-** 23
-DXF：捕捉基点的 Y 值（在 DCS 中）
+Snap base point (in DCS)
+DXF: X value;
+APP: 2D point
+** twenty three
+DXF: Snap Y value of base point (in DCS)
 ** 14
-捕捉间距 X 和 Y
-DXF：X 值；
-APP：二维点
-** 24
-DXF：捕捉间距 X 和 Y 的 Y 值
+Snap Spacing X and Y
+DXF: X value;
+APP: 2D point
+** twenty four
+DXF: Snap to Y value of Spacing X and Y
 ** 15
-栅格间距 X 和 Y
-DXF：X 值；
-APP：二维点
+Grid Spacing X and Y
+DXF: X value;
+APP: 2D point
 ** 25
-DXF：栅格间距 X 和 Y 的 Y 值
+DXF: Y value of grid spacing X and Y
 ** 16
-相对于目标点的观察方向（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Viewing direction relative to target point (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 26, 36
-DXF：相对于目标点的观察方向的 Y 值和 Z 值
-（在 WCS 中）
+DXF: Y and Z values ​​relative to the viewing direction of the target point
+(in WCS)
 ** 17
-观察目标点（在 WCS 中）
-DXF：X 值；
-APP：三维点
+Observe the target point (in WCS)
+DXF: X value;
+APP: 3D Point
 ** 27, 37
-DXF：观察目标点的 Y 值和 Z 值（在 WCS 中）
+DXF: Observe the Y and Z values ​​of the target point (in WCS)
 ** 42
-焦距
+focal length
 ** 43
-前向剪裁平面（距目标点的偏移）
+Forward clipping plane (offset from target point)
 ** 44
-后向剪裁平面（距目标点的偏移）
+Back clipping plane (offset from target point)
 ** 45
-视图高度
+view height
 ** 50
-捕捉旋转角度
+Snap rotation angle
 ** 51
-视图扭转角度
+View twist angle
 ** 72
-圆形边
-** 331 或 441
-冻结图层对象的软指针 ID/句柄或硬指针 ID/句柄；
-为每个冻结图层重复
+rounded edge
+** 331 or 441
+Soft pointer ID/handle or hard pointer ID/handle of the frozen layer object;
+Repeat for each frozen layer
 ** 1
-打印样式表
+print style sheet
 ** 281
-渲染模式：
-0 = 二维优化（传统二维）
-1 = 线框
-2 = 隐藏线
-3 = 平面着色
-4 = 体着色
-5 = 带线框平面着色
-6 = 带线框体着色
-所有非二维优化渲染模式均使用新三维图形管道。
-这些值直接与 SHADEMODE 命令和 AcDbAbstractViewTableRecord::RenderMode 枚举相对应
+Render Mode:
+0 = 2D optimization (traditional 2D)
+1 = wireframe
+2 = hidden lines
+3 = Flat Shading
+4 = body shading
+5 = Flat shading with wireframe
+6 = Shaded with wireframe
+All non-2D optimized rendering modes use the new 3D graphics pipeline.
+These values ​​correspond directly to the SHADEMODE command and the AcDbAbstractViewTableRecord::RenderMode enumeration
 ** 71
-视图模式（参见 VIEWMODE 系统变量）
+view mode (see VIEWMODE system variable)
 ** 74
-UCSICON 设置
+UCSICON settings
 ** 110
-UCS 原点
-DXF：X 值；
-APP：三维点
+UCS origin
+DXF: X value;
+APP: 3D Point
 ** 120, 130
-DXF：UCS 原点的 Y 值和 Z 值
+DXF: Y and Z values ​​of the UCS origin
 ** 111
-UCS X 轴
-DXF：X 值；
-APP：三维矢量
+UCS X-axis
+DXF: X value;
+APP: 3D Vector
 ** 121, 131
-DXF：UCS X 轴的 Y 值和 Z 值
+DXF: Y and Z values ​​of UCS X-axis
 ** 112
-UCS Y 轴
-DXF：X 值；
-APP：三维矢量
+UCS Y-axis
+DXF: X value;
+APP: 3D Vector
 ** 122, 132
-DXF：UCS Y 轴的 Y 值和 Z 值
+DXF: Y and Z values ​​of UCS Y-axis
 ** 345
-如果 UCS 是命名 UCS，则为 AcDbUCSTableRecord 的 ID/句柄。
-如果不存在，则为未命名 UCS
+If the UCS is a named UCS, the ID/handle of the AcDbUCSTableRecord.
+Unnamed UCS if not present
 ** 346
-如果 UCS 为正交 UCS，则为基准 UCS 的 AcDbUCSTableRecord 的 ID/句柄（代码 79 非零）。
-如果不存在，且代码 79 非零，则将基准 UCS 作为 WORLD
+ID/handle to the AcDbUCSTableRecord of the base UCS if the UCS is an orthogonal UCS (code 79 non-zero).
+If not present and code 79 is nonzero, base UCS as WORLD
 ** 79
-UCS 的正交类型
-0 = UCS 为非正交视图
-1 = 俯视
-2 = 仰视
-3 = 前视
-4 = 后视
-5 = 左视
-6 = 右视
+Orthogonal types of UCS
+0 = UCS is a non-orthogonal view
+1 = Looking down
+2 =
+
+look up
+3 = Forward looking
+4 = rear view
+5 = left view
+6 = Right view
 ** 146
-标高
+elevation
 ** 170
-着色打印设置
+Shaded print settings
 ** 61
-主栅格线
+home grid line
 ** 332
-背景对象的软指针 ID/句柄（可选）
+Soft pointer ID/handle of the background object (optional)
 ** 333
-着色打印对象的软指针 ID/句柄（可选）
+Soft pointer ID/handle to shader object (optional)
 ** 348
-视觉样式对象的硬指针 ID/句柄（可选）
+Hard pointer ID/handle to the visual style object (optional)
 ** 292
-标志上的默认光源
+Default light source on logo
 ** 282
-默认光源类型
-0 = 一条平行光
-1 = 两条平行光
+Default light type
+0 = a directional light
+1 = two parallel lights
 ** 141
-亮度
+brightness
 ** 142
-对比度
+Contrast
 ** 63, 421, 431
-环境色（仅当不是黑色时输出）
-* block
+Ambient color (output only if not black)
+*block
 ** 0
-图元类型 (BLOCK)
+Entity Type (BLOCK)
 ** 5
-句柄
+handle
 ** 102
-应用程序定义的组的开始“{application_name”。例如，“{ACAD_REACTORS”表示 AutoCAD 永久反应器组的开始（可选）
-应用程序定义的代码
-** 102 组中的代码和值由应用程序定义（可选）
+The start of an application-defined group '{application_name'. For example, "{ACAD_REACTORS" represents the start of an AutoCAD permanent reactor group (optional)
+application-defined code
+** Codes and values ​​in group 102 are defined by the application (optional)
 ** 102
-组的结束“}”（可选）
+End of group '}' (optional)
 ** 330
-所有者对象的软指针 ID/句柄
+Soft pointer ID/handle to the owner object
 ** 100
-子类标记 (AcDbEntity)
+Subclass Marker (AcDbEntity)
 ** 8
-图层名
+layer name
 ** 100
-子类标记 (AcDbBlockBegin)
+Subclass Marker (AcDbBlockBegin)
 ** 2
-块名
+block name
 ** 70
-块类型标志（按位编码值，可以组合使用）：
-0 = 表示不应用下列任何标志
-1 = 由图案填充、关联标注、其他内部操作或应用程序生成的匿名块
-2 = 块具有非固定属性定义（如果块具有任何固定属性定义或根本没有属性定义，则不设定此位）
-4 = 块是外部参照 (xref)
-8 = 块是外部参照覆盖
-16 = 块依赖外部参照
-32 = 块是融入的外部参照，或者依赖外部参照（输入时被忽略）
-64 = 定义是被引用的外部参照（输入时
-被忽略）
+Block type flags (bit-encoded values, can be combined):
+0 = Indicates that none of the following flags should be applied
+1 = Anonymous blocks generated by hatches, associative callouts, other internal operations, or applications
+2 = The block has non-fixed attribute definitions (this bit is not set if the block has any fixed attribute definitions or no attribute definitions at all)
+4 = Block is an external reference (xref)
+8 = Block is an xref override
+16 = Block depends on xref
+32 = Block is an incorporated xref, or depends on an xref (ignored on import)
+64 = Definition is a referenced xref (when entering
+be ignored)
 ** 10
-基点
-DXF：X 值；
-APP：三维点
+basis point
+DXF: X value;
+APP: 3D Point
 ** 20, 30
-DXF：基点的 Y 值和 Y 值
+DXF: Y value and Y value of base point
 ** 3
-块名
+block name
 ** 1
-外部参照路径名
+xref pathname
 ** 4
-块说明（可选）
+block description (optional)
 * endblock
 ** 0
-图元类型 (ENDBLK)
+Entity Type (ENDBLK)
 ** 5
-句柄
+handle
 ** 102
-应用程序定义的组的开始“{application_name”。例如，“{ACAD_REACTORS”表示 AutoCAD 永久反应器组的开始（可选）
-应用程序定义的代码
-** 102 组中的代码和值由应用程序定义（可选）
+The start of an application-defined group '{application_name'. For example, "{ACAD_REACTORS" represents the start of an AutoCAD permanent reactor group (optional)
+application-defined code
 ** 102
-组的结束“}”（可选）
+The codes and values ​​in the group are defined by the application (optional)
+** 102
+End of group '}' (optional)
 ** 330
-所有者对象的软指针 ID/句柄
+Soft pointer ID/handle to the owner object
 ** 100
-子类标记 (AcDbEntity)
+Subclass Marker (AcDbEntity)
 ** 8
-图层名
+layer name
 ** 100
-子类标记 (AcDbBlockEnd)
+Subclass Marker (AcDbBlockEnd)
