@@ -1,0 +1,2625 @@
+* 3DALIGN
+在二维和三维空间中将对象与其他对象对齐。
+
+* 3DARRAY
+创建非关联三维矩形或环形阵列。
+
+* 3DCLIP
+打开“调整剪裁平面”窗口，可以在其中指定要显示三维模型的哪些部分。
+
+* 3DCORBIT
+在三维空间中连续旋转视图。
+
+* 3DDISTANCE
+启动交互式三维视图并使对象显示得更近或更远。
+
+* 3DDWF
+创建三维模型的三维 DWF 文件或三维 DWFx 文件，并将其显示在 DWF Viewer 中。
+
+* 3DEDITBAR
+重塑样条曲线和 NURBS 曲面，包括其相切特性。
+
+* 3DFACE
+在三维空间中创建三侧面或四侧面的曲面。
+
+* 3DFLY
+交互式更改图形中的三维视图以创建在模型中飞行的外观。
+
+* 3DFORBIT
+在三维空间中旋转视图而不约束回卷。
+
+* 3DMESH
+创建自由形式的多边形网格。
+
+* 3DMOVE
+在三维视图中，显示三维移动小控件以帮助在指定方向上按指定距离移动三维对象。
+
+* 3DORBIT
+提供使用鼠标操作的三维形式的交互式查看。单击鼠标右键以显示“查看”选项。
+
+* 3DORBITCTR
+在三维动态观察视图中设置旋转的特定中心。
+
+* 3DOSNAP
+设定三维对象的对象捕捉模式。
+
+* 3DPAN
+改变视图而不更改查看方向或比例。
+
+* 3DPOLY
+创建三维多段线。
+
+* 3DPRINT
+指定三维打印设置，并为三维打印准备图形。
+
+* 3DPRINTSERVICE
+创建可发送给三维打印服务的 STL 文件。
+
+* 3DROTATE
+在三维视图中，显示三维旋转小控件以协助绕基点旋转三维对象。
+
+* 3DSCALE
+在三维视图中，显示三维缩放小控件以协助调整三维对象的大小。
+
+* 3DSIN
+输入 3ds Max (3DS) 文件。
+
+* 3DSWIVEL
+在拖动方向上更改视图的目标。
+
+* 3DWALK
+交互式更改图形中的三维视图以创建在模型中漫游的外观。
+
+* 3DZOOM
+在透视视图中放大和缩小。
+
+
+* ABOUT
+显示有关产品的信息。
+
+* ACADINFO (Express Tool)
+创建一个文件，该文件存储有关 AutoCAD 安装和当前设置的信息。
+
+* ACISIN
+输入 ACIS (SAT) 文件并创建三维实体、体或面域对象。
+
+* ACISOUT
+将三维实体、面域或实体对象输出到 ACIS 文件。
+
+* ACTBASEPOINT
+在动作宏中插入基点或基点提示。
+
+* ACTMANAGER
+管理动作宏文件。
+
+* ACTRECORD
+开始录制动作宏。
+
+* ACTSTOP
+停止动作录制器，并提供将已录制的动作保存至动作宏文件的选项。
+
+* ACTUSERINPUT
+在动作宏中暂停以等待用户输入。
+
+* ACTUSERMESSAGE
+将用户消息插入动作宏中。
+
+* ADCCLOSE
+关闭设计中心。
+
+* ADCENTER
+管理和插入诸如块、外部参照和填充图案等内容。
+
+* ADCNAVIGATE
+在“设计中心文件夹”选项卡中加载指定的图形文件、文件夹或网络路径。
+
+* ADDSELECTED
+创建一个新对象，该对象与选定对象具有相同的类型和常规特性，但具有不同的几何值。
+
+* ADJUST
+调整选定参考底图（DWF、DWFx、PDF 或 DGN）或图像的淡入度、对比度和单色设置。
+
+* ALIASEDIT (Express Tool)
+创建、修改和删除 AutoCAD 命令别名。
+
+* ALIGN
+在二维和三维空间中将对象与其他对象对齐。
+
+* ALIGNSPACE (Express Tool)
+基于在模型空间和图纸空间中指定的对齐点，在布局视口中调整视图的平移和缩放因子。
+
+* AMECONVERT
+将 AME 实体模型转换为 AutoCAD 实体对象。
+
+* ANALYSISCURVATURE
+在曲面上显示渐变色，以便评估曲面曲率的不同方面。
+
+* ANALYSISDRAFT
+在三维模型上显示渐变色，以便评估某部分与其模具之间是否具有足够的空间。
+
+* ANALYSISOPTIONS
+设置斑纹、曲率和拔模分析的显示选项。
+
+* ANALYSISZEBRA
+将条纹投影到三维模型上，以便分析曲面连续性。
+
+* ANIPATH
+保存相机在三维模型中移动或平移的动画。
+
+* ANNORESET
+重置选定注释性对象的所有换算比例图示的位置。
+
+* ANNOUPDATE
+更新现有注释性对象，使之与其样式的当前特性相匹配。
+
+* APERTURE
+控制对象捕捉靶框大小。
+
+* APPAUTOLOADER
+列出或重新加载在应用程序插件文件夹中的所有插件。
+
+* APPLOAD
+加载和卸载应用程序，定义要在启动时加载的应用程序。
+
+* APPSTORE
+打开 Autodesk App Store 网站。
+
+* ARC, 圆弧
+创建圆弧。
+
+* ARCHIVE
+将当前图纸集文件打包存储。
+
+* ARCTEXT (Express Tool)
+沿圆弧放置文字。
+
+* AREA,面积
+计算对象或所定义区域的面积和周长。
+
+* ARRAY
+创建按指定方式排列的对象副本。
+
+* ARRAYCLASSIC
+使用传统对话框创建阵列。
+
+* ARRAYCLOSE
+保存或放弃对阵列的源对象的更改并退出阵列编辑状态。
+
+* ARRAYEDIT
+编辑关联阵列对象及其源对象。
+
+* ARRAYPATH
+沿路径或部分路径均匀分布对象副本。
+
+* ARRAYPOLAR
+围绕中心点或旋转轴在环形阵列中均匀分布对象副本。
+
+* ARRAYRECT
+将对象副本分布到行、列和标高的任意组合。
+
+* ARX
+加载、卸载 ObjectARX 应用程序并提供相关信息。
+
+* ATTACH
+将参照插入到外部文件，例如其他图形、光栅图像、点云、协调模型和参考底图。
+
+* ATTACHURL
+将超链接附着到图形中的对象或区域。
+
+* ATTDEF
+创建用于在块中存储数据的属性定义。
+
+* ATTDISP
+控制图形中所有块属性的可见性覆盖。
+
+* ATTEDIT
+更改块中的属性信息。
+
+* ATTEXT
+将与块关联的属性数据、文字信息提取到文件中。
+
+* ATTIN (Express Tool)
+从外部制表符分隔的 ASCII 文件输入块属性值。
+
+* ATTIPEDIT
+更改块中属性的文本内容。
+
+* ATTOUT (Express Tool)
+将块属性值输出为以制表符分隔的 ASCII 格式的外部文件。
+
+* ATTREDEF
+重定义块并更新关联属性。
+
+* ATTSYNC
+将块定义中的属性更改应用于所有块参照。
+
+* AUDIT
+检查图形的完整性并更正某些错误。
+
+* AUTOCONSTRAIN
+根据对象相对于彼此的方向将几何约束应用于对象的选择集。
+
+* AUTOPUBLISH
+将图形自动发布为 DWF、DWFx 或 PDF 文件，发布至指定位置。
+
+* BACKGROUND
+定义命名视图背景的类型、颜色、效果和位置。
+
+* BACTION
+向动态块定义中添加动作。
+
+* BACTIONBAR
+为参数对象的选择集显示或隐藏动作栏。
+
+* BACTIONSET
+指定与动态块定义中的动作相关联的对象选择集。
+
+* BACTIONTOOL
+向动态块定义中添加动作。
+
+* BASE, 基点
+为当前图形设置插入基点。
+
+* BASSOCIATE
+将动作与动态块定义中的参数相关联。
+
+* BATTMAN
+管理选定块定义的属性。
+
+* BATTORDER
+指定块属性的顺序。
+
+* BAUTHORPALETTE
+打开块编辑器中的“块编写选项板”窗口。
+
+* BAUTHORPALETTECLOSE
+关闭块编辑器中的“块编写选项板”窗口。
+
+* BCLOSE
+关闭块编辑器。
+
+* BCONSTRUCTION
+将块几何图形转换为可能会隐藏或显示的构造几何图形。
+
+* BCOUNT (Express Tool)
+为选择集或整个图形中的每个块，创建实例数的报告。
+
+* BCPARAMETER
+将约束参数应用于选定的对象，或将标注约束转换为参数约束。
+
+* BCYCLEORDER
+更改动态块参照夹点的循环次序。
+
+* BEDIT
+在块编辑器中打开块定义。
+
+* BESETTINGS
+显示“块编辑器设置”对话框。
+
+* BEXTEND (Express Tool)
+将对象扩展为块。
+
+* BGRIPSET
+创建、删除或重置与参数相关联的夹点。
+
+* BLEND
+在两条选定直线或曲线之间的间隙中创建样条曲线。
+
+* BLOCK
+从选定的对象中创建一个块定义。
+
+* BLOCK?(Express Tool)
+在块定义中列出对象。
+
+* BLOCKICON
+为 AutoCAD 设计中心中显示的块生成预览图像。
+
+* BLOCKREPLACE (Express Tool)
+将指定块的所有实例替换为不同的块。
+
+* BLOCKSPALETTE
+显示“块”选项板，可用于将块和图形插入到当前图形中。
+
+* BLOCKSPALETTECLOSE
+关闭“块”选项板。
+
+* BLOCKTOXREF (Express Tool)
+将指定块的所有实例替换为外部参照。
+
+* BLOOKUPTABLE
+为动态块定义显示或创建查寻表。
+
+* BMPOUT
+将选定对象以与设备无关的位图格式保存到文件中。
+
+* BOUNDARY
+从封闭区域创建面域或多段线。
+
+* BOX
+创建三维实体长方体。
+
+* BPARAMETER
+向动态块定义中添加带有夹点的参数。
+
+* BREAK
+在两点之间打断选定对象。
+
+* BREAKATPOINT
+在指定点处将选定对象打断为两个对象。
+
+* BREAKLINE (Express Tool)
+创建特征线，以及包含特征线符号的多段线。
+
+* BREP
+删除三维实体和复合实体的历史记录以及曲面的关联性。
+
+* BROWSER
+启动系统注册表中定义的默认 Web 浏览器。
+
+* BSAVE
+保存当前块定义。
+
+* BSAVEAS
+用新名称保存当前块定义的副本。
+
+* BSCALE (Express Tool)
+相对于其插入点缩放块参照。
+
+* BTABLE
+将块的变量存储在块特性表中。
+
+* BTESTBLOCK
+在块编辑器内显示一个窗口，以测试动态块。
+
+* BTRIM (Express Tool)
+将对象修剪为块。
+
+* BURST (Express Tool)
+分解选定的块，同时保留块图层，并将属性值转换为文字对象。
+
+* BVHIDE
+使对象在动态块定义中的当前可见性状态下不可见，或在所有可见性状态下均不可见。
+
+* BVSHOW
+使对象在动态块定义中的当前可见性状态下可见，或在所有可见性状态下均可见。
+
+* BVSTATE
+创建、设置或删除动态块中的可见性状态。
+
+* CAL
+在命令提示下或在命令中计算数学和几何表达式。
+
+* CAMERA
+设置相机位置和目标位置，以创建并保存对象的三维透视视图。
+
+* CDORDER (Express Tool)
+按选定对象的颜色编号排列其绘图顺序。
+
+* CENTERDISASSOCIATE
+从中心标记或中心线定义的对象中删除其关联性。
+
+* CENTERLINE
+创建与所选线和线性多段线线段关联的中心线几何图形。
+
+* CENTERMARK
+在选定的圆或圆弧的中心处创建关联的十字形标记。
+
+* CENTERREASSOCIATE
+将中心标记或中心线对象关联或者重新关联至选定的对象。
+
+* CENTERRESET
+将中心线重置为在 CENTEREXE 系统变量中指定的当前值。
+
+* CHAMFER
+为两个二维对象的边或三维实体的相邻面创建斜角或者倒角。
+
+* CHAMFEREDGE
+为三维实体边和曲面边建立倒角。
+
+* CHANGE
+更改现有对象的特性。
+
+* CHECKSTANDARDS
+检查当前图形中是否存在标准冲突。
+
+* CHPROP
+更改对象的特性。
+
+* CHSPACE
+在布局上，在模型空间和图纸空间之间传输选定对象。
+
+* CHURLS (Express Tool)
+提供一种方法，用来编辑以前为选定对象附着的 URL。
+
+* CIRCLE
+创建圆。
+
+* CLASSICGROUP
+打开传统“对象编组”对话框。
+
+* CLASSICIMAGE
+管理当前图形中的参照图像文件。
+
+* CLASSICINSERT
+使用经典版本的 INSERT 命令，将块或图形插入到当前图形中。
+
+* CLASSICLAYER
+打开传统图层特性管理器。
+
+* CLASSICXREF
+管理当前图形中的参照图形文件。
+
+* CLEANSCREENOFF
+恢复在使用 CLEANSCREENON 之前的显示状态。
+
+* CLEANSCREENON
+清除工具栏和可固定窗口（命令窗口除外）的屏幕。
+
+* CLIP
+将选定对象（如块、外部参照、图像、视口和参考底图）修剪到指定的边界。
+
+* CLIPIT (Express Tool)
+使用直线和曲线剪裁外部参照或图像。
+
+* CLOSE
+关闭当前图形。
+
+* CLOSEALL
+关闭当前所有打开的图形。
+
+* CLOSEALLOTHER
+关闭所有其他打开的图形，当前图形除外。
+
+* COLOR
+设置新对象的颜色。
+
+* COMMANDLINE
+显示“命令”窗口。
+
+* COMMANDLINEHIDE
+隐藏命令窗口。
+
+* COMPARE
+将指定图形文件与当前图形文件进行比较，在修订云线中使用颜色亮显差异。
+
+* COMPARECLOSE
+关闭“DWG 比较”工具栏并结束比较。
+
+* COMPAREEXPORT
+将比较结果输出到新图形文件（称为“快照图形”）中。
+
+* COMPAREIMPORT
+将比较图形中的对象输入到当前图形中。
+
+* COMPAREINFO
+提供一种插入或复制关于两个比较图形文件的特性信息的方法。
+
+* COMPILE
+将形文件和 PostScript 字体文件编译成 SHX 文件。
+
+* CONE
+创建三维实体圆锥体。
+
+* CONSTRAINTBAR
+显示或隐藏对象上的几何约束。
+
+* CONSTRAINTSETTINGS
+控制约束栏上几何约束的显示。
+
+* CONVERT
+转换传统多段线和图案填充以用于更高的产品版本。
+
+* CONVERTCTB
+将颜色相关的打印样式表 (CTB) 转换为命名打印样式表 (STB)。
+
+* CONVERTOLDLIGHTS
+将以先前图形文件格式创建的光源转换为当前格式。
+
+* CONVERTOLDMATERIALS
+转换旧材质以使用当前材质格式。
+
+* CONVERTPSTYLES
+将当前图形转换为命名或颜色相关打印样式。
+
+* CONVTOMESH
+将三维对象（例如多边形网格、曲面和实体）转换为网格对象。
+
+* CONVTONURBS
+将三维实体和曲面转换为 NURBS 曲面。
+
+* CONVTOSOLID
+将符合条件的三维对象转换为三维实体。
+
+* CONVTOSURFACE
+将对象转换为三维曲面。
+
+* COORDINATIONMODELATTACH
+将参照插入到协调模型中，例如 NWD 和 NWC Navisworks 文件。
+
+* COPY, 复制, C
+在指定方向上按指定距离复制对象。
+
+* COPYBASE
+将选定的对象与指定的基点一起复制到剪贴板。
+
+* COPYCLIP
+将选定的对象复制到剪贴板。
+
+* COPYHIST
+将命令行历史记录文字复制到剪贴板。
+
+* COPYLINK
+将当前视图复制到剪贴板中以便链接到其他 OLE 应用程序。
+
+* COPYM (Express Tool)
+使用“重复”、“阵列”、“定数等分”和“定距等分”选项复制多个对象。
+
+* COPYTOLAYER
+将一个或多个对象复制到其他图层。
+
+* COUNT
+计数并亮显图形中选定对象的实例。
+
+* COUNTCLOSE
+关闭“计数”工具栏并退出计数。
+
+* COUNTFIELD
+创建设置为当前计数值的字段。
+
+* COUNTLIST
+显示“计数”选项板以显示和管理计数的块。
+
+* COUNTLISTCLOSE
+关闭“计数”选项板。
+
+* COUNTNAVNEXT
+缩放到计数结果中的下一个对象。
+
+* COUNTNAVPREV
+缩放到计数结果中的上一个对象。
+
+* COUNTTABLE
+在图形中插入包含块名称和每个块的相应计数的表格。
+
+* CUI
+管理产品中自定义的用户界面元素。
+
+* CUIEXPORT
+将主 CUIx 文件中的自定义设置输出到企业或局部 CUIx 文件。
+
+* CUIIMPORT
+将企业或局部 CUIx 文件中的自定义设置输入到主 CUIx 文件。
+
+* CUILOAD
+加载自定义文件 (CUIx)。
+
+* CUIUNLOAD
+卸载 CUIx 文件。
+
+* CUSTOMIZE
+自定义工具选项板和工具选项板组。
+
+* CUTCLIP
+将选定的对象复制到剪贴板，并将其从图形中删除。
+
+* CVADD
+将控制点添加到 NURBS 曲面和样条曲线。
+
+* CVHIDE
+关闭所有 NURBS 曲面和曲线的控制点的显示。
+
+* CVREBUILD
+重新生成 NURBS 曲面和曲线的形状。
+
+* CVREMOVE
+删除 NURBS 曲面和曲线上的控制点。
+
+* CVSHOW
+显示指定 NURBS 曲面或曲线的控制点。
+
+* CYLINDER
+创建三维实体圆柱体。
+
+* DATAEXTRACTION
+从外部源提取图形数据，并将数据合并至数据提取表或外部文件。
+
+* DATALINK
+显示“数据链接”对话框。
+
+* DATALINKUPDATE
+将数据更新至已建立的外部数据链接或从已建立的外部数据链接更新数据。
+
+* DBCCLOSE
+关闭“选择数据对象”对话框（数据库连接管理器）。
+
+* DBCCONFIGURE
+打开“配置数据源”对话框（数据库连接管理器）
+
+* DBCDEFINELLT
+打开“选择数据库对象”对话框。
+
+* DBCDEFINELT
+打开“选择数据对象”对话框（数据库连接管理器）
+
+* DBCONNECT
+提供至外部数据库表的接口。
+
+* DBLIST
+列出图形中每个对象的数据库信息。
+
+* DCALIGNED
+约束不同对象上两个点之间的距离。
+
+* DCANGULAR
+约束直线段或多段线段之间的角度、由圆弧或多段线圆弧扫掠得到的角度，或对象上三个点之间的角度。
+
+* DCCONVERT
+将关联标注转换为标注约束。
+
+* DCDIAMETER
+约束圆或圆弧的直径。
+
+* DCDISPLAY
+显示或隐藏与对象选择集关联的动态约束。
+
+* DCFORM
+指定要创建的标注约束是动态约束还是注释性约束。
+
+* DCHORIZONTAL
+约束对象上的点或不同对象上两个点之间的 X 距离。
+
+* DCLINEAR
+根据尺寸界线原点和尺寸线的位置创建水平、垂直或旋转约束。
+
+* DCRADIUS
+约束圆或圆弧的半径。
+
+* DCVERTICAL
+约束对象上的点或不同对象上两个点之间的 Y 距离。
+
+* DDEDIT
+编辑单行文字、标注文字、属性定义和功能控制边框。
+
+* DDPTYPE
+指定点对象的显示样式及大小。
+
+* DDVPOINT
+设置三维观察方向。
+
+* DELAY
+在脚本中提供指定时间的暂停。
+
+* DELCONSTRAINT
+从对象的选择集中删除所有几何约束和标注约束。
+
+* DETACHURL
+删除图形中的超链接。
+
+* DGNADJUST
+调整 DGN 参考底图的淡入度、对比度和单色设置。
+
+* DGNATTACH
+将 DGN 文件作为参考底图插入到当前图形中。
+
+* DGNCLIP
+根据指定边界修剪选定 DGN 参考底图的显示。
+
+* DGNEXPORT
+从当前图形创建一个或多个 DGN 文件。
+
+* DGNIMPORT
+将数据从 DGN 文件输入到新的 DWG 文件或当前 DWG 文件，具体取决于 DGNIMPORTMODE 系统变量。
+
+* DGNLAYERS
+控制 DGN 参考底图中图层的显示。
+
+* DGNMAPPING
+允许用户创建和编辑用户定义的 DGN 映射设置。
+
+* DIGITALSIGN
+将数字签名附着到图形，如果进行了未经授权的更改，将删除该签名。
+
+* DIM
+使用单个命令创建多个标注和标注类型。
+
+* DIMALIGNED
+创建对齐线性标注。
+
+* DIMANGULAR
+创建角度标注。
+
+* DIMARC
+创建圆弧长度标注。
+
+* DIMBASELINE
+从上一个标注或选定标注的基线处创建线性标注、角度标注或坐标标注。
+
+* DIMBREAK
+在标注和尺寸界线与其他对象的相交处打断或恢复标注和尺寸界线。
+
+* DIMCENTER
+创建圆和圆弧的非关联中心标记或中心线。
+
+* DIMCONSTRAINT
+对选定对象或对象上的点应用标注约束，或将关联标注转换为标注约束。
+
+* DIMCONTINUE
+创建从上一个标注或选定标注的尺寸界线开始的标注。
+
+* DIMDIAMETER
+为圆或圆弧创建直径标注。
+
+* DIMDISASSOCIATE
+删除选定标注的关联性。
+
+* DIMEDIT
+编辑标注文字和尺寸界线。
+
+* DIMEX (Express Tool)
+将命名标注样式及其设置输出到外部文件。
+
+* DIMIM (Express Tool)
+从外部文件中输入命名标注样式及其设置。
+
+* DIMINSPECT
+为选定的标注添加或删除检验信息。
+
+* DIMJOGGED
+为圆和圆弧创建折弯标注。
+
+* DIMJOGLINE
+在线性标注或对齐标注中添加或删除折弯线。
+
+* DIMLINEAR
+创建线性标注。
+
+* DIMORDINATE
+创建坐标标注。
+
+* DIMOVERRIDE
+控制选定标注中使用的系统变量的替代值。
+
+* DIMRADIUS
+为圆或圆弧创建半径标注。
+
+* DIMREASSOC (Express Tool)
+将测量值恢复为替代或修改的标注文字。
+
+* DIMREASSOCIATE
+将选定的标注关联或重新关联至对象或对象上的点。
+
+* DIMREGEN
+更新所有关联标注的位置。
+
+* DIMROTATED
+创建旋转线性标注。
+
+* DIMSPACE
+调整线性标注或角度标注之间的间距。
+
+* DIMSTYLE
+创建和修改标注样式。
+
+* DIMTEDIT
+移动和旋转标注文字并重新定位尺寸线。
+
+* DIST
+测量两点之间的距离和角度。
+
+* DISTANTLIGHT
+创建平行光。
+
+* DIVIDE
+创建沿对象的长度或周长等间隔排列的点对象或块。
+
+* DONUT
+创建实心圆或较宽的环。
+
+* DOWNLOADMANAGER
+报告当前下载的状态。
+
+* DRAGMODE
+控制进行拖动的对象的显示方式。
+
+* DRAWINGRECOVERY
+显示可以在程序或系统故障后修复的图形文件的列表。
+
+* DRAWINGRECOVERYHIDE
+关闭“图形修复管理器”。
+
+* DRAWORDER
+更改图像和其他对象的绘制顺序。
+
+* DSETTINGS
+设置栅格和捕捉、极轴和对象捕捉追踪、对象捕捉模式、动态输入和快捷特性。
+
+* DUMPSHX (Express Tool)
+将现有 SHX（已编译）文件转换为等效的 SHP（已反编译）文件
+
+* DVIEW
+使用相机和目标来定义平行投影或透视视图。
+
+* DWFADJUST
+调整 DWF 或 DWFx 参考底图的淡入度、对比度和单色设置。
+
+* DWFATTACH
+将 DWF 或 DWFx 文件作为参考底图插入到当前图形中。
+
+* DWFCLIP
+根据指定边界修剪选定 DWF 或 DWFx 参考底图的显示。
+
+* DWFFORMAT
+设置特定命令中的输出默认格式为 DWF 或 DWFx。
+
+* DWFLAYERS
+控制 DWF 或 DWFx 参考底图中图层的显示。
+
+* DWGCONVERT
+为选定的图形文件转换图形格式版本。
+
+* DWGHISTORY
+将打开“图形历史记录”选项板，其中显示了由支持的云存储提供程序维护的当前图形的版本历史记录。
+
+* DWGHISTORYCLOSE
+关闭“图形历史”选项板。
+
+* DWGLOG (Express Tool)
+在访问每个图形文件时，为其创建和维护单个日志文件。
+
+* DWGPROPS
+设置和显示当前图形的文件特性。
+
+* DXBIN
+输入 AutoCAD DXB（二进制图形交换）文件。
+
+* EATTEDIT
+在块参照中编辑属性。
+
+* EATTEXT
+将块属性信息输出为表格或外部文件。
+
+* EDGE
+更改三维面的边的可见性。
+
+* EDGESURF
+在四条相邻的边或曲线之间创建网格。
+
+* EDITSHOT
+以运动或不运动方式编辑保存的命名视图。
+
+* EDITTIME (Express Tool)
+跟踪图形的活动编辑时长。
+
+* ELEV
+设置新对象的标高和拉伸厚度。
+
+* ELLIPSE
+创建椭圆或椭圆弧。
+
+* ERASE
+从图形中删除对象。
+
+* ETRANSMIT
+将一组文件打包以进行 Internet 传递。
+
+* EXOFFSET (Express Tool)
+偏移选定的对象。
+
+* EXPLAN (Express Tool)
+显示指定 UCS 的 XY 平面的正交视图，而不改变视图的放大。
+
+* EXPLODE
+将复合对象分解为其组件对象。
+
+* EXPORT
+以其他文件格式保存图形中的对象。
+
+* EXPORTDWF
+创建 DWF 文件，并使用户可于逐张图纸上设置各个页面设置替代。
+
+* EXPORTDWFX
+创建 DWFx 文件，从中可逐页设置各个页面设置替代。
+
+* EXPORTLAYOUT
+创建新图形的模型空间中当前布局的视觉表示。
+
+* EXPORTPDF
+从模型空间中的单个布局、所有布局或指定区域生成 PDF 文件。
+
+* EXPORTSETTINGS
+输出到 DWF、DWFx 或 PDF 文件时调整页面设置和图形选择。
+
+* EXPORTTOAUTOCAD
+创建可以在产品（如 AutoCAD）中打开的 AEC 文件的版本。
+
+* EXPRESSMENU (Express Tool)
+加载 AutoCAD Express Tools 菜单并在菜单栏上显示 Express 菜单。
+
+* EXPRESSTOOLS (Express Tool)
+加载 AutoCAD Express Tools 库，将 Express 文件夹放置在搜索路径中，并在菜单栏上加载并放置 Express 菜单。
+
+* EXTEND
+扩展对象以与其他对象的边相接。
+
+* EXTERNALREFERENCES
+打开“外部参照”选项板。
+
+* EXTERNALREFERENCESCLOSE
+关闭“外部参照”选项板。
+
+* EXTRIM (Express Tool)
+修剪由选定的多段线、直线、圆、圆弧、椭圆、文字、多行文字或属性定义指定的剪切边上的所有对象。
+
+* EXTRUDE
+从封闭区域的对象创建三维实体，或从具有开口的对象创建三维曲面。
+
+* FIELD
+创建带字段的多行文字对象，该对象可以随着字段值的更改而自动更新。
+
+* FILETAB
+显示位于绘图区域顶部的文件选项卡。
+
+* FILETABCLOSE
+隐藏位于绘图区域顶部的文件选项卡。
+
+* FILL
+控制诸如图案填充、二维实体和宽多段线等填充对象的显示。
+
+* FILLET
+两个二维对象的圆角或倒角，或者三维实体的相邻面。
+
+* FILLETEDGE
+为实体对象边建立圆角。
+
+* FILTER
+创建一个要求列表，对象必需符合这些要求才能包含在选择集中。
+
+* FIND
+查找指定的文字，然后可以选择性地将其替换为其他文字。
+
+* FLATSHOT
+基于当前视图创建所有三维对象的二维表示。
+
+* FLATTEN (Express Tool)
+将三维几何图形转换为投影的二维表示。
+
+* FREESPOT
+创建自由聚光灯（未指定目标的聚光灯）。
+
+* FREEWEB
+创建自由光域灯光（未指定目标的光域灯光）。
+
+* FS (Express Tool)
+创建接触选定对象的所有对象的选择集。
+
+* GATTE (Express Tool)
+全局更改用于指定块的全部实例的属性值。
+
+* GCCOINCIDENT
+约束两个点使其重合，或者约束一个点使其位于曲线（或曲线的延长线）上。
+
+* GCCOLLINEAR
+使两条或多条直线段沿同一直线方向。
+
+* GCCONCENTRIC
+将两个圆弧、圆或椭圆约束到同一个中心点。
+
+* GCEQUAL
+将选定圆弧和圆的尺寸重新调整为半径相同，或将选定直线的尺寸重新调整为长度相同。
+
+* GCFIX
+将点和曲线锁定在位。
+
+* GCHORIZONTAL
+使直线或点对位于与当前坐标系的 X 轴平行的位置。
+
+* GCPARALLEL
+使选定的直线彼此平行。
+
+* GCPERPENDICULAR
+使选定的直线位于彼此垂直的位置。
+
+* GCSMOOTH
+将样条曲线约束为连续，并与其他样条曲线、直线、圆弧或多段线保持 G2 连续性。
+
+* GCSYMMETRIC
+使选定对象受对称约束，相对于选定直线对称。
+
+* GCTANGENT
+将两条曲线约束为保持彼此相切或其延长线保持彼此相切。
+
+* GCVERTICAL
+使直线或点对位于与当前坐标系的 Y 轴平行的位置。
+
+* GEOGRAPHICLOCATION
+将地理位置信息指定给图形文件。
+
+* GEOLOCATEME
+显示或隐藏在模型空间中对应于您当前位置的坐标处的指示器。
+
+* GEOMAP
+将在当前视口中通过联机地图服务显示地图。
+
+* GEOMAPIMAGE
+将联机地图的一部分捕获到称为地图图像的对象，然后将其嵌入在绘图区域中。
+
+* GEOMAPIMAGEUPDATE
+从联机地图服务更新地图图像并且可以选择重置其分辨率，以便提供最佳的屏幕查看效果。
+
+* GEOMARKLATLONG
+将位置标记放置在由纬度和经度定义的位置上。
+
+* GEOMARKME
+将位置标记放置在绘图区域中与您当前位置相对应的坐标上。
+
+* GEOMARKPOINT
+将位置标记放置在模型空间中的指定点处。
+
+* GEOMARKPOSITION
+将位置标记放置在指定的位置。
+
+* GEOMCONSTRAINT
+应用对象之间或对象上的点之间的几何关系或使其永久保持。
+
+* GEOREMOVE
+从图形文件中删除所有地理位置信息。
+
+* GEOREORIENTMARKER
+更改模型空间中地理标记的北向和位置，而不更改其纬度和经度。
+
+* GETSEL (Express Tool)
+基于图层和对象类型过滤器，创建对象的选择集。
+
+* GOTOSTART
+从当前图形切换到“开始”选项卡。
+
+* GOTOURL
+打开文件或与附加到对象的超链接关联的 Web 页。
+
+* GRADIENT
+使用渐变填充填充封闭区域或选定对象。
+
+* GRAPHICSCONFIG
+将硬件加速设置为开或关，并提供对显示性能选项的访问。
+
+* GRAPHSCR
+将使文本窗口显示在应用程序窗口的后面。
+
+* GRID
+在当前视口中显示栅格图案。
+
+* GROUP
+创建和管理已保存的对象集（称为编组）。
+
+* GROUPEDIT
+将对象添加到选定的组以及从选定组中删除对象，或重命名选定的组。
+
+* HATCH
+使用填充图案、实体填充或渐变填充来填充封闭区域或选定对象。
+
+* HATCHEDIT
+修改现有的图案填充或填充。
+
+* HATCHGENERATEBOUNDARY
+围绕选定的图案填充创建非关联多段线。
+
+* HATCHSETBOUNDARY
+重新定义选定的图案填充或填充以符合不同的闭合边界。
+
+* HATCHSETORIGIN
+控制选定图案填充的填充图案生成的起始位置。
+
+* HATCHTOBACK
+将图形中所有图案填充的绘图次序设定为在所有其他对象之后。
+
+* HELIX
+创建二维螺旋或三维弹簧。
+
+* HELP
+显示联机或脱机帮助系统。
+
+* HIDE
+在二维线框视觉样式中不显示隐藏线的情况下，显示三维模型。
+
+* HIDEOBJECTS
+暂时不显示选定对象。
+
+* HIDEPALETTES
+隐藏所有显示的选项板及功能区和图形选项卡。
+
+* HIGHLIGHTNEW
+控制是否使用橙色点在用户界面中亮显产品更新中新增和改进的功能。
+
+* HLSETTINGS
+设置诸如隐藏线的特性的显示。
+
+* HYPERLINK
+将超链接附着到对象或修改现有超链接。
+
+* HYPERLINKOPTIONS
+控制超链接光标、工具提示和快捷菜单的显示。
+
+* ID
+显示指定位置的 UCS 坐标值。
+
+* IGESEXPORT
+将当前图形中的选定对象保存为新的 IGES（*.igs 或 *.iges）文件。
+
+* IGESIMPORT
+将数据从 IGES（*.igs 或 *.iges）文件输入到当前图形中。
+
+* IMAGE
+显示“外部参照”选项板。
+
+* IMAGEADJUST
+控制图像的亮度、对比度和淡入度值。
+
+* IMAGEAPP (Express Tool)
+为 IMAGEEDIT 指定图像编辑程序。
+
+* IMAGEATTACH
+将参照插入图像文件中。
+
+* IMAGECLIP
+根据指定边界修剪选定图像的显示。
+
+* IMAGEEDIT (Express Tool)
+启动通过 IMAGEAPP 为选定图像指定的图像编辑程序。
+
+* IMAGEQUALITY
+控制图像的显示质量。
+
+* IMPORT
+将不同格式的文件输入当前图形中。
+
+* IMPRINT
+压印三维实体或曲面上的二维几何图形，从而在平面上创建其他边。
+
+* INPUTSEARCHOPTIONS
+可以打开控制命令行建议列表（用于命令、系统变量和命名对象）的显示设置的对话框。
+
+* INSERT
+显示“块”选项板，可用于将块和图形插入到当前图形中。
+
+* INSERTOBJ
+插入链接或内嵌对象。
+
+* INTERFERE
+通过两组选定三维实体之间的干涉创建临时三维实体。
+
+* INTERSECT
+通过重叠实体、曲面或面域创建三维实体、曲面或二维面域。
+
+* ISODRAFT
+启用或禁用等轴测草图设置，然后指定当前二维等轴测草图平面。
+
+* ISOLATEOBJECTS
+暂时不显示选定对象之外的所有对象。
+
+* ISOPLANE
+指定二维等轴测图形的当前平面。
+
+* JOIN
+合并线性和弯曲对象的端点，以便创建单个对象。
+
+* JPGOUT
+将选定对象以 JPEG 文件格式保存到文件中。
+
+* JULIAN (Express Tool)
+包含 DATE 工具和多个 AutoCAD 公历日期和日历日期转化例程。
+
+* JUSTIFYTEXT
+更改选定文字对象的对正点而不更改其位置。
+
+* LAYCUR
+将选定对象的图层特性更改为当前图层的特性。
+
+* LAYDEL
+删除图层上的所有对象并清理该图层。
+
+* LAYER
+管理图层和图层特性。
+
+* LAYERCLOSE
+关闭图层特性管理器。
+
+* LAYERP
+放弃对图层设置的上一个或上一组更改。
+
+* LAYERPALETTE
+打开无模式图层特性管理器。
+
+* LAYERPMODE
+打开和关闭追踪 LAYERP 命令对使用的图层设置所做的更改。
+
+* LAYERSTATE
+保存、恢复和管理称为图层状态的图层设置的集合。
+
+* LAYERSTATESAVE
+显示“要保存的新图层状态”对话框，从中可以提供新图层状态的名称和说明。
+
+* LAYFRZ
+冻结选定对象所在的图层。
+
+* LAYISO
+隐藏或锁定除选定对象所在图层外的所有图层。
+
+* LAYLCK
+锁定选定对象所在的图层。
+
+* LAYMCH
+更改选定对象所在的图层，以使其匹配目标图层。
+
+* LAYMCUR
+将当前图层设定为选定对象所在的图层。
+
+* LAYMRG
+将选定图层合并为一个目标图层，并从图形中将它们删除。
+
+* LAYOFF
+关闭选定对象所在的图层。
+
+* LAYON
+打开图形中的所有图层。
+
+* LAYOUT
+创建和修改图形布局。
+
+* LAYOUTMERGE (Express Tool)
+将指定的布局组合为单个布局。
+
+* LAYOUTWIZARD
+创建新的布局选项卡并指定页面和打印设置。
+
+* LAYTHW
+解冻图形中的所有图层。
+
+* LAYTRANS
+当前图形中的图层转换为指定的图层标准。
+
+* LAYULK
+解锁选定对象所在的图层。
+
+* LAYUNISO
+恢复使用 LAYISO 命令隐藏或锁定的所有图层
+
+* LAYVPI
+冻结除当前视口外的所有布局视口中的选定图层。
+
+* LAYWALK
+显示选定图层上的对象并隐藏所有其他图层上的对象。
+
+* LEADER
+创建连接注释与特征的线。
+
+* LENGTHEN
+更改对象的长度和圆弧的包含角。
+
+* LIGHT
+创建光源。
+
+* LIGHTLIST
+显示用于列出模型中所有光源的“模型中的光源”选项板。
+
+* LIGHTLISTCLOSE
+关闭“模型中的光源”选项板。
+
+* LIMITS
+在绘图区域中设置不可见的矩形边界，该边界可以限制栅格显示并限制单击或输入点位置。
+
+* LINE
+创建一系列连续的直线段。每条线段都是可以单独进行编辑的直线对象。
+
+* LINETYPE
+加载、设置和修改线型。
+
+* LIST
+为选定对象显示特性数据。
+
+* LIVESECTION
+打开选定截面对象的活动截面。
+
+* LOAD
+使编译的形 (SHX) 文件中的符号可供 SHAPE 命令使用。
+
+* LOFT
+在若干横截面之间的空间中创建三维实体或曲面。
+
+* LOGFILEOFF
+关闭通过 LOGFILEON 命令打开的命令历史记录日志文件。
+
+* LOGFILEON
+将命令历史记录的内容写入到文件中。
+
+* LSP (Express Tool)
+显示所有可用 AutoLISP 命令、函数和变量的列表。
+
+* LSPSURF (Express Tool)
+按单个函数显示 AutoLISP 文件的内容。
+
+* LTSCALE
+设定全局线型比例因子。
+
+* LWEIGHT
+设置当前线宽、线宽显示选项和线宽单位。
+
+* MAKELISPAPP
+将一个或多个 AutoLISP (LSP) 源文件编译到可分发给用户并保护代码的应用程序 (VLX) 文件中。
+
+* MARKUP
+打开标记集管理器。
+
+* MARKUPCLOSE
+关闭标记集管理器。
+
+* MASSPROP
+计算选定二维面域或三维实体的质量特性。
+
+* MATBROWSERCLOSE
+关闭材质浏览器。
+
+* MATBROWSEROPEN
+打开材质浏览器。
+
+* MATCHCELL
+将选定表格单元的特性应用于其他表格单元。
+
+* MATCHPROP
+将选定对象的特性应用于其他对象。
+
+* MATEDITORCLOSE
+关闭材质编辑器。
+
+* MATEDITOROPEN
+打开材质编辑器。
+
+* MATERIALASSIGN
+将在 CMATERIAL 系统变量中定义的材质指定给所选择的对象。
+
+* MATERIALATTACH
+将材质与图层关联。
+
+* MATERIALMAP
+调整将纹理贴图到面或对象的方式。
+
+* MATERIALS
+打开材质浏览器。
+
+* MATERIALSCLOSE
+关闭材质浏览器。
+
+* MEASURE
+沿对象的长度或周长按测定间隔创建点对象或块。
+
+* MEASUREGEOM
+测量选定对象的距离、半径、角度、面积和体积，测量一系列点或者动态测量。
+
+* MENU
+旧式的。加载自定义文件。
+
+* MESH
+创建三维网格图元对象，例如长方体、圆锥体、圆柱体、棱锥体、球体、楔体或圆环体。
+
+* MESHCAP
+创建用于连接开放边的网格面。
+
+* MESHCOLLAPSE
+合并选定网格面或边的顶点。
+
+* MESHCREASE
+锐化选定网格子对象的边。
+
+* MESHEXTRUDE
+将网格面延伸到三维空间。
+
+* MESHMERGE
+将相邻面合并为单个面。
+
+* MESHOPTIONS
+显示“网格镶嵌选项”对话框，此对话框用于控制将现有对象转换为网格对象时的默认设置。
+
+* MESHPRIMITIVEOPTIONS
+显示“网格图元选项”对话框，此对话框用于设置图元网格对象的镶嵌默认值。
+
+* MESHREFINE
+成倍增加选定网格对象或面中的面数。
+
+* MESHSMOOTH
+将三维对象（例如多边形网格、曲面和实体）转换为网格对象。
+
+* MESHSMOOTHLESS
+将网格对象的平滑度降低一级。
+
+* MESHSMOOTHMORE
+将网格对象的平滑度提高一级。
+
+* MESHSPIN
+旋转两个三角形网格面的相邻边。
+
+* MESHSPLIT
+将一个网格面拆分为两个面。
+
+* MESHUNCREASE
+删除选定网格面、边或顶点的锐化。
+
+* MIGRATEMATERIALS
+在工具选项板中查找任何传统材质，并将这些材质转换为常规类型。
+
+* MINSERT
+在矩形阵列中插入一个块的多个实例。
+
+* MIRROR
+创建选定对象的镜像副本。
+
+* MIRROR3D
+创建镜像平面上选定三维对象的镜像副本。
+
+* MKLTYPE (Express Tool)
+基于选定对象创建线型定义，并将它们存储在指定的线型定义 (LIN) 文件中。
+
+* MKSHAPE (Express Tool)
+基于选定对象创建形状定义。
+
+* MLEADER
+创建多重引线对象。
+
+* MLEADERALIGN
+对齐并间隔排列选定的多重引线对象。
+
+* MLEADERCOLLECT
+将包含块的选定多重引线整理到行或列中，并通过单引线显示结果。
+
+* MLEADEREDIT
+将引线添加至多重引线对象，或从多重引线对象中删除引线。
+
+* MLEADERSTYLE
+创建和修改多重引线样式。
+
+* MLEDIT
+编辑多线交点、打断点和顶点。
+
+* MLINE
+创建多条平行线。
+
+* MLSTYLE
+创建、修改和管理多线样式。
+
+* MOCORO (Express Tool)
+使用单个命令移动、复制、旋转和缩放选定的对象。
+
+* MODEL
+从命名的布局选项卡切换到“模型”选项卡。
+
+* MOVE
+在指定方向上按指定距离移动对象。
+
+* MOVEBAK (Express Tool)
+更改图形备份 (BAK) 文件的目标文件夹。
+
+* MPEDIT (Express Tool)
+编辑多个多段线；还将多个直线和圆弧对象转换为多段线对象。
+
+* MREDO
+恢复之前几个用 UNDO 或 U 命令放弃的效果。
+
+* MSLIDE
+创建当前模型视口或当前布局的幻灯片文件。
+
+* MSPACE
+在布局中，从图纸空间切换到布局视口中的模型空间。
+
+* MSTRETCH (Express Tool)
+拉伸具有多个交叉窗口和交叉多边形的对象。
+
+* MTEDIT
+编辑多行文字。
+
+* MTEXT
+创建多行文字对象。
+
+* MULTIPLE
+重复指定下一条命令直至被取消。
+
+* MVIEW
+创建并控制布局视口。
+
+* MVSETUP
+设置图形规格。
+
+* NAVBAR
+提供对通用界面中的查看工具的访问。
+
+* NAVSMOTION
+为出于设计检查、演示以及书签样式导航目的而创建和回放电影式相机动画提供屏幕上显示。
+
+* NAVSMOTIONCLOSE
+关闭 ShowMotion 界面，可以在其中通过选择命名视图在图形中导航。
+
+* NAVSWHEEL
+提供对可通过光标快速访问的增强导航工具的访问。
+
+* NAVVCUBE
+指示当前查看方向。拖动或单击 ViewCube 可旋转场景。
+
+* NCOPY
+复制包含在外部参照、块或 DGN 参考底图中的对象。
+
+* NETLOAD
+加载 .NET 应用程序。
+
+* NEW
+创建新图形。
+
+* NEWSHEETSET
+创建用于管理图形布局、文件路径和工程数据的新图纸集数据文件。
+
+* NEWSHOT
+创建包含运动的命名视图，该视图将在使用 ShowMotion 查看时回放
+
+* NEWVIEW
+通过当前视口中的显示或者定义矩形窗口，保存新的命名视图。
+
+* OBJECTSCALE
+为注释性对象添加或删除支持的比例。
+
+* OFFSET
+创建同心圆、平行线和平行曲线。
+
+* OFFSETEDGE
+创建闭合多段线或样条曲线对象，该对象在三维实体或曲面上从选定平整面的边以指定距离偏移。
+
+* OLECONVERT
+为嵌入的 OLE 对象指定不同的源应用程序，并控制是否用图标来表示该 OLE 对象。
+
+* OLELINKS
+更新、更改和取消所选的链接 OLE 对象。
+
+* OLEOPEN
+在选定 OLE 对象的源应用程序中打开该对象。
+
+* OLERESET
+将所选的 OLE 对象恢复为其原始大小和形状。
+
+* OLESCALE
+控制选定的 OLE 对象的大小、比例和其他特性。
+
+* OOPS
+恢复删除的对象。
+
+* OPEN
+打开现有的图形文件。
+
+* OPENDWFMARKUP
+打开包含标记的 DWF 或 DWFx 文件。
+
+* OPENFROMWEBMOBILE
+从联机 Autodesk Account 打开图形文件。
+
+* OPENSHEETSET
+打开选定的图纸集。
+
+* OPTIONS
+自定义程序设置。
+
+* ORTHO
+约束光标在水平方向或垂直方向移动。
+
+* OSNAP
+设置执行对象捕捉模式。
+
+* OVERKILL
+删除重复或重叠的直线、圆弧和多段线。此外，合并局部重叠或连续的直线、圆弧和多段线。
+
+* PAGESETUP
+控制每个新建布局的页面布局、打印设备、图纸尺寸和其他设置。
+
+* PAN
+改变视图而不更改查看方向或比例。
+
+* PARAMETERS
+打开“参数管理器”选项板，它包括当前图形中的所有标注约束参数、参照参数和用户变量。
+
+* PARAMETERSCLOSE
+关闭“参数管理器”选项板。
+
+* PARTIALOAD
+将附加几何图形加载到局部打开的图形中。
+
+* PARTIALOPEN
+将选定视图或图层中的几何图形和命名对象加载到图形中。
+
+* PASTEASHYPERLINK
+创建到文件的超链接，并将其与选定的对象关联。
+
+* PASTEBLOCK
+将剪贴板中的对象作为块粘贴到当前图形中。
+
+* PASTECLIP
+将剪贴板中的对象粘贴到当前图形中。
+
+* PASTEORIG
+使用原坐标将剪贴板中的对象粘贴到当前图形中。
+
+* PASTESPEC
+将剪贴板中的对象粘贴到当前图形中，并控制数据的格式。
+
+* PCEXTRACTCENTERLINE
+穿过点云中的圆柱段中心轴创建一条线。
+
+* PCEXTRACTCORNER
+在点云中三个平面线段的交点处创建点对象。
+
+* PCEXTRACTEDGE
+类推两个相邻平面线段的交点，然后沿着边创建一条线。
+
+* PCEXTRACTSECTION
+通过点云从截面生成二维几何图形。
+
+* PCINWIZARD
+显示向导，将 PCP 和 PC2 配置文件打印设置输入到模型或当前布局中。
+
+* PDFADJUST
+调整 PDF 参考底图的淡入度、对比度和单色设置。
+
+* PDFATTACH
+将 PDF 文件作为参考底图插入到当前图形中。
+
+* PDFCLIP
+根据指定边界修剪选定 PDF 参考底图的显示。
+
+* PDFIMPORT
+从指定的 PDF 文件输入几何图形、填充、光栅图像和 TrueType 文字对象。
+
+* PDFLAYERS
+控制 PDF 参考底图中图层的显示。
+
+* PDFSHXTEXT
+将从 PDF 文件中输入的 SHX 几何图形转换为单个多行文字对象。
+
+* PEDIT
+编辑多段线、要合并到多段线的对象以及相关对象。
+
+* PFACE
+逐个顶点创建三维多面网格。
+
+* PLAN
+显示指定用户坐标系的 XY 平面的正交视图。
+
+* PLANESURF
+创建平面曲面。
+
+* PLINE
+创建二维多段线，它是由直线段和圆弧段组成的单个对象。
+
+* PLOT
+将图形打印到绘图仪、打印机或文件。
+
+* PLOTSTAMP
+将打印戳记和类似日期、时间和比例的信息一起放在每个图形的指定角，并将其记录到文件中。
+
+* PLOTSTYLE
+控制附着到当前布局、并可指定给对象的命名打印样式。
+
+* PLOTTERMANAGER
+显示绘图仪管理器，从中可以添加或编辑绘图仪配置。
+
+* PLT2DWG (Express Tool)
+将传统 HPGL 文件输入到当前图形中，并保留所有颜色。
+
+* PMTOGGLE
+控制性能录制器处于打开还是关闭状态。
+
+* PNGOUT
+将选定对象以便携式网络图形格式保存到文件中。
+
+* POINT
+创建点对象。
+
+* POINTCLOUDATTACH
+将点云扫描 (RCS）或项目文件 (RCP) 插入到当前图形中。
+
+* POINTCLOUDCOLORMAP
+显示“点云颜色映射”对话框，用于定义强度、标高和分类点云样式化的设置。
+
+* POINTCLOUDCROP
+将选定的点云裁剪为指定的多边形、矩形或圆形边界。
+
+* POINTCLOUDCROPSTATE
+保存、恢复和删除点云裁剪状态。
+
+* POINTCLOUDMANAGER
+显示“点云管理器”选项板，用于控制点云项目、面域和扫描的显示。
+
+* POINTCLOUDMANAGERCLOSE
+关闭点云管理器。
+
+* POINTCLOUDSTYLIZE
+控制点云的颜色。
+
+* POINTCLOUDUNCROP
+从选定的点云删除所有修剪区域。
+
+* POINTLIGHT
+创建可从所在位置向所有方向发射光线的点光源。
+
+* POLYGON
+创建等边闭合多段线。
+
+* POLYSOLID
+创建墙或一系列墙形状的三维实体。
+
+* PRESSPULL
+通过拉伸和偏移动态修改对象。
+
+* PREVIEW
+将要打印图形时显示此图形。
+
+* PROJECTGEOMETRY
+从不同方向将点、直线或曲线投影到三维实体或曲面上。
+
+* PROPERTIES
+控制现有对象的特性。
+
+* PROPERTIESCLOSE
+关闭“特性”选项板。
+
+* PROPULATE (Express Tool)
+更新、列出或清除“图形特性”数据。
+
+* PSBSCALE (Express Tool)
+指定或更新块对象相对于图纸空间的比例。
+
+* PSETUPIN
+将用户定义的页面设置输入到新的图形布局中。
+
+* PSOUT
+从 DWG 文件创建 PostScript 文件。
+
+* PSPACE
+在布局中，从布局视口中的模型空间切换到图纸空间。
+
+* PSTSCALE (Express Tool)
+指定或更新文字对象相对于图纸空间的比例。
+
+* PTYPE
+指定点对象的显示样式及大小。
+
+* PUBLISH
+将图形发布为 DWF、DWFx 和 PDF 文件，或发布到打印机或绘图仪。
+
+* PURGE
+删除图形中未使用的项目，例如块定义和图层。
+
+* PURGEAECDATA
+在命令提示下删除图形中不可见的 AEC 数据（AutoCAD Architecture 和 AutoCAD Civil 3D 自定义对象）。
+
+* PUSHTODOCSCLOSE
+打开“Push to Autodesk Docs”选项板。
+
+* PUSHTODOCSOPEN
+将打开“Push to Autodesk Docs”选项板，从中可以选择要作为 PDF 上载到 Autodesk Docs 的 AutoCAD 布局。
+
+* PYRAMID
+创建三维实体棱锥体。
+
+* QCCLOSE
+关闭“快速计算器”计算器。
+
+* QDIM
+从选定对象快速创建一系列标注。
+
+* QLATTACH (Express Tool)
+将引线附着到多行文字、公差或块参照对象。
+
+* QLATTACHSET (Express Tool)
+将引线全局附着到多行文字、公差或块参照对象。
+
+* QLDETACHSET (Express Tool)
+从多行文字、公差或块参照对象拆离引线。
+
+* QLEADER
+创建引线和引线注释。
+
+* QNEW
+从指定的图形样板文件启动新图形。
+
+* QQUIT (Express Tool)
+关闭所有打开的图形，然后退出。
+
+* QSAVE
+使用指定的默认文件格式保存当前图形。
+
+* QSELECT
+根据过滤条件创建选择集。
+
+* QTEXT
+控制文字和属性对象的显示和打印。
+
+* QUICKCALC
+打开“快速计算器”计算器。
+
+* QUICKCUI
+以收拢状态显示自定义用户界面编辑器。
+
+* QUICKPROPERTIES
+为选定的对象显示快捷特性数据。
+
+* QUIT
+退出程序。
+
+* QVDRAWING
+使用预览图像显示打开的图形和图形中的布局。
+
+* QVDRAWINGCLOSE
+关闭打开的图形及其布局的预览图像。
+
+* QVLAYOUT
+显示当前图形中模型空间和布局的预览图像。
+
+* QVLAYOUTCLOSE
+关闭当前图形中模型空间和布局的预览图像
+
+* RAY
+创建始于一点并无限延伸的线性对象。
+
+* RECOVER
+修复损坏的图形文件，然后重新打开。
+
+* RECOVERALL
+修复损坏的图形文件以及所有附着的外部参照。
+
+* RECTANG
+创建矩形多段线。
+
+* REDEFINE
+恢复被 UNDEFINE 替代的 AutoCAD 内部命令。
+
+* REDIR (Express Tool)
+重定义外部参照、图像、形状、样式和 rtext 中硬编码的路径。
+
+* REDIRMODE (Express Tool)
+通过指定包含哪些对象类型，设置 REDIR Express Tool 的选项。
+
+* REDO
+恢复上一个用 UNDO 或 U 命令放弃的效果。
+
+* REDRAW
+刷新当前视口中的显示。
+
+* REDRAWALL
+刷新所有视口中的显示。
+
+* REFCLOSE
+保存或放弃在位编辑参照（外部参照或块定义）时所做的更改。
+
+* REFEDIT
+直接在当前图形中编辑外部参照或块定义。
+
+* REFSET
+在位编辑参照（外部参照或块定义）时从工作集添加或删除对象。
+
+* REGEN
+在当前视口内重新生成图形。
+
+* REGEN3
+在图形中重新生成视图，以修复三维实体和曲面显示中的异常问题。
+
+* REGENALL
+重生成整个图形并刷新所有视口。
+
+* REGENAUTO
+旧式的。控制图形的自动重生成。
+
+* REGION
+将封闭区域的对象转换为二维面域对象。
+
+* REINIT
+重新初始化数字化仪、数字化仪的输入/输出端口和程序参数文件。
+
+* RENAME
+更改指定给项目（例如图层和标注样式）的名称。
+
+* RENDER
+创建三维实体或曲面模型的真实照片级图像或真实着色图像。
+
+* RENDERCROP
+渲染视口内指定的矩形区域（称为修剪窗口）。
+
+* RENDERENVIRONMENT
+控制与渲染环境相关的设置。
+
+* RENDERENVIRONMENTCLOSE
+关闭“渲染环境和曝光”选项板。
+
+* RENDEREXPOSURE
+控制与渲染环境相关的设置。
+
+* RENDEREXPOSURECLOSE
+关闭“渲染环境和曝光”选项板。
+
+* RENDERONLINE
+使用 Autodesk 联机资源来创建三维实体或曲面模型的图像。
+
+* RENDERPRESETS
+指定渲染预设和可重复使用的渲染参数，以便渲染图像。
+
+* RENDERPRESETSCLOSE
+关闭“渲染预设管理器”选项板。
+
+* RENDERWIN
+旧式的。显示“渲染”窗口而不启动渲染操作。
+
+* RENDERWINDOW
+显示“渲染”窗口而不启动渲染操作。
+
+* RENDERWINDOWCLOSE
+关闭“渲染”窗口。
+
+* REPURLS (Express Tool)
+在附着到所有选定对象的超链接中使用的 URL 中，查找和替换指定的文本字符串。
+
+* RESETBLOCK
+将一个或多个动态块参照重置为块定义的默认值。
+
+* RESUME
+继续执行被中断的脚本文件。
+
+* REVCLOUD
+创建或修改修订云线。
+
+* REVCLOUDPROPERTIES
+控制选定修订云线中圆弧的近似弦长。
+
+* REVERSE
+反转选定直线、多段线、样条曲线和螺旋的顶点，对于具有包含文字的线型或具有不同起点宽度和端点宽度的宽多段线，此操作非常有用。
+
+* REVERT (Express Tool)
+关闭并重新打开当前图形。
+
+* REVOLVE
+通过绕轴扫掠对象创建三维实体或曲面。
+
+* REVSURF
+通过绕轴旋转轮廓来创建网格。
+
+* RIBBON
+显示功能区。
+
+* RIBBONCLOSE
+隐藏功能区。
+
+* ROTATE
+绕基点旋转对象。
+
+* ROTATE3D
+绕三维轴移动对象。
+
+* RPREF
+显示用于配置渲染设置的“渲染预设管理器”选项板。
+
+* RPREFCLOSE
+关闭“渲染设置管理器”选项板。
+
+* RSCRIPT
+重复执行脚本文件。
+
+* RTEDIT (Express Tool)
+编辑现有的远程文字 (rtext) 对象。
+
+* RTEXT (Express Tool)
+创建远程文字 (rtext) 对象。
+
+* RTUCS (Express Tool)
+使用定点设备动态旋转 UCS。
+
+* RULESURF
+创建用于表示两条直线或曲线之间的曲面的网格。
+
+* SAVE
+使用不同的文件名或位置保存当前图形，而不更改当前图形文件。
+
+* SAVEALL (Express Tool)
+保存所有打开的图形。
+
+* SAVEAS
+使用新文件名或位置保存当前图形的副本。
+
+* SAVEIMG
+将渲染图像保存到文件中。
+
+* SAVETOWEBMOBILE
+将当前图形的副本保存到 Autodesk Account。
+
+* SCALE
+放大或缩小选定对象，使缩放后对象的比例保持不变。
+
+* SCALELISTEDIT
+控制可用于布局视口、页面布局和打印的缩放比例的列表。
+
+* SCALETEXT
+增大或缩小选定文字对象而不更改其位置。
+
+* SCRIPT
+从脚本文件执行一系列命令。
+
+* SCRIPTCALL
+从脚本文件执行一系列命令和嵌套脚本。
+
+* SECTION
+使用平面与三维实体、曲面或网格的交点创建二维面域对象。
+
+* SECTIONPLANE
+以通过三维对象和点云创建剪切平面的方式创建截面对象。
+
+* SECTIONPLANEJOG
+将折弯线段添加至截面对象。
+
+* SECTIONPLANESETTINGS
+设置选定截面平面的显示选项。
+
+* SECTIONPLANETOBLOCK
+将选定截面平面保存为二维或三维块。
+
+* SECTIONSPINNERS
+显示对话框，以便为“截面平面”功能区上下文选项卡中的“截面对象偏移”和“切片厚度”控件设置增量值。
+
+* SECURITYOPTIONS
+控制在 AutoCAD 中运行可执行文件的安全性限制。
+
+* SELECT
+将选定对象置于“上一个”选择集中。
+
+* SELECTSIMILAR
+查找当前图形中与选定对象特性匹配的所有对象，然后将它们添加到选择集中。
+
+* SETBYLAYER
+将选定对象的特性替代更改为“ByLayer”。
+
+* SETVAR
+列出或更改系统变量的值。
+
+* SHADEMODE
+控制三维对象的显示。
+
+* SHAPE
+从使用 LOAD 加载的形文件（SHX 文件）中插入形。
+
+* SHARE
+共享指向当前图形副本的链接，以在 AutoCAD Web 应用程序中查看或编辑。图形副本包含所有外部参照和图像。
+
+* SHAREDVIEWS
+打开“共享视图”选项板。
+
+* SHAREDVIEWSCLOSE
+关闭“共享视图”选项板。
+
+* SHAREVIEW
+发布当前空间或整个图形的表示，以供联机查看和共享。
+
+* SHEETSET
+打开图纸集管理器。
+
+* SHEETSETHIDE
+关闭图纸集管理器。
+
+* SHELL
+访问操作系统命令。
+
+* SHOWPALETTES
+恢复隐藏的选项板、功能区和图形选项卡的显示。
+
+* SHOWRENDERGALLERY
+显示在 Autodesk 帐户中渲染和存储的图像。
+
+* SHOWURLS (Express Tool)
+显示包含在图形中的所有附着的 URL，并允许对它们进行编辑。
+
+* SHP2BLK (Express Tool)
+使用等效的块转换选定形状对象的所有实例。
+
+* SIGVALIDATE
+显示有关附着到图形文件的数字签名的信息。
+
+* SKETCH
+创建一系列徒手绘制的线段。
+
+* SLICE
+通过剖切或分割现有对象，创建新的三维实体和曲面。
+
+* SNAP
+限制光标按指定的间距移动。
+
+* SOLDRAW
+在用 SOLVIEW 命令创建的布局视口中生成轮廓和截面。
+
+* SOLID
+创建实体填充的三角形和四边形。
+
+* SOLIDEDIT
+编辑三维实体对象的面和边。
+
+* SOLPROF
+创建三维实体的二维轮廓图，以显示在布局视口中。
+
+* SOLVIEW
+自动为三维实体创建正交视图、图层和布局视口。
+
+* SPACETRANS
+计算布局中等效的模型空间和图纸空间距离。
+
+* SPELL
+检查图形中的拼写。
+
+* SPHERE
+创建三维实体球体。
+
+* SPLINE
+创建经过或靠近一组拟合点或由控制框的顶点定义的平滑曲线。
+
+* SPLINEDIT
+修改样条曲线的参数或将样条拟合多段线转换为样条曲线。
+
+* SPOTLIGHT
+创建可发射定向圆锥形光柱的聚光灯。
+
+* SSX (Express Tool)
+基于选定的对象创建选择集。
+
+* STANDARDS
+管理标准文件与图形之间的关联性
+
+* STATUS
+显示图形的统计信息、模式和范围。
+
+* STLOUT
+以可以用于立体平板印刷设备的格式存储三维实体和无间隙网格。
+
+* STRETCH
+拉伸与选择窗口或多边形交叉的对象。
+
+* STYLE
+创建、修改或指定文字样式。
+
+* STYLESMANAGER
+显示打印样式管理器，从中可以修改打印样式表。
+
+* SUBTRACT
+通过从另一个对象减去一个重叠面域或三维实体来创建为新对象。
+
+* SUNPROPERTIES
+显示“日光特性”选项板。
+
+* SUNPROPERTIESCLOSE
+关闭“阳光特性”选项板
+
+* SUPERHATCH (Express Tool)
+使用选定的图像、块、外部参照或区域覆盖对象对区域进行图案填充。
+
+* SURFBLEND
+在两个现有曲面之间创建连续的过渡曲面。
+
+* SURFEXTEND
+按指定的距离拉长曲面。
+
+* SURFEXTRACTCURVE
+在曲面和三维实体上创建曲线。
+
+* SURFFILLET
+在两个其他曲面之间创建圆角曲面。
+
+* SURFNETWORK
+在 U 方向和 V 方向（包括曲面和实体边子对象）的几条曲线之间的空间中创建曲面。
+
+* SURFOFFSET
+创建与原始曲面相距指定距离的平行曲面。
+
+* SURFPATCH
+通过在形成闭环的曲面边上拟合一个封口来创建新曲面。
+
+* SURFSCULPT
+修剪和合并完全封闭体积的一组曲面或网格以创建三维实体。
+
+* SURFTRIM
+修剪与其他曲面或其他类型的几何图形相交的曲面部分。
+
+* SURFUNTRIM
+替换由 SURFTRIM 命令删除的曲面区域。
+
+* SWEEP
+通过沿开放或闭合路径扫掠二维对象或子对象来创建三维实体或三维曲面。
+
+* SYSVARMONITOR
+监视系统变量的列表，并在列表中任何一个系统变量发生更改时发送通知。
+
+* SYSVDLG (Express Tool)
+允许您查看、编辑、保存和恢复系统变量设置。
+
+* SYSWINDOWS
+应用程序窗口与外部应用程序共享时，排列窗口和图标。
+
+* TABLE
+创建空的表格对象。
+
+* TABLEDIT
+编辑表格单元中的文字。
+
+* TABLEEXPORT
+以 CSV 文件格式从表格对象中输出数据。
+
+* TABLESTYLE
+创建、修改或指定表格样式。
+
+* TABLET
+校准、配置、打开和关闭已连接的数字化仪。
+
+* TABSURF
+从沿直线路径扫掠的直线或曲线创建网格。
+
+* TARGETPOINT
+创建目标点光源。
+
+* TASKBAR
+控制多个打开的图形在 Windows 任务栏上是单独显示还是被编组。
+
+* TCASE (Express Tool)
+更改选定文字、多行文字、属性和标注文字的大小写。
+
+* TCIRCLE (Express Tool)
+围绕每个选定的文字或多行文字对象创建圆、长孔形或矩形。
+
+* TCOUNT (Express Tool)
+将连续编号作为前缀、后缀或替换文字添加到文字和多行文字对象。
+
+* TEXT
+创建单行文字对象。
+
+* TEXTALIGN
+垂直、水平或倾斜对齐多个文字对象。
+
+* TEXTEDIT
+编辑选定的多行文字或单行文字对象，或标注对象上的文字。
+
+* TEXTFIT (Express Tool)
+基于新的起点和终点，展开或收拢文字对象的宽度。
+
+* TEXTMASK (Express Tool)
+在选定文字或多行文字对象的后面创建空白区域。
+
+* TEXTSCR
+打开一个文本窗口，该窗口将显示当前任务的提示和命令行条目的历史记录。
+
+* TEXTTOFRONT
+将文字、引线和标注置于图形中的其他所有对象之前。
+
+* TEXTUNMASK (Express Tool)
+从通过 TEXTMASK 进行遮罩的选定文字或多行文字中删除遮罩。
+
+* TFRAMES (Express Tool)
+切换所有区域覆盖和图像对象的边框显示。
+
+* THICKEN
+以指定的厚度将曲面转换为三维实体。
+
+* TIFOUT
+将选定对象以 TIFF 文件格式保存到文件中。
+
+* TIME
+显示图形的日期和时间统计信息。
+
+* TINSERT
+将块插入到表格单元中。
+
+* TJUST (Express Tool)
+更改文字对象的对正点而不移动文字。使用文字、多行文字和属性定义对象。
+
+* TOLERANCE
+创建包含在特征控制框中的形位公差。
+
+* TOOLBAR
+显示、隐藏和自定义工具栏。
+
+* TOOLPALETTES
+打开“工具选项板”窗口。
+
+* TOOLPALETTESCLOSE
+关闭“工具选项板”窗口
+
+* TORIENT (Express Tool)
+旋转文字、多行文字、属性定义和具有属性的块，以提高可读性。
+
+* TORUS
+创建圆环形的三维实体。
+
+* TPNAVIGATE
+显示指定的工具选项板或选项板组。
+
+* TRACE
+从命令提示打开和管理跟踪。
+
+* TRACEBACK
+以完全饱和度显示宿主图形，同时暗显跟踪几何图形。
+
+* TRACEFRONT
+以完全饱和度显示活动跟踪，同时暗显宿主图形几何图形。
+
+* TRACEPALETTECLOSE
+关闭“跟踪”选项板，从中可以查看和管理当前图形中的跟踪。
+
+* TRACEPALETTEOPEN
+打开“跟踪”选项板，从中可以查看和管理当前图形中的跟踪。
+
+* TRANSPARENCY
+控制图像的背景像素是否透明。
+
+* TRAYSETTINGS
+控制状态栏托盘中图标和通知的显示。
+
+* TREESTAT
+显示有关图形当前空间索引的信息。
+
+* TREX (Express Tool)
+结合 TRIM 和 EXTEND 命令。
+
+* TRIM
+修剪对象以与其他对象的边相接。
+
+* TSCALE (Express Tool)
+缩放文字、多行文字、属性和属性定义。
+
+* TXT2MTXT
+将单行或多行文字对象转换或者合并为一个或多个多行文字对象。
+
+* TXTEXP (Express Tool)
+将文字或多行文字对象分解为多段线对象。
+
+* U
+撤销最近一次操作。
+
+* UCS
+设置当前用户坐标系 (UCS) 的原点和方向。
+
+* UCSICON
+控制 UCS 图标的可见性、位置、外观和可选性。
+
+* UCSMAN
+管理 UCS 定义。
+
+* ULAYERS
+控制 DWF、DWFx、PDF 或 DGN 参考底图中图层的显示。
+
+* UNDEFINE
+允许应用程序定义的命令替代内部命令。
+
+* UNDO
+撤销命令的效果。
+
+* UNGROUP
+解除组中对象的关联。
+
+* UNION
+将两个或多个三维实体、曲面或二维面域合并为一个复合三维实体、曲面或面域。
+
+* UNISOLATEOBJECTS
+显示之前通过 ISOLATEOBJECTS 或 HIDEOBJECTS 命令隐藏的对象。
+
+* UNITS
+控制坐标、距离和角度的精度和显示格式。
+
+* UPDATEFIELD
+更新选定对象中的字段。
+
+* UPDATETHUMBSNOW
+手动更新命名视图、图形和布局的缩略图预览。
+
+* VBAIDE
+显示 Visual Basic 编辑器。
+
+* VBALOAD
+将全局 VBA 工程加载到当前工作任务中。
+
+* VBAMAN
+使用对话框管理 VBA 工程操作。
+
+* VBAPREF
+提供对某些 VBA 环境设置的访问。
+
+* VBARUN
+运行 VBA 宏。
+
+* VBASTMT
+在 AutoCAD 命令提示下执行 VBA 语句。
+
+* VBAUNLOAD
+卸载全局 VBA 工程。
+
+* VIEW
+保存和恢复命名模型空间视图、布局视图和预设视图。
+
+* VIEWBACK
+在更改视图后，向后恢复连续视图。
+
+* VIEWBASE
+从模型空间或 Autodesk Inventor 模型创建基础视图。
+
+* VIEWCOMPONENT
+从模型文档工程视图中选择部件进行编辑。
+
+* VIEWDETAIL
+创建模型文档工程视图部分的局部视图。
+
+* VIEWDETAILSTYLE
+创建和修改局部视图样式。
+
+* VIEWEDIT
+编辑现有的模型文档工程视图。
+
+* VIEWFORWARD
+在使用 VIEWBACK 或“缩放上一个”显示上一个视图后，向前恢复连续视图。
+
+* VIEWGO
+恢复命名视图。
+
+* VIEWPLAY
+播放与命名视图关联的动画。
+
+* VIEWPLOTDETAILS
+显示有关完成的打印和发布作业的信息。
+
+* VIEWPROJ
+从现有的模型文档工程视图创建一个或多个投影视图。
+
+* VIEWRES
+如果关闭硬件加速，请设置当前视口中对象的分辨率。
+
+* VIEWSECTION
+创建已在 AutoCAD 或 Autodesk Inventor 中创建的三维模型的截图视图。
+
+* VIEWSECTIONSTYLE
+创建和修改截面视图样式。
+
+* VIEWSETPROJ
+从 Inventor 模型中指定包含模型文档工程视图的活动项目文件。
+
+* VIEWSKETCHCLOSE
+退出符号草图模式。
+
+* VIEWSTD
+为模型文档工程视图定义默认设置。
+
+* VIEWSYMBOLSKETCH
+打开一个编辑环境，以便将剖切线或详图边界约束到工程视图几何图形。
+
+* VIEWUPDATE
+更新由于源模型已更改而变为过期的工程视图。
+
+* VISUALSTYLES
+创建和修改视觉样式，并将视觉样式应用于视口。
+
+* VISUALSTYLESCLOSE
+关闭视觉样式管理器。
+
+* VLISP
+显示 AutoLISP 开发环境。
+
+* VPCLIP
+重定义布局视口对象，同时保留其特性。
+
+* VPLAYER
+设置视口中图层的可见性。
+
+* VPMAX
+展开当前布局视口以进行编辑。
+
+* VPMIN
+恢复当前布局视口。
+
+* VPOINT
+设置图形的三维可视化观察方向。
+
+* VPORTS
+在模型空间或布局（图纸空间）中创建多个视口。
+
+* VPSCALE (Express Tool)
+在布局中，显示当前视口或选定的布局视口的比例。
+
+* VPSYNC (Express Tool)
+将一个或多个相邻的布局视口中的视图与主布局视口对齐。
+
+* VSCURRENT
+设置当前视口的视觉样式。
+
+* VSLIDE
+在当前视口中显示图像幻灯片文件。
+
+* VSSAVE
+使用新名称保存当前视觉样式。
+
+* VTOPTIONS
+将视图中的更改显示为平滑过渡。
+
+* WALKFLYSETTINGS
+控制漫游和飞行导航设置。
+
+* WBLOCK
+将选定对象保存到指定的图形文件或将块转换为指定的图形文件。
+
+* WEBLIGHT
+创建光源灯光强度分布的精确三维表示。
+
+* WEBLOAD
+从 URL 加载 JavaScript 文件，然后执行包含在该文件中的 JavaScript 代码。
+
+* WEDGE
+创建三维实体楔体。
+
+* WHOHAS
+显示关于打开的图形文件的信息。
+
+* WIPEOUT
+创建区域覆盖对象，并控制是否将区域覆盖框架显示在图形中。
+
+* WMFIN
+输入 Windows 图元文件。
+
+* WMFOPTS
+设置 WMFIN 选项。
+
+* WMFOUT
+将对象保存为 Windows 图元文件。
+
+* WORKSPACE
+创建、修改和保存工作空间，并将其设定为当前工作空间。
+
+* WSSAVE
+保存工作空间。
+
+* WSSETTINGS
+设置工作空间选项。
+
+* XATTACH
+将选定的 DWG 文件附着为外部参照。
+
+* XBIND
+将外部参照中命名对象的一个或多个定义绑定到当前图形。
+
+* XCLIP
+根据指定边界修剪选定外部参照或块参照的显示。
+
+* XCOMPARE
+将附着的外部参照与参照图形文件的最新状态相比较，在修订云线内使用颜色亮显差异。
+
+* XCOMPARECLOSE
+关闭“外部参照比较”工具栏并结束比较。
+
+* XCOMPARERCNEXT
+缩放到外部参照比较结果的下一更改集。
+
+* XCOMPARERCPREV
+缩放到外部参照比较结果的上一更改集。
+
+* XDATA (Express Tool)
+将扩展对象数据 (xdata) 附着到选定对象。
+
+* XDLIST (Express Tool)
+列出附着到对象的扩展数据。
+
+* XEDGES
+从三维实体、曲面、网格、面域或子对象的边创建线框几何图形。
+
+* XLINE
+创建无限长的构造线。
+
+* XLIST (Express Tool)
+列出块或外部参照中嵌套对象的类型、块名称、图层名称、颜色和线型。
+
+* XOPEN
+在新窗口中打开选定的图形参照（外部参照）。
+
+* XPLODE
+将复合对象分解为其部件对象，而且生成的对象具有指定的特性。
+
+* XREF
+启动 EXTERNALREFERENCES 命令。
+
+* ZOOM,缩放
+增大或减小当前视口中视图的比例。

@@ -1,0 +1,877 @@
+其它聊天,你能干什么,0.9,你有什么功能##你能干啥,我可以回答以下问题LINE_BREAK1、CAD命令用法LINE_BREAK2、CAD变量说明LINE_BREAK3、Autolisp函数用法LINE_BREAK4、@lisp函数说明LINE_BREAK5、@lisp应用说明LINE_BREAK6、排解您的烦恼LINE_BREAK,false
+autolisp,dcl-Control-SetKeepFocus,0.91,,(dcl-Control-SetKeepFocus 控件变量或名称 布尔值[T or nil])LINE_BREAK如果此属性为False，表单上的控件不保留键盘输入焦点; 所有键盘输入都将发送到AutoCAD命令行。 当表单包含接受键盘输入的控件时，将此属性设置为True。,false
+CAD应用云,怎么使用,0.91,如何使用##常用命令,"@lisp 使用说明LINE_BREAK本功能相关命令均为 @+单个字符 。在CAD命令行中输入以下命令即可完成相应操作。LINE_BREAKLINE_BREAK命令: @LINE_BREAK功能：重新加载 @lisp , 如果 @lisp 不完整，多次运行可自行修补完整 。LINE_BREAK命令:@H	LINE_BREAK助记符：help	LINE_BREAK功能：显示CAD命令及用法。LINE_BREAK命令:@I	LINE_BREAK助记符: install	LINE_BREAK功能：输入该命令后输入想要安装的应用包，就可以下载并安装相应的应用包了。LINE_BREAK命令:@L	LINE_BREAK助记符: list	LINE_BREAK功能：显示已安装的应用包列表。LINE_BREAK命令:@M	LINE_BREAK助记符: menu	LINE_BREAK功能：重新生成菜单。如果 @lisp 菜单与现有的环境不匹配，可运行此命令。LINE_BREAK命令:@R	LINE_BREAK助记符: remove	LINE_BREAK功能：移除应用包。LINE_BREAK命令:@SLINE_BREAK助记符：setup	LINE_BREAK功能：设置系统变量的值。LINE_BREAK命令:@U	LINE_BREAK助记符：update	LINE_BREAK功能：手动更新 @lisp 系统及已安装的包。LINE_BREAK命令:@W	LINE_BREAK助记符：www	LINE_BREAK功能：访问 @lisp 网站。查询 @lisp 新动态及新增应用包。",false
+CAD命令,DRAWINGRECOVERY,0.91,,CAD命令: DRAWINGRECOVERYLINE_BREAK    显示可以在程序或系统故障后修复的图形文件的列表。,false
+CAD命令,CHPROP,0.91,,CAD命令: CHPROPLINE_BREAK    更改对象的特性。,false
+CAD命令,CHECKSTANDARDS,0.91,,CAD命令: CHECKSTANDARDSLINE_BREAK    检查当前图形中是否存在标准冲突。,false
+CAD命令,CHANGE,0.91,,CAD命令: CHANGELINE_BREAK    更改现有对象的特性。,false
+CAD命令,CHAMFEREDGE,0.91,,CAD命令: CHAMFEREDGELINE_BREAK    为三维实体边和曲面边建立倒角。,false
+CAD命令,CHAMFER,0.91,,CAD命令: CHAMFERLINE_BREAK    为两个二维对象的边或三维实体的相邻面创建斜角或者倒角。,false
+CAD命令,CENTERRESET,0.91,,CAD命令: CENTERRESETLINE_BREAK    将中心线重置为在 CENTEREXE 系统变量中指定的当前值。,false
+CAD命令,CENTERREASSOCIATE,0.91,,CAD命令: CENTERREASSOCIATELINE_BREAK    将中心标记或中心线对象关联或者重新关联至选定的对象。,false
+CAD命令,CENTERMARK,0.91,,CAD命令: CENTERMARKLINE_BREAK    在选定的圆或圆弧的中心处创建关联的十字形标记。,false
+CAD命令,CENTERLINE,0.91,,CAD命令: CENTERLINELINE_BREAK    创建与所选线和线性多段线线段关联的中心线几何图形。,false
+CAD命令,CENTERDISASSOCIATE,0.91,,CAD命令: CENTERDISASSOCIATELINE_BREAK    从中心标记或中心线定义的对象中删除其关联性。,false
+CAD命令,CDORDER,0.91,,CAD命令: CDORDERLINE_BREAK     (Express Tool)按选定对象的颜色编号排列其绘图顺序。,false
+CAD命令,CAMERA,0.91,,CAD命令: CAMERALINE_BREAK    设置相机位置和目标位置，以创建并保存对象的三维透视视图。,false
+CAD命令,CAL,0.91,,CAD命令: CALLINE_BREAK    在命令提示下或在命令中计算数学和几何表达式。,false
+CAD命令,BVSTATE,0.91,,CAD命令: BVSTATELINE_BREAK    创建、设置或删除动态块中的可见性状态。,false
+CAD命令,BVSHOW,0.91,,CAD命令: BVSHOWLINE_BREAK    使对象在动态块定义中的当前可见性状态下可见，或在所有可见性状态下均可见。,false
+CAD命令,BVHIDE,0.91,,CAD命令: BVHIDELINE_BREAK    使对象在动态块定义中的当前可见性状态下不可见，或在所有可见性状态下均不可见。,false
+CAD命令,BURSTS,0.91,,CAD命令: BURSTSLINE_BREAK     (Express Tool)分解选定的块，同时保留块图层，并将属性值转换为文字对象。,false
+CAD命令,BTRIM,0.91,,CAD命令: BTRIMLINE_BREAK     (Express Tool)将对象修剪为块。,false
+CAD命令,BTESTBLOCK,0.91,,CAD命令: BTESTBLOCKLINE_BREAK    在块编辑器内显示一个窗口，以测试动态块。,false
+CAD命令,BTABLE,0.91,,CAD命令: BTABLELINE_BREAK    将块的变量存储在块特性表中。,false
+CAD命令,BSCALE,0.91,,CAD命令: BSCALELINE_BREAK     (Express Tool)相对于其插入点缩放块参照。,false
+CAD命令,BSAVEAS,0.91,,CAD命令: BSAVEASLINE_BREAK    用新名称保存当前块定义的副本。,false
+CAD命令,BSAVE,0.91,,CAD命令: BSAVELINE_BREAK    保存当前块定义。,false
+CAD命令,BROWSER,0.91,,CAD命令: BROWSERLINE_BREAK    启动系统注册表中定义的默认 Web 浏览器。,false
+CAD命令,BREP,0.91,,CAD命令: BREPLINE_BREAK    删除三维实体和复合实体的历史记录以及曲面的关联性。,false
+CAD命令,BREAKLINE,0.91,,CAD命令: BREAKLINELINE_BREAK    (Express Tool)创建特征线，以及包含特征线符号的多段线。,false
+CAD命令,BREAK,0.91,,CAD命令: BREAKLINE_BREAK    在两点之间打断选定对象。,false
+CAD命令,BPARAMETER,0.91,,CAD命令: BPARAMETERLINE_BREAK    向动态块定义中添加带有夹点的参数。,false
+CAD命令,BOX,0.91,,CAD命令: BOXLINE_BREAK    创建三维实体长方体。,false
+CAD命令,BOUNDARY,0.91,,CAD命令: BOUNDARYLINE_BREAK    从封闭区域创建面域或多段线。,false
+CAD命令,BMPOUT,0.91,,CAD命令: BMPOUTLINE_BREAK    将选定对象以与设备无关的位图格式保存到文件中。,false
+CAD命令,BLOOKUPTABLE,0.91,,CAD命令: BLOOKUPTABLELINE_BREAK    为动态块定义显示或创建查寻表。,false
+CAD命令,BLOCKTOXREF,0.91,,CAD命令: BLOCKTOXREFLINE_BREAK     (Express Tool)将指定块的所有实例替换为外部参照。,false
+CAD命令,BLOCKSPALETTECLOSE,0.91,,CAD命令: BLOCKSPALETTECLOSELINE_BREAK    关闭“块”选项板。,false
+CAD命令,BLOCKSPALETTE,0.91,,CAD命令: BLOCKSPALETTELINE_BREAK    显示“块”选项板，可用于将块和图形插入到当前图形中。,false
+CAD命令,BLOCKREPLACE,0.91,,CAD命令: BLOCKREPLACELINE_BREAK     (Express Tool)将指定块的所有实例替换为不同的块。,false
+CAD命令,BLOCKICON,0.91,,CAD命令: BLOCKICONLINE_BREAK    为 AutoCAD 设计中心中显示的块生成预览图像。,false
+CAD命令,BLOCK?,0.91,,CAD命令: BLOCK?LINE_BREAK    (Express Tool)在块定义中列出对象。,false
+CAD命令,BLOCK,0.91,,CAD命令: BLOCKLINE_BREAK    从选定的对象中创建一个块定义。,false
+CAD命令,BLEND,0.91,,CAD命令: BLENDLINE_BREAK    在两条选定直线或曲线之间的间隙中创建样条曲线。,false
+CAD命令,BGRIPSET,0.91,,CAD命令: BGRIPSETLINE_BREAK    创建、删除或重置与参数相关联的夹点。,false
+CAD命令,BEXTEND,0.91,,CAD命令: BEXTENDLINE_BREAK     (Express Tool)将对象扩展为块。,false
+CAD命令,BESETTINGS,0.91,,CAD命令: BESETTINGSLINE_BREAK    显示“块编辑器设置”对话框。,false
+CAD命令,BEDIT,0.91,,CAD命令: BEDITLINE_BREAK    在块编辑器中打开块定义。,false
+CAD命令,BCYCLEORDER,0.91,,CAD命令: BCYCLEORDERLINE_BREAK    更改动态块参照夹点的循环次序。,false
+CAD命令,BCPARAMETER,0.91,,CAD命令: BCPARAMETERLINE_BREAK    将约束参数应用于选定的对象，或将标注约束转换为参数约束。,false
+CAD命令,BCOUNT,0.91,,CAD命令: BCOUNTLINE_BREAK     (Express Tool)为选择集或整个图形中的每个块，创建实例数的报告。,false
+CAD命令,BCONSTRUCTION,0.91,,CAD命令: BCONSTRUCTIONLINE_BREAK    将块几何图形转换为可能会隐藏或显示的构造几何图形。,false
+CAD命令,BCLOSE,0.91,,CAD命令: BCLOSELINE_BREAK    关闭块编辑器。,false
+CAD命令,BAUTHORPALETTECLOSE,0.91,,CAD命令: BAUTHORPALETTECLOSELINE_BREAK    关闭块编辑器中的“块编写选项板”窗口。,false
+CAD命令,DRAWINGRECOVERYHIDE,0.91,,CAD命令: DRAWINGRECOVERYHIDELINE_BREAK    关闭“图形修复管理器”。,false
+CAD命令,BAUTHORPALETTE,0.91,,CAD命令: BAUTHORPALETTELINE_BREAK    打开块编辑器中的“块编写选项板”窗口。,false
+CAD命令,BATTORDER,0.91,,CAD命令: BATTORDERLINE_BREAK    指定块属性的顺序。,false
+CAD命令,BATTMAN,0.91,,CAD命令: BATTMANLINE_BREAK    管理选定块定义的属性。,false
+CAD命令,BASSOCIATE,0.91,,CAD命令: BASSOCIATELINE_BREAK    将动作与动态块定义中的参数相关联。,false
+CAD命令,BASE,0.91,,CAD命令: BASELINE_BREAK    为当前图形设置插入基点。,false
+CAD命令,BACTIONTOOL,0.91,,CAD命令: BACTIONTOOLLINE_BREAK    向动态块定义中添加动作。,false
+CAD命令,BACTIONSET,0.91,,CAD命令: BACTIONSETLINE_BREAK    指定与动态块定义中的动作相关联的对象选择集。,false
+CAD命令,BACTIONBAR,0.91,,CAD命令: BACTIONBARLINE_BREAK    为参数对象的选择集显示或隐藏动作栏。,false
+CAD命令,BACTION,0.91,,CAD命令: BACTIONLINE_BREAK    向动态块定义中添加动作。,false
+CAD命令,BACKGROUND,0.91,,CAD命令: BACKGROUNDLINE_BREAK    定义命名视图背景的类型、颜色、效果和位置。,false
+CAD命令,AUTOPUBLISH,0.91,,CAD命令: AUTOPUBLISHLINE_BREAK    将图形自动发布为 DWF、DWFx 或 PDF 文件，发布至指定位置。,false
+CAD命令,AUTOCONSTRAIN,0.91,,CAD命令: AUTOCONSTRAINLINE_BREAK    根据对象相对于彼此的方向将几何约束应用于对象的选择集。,false
+CAD命令,AUDIT,0.91,,CAD命令: AUDITLINE_BREAK    检查图形的完整性并更正某些错误。,false
+CAD命令,ATTSYNC,0.91,,CAD命令: ATTSYNCLINE_BREAK    将块定义中的属性更改应用于所有块参照。,false
+CAD命令,ATTREDEF,0.91,,CAD命令: ATTREDEFLINE_BREAK    重定义块并更新关联属性。,false
+CAD命令,ATTOUT,0.91,,CAD命令: ATTOUTLINE_BREAK    (Express Tool)将块属性值输出为以制表符分隔的 ASCII 格式的外部文件。,false
+CAD命令,ATTIPEDIT,0.91,,CAD命令: ATTIPEDITLINE_BREAK    更改块中属性的文本内容。,false
+CAD命令,ATTIN,0.91,,CAD命令: ATTINLINE_BREAK    (Express Tool)从外部制表符分隔的 ASCII 文件输入块属性值。,false
+CAD命令,ATTEXT,0.91,,CAD命令: ATTEXTLINE_BREAK    将与块关联的属性数据、文字信息提取到文件中。,false
+CAD命令,DRAWORDER,0.91,,CAD命令: DRAWORDERLINE_BREAK    更改图像和其他对象的绘制顺序。,false
+CAD命令,ATTDISP,0.91,,CAD命令: ATTDISPLINE_BREAK    控制图形中所有块属性的可见性覆盖。,false
+CAD命令,ATTDEF,0.91,,CAD命令: ATTDEFLINE_BREAK    创建用于在块中存储数据的属性定义。,false
+CAD命令,ATTACHURL,0.91,,CAD命令: ATTACHURLLINE_BREAK    将超链接附着到图形中的对象或区域。,false
+CAD命令,ATTACH,0.91,,CAD命令: ATTACHLINE_BREAK    将参照插入到外部文件，例如其他图形、光栅图像、点云、协调模型和参考底图。,false
+CAD命令,ARX,0.91,,CAD命令: ARXLINE_BREAK    加载、卸载 ObjectARX 应用程序并提供相关信息。,false
+CAD命令,ARRAYRECT,0.91,,CAD命令: ARRAYRECTLINE_BREAK    将对象副本分布到行、列和标高的任意组合。,false
+CAD命令,ARRAYPOLAR,0.91,,CAD命令: ARRAYPOLARLINE_BREAK    围绕中心点或旋转轴在环形阵列中均匀分布对象副本。,false
+CAD命令,ARRAYPATH,0.91,,CAD命令: ARRAYPATHLINE_BREAK    沿路径或部分路径均匀分布对象副本。,false
+CAD命令,ARRAYEDIT,0.91,,CAD命令: ARRAYEDITLINE_BREAK    编辑关联阵列对象及其源对象。,false
+CAD命令,ARRAYCLOSE,0.91,,CAD命令: ARRAYCLOSELINE_BREAK    保存或放弃对阵列的源对象的更改并退出阵列编辑状态。,false
+CAD命令,ARRAYCLASSIC,0.91,,CAD命令: ARRAYCLASSICLINE_BREAK    使用传统对话框创建阵列。,false
+CAD命令,ARRAY,0.91,,CAD命令: ARRAYLINE_BREAK    创建按指定方式排列的对象副本。,false
+CAD命令,AREA,0.91,,CAD命令: AREALINE_BREAK    计算对象或所定义区域的面积和周长。,false
+CAD命令,ARCTEXT,0.91,,CAD命令: ARCTEXTLINE_BREAK    (Express Tool)沿圆弧放置文字。,false
+CAD命令,ARCHIVE,0.91,,CAD命令: ARCHIVELINE_BREAK    将当前图纸集文件打包存储。,false
+CAD命令,ARC,0.91,,CAD命令: ARCLINE_BREAK    创建圆弧。,false
+CAD命令,APPSTORE,0.91,,CAD命令: APPSTORELINE_BREAK    打开 Autodesk App Store 网站。,false
+CAD命令,APPLOAD,0.91,,CAD命令: APPLOADLINE_BREAK    加载和卸载应用程序，定义要在启动时加载的应用程序。,false
+CAD命令,APPAUTOLOADER,0.91,,CAD命令: APPAUTOLOADERLINE_BREAK    列出或重新加载在应用程序插件文件夹中的所有插件。,false
+CAD命令,APERTURE,0.91,,CAD命令: APERTURELINE_BREAK    控制对象捕捉靶框大小。,false
+CAD命令,ANNOUPDATE,0.91,,CAD命令: ANNOUPDATELINE_BREAK    更新现有注释性对象，使之与其样式的当前特性相匹配。,false
+CAD命令,ANNORESET,0.91,,CAD命令: ANNORESETLINE_BREAK    重置选定注释性对象的所有换算比例图示的位置。,false
+CAD命令,ANIPATH,0.91,,CAD命令: ANIPATHLINE_BREAK    保存相机在三维模型中移动或平移的动画。,false
+CAD命令,ANALYSISZEBRA,0.91,,CAD命令: ANALYSISZEBRALINE_BREAK    将条纹投影到三维模型上，以便分析曲面连续性。,false
+CAD命令,ANALYSISOPTIONS,0.91,,CAD命令: ANALYSISOPTIONSLINE_BREAK    设置斑纹、曲率和拔模分析的显示选项。,false
+CAD命令,ANALYSISDRAFT,0.91,,CAD命令: ANALYSISDRAFTLINE_BREAK    在三维模型上显示渐变色，以便评估某部分与其模具之间是否具有足够的空间。,false
+CAD命令,ANALYSISCURVATURE,0.91,,CAD命令: ANALYSISCURVATURELINE_BREAK    在曲面上显示渐变色，以便评估曲面曲率的不同方面。,false
+CAD命令,AMECONVERT,0.91,,CAD命令: AMECONVERTLINE_BREAK    将 AME 实体模型转换为 AutoCAD 实体对象。,false
+CAD命令,ALIGNSPACE,0.91,,CAD命令: ALIGNSPACELINE_BREAK    (Express Tool)基于在模型空间和图纸空间中指定的对齐点，在布局视口中调整视图的平移和缩放因子。,false
+CAD命令,ALIGN,0.91,,CAD命令: ALIGNLINE_BREAK    在二维和三维空间中将对象与其他对象对齐。,false
+CAD命令,ALIASEDIT,0.91,,CAD命令: ALIASEDITLINE_BREAK    (Express Tool)创建、修改和删除 AutoCAD 命令别名。,false
+CAD命令,ADJUST,0.91,,CAD命令: ADJUSTLINE_BREAK    调整选定参考底图（DWF、DWFx、PDF 或 DGN）或图像的淡入度、对比度和单色设置。,false
+CAD命令,ADDSELECTED,0.91,,CAD命令: ADDSELECTEDLINE_BREAK    创建一个新对象，该对象与选定对象具有相同的类型和常规特性，但具有不同的几何值。,false
+CAD命令,ADCNAVIGATE,0.91,,CAD命令: ADCNAVIGATELINE_BREAK    在“设计中心文件夹”选项卡中加载指定的图形文件、文件夹或网络路径。,false
+CAD命令,ADCENTER,0.91,,CAD命令: ADCENTERLINE_BREAK    管理和插入诸如块、外部参照和填充图案等内容。,false
+CAD命令,ADCCLOSE,0.91,,CAD命令: ADCCLOSELINE_BREAK    关闭设计中心。,false
+CAD命令,ACTUSERMESSAGE,0.91,,CAD命令: ACTUSERMESSAGELINE_BREAK    将用户消息插入动作宏中。,false
+CAD命令,ACTUSERINPUT,0.91,,CAD命令: ACTUSERINPUTLINE_BREAK    在动作宏中暂停以等待用户输入。,false
+CAD命令,ACTSTOP,0.91,,CAD命令: ACTSTOPLINE_BREAK    停止动作录制器，并提供将已录制的动作保存至动作宏文件的选项。,false
+CAD命令,ACTRECORD,0.91,,CAD命令: ACTRECORDLINE_BREAK    开始录制动作宏。,false
+CAD命令,ACTMANAGER,0.91,,CAD命令: ACTMANAGERLINE_BREAK    管理动作宏文件。,false
+CAD命令,ACTBASEPOINT,0.91,,CAD命令: ACTBASEPOINTLINE_BREAK    在动作宏中插入基点或基点提示。,false
+CAD命令,ACISOUT,0.91,,CAD命令: ACISOUTLINE_BREAK    将三维实体、面域或实体对象输出到 ACIS 文件。,false
+CAD命令,ACISIN,0.91,,CAD命令: ACISINLINE_BREAK    输入 ACIS (SAT) 文件并创建三维实体、体或面域对象。,false
+CAD命令,ACADINFO,0.91,,CAD命令: ACADINFOLINE_BREAK    (Express Tool)创建一个文件，该文件存储有关 AutoCAD 安装和当前设置的信息。,false
+CAD命令,ABOUT,0.91,,CAD命令: ABOUTLINE_BREAK    显示有关产品的信息。,false
+CAD命令,3DZOOM,0.91,,CAD命令: 3DZOOMLINE_BREAK    在透视视图中放大和缩小。,false
+CAD命令,3DWALK,0.91,,CAD命令: 3DWALKLINE_BREAK    交互式更改图形中的三维视图以创建在模型中漫游的外观。,false
+CAD命令,3DSWIVEL,0.91,,CAD命令: 3DSWIVELLINE_BREAK    在拖动方向上更改视图的目标。,false
+CAD命令,3DSIN,0.91,,CAD命令: 3DSINLINE_BREAK    输入 3ds Max (3DS) 文件。,false
+CAD命令,3DSCALE,0.91,,CAD命令: 3DSCALELINE_BREAK    在三维视图中，显示三维缩放小控件以协助调整三维对象的大小。,false
+CAD命令,3DROTATE,0.91,,CAD命令: 3DROTATELINE_BREAK    在三维视图中，显示三维旋转小控件以协助绕基点旋转三维对象。,false
+CAD命令,3DPRINTSERVICE,0.91,,CAD命令: 3DPRINTSERVICELINE_BREAK    创建可以发送到三维打印服务的 STL 文件。,false
+CAD命令,3DPRINT,0.91,,CAD命令: 3DPRINTLINE_BREAK    指定三维打印设置，并为三维打印准备图形。,false
+CAD命令,3DPOLY,0.91,,CAD命令: 3DPOLYLINE_BREAK    创建三维多段线。,false
+CAD命令,3DPAN,0.91,,CAD命令: 3DPANLINE_BREAK    图形位于透视视图中时，启动交互式三维视图，并允许用户水平和垂直拖动视图。,false
+CAD命令,3DOSNAP,0.91,,CAD命令: 3DOSNAPLINE_BREAK    设定三维对象的对象捕捉模式。,false
+CAD命令,3DORBITCTR,0.91,,CAD命令: 3DORBITCTRLINE_BREAK    在三维动态观察视图中设置旋转的特定中心。,false
+CAD命令,3DORBIT,0.91,,CAD命令: 3DORBITLINE_BREAK    提供使用鼠标操作的三维形式的交互式查看。单击鼠标右键以显示“查看”选项。,false
+CAD命令,3DMOVE,0.91,,CAD命令: 3DMOVELINE_BREAK    在三维视图中，显示三维移动小控件以帮助在指定方向上按指定距离移动三维对象。,false
+CAD命令,3DMESH,0.91,,CAD命令: 3DMESHLINE_BREAK    创建自由形式的多边形网格。,false
+CAD命令,3DFORBIT,0.91,,CAD命令: 3DFORBITLINE_BREAK    在三维空间中旋转视图而不约束回卷。,false
+CAD命令,3DFLY,0.91,,CAD命令: 3DFLYLINE_BREAK    交互式更改图形中的三维视图以创建在模型中飞行的外观。,false
+CAD命令,3DFACE,0.91,,CAD命令: 3DFACELINE_BREAK    在三维空间中创建三侧面或四侧面的曲面。,false
+CAD命令,3DEDITBAR,0.91,,CAD命令: 3DEDITBARLINE_BREAK    重塑样条曲线和 NURBS 曲面，包括其相切特性。,false
+CAD命令,3DDWF,0.91,,CAD命令: 3DDWFLINE_BREAK    创建三维模型的三维 DWF 文件或三维 DWFx 文件，并将其显示在 DWF Viewer 中。,false
+CAD命令,3DDISTANCE,0.91,,CAD命令: 3DDISTANCELINE_BREAK    启动交互式三维视图并使对象显示得更近或更远。,false
+CAD命令,3DCORBIT,0.91,,CAD命令: 3DCORBITLINE_BREAK    在三维空间中连续旋转视图。,false
+CAD命令,3DCLIP,0.91,,CAD命令: 3DCLIPLINE_BREAK    打开“调整剪裁平面”窗口，可以在其中指定要显示三维模型的哪些部分。,false
+CAD命令,3DARRAY,0.91,,CAD命令: 3DARRAYLINE_BREAK    创建非关联三维矩形或环形阵列。,false
+CAD命令,3DALIGN,0.91,,CAD命令: 3DALIGNLINE_BREAK    在二维和三维空间中将对象与其他对象对齐。,false
+CAD命令,DSETTINGS,0.91,,CAD命令: DSETTINGSLINE_BREAK    设置栅格和捕捉、极轴和对象捕捉追踪、对象捕捉模式、动态输入和快捷特性。,false
+CAD命令,DUMPSHX,0.91,,CAD命令: DUMPSHXLINE_BREAK     (Express Tool)将现有 SHX（已编译）文件转换为等效的 SHP（已反编译）文件,false
+CAD命令,DVIEW,0.91,,CAD命令: DVIEWLINE_BREAK    使用相机和目标来定义平行投影或透视视图。,false
+CAD命令,DWFADJUST,0.91,,CAD命令: DWFADJUSTLINE_BREAK    调整 DWF 或 DWFx 参考底图的淡入度、对比度和单色设置。,false
+CAD命令,DWFATTACH,0.91,,CAD命令: DWFATTACHLINE_BREAK    将 DWF 或 DWFx 文件作为参考底图插入到当前图形中。,false
+CAD命令,DWFCLIP,0.91,,CAD命令: DWFCLIPLINE_BREAK    根据指定边界修剪选定 DWF 或 DWFx 参考底图的显示。,false
+CAD命令,DWFFORMAT,0.91,,CAD命令: DWFFORMATLINE_BREAK    设置特定命令中的输出默认格式为 DWF 或 DWFx。,false
+CAD命令,DWFLAYERS,0.91,,CAD命令: DWFLAYERSLINE_BREAK    控制 DWF 或 DWFx 参考底图中图层的显示。,false
+CAD命令,DWGCONVERT,0.91,,CAD命令: DWGCONVERTLINE_BREAK    为选定的图形文件转换图形格式版本。,false
+CAD命令,DWGLOG,0.91,,CAD命令: DWGLOGLINE_BREAK     (Express Tool)在访问每个图形文件时，为其创建和维护单个日志文件。,false
+CAD命令,DWGPROPS,0.91,,CAD命令: DWGPROPSLINE_BREAK    设置和显示当前图形的文件特性。,false
+CAD命令,DXBIN,0.91,,CAD命令: DXBINLINE_BREAK    输入 AutoCAD DXB（二进制图形交换）文件。,false
+CAD命令,EATTEDIT,0.91,,CAD命令: EATTEDITLINE_BREAK    在块参照中编辑属性。,false
+CAD命令,EATTEXT,0.91,,CAD命令: EATTEXTLINE_BREAK    将块属性信息输出为表格或外部文件。,false
+CAD命令,EDGE,0.91,,CAD命令: EDGELINE_BREAK    更改三维面的边的可见性。,false
+CAD命令,EDGESURF,0.91,,CAD命令: EDGESURFLINE_BREAK    在四条相邻的边或曲线之间创建网格。,false
+CAD命令,EDITSHOT,0.91,,CAD命令: EDITSHOTLINE_BREAK    以运动或不运动方式编辑保存的命名视图。,false
+CAD命令,EDITTIME,0.91,,CAD命令: EDITTIMELINE_BREAK     (Express Tool)跟踪图形的活动编辑时长。,false
+CAD命令,ELEV,0.91,,CAD命令: ELEVLINE_BREAK    设置新对象的标高和拉伸厚度。,false
+CAD命令,ELLIPSE,0.91,,CAD命令: ELLIPSELINE_BREAK    创建椭圆或椭圆弧。,false
+CAD命令,ERASE,0.91,,CAD命令: ERASELINE_BREAK    从图形中删除对象。,false
+CAD命令,ETRANSMIT,0.91,,CAD命令: ETRANSMITLINE_BREAK    将一组文件打包以进行 Internet 传递。,false
+CAD命令,EXOFFSET,0.91,,CAD命令: EXOFFSETLINE_BREAK     (Express Tool)偏移选定的对象。,false
+CAD命令,EXPLAN,0.91,,CAD命令: EXPLANLINE_BREAK     (Express Tool)显示指定 UCS 的 XY 平面的正交视图，而不改变视图的放大。,false
+CAD命令,EXPLODE,0.91,,CAD命令: EXPLODELINE_BREAK    将复合对象分解为其组件对象。,false
+CAD命令,EXPORT,0.91,,CAD命令: EXPORTLINE_BREAK    以其他文件格式保存图形中的对象。,false
+CAD命令,EXPORTDWF,0.91,,CAD命令: EXPORTDWFLINE_BREAK    创建 DWF 文件，并使用户可于逐张图纸上设置各个页面设置替代。,false
+CAD命令,EXPORTDWFX,0.91,,CAD命令: EXPORTDWFXLINE_BREAK    创建 DWFx 文件，从中可逐页设置各个页面设置替代。,false
+CAD命令,EXPORTLAYOUT,0.91,,CAD命令: EXPORTLAYOUTLINE_BREAK    创建新图形的模型空间中当前布局的视觉表示。,false
+CAD命令,EXPORTPDF,0.91,,CAD命令: EXPORTPDFLINE_BREAK    从模型空间中的单个布局、所有布局或指定区域生成 PDF 文件。,false
+CAD命令,EXPORTSETTINGS,0.91,,CAD命令: EXPORTSETTINGSLINE_BREAK    输出到 DWF、DWFx 或 PDF 文件时调整页面设置和图形选择。,false
+CAD命令,EXPORTTOAUTOCAD,0.91,,CAD命令: EXPORTTOAUTOCADLINE_BREAK    创建可以在产品（如 AutoCAD）中打开的 AEC 文件的版本。,false
+CAD命令,EXPRESSMENU,0.91,,CAD命令: EXPRESSMENULINE_BREAK     (Express Tool)加载 AutoCAD Express Tools 菜单并在菜单栏上显示 Express 菜单。,false
+CAD命令,EXPRESSTOOLS,0.91,,CAD命令: EXPRESSTOOLSLINE_BREAK     (Express Tool)加载 AutoCAD Express Tools 库，将 Express 文件夹放置在搜索路径中，并在菜单栏上加载并放置 Express 菜单。,false
+CAD命令,EXTEND,0.91,,CAD命令: EXTENDLINE_BREAK    扩展对象以与其他对象的边相接。,false
+CAD命令,EXTERNALREFERENCES,0.91,,CAD命令: EXTERNALREFERENCESLINE_BREAK    打开“外部参照”选项板。,false
+CAD命令,EXTERNALREFERENCESCLOSE,0.91,,CAD命令: EXTERNALREFERENCESCLOSELINE_BREAK    关闭“外部参照”选项板。,false
+CAD命令,EXTRIM,0.91,,CAD命令: EXTRIMLINE_BREAK     (Express Tool)修剪由选定的多段线、直线、圆、圆弧、椭圆、文字、多行文字或属性定义指定的剪切边上的所有对象。,false
+CAD命令,EXTRUDE,0.91,,CAD命令: EXTRUDELINE_BREAK    从封闭区域的对象创建三维实体，或从具有开口的对象创建三维曲面。,false
+CAD命令,FIELD,0.91,,CAD命令: FIELDLINE_BREAK    创建带字段的多行文字对象，该对象可以随着字段值的更改而自动更新。,false
+CAD命令,FILETAB,0.91,,CAD命令: FILETABLINE_BREAK    显示位于绘图区域顶部的文件选项卡。,false
+CAD命令,FILETABCLOSE,0.91,,CAD命令: FILETABCLOSELINE_BREAK    隐藏位于绘图区域顶部的文件选项卡。,false
+CAD命令,FILL,0.91,,CAD命令: FILLLINE_BREAK    控制诸如图案填充、二维实体和宽多段线等填充对象的显示。,false
+CAD命令,FILLET,0.91,,CAD命令: FILLETLINE_BREAK    两个二维对象的圆角或倒角，或者三维实体的相邻面。,false
+CAD命令,FILLETEDGE,0.91,,CAD命令: FILLETEDGELINE_BREAK    为实体对象边建立圆角。,false
+CAD命令,FILTER,0.91,,CAD命令: FILTERLINE_BREAK    创建一个要求列表，对象必需符合这些要求才能包含在选择集中。,false
+CAD命令,FIND,0.91,,CAD命令: FINDLINE_BREAK    查找指定的文字，然后可以选择性地将其替换为其他文字。,false
+CAD命令,FLATSHOT,0.91,,CAD命令: FLATSHOTLINE_BREAK    基于当前视图创建所有三维对象的二维表示。,false
+CAD命令,FLATTEN,0.91,,CAD命令: FLATTENLINE_BREAK     (Express Tool)将三维几何图形转换为投影的二维表示。,false
+CAD命令,FREESPOT,0.91,,CAD命令: FREESPOTLINE_BREAK    创建自由聚光灯（未指定目标的聚光灯）。,false
+CAD命令,FS,0.91,,CAD命令: FSLINE_BREAK     (Express Tool)创建接触选定对象的所有对象的选择集。,false
+CAD命令,GATTE,0.91,,CAD命令: GATTELINE_BREAK     (Express Tool)全局更改用于指定块的全部实例的属性值。,false
+CAD命令,GCCOINCIDENT,0.91,,CAD命令: GCCOINCIDENTLINE_BREAK    约束两个点使其重合，或者约束一个点使其位于曲线（或曲线的延长线）上。,false
+CAD命令,GCCOLLINEAR,0.91,,CAD命令: GCCOLLINEARLINE_BREAK    使两条或多条直线段沿同一直线方向。,false
+CAD命令,GCCONCENTRIC,0.91,,CAD命令: GCCONCENTRICLINE_BREAK    将两个圆弧、圆或椭圆约束到同一个中心点。,false
+CAD命令,GCEQUAL,0.91,,CAD命令: GCEQUALLINE_BREAK    将选定圆弧和圆的尺寸重新调整为半径相同，或将选定直线的尺寸重新调整为长度相同。,false
+CAD命令,GCFIX,0.91,,CAD命令: GCFIXLINE_BREAK    将点和曲线锁定在位。,false
+CAD命令,GCHORIZONTAL,0.91,,CAD命令: GCHORIZONTALLINE_BREAK    使直线或点对位于与当前坐标系的 X 轴平行的位置。,false
+CAD命令,GCPARALLEL,0.91,,CAD命令: GCPARALLELLINE_BREAK    使选定的直线彼此平行。,false
+CAD命令,GCPERPENDICULAR,0.91,,CAD命令: GCPERPENDICULARLINE_BREAK    使选定的直线位于彼此垂直的位置。,false
+CAD命令,GCSMOOTH,0.91,,CAD命令: GCSMOOTHLINE_BREAK    将样条曲线约束为连续，并与其他样条曲线、直线、圆弧或多段线保持 G2 连续性。,false
+CAD命令,GCSYMMETRIC,0.91,,CAD命令: GCSYMMETRICLINE_BREAK    使选定对象受对称约束，相对于选定直线对称。,false
+CAD命令,GCTANGENT,0.91,,CAD命令: GCTANGENTLINE_BREAK    将两条曲线约束为保持彼此相切或其延长线保持彼此相切。,false
+CAD命令,GCVERTICAL,0.91,,CAD命令: GCVERTICALLINE_BREAK    使直线或点对位于与当前坐标系的 Y 轴平行的位置。,false
+CAD命令,GEOGRAPHICLOCATION,0.91,,CAD命令: GEOGRAPHICLOCATIONLINE_BREAK    将地理位置信息指定给图形文件。,false
+CAD命令,GEOLOCATEME,0.91,,CAD命令: GEOLOCATEMELINE_BREAK    显示或隐藏在模型空间中对应于您当前位置的坐标处的指示器。,false
+CAD命令,GEOMAP,0.91,,CAD命令: GEOMAPLINE_BREAK    将在当前视口中通过联机地图服务显示地图。,false
+CAD命令,GEOMAPIMAGE,0.91,,CAD命令: GEOMAPIMAGELINE_BREAK    将联机地图的一部分捕获到称为地图图像的对象，然后将其嵌入在绘图区域中。,false
+CAD命令,GEOMAPIMAGEUPDATE,0.91,,CAD命令: GEOMAPIMAGEUPDATELINE_BREAK    从联机地图服务更新地图图像并且可以选择重置其分辨率，以便提供最佳的屏幕查看效果。,false
+CAD命令,GEOMARKLATLONG,0.91,,CAD命令: GEOMARKLATLONGLINE_BREAK    将位置标记放置在由纬度和经度定义的位置上。,false
+CAD命令,GEOMARKME,0.91,,CAD命令: GEOMARKMELINE_BREAK    将位置标记放置在绘图区域中与您当前位置相对应的坐标上。,false
+CAD命令,GEOMARKPOINT,0.91,,CAD命令: GEOMARKPOINTLINE_BREAK    将位置标记放置在模型空间中的指定点处。,false
+CAD命令,GEOMARKPOSITION,0.91,,CAD命令: GEOMARKPOSITIONLINE_BREAK    将位置标记放置在指定的位置。,false
+CAD命令,GEOMCONSTRAINT,0.91,,CAD命令: GEOMCONSTRAINTLINE_BREAK    应用对象之间或对象上的点之间的几何关系或使其永久保持。,false
+CAD命令,GEOREMOVE,0.91,,CAD命令: GEOREMOVELINE_BREAK    从图形文件中删除所有地理位置信息。,false
+CAD命令,GEOREORIENTMARKER,0.91,,CAD命令: GEOREORIENTMARKERLINE_BREAK    更改模型空间中地理标记的北向和位置，而不更改其纬度和经度。,false
+CAD命令,GETSEL,0.91,,CAD命令: GETSELLINE_BREAK     (Express Tool)基于图层和对象类型过滤器，创建对象的选择集。,false
+CAD命令,GOTOSTART,0.91,,CAD命令: GOTOSTARTLINE_BREAK    从当前图形切换到“开始”选项卡。,false
+CAD命令,GOTOURL,0.91,,CAD命令: GOTOURLLINE_BREAK    打开文件或与附加到对象的超链接关联的 Web 页。,false
+CAD命令,GRADIENT,0.91,,CAD命令: GRADIENTLINE_BREAK    使用渐变填充填充封闭区域或选定对象。,false
+CAD命令,GRAPHICSCONFIG,0.91,,CAD命令: GRAPHICSCONFIGLINE_BREAK    将硬件加速设置为开或关，并提供对显示性能选项的访问。,false
+CAD命令,GRAPHSCR,0.91,,CAD命令: GRAPHSCRLINE_BREAK    将使文本窗口显示在应用程序窗口的后面。,false
+CAD命令,GRID,0.91,,CAD命令: GRIDLINE_BREAK    在当前视口中显示栅格图案。,false
+CAD命令,GROUP,0.91,,CAD命令: GROUPLINE_BREAK    创建和管理已保存的对象集（称为编组）。,false
+CAD命令,GROUPEDIT,0.91,,CAD命令: GROUPEDITLINE_BREAK    将对象添加到选定的组以及从选定组中删除对象，或重命名选定的组。,false
+CAD命令,HATCH,0.91,,CAD命令: HATCHLINE_BREAK    使用填充图案、实体填充或渐变填充来填充封闭区域或选定对象。,false
+CAD命令,HATCHEDIT,0.91,,CAD命令: HATCHEDITLINE_BREAK    修改现有的图案填充或填充。,false
+CAD命令,HATCHGENERATEBOUNDARY,0.91,,CAD命令: HATCHGENERATEBOUNDARYLINE_BREAK    围绕选定的图案填充创建非关联多段线。,false
+CAD命令,HATCHSETBOUNDARY,0.91,,CAD命令: HATCHSETBOUNDARYLINE_BREAK    重新定义选定的图案填充或填充以符合不同的闭合边界。,false
+CAD命令,HATCHSETORIGIN,0.91,,CAD命令: HATCHSETORIGINLINE_BREAK    控制选定图案填充的填充图案生成的起始位置。,false
+CAD命令,HATCHTOBACK,0.91,,CAD命令: HATCHTOBACKLINE_BREAK    将图形中所有图案填充的绘图次序设定为在所有其他对象之后。,false
+CAD命令,HELIX,0.91,,CAD命令: HELIXLINE_BREAK    创建二维螺旋或三维弹簧。,false
+CAD命令,HELP,0.91,,CAD命令: HELPLINE_BREAK    显示联机或脱机帮助系统。,false
+CAD命令,HIDE,0.91,,CAD命令: HIDELINE_BREAK    在二维线框视觉样式中不显示隐藏线的情况下，显示三维模型。,false
+CAD命令,HIDEOBJECTS,0.91,,CAD命令: HIDEOBJECTSLINE_BREAK    隐藏选定对象。,false
+CAD命令,HIDEPALETTES,0.91,,CAD命令: HIDEPALETTESLINE_BREAK    隐藏所有显示的选项板及功能区和图形选项卡。,false
+CAD命令,HIGHLIGHTNEW,0.91,,CAD命令: HIGHLIGHTNEWLINE_BREAK    控制是否使用橙色点在用户界面中亮显产品更新中新增和改进的功能。,false
+CAD命令,HLSETTINGS,0.91,,CAD命令: HLSETTINGSLINE_BREAK    设置诸如隐藏线的特性的显示。,false
+CAD命令,HYPERLINK,0.91,,CAD命令: HYPERLINKLINE_BREAK    将超链接附着到对象或修改现有超链接。,false
+CAD命令,HYPERLINKOPTIONS,0.91,,CAD命令: HYPERLINKOPTIONSLINE_BREAK    控制超链接光标、工具提示和快捷菜单的显示。,false
+CAD命令,ID,0.91,,CAD命令: IDLINE_BREAK    显示指定位置的 UCS 坐标值。,false
+CAD命令,IGESEXPORT,0.91,,CAD命令: IGESEXPORTLINE_BREAK    将当前图形中的选定对象保存为新的 IGES（*.igs 或 *.iges）文件。,false
+CAD命令,IGESIMPORT,0.91,,CAD命令: IGESIMPORTLINE_BREAK    将数据从 IGES（*.igs 或 *.iges）文件输入到当前图形中。,false
+CAD命令,IMAGE,0.91,,CAD命令: IMAGELINE_BREAK    显示“外部参照”选项板。,false
+CAD命令,IMAGEADJUST,0.91,,CAD命令: IMAGEADJUSTLINE_BREAK    控制图像的亮度、对比度和淡入度值。,false
+CAD命令,IMAGEAPP,0.91,,CAD命令: IMAGEAPPLINE_BREAK    (Express Tool)为 IMAGEEDIT 指定图像编辑程序。,false
+CAD命令,IMAGEATTACH,0.91,,CAD命令: IMAGEATTACHLINE_BREAK    将参照插入图像文件中。,false
+CAD命令,IMAGECLIP,0.91,,CAD命令: IMAGECLIPLINE_BREAK    根据指定边界修剪选定图像的显示。,false
+CAD命令,IMAGEEDIT,0.91,,CAD命令: IMAGEEDITLINE_BREAK     (Express Tool)启动通过 IMAGEAPP 为选定图像指定的图像编辑程序。,false
+CAD命令,IMAGEQUALITY,0.91,,CAD命令: IMAGEQUALITYLINE_BREAK    控制图像的显示质量。,false
+CAD命令,IMPORT,0.91,,CAD命令: IMPORTLINE_BREAK    将不同格式的文件输入当前图形中。,false
+CAD命令,IMPRINT,0.91,,CAD命令: IMPRINTLINE_BREAK    压印三维实体或曲面上的二维几何图形，从而在平面上创建其他边。,false
+CAD命令,INPUTSEARCHOPTIONS,0.91,,CAD命令: INPUTSEARCHOPTIONSLINE_BREAK    可以打开控制命令行建议列表（用于命令、系统变量和命名对象）的显示设置的对话框。,false
+CAD命令,INSERT,0.91,,CAD命令: INSERTLINE_BREAK    显示“块”选项板，可用于将块和图形插入到当前图形中。,false
+CAD命令,INSERTOBJ,0.91,,CAD命令: INSERTOBJLINE_BREAK    插入链接或内嵌对象。,false
+CAD命令,INTERFERE,0.91,,CAD命令: INTERFERELINE_BREAK    通过两组选定三维实体之间的干涉创建临时三维实体。,false
+CAD命令,INTERSECT,0.91,,CAD命令: INTERSECTLINE_BREAK    通过重叠实体、曲面或面域创建三维实体、曲面或二维面域。,false
+CAD命令,ISODRAFT,0.91,,CAD命令: ISODRAFTLINE_BREAK    启用或禁用等轴测草图设置，然后指定当前二维等轴测草图平面。,false
+CAD命令,ISOLATEOBJECTS,0.91,,CAD命令: ISOLATEOBJECTSLINE_BREAK    暂时隐藏除选定对象之外的所有对象。,false
+CAD命令,ISOPLANE,0.91,,CAD命令: ISOPLANELINE_BREAK    指定二维等轴测图形的当前平面。,false
+CAD命令,JOIN,0.91,,CAD命令: JOINLINE_BREAK    合并线性和弯曲对象的端点，以便创建单个对象。,false
+CAD命令,JPGOUT,0.91,,CAD命令: JPGOUTLINE_BREAK    将选定对象以 JPEG 文件格式保存到文件中。,false
+CAD命令,JULIAN,0.91,,CAD命令: JULIANLINE_BREAK     (Express Tool)包含 DATE 工具和多个 AutoCAD 公历日期和日历日期转化例程。,false
+CAD命令,JUSTIFYTEXT,0.91,,CAD命令: JUSTIFYTEXTLINE_BREAK    更改选定文字对象的对正点而不更改其位置。,false
+CAD命令,LAYCUR,0.91,,CAD命令: LAYCURLINE_BREAK    将选定对象的图层特性更改为当前图层的特性。,false
+CAD命令,LAYER,0.91,,CAD命令: LAYERLINE_BREAK    管理图层和图层特性。,false
+CAD命令,LAYERCLOSE,0.91,,CAD命令: LAYERCLOSELINE_BREAK    关闭图层特性管理器。,false
+CAD命令,LAYERP,0.91,,CAD命令: LAYERPLINE_BREAK    放弃对图层设置的上一个或上一组更改。,false
+CAD命令,LAYERPALETTE,0.91,,CAD命令: LAYERPALETTELINE_BREAK    打开无模式图层特性管理器。,false
+CAD命令,LAYERPMODE,0.91,,CAD命令: LAYERPMODELINE_BREAK    打开和关闭追踪 LAYERP 命令对使用的图层设置所做的更改。,false
+CAD命令,LAYERSTATE,0.91,,CAD命令: LAYERSTATELINE_BREAK    保存、恢复和管理称为图层状态的图层设置的集合。,false
+CAD命令,LAYERSTATESAVE,0.91,,CAD命令: LAYERSTATESAVELINE_BREAK    显示“要保存的新图层状态”对话框，从中可以提供新图层状态的名称和说明。,false
+CAD命令,LAYFRZ,0.91,,CAD命令: LAYFRZLINE_BREAK    冻结选定对象所在的图层。,false
+CAD命令,LAYISO,0.91,,CAD命令: LAYISOLINE_BREAK    隐藏或锁定除选定对象所在图层外的所有图层。,false
+CAD命令,LAYLCK,0.91,,CAD命令: LAYLCKLINE_BREAK    锁定选定对象所在的图层。,false
+CAD命令,LAYMCH,0.91,,CAD命令: LAYMCHLINE_BREAK    更改选定对象所在的图层，以使其匹配目标图层。,false
+CAD命令,LAYMCUR,0.91,,CAD命令: LAYMCURLINE_BREAK    将当前图层设定为选定对象所在的图层。,false
+CAD命令,LAYMRG,0.91,,CAD命令: LAYMRGLINE_BREAK    将选定图层合并为一个目标图层，并从图形中将它们删除。,false
+CAD命令,LAYOFF,0.91,,CAD命令: LAYOFFLINE_BREAK    关闭选定对象所在的图层。,false
+CAD命令,LAYON,0.91,,CAD命令: LAYONLINE_BREAK    打开图形中的所有图层。,false
+CAD命令,LAYOUT,0.91,,CAD命令: LAYOUTLINE_BREAK    创建和修改图形布局。,false
+CAD命令,LAYOUTMERGE,0.91,,CAD命令: LAYOUTMERGELINE_BREAK     (Express Tool)将指定的布局组合为单个布局。,false
+CAD命令,LAYOUTWIZARD,0.91,,CAD命令: LAYOUTWIZARDLINE_BREAK    创建新的布局选项卡并指定页面和打印设置。,false
+CAD命令,LAYTHW,0.91,,CAD命令: LAYTHWLINE_BREAK    解冻图形中的所有图层。,false
+CAD命令,LAYTRANS,0.91,,CAD命令: LAYTRANSLINE_BREAK    当前图形中的图层转换为指定的图层标准。,false
+CAD命令,LAYULK,0.91,,CAD命令: LAYULKLINE_BREAK    解锁选定对象所在的图层。,false
+CAD命令,LAYUNISO,0.91,,CAD命令: LAYUNISOLINE_BREAK    恢复使用 LAYISO 命令隐藏或锁定的所有图层.,false
+CAD命令,LAYVPI,0.91,,CAD命令: LAYVPILINE_BREAK    冻结除当前视口外的所有布局视口中的选定图层。,false
+CAD命令,LAYWALK,0.91,,CAD命令: LAYWALKLINE_BREAK    显示选定图层上的对象并隐藏所有其他图层上的对象。,false
+CAD命令,LEADER,0.91,,CAD命令: LEADERLINE_BREAK    创建连接注释与特征的线。,false
+CAD命令,LENGTHEN,0.91,,CAD命令: LENGTHENLINE_BREAK    更改对象的长度和圆弧的包含角。,false
+CAD命令,LIGHT,0.91,,CAD命令: LIGHTLINE_BREAK    创建光源。,false
+CAD命令,LIGHTLIST,0.91,,CAD命令: LIGHTLISTLINE_BREAK    显示用于列出模型中所有光源的“模型中的光源”选项板。,false
+CAD命令,LIGHTLISTCLOSE,0.91,,CAD命令: LIGHTLISTCLOSELINE_BREAK    关闭“模型中的光源”选项板。,false
+CAD命令,LIMITS,0.91,,CAD命令: LIMITSLINE_BREAK    在绘图区域中设置不可见的矩形边界，该边界可以限制栅格显示并限制单击或输入点位置。,false
+CAD命令,LINE,0.91,,CAD命令: LINELINE_BREAK    创建一系列连续的直线段。每条线段都是可以单独进行编辑的直线对象。,false
+CAD命令,LINETYPE,0.91,,CAD命令: LINETYPELINE_BREAK    加载、设置和修改线型。,false
+CAD命令,LIST,0.91,,CAD命令: LISTLINE_BREAK    为选定对象显示特性数据。,false
+CAD命令,LIVESECTION,0.91,,CAD命令: LIVESECTIONLINE_BREAK    打开选定截面对象的活动截面。,false
+CAD命令,LOAD,0.91,,CAD命令: LOADLINE_BREAK    使编译的形 (SHX) 文件中的符号可供 SHAPE 命令使用。,false
+CAD命令,LOFT,0.91,,CAD命令: LOFTLINE_BREAK    在若干横截面之间的空间中创建三维实体或曲面。,false
+CAD命令,LOGFILEOFF,0.91,,CAD命令: LOGFILEOFFLINE_BREAK    关闭通过 LOGFILEON 命令打开的命令历史记录日志文件。,false
+CAD命令,LOGFILEON,0.91,,CAD命令: LOGFILEONLINE_BREAK    将命令历史记录的内容写入到文件中。,false
+CAD命令,LSP,0.91,,CAD命令: LSPLINE_BREAK     (Express Tool)显示所有可用 AutoLISP 命令、函数和变量的列表。,false
+CAD命令,LSPSURF,0.91,,CAD命令: LSPSURFLINE_BREAK     (Express Tool)按单个函数显示 AutoLISP 文件的内容。,false
+CAD命令,LTSCALE,0.91,,CAD命令: LTSCALELINE_BREAK    设定全局线型比例因子。,false
+CAD命令,LWEIGHT,0.91,,CAD命令: LWEIGHTLINE_BREAK    设置当前线宽、线宽显示选项和线宽单位。,false
+CAD命令,MARKUP,0.91,,CAD命令: MARKUPLINE_BREAK    打开标记集管理器。,false
+CAD命令,MARKUPCLOSE,0.91,,CAD命令: MARKUPCLOSELINE_BREAK    关闭标记集管理器。,false
+CAD命令,MASSPROP,0.91,,CAD命令: MASSPROPLINE_BREAK    计算选定二维面域或三维实体的质量特性。,false
+CAD命令,MATBROWSERCLOSE,0.91,,CAD命令: MATBROWSERCLOSELINE_BREAK    关闭材质浏览器。,false
+CAD命令,MATBROWSEROPEN,0.91,,CAD命令: MATBROWSEROPENLINE_BREAK    打开材质浏览器。,false
+CAD命令,MATCHCELL,0.91,,CAD命令: MATCHCELLLINE_BREAK    将选定表格单元的特性应用于其他表格单元。,false
+CAD命令,MATCHPROP,0.91,,CAD命令: MATCHPROPLINE_BREAK    将选定对象的特性应用于其他对象。,false
+CAD命令,MATEDITORCLOSE,0.91,,CAD命令: MATEDITORCLOSELINE_BREAK    关闭材质编辑器。,false
+CAD命令,MATEDITOROPEN,0.91,,CAD命令: MATEDITOROPENLINE_BREAK    打开材质编辑器。,false
+CAD命令,MATERIALASSIGN,0.91,,CAD命令: MATERIALASSIGNLINE_BREAK    将在 CMATERIAL 系统变量中定义的材质指定给所选择的对象。,false
+CAD命令,MATERIALATTACH,0.91,,CAD命令: MATERIALATTACHLINE_BREAK    将材质与图层关联。,false
+CAD命令,MATERIALMAP,0.91,,CAD命令: MATERIALMAPLINE_BREAK    调整将纹理贴图到面或对象的方式。,false
+CAD命令,MATERIALS,0.91,,CAD命令: MATERIALSLINE_BREAK    打开材质浏览器。,false
+CAD命令,MATERIALSCLOSE,0.91,,CAD命令: MATERIALSCLOSELINE_BREAK    关闭材质浏览器。,false
+CAD命令,MEASURE,0.91,,CAD命令: MEASURELINE_BREAK    沿对象的长度或周长按测定间隔创建点对象或块。,false
+CAD命令,MEASUREGEOM,0.91,,CAD命令: MEASUREGEOMLINE_BREAK    测量选定对象的距离、半径、角度、面积和体积，测量一系列点或者动态测量。,false
+CAD命令,MENU,0.91,,CAD命令: MENULINE_BREAK    加载自定义文件。,false
+CAD命令,MESH,0.91,,CAD命令: MESHLINE_BREAK    创建三维网格图元对象，例如长方体、圆锥体、圆柱体、棱锥体、球体、楔体或圆环体。,false
+CAD命令,MESHCAP,0.91,,CAD命令: MESHCAPLINE_BREAK    创建用于连接开放边的网格面。,false
+CAD命令,MESHCOLLAPSE,0.91,,CAD命令: MESHCOLLAPSELINE_BREAK    合并选定网格面或边的顶点。,false
+CAD命令,MESHCREASE,0.91,,CAD命令: MESHCREASELINE_BREAK    锐化选定网格子对象的边。,false
+CAD命令,MESHEXTRUDE,0.91,,CAD命令: MESHEXTRUDELINE_BREAK    将网格面延伸到三维空间。,false
+CAD命令,MESHMERGE,0.91,,CAD命令: MESHMERGELINE_BREAK    将相邻面合并为单个面。,false
+CAD命令,MESHOPTIONS,0.91,,CAD命令: MESHOPTIONSLINE_BREAK    显示“网格镶嵌选项”对话框，此对话框用于控制将现有对象转换为网格对象时的默认设置。,false
+CAD命令,MESHPRIMITIVEOPTIONS,0.91,,CAD命令: MESHPRIMITIVEOPTIONSLINE_BREAK    显示“网格图元选项”对话框，此对话框用于设置图元网格对象的镶嵌默认值。,false
+CAD命令,MESHREFINE,0.91,,CAD命令: MESHREFINELINE_BREAK    成倍增加选定网格对象或面中的面数。,false
+CAD命令,MESHSMOOTH,0.91,,CAD命令: MESHSMOOTHLINE_BREAK    将三维对象（例如多边形网格、曲面和实体）转换为网格对象。,false
+CAD命令,MESHSMOOTHLESS,0.91,,CAD命令: MESHSMOOTHLESSLINE_BREAK    将网格对象的平滑度降低一级。,false
+CAD命令,MESHSMOOTHMORE,0.91,,CAD命令: MESHSMOOTHMORELINE_BREAK    将网格对象的平滑度提高一级。,false
+CAD命令,MESHSPIN,0.91,,CAD命令: MESHSPINLINE_BREAK    旋转两个三角形网格面的相邻边。,false
+CAD命令,MESHSPLIT,0.91,,CAD命令: MESHSPLITLINE_BREAK    将一个网格面拆分为两个面。,false
+CAD命令,MESHUNCREASE,0.91,,CAD命令: MESHUNCREASELINE_BREAK    删除选定网格面、边或顶点的锐化。,false
+CAD命令,MIGRATEMATERIALS,0.91,,CAD命令: MIGRATEMATERIALSLINE_BREAK    在工具选项板中查找任何传统材质，并将这些材质转换为常规类型。,false
+CAD命令,MINSERT,0.91,,CAD命令: MINSERTLINE_BREAK    在矩形阵列中插入一个块的多个实例。,false
+CAD命令,MIRROR,0.91,,CAD命令: MIRRORLINE_BREAK    创建选定对象的镜像副本。,false
+CAD命令,MIRROR3D,0.91,,CAD命令: MIRROR3DLINE_BREAK    创建镜像平面上选定三维对象的镜像副本。,false
+CAD命令,MKLTYPE,0.91,,CAD命令: MKLTYPELINE_BREAK     (Express Tool)基于选定对象创建线型定义，并将它们存储在指定的线型定义 (LIN) 文件中。,false
+CAD命令,MKSHAPE,0.91,,CAD命令: MKSHAPELINE_BREAK     (Express Tool)基于选定对象创建形状定义。,false
+CAD命令,MLEADER,0.91,,CAD命令: MLEADERLINE_BREAK    创建多重引线对象。,false
+CAD命令,MLEADERALIGN,0.91,,CAD命令: MLEADERALIGNLINE_BREAK    对齐并间隔排列选定的多重引线对象。,false
+CAD命令,MLEADERCOLLECT,0.91,,CAD命令: MLEADERCOLLECTLINE_BREAK    将包含块的选定多重引线整理到行或列中，并通过单引线显示结果。,false
+CAD命令,MLEADEREDIT,0.91,,CAD命令: MLEADEREDITLINE_BREAK    将引线添加至多重引线对象，或从多重引线对象中删除引线。,false
+CAD命令,MLEADERSTYLE,0.91,,CAD命令: MLEADERSTYLELINE_BREAK    创建和修改多重引线样式。,false
+CAD命令,MLEDIT,0.91,,CAD命令: MLEDITLINE_BREAK    编辑多线交点、打断点和顶点。,false
+CAD命令,MLINE,0.91,,CAD命令: MLINELINE_BREAK    创建多条平行线。,false
+CAD命令,MLSTYLE,0.91,,CAD命令: MLSTYLELINE_BREAK    创建、修改和管理多线样式。,false
+CAD命令,MOCORO,0.91,,CAD命令: MOCOROLINE_BREAK     (Express Tool)使用单个命令移动、复制、旋转和缩放选定的对象。,false
+CAD命令,MODEL,0.91,,CAD命令: MODELLINE_BREAK    从命名的布局选项卡切换到“模型”选项卡。,false
+CAD命令,MOVE,0.91,,CAD命令: MOVELINE_BREAK    在指定方向上按指定距离移动对象。,false
+CAD命令,MOVEBAK,0.91,,CAD命令: MOVEBAKLINE_BREAK     (Express Tool)更改图形备份 (BAK) 文件的目标文件夹。,false
+CAD命令,MPEDIT,0.91,,CAD命令: MPEDITLINE_BREAK     (Express Tool)编辑多个多段线；还将多个直线和圆弧对象转换为多段线对象。,false
+CAD命令,MREDO,0.91,,CAD命令: MREDOLINE_BREAK    恢复之前几个用 UNDO 或 U 命令放弃的效果。,false
+CAD命令,MSLIDE,0.91,,CAD命令: MSLIDELINE_BREAK    创建当前模型视口或当前布局的幻灯片文件。,false
+CAD命令,MSPACE,0.91,,CAD命令: MSPACELINE_BREAK    在布局中，从图纸空间切换到布局视口中的模型空间。,false
+CAD命令,MSTRETCH,0.91,,CAD命令: MSTRETCHLINE_BREAK     (Express Tool)拉伸具有多个交叉窗口和交叉多边形的对象。,false
+CAD命令,MTEDIT,0.91,,CAD命令: MTEDITLINE_BREAK    编辑多行文字。,false
+CAD命令,MTEXT,0.91,,CAD命令: MTEXTLINE_BREAK    创建多行文字对象。,false
+CAD命令,MULTIPLE,0.91,,CAD命令: MULTIPLELINE_BREAK    重复指定下一条命令直至被取消。,false
+CAD命令,MVIEW,0.91,,CAD命令: MVIEWLINE_BREAK    创建并控制布局视口。,false
+CAD命令,MVSETUP,0.91,,CAD命令: MVSETUPLINE_BREAK    设置图形规格。,false
+CAD命令,NAVBAR,0.91,,CAD命令: NAVBARLINE_BREAK    提供对通用界面中的查看工具的访问。,false
+CAD命令,NAVSMOTION,0.91,,CAD命令: NAVSMOTIONLINE_BREAK    为出于设计检查、演示以及书签样式导航目的而创建和回放电影式相机动画提供屏幕上显示。,false
+CAD命令,NAVSMOTIONCLOSE,0.91,,CAD命令: NAVSMOTIONCLOSELINE_BREAK    关闭 ShowMotion 界面。,false
+CAD命令,NAVSWHEEL,0.91,,CAD命令: NAVSWHEELLINE_BREAK    提供对可通过光标快速访问的增强导航工具的访问。,false
+CAD命令,NAVVCUBE,0.91,,CAD命令: NAVVCUBELINE_BREAK    指示当前查看方向。拖动或单击 ViewCube 可旋转场景。,false
+CAD命令,NCOPY,0.91,,CAD命令: NCOPYLINE_BREAK    复制包含在外部参照、块或 DGN 参考底图中的对象。,false
+CAD命令,NETLOAD,0.91,,CAD命令: NETLOADLINE_BREAK    加载 .NET 应用程序。,false
+CAD命令,NEW,0.91,,CAD命令: NEWLINE_BREAK    创建新图形。,false
+CAD命令,NEWSHEETSET,0.91,,CAD命令: NEWSHEETSETLINE_BREAK    创建用于管理图形布局、文件路径和工程数据的新图纸集数据文件。,false
+CAD命令,NEWSHOT,0.91,,CAD命令: NEWSHOTLINE_BREAK    创建包含运动的命名视图，该视图将在使用 ShowMotion 查看时回放,false
+CAD命令,NEWVIEW,0.91,,CAD命令: NEWVIEWLINE_BREAK    通过当前视口中的显示或者定义矩形窗口，保存新的命名视图。,false
+CAD命令,OBJECTSCALE,0.91,,CAD命令: OBJECTSCALELINE_BREAK    为注释性对象添加或删除支持的比例。,false
+CAD命令,OFFSET,0.91,,CAD命令: OFFSETLINE_BREAK    创建同心圆、平行线和平行曲线。,false
+CAD命令,OFFSETEDGE,0.91,,CAD命令: OFFSETEDGELINE_BREAK    创建闭合多段线或样条曲线对象，该对象在三维实体或曲面上从选定平整面的边以指定距离偏移。,false
+CAD命令,OLECONVERT,0.91,,CAD命令: OLECONVERTLINE_BREAK    为嵌入的 OLE 对象指定不同的源应用程序，并控制是否用图标来表示该 OLE 对象。,false
+CAD命令,OLELINKS,0.91,,CAD命令: OLELINKSLINE_BREAK    更新、更改和取消所选的链接 OLE 对象。,false
+CAD命令,OLEOPEN,0.91,,CAD命令: OLEOPENLINE_BREAK    在选定 OLE 对象的源应用程序中打开该对象。,false
+CAD命令,OLERESET,0.91,,CAD命令: OLERESETLINE_BREAK    将所选的 OLE 对象恢复为其原始大小和形状。,false
+CAD命令,OLESCALE,0.91,,CAD命令: OLESCALELINE_BREAK    控制选定的 OLE 对象的大小、比例和其他特性。,false
+CAD命令,OOPS,0.91,,CAD命令: OOPSLINE_BREAK    恢复删除的对象。,false
+CAD命令,OPEN,0.91,,CAD命令: OPENLINE_BREAK    打开现有的图形文件。,false
+CAD命令,OPENDWFMARKUP,0.91,,CAD命令: OPENDWFMARKUPLINE_BREAK    打开包含标记的 DWF 或 DWFx 文件。,false
+CAD命令,OPENFROMWEBMOBILE,0.91,,CAD命令: OPENFROMWEBMOBILELINE_BREAK    从联机 Autodesk Web 和 Mobile 帐户打开图形文件。,false
+CAD命令,OPENSHEETSET,0.91,,CAD命令: OPENSHEETSETLINE_BREAK    打开选定的图纸集。,false
+CAD命令,OPTIONS,0.91,,CAD命令: OPTIONSLINE_BREAK    自定义程序设置。,false
+CAD命令,ATTEDIT,0.91,,CAD命令: ATTEDITLINE_BREAK    更改块中的属性信息。,false
+CAD命令,ORTHO,0.91,,CAD命令: ORTHOLINE_BREAK    约束光标在水平方向或垂直方向移动。,false
+CAD命令,OSNAP,0.91,,CAD命令: OSNAPLINE_BREAK    设置执行对象捕捉模式。,false
+CAD命令,OVERKILL,0.91,,CAD命令: OVERKILLLINE_BREAK    删除重复或重叠的直线、圆弧和多段线。此外，合并局部重叠或连续的直线、圆弧和多段线。,false
+CAD命令,PAGESETUP,0.91,,CAD命令: PAGESETUPLINE_BREAK    控制每个新建布局的页面布局、打印设备、图纸尺寸和其他设置。,false
+CAD命令,PAN,0.91,,CAD命令: PANLINE_BREAK    改变视图而不更改查看方向或比例。,false
+CAD命令,PARAMETERS,0.91,,CAD命令: PARAMETERSLINE_BREAK    打开“参数管理器”选项板，它包括当前图形中的所有标注约束参数、参照参数和用户变量。,false
+CAD命令,PARAMETERSCLOSE,0.91,,CAD命令: PARAMETERSCLOSELINE_BREAK    关闭“参数管理器”选项板。,false
+CAD命令,PARTIALOAD,0.91,,CAD命令: PARTIALOADLINE_BREAK    将附加几何图形加载到局部打开的图形中。,false
+CAD命令,PARTIALOPEN,0.91,,CAD命令: PARTIALOPENLINE_BREAK    将选定视图或图层中的几何图形和命名对象加载到图形中。,false
+CAD命令,PASTEASHYPERLINK,0.91,,CAD命令: PASTEASHYPERLINKLINE_BREAK    创建到文件的超链接，并将其与选定的对象关联。,false
+CAD命令,PASTEBLOCK,0.91,,CAD命令: PASTEBLOCKLINE_BREAK    将剪贴板中的对象作为块粘贴到当前图形中。,false
+CAD命令,PASTECLIP,0.91,,CAD命令: PASTECLIPLINE_BREAK    将剪贴板中的对象粘贴到当前图形中。,false
+CAD命令,PASTEORIG,0.91,,CAD命令: PASTEORIGLINE_BREAK    使用原坐标将剪贴板中的对象粘贴到当前图形中。,false
+CAD命令,PASTESPEC,0.91,,CAD命令: PASTESPECLINE_BREAK    将剪贴板中的对象粘贴到当前图形中，并控制数据的格式。,false
+CAD命令,PCEXTRACTCENTERLINE,0.91,,CAD命令: PCEXTRACTCENTERLINELINE_BREAK    穿过点云中的圆柱段中心轴创建一条线。,false
+CAD命令,PCEXTRACTCORNER,0.91,,CAD命令: PCEXTRACTCORNERLINE_BREAK    在点云中三个平面线段的交点处创建点对象。,false
+CAD命令,PCEXTRACTEDGE,0.91,,CAD命令: PCEXTRACTEDGELINE_BREAK    类推两个相邻平面线段的交点，然后沿着边创建一条线。,false
+CAD命令,PCEXTRACTSECTION,0.91,,CAD命令: PCEXTRACTSECTIONLINE_BREAK    通过点云从截面生成二维几何图形。,false
+CAD命令,PCINWIZARD,0.91,,CAD命令: PCINWIZARDLINE_BREAK    显示向导，将 PCP 和 PC2 配置文件打印设置输入到模型或当前布局中。,false
+CAD命令,PDFADJUST,0.91,,CAD命令: PDFADJUSTLINE_BREAK    调整 PDF 参考底图的淡入度、对比度和单色设置。,false
+CAD命令,PDFATTACH,0.91,,CAD命令: PDFATTACHLINE_BREAK    将 PDF 文件作为参考底图插入到当前图形中。,false
+CAD命令,PDFCLIP,0.91,,CAD命令: PDFCLIPLINE_BREAK    根据指定边界修剪选定 PDF 参考底图的显示。,false
+CAD命令,PDFIMPORT,0.91,,CAD命令: PDFIMPORTLINE_BREAK    从指定的 PDF 文件输入几何图形、填充、光栅图像和 TrueType 文字对象。,false
+CAD命令,PDFLAYERS,0.91,,CAD命令: PDFLAYERSLINE_BREAK    控制 PDF 参考底图中图层的显示。,false
+CAD命令,PDFSHXTEXT,0.91,,CAD命令: PDFSHXTEXTLINE_BREAK    将从 PDF 文件中输入的 SHX 几何图形转换为单个多行文字对象。,false
+CAD命令,PEDIT,0.91,,CAD命令: PEDITLINE_BREAK    编辑多段线、要合并到多段线的对象以及相关对象。,false
+CAD命令,PFACE,0.91,,CAD命令: PFACELINE_BREAK    逐个顶点创建三维多面网格。,false
+CAD命令,PLAN,0.91,,CAD命令: PLANLINE_BREAK    显示指定用户坐标系的 XY 平面的正交视图。,false
+CAD命令,PLANESURF,0.91,,CAD命令: PLANESURFLINE_BREAK    创建平面曲面。,false
+CAD命令,PLINE,0.91,,CAD命令: PLINELINE_BREAK    创建二维多段线，它是由直线段和圆弧段组成的单个对象。,false
+CAD命令,PLOT,0.91,,CAD命令: PLOTLINE_BREAK    将图形打印到绘图仪、打印机或文件。,false
+CAD命令,PLOTSTAMP,0.91,,CAD命令: PLOTSTAMPLINE_BREAK    将打印戳记和类似日期、时间和比例的信息一起放在每个图形的指定角，并将其记录到文件中。,false
+CAD命令,PLOTSTYLE,0.91,,CAD命令: PLOTSTYLELINE_BREAK    控制附着到当前布局、并可指定给对象的命名打印样式。,false
+CAD命令,PLOTTERMANAGER,0.91,,CAD命令: PLOTTERMANAGERLINE_BREAK    显示绘图仪管理器，从中可以添加或编辑绘图仪配置。,false
+CAD命令,PLT2DWG,0.91,,CAD命令: PLT2DWGLINE_BREAK    (Express Tool)将传统 HPGL 文件输入到当前图形中，并保留所有颜色。,false
+CAD命令,PMTOGGLE,0.91,,CAD命令: PMTOGGLELINE_BREAK    控制性能录制器处于打开还是关闭状态。,false
+CAD命令,PNGOUT,0.91,,CAD命令: PNGOUTLINE_BREAK    将选定对象以便携式网络图形格式保存到文件中。,false
+CAD命令,POINT,0.91,,CAD命令: POINTLINE_BREAK    创建点对象。,false
+CAD命令,POINTCLOUDATTACH,0.91,,CAD命令: POINTCLOUDATTACHLINE_BREAK    将点云扫描 (RCS）或项目文件 (RCP) 插入到当前图形中。,false
+CAD命令,POINTCLOUDCOLORMAP,0.91,,CAD命令: POINTCLOUDCOLORMAPLINE_BREAK    显示“点云颜色映射”对话框，用于定义强度、标高和分类点云样式化的设置。,false
+CAD命令,POINTCLOUDCROP,0.91,,CAD命令: POINTCLOUDCROPLINE_BREAK    将选定的点云裁剪为指定的多边形、矩形或圆形边界。,false
+CAD命令,POINTCLOUDCROPSTATE,0.91,,CAD命令: POINTCLOUDCROPSTATELINE_BREAK    保存、恢复和删除点云裁剪状态。,false
+CAD命令,POINTCLOUDMANAGER,0.91,,CAD命令: POINTCLOUDMANAGERLINE_BREAK    显示“点云管理器”选项板，用于控制点云项目、面域和扫描的显示。,false
+CAD命令,POINTCLOUDMANAGERCLOSE,0.91,,CAD命令: POINTCLOUDMANAGERCLOSELINE_BREAK    关闭点云管理器。,false
+CAD命令,POINTCLOUDSTYLIZE,0.91,,CAD命令: POINTCLOUDSTYLIZELINE_BREAK    控制点云的颜色。,false
+CAD命令,POINTCLOUDUNCROP,0.91,,CAD命令: POINTCLOUDUNCROPLINE_BREAK    从选定的点云删除所有修剪区域。,false
+CAD命令,POINTLIGHT,0.91,,CAD命令: POINTLIGHTLINE_BREAK    创建可从所在位置向所有方向发射光线的点光源。,false
+CAD命令,POLYGON,0.91,,CAD命令: POLYGONLINE_BREAK    创建等边闭合多段线。,false
+CAD命令,POLYSOLID,0.91,,CAD命令: POLYSOLIDLINE_BREAK    创建墙或一系列墙形状的三维实体。,false
+CAD命令,PRESSPULL,0.91,,CAD命令: PRESSPULLLINE_BREAK    通过拉伸和偏移动态修改对象。,false
+CAD命令,PREVIEW,0.91,,CAD命令: PREVIEWLINE_BREAK    将要打印图形时显示此图形。,false
+CAD命令,PROJECTGEOMETRY,0.91,,CAD命令: PROJECTGEOMETRYLINE_BREAK    从不同方向将点、直线或曲线投影到三维实体或曲面上。,false
+CAD命令,PROPERTIES,0.91,,CAD命令: PROPERTIESLINE_BREAK    控制现有对象的特性。,false
+CAD命令,PROPERTIESCLOSE,0.91,,CAD命令: PROPERTIESCLOSELINE_BREAK    关闭“特性”选项板。,false
+CAD命令,PROPULATE,0.91,,CAD命令: PROPULATELINE_BREAK     (Express Tool)更新、列出或清除“图形特性”数据。,false
+CAD命令,PSBSCALE,0.91,,CAD命令: PSBSCALELINE_BREAK     (Express Tool)指定或更新块对象相对于图纸空间的比例。,false
+CAD命令,PSETUPIN,0.91,,CAD命令: PSETUPINLINE_BREAK    将用户定义的页面设置输入到新的图形布局中。,false
+CAD命令,PSOUT,0.91,,CAD命令: PSOUTLINE_BREAK    从 DWG 文件创建 PostScript 文件。,false
+CAD命令,PSPACE,0.91,,CAD命令: PSPACELINE_BREAK    在布局中，从布局视口中的模型空间切换到图纸空间。,false
+CAD命令,PSTSCALE,0.91,,CAD命令: PSTSCALELINE_BREAK     (Express Tool)指定或更新文字对象相对于图纸空间的比例。,false
+CAD命令,PTYPE,0.91,,CAD命令: PTYPELINE_BREAK    指定点对象的显示样式及大小。,false
+CAD命令,PUBLISH,0.91,,CAD命令: PUBLISHLINE_BREAK    将图形发布为 DWF、DWFx 和 PDF 文件，或发布到打印机或绘图仪。,false
+CAD命令,PURGE,0.91,,CAD命令: PURGELINE_BREAK    删除图形中未使用的项目，例如块定义和图层。,false
+CAD命令,PYRAMID,0.91,,CAD命令: PYRAMIDLINE_BREAK    创建三维实体棱锥体。,false
+CAD命令,QCCLOSE,0.91,,CAD命令: QCCLOSELINE_BREAK    关闭“快速计算器”计算器。,false
+CAD命令,QDIM,0.91,,CAD命令: QDIMLINE_BREAK    从选定对象快速创建一系列标注。,false
+CAD命令,QLATTACH,0.91,,CAD命令: QLATTACHLINE_BREAK     (Express Tool)将引线附着到多行文字、公差或块参照对象。,false
+CAD命令,QLATTACHSET,0.91,,CAD命令: QLATTACHSETLINE_BREAK     (Express Tool)将引线全局附着到多行文字、公差或块参照对象。,false
+CAD命令,QLDETACHSET,0.91,,CAD命令: QLDETACHSETLINE_BREAK     (Express Tool)从多行文字、公差或块参照对象拆离引线。,false
+CAD命令,QLEADER,0.91,,CAD命令: QLEADERLINE_BREAK    创建引线和引线注释。,false
+CAD命令,QNEW,0.91,,CAD命令: QNEWLINE_BREAK    从指定的图形样板文件启动新图形。,false
+CAD命令,QQUIT,0.91,,CAD命令: QQUITLINE_BREAK     (Express Tool)关闭所有打开的图形，然后退出。,false
+CAD命令,QSAVE,0.91,,CAD命令: QSAVELINE_BREAK    使用指定的默认文件格式保存当前图形。,false
+CAD命令,QSELECT,0.91,,CAD命令: QSELECTLINE_BREAK    根据过滤条件创建选择集。,false
+CAD命令,QTEXT,0.91,,CAD命令: QTEXTLINE_BREAK    控制文字和属性对象的显示和打印。,false
+CAD命令,QUICKCALC,0.91,,CAD命令: QUICKCALCLINE_BREAK    打开“快速计算器”计算器。,false
+CAD命令,QUICKCUI,0.91,,CAD命令: QUICKCUILINE_BREAK    以收拢状态显示自定义用户界面编辑器。,false
+CAD命令,QUICKPROPERTIES,0.91,,CAD命令: QUICKPROPERTIESLINE_BREAK    为选定的对象显示快捷特性数据。,false
+CAD命令,QUIT,0.91,,CAD命令: QUITLINE_BREAK    退出程序。,false
+CAD命令,QVDRAWING,0.91,,CAD命令: QVDRAWINGLINE_BREAK    使用预览图像显示打开的图形和图形中的布局。,false
+CAD命令,QVDRAWINGCLOSE,0.91,,CAD命令: QVDRAWINGCLOSELINE_BREAK    关闭打开的图形及其布局的预览图像。,false
+CAD命令,QVLAYOUT,0.91,,CAD命令: QVLAYOUTLINE_BREAK    显示当前图形中模型空间和布局的预览图像。,false
+CAD命令,QVLAYOUTCLOSE,0.91,,CAD命令: QVLAYOUTCLOSELINE_BREAK    关闭当前图形中模型空间和布局的预览图像,false
+CAD命令,RAY,0.91,,CAD命令: RAYLINE_BREAK    创建始于一点并无限延伸的线性对象。,false
+CAD命令,RECOVER,0.91,,CAD命令: RECOVERLINE_BREAK    修复损坏的图形文件，然后重新打开。,false
+CAD命令,RECOVERALL,0.91,,CAD命令: RECOVERALLLINE_BREAK    修复损坏的图形文件以及所有附着的外部参照。,false
+CAD命令,RECTANG,0.91,,CAD命令: RECTANGLINE_BREAK    创建矩形多段线。,false
+CAD命令,REDEFINE,0.91,,CAD命令: REDEFINELINE_BREAK    恢复被 UNDEFINE 替代的 AutoCAD 内部命令。,false
+CAD命令,REDIR,0.91,,CAD命令: REDIRLINE_BREAK     (Express Tool)重定义外部参照、图像、形状、样式和 rtext 中硬编码的路径。,false
+CAD命令,REDIRMODE,0.91,,CAD命令: REDIRMODELINE_BREAK     (Express Tool)通过指定包含哪些对象类型，设置 REDIR Express Tool 的选项。,false
+CAD命令,REDO,0.91,,CAD命令: REDOLINE_BREAK    恢复上一个用 UNDO 或 U 命令放弃的效果。,false
+CAD命令,REDRAW,0.91,,CAD命令: REDRAWLINE_BREAK    刷新当前视口中的显示。,false
+CAD命令,REDRAWALL,0.91,,CAD命令: REDRAWALLLINE_BREAK    刷新所有视口中的显示。,false
+CAD命令,REFCLOSE,0.91,,CAD命令: REFCLOSELINE_BREAK    保存或放弃在位编辑参照（外部参照或块定义）时所做的更改。,false
+CAD命令,REFEDIT,0.91,,CAD命令: REFEDITLINE_BREAK    直接在当前图形中编辑外部参照或块定义。,false
+CAD命令,REFSET,0.91,,CAD命令: REFSETLINE_BREAK    在位编辑参照（外部参照或块定义）时从工作集添加或删除对象。,false
+CAD命令,REGEN,0.91,,CAD命令: REGENLINE_BREAK    在当前视口内重新生成图形。,false
+CAD命令,REGEN3,0.91,,CAD命令: REGEN3LINE_BREAK    在图形中重新生成视图，以修复三维实体和曲面显示中的异常问题。,false
+CAD命令,REGENALL,0.91,,CAD命令: REGENALLLINE_BREAK    重生成整个图形并刷新所有视口。,false
+CAD命令,REGENAUTO,0.91,,CAD命令: REGENAUTOLINE_BREAK    旧式的。控制图形的自动重生成。,false
+CAD命令,REGION,0.91,,CAD命令: REGIONLINE_BREAK    将封闭区域的对象转换为二维面域对象。,false
+CAD命令,REINIT,0.91,,CAD命令: REINITLINE_BREAK    重新初始化数字化仪、数字化仪的输入/输出端口和程序参数文件。,false
+CAD命令,RENAME,0.91,,CAD命令: RENAMELINE_BREAK    更改指定给项目（例如图层和标注样式）的名称。,false
+CAD命令,RENDER,0.91,,CAD命令: RENDERLINE_BREAK    创建三维实体或曲面模型的真实照片级图像或真实着色图像。,false
+CAD命令,RENDERCROP,0.91,,CAD命令: RENDERCROPLINE_BREAK    渲染视口内指定的矩形区域（称为修剪窗口）。,false
+CAD命令,RENDERENVIRONMENT,0.91,,CAD命令: RENDERENVIRONMENTLINE_BREAK    控制与渲染环境相关的设置。,false
+CAD命令,RENDERENVIRONMENTCLOSE,0.91,,CAD命令: RENDERENVIRONMENTCLOSELINE_BREAK    关闭“渲染环境和曝光”选项板。,false
+CAD命令,RENDEREXPOSURE,0.91,,CAD命令: RENDEREXPOSURELINE_BREAK    控制与渲染环境相关的设置。,false
+CAD命令,RENDEREXPOSURECLOSE,0.91,,CAD命令: RENDEREXPOSURECLOSELINE_BREAK    关闭“渲染环境和曝光”选项板。,false
+CAD命令,RENDERONLINE,0.91,,CAD命令: RENDERONLINELINE_BREAK    使用 Autodesk 联机资源来创建三维实体或曲面模型的图像。,false
+CAD命令,RENDERPRESETS,0.91,,CAD命令: RENDERPRESETSLINE_BREAK    指定渲染预设和可重复使用的渲染参数，以便渲染图像。,false
+CAD命令,RENDERPRESETSCLOSE,0.91,,CAD命令: RENDERPRESETSCLOSELINE_BREAK    关闭“渲染预设管理器”选项板。,false
+CAD命令,RENDERWIN,0.91,,CAD命令: RENDERWINLINE_BREAK    旧式的。显示“渲染”窗口而不启动渲染操作。,false
+CAD命令,RENDERWINDOW,0.91,,CAD命令: RENDERWINDOWLINE_BREAK    显示“渲染”窗口而不启动渲染操作。,false
+CAD命令,RENDERWINDOWCLOSE,0.91,,CAD命令: RENDERWINDOWCLOSELINE_BREAK    关闭“渲染”窗口。,false
+CAD命令,REPURLS,0.91,,CAD命令: REPURLSLINE_BREAK     (Express Tool)在附着到所有选定对象的超链接中使用的 URL 中，查找和替换指定的文本字符串。,false
+CAD命令,RESETBLOCK,0.91,,CAD命令: RESETBLOCKLINE_BREAK    将一个或多个动态块参照重置为块定义的默认值。,false
+CAD命令,RESUME,0.91,,CAD命令: RESUMELINE_BREAK    继续执行被中断的脚本文件。,false
+CAD命令,REVCLOUD,0.91,,CAD命令: REVCLOUDLINE_BREAK    创建或修改修订云线。,false
+CAD命令,REVERSE,0.91,,CAD命令: REVERSELINE_BREAK    反转选定直线、多段线、样条曲线和螺旋的顶点，对于具有包含文字的线型或具有不同起点宽度和端点宽度的宽多段线，此操作非常有用。,false
+CAD命令,REVERT,0.91,,CAD命令: REVERTLINE_BREAK     (Express Tool)关闭并重新打开当前图形。,false
+CAD命令,REVOLVE,0.91,,CAD命令: REVOLVELINE_BREAK    通过绕轴扫掠对象创建三维实体或曲面。,false
+CAD命令,REVSURF,0.91,,CAD命令: REVSURFLINE_BREAK    通过绕轴旋转轮廓来创建网格。,false
+CAD命令,RIBBON,0.91,,CAD命令: RIBBONLINE_BREAK    显示功能区。,false
+CAD命令,RIBBONCLOSE,0.91,,CAD命令: RIBBONCLOSELINE_BREAK    隐藏功能区。,false
+CAD命令,ROTATE,0.91,,CAD命令: ROTATELINE_BREAK    绕基点旋转对象。,false
+CAD命令,ROTATE3D,0.91,,CAD命令: ROTATE3DLINE_BREAK    绕三维轴移动对象。,false
+CAD命令,RPREF,0.91,,CAD命令: RPREFLINE_BREAK    显示用于配置渲染设置的“渲染预设管理器”选项板。,false
+CAD命令,RPREFCLOSE,0.91,,CAD命令: RPREFCLOSELINE_BREAK    关闭“渲染设置管理器”选项板。,false
+CAD命令,RSCRIPT,0.91,,CAD命令: RSCRIPTLINE_BREAK    重复执行脚本文件。,false
+CAD命令,RTEDIT,0.91,,CAD命令: RTEDITLINE_BREAK     (Express Tool)编辑现有的远程文字 (rtext) 对象。,false
+CAD命令,RTEXT,0.91,,CAD命令: RTEXTLINE_BREAK     (Express Tool)创建远程文字 (rtext) 对象。,false
+CAD命令,RTUCS,0.91,,CAD命令: RTUCSLINE_BREAK     (Express Tool)使用定点设备动态旋转 UCS。,false
+CAD命令,RULESURF,0.91,,CAD命令: RULESURFLINE_BREAK    创建用于表示两条直线或曲线之间的曲面的网格。,false
+CAD命令,SAVE,0.91,,CAD命令: SAVELINE_BREAK    使用不同的文件名或位置保存当前图形，而不更改当前图形文件。,false
+CAD命令,SAVEALL,0.91,,CAD命令: SAVEALLLINE_BREAK     (Express Tool)保存所有打开的图形。,false
+CAD命令,SAVEAS,0.91,,CAD命令: SAVEASLINE_BREAK    使用新文件名或位置保存当前图形的副本。,false
+CAD命令,SAVEIMG,0.91,,CAD命令: SAVEIMGLINE_BREAK    将渲染图像保存到文件中。,false
+CAD命令,SAVETOWEBMOBILE,0.91,,CAD命令: SAVETOWEBMOBILELINE_BREAK    将当前图形的副本保存到 Autodesk Web 和 Mobile 帐户。,false
+CAD命令,SCALE,0.91,,CAD命令: SCALELINE_BREAK    放大或缩小选定对象，使缩放后对象的比例保持不变。,false
+CAD命令,SCALELISTEDIT,0.91,,CAD命令: SCALELISTEDITLINE_BREAK    控制可用于布局视口、页面布局和打印的缩放比例的列表。,false
+CAD命令,SCALETEXT,0.91,,CAD命令: SCALETEXTLINE_BREAK    增大或缩小选定文字对象而不更改其位置。,false
+CAD命令,SCRIPT,0.91,,CAD命令: SCRIPTLINE_BREAK    从脚本文件执行一系列命令。,false
+CAD命令,SCRIPTCALL,0.91,,CAD命令: SCRIPTCALLLINE_BREAK    从脚本文件执行一系列命令和嵌套脚本。,false
+CAD命令,SECTION,0.91,,CAD命令: SECTIONLINE_BREAK    使用平面与三维实体、曲面或网格的交点创建二维面域对象。,false
+CAD命令,SECTIONPLANE,0.91,,CAD命令: SECTIONPLANELINE_BREAK    以通过三维对象和点云创建剪切平面的方式创建截面对象。,false
+CAD命令,SECTIONPLANEJOG,0.91,,CAD命令: SECTIONPLANEJOGLINE_BREAK    将折弯线段添加至截面对象。,false
+CAD命令,SECTIONPLANESETTINGS,0.91,,CAD命令: SECTIONPLANESETTINGSLINE_BREAK    设置选定截面平面的显示选项。,false
+CAD命令,SECTIONPLANETOBLOCK,0.91,,CAD命令: SECTIONPLANETOBLOCKLINE_BREAK    将选定截面平面保存为二维或三维块。,false
+CAD命令,SECTIONSPINNERS,0.91,,CAD命令: SECTIONSPINNERSLINE_BREAK    显示对话框，以便为“截面平面”功能区上下文选项卡中的“截面对象偏移”和“切片厚度”控件设置增量值。,false
+CAD命令,SECURITYOPTIONS,0.91,,CAD命令: SECURITYOPTIONSLINE_BREAK    控制在 AutoCAD 中运行可执行文件的安全性限制。,false
+CAD命令,SELECT,0.91,,CAD命令: SELECTLINE_BREAK    将选定对象置于“上一个”选择集中。,false
+CAD命令,SELECTSIMILAR,0.91,,CAD命令: SELECTSIMILARLINE_BREAK    查找当前图形中与选定对象特性匹配的所有对象，然后将它们添加到选择集中。,false
+CAD命令,SETBYLAYER,0.91,,CAD命令: SETBYLAYERLINE_BREAK    将选定对象的特性替代更改为“ByLayer”。,false
+CAD命令,SETVAR,0.91,,CAD命令: SETVARLINE_BREAK    列出或更改系统变量的值。,false
+CAD命令,SHADEMODE,0.91,,CAD命令: SHADEMODELINE_BREAK    控制三维对象的显示。,false
+CAD命令,SHAPE,0.91,,CAD命令: SHAPELINE_BREAK    从使用 LOAD 加载的形文件（SHX 文件）中插入形。,false
+CAD命令,SHAREDVIEWS,0.91,,CAD命令: SHAREDVIEWSLINE_BREAK    打开“共享视图”选项板。,false
+CAD命令,SHAREDVIEWSCLOSE,0.91,,CAD命令: SHAREDVIEWSCLOSELINE_BREAK    关闭“共享视图”选项板。,false
+CAD命令,SHAREVIEW,0.91,,CAD命令: SHAREVIEWLINE_BREAK    发布当前空间或整个图形的表示，以供联机查看和共享。,false
+CAD命令,SHEETSET,0.91,,CAD命令: SHEETSETLINE_BREAK    打开图纸集管理器。,false
+CAD命令,SHEETSETHIDE,0.91,,CAD命令: SHEETSETHIDELINE_BREAK    关闭图纸集管理器。,false
+CAD命令,SHELL,0.91,,CAD命令: SHELLLINE_BREAK    访问操作系统命令。,false
+CAD命令,SHOWPALETTES,0.91,,CAD命令: SHOWPALETTESLINE_BREAK    恢复隐藏的选项板、功能区和图形选项卡的显示。,false
+CAD命令,SHOWRENDERGALLERY,0.91,,CAD命令: SHOWRENDERGALLERYLINE_BREAK    显示在 Autodesk 帐户中渲染和存储的图像。,false
+CAD命令,SHOWURLS,0.91,,CAD命令: SHOWURLSLINE_BREAK     (Express Tool)显示包含在图形中的所有附着的 URL，并允许对它们进行编辑。,false
+CAD命令,SHP2BLK,0.91,,CAD命令: SHP2BLKLINE_BREAK     (Express Tool)使用等效的块转换选定形状对象的所有实例。,false
+CAD命令,SIGVALIDATE,0.91,,CAD命令: SIGVALIDATELINE_BREAK    显示有关附着到图形文件的数字签名的信息。,false
+CAD命令,SKETCH,0.91,,CAD命令: SKETCHLINE_BREAK    创建一系列徒手绘制的线段。,false
+CAD命令,SLICE,0.91,,CAD命令: SLICELINE_BREAK    通过剖切或分割现有对象，创建新的三维实体和曲面。,false
+CAD命令,SNAP,0.91,,CAD命令: SNAPLINE_BREAK    限制光标按指定的间距移动。,false
+CAD命令,SOLDRAW,0.91,,CAD命令: SOLDRAWLINE_BREAK    在用 SOLVIEW 命令创建的布局视口中生成轮廓和截面。,false
+CAD命令,SOLID,0.91,,CAD命令: SOLIDLINE_BREAK    创建实体填充的三角形和四边形。,false
+CAD命令,SOLIDEDIT,0.91,,CAD命令: SOLIDEDITLINE_BREAK    编辑三维实体对象的面和边。,false
+CAD命令,SOLPROF,0.91,,CAD命令: SOLPROFLINE_BREAK    创建三维实体的二维轮廓图，以显示在布局视口中。,false
+CAD命令,SOLVIEW,0.91,,CAD命令: SOLVIEWLINE_BREAK    自动为三维实体创建正交视图、图层和布局视口。,false
+CAD命令,SPACETRANS,0.91,,CAD命令: SPACETRANSLINE_BREAK    计算布局中等效的模型空间和图纸空间距离。,false
+CAD命令,SPELL,0.91,,CAD命令: SPELLLINE_BREAK    检查图形中的拼写。,false
+CAD命令,SPHERE,0.91,,CAD命令: SPHERELINE_BREAK    创建三维实体球体。,false
+CAD命令,SPLINE,0.91,,CAD命令: SPLINELINE_BREAK    创建经过或靠近一组拟合点或由控制框的顶点定义的平滑曲线。,false
+CAD命令,SPLINEDIT,0.91,,CAD命令: SPLINEDITLINE_BREAK    修改样条曲线的参数或将样条拟合多段线转换为样条曲线。,false
+CAD命令,SPOTLIGHT,0.91,,CAD命令: SPOTLIGHTLINE_BREAK    创建可发射定向圆锥形光柱的聚光灯。,false
+CAD命令,SSX,0.91,,CAD命令: SSXLINE_BREAK     (Express Tool)基于选定的对象创建选择集。,false
+CAD命令,STANDARDS,0.91,,CAD命令: STANDARDSLINE_BREAK    管理标准文件与图形之间的关联性,false
+CAD命令,STATUS,0.91,,CAD命令: STATUSLINE_BREAK    显示图形的统计信息、模式和范围。,false
+CAD命令,STLOUT,0.91,,CAD命令: STLOUTLINE_BREAK    以可以用于立体平板印刷设备的格式存储三维实体和无间隙网格。,false
+CAD命令,STRETCH,0.91,,CAD命令: STRETCHLINE_BREAK    拉伸与选择窗口或多边形交叉的对象。,false
+CAD命令,STYLE,0.91,,CAD命令: STYLELINE_BREAK    创建、修改或指定文字样式。,false
+CAD命令,STYLESMANAGER,0.91,,CAD命令: STYLESMANAGERLINE_BREAK    显示打印样式管理器，从中可以修改打印样式表。,false
+CAD命令,SUBTRACT,0.91,,CAD命令: SUBTRACTLINE_BREAK    通过从另一个对象减去一个重叠面域或三维实体来创建为新对象。,false
+CAD命令,SUNPROPERTIES,0.91,,CAD命令: SUNPROPERTIESLINE_BREAK    显示“日光特性”选项板。,false
+CAD命令,SUNPROPERTIESCLOSE,0.91,,CAD命令: SUNPROPERTIESCLOSELINE_BREAK    关闭“阳光特性”选项板,false
+CAD命令,SUPERHATCH,0.91,,CAD命令: SUPERHATCHLINE_BREAK     (Express Tool)使用选定的图像、块、外部参照或区域覆盖对象对区域进行图案填充。,false
+CAD命令,SURFBLEND,0.91,,CAD命令: SURFBLENDLINE_BREAK    在两个现有曲面之间创建连续的过渡曲面。,false
+CAD命令,SURFEXTEND,0.91,,CAD命令: SURFEXTENDLINE_BREAK    按指定的距离拉长曲面。,false
+CAD命令,SURFEXTRACTCURVE,0.91,,CAD命令: SURFEXTRACTCURVELINE_BREAK    在曲面和三维实体上创建曲线。,false
+CAD命令,SURFFILLET,0.91,,CAD命令: SURFFILLETLINE_BREAK    在两个其他曲面之间创建圆角曲面。,false
+CAD命令,SURFNETWORK,0.91,,CAD命令: SURFNETWORKLINE_BREAK    在 U 方向和 V 方向（包括曲面和实体边子对象）的几条曲线之间的空间中创建曲面。,false
+CAD命令,SURFPATCH,0.91,,CAD命令: SURFPATCHLINE_BREAK    通过在形成闭环的曲面边上拟合一个封口来创建新曲面。,false
+CAD命令,SURFSCULPT,0.91,,CAD命令: SURFSCULPTLINE_BREAK    修剪和合并完全封闭体积的一组曲面或网格以创建三维实体。,false
+CAD命令,SURFTRIM,0.91,,CAD命令: SURFTRIMLINE_BREAK    修剪与其他曲面或其他类型的几何图形相交的曲面部分。,false
+CAD命令,SURFUNTRIM,0.91,,CAD命令: SURFUNTRIMLINE_BREAK    替换由 SURFTRIM 命令删除的曲面区域。,false
+CAD命令,SWEEP,0.91,,CAD命令: SWEEPLINE_BREAK    通过沿开放或闭合路径扫掠二维对象或子对象来创建三维实体或三维曲面。,false
+CAD命令,SYSVARMONITOR,0.91,,CAD命令: SYSVARMONITORLINE_BREAK    监视系统变量的列表，并在列表中任何一个系统变量发生更改时发送通知。,false
+CAD命令,SYSVDLG,0.91,,CAD命令: SYSVDLGLINE_BREAK     (Express Tool)允许您查看、编辑、保存和恢复系统变量设置。,false
+CAD命令,SYSWINDOWS,0.91,,CAD命令: SYSWINDOWSLINE_BREAK    应用程序窗口与外部应用程序共享时，排列窗口和图标。,false
+CAD命令,TABLE,0.91,,CAD命令: TABLELINE_BREAK    创建空的表格对象。,false
+CAD命令,TABLEDIT,0.91,,CAD命令: TABLEDITLINE_BREAK    编辑表格单元中的文字。,false
+CAD命令,TABLEEXPORT,0.91,,CAD命令: TABLEEXPORTLINE_BREAK    以 CSV 文件格式从表格对象中输出数据。,false
+CAD命令,TABLESTYLE,0.91,,CAD命令: TABLESTYLELINE_BREAK    创建、修改或指定表格样式。,false
+CAD命令,TABLET,0.91,,CAD命令: TABLETLINE_BREAK    校准、配置、打开和关闭已连接的数字化仪。,false
+CAD命令,TABSURF,0.91,,CAD命令: TABSURFLINE_BREAK    从沿直线路径扫掠的直线或曲线创建网格。,false
+CAD命令,TARGETPOINT,0.91,,CAD命令: TARGETPOINTLINE_BREAK    创建目标点光源。,false
+CAD命令,TASKBAR,0.91,,CAD命令: TASKBARLINE_BREAK    控制多个打开的图形在 Windows 任务栏上是单独显示还是被编组。,false
+CAD命令,TCASE,0.91,,CAD命令: TCASELINE_BREAK     (Express Tool)更改选定文字、多行文字、属性和标注文字的大小写。,false
+CAD命令,TCIRCLE,0.91,,CAD命令: TCIRCLELINE_BREAK     (Express Tool)围绕每个选定的文字或多行文字对象创建圆、长孔形或矩形。,false
+CAD命令,TCOUNT,0.91,,CAD命令: TCOUNTLINE_BREAK     (Express Tool)将连续编号作为前缀、后缀或替换文字添加到文字和多行文字对象。,false
+CAD命令,TEXT,0.91,,CAD命令: TEXTLINE_BREAK    创建单行文字对象。,false
+CAD命令,TEXTALIGN,0.91,,CAD命令: TEXTALIGNLINE_BREAK    垂直、水平或倾斜对齐多个文字对象。,false
+CAD命令,TEXTEDIT,0.91,,CAD命令: TEXTEDITLINE_BREAK    编辑选定的多行文字或单行文字对象，或标注对象上的文字。,false
+CAD命令,TEXTFIT,0.91,,CAD命令: TEXTFITLINE_BREAK     (Express Tool)基于新的起点和终点，展开或收拢文字对象的宽度。,false
+CAD命令,TEXTMASK,0.91,,CAD命令: TEXTMASKLINE_BREAK     (Express Tool)在选定文字或多行文字对象的后面创建空白区域。,false
+CAD命令,TEXTSCR,0.91,,CAD命令: TEXTSCRLINE_BREAK    打开一个文本窗口，该窗口将显示当前任务的提示和命令行条目的历史记录。,false
+CAD命令,TEXTTOFRONT,0.91,,CAD命令: TEXTTOFRONTLINE_BREAK    将文字、引线和标注置于图形中的其他所有对象之前。,false
+CAD命令,TEXTUNMASK,0.91,,CAD命令: TEXTUNMASKLINE_BREAK     (Express Tool)从通过 TEXTMASK 进行遮罩的选定文字或多行文字中删除遮罩。,false
+CAD命令,TFRAMES,0.91,,CAD命令: TFRAMESLINE_BREAK     (Express Tool)切换所有区域覆盖和图像对象的边框显示。,false
+CAD命令,THICKEN,0.91,,CAD命令: THICKENLINE_BREAK    以指定的厚度将曲面转换为三维实体。,false
+CAD命令,TIFOUT,0.91,,CAD命令: TIFOUTLINE_BREAK    将选定对象以 TIFF 文件格式保存到文件中。,false
+CAD命令,TIME,0.91,,CAD命令: TIMELINE_BREAK    显示图形的日期和时间统计信息。,false
+CAD命令,TINSERT,0.91,,CAD命令: TINSERTLINE_BREAK    将块插入到表格单元中。,false
+CAD命令,TJUST,0.91,,CAD命令: TJUSTLINE_BREAK     (Express Tool)更改文字对象的对正点而不移动文字。使用文字、多行文字和属性定义对象。,false
+CAD命令,TOLERANCE,0.91,,CAD命令: TOLERANCELINE_BREAK    创建包含在特征控制框中的形位公差。,false
+CAD命令,TOOLBAR,0.91,,CAD命令: TOOLBARLINE_BREAK    显示、隐藏和自定义工具栏。,false
+CAD命令,TOOLPALETTES,0.91,,CAD命令: TOOLPALETTESLINE_BREAK    打开“工具选项板”窗口。,false
+CAD命令,TOOLPALETTESCLOSE,0.91,,CAD命令: TOOLPALETTESCLOSELINE_BREAK    关闭“工具选项板”窗口,false
+CAD命令,TORIENT,0.91,,CAD命令: TORIENTLINE_BREAK     (Express Tool)旋转文字、多行文字、属性定义和具有属性的块，以提高可读性。,false
+CAD命令,TORUS,0.91,,CAD命令: TORUSLINE_BREAK    创建圆环形的三维实体。,false
+CAD命令,TPNAVIGATE,0.91,,CAD命令: TPNAVIGATELINE_BREAK    显示指定的工具选项板或选项板组。,false
+CAD命令,TRANSPARENCY,0.91,,CAD命令: TRANSPARENCYLINE_BREAK    控制图像的背景像素是否透明。,false
+CAD命令,TRAYSETTINGS,0.91,,CAD命令: TRAYSETTINGSLINE_BREAK    控制状态栏托盘中图标和通知的显示。,false
+CAD命令,TREESTAT,0.91,,CAD命令: TREESTATLINE_BREAK    显示有关图形当前空间索引的信息。,false
+CAD命令,TREX,0.91,,CAD命令: TREXLINE_BREAK     (Express Tool)结合 TRIM 和 EXTEND 命令。,false
+CAD命令,TRIM,0.91,,CAD命令: TRIMLINE_BREAK    修剪对象以与其他对象的边相接。,false
+CAD命令,TSCALE,0.91,,CAD命令: TSCALELINE_BREAK     (Express Tool)缩放文字、多行文字、属性和属性定义。,false
+CAD命令,TXT2MTXT,0.91,,CAD命令: TXT2MTXTLINE_BREAK    将单行或多行文字对象转换或者合并为一个或多个多行文字对象。,false
+CAD命令,TXTEXP,0.91,,CAD命令: TXTEXPLINE_BREAK     (Express Tool)将文字或多行文字对象分解为多段线对象。,false
+CAD命令,U,0.91,,CAD命令: ULINE_BREAK    撤销最近一次操作。,false
+CAD命令,UCS,0.91,,CAD命令: UCSLINE_BREAK    设置当前用户坐标系 (UCS) 的原点和方向。,false
+CAD命令,UCSICON,0.91,,CAD命令: UCSICONLINE_BREAK    控制 UCS 图标的可见性、位置、外观和可选性。,false
+CAD命令,UCSMAN,0.91,,CAD命令: UCSMANLINE_BREAK    管理 UCS 定义。,false
+CAD命令,ULAYERS,0.91,,CAD命令: ULAYERSLINE_BREAK    控制 DWF、DWFx、PDF 或 DGN 参考底图中图层的显示。,false
+CAD命令,UNDEFINE,0.91,,CAD命令: UNDEFINELINE_BREAK    允许应用程序定义的命令替代内部命令。,false
+CAD命令,UNDO,0.91,,CAD命令: UNDOLINE_BREAK    撤销命令的效果。,false
+CAD命令,UNGROUP,0.91,,CAD命令: UNGROUPLINE_BREAK    解除组中对象的关联。,false
+CAD命令,UNION,0.91,,CAD命令: UNIONLINE_BREAK    将两个或多个三维实体、曲面或二维面域合并为一个复合三维实体、曲面或面域。,false
+CAD命令,UNISOLATEOBJECTS,0.91,,CAD命令: UNISOLATEOBJECTSLINE_BREAK    显示之前通过 ISOLATEOBJECTS 或 HIDEOBJECTS 命令隐藏的对象。,false
+CAD命令,UNITS,0.91,,CAD命令: UNITSLINE_BREAK    控制坐标、距离和角度的精度和显示格式。,false
+CAD命令,UPDATEFIELD,0.91,,CAD命令: UPDATEFIELDLINE_BREAK    更新选定对象中的字段。,false
+CAD命令,UPDATETHUMBSNOW,0.91,,CAD命令: UPDATETHUMBSNOWLINE_BREAK    手动更新命名视图、图形和布局的缩略图预览。,false
+CAD命令,VBAIDE,0.91,,CAD命令: VBAIDELINE_BREAK    显示 Visual Basic 编辑器。,false
+CAD命令,VBALOAD,0.91,,CAD命令: VBALOADLINE_BREAK    将全局 VBA 工程加载到当前工作任务中。,false
+CAD命令,VBAMAN,0.91,,CAD命令: VBAMANLINE_BREAK    使用对话框管理 VBA 工程操作。,false
+CAD命令,VBAPREF,0.91,,CAD命令: VBAPREFLINE_BREAK    提供对某些 VBA 环境设置的访问。,false
+CAD命令,VBARUN,0.91,,CAD命令: VBARUNLINE_BREAK    运行 VBA 宏。,false
+CAD命令,VBASTMT,0.91,,CAD命令: VBASTMTLINE_BREAK    在 AutoCAD 命令提示下执行 VBA 语句。,false
+CAD命令,VBAUNLOAD,0.91,,CAD命令: VBAUNLOADLINE_BREAK    卸载全局 VBA 工程。,false
+CAD命令,VIEW,0.91,,CAD命令: VIEWLINE_BREAK    保存和恢复命名模型空间视图、布局视图和预设视图。,false
+CAD命令,VIEWBACK,0.91,,CAD命令: VIEWBACKLINE_BREAK    在更改视图后，向后恢复连续视图。,false
+CAD命令,VIEWBASE,0.91,,CAD命令: VIEWBASELINE_BREAK    从模型空间或 Autodesk Inventor 模型创建基础视图。,false
+CAD命令,VIEWCOMPONENT,0.91,,CAD命令: VIEWCOMPONENTLINE_BREAK    从模型文档工程视图中选择部件进行编辑。,false
+CAD命令,VIEWDETAIL,0.91,,CAD命令: VIEWDETAILLINE_BREAK    创建模型文档工程视图部分的局部视图。,false
+CAD命令,VIEWDETAILSTYLE,0.91,,CAD命令: VIEWDETAILSTYLELINE_BREAK    创建和修改局部视图样式。,false
+CAD命令,VIEWEDIT,0.91,,CAD命令: VIEWEDITLINE_BREAK    编辑现有的模型文档工程视图。,false
+CAD命令,VIEWFORWARD,0.91,,CAD命令: VIEWFORWARDLINE_BREAK    在使用 VIEWBACK 或“缩放上一个”显示上一个视图后，向前恢复连续视图。,false
+CAD命令,VIEWGO,0.91,,CAD命令: VIEWGOLINE_BREAK    恢复命名视图。,false
+CAD命令,VIEWPLAY,0.91,,CAD命令: VIEWPLAYLINE_BREAK    播放与命名视图关联的动画。,false
+CAD命令,VIEWPLOTDETAILS,0.91,,CAD命令: VIEWPLOTDETAILSLINE_BREAK    显示有关完成的打印和发布作业的信息。,false
+CAD命令,VIEWPROJ,0.91,,CAD命令: VIEWPROJLINE_BREAK    从现有的模型文档工程视图创建一个或多个投影视图。,false
+CAD命令,VIEWRES,0.91,,CAD命令: VIEWRESLINE_BREAK    设置当前视口中对象的分辨率。,false
+CAD命令,VIEWSECTION,0.91,,CAD命令: VIEWSECTIONLINE_BREAK    创建已在 AutoCAD 或 Autodesk Inventor 中创建的三维模型的截图视图。,false
+CAD命令,VIEWSECTIONSTYLE,0.91,,CAD命令: VIEWSECTIONSTYLELINE_BREAK    创建和修改截面视图样式。,false
+CAD命令,VIEWSETPROJ,0.91,,CAD命令: VIEWSETPROJLINE_BREAK    从 Inventor 模型中指定包含模型文档工程视图的活动项目文件。,false
+CAD命令,VIEWSKETCHCLOSE,0.91,,CAD命令: VIEWSKETCHCLOSELINE_BREAK    退出符号草图模式。,false
+CAD命令,VIEWSTD,0.91,,CAD命令: VIEWSTDLINE_BREAK    为模型文档工程视图定义默认设置。,false
+CAD命令,VIEWSYMBOLSKETCH,0.91,,CAD命令: VIEWSYMBOLSKETCHLINE_BREAK    打开一个编辑环境，以便将剖切线或详图边界约束到工程视图几何图形。,false
+CAD命令,VIEWUPDATE,0.91,,CAD命令: VIEWUPDATELINE_BREAK    更新由于源模型已更改而变为过期的工程视图。,false
+CAD命令,VISUALSTYLES,0.91,,CAD命令: VISUALSTYLESLINE_BREAK    创建和修改视觉样式，并将视觉样式应用于视口。,false
+CAD命令,VISUALSTYLESCLOSE,0.91,,CAD命令: VISUALSTYLESCLOSELINE_BREAK    关闭视觉样式管理器。,false
+CAD命令,VLISP,0.91,,CAD命令: VLISPLINE_BREAK    显示 Visual LISP 交互式开发环境。,false
+CAD命令,VPCLIP,0.91,,CAD命令: VPCLIPLINE_BREAK    剪裁布局视口对象并调整视口边框的形状。,false
+CAD命令,VPLAYER,0.91,,CAD命令: VPLAYERLINE_BREAK    设置视口中图层的可见性。,false
+CAD命令,VPMAX,0.91,,CAD命令: VPMAXLINE_BREAK    展开当前布局视口以进行编辑。,false
+CAD命令,VPMIN,0.91,,CAD命令: VPMINLINE_BREAK    恢复当前布局视口。,false
+CAD命令,VPOINT,0.91,,CAD命令: VPOINTLINE_BREAK    设置图形的三维可视化观察方向。,false
+CAD命令,VPORTS,0.91,,CAD命令: VPORTSLINE_BREAK    在模型空间或布局（图纸空间）中创建多个视口。,false
+CAD命令,VPSCALE,0.91,,CAD命令: VPSCALELINE_BREAK     (Express Tool)在布局中，显示当前视口或选定的布局视口的比例。,false
+CAD命令,VPSYNC,0.91,,CAD命令: VPSYNCLINE_BREAK     (Express Tool)将一个或多个相邻的布局视口中的视图与主布局视口对齐。,false
+CAD命令,VSCURRENT,0.91,,CAD命令: VSCURRENTLINE_BREAK    设置当前视口的视觉样式。,false
+CAD命令,VSLIDE,0.91,,CAD命令: VSLIDELINE_BREAK    在当前视口中显示图像幻灯片文件。,false
+CAD命令,VSSAVE,0.91,,CAD命令: VSSAVELINE_BREAK    使用新名称保存当前视觉样式。,false
+CAD命令,VTOPTIONS,0.91,,CAD命令: VTOPTIONSLINE_BREAK    将视图中的更改显示为平滑过渡。,false
+CAD命令,WALKFLYSETTINGS,0.91,,CAD命令: WALKFLYSETTINGSLINE_BREAK    控制漫游和飞行导航设置。,false
+CAD命令,WBLOCK,0.91,,CAD命令: WBLOCKLINE_BREAK    将选定对象保存到指定的图形文件或将块转换为指定的图形文件。,false
+CAD命令,WEBLIGHT,0.91,,CAD命令: WEBLIGHTLINE_BREAK    创建光源灯光强度分布的精确三维表示。,false
+CAD命令,WEBLOAD,0.91,,CAD命令: WEBLOADLINE_BREAK    从 URL 加载 JavaScript 文件，然后执行包含在该文件中的 JavaScript 代码。,false
+CAD命令,WEDGE,0.91,,CAD命令: WEDGELINE_BREAK    创建三维实体楔体。,false
+CAD命令,WHOHAS,0.91,,CAD命令: WHOHASLINE_BREAK    显示关于打开的图形文件的信息。,false
+CAD命令,WIPEOUT,0.91,,CAD命令: WIPEOUTLINE_BREAK    创建区域覆盖对象，并控制是否将区域覆盖框架显示在图形中。,false
+CAD命令,WMFIN,0.91,,CAD命令: WMFINLINE_BREAK    输入 Windows 图元文件。,false
+CAD命令,WMFOPTS,0.91,,CAD命令: WMFOPTSLINE_BREAK    设置 WMFIN 选项。,false
+CAD命令,WMFOUT,0.91,,CAD命令: WMFOUTLINE_BREAK    将对象保存为 Windows 图元文件。,false
+CAD命令,WORKFLOW,0.91,,CAD命令: WORKFLOWLINE_BREAK    （仅限于 AutoCAD 套件）指定用于准备图形以输入到 Autodesk Showcase 或 Autodesk 3ds Max 的套件工作流。,false
+CAD命令,WORKSPACE,0.91,,CAD命令: WORKSPACELINE_BREAK    创建、修改和保存工作空间，并将其设定为当前工作空间。,false
+CAD命令,WSSAVE,0.91,,CAD命令: WSSAVELINE_BREAK    保存工作空间。,false
+CAD命令,WSSETTINGS,0.91,,CAD命令: WSSETTINGSLINE_BREAK    设置工作空间选项。,false
+CAD命令,XATTACH,0.91,,CAD命令: XATTACHLINE_BREAK    将选定的 DWG 文件附着为外部参照。,false
+CAD命令,XBIND,0.91,,CAD命令: XBINDLINE_BREAK    将外部参照中命名对象的一个或多个定义绑定到当前图形。,false
+CAD命令,XCLIP,0.91,,CAD命令: XCLIPLINE_BREAK    根据指定边界修剪选定外部参照或块参照的显示。,false
+CAD命令,XDATA,0.91,,CAD命令: XDATALINE_BREAK     (Express Tool)将扩展对象数据 (xdata) 附着到选定对象。,false
+CAD命令,XDLIST,0.91,,CAD命令: XDLISTLINE_BREAK     (Express Tool)列出附着到对象的扩展数据。,false
+CAD命令,XEDGES,0.91,,CAD命令: XEDGESLINE_BREAK    从三维实体、曲面、网格、面域或子对象的边创建线框几何图形。,false
+CAD命令,XLINE,0.91,,CAD命令: XLINELINE_BREAK    创建无限长的构造线。,false
+CAD命令,XLIST,0.91,,CAD命令: XLISTLINE_BREAK     (Express Tool)列出块或外部参照中嵌套对象的类型、块名称、图层名称、颜色和线型。,false
+CAD命令,XOPEN,0.91,,CAD命令: XOPENLINE_BREAK    在新窗口中打开选定的图形参照（外部参照）。,false
+CAD命令,XPLODE,0.91,,CAD命令: XPLODELINE_BREAK    将复合对象分解为其部件对象，而且生成的对象具有指定的特性。,false
+CAD命令,CHSPACE,0.91,,CAD命令: CHSPACELINE_BREAK    在布局上，在模型空间和图纸空间之间传输选定对象。,false
+CAD命令,XREF,0.91,,CAD命令: XREFLINE_BREAK    启动 EXTERNALREFERENCES 命令。,false
+CAD命令,ZOOM,0.91,,CAD命令: ZOOMLINE_BREAK    增大或减小当前视口中视图的比例。,false
+CAD命令,CAD命令A,0.91,,该索引下有以下命令：LINE_BREAKABOUTLINE_BREAKACADINFOLINE_BREAKACISINLINE_BREAKACISOUTLINE_BREAKACTBASEPOINTLINE_BREAKACTMANAGERLINE_BREAKACTRECORDLINE_BREAKACTSTOPLINE_BREAKACTUSERINPUTLINE_BREAKACTUSERMESSAGELINE_BREAKADCCLOSELINE_BREAKADCENTERLINE_BREAKADCNAVIGATELINE_BREAKADDSELECTEDLINE_BREAKADJUSTLINE_BREAKALIASEDITLINE_BREAKALIGNLINE_BREAKALIGNSPACELINE_BREAKAMECONVERTLINE_BREAKANALYSISCURVATURELINE_BREAKANALYSISDRAFTLINE_BREAKANALYSISOPTIONSLINE_BREAKANALYSISZEBRALINE_BREAKANIPATHLINE_BREAKANNORESETLINE_BREAKANNOUPDATELINE_BREAKAPERTURELINE_BREAKAPPAUTOLOADERLINE_BREAKAPPLOADLINE_BREAKAPPSTORELINE_BREAKARCLINE_BREAKARCHIVELINE_BREAKARCTEXTLINE_BREAKAREALINE_BREAKARRAYLINE_BREAKARRAYCLASSICLINE_BREAKARRAYCLOSELINE_BREAKARRAYEDITLINE_BREAKARRAYPATHLINE_BREAKARRAYPOLARLINE_BREAKARRAYRECTLINE_BREAKARXLINE_BREAKATTACHLINE_BREAKATTACHURLLINE_BREAKATTDEFLINE_BREAKATTDISPLINE_BREAKATTEDITLINE_BREAKATTEXTLINE_BREAKATTINLINE_BREAKATTIPEDITLINE_BREAKATTOUTLINE_BREAKATTREDEFLINE_BREAKATTSYNCLINE_BREAKAUDITLINE_BREAKAUTOCONSTRAINLINE_BREAKAUTOPUBLISHLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令B,0.91,,该索引下有以下命令：LINE_BREAKBACKGROUNDLINE_BREAKBACTIONLINE_BREAKBACTIONBARLINE_BREAKBACTIONSETLINE_BREAKBACTIONTOOLLINE_BREAKBASELINE_BREAKBASSOCIATELINE_BREAKBATTMANLINE_BREAKBATTORDERLINE_BREAKBAUTHORPALETTELINE_BREAKBAUTHORPALETTECLOSELINE_BREAKBCLOSELINE_BREAKBCONSTRUCTIONLINE_BREAKBCOUNTLINE_BREAKBCPARAMETERLINE_BREAKBCYCLEORDERLINE_BREAKBEDITLINE_BREAKBESETTINGSLINE_BREAKBEXTENDLINE_BREAKBGRIPSETLINE_BREAKBLENDLINE_BREAKBLOCKLINE_BREAKBLOCK?LINE_BREAKBLOCKICONLINE_BREAKBLOCKREPLACELINE_BREAKBLOCKSPALETTELINE_BREAKBLOCKSPALETTECLOSELINE_BREAKBLOCKTOXREFLINE_BREAKBLOOKUPTABLELINE_BREAKBMPOUTLINE_BREAKBOUNDARYLINE_BREAKBOXLINE_BREAKBPARAMETERLINE_BREAKBREAKLINE_BREAKBREAKLINELINE_BREAKBREPLINE_BREAKBROWSERLINE_BREAKBSAVELINE_BREAKBSAVEASLINE_BREAKBSCALELINE_BREAKBTABLELINE_BREAKBTESTBLOCKLINE_BREAKBTRIMLINE_BREAKBURSTSLINE_BREAKBVHIDELINE_BREAKBVSHOWLINE_BREAKBVSTATELINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令C,0.91,,该索引下有以下命令：LINE_BREAKCALLINE_BREAKCAMERALINE_BREAKCDORDERLINE_BREAKCENTERDISASSOCIATELINE_BREAKCENTERLINELINE_BREAKCENTERMARKLINE_BREAKCENTERREASSOCIATELINE_BREAKCENTERRESETLINE_BREAKCHAMFERLINE_BREAKCHAMFEREDGELINE_BREAKCHANGELINE_BREAKCHECKSTANDARDSLINE_BREAKCHPROPLINE_BREAKCHSPACELINE_BREAKCHURLSLINE_BREAKCIRCLELINE_BREAKCLASSICGROUPLINE_BREAKCLASSICIMAGELINE_BREAKCLASSICINSERTLINE_BREAKCLASSICLAYERLINE_BREAKCLASSICXREFLINE_BREAKCLEANSCREENOFFLINE_BREAKCLEANSCREENONLINE_BREAKCLIPLINE_BREAKCLIPITLINE_BREAKCLOSELINE_BREAKCLOSEALLLINE_BREAKCLOSEALLOTHERLINE_BREAKCOLORLINE_BREAKCOMMANDLINELINE_BREAKCOMMANDLINEHIDELINE_BREAKCOMPARELINE_BREAKCOMPARECLOSELINE_BREAKCOMPAREEXPORTLINE_BREAKCOMPAREIMPORTLINE_BREAKCOMPAREINFOLINE_BREAKCOMPILELINE_BREAKCONELINE_BREAKCONSTRAINTBARLINE_BREAKCONSTRAINTSETTINGSLINE_BREAKCONVERTLINE_BREAKCONVERTCTBLINE_BREAKCONVERTOLDLIGHTSLINE_BREAKCONVERTOLDMATERIALSLINE_BREAKCONVERTPSTYLESLINE_BREAKCONVTOMESHLINE_BREAKCONVTONURBSLINE_BREAKCONVTOSOLIDLINE_BREAKCONVTOSURFACELINE_BREAKCOORDINATIONMODELATTACHLINE_BREAKCOPYLINE_BREAKCOPYBASELINE_BREAKCOPYCLIPLINE_BREAKCOPYHISTLINE_BREAKCOPYLINKLINE_BREAKCOPYMLINE_BREAKCOPYTOLAYERLINE_BREAKCUILINE_BREAKCUIEXPORTLINE_BREAKCUIIMPORTLINE_BREAKCUILOADLINE_BREAKCUIUNLOADLINE_BREAKCUSTOMIZELINE_BREAKCUTCLIPLINE_BREAKCVADDLINE_BREAKCVHIDELINE_BREAKCVREBUILDLINE_BREAKCVREMOVELINE_BREAKCVSHOWLINE_BREAKCYLINDERLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令D,0.91,,该索引下有以下命令：LINE_BREAKDATAEXTRACTIONLINE_BREAKDATALINKLINE_BREAKDATALINKUPDATELINE_BREAKDBCCLOSELINE_BREAKDBCCONFIGURELINE_BREAKDBCDEFINELLTLINE_BREAKDBCDEFINELTLINE_BREAKDBCONNECTLINE_BREAKDBLISTLINE_BREAKDCALIGNEDLINE_BREAKDCANGULARLINE_BREAKDCCONVERTLINE_BREAKDCDIAMETERLINE_BREAKDCDISPLAYLINE_BREAKDCFORMLINE_BREAKDCHORIZONTALLINE_BREAKDCLINEARLINE_BREAKDCRADIUSLINE_BREAKDCVERTICALLINE_BREAKDDEDITLINE_BREAKDDPTYPELINE_BREAKDDVPOINTLINE_BREAKDELAYLINE_BREAKDELCONSTRAINTLINE_BREAKDETACHURLLINE_BREAKDGNADJUSTLINE_BREAKDGNATTACHLINE_BREAKDGNCLIPLINE_BREAKDGNEXPORTLINE_BREAKDGNIMPORTLINE_BREAKDGNLAYERSLINE_BREAKDGNMAPPINGLINE_BREAKDIGITALSIGNLINE_BREAKDIMLINE_BREAKDIMALIGNEDLINE_BREAKDIMANGULARLINE_BREAKDIMARCLINE_BREAKDIMBASELINELINE_BREAKDIMBREAKLINE_BREAKDIMCENTERLINE_BREAKDIMCONSTRAINTLINE_BREAKDIMCONTINUELINE_BREAKDIMDIAMETERLINE_BREAKDIMDISASSOCIATELINE_BREAKDIMEDITLINE_BREAKDIMEXLINE_BREAKDIMIMLINE_BREAKDIMINSPECTLINE_BREAKDIMJOGGEDLINE_BREAKDIMJOGLINELINE_BREAKDIMLINEARLINE_BREAKDIMORDINATELINE_BREAKDIMOVERRIDELINE_BREAKDIMRADIUSLINE_BREAKDIMREASSOCLINE_BREAKDIMREASSOCIATELINE_BREAKDIMREGENLINE_BREAKDIMROTATEDLINE_BREAKDIMSPACELINE_BREAKDIMSTYLELINE_BREAKDIMTEDITLINE_BREAKDISTLINE_BREAKDISTANTLIGHTLINE_BREAKDIVIDELINE_BREAKDONUTLINE_BREAKDOWNLOADMANAGERLINE_BREAKDRAGMODELINE_BREAKDRAWINGRECOVERYLINE_BREAKDRAWINGRECOVERYHIDELINE_BREAKDRAWORDERLINE_BREAKDSETTINGSLINE_BREAKDUMPSHXLINE_BREAKDVIEWLINE_BREAKDWFADJUSTLINE_BREAKDWFATTACHLINE_BREAKDWFCLIPLINE_BREAKDWFFORMATLINE_BREAKDWFLAYERSLINE_BREAKDWGCONVERTLINE_BREAKDWGLOGLINE_BREAKDWGPROPSLINE_BREAKDXBINLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令E,0.91,,该索引下有以下命令：LINE_BREAKEATTEDITLINE_BREAKEATTEXTLINE_BREAKEDGELINE_BREAKEDGESURFLINE_BREAKEDITSHOTLINE_BREAKEDITTIMELINE_BREAKELEVLINE_BREAKELLIPSELINE_BREAKERASELINE_BREAKETRANSMITLINE_BREAKEXOFFSETLINE_BREAKEXPLANLINE_BREAKEXPLODELINE_BREAKEXPORTLINE_BREAKEXPORTDWFLINE_BREAKEXPORTDWFXLINE_BREAKEXPORTLAYOUTLINE_BREAKEXPORTPDFLINE_BREAKEXPORTSETTINGSLINE_BREAKEXPORTTOAUTOCADLINE_BREAKEXPRESSMENULINE_BREAKEXPRESSTOOLSLINE_BREAKEXTENDLINE_BREAKEXTERNALREFERENCESLINE_BREAKEXTERNALREFERENCESCLOSELINE_BREAKEXTRIMLINE_BREAKEXTRUDELINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令F,0.91,,该索引下有以下命令：LINE_BREAKFIELDLINE_BREAKFILETABLINE_BREAKFILETABCLOSELINE_BREAKFILLLINE_BREAKFILLETLINE_BREAKFILLETEDGELINE_BREAKFILTERLINE_BREAKFINDLINE_BREAKFLATSHOTLINE_BREAKFLATTENLINE_BREAKFREESPOTLINE_BREAKFREEWEBLINE_BREAKFSLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令G,0.91,,该索引下有以下命令：LINE_BREAKGATTELINE_BREAKGCCOINCIDENTLINE_BREAKGCCOLLINEARLINE_BREAKGCCONCENTRICLINE_BREAKGCEQUALLINE_BREAKGCFIXLINE_BREAKGCHORIZONTALLINE_BREAKGCPARALLELLINE_BREAKGCPERPENDICULARLINE_BREAKGCSMOOTHLINE_BREAKGCSYMMETRICLINE_BREAKGCTANGENTLINE_BREAKGCVERTICALLINE_BREAKGEOGRAPHICLOCATIONLINE_BREAKGEOLOCATEMELINE_BREAKGEOMAPLINE_BREAKGEOMAPIMAGELINE_BREAKGEOMAPIMAGEUPDATELINE_BREAKGEOMARKLATLONGLINE_BREAKGEOMARKMELINE_BREAKGEOMARKPOINTLINE_BREAKGEOMARKPOSITIONLINE_BREAKGEOMCONSTRAINTLINE_BREAKGEOREMOVELINE_BREAKGEOREORIENTMARKERLINE_BREAKGETSELLINE_BREAKGOTOSTARTLINE_BREAKGOTOURLLINE_BREAKGRADIENTLINE_BREAKGRAPHICSCONFIGLINE_BREAKGRAPHSCRLINE_BREAKGRIDLINE_BREAKGROUPLINE_BREAKGROUPEDITLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令H,0.91,,该索引下有以下命令：LINE_BREAKHATCHLINE_BREAKHATCHEDITLINE_BREAKHATCHGENERATEBOUNDARYLINE_BREAKHATCHSETBOUNDARYLINE_BREAKHATCHSETORIGINLINE_BREAKHATCHTOBACKLINE_BREAKHELIXLINE_BREAKHELPLINE_BREAKHIDELINE_BREAKHIDEOBJECTSLINE_BREAKHIDEPALETTESLINE_BREAKHIGHLIGHTNEWLINE_BREAKHLSETTINGSLINE_BREAKHYPERLINKLINE_BREAKHYPERLINKOPTIONSLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令I,0.91,,该索引下有以下命令：LINE_BREAKIDLINE_BREAKIGESEXPORTLINE_BREAKIGESIMPORTLINE_BREAKIMAGELINE_BREAKIMAGEADJUSTLINE_BREAKIMAGEAPPLINE_BREAKIMAGEATTACHLINE_BREAKIMAGECLIPLINE_BREAKIMAGEEDITLINE_BREAKIMAGEQUALITYLINE_BREAKIMPORTLINE_BREAKIMPRINTLINE_BREAKINPUTSEARCHOPTIONSLINE_BREAKINSERTLINE_BREAKINSERTOBJLINE_BREAKINTERFERELINE_BREAKINTERSECTLINE_BREAKISODRAFTLINE_BREAKISOLATEOBJECTSLINE_BREAKISOPLANELINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令J,0.91,,该索引下有以下命令：LINE_BREAKJOINLINE_BREAKJPGOUTLINE_BREAKJULIANLINE_BREAKJUSTIFYTEXTLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令L,0.91,,该索引下有以下命令：LINE_BREAKLAYCURLINE_BREAKLAYDELLINE_BREAKLAYERLINE_BREAKLAYERCLOSELINE_BREAKLAYERPLINE_BREAKLAYERPALETTELINE_BREAKLAYERPMODELINE_BREAKLAYERSTATELINE_BREAKLAYERSTATESAVELINE_BREAKLAYFRZLINE_BREAKLAYISOLINE_BREAKLAYLCKLINE_BREAKLAYMCHLINE_BREAKLAYMCURLINE_BREAKLAYMRGLINE_BREAKLAYOFFLINE_BREAKLAYONLINE_BREAKLAYOUTLINE_BREAKLAYOUTMERGELINE_BREAKLAYOUTWIZARDLINE_BREAKLAYTHWLINE_BREAKLAYTRANSLINE_BREAKLAYULKLINE_BREAKLAYUNISOLINE_BREAKLAYVPILINE_BREAKLAYWALKLINE_BREAKLEADERLINE_BREAKLENGTHENLINE_BREAKLIGHTLINE_BREAKLIGHTLISTLINE_BREAKLIGHTLISTCLOSELINE_BREAKLIMITSLINE_BREAKLINELINE_BREAKLINETYPELINE_BREAKLISTLINE_BREAKLIVESECTIONLINE_BREAKLOADLINE_BREAKLOFTLINE_BREAKLOGFILEOFFLINE_BREAKLOGFILEONLINE_BREAKLSPLINE_BREAKLSPSURFLINE_BREAKLTSCALELINE_BREAKLWEIGHTLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令M,0.91,,该索引下有以下命令：LINE_BREAKMARKUPLINE_BREAKMARKUPCLOSELINE_BREAKMASSPROPLINE_BREAKMATBROWSERCLOSELINE_BREAKMATBROWSEROPENLINE_BREAKMATCHCELLLINE_BREAKMATCHPROPLINE_BREAKMATEDITORCLOSELINE_BREAKMATEDITOROPENLINE_BREAKMATERIALASSIGNLINE_BREAKMATERIALATTACHLINE_BREAKMATERIALMAPLINE_BREAKMATERIALSLINE_BREAKMATERIALSCLOSELINE_BREAKMEASURELINE_BREAKMEASUREGEOMLINE_BREAKMENULINE_BREAKMESHLINE_BREAKMESHCAPLINE_BREAKMESHCOLLAPSELINE_BREAKMESHCREASELINE_BREAKMESHEXTRUDELINE_BREAKMESHMERGELINE_BREAKMESHOPTIONSLINE_BREAKMESHPRIMITIVEOPTIONSLINE_BREAKMESHREFINELINE_BREAKMESHSMOOTHLINE_BREAKMESHSMOOTHLESSLINE_BREAKMESHSMOOTHMORELINE_BREAKMESHSPINLINE_BREAKMESHSPLITLINE_BREAKMESHUNCREASELINE_BREAKMIGRATEMATERIALSLINE_BREAKMINSERTLINE_BREAKMIRRORLINE_BREAKMIRROR3DLINE_BREAKMKLTYPELINE_BREAKMKSHAPELINE_BREAKMLEADERLINE_BREAKMLEADERALIGNLINE_BREAKMLEADERCOLLECTLINE_BREAKMLEADEREDITLINE_BREAKMLEADERSTYLELINE_BREAKMLEDITLINE_BREAKMLINELINE_BREAKMLSTYLELINE_BREAKMOCOROLINE_BREAKMODELLINE_BREAKMOVELINE_BREAKMOVEBAKLINE_BREAKMPEDITLINE_BREAKMREDOLINE_BREAKMSLIDELINE_BREAKMSPACELINE_BREAKMSTRETCHLINE_BREAKMTEDITLINE_BREAKMTEXTLINE_BREAKMULTIPLELINE_BREAKMVIEWLINE_BREAKMVSETUPLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令N,0.91,,该索引下有以下命令：LINE_BREAKNAVBARLINE_BREAKNAVSMOTIONLINE_BREAKNAVSMOTIONCLOSELINE_BREAKNAVSWHEELLINE_BREAKNAVVCUBELINE_BREAKNCOPYLINE_BREAKNETLOADLINE_BREAKNEWLINE_BREAKNEWSHEETSETLINE_BREAKNEWSHOTLINE_BREAKNEWVIEWLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令O,0.91,,该索引下有以下命令：LINE_BREAKOBJECTSCALELINE_BREAKOFFSETLINE_BREAKOFFSETEDGELINE_BREAKOLECONVERTLINE_BREAKOLELINKSLINE_BREAKOLEOPENLINE_BREAKOLERESETLINE_BREAKOLESCALELINE_BREAKOOPSLINE_BREAKOPENLINE_BREAKOPENDWFMARKUPLINE_BREAKOPENFROMWEBMOBILELINE_BREAKOPENSHEETSETLINE_BREAKOPTIONSLINE_BREAKORTHOLINE_BREAKOSNAPLINE_BREAKOVERKILLLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令P,0.91,,该索引下有以下命令：LINE_BREAKPAGESETUPLINE_BREAKPANLINE_BREAKPARAMETERSLINE_BREAKPARAMETERSCLOSELINE_BREAKPARTIALOADLINE_BREAKPARTIALOPENLINE_BREAKPASTEASHYPERLINKLINE_BREAKPASTEBLOCKLINE_BREAKPASTECLIPLINE_BREAKPASTEORIGLINE_BREAKPASTESPECLINE_BREAKPCEXTRACTCENTERLINELINE_BREAKPCEXTRACTCORNERLINE_BREAKPCEXTRACTEDGELINE_BREAKPCEXTRACTSECTIONLINE_BREAKPCINWIZARDLINE_BREAKPDFADJUSTLINE_BREAKPDFATTACHLINE_BREAKPDFCLIPLINE_BREAKPDFIMPORTLINE_BREAKPDFLAYERSLINE_BREAKPDFSHXTEXTLINE_BREAKPEDITLINE_BREAKPFACELINE_BREAKPLANLINE_BREAKPLANESURFLINE_BREAKPLINELINE_BREAKPLOTLINE_BREAKPLOTSTAMPLINE_BREAKPLOTSTYLELINE_BREAKPLOTTERMANAGERLINE_BREAKPLT2DWGLINE_BREAKPMTOGGLELINE_BREAKPNGOUTLINE_BREAKPOINTLINE_BREAKPOINTCLOUDATTACHLINE_BREAKPOINTCLOUDCOLORMAPLINE_BREAKPOINTCLOUDCROPLINE_BREAKPOINTCLOUDCROPSTATELINE_BREAKPOINTCLOUDMANAGERLINE_BREAKPOINTCLOUDMANAGERCLOSELINE_BREAKPOINTCLOUDSTYLIZELINE_BREAKPOINTCLOUDUNCROPLINE_BREAKPOINTLIGHTLINE_BREAKPOLYGONLINE_BREAKPOLYSOLIDLINE_BREAKPRESSPULLLINE_BREAKPREVIEWLINE_BREAKPROJECTGEOMETRYLINE_BREAKPROPERTIESLINE_BREAKPROPERTIESCLOSELINE_BREAKPROPULATELINE_BREAKPSBSCALELINE_BREAKPSETUPINLINE_BREAKPSOUTLINE_BREAKPSPACELINE_BREAKPSTSCALELINE_BREAKPTYPELINE_BREAKPUBLISHLINE_BREAKPURGELINE_BREAKPYRAMIDLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令Q,0.91,,该索引下有以下命令：LINE_BREAKQCCLOSELINE_BREAKQDIMLINE_BREAKQLATTACHLINE_BREAKQLATTACHSETLINE_BREAKQLDETACHSETLINE_BREAKQLEADERLINE_BREAKQNEWLINE_BREAKQQUITLINE_BREAKQSAVELINE_BREAKQSELECTLINE_BREAKQTEXTLINE_BREAKQUICKCALCLINE_BREAKQUICKCUILINE_BREAKQUICKPROPERTIESLINE_BREAKQUITLINE_BREAKQVDRAWINGLINE_BREAKQVDRAWINGCLOSELINE_BREAKQVLAYOUTLINE_BREAKQVLAYOUTCLOSELINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令R,0.91,,该索引下有以下命令：LINE_BREAKRAYLINE_BREAKRECOVERLINE_BREAKRECOVERALLLINE_BREAKRECTANGLINE_BREAKREDEFINELINE_BREAKREDIRLINE_BREAKREDIRMODELINE_BREAKREDOLINE_BREAKREDRAWLINE_BREAKREDRAWALLLINE_BREAKREFCLOSELINE_BREAKREFEDITLINE_BREAKREFSETLINE_BREAKREGENLINE_BREAKREGEN3LINE_BREAKREGENALLLINE_BREAKREGENAUTOLINE_BREAKREGIONLINE_BREAKREINITLINE_BREAKRENAMELINE_BREAKRENDERLINE_BREAKRENDERCROPLINE_BREAKRENDERENVIRONMENTLINE_BREAKRENDERENVIRONMENTCLOSELINE_BREAKRENDEREXPOSURELINE_BREAKRENDEREXPOSURECLOSELINE_BREAKRENDERONLINELINE_BREAKRENDERPRESETSLINE_BREAKRENDERPRESETSCLOSELINE_BREAKRENDERWINLINE_BREAKRENDERWINDOWLINE_BREAKRENDERWINDOWCLOSELINE_BREAKREPURLSLINE_BREAKRESETBLOCKLINE_BREAKRESUMELINE_BREAKREVCLOUDLINE_BREAKREVERSELINE_BREAKREVERTLINE_BREAKREVOLVELINE_BREAKREVSURFLINE_BREAKRIBBONLINE_BREAKRIBBONCLOSELINE_BREAKROTATELINE_BREAKROTATE3DLINE_BREAKRPREFLINE_BREAKRPREFCLOSELINE_BREAKRSCRIPTLINE_BREAKRTEDITLINE_BREAKRTEXTLINE_BREAKRTUCSLINE_BREAKRULESURFLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令S,0.91,,该索引下有以下命令：LINE_BREAKSAVELINE_BREAKSAVEALLLINE_BREAKSAVEASLINE_BREAKSAVEIMGLINE_BREAKSAVETOWEBMOBILELINE_BREAKSCALELINE_BREAKSCALELISTEDITLINE_BREAKSCALETEXTLINE_BREAKSCRIPTLINE_BREAKSCRIPTCALLLINE_BREAKSECTIONLINE_BREAKSECTIONPLANELINE_BREAKSECTIONPLANEJOGLINE_BREAKSECTIONPLANESETTINGSLINE_BREAKSECTIONPLANETOBLOCKLINE_BREAKSECTIONSPINNERSLINE_BREAKSECURITYOPTIONSLINE_BREAKSELECTLINE_BREAKSELECTSIMILARLINE_BREAKSETBYLAYERLINE_BREAKSETVARLINE_BREAKSHADEMODELINE_BREAKSHAPELINE_BREAKSHAREDVIEWSLINE_BREAKSHAREDVIEWSCLOSELINE_BREAKSHAREVIEWLINE_BREAKSHEETSETLINE_BREAKSHEETSETHIDELINE_BREAKSHELLLINE_BREAKSHOWPALETTESLINE_BREAKSHOWRENDERGALLERYLINE_BREAKSHOWURLSLINE_BREAKSHP2BLKLINE_BREAKSIGVALIDATELINE_BREAKSKETCHLINE_BREAKSLICELINE_BREAKSNAPLINE_BREAKSOLDRAWLINE_BREAKSOLIDLINE_BREAKSOLIDEDITLINE_BREAKSOLPROFLINE_BREAKSOLVIEWLINE_BREAKSPACETRANSLINE_BREAKSPELLLINE_BREAKSPHERELINE_BREAKSPLINELINE_BREAKSPLINEDITLINE_BREAKSPOTLIGHTLINE_BREAKSSXLINE_BREAKSTANDARDSLINE_BREAKSTATUSLINE_BREAKSTLOUTLINE_BREAKSTRETCHLINE_BREAKSTYLELINE_BREAKSTYLESMANAGERLINE_BREAKSUBTRACTLINE_BREAKSUNPROPERTIESLINE_BREAKSUNPROPERTIESCLOSELINE_BREAKSUPERHATCHLINE_BREAKSURFBLENDLINE_BREAKSURFEXTENDLINE_BREAKSURFEXTRACTCURVELINE_BREAKSURFFILLETLINE_BREAKSURFNETWORKLINE_BREAKSURFOFFSETLINE_BREAKSURFPATCHLINE_BREAKSURFSCULPTLINE_BREAKSURFTRIMLINE_BREAKSURFUNTRIMLINE_BREAKSWEEPLINE_BREAKSYSVARMONITORLINE_BREAKSYSVDLGLINE_BREAKSYSWINDOWSLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令T,0.91,,该索引下有以下命令：LINE_BREAKTABLELINE_BREAKTABLEDITLINE_BREAKTABLEEXPORTLINE_BREAKTABLESTYLELINE_BREAKTABLETLINE_BREAKTABSURFLINE_BREAKTARGETPOINTLINE_BREAKTASKBARLINE_BREAKTCASELINE_BREAKTCIRCLELINE_BREAKTCOUNTLINE_BREAKTEXTLINE_BREAKTEXTALIGNLINE_BREAKTEXTEDITLINE_BREAKTEXTFITLINE_BREAKTEXTMASKLINE_BREAKTEXTSCRLINE_BREAKTEXTTOFRONTLINE_BREAKTEXTUNMASKLINE_BREAKTFRAMESLINE_BREAKTHICKENLINE_BREAKTIFOUTLINE_BREAKTIMELINE_BREAKTINSERTLINE_BREAKTJUSTLINE_BREAKTOLERANCELINE_BREAKTOOLBARLINE_BREAKTOOLPALETTESLINE_BREAKTOOLPALETTESCLOSELINE_BREAKTORIENTLINE_BREAKTORUSLINE_BREAKTPNAVIGATELINE_BREAKTRANSPARENCYLINE_BREAKTRAYSETTINGSLINE_BREAKTREESTATLINE_BREAKTREXLINE_BREAKTRIMLINE_BREAKTSCALELINE_BREAKTXT2MTXTLINE_BREAKTXTEXPLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令U,0.91,,该索引下有以下命令：LINE_BREAKULINE_BREAKUCSLINE_BREAKUCSICONLINE_BREAKUCSMANLINE_BREAKULAYERSLINE_BREAKUNDEFINELINE_BREAKUNDOLINE_BREAKUNGROUPLINE_BREAKUNIONLINE_BREAKUNISOLATEOBJECTSLINE_BREAKUNITSLINE_BREAKUPDATEFIELDLINE_BREAKUPDATETHUMBSNOWLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令V,0.91,,该索引下有以下命令：LINE_BREAKVBAIDELINE_BREAKVBALOADLINE_BREAKVBAMANLINE_BREAKVBAPREFLINE_BREAKVBARUNLINE_BREAKVBASTMTLINE_BREAKVBAUNLOADLINE_BREAKVIEWLINE_BREAKVIEWBACKLINE_BREAKVIEWBASELINE_BREAKVIEWCOMPONENTLINE_BREAKVIEWDETAILLINE_BREAKVIEWDETAILSTYLELINE_BREAKVIEWEDITLINE_BREAKVIEWFORWARDLINE_BREAKVIEWGOLINE_BREAKVIEWPLAYLINE_BREAKVIEWPLOTDETAILSLINE_BREAKVIEWPROJLINE_BREAKVIEWRESLINE_BREAKVIEWSECTIONLINE_BREAKVIEWSECTIONSTYLELINE_BREAKVIEWSETPROJLINE_BREAKVIEWSKETCHCLOSELINE_BREAKVIEWSTDLINE_BREAKVIEWSYMBOLSKETCHLINE_BREAKVIEWUPDATELINE_BREAKVISUALSTYLESLINE_BREAKVISUALSTYLESCLOSELINE_BREAKVLISPLINE_BREAKVPCLIPLINE_BREAKVPLAYERLINE_BREAKVPMAXLINE_BREAKVPMINLINE_BREAKVPOINTLINE_BREAKVPORTSLINE_BREAKVPSCALELINE_BREAKVPSYNCLINE_BREAKVSCURRENTLINE_BREAKVSLIDELINE_BREAKVSSAVELINE_BREAKVTOPTIONSLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令W,0.91,,该索引下有以下命令：LINE_BREAKWALKFLYSETTINGSLINE_BREAKWBLOCKLINE_BREAKWEBLIGHTLINE_BREAKWEBLOADLINE_BREAKWEDGELINE_BREAKWHOHASLINE_BREAKWIPEOUTLINE_BREAKWMFINLINE_BREAKWMFOPTSLINE_BREAKWMFOUTLINE_BREAKWORKFLOWLINE_BREAKWORKSPACELINE_BREAKWSSAVELINE_BREAKWSSETTINGSLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令X,0.91,,该索引下有以下命令：LINE_BREAKXATTACHLINE_BREAKXBINDLINE_BREAKXCLIPLINE_BREAKXDATALINE_BREAKXDLISTLINE_BREAKXEDGESLINE_BREAKXLINELINE_BREAKXLISTLINE_BREAKXOPENLINE_BREAKXPLODELINE_BREAKXREFLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CAD命令Z,0.91,,该索引下有以下命令：LINE_BREAKZOOMLINE_BREAK 请输入命令全称获取功能。,false
+CAD命令,CHURLS,0.91,,CAD命令: CHURLSLINE_BREAK     (Express Tool)提供一种方法，用来编辑以前为选定对象附着的 URL。,false
+CAD命令,CIRCLE,0.91,,CAD命令: CIRCLELINE_BREAK    创建圆。,false
+CAD命令,CLASSICGROUP,0.91,,CAD命令: CLASSICGROUPLINE_BREAK    打开传统“对象编组”对话框。,false
+CAD命令,SURFOFFSET,0.91,,CAD命令: SURFOFFSETLINE_BREAK    创建与原始曲面相距指定距离的平行曲面。,false
+CAD命令,CLASSICIMAGE,0.91,,CAD命令: CLASSICIMAGELINE_BREAK    管理当前图形中的参照图像文件。,false
+CAD命令,CLASSICINSERT,0.91,,CAD命令: CLASSICINSERTLINE_BREAK    使用经典版本的 INSERT 命令，将块或图形插入到当前图形中。,false
+CAD命令,CLASSICLAYER,0.91,,CAD命令: CLASSICLAYERLINE_BREAK    打开传统图层特性管理器。,false
+CAD命令,CLASSICXREF,0.91,,CAD命令: CLASSICXREFLINE_BREAK    管理当前图形中的参照图形文件。,false
+CAD命令,CLEANSCREENOFF,0.91,,CAD命令: CLEANSCREENOFFLINE_BREAK    恢复在使用 CLEANSCREENON 之前的显示状态。,false
+CAD命令,CLEANSCREENON,0.91,,CAD命令: CLEANSCREENONLINE_BREAK    清除工具栏和可固定窗口（命令窗口除外）的屏幕。,false
+CAD命令,CLIP,0.91,,CAD命令: CLIPLINE_BREAK    将选定对象（如块、外部参照、图像、视口和参考底图）修剪到指定的边界。,false
+CAD命令,CLIPIT,0.91,,CAD命令: CLIPITLINE_BREAK     (Express Tool)使用直线和曲线剪裁外部参照或图像。,false
+CAD命令,CLOSE,0.91,,CAD命令: CLOSELINE_BREAK    关闭当前图形。,false
+CAD命令,CLOSEALL,0.91,,CAD命令: CLOSEALLLINE_BREAK    关闭当前所有打开的图形。,false
+CAD命令,CLOSEALLOTHER,0.91,,CAD命令: CLOSEALLOTHERLINE_BREAK    关闭所有其他打开的图形，当前图形除外。,false
+CAD命令,COLOR,0.91,,CAD命令: COLORLINE_BREAK    设置新对象的颜色。,false
+CAD命令,COMMANDLINE,0.91,,CAD命令: COMMANDLINELINE_BREAK    显示“命令”窗口。,false
+CAD命令,COMMANDLINEHIDE,0.91,,CAD命令: COMMANDLINEHIDELINE_BREAK    隐藏命令窗口。,false
+CAD命令,COMPARE,0.91,,CAD命令: COMPARELINE_BREAK    将指定图形文件与当前图形文件进行比较，在修订云线中使用颜色亮显差异。,false
+CAD命令,COMPARECLOSE,0.91,,CAD命令: COMPARECLOSELINE_BREAK    关闭“DWG 比较”工具栏并结束比较。,false
+CAD命令,COMPAREEXPORT,0.91,,CAD命令: COMPAREEXPORTLINE_BREAK    将比较结果输出到新图形文件（称为“快照图形”）中。,false
+CAD命令,COMPAREIMPORT,0.91,,CAD命令: COMPAREIMPORTLINE_BREAK    将比较图形中的对象输入到当前图形中。,false
+CAD命令,COMPAREINFO,0.91,,CAD命令: COMPAREINFOLINE_BREAK    提供一种插入或复制关于两个比较图形文件的特性信息的方法。,false
+CAD命令,COMPILE,0.91,,CAD命令: COMPILELINE_BREAK    将形文件和 PostScript 字体文件编译成 SHX 文件。,false
+CAD命令,CONE,0.91,,CAD命令: CONELINE_BREAK    创建三维实体圆锥体。,false
+CAD命令,CONSTRAINTBAR,0.91,,CAD命令: CONSTRAINTBARLINE_BREAK    显示或隐藏对象上的几何约束。,false
+CAD命令,CONSTRAINTSETTINGS,0.91,,CAD命令: CONSTRAINTSETTINGSLINE_BREAK    控制约束栏上几何约束的显示。,false
+CAD命令,CONVERT,0.91,,CAD命令: CONVERTLINE_BREAK    转换传统多段线和图案填充以用于更高的产品版本。,false
+CAD命令,CONVERTCTB,0.91,,CAD命令: CONVERTCTBLINE_BREAK    将颜色相关的打印样式表 (CTB) 转换为命名打印样式表 (STB)。,false
+CAD命令,CONVERTOLDLIGHTS,0.91,,CAD命令: CONVERTOLDLIGHTSLINE_BREAK    将以先前图形文件格式创建的光源转换为当前格式。,false
+CAD命令,CONVERTOLDMATERIALS,0.91,,CAD命令: CONVERTOLDMATERIALSLINE_BREAK    转换旧材质以使用当前材质格式。,false
+CAD命令,CONVERTPSTYLES,0.91,,CAD命令: CONVERTPSTYLESLINE_BREAK    将当前图形转换为命名或颜色相关打印样式。,false
+CAD命令,CONVTOMESH,0.91,,CAD命令: CONVTOMESHLINE_BREAK    将三维对象（例如多边形网格、曲面和实体）转换为网格对象。,false
+CAD命令,CONVTONURBS,0.91,,CAD命令: CONVTONURBSLINE_BREAK    将三维实体和曲面转换为 NURBS 曲面。,false
+CAD命令,CONVTOSOLID,0.91,,CAD命令: CONVTOSOLIDLINE_BREAK    将符合条件的三维对象转换为三维实体。,false
+CAD命令,CONVTOSURFACE,0.91,,CAD命令: CONVTOSURFACELINE_BREAK    将对象转换为三维曲面。,false
+CAD命令,COORDINATIONMODELATTACH,0.91,,CAD命令: COORDINATIONMODELATTACHLINE_BREAK    将参照插入到协调模型中，例如 NWD 和 NWC Navisworks 文件。,false
+CAD命令,COPY,0.91,,CAD命令: COPYLINE_BREAK    在指定方向上按指定距离复制对象。,false
+CAD命令,COPYBASE,0.91,,CAD命令: COPYBASELINE_BREAK    将选定的对象与指定的基点一起复制到剪贴板。,false
+CAD命令,COPYCLIP,0.91,,CAD命令: COPYCLIPLINE_BREAK    将选定的对象复制到剪贴板。,false
+CAD命令,COPYHIST,0.91,,CAD命令: COPYHISTLINE_BREAK    将命令行历史记录文字复制到剪贴板。,false
+CAD命令,COPYLINK,0.91,,CAD命令: COPYLINKLINE_BREAK    将当前视图复制到剪贴板中以便链接到其他 OLE 应用程序。,false
+CAD命令,COPYM,0.91,,CAD命令: COPYMLINE_BREAK     (Express Tool)使用“重复”、“阵列”、“定数等分”和“定距等分”选项复制多个对象。,false
+CAD命令,COPYTOLAYER,0.91,,CAD命令: COPYTOLAYERLINE_BREAK    将一个或多个对象复制到其他图层。,false
+CAD命令,CUI,0.91,,CAD命令: CUILINE_BREAK    管理产品中自定义的用户界面元素。,false
+CAD命令,CUIEXPORT,0.91,,CAD命令: CUIEXPORTLINE_BREAK    将主 CUIx 文件中的自定义设置输出到企业或局部 CUIx 文件。,false
+CAD命令,CUIIMPORT,0.91,,CAD命令: CUIIMPORTLINE_BREAK    将企业或局部 CUIx 文件中的自定义设置输入到主 CUIx 文件。,false
+CAD命令,CUILOAD,0.91,,CAD命令: CUILOADLINE_BREAK    加载自定义文件 (CUIx)。,false
+CAD命令,CUIUNLOAD,0.91,,CAD命令: CUIUNLOADLINE_BREAK    卸载 CUIx 文件。,false
+CAD命令,CUSTOMIZE,0.91,,CAD命令: CUSTOMIZELINE_BREAK    自定义工具选项板和工具选项板组。,false
+CAD命令,CUTCLIP,0.91,,CAD命令: CUTCLIPLINE_BREAK    将选定的对象复制到剪贴板，并将其从图形中删除。,false
+CAD命令,CVADD,0.91,,CAD命令: CVADDLINE_BREAK    将控制点添加到 NURBS 曲面和样条曲线。,false
+CAD命令,CVHIDE,0.91,,CAD命令: CVHIDELINE_BREAK    关闭所有 NURBS 曲面和曲线的控制点的显示。,false
+CAD命令,CVREBUILD,0.91,,CAD命令: CVREBUILDLINE_BREAK    重新生成 NURBS 曲面和曲线的形状。,false
+CAD命令,CVREMOVE,0.91,,CAD命令: CVREMOVELINE_BREAK    删除 NURBS 曲面和曲线上的控制点。,false
+CAD命令,CVSHOW,0.91,,CAD命令: CVSHOWLINE_BREAK    显示指定 NURBS 曲面或曲线的控制点。,false
+CAD命令,CYLINDER,0.91,,CAD命令: CYLINDERLINE_BREAK    创建三维实体圆柱体。,false
+CAD命令,DATAEXTRACTION,0.91,,CAD命令: DATAEXTRACTIONLINE_BREAK    从外部源提取图形数据，并将数据合并至数据提取表或外部文件。,false
+CAD命令,DATALINK,0.91,,CAD命令: DATALINKLINE_BREAK    显示“数据链接”对话框。,false
+CAD命令,DATALINKUPDATE,0.91,,CAD命令: DATALINKUPDATELINE_BREAK    将数据更新至已建立的外部数据链接或从已建立的外部数据链接更新数据。,false
+CAD命令,DBCCLOSE,0.91,,CAD命令: DBCCLOSELINE_BREAK    关闭“选择数据对象”对话框（数据库连接管理器）。,false
+CAD命令,DBCCONFIGURE,0.91,,CAD命令: DBCCONFIGURELINE_BREAK    打开“配置数据源”对话框（数据库连接管理器）,false
+CAD命令,DBCDEFINELLT,0.91,,CAD命令: DBCDEFINELLTLINE_BREAK    打开“选择数据库对象”对话框。,false
+CAD命令,DBCDEFINELT,0.91,,CAD命令: DBCDEFINELTLINE_BREAK    打开“选择数据对象”对话框（数据库连接管理器）,false
+CAD命令,DBCONNECT,0.91,,CAD命令: DBCONNECTLINE_BREAK    提供至外部数据库表的接口。,false
+CAD命令,DBLIST,0.91,,CAD命令: DBLISTLINE_BREAK    列出图形中每个对象的数据库信息。,false
+CAD命令,DCALIGNED,0.91,,CAD命令: DCALIGNEDLINE_BREAK    约束不同对象上两个点之间的距离。,false
+CAD命令,DCANGULAR,0.91,,CAD命令: DCANGULARLINE_BREAK    约束直线段或多段线段之间的角度、由圆弧或多段线圆弧扫掠得到的角度，或对象上三个点之间的角度。,false
+CAD命令,DCCONVERT,0.91,,CAD命令: DCCONVERTLINE_BREAK    将关联标注转换为标注约束。,false
+CAD命令,DCDIAMETER,0.91,,CAD命令: DCDIAMETERLINE_BREAK    约束圆或圆弧的直径。,false
+CAD命令,DCDISPLAY,0.91,,CAD命令: DCDISPLAYLINE_BREAK    显示或隐藏与对象选择集关联的动态约束。,false
+CAD命令,DCFORM,0.91,,CAD命令: DCFORMLINE_BREAK    指定要创建的标注约束是动态约束还是注释性约束。,false
+CAD命令,DCHORIZONTAL,0.91,,CAD命令: DCHORIZONTALLINE_BREAK    约束对象上的点或不同对象上两个点之间的 X 距离。,false
+CAD命令,DCLINEAR,0.91,,CAD命令: DCLINEARLINE_BREAK    根据尺寸界线原点和尺寸线的位置创建水平、垂直或旋转约束。,false
+CAD命令,DCRADIUS,0.91,,CAD命令: DCRADIUSLINE_BREAK    约束圆或圆弧的半径。,false
+CAD命令,DCVERTICAL,0.91,,CAD命令: DCVERTICALLINE_BREAK    约束对象上的点或不同对象上两个点之间的 Y 距离。,false
+CAD命令,DDEDIT,0.91,,CAD命令: DDEDITLINE_BREAK    编辑单行文字、标注文字、属性定义和功能控制边框。,false
+CAD命令,DDPTYPE,0.91,,CAD命令: DDPTYPELINE_BREAK    指定点对象的显示样式及大小。,false
+CAD命令,DDVPOINT,0.91,,CAD命令: DDVPOINTLINE_BREAK    设置三维观察方向。,false
+CAD命令,DELAY,0.91,,CAD命令: DELAYLINE_BREAK    在脚本中提供指定时间的暂停。,false
+CAD命令,DELCONSTRAINT,0.91,,CAD命令: DELCONSTRAINTLINE_BREAK    从对象的选择集中删除所有几何约束和标注约束。,false
+CAD命令,DETACHURL,0.91,,CAD命令: DETACHURLLINE_BREAK    删除图形中的超链接。,false
+CAD命令,DGNADJUST,0.91,,CAD命令: DGNADJUSTLINE_BREAK    调整 DGN 参考底图的淡入度、对比度和单色设置。,false
+CAD命令,DGNATTACH,0.91,,CAD命令: DGNATTACHLINE_BREAK    将 DGN 文件作为参考底图插入到当前图形中。,false
+CAD命令,DGNCLIP,0.91,,CAD命令: DGNCLIPLINE_BREAK    根据指定边界修剪选定 DGN 参考底图的显示。,false
+CAD命令,DGNEXPORT,0.91,,CAD命令: DGNEXPORTLINE_BREAK    从当前图形创建一个或多个 DGN 文件。,false
+CAD命令,DGNIMPORT,0.91,,CAD命令: DGNIMPORTLINE_BREAK    将数据从 DGN 文件输入到新的 DWG 文件或当前 DWG 文件，具体取决于 DGNIMPORTMODE 系统变量。,false
+CAD命令,DGNLAYERS,0.91,,CAD命令: DGNLAYERSLINE_BREAK    控制 DGN 参考底图中图层的显示。,false
+CAD命令,DGNMAPPING,0.91,,CAD命令: DGNMAPPINGLINE_BREAK    允许用户创建和编辑用户定义的 DGN 映射设置。,false
+CAD命令,DIGITALSIGN,0.91,,CAD命令: DIGITALSIGNLINE_BREAK    将数字签名附着到图形，如果进行了未经授权的更改，将删除该签名。,false
+CAD命令,DIM,0.91,,CAD命令: DIMLINE_BREAK    使用单个命令创建多个标注和标注类型。,false
+CAD命令,DIMALIGNED,0.91,,CAD命令: DIMALIGNEDLINE_BREAK    创建对齐线性标注。,false
+CAD命令,DIMANGULAR,0.91,,CAD命令: DIMANGULARLINE_BREAK    创建角度标注。,false
+CAD命令,DIMARC,0.91,,CAD命令: DIMARCLINE_BREAK    创建圆弧长度标注。,false
+CAD命令,DIMBASELINE,0.91,,CAD命令: DIMBASELINELINE_BREAK    从上一个标注或选定标注的基线处创建线性标注、角度标注或坐标标注。,false
+CAD命令,DIMBREAK,0.91,,CAD命令: DIMBREAKLINE_BREAK    在标注和尺寸界线与其他对象的相交处打断或恢复标注和尺寸界线。,false
+CAD命令,DIMCENTER,0.91,,CAD命令: DIMCENTERLINE_BREAK    创建圆和圆弧的非关联中心标记或中心线。,false
+CAD命令,DIMCONSTRAINT,0.91,,CAD命令: DIMCONSTRAINTLINE_BREAK    对选定对象或对象上的点应用标注约束，或将关联标注转换为标注约束。,false
+CAD命令,DIMCONTINUE,0.91,,CAD命令: DIMCONTINUELINE_BREAK    创建从上一个标注或选定标注的尺寸界线开始的标注。,false
+CAD命令,DIMDIAMETER,0.91,,CAD命令: DIMDIAMETERLINE_BREAK    为圆或圆弧创建直径标注。,false
+CAD命令,DIMDISASSOCIATE,0.91,,CAD命令: DIMDISASSOCIATELINE_BREAK    删除选定标注的关联性。,false
+CAD命令,DIMEDIT,0.91,,CAD命令: DIMEDITLINE_BREAK    编辑标注文字和尺寸界线。,false
+CAD命令,DIMEX,0.91,,CAD命令: DIMEXLINE_BREAK     (Express Tool)将命名标注样式及其设置输出到外部文件。,false
+CAD命令,DIMIM,0.91,,CAD命令: DIMIMLINE_BREAK     (Express Tool)从外部文件中输入命名标注样式及其设置。,false
+CAD命令,DIMINSPECT,0.91,,CAD命令: DIMINSPECTLINE_BREAK    为选定的标注添加或删除检验信息。,false
+CAD命令,DIMJOGGED,0.91,,CAD命令: DIMJOGGEDLINE_BREAK    为圆和圆弧创建折弯标注。,false
+CAD命令,DIMJOGLINE,0.91,,CAD命令: DIMJOGLINELINE_BREAK    在线性标注或对齐标注中添加或删除折弯线。,false
+CAD命令,DIMLINEAR,0.91,,CAD命令: DIMLINEARLINE_BREAK    创建线性标注。,false
+CAD命令,DIMORDINATE,0.91,,CAD命令: DIMORDINATELINE_BREAK    创建坐标标注。,false
+CAD命令,DIMOVERRIDE,0.91,,CAD命令: DIMOVERRIDELINE_BREAK    控制选定标注中使用的系统变量的替代值。,false
+CAD命令,DIMRADIUS,0.91,,CAD命令: DIMRADIUSLINE_BREAK    为圆或圆弧创建半径标注。,false
+CAD命令,DIMREASSOC,0.91,,CAD命令: DIMREASSOCLINE_BREAK     (Express Tool)将测量值恢复为替代或修改的标注文字。,false
+CAD命令,DIMREASSOCIATE,0.91,,CAD命令: DIMREASSOCIATELINE_BREAK    将选定的标注关联或重新关联至对象或对象上的点。,false
+CAD命令,DIMREGEN,0.91,,CAD命令: DIMREGENLINE_BREAK    更新所有关联标注的位置。,false
+CAD命令,DIMROTATED,0.91,,CAD命令: DIMROTATEDLINE_BREAK    创建旋转线性标注。,false
+CAD命令,DIMSPACE,0.91,,CAD命令: DIMSPACELINE_BREAK    调整线性标注或角度标注之间的间距。,false
+CAD命令,DIMSTYLE,0.91,,CAD命令: DIMSTYLELINE_BREAK    创建和修改标注样式。,false
+CAD命令,DIMTEDIT,0.91,,CAD命令: DIMTEDITLINE_BREAK    移动和旋转标注文字并重新定位尺寸线。,false
+CAD命令,DIST,0.91,,CAD命令: DISTLINE_BREAK    测量两点之间的距离和角度。,false
+CAD命令,DISTANTLIGHT,0.91,,CAD命令: DISTANTLIGHTLINE_BREAK    创建平行光。,false
+CAD命令,DIVIDE,0.91,,CAD命令: DIVIDELINE_BREAK    创建沿对象的长度或周长等间隔排列的点对象或块。,false
+CAD命令,DONUT,0.91,,CAD命令: DONUTLINE_BREAK    创建实心圆或较宽的环。,false
+CAD命令,DOWNLOADMANAGER,0.91,,CAD命令: DOWNLOADMANAGERLINE_BREAK    报告当前下载的状态。,false
+CAD命令,DRAGMODE,0.91,,CAD命令: DRAGMODELINE_BREAK    控制进行拖动的对象的显示方式。,false
+CAD命令,FREEWEB,0.91,,CAD命令: FREEWEBLINE_BREAK    创建自由光域灯光（未指定目标的光域灯光）。,false
+CAD命令,LAYDEL,0.91,,CAD命令: LAYDELLINE_BREAK    删除图层上的所有对象并清理该图层。,false
