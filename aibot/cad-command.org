@@ -73,7 +73,6 @@
 * 3DZOOM
 在透视视图中放大和缩小。
 
-
 * ABOUT
 显示有关产品的信息。
 
@@ -554,7 +553,7 @@
 * COORDINATIONMODELATTACH
 将参照插入到协调模型中，例如 NWD 和 NWC Navisworks 文件。
 
-* COPY, 复制, C
+* COPY, 复制, C, CP
 在指定方向上按指定距离复制对象。
 
 * COPYBASE
@@ -1487,7 +1486,7 @@
 * MINSERT
 在矩形阵列中插入一个块的多个实例。
 
-* MIRROR
+* MIRROR,镜像
 创建选定对象的镜像副本。
 
 * MIRROR3D
@@ -1532,7 +1531,7 @@
 * MODEL
 从命名的布局选项卡切换到“模型”选项卡。
 
-* MOVE
+* MOVE,移动
 在指定方向上按指定距离移动对象。
 
 * MOVEBAK
@@ -1631,7 +1630,7 @@
 * OOPS
 恢复删除的对象。
 
-* OPEN
+* OPEN,Ctrl+O
 打开现有的图形文件。
 
 * OPENDWFMARKUP
@@ -1658,7 +1657,7 @@
 * PAGESETUP
 控制每个新建布局的页面布局、打印设备、图纸尺寸和其他设置。
 
-* PAN
+* PAN,漫游
 改变视图而不更改查看方向或比例。
 
 * PARAMETERS
@@ -1733,10 +1732,10 @@
 * PLANESURF
 创建平面曲面。
 
-* PLINE
+* PLINE,PL,多段线
 创建二维多段线，它是由直线段和圆弧段组成的单个对象。
 
-* PLOT
+* PLOT,打印
 将图形打印到绘图仪、打印机或文件。
 
 * PLOTSTAMP
@@ -2075,7 +2074,7 @@
 * RULESURF
 创建用于表示两条直线或曲线之间的曲面的网格。
 
-* SAVE
+* SAVE,Ctrl+S
 使用不同的文件名或位置保存当前图形，而不更改当前图形文件。
 
 * SAVEALL
@@ -2091,7 +2090,7 @@
 * SAVETOWEBMOBILE
 将当前图形的副本保存到 Autodesk Account。
 
-* SCALE
+* SCALE,缩放
 放大或缩小选定对象，使缩放后对象的比例保持不变。
 
 * SCALELISTEDIT
@@ -2450,7 +2449,7 @@
 (Express Tool)
 将文字或多行文字对象分解为多段线对象。
 
-* U
+* U,撤销
 撤销最近一次操作。
 
 * UCS
@@ -2688,7 +2687,7 @@
 * XEDGES
 从三维实体、曲面、网格、面域或子对象的边创建线框几何图形。
 
-* XLINE
+* XLINE, 构造线
 创建无限长的构造线。
 
 * XLIST
