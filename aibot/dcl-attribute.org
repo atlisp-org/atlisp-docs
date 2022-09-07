@@ -1,0 +1,148 @@
+* action 
+** All active tiles
+AutoLISP action expression
+Specifies an AutoLISP expression to perform an action when this tile is selected. Also known as a callback.
+* alignment
+** All tiles
+Horizontal or vertical position in a cluster
+Specifies the horizontal or vertical positioning (justification) of a tile within its cluster.
+* allow_accept
+** edit_box, image_button, list_box
+Activates is_default button when this tile is selected
+Warn:This attribute isn't supported by the edit_box tile on Mac OS.
+Specifies whether the tile is activated when the user presses the accept key (usually Enter).
+* aspect_ratio
+** image, image_button
+Aspect ratio of an image
+Specifies the ratio of the width of the image to its height (width divided by height).
+* big_increment
+** slider
+Incremental distance to move
+Warn:Supported on Windows only.
+Specifies the value used by the slider's incremental controls.
+* children_alignment
+** row, column, radio_row, radio_column, boxed_row, boxed_column, boxed_radio_row, boxed_radio_column
+Alignment of a cluster's children
+Specifies the default alignment (similar to alignment) for all tiles in a cluster.
+* children_fixed_height
+** row, column, radio_row, radio_column, boxed_row, boxed_column, boxed_radio_row, boxed_radio_column
+Height of a cluster's children doesn't grow during layout
+Specifies the default height (similar to height) for all tiles in a cluster.
+* children_fixed_width
+** row, column, radio_row, radio_column, boxed_row, boxed_column, boxed_radio_row, boxed_radio_column
+Width of a cluster's children doesn't grow during layout
+Specifies the default width (similar to width) for all tiles in a cluster.
+* color attribute
+** image, image_button
+Background (fill) color of an image
+Specifies the background (fill) color of the image.
+* edit_limit
+** edit_box
+Maximum number of characters users can enter
+Warn:Supported on Windows only.
+Specifies the maximum number of characters a user is allowed to enter in the edit box.
+* edit_width
+** edit_box, popup_list
+Width of the edit (input) portion of the tile
+Specifies the width in character-width units of the edit (input) portion of the box—the actual boxed portion of the edit_box tile.
+* fixed_height
+** All tiles
+Height doesn't grow during layout
+Specifies if a tile's height is allowed to fill the available space.
+* fixed_width
+** All tiles
+Width doesn't grow during layout
+Specifies if a tile's width is allowed to fill the available space.
+* fixed_width_font
+** list_box, popup_list
+Displays text in a fixed pitch font
+Warn:Supported on Windows only.
+Specifies whether a list box or pop-up list will display text in a fixed pitch font.
+* height
+** All tiles
+Height of the tile
+Specifies the height of a tile.
+* initial_focus
+** Dialog
+Key of the tile with initial focus
+Warn:Supported on Windows only.
+Specifies the key of the tile within the dialog box that receives the initial keyboard focus.
+* is_bold
+** Text
+Displays as bold
+Specifies whether the text is displayed in bold characters.
+* is_cancel
+** Button
+Button is activated when the cancel key—usually ESC—is pressed
+Specifies whether the button is selected when the user presses the Esc key.
+* is_default
+** Button
+Button is activated when the accept key—usually ENTER—is pressed
+Specifies whether the button is the default button selected ("pushed") when the user presses the accept key.
+* is_enabled
+** All active tiles
+Tile is initially enabled
+Specifies whether or not the tile is initially available.
+* is_tab_stop
+** All active tiles
+Tile is a tab stop
+Warn:Supported on Windows only.
+Specifies whether the tile receives keyboard focus when the user moves between tiles by pressing the Tab key.
+* key
+** All active tiles
+Tile name used by the application
+Specifies a name that the program uses to refer to this specific tile.
+* label
+** boxed_row, boxed_column, boxed_radio_row, boxed_radio_column, button, dialog, edit_box, list_box, popup_list, radio_button, text, toggle
+Displayed label of the tile
+Specifies the text displayed within the tile.
+* layout Attribute
+** slider
+Whether the slider is horizontal or vertical
+Specifies the text displayed within the tile.
+* list attribute
+** list_box, popup_list
+Initial values to display in list
+Specifies the initial set of lines (choices) to be placed in the popup_list or list_box.
+* max_value
+** slider
+Maximum value of a slider
+Specifies the upper range of values that a slider returns.
+* min_value
+** slider
+Minimum value of a slider
+Specifies the lower range of values that a slider returns.
+* mnemonic
+** all active tiles
+Mnemonic character for the tile
+Warn:Supported on Windows only.
+Specifies a keyboard mnemonic character for the tile.
+* multiple_select
+** list_box
+List box allows multiple items to be selected
+Specifies whether multiple items in the list_box can be selected (highlighted) at the same time.
+* password_char
+** edit_box
+Masks characters entered in edit_box
+Specifies the character to be used to mask user input.
+* small_increment
+** slider
+Incremental distance to move
+Specifies the value used by the slider's incremental controls.
+* tabs
+** list_box, popup_list
+Tab stops for list display
+Specifies the placement of tabs in character width units.
+* tab_truncate
+** list_box, popup_list
+Truncates text that is larger than the associated tab stop
+Warn:Supported on Windows only.
+Specifies whether the text in a list box or pop-up list is truncated if it is larger than the associated tab stop.
+* value
+** Text, active tiles (except buttons and image buttons)
+Tile's initial value
+Specifies the initial value of a tile. Possible value is a quoted string.
+* width
+** All tiles
+Width of the tile
+Specifies the width of a tile.
