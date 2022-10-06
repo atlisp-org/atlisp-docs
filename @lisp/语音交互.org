@@ -1,0 +1,36 @@
+* @lisp 支持语音交互
+在使用 CAD 绘图过程中，可以发出语音提示用户进行下一步操作。
+* 用法
+以下用户输入函数中，msg 可以写成 (@:speak msg) ，在将提示信息显示到命令的同步，用语音播报。
+
+#+begin_src lisp
+  (prompt msg)
+  (entsel [msg])
+  (getangle [pt] [msg])
+  (getcorner pt [msg])
+  (getdist [pt] [msg])
+  (getfiled title default ext flags)
+  (getint [msg])
+  (getkword [msg])
+  (getorient [pt] [msg])
+  (getpoint [pt] [msg])
+  (getreal [msg])
+  (getstring [cr] [msg])
+  (initget [bits] [string])
+  (nentsel [msg])
+  (nentselp [msg] [pt])
+  ;; 示例
+  (prompt (@:speak "这里输入您要提示的信息:"))
+  (entsel (@:speak "请点选一个图元:"))
+  (getangle [pt] (@:speak "请输入角度:"))
+  (getcorner pt (@:speak "请输入窗口范围:"))
+  (getdist [pt](@:speak "请输入距离:"))
+  (getint (@:speak "请输入一个整数:"))
+  (getkword(@:speak "请输入关键字:"))
+  (getorient [pt](@:speak "请点选一个图元:"))
+  (getpoint [pt](@:speak "请点选一个点坐标:"))
+  (getreal (@:speak "请输入一个实数:"))
+  (getstring [cr](@:speak "请输入一个字符串:"))
+  (nentsel(@:speak "请点选一个图元:"))
+  (nentselp(@:speak "请点选一个图元:")[pt])
+#+end_src
