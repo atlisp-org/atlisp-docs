@@ -1,0 +1,756 @@
+* dos_strremove
+** (dos_strremove string char)
+在字符串中移去指定字符
+* dos_cmdline
+** (dos_cmdline [T])
+从AutoCAD的命令行或历史窗口返回文本。
+Example
+Command: (dos_cmdline)
+Command: (dos_cmdline),false
+* dos_curvearea
+** (dos_curvearea entity)
+返回闭合曲线实体所限定的面积。
+Example
+Command: (dos_curvearea (car (entsel ""\nSelect a closed curve:"")))
+6.43372
+* dos_closeall
+** (dos_closeall)
+关闭所有打开的AutoCAD绘图文件。
+Example
+Command: (dos_closeall)
+* dos_cleardbmod
+** (dos_cleardbmod [T])
+清除DBMOD(或绘图修改状态)系统变量。警告，在清除此变量后，将不会在关闭绘图或关闭AutoCAD时提示保存绘图。
+Example
+Command: (dos_cleardbmod)
+* dos_arxlist
+** (dos_arxlist [T])
+返回加载的ARX应用程序列表,类似于(arx)。
+Example
+Command: (dos_arxlist)
+* dos_acadname
+** (dos_acadname)
+返回正在运行的AutoCAD的产品名称。在确定是否运行AutoCAD的“垂直”版本时非常有用。
+* dos_acitorgb
+** (dos_acitorgb aci-value)
+将AutoCAD颜色索引(ACI)值转换为红绿蓝(RGB)颜色值。
+Example
+Command: (dos_acitorgb 1)
+(255 0 0)
+Command: (dos_acitorgb 128)
+(0 76 57)"
+* dos_acadmem
+** (dos_acadmem)
+返回AutoCAD内存统计信息
+Example
+Command: (dos_acadmem)
+(16003072 73891840 43562 57044992 58130432 469140 481864 46140 49708)
+* dos_shellexe
+** (dos_shellexe file parameters [operation [show]])
+打开或打印指定的文件。 
+operation： 0：打开可执行文件或文档。1：打印文档。2：浏览指定的文件夹。
+Example
+Command: (dos_shellexe ""notepad.exe"" ""readme.txt"")
+T
+(dos_shellexe ""c:\\drawings\\"" nil 2)
+T
+* dos_processes
+** (dos_processes [T])
+返回在系统上运行的进程或任务的列表。
+T：如果指定，则返回运行进程的完全限定路径。否则，只返回文件名。  
+Example
+Command: (dos_processes)
+(""smss.exe"" ""winlogon.exe"" ""services.exe"" ""lsass.exe"" ""mdm.exe"" ""RegSrvc.exe""  ""svchost.exe"" ""acad.exe"")
+* dos_setprn
+** (dos_setprn printername)
+设置当前或默认的Windows打印机。打印机名称必须是名称 
+Example
+Command: (dos_setprn (cadr (dos_printers)))
+* dos_spool
+** (dos_spool filename printername)
+将磁盘文件假脱机或打印到Windows打印机。spool文件必须为“raw”打印机格式。 
+Example
+Command: (dos_spool "readme.txt" (dos_getprn))
+* dos_command
+** (dos_command command [show])
+运行内部命令。内部命令是操作系统命令解释器固有的命令（例如command.com或cmd.exe）。 
+show：默认为0. 
+0：正常 1：不激活 2：最小化窗 3：最小且不激活 4：最大化
+Example
+Command: (dos_command ""copy *.dwg c:/temp"")
+* dos_execute
+** (dos_execute command [show])
+执行外部程序。path环境变量用于查找要执行的程序。 
+Example
+Command: (dos_execute "Notepad.exe")
+"Notepad.exe"
+* dos_exewait
+** (dos_exewait command [show])
+执行外部程序，然后等待终止，然后将控制权返回到调用应用程序。 
+Example
+Command: (dos_exewait ""Notepad.exe"")
+Running external process, please wait...
+T"
+* dos_getprn
+** (dos_getprn)
+返回当前或默认的Windows打印机。 
+Example
+Command: (dos_getprn)
+""HP LaserJet 8100 Series PCL"
+* dos_printers
+** (dos_printers)
+返回已安装的Windows打印机的列表。这些打印机是通过Windows控制面板安装的。 
+Example
+Command: (dos_printers)
+("HP LaserJet 8100 Series PCL 6" "hp LaserJet 1300 PCL 6" "HP DeskJet 935C""HP Color LaserJet 4500")
+* dos_zerop
+** (dos_zerop vector)
+确定二维或三维矢量是零矢量还是空矢量。 
+Example
+Command: (dos_zerop '(0 0 0))
+T
+Command: (dos_zerop '(0 0 0.00001))
+nil
+* dos_wedgeproduct
+** (dos_wedgeproduct vector0 vector1)
+计算两个二维向量的楔形积或平行四边形的有符号面积 
+Example
+Command: (dos_wedgeproduct '(5 0) '(3 2))
+10
+* dos_vector
+** (dos_vector point0 point1)
+从两个二维或两个三维点创建矢量。 
+Example
+Command: (dos_vector '(3 2) '(1 1))
+(2 1)
+Command: (dos_vector '(3 2 2) '(1 1 5))
+(2 1 -3)
+* dos_unitp
+** (dos_unitp vector)
+确定二维或三维矢量是单位矢量。 
+
+Example
+Command: (dos_unitp (dos_unitize '(2 1)))
+T
+Command: (dos_unitp '(2 1))
+nil
+* dos_unitize
+** (dos_unitize vector)
+单位向量指示方向，但其长度变为1。结果向量通常称为单位向量。
+* dos_trunc
+** (dos_pow number [precision])
+将数字截断为指定的小数位数。 
+Example
+Command: (dos_trunc (dos_pi))
+3
+Command: (dos_trunc (dos_pi) 3)
+3.141
+* dos_tripleproduct
+** (dos_tripleproduct vector0 vector1 vector2)
+计算三个三维矢量的三重积。 
+Example
+Command: (dos_tripleproduct '(1 0 0) '(0 1 0) '(0 0 1))
+1
+* dos_tinyp
+** (dos_tinyp vector [tiny_tol])
+确定二维或三维矢量是否非常短。 
+tiny_tol：用于确定向量是否很小的公差。如果省略，则使用1.0e-12的公差。 
+
+Example
+Command: (dos_tinyp '(1 0 0))
+nil
+Command: (dos_tinyp '(0 0 0))
+T
+* dos_tanh
+** (dos_tanh number)
+计算一个数的双曲正切 
+Example
+Command: (dos_tanh -2)
+-0.964028
+Command: (dos_tanh 0)
+0
+Command: (dos_tanh 0.5)
+0.462117
+* dos_tan
+** (dos_tan angle)
+计算一个数的正切值 
+Example
+Command: (dos_tan 0.785)
+0.999204
+Command: (dos_tan (dos_dtr 45))
+1.0
+* dos_sum
+** (dos_sum number0 ...)
+累加数字，包括数字列表，并返回和。 
+Example
+Command: (dos_sum 1 1 2 2 2 3 4 4 5 6 7 7 8 9)
+61
+Command: (dos_sum '(1 1 2 2 2 3 4 4 5 6 7 7 8 9))
+61
+Command: (dos_sum '(3 2 1) '(2 4 -3))
+(5 6 -2)
+* dos_sqrt
+** (dos_sqrt number)
+计算平方根。 
+Example
+Command: (dos_sqrt 16)
+4
+Command: (dos_sqrt -2)
+nil
+Command: (dos_sqrt (dos_abs -2))
+1.41421
+* dos_sortnumbers
+** (dos_sortnumbers list [ascending])
+对数字列表排序 
+Example
+Command: (dos_sortnumbers '(4 3 6 5 1 2 7 9 8))
+(1 2 3 4 5 6 7 8 9)
+Command: (dos_sortnumbers '(4 3 6 5 1 2 7 9 8) nil)
+(9 8 7 6 5 4 3 2 1)
+* dos_sinh
+** (dos_sinh number)
+计算一个数的双曲正弦 
+Example
+Command: (dos_sinh 1)
+1.1752
+Command: (dos_sinh -1)
+-1.1752
+* dos_sin
+** (dos_sin angle)
+计算一个数的正弦 
+Example
+Command: (dos_sin (dos_pi))
+0
+Command: (dos_sin (/ (dos_pi) 2))
+1
+Command: (dos_sin (dos_dtr 30))
+0.5
+* dos_sign
+** (dos_sign number [expr0 expr1 expr2])
+返回一个值，该值指示数字的符号，或基于值符号的表达式。 如果指定了可选表达式，则如果数字小于零，则expr0；如果数字等于零，则expr1；如果数字大于零，则expr2。
+Example
+Command: (dos_sign -3.14)
+-1
+Command: (dos_sign 3.14)
+1
+* dos_scale
+** (dos_scale list scale)
+缩放数字列表。该列表可以表示二维和三维点和向量。 
+Example
+Command: (dos_scale '(1 2 3) 5)
+(5 10 15)
+* dos_rtd
+** (dos_rtd radians)
+将角度从弧度转换为度数。 
+Example
+Command: (dos_rtd 0.785398)
+45.0
+Command: (dos_rtd 1.5708)
+90.0002
+* dos_round
+** (dos_round number [mode])
+此函数提供了其他几种用于舍入数字的有用方法。
+注意，四舍五入算法有两类：对称于零的算法和偏向于某种程度的算法。
+* dos_righthandp
+** (dos_righthandp x-axis y-axis z-axis)
+确定两个二维或两个三维向量是正交的、右手的。 
+Example
+Command: (dos_righthandp '(1 0) '(0 1))
+T
+Command: (dos_righthandp '(0 1) '(1 0))
+nil
+* dos_range
+** (dos_range number0 ...)
+返回数字列表或序列的范围（最小值和最大值之间的差异）。 
+Example
+Command: (dos_range '(1 1 2 2 2 3 4 4 5 6 7 7 8 9))
+8
+Command: (dos_range 1 1 2 2 2 3 4 4 5 6 7 7 8 9)
+8
+* dos_random
+** (dos_random)
+返回伪随机数。 
+Command: (dos_random)
+13395
+Command: (rem (dos_random) 100) 'in 0-99
+37
+Command: (+ (rem (dos_random) 100) 1) 'in 1-100
+69
+Command: (+ (rem (dos_random) 30) 1985) 'in 1985-2014
+2003
+* dos_quotient
+** (dos_quotient number0 ...)
+对数字（包括数字列表）进行除法，并返回商。 
+Example
+Command: (dos_quotient 50 2 5)
+5
+Command: (dos_quotient '(50 2 5))
+5
+Command: (dos_quotient '(50 25) '(2 5))
+(25 5)
+* dos_quadratic
+** (dos_quadratic a b c)
+求二次方程的解。a、b和c表示常量，a≠0。（如果a=0，则方程变为线性方程。）
+0: (r0 < r1)；1: (r0 = r1)；2: (r0 +/- (r1)*sqrt(-1)) 
+-1:-2: -3: failure 
+1 r0 (root) 
+2 r1 (root)
+Example
+Command: (dos_quadratic 1 -3 -4)
+(0 -1 4)
+* dos_product
+** (dos_product number0 ...)
+将数字（包括数字列表）相乘，并返回乘积。 
+Example
+Command: (dos_product 50 2 5)
+500
+Command: (dos_product '(50 2 5))
+500
+Command: (dos_product '(50 25) '(2 5))
+(100 125)
+* dos_pow
+** (dos_pow number power)
+计算x的y次方。 
+Example
+Command: (dos_pow 5 2)
+25
+Command: (dos_pow 98.6 3.2)
+2.40108e+006
+Command: (dos_pow 4 (/ 5.0 4.0))
+5.65685
+* dos_pi
+** (dos_pi)
+返回pi，这是一个数学常数，其值是欧几里得空间中任意圆的周长与直径之比，即3.14159265358979323846。 Command: (dos_pi)
+3.14159
+* dos_phi
+** (dos_phi)
+返回phi，黄金比率。
+Example
+Command: (dos_phi)
+1.61803
+* dos_perpendicularto
+** (dos_perpendicularto vector)
+返回垂直向量。结果向量没有统一。 
+Example
+Command: (dos_perpendicularto '(1 0))
+(0 1)
+Command: (dos_perpendicularto '(3 2 1))
+(-2 3 0)
+* dos_perpendicularp
+** (dos_perpendicularp vector0 vector1 [angle_tol])
+确定两个二维或两个三维矢量是垂直的。 
+angle_tol：以弧度表示的可选角度公差。如果省略，则使用pi/180.0的角度公差。 
+Example
+Command: (dos_perpendicularp '(1 0) '(0 1))
+T
+Command: (dos_perpendicularp '(1 0) '(0.707 1))
+nil
+* dos_parameterize
+** (dos_parameterize number minimum maximum)
+将规范化参数或值转换为参数；在指定范围内。 
+Example
+Command: (dos_normalize 39 0 255)
+0.152941
+Command: (dos_parameterize 0.152941 0 255)
+39.0
+* dos_parallelp
+** (dos_parallelp vector0 vector1 [angle_tol])
+确定两个二维或两个三维矢量是否平行。 
+返回值：1-向量是平行的；0-向量不平行；-1-矢量是反平行的。 
+Example
+Command: (dos_parallelp '(1 1) '(2 2))
+1
+Command: (dos_parallelp '(1 1) '(2 3))
+0
+* dos_orthonormalp
+** (dos_orthonormalp x-axis y-axis z-axis)
+确定两个二维或两个三维矢量是正交的，且是单位长度的。
+Example
+Command: (dos_orthonormalp '(1 0) '(0 1))
+T
+Command: (dos_orthonormalp '(3 0) '(0 2))
+nil
+* dos_orthogonalp
+** (dos_orthogonalp x-axis y-axis z-axis)
+确定两个二维或两个三维矢量是否为非零且相互垂直。
+Example
+Command: (dos_orthogonalp '(1 0) '(0.70710 0.70710))
+nil
+Command: (dos_orthogonalp '(1 0 0) '(0 1 0) '(0 0 1))
+T
+* dos_normalize
+** (dos_normalize number minimum maximum)
+将参数或值转换为规范化参数；范围在0.0到1.0之间的参数。
+Example
+Command: (dos_normalize 39 0 255)
+0.152941
+Command: (dos_parameterize 0.152941 0 255)
+39.0
+* dos_negate
+** (dos_negate number0 ...)
+否定一个数字的列表或序列。注意，一个否定的向量和以前一样大，但是它的方向现在是相反的。 
+Example
+Command: (dos_negate 1 2 2 3 4 9)
+(-1 -2 -2 -3 -4 -9)
+Command: (dos_negate '(3 2))
+(-3 -2)
+* dos_moment
+** (dos_moment number0 ...)
+包含平均值、平均偏差、标准偏差、方差、偏度和峰度（如果成功）的列表。注意，如果方差=0，那么偏度和峰度将为零。
+* dos_modf
+** (dos_modf number)
+将浮点值拆分为整数和小数部分。 
+Example
+Command: (dos_modf (dos_e))
+(2.0 0.718282)
+Command: (dos_modf (dos_pi))
+(3.0 0.141593)
+Command: (dos_modf -14.87654321)
+(-14.0 -0.876543)
+* dos_mode
+** (dos_mode number0 ...)
+返回数字列表或序列的模式（最常出现的值）。 
+Example
+Command: (dos_mode '(1 1 2 2 2 3 4 4 5 6 7 7 8 9))
+(2)
+Command: (dos_mode 1 1 2 2 2 3 4 4 5 6 7 7 8 9)
+(2)
+* dos_min
+** (dos_min number0 ...)
+返回列表或数字系列中的最小数字。 
+Example
+Command: (dos_min '(1 2 3 4 5 6 7 8 9))
+1
+Command: (dos_min 1 2 3 4 5 6 7 8 9)
+1
+* dos_median
+** (dos_median number0 ...)
+返回数字列表或序列的中间值或中间值。 
+Example
+Command: (dos_median '(1 2 3 4 5 6 7 8 9))
+5
+Command: (dos_median 1 2 3 4 5 6 7 8 9)
+5
+* dos_mean
+** (dos_mean number0 ...)
+返回数字列表或序列的平均值。 
+Example
+Command: (dos_mean 1 2 3 4 5 6 7 8 9)
+5
+Command: (dos_mean '(1 2 3 4 5 6 7 8 9))
+5
+Command: (dos_mean '(1 2) '(3 6) '(1 7))
+(1.66667 5)
+* dos_max
+** (dos_max number0 ...)
+返回列表或数字系列中的最大数字。 
+Example
+Command: (dos_max '(1 2 3 4 5 6 7 8 9))
+9
+Command: (dos_max 1 2 3 4 5 6 7 8 9)
+9
+* dos_log2
+** (dos_log2 number)
+计算一个数的二进制对数（以2为底）。 
+Example
+Command: (dos_log2 1)
+
+0
+
+ 
+
+Command: (dos_log2 2)
+1
+Command: (dos_log2 3)
+1.58496
+Command: (dos_log2 4)
+2
+* dos_log10
+** (dos_log10 number)
+计算一个数的常用（十进制）对数（以10为底）。 
+Example
+Command: (dos_log10 86)
+1.9345
+Command: (dos_log10 10)
+1
+Command: (dos_log10 1e5)
+5
+* dos_log
+** (dos_log number)
+计算数字的自然对数。自然对数基于常数e（2.71828182845904523536）。注意，此函数与dos exp函数相反。 
+Example
+Command: (dos_log 86)
+4.45435
+Command: (dos_log 2.7182818)
+1.0
+Command: (dos_log (dos_exp 3))
+3
+* dos_length
+** (dos_length vector)
+计算二维或三维矢量的长度。 
+Example
+Command: (dos_length '(3 2))
+3.60555
+Command: (dos_length '(3 2 2))
+4.12311
+* dos_lcm
+** (dos_lcm first second)
+计算两个整数的最小公倍数。最小公倍数是最小的正整数，它是两个整数的倍数。
+Example
+Command: (dos_lcm 5 2)
+10
+Command: (dos_lcm 24 36)
+72
+* dos_interp
+** (dos_interp min max t [mode])
+在两个数字之间执行插值。 T 超出此范围的最小值和最大值之间的归一化值（介于0和1之间）将导致外推。
+mode要使用的插值方法。 0（默认）-- 线性的；1-- 余弦；2--平滑步距；3--加速度；4--减速
+* dos_hypot
+** (dos_hypot x y)
+计算斜边。函数计算直角三角形斜边的长度，给定两边的长度x和y（换句话说，x2+y2的平方根）。 
+Example
+Command: (dos_hypot 3 4)
+5
+* dos_gcd
+** (dos_gcd first second)
+计算两个整数的最大公约数。 
+Example
+Command: (dos_gcd 81 57)
+3
+Command: (dos_gcd 12 20)
+4
+* dos_fmod
+** (dos_fmod numerator denominator)
+计算x/y的浮点余数。 
+Example
+Command: (dos_fmod 5.3 2)
+1.3
+Command: (dos_fmod 18.5 4.2)
+1.7
+* dos_floor
+** (dos_floor number)
+计算数字的底数。函数返回一个值，该值表示小于或等于该数字的最大整数。 
+Command: (dos_floor -1.6)
+-2
+Command: (dos_floor -1.4)
+-2
+Command: (dos_floor 1.5)
+1
+Command: (dos_floor 1.6)
+1
+* dos_fact
+** (dos_fact number)
+返回数字的阶乘。一个数的阶乘等于1*2*3*…*个数。 你想要的阶乘的非负数。如果数字不是整数，它将被截断。 
+Command: (dos_fact 1.9)
+1
+Command: (dos_fact 0)
+1
+Command: (dos_fact -1)
+nil
+Command: (dos_fact 1)
+1
+* dos_exp
+** (dos_exp number)
+返回e的幂。常数e等于2.71828182845904523536，自然对数的底。 
+Example
+Command: (dos_exp 1)
+2.71828
+Command: (dos_exp 2)
+7.38906
+* dos_equal
+** (dos_equal number0 number1 [tolerance])
+通过减去被比较的两个变量，并测试它们的差异是否小于在显著性极限处选择的值，来比较两个数字或两个数字列表，近似地。 
+Example
+Command: (dos_equal 3.14 3.14159)
+nil
+Command: (dos_equal 3.14 3.14159 0.01)
+T
+Command: (dos_equal '(1 3) '(1 3))
+T
+* dos_e
+** (dos_e)
+返回e（数学常数），或欧拉数，即2.71828182845904523536。 
+Example
+Command: (dos_e)
+2.71828 
+Command: (dos_log (dos_e))
+1
+* dos_dtr
+** (dos_dtr degrees [minutes [seconds [direction]]])
+将角度从度转换为弧度。 
+Example
+Command: (dos_dtr 45)
+0.785398
+Command: (dos_dtr 90)
+1.5708
+Command: (dos_dtr 47 6 13)
+0.822113
+* dos_dotproduct
+** (dos_dotproduct vector0 vector1)
+计算两个二维或两个三维矢量的点积。 
+Example
+Command: (dos_dotproduct '(1 0) '(0.70710 0.70710))
+0.7071
+Command: (dos_dotproduct '(1 0 0) '(0 0 1))
+0
+* dos_div
+** (dos_div numerator denominator)
+计算两个整数的商和余数。 
+Example
+Command: (dos_div 876 13)
+(67 5)
+* dos_difference
+** (dos_difference number0 ...)
+减去数字，包括数字列表，并返回差。 
+Example
+Command: (dos_difference 10)
+-10
+Command: (dos_difference 10 3 5 8)
+-6
+Command: (dos_difference '(10 3 5 8))
+2
+Command: (dos_difference '(10 3) '(2 7))
+(8 -4)
+* dos_cullnumbers
+** (dos_cullnumbers list [tolerance])
+从数字列表中剔除或删除重复值。 
+剔除容忍度。如果省略，则使用1.0e-12的公差。 
+
+Command: (dos_cullnumbers '(3 8 4 8 2 3 9 5 8))
+(3 8 4 2 9 5)
+* dos_crossproduct
+** (dos_crossproduct vector0 vector1)
+计算两个二维或两个三维矢量的交叉积。 如果成功，则返回结果向量。 
+Command: (dos_crossproduct '(1 0) '(0.70710 0.70710))
+(0 0 0.7071)
+Command: (dos_crossproduct '(1 0 0) '(0 0 1))
+(0 -1 0)
+* dos_cosh
+** (dos_cosh number)
+计算一个数的双曲余弦。 
+Example
+Command: (dos_cosh 4)
+27.3082
+Command: (dos_cosh (dos_exp 1))
+7.61013
+* dos_cos
+** (dos_cos angle)
+计算一个数的余弦。 
+Example
+Command: (dos_cos 1.047)
+0.500171
+Command: (dos_cos (/ (* 60 (dos_pi)) 180))
+0.5
+Command: (dos_cos (dos_dtr 60))
+0.5
+* dos_copysign
+** (dos_copysign first second)
+返回一个带其他数字符号的数字。 
+如果成功，第一个符号将更改为与第二个符号匹配。 
+Example
+Command: (dos_copysign 3.14 -1)
+-3.14
+Command: (dos_copysign -3.14 -1)
+-3.14
+Command: (dos_copysign -3.14 1)
+3.14
+* dos_clamp
+** (dos_clamp number min max)
+将一个数字夹紧或限制为一个间隔。 
+夹在最小值和最大值之间的数字，如果成功，则使最小值<=数字<=最大值。 
+Example
+Command: (dos_clamp 3 0 10)
+3
+Command: (dos_clamp 11 0 10)
+10
+* dos_chgsign
+** (dos_chgsign number)
+反转数字的符号。 
+Example
+Command: (dos_chgsign 3.14)
+-3.14
+Command: (dos_chgsign -3.14)
+3.14
+* dos_ceil
+** (dos_ceil number)
+计算数字上限。
+表示大于或等于数字的最小整数的值（如果成功）。
+Example
+Command: (dos_ceil -1.6)
+-1
+Command: (dos_ceil -1.4)
+-1
+Command: (dos_ceil 1.4)
+2
+* dos_cbrt
+** (dos_cbrt number)
+计算多维数据集根。 
+Example
+Command: (dos_cbrt 25)
+2.92402
+Command: (dos_cbrt 45)
+3.55689
+* dos_atanh
+** (dos_atanh number)
+计算反双曲正切。
+数字，必须介于-1.0和1.0之间（不包括-1.0和1.0）。 
+Example
+Command: (dos_atanh 0.76159416)
+1.0
+Command: (dos_atanh -0.1)
+-0.100335
+* dos_atan2
+** (dos_atan2 y x)
+计算y/x的反切线（反切线）。 
+y/x的反正切（如果x等于0，则当y为正时，dos_atan2返回π/2；如果y为负，则返回π/2；如果y为0，则返回0）。
+Example
+Command: (dos_atan2 0.5 5.0)
+0.0996687
+* dos_atan
+** (dos_atan number)
+计算一个数的反切线（反切线） 
+如果成功，则为范围[–π/2，π/2]弧度内数字的反正切值。 
+Example
+Command: (dos_atan 0.0)
+0
+Command: (dos_atan 1.0)
+0.785398
+* dos_asinh
+** (dos_asinh number)
+计算反双曲正弦。
+Example
+Command: (dos_asinh -2.5)
+-1.64723
+Command: (dos_asinh 10)
+2.99822
+* dos_asin
+** (dos_asin number)
+计算一个号码的正弦（反向正弦）。
+如果成功的话，在范围[–π/2，π/2]弧度内数字的反正弦。
+Example
+Command: (dos_asin 0.0)
+0
+Command: (dos_asin 1.0)
+1.5708
+* dos_anglebetween
+** (dos_anglebetween vector0 vector1)
+返回两个二维或两个三维矢量之间的角度。 
+Example
+Command: (dos_anglebetween '(1 0) '(0.70710 0.70710))
+0.785398
+Command: (dos_anglebetween '(1 0 0) '(0 0 1))
+1.5708
+* dos_acosh
+** (dos_acosh number)
+计算反双曲余弦
+Example
+Command: (dos_acosh 1)
+0
+Command: (dos_acosh 10)
+2.99322
+* dos_acos
+** (dos_acos number)
+反余弦
+* dos_abs number
+** (dos_abs number)
+返回数字的绝对值或数字的数值，而不考虑其符号。

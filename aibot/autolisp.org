@@ -1,0 +1,762 @@
+* -
+** (– [数值 数值] ...)
+将第一个数减去其他数的和并返回差值
+* ~
+** (~ int)
+返回参数的按位非（即 1 的补码）
+* +
+** (+ [number number] ...)
+返回所有数的和
+* =
+** (= numstr [numstr] ...)
+比较参数是否相等
+* *
+** (* [number number] ...)
+返回所有数的乘积
+* /
+** (/ [number number] ...)
+将第一个数除以其他数的乘积并返回商
+* 1+
+** (1+ number)
+将参数加 1
+* <
+** (< numstr [numstr] ...)
+如果每个参数值都小于它右边的参数则返回 T，否则返回 nil
+* <=
+** (<= numstr [numstr] ...)
+如果每个参数值都小于或等于它右边的参数则返回 T，否则返回 nil
+* >
+** (> numstr [numstr] ...)
+如果每个参数值都大于它右边的参数则返回 T，否则返回 nil
+* >=
+** (>= numstr [numstr] ...)
+如果每个参数值都大于或等于它右边的参数则返回 T，否则返回 nil
+* abs,绝对值
+** (abs number)
+返回参数的绝对值
+* acad_colordlg, 颜色选择对话框
+** (acad_colordlg colornum [flag])
+显示标准的 AutoCAD 颜色选择对话框
+* acad_helpdlg
+** (acad_helpdlg helpfile topic)
+启动帮助工具（已废弃）
+* acad_strlsort
+** (acad_strlsort list)
+以ASCII码字母顺序对字符串表进行排序
+* action_tile
+** (action_tile key action-expression)
+为某一对话框控件指定一个动作表达式，用户在对话框中选中这个控件时，就会执行该动作表达式
+* add_list
+** (add_list string)
+在当前激活的对话框的列表框中增加一个字符串或修改其中的一个字符串
+* ads
+** (ads)
+此函数将返回一串目前装入的AutoCAD高级开发系统(ADS)应用程序。每一个应用程序和它的路径在这个表中都是一个以引号括起来的字符串。
+* alert,警告框
+** (alert string)
+显示一个警告框，其中显示一条出错或警告信息
+* alloc
+** (alloc n-alloc)
+设置段长度以供 expand 函数使用
+* and
+** (and [expr ...])
+返回表达式的逻辑与 (AND) 运算结果
+* angle,弧度
+** (angle pt1 pt2)
+以弧度为单位返回两点之间连线与当前 UCS 下 X 轴之间的夹角
+* angtof,角度转实数
+** (angtof string [units])
+将表示角度的字符串转换为实数（浮点数）形式的弧度值
+* angtos,角度转字符串
+** (angtos angle [unit [precision]])
+将一个以弧度为单位的角度值转换成字符串
+* append,组合表
+** (append [list ...])
+将任意多个表组合成一个表
+* apply
+** (apply 'function list)
+传递一个列表作为指定函数的参数，并执行该函数
+* 函数arx
+** (arx)
+此函数将返回一个目前已装入的 ARX 应用程序的表。
+* arxload
+** (arxload application [onfailure])
+加载 ObjectARX 应用程序
+* arxunload
+** (arxunload application [onfailure])
+卸载 ObjectARX 应用程序
+* ascii
+** (ascii string)
+将字符串中的第一个字符转换成其 ASCII 码(整数)后返回
+* assoc
+** (assoc element alist)
+从关联表中搜索一个元素，如果找到则返回该关联表条目
+* atan,反正切值
+** (atan num1 [num2])
+返回一个数的反正切值（以弧度为单位）
+* atof,字符串转实数
+** (atof string)
+将一个字符串转换成实数
+* atoi,字符串转整数
+** (atoi string)
+将一个字符串转换成整数
+* atom
+** (atom item)
+验证一个项是否是原子
+* autoarxload
+** (autoarxload filename cmdlist)
+预定义可自动加载某相关 ObjectARX 应用程序的命令名
+* autoload
+** (autoload filename cmdlist)
+预定义可自动加载某相关 AutoLISP 应用程序的命令名
+* autoxload
+** (autoxload filename cmdlist)
+此函数是事先定义命令名称来装入一已连接的 ADS 应用程序。
+* /=
+** (/= numstr [numstr] ...)
+比较参数是否值不相等
+* boole,布尔运算
+** (Boole operator int1 [int2 ...])
+11123,用作一个通用的按位逻辑运算函数
+* boundp
+** (boundp sym)
+检验符号是否被设置为某个值
+* car
+** (car list)
+返回表的第一个元素
+* cdr
+** (cdr list)
+返回去掉了第一个元素的表或点对表的第二个元素
+* chr
+** (chr integer)
+将代表字符 ASCII 码的整数转换成包含相应的单一字符的字符串
+* client_data_tile
+** (client_data_tile key clientdata)
+将特定应用数据与一个对话框控件相关联
+* 函数close
+** (close file-desc)
+关闭一个已打开的文件
+* command
+** (command [arguments] ...)
+执行一条 AutoCAD 命令
+* cond
+** (cond [(test result ...) ...])
+多条件、多处理结果函数
+* cons
+** (cons new-first-element list-or-atom)
+向表的头部添加一个元素，或构造一个点对
+* cos,余弦值
+** (cos ang)
+返回弧度角度的余弦值
+* cvunit,单位转换
+** (cvunit value from-unit to-unit)
+在不同测量单位之间进行换算
+* defun,定义函数
+** (defun sym ([arguments] [/ variables...]) expr...)
+定义函数
+* dictadd
+** (dictadd ename symbol newobj)
+在指定词典内添加非图形对象
+* dictnext
+** (dictnext ename [rewind])
+查找词典中的下一个条目
+* dictremove
+** (dictremove ename symbol)
+从指定词典中删除一个条目
+* dictrename
+** (dictrename ename oldsym newsym)
+重命名词典条目
+* dictsearch
+** (dictsearch ename symbol [setnext])
+在词典中搜索某个项
+* dimx_tile
+** (dimx_tile key)
+返回控件的宽度
+* dimy_tile
+** (dimy_tile key)
+返回控件的高度
+* 函数distance
+** (distance pt1 pt2)
+返回两个点之间的距离
+* distof
+** (distof string [mode])
+将一个表示实（浮点）数的字符串转换成一个实数
+* done_dialog
+** (done_dialog [status])
+中断对话框
+* end_image
+** (end_image)
+结束当前激活的对话框图像控件的操作
+* end_list
+** (end_list)
+结束对当前激活的对话框列表的操作
+* entdel,删除图元
+** (entdel  ename)
+删除对象（图元）或恢复先前删除的对象
+* entget
+** (entget ename [applist])
+获得对象（图元）的定义数据
+* entlast
+** (entlast)
+返回图形中最后那个未删除的主对象（图元）名称
+* entmake,创建图元
+** (entmake [elist])
+在图形中创建一个新图元
+* entmakex
+** (entmakex [elist])
+创建一个新对象或图元，赋给它一个句柄和图元名（但不指定所有者)
+并返回新图元的名称
+* entmod,修改图元
+** (entmod elist)
+修改对象（图元）的定义数据
+* entnext
+** (entnext [ename])
+如果调用entnext时没有参数，则返回数据库中第一个未删除实体的实体名。如果向entnext提供了一个ename参数，则函数返回数据库中ename后面第一个未删除实体的实体名。如果数据库中没有下一个实体，则返回nil。entnext函数返回主实体和子实体。
+* entsel,选择图元
+** (entsel [msg])
+提示用户通过指定一个点来选择单个对象（图元）
+* entupd,更新图元
+** (entupd ename)
+更新对象（图元）的屏幕显示
+* eq
+** (eq expr1 expr2)
+确定两个表达式是否具有相同的约束条件
+* equal,等价
+** (equal expr1 expr2 [fuzz])
+确定两个表达式的值是否相等
+* *error*
+** (*error* string)
+可由用户定义的错误处理函数
+* eval,求值
+** (eval expr)
+返回 AutoLISP 表达式的求值结果
+* exit
+** (exit)
+强行使当前应用程序退出
+* exp,自然反对数
+** (exp num)
+返回常数 e (2.718282...) 的指定次幂（自然反对数）
+* expand
+** (expand n-expand)
+为 AutoLISP 分配附加空间
+* expt,求幂
+** (expt number power)
+返回以某指定数为底数的若干次幂的值
+* fill_image
+** (fill_image x1 y1 width height color)
+在当前激活的对话框图像控件中画一个填充矩形
+* findfile,搜索文件
+** (findfile filename)
+在 AutoCAD 库路径中搜索指定文件或目录
+* fix,取整
+** (fix number)
+截去实数的小数部分，将它转换成整数后返回该整数
+* float,转浮点数
+** (float number)
+将一个数转换为实数后返回
+* foreach
+** (foreach name list [expr...])
+将表中的所有成员以指定变量的身份带入表达式求值
+* gc
+** (gc)
+强制收集无用数据，释放不再使用的节点
+* gcd,最大公约数
+** (gcd int1 int2)
+返回两个整数的最大公约数
+* getangle
+** (getangle [pt] [msg])
+暂停以等待用户输入角度，然后以弧度形式返回该角度
+* get_attr
+** (get_attr key attribute)
+获取对话框指定控件的某个属性值
+* getcfg
+** (getcfg cfgname)
+从 acad.cfg 文件的 AppData 段中检索应用数据
+* getcname
+** (getcname cname)
+获取 AutoCAD 命令的本地化名或英文名
+* getcorner
+** (getcorner pt [msg])
+暂停等待用户输入矩形第二个角点的坐标
+* getdist
+** (getdist [pt] [msg])
+暂停以等待用户输入距离
+* getenv
+** (getenv variable-name)
+以字符串方式返回指定的环境变量的值
+* getfiled
+** (getfiled title default ext flags)
+用标准的 AutoCAD 文件对话框提示用户输入一个文件名，并返回该文件名。
+default: 默认路径
+ext:扩展表。不含 .
+flags:
+控制对话框行为的整数值（位编码字段）。要一次设置多个条件，请将这些值相加，以创建一个介于0和15之间的标志值。getfield可以识别以下标志参数：
+1（位0）--提示输入要创建的新文件的名称。当提示打开现有文件的名称时，不要设置此位。在后一种情况下，如果用户输入不存在的文件名，对话框将在底部显示错误消息。
+如果设置了此位，并且用户选择了一个已经存在的文件，AutoCAD将显示一个警告框，并提供继续或取消操作的选择。
+
+4（位2）--让用户输入任意文件扩展名，或者根本不输入扩展名。
+如果未设置此位，getfield只接受ext参数中指定的扩展名，如果用户未在file文本框中输入扩展名，则将此扩展名附加到文件名。
+
+8（位3）——如果设置了该位，而未设置位0，getfield将对输入的文件名执行库搜索。如果它在库搜索路径中找到文件及其目录，则会删除路径并仅返回文件名。（如果发现同名文件位于不同的目录中，则不会删除路径名。）
+如果未设置该位，getfield将返回整个文件名，包括路径名。
+如果使用对话框打开要在图形（或其他数据库）中保存其名称的现有文件，请设置此位。
+
+16（位4）--如果设置了此位，或者默认参数以路径分隔符结尾，则该参数仅被解释为路径名。getfield函数假定没有默认文件名。它在“查找范围：”行中显示路径，并将“文件名”框留空。
+
+32（位5）--如果设置了此位，并且设置了位0（表示正在指定一个新文件），则用户将不会收到覆盖现有文件的警告。不会显示警告用户已存在同名文件的警告框；旧文件将被替换。
+
+64（位6）--如果用户指定了URL，则不要传输远程文件。
+
+128（位7）--根本不允许URL。
+* getint
+** (getint [msg])
+暂停以等待用户输入一个整数并返回该整数
+* getkword
+** (getkword [msg])
+暂停以等待用户输入一个关键字并返回该关键字
+* getorient
+** (getorient [pt] [msg])
+暂停以等待用户输入角度，并返回该角度
+* getpoint
+** (getpoint [pt] [msg])
+暂停以等待用户输入点，并返回该点
+* getreal
+** (getreal [msg])
+暂停以让用户输入一个实数并返回该实数
+* getstring
+** (getstring [cr] [msg])
+暂停以等待用户输入字符串，并返回该字符串
+* get_tile
+** (get_tile key)
+获取对话框指定控件的当前运行时的值
+* getvar
+** (getvar varname)
+获取一个 AutoCAD 系统变量的值
+* 函数graphscr
+** (graphscr)
+显示 AutoCAD 图形屏幕
+* grclear
+** (grclear)
+清除当前视口（已废弃）
+* grdraw
+** (grdraw from to color [highlight])
+在当前视口中的两个点之间显示一条矢量线
+* grread
+** (grread [track] [allkeys [curtype]])
+从 AutoCAD 的任何一种输入设备中读取数值
+* grtext
+** (grtext [box text [highlight]])
+将文本写到状态行或屏幕菜单区
+* grvecs
+** (grvecs vlist [trans])
+在图形屏幕上绘制多个矢量
+* handent
+** (handent handle)
+根据对象（图元）的句柄返回它的对象（图元）名
+* if
+** (if testexpr thenexpr [elseexpr])
+根据对条件的判断结果，对两个表达式求值
+* initget
+** (initget [bits] [string])
+为随后的用户输入函数调用创建关键字
+* inters
+** (inters pt1 pt2 pt3 pt4 [onseg])
+求两条直线的交点
+* itoa
+** (itoa int)
+将整数转换成字符串，并返回转换结果
+* lambda
+** (lambda arguments expr...)
+定义无名函数
+* last
+** (last lst)
+返回表的最后一个元素
+* length
+** (length lst)
+以整数形式返回表中元素的数目
+* 函数list
+** (list [expr...])
+将任意数目的表达式组合成一个表
+* listp
+** (listp item)
+检查某个项是否是表
+* 函数load
+** "(load filename [onfailure])
+此函数将装入一个包含AutoLISP表达式的文件, 同时判别这些表达式。filename是一个代表文件名称的字符串, 而且不须加上扩展名(因为扩展名.lsp是自动设定)。"
+* load_dialog
+** (load_dialog dclfile)
+加载 DCL 文件
+* log
+** (log num)
+返回一个实数的自然对数
+* logand
+** (logand [int int...])
+返回一个整数表中的各数按位逻辑与 (AND) 的结果
+* logior
+** (logior [intint...])
+返回一个整数表中的各数按位逻辑或 (OR) 的结果
+* lsh
+** (lsh int numbits)
+返回某整数作指定次逻辑移位后的结果
+* mapcar
+** (mapcar 'function list1... listn)
+循环取list1至listn相同位置的元素同时作为function的参数进行求值，并将求值结果构成的表返回
+* max
+** (max [number number...])
+返回给定各数中的最大者
+* mem
+** (mem)
+显示 AutoLISP 内存的当前状态
+* member
+** (member expr lst)
+搜索表中是否包含某表达式，并从该表达式的第一次出现处返回表的其余部分
+* menucmd
+** (menucmd string)
+发出菜单命令，或设置并检索菜单项状态
+* menugroup
+** (menugroup groupname)
+检查是否加载了指定的菜单组
+* min
+** (min [number number...])
+返回给定各数中的最小者
+* minusp
+** (minusp num)
+检查某个数是否是负数
+* mode_tile
+** (mode_tile key mode)
+设置对话框控件的状态
+* namedobjdict
+** (namedobjdict)
+返回当前图形的命名对象词典的图元名，它是所有非图形对象的根
+* nentsel
+** (nentsel [msg])
+提示用户指定点来选择对象（图元），得到这个对象所指片段的对象名
+* nentselp
+** (nentselp [msg] [pt])
+在没有用户输入的情况下，本函数的功能与 nentsel 函数类似
+* new_dialog
+** (new_dialog dlgname dcl_id [action [screen-pt]])
+开始一个新的对话框并显示该对话框，而且能指定一个缺省操作
+* not
+** (not item)
+检查一个项的求值结果是否为 nil
+* nth
+** (nth n lst)
+返回表中的第 n个元素
+* null
+** (null item)
+检查某项的值是否设置为 nil
+* numberp
+** (numberp item)
+检查某个项是否是实数或整数
+* 函数open
+** (open filename mode)
+打开一个文件，供其他 AutoLISP I/O 函数访问
+* or
+** (or [expr...])
+返回对表达式进行逻辑或 (OR) 运算的结果
+* 函数osnap
+** (osnap pt mode)
+将某种对象捕捉模式作用于指定点而获得一个点，并返回该点
+* polar
+** (polar pt ang dist)
+在 UCS 坐标系下，求某点的指定角度和指定距离处的点，并返回该点
+* princ
+** (princ [expr [file-desc]])
+在命令行打印表达式，或将表达式写入已打开的文件中
+* print
+** (print [expr [file-desc]])
+在命令行打印表达式，或将表达式写入已打开的文件中
+* progn
+** (progn [expr]...)
+顺序地对每一个表达式进行求值，并返回最后那个表达式的值
+* prompt
+** (prompt msg)
+在屏幕提示区显示一个字符串
+* 函数quit
+** (quit)
+强制退出当前应用程序
+* quote
+** (quote expr)
+返回表达式而不对其求值
+* read
+** (read [string])
+返回字符串中的第一个表或第一个原子
+* read-line
+** (read-line [file-desc])
+从键盘或已打开文件中读取行结束符前的字符串
+* 函数redraw
+** (redraw [ename [mode]])
+重画当前视口或当前视口中的一个指定对象（图元）
+* regapp
+** (regapp application)
+为当前 AutoCAD 图形注册一个应用名，为使用扩展对象数据作准备
+* rem
+** (rem [number number...])
+将第一个数除以第二个数，并返回余数
+* repeat
+** (repeat int [expr...])
+对循环体中的每一个表达式进行指定次数的求值计算，并返回最后一个表达式的值
+* 函数reverse
+** (reverse lst)
+将表的元素顺序倒置后返回
+* rtos
+** (rtos number [mode [precision]])
+将数字转换成字符串
+* set
+** (set sym expr)
+将引号中的符号名的值设置成一个表达式的值
+* setcfg
+** (setcfg cfgname cfgval)
+将应用数据写到 acad.cfg 文件的 AppData 段中
+* setfunhelp
+** (setfunhelp c:fname [helpfile [topic [command]]])
+给帮助工具注册一个用户定义函数，这样，用户在请求该命令的帮助时，就会调用正确的帮助文件和主题
+* setq
+** (setq sym expr [sym expr]...)
+将一个或多个符号的值设置为相应表达式的值
+* set_tile
+** (set_tile key value)
+设置对话框控件的值
+* 函数setvar
+** (setvar varname value)
+设置 AutoCAD 系统变量为指定值
+* setview
+** (setview view_descriptor [vport_id])
+为指定视口建立一个视图
+* sin
+** (sin ang)
+以实数形式返回角度的正弦值（以弧度为单位）
+* slide_image
+** (slide_image x1 y1 width height sldname)
+在当前激活的对话框图像控件中显示 AutoCAD 幻灯片
+* snvalid
+** (snvalid sym_name [flag])
+检查组成符号表名的各字符的有效性
+* sqrt
+** (sqrt num)
+以实数形式返回一个数的平方根
+* ssadd
+** (ssadd [ename [ss]])
+将对象（图元）加入到选择集中，或创建新的选择集
+* ssdel
+** (ssdel ename ss)
+从选择集中撤消对象（图元）
+* ssget
+** (ssget [sel-method] [pt1 [pt2]] [pt-list] [filter-list])
+根据选定对象创建选择集
+* ssgetfirst
+** (ssgetfirst)
+判断哪些对象是被选取的和被夹取的
+* sslength
+** (sslength ss)
+求出一个选择集中的对象（图元）数目，并将其作为一个整数返回
+* ssmemb
+** (ssmemb ename ss)
+测试某对象（图元）是否是选择集的成员
+* ssname
+** (ssname ss index)
+返回选择集中由序号指定的那个对象（图元）的图元名
+* ssnamex
+** (ssnamex ss [index])
+获取关于选择集创建方式的信息
+* sssetfirst
+** (sssetfirst gripset [pickset])
+设置哪些对象既是被选取的又是被夹取的
+* startapp
+** (startapp appcmd [file])
+启动 Windows 应用程序
+* start_dialog
+** (start_dialog)
+显示对话框并将控制交给对话框
+* start_image
+** (start_image key)
+开始对对话框控件中的一个图像控件进行操作
+* start_list
+** (start_list key [operation [index]])
+开始处理对话框中的列表框或弹出式列表框中的列表
+* strcase
+** (strcase string [lcase])
+返回所有字母大写的字符串(如果 lcase 不为 nil 则小写)
+* strcat
+** (strcat [string [string]...])
+返回从左到右拼接后的字符串
+* strlen
+** (strlen [string]...)
+以整数形式返回一个字符串中字符的个数
+* subst
+** (subst newitem olditem lst)
+在表中搜索某旧项，并将表中出现的每一个旧项用新项代替，然后返回修改后所得的表
+* substr
+** "(substr string start [length])
+返回字符串中的一个子字符串,字符串中的第一个字符的位置为 1"
+* 函数tablet
+** (tablet code [row1 row2 row3 direction])
+获取和设置数字化仪校准
+* tblnext
+** (tblnext table-name [rewind])
+在符号表中查找下一项
+* tblobjname
+** (tblobjname table-name symbol)
+返回指定符号表条目的图元名
+* tblsearch
+** (tblsearch table-name symbol [setnext])
+在指定的符号表中搜索符号名
+* term_dialog
+** (term_dialog)
+终止当前所有的对话框，就象用户取消了它们一样
+* terpri
+** (terpri)
+在命令行上输出一个换行符
+* textbox
+** (textbox elist)
+测量一个指定文本对象的尺寸，并返回围住该文本的一个矩形框的对角坐标
+* textpage
+** (textpage)
+从图形屏幕切换至文本屏幕
+* 函数textscr
+** (textscr)
+切换至文本屏幕（相当于 AutoCAD Flip Screen 功能键）
+* trace
+** (trace [function...])
+调试 AutoLISP 程序时的辅助函数
+* trans
+** (trans pt from to [disp])
+将 pt 坐标(3维点)从坐标系换算到坐标系disp:
+
+  非 nil 则以3维位移量的转换模式来换算 pt
+from to: 
+  0 表示 WCS
+  1 表示当前 UCS
+  2 搭配码 0 1 时，表示当前视口的显示坐标系 DCS
+    搭配码 3 时，表示当前模型空间视口的 DCS
+  3 图纸空间 DCS，仅搭配码 2 
+* 函数type
+** (type item)
+返回指定项的数据类型
+* unload_dialog
+** (unload_dialog dcl_id)
+卸载 DCL 文件
+* untrace
+** (untrace [function...])
+清除指定函数的跟踪标志
+* vector_image
+** (vector_image x1 y1 x2 y2 color)
+在当前激活的对话框图像控件上显示一个矢量线
+* 函数ver
+** (ver)
+返回当前 AutoLISP 版本号的字符串
+* 函数vports
+** (vports)
+返回表示当前视口配置的视口描述符表
+* wcmatch
+** (wcmatch string pattern)
+将模式字符串与某指定的字符串进行匹配比较
+* while
+** (while testexpr [expr...])
+对测试表达式进行求值，如果它不是 nil，则执行循环体中的表达式，重复这个过程，直到测试表达式的求值结果为 nil
+* write-char
+** (write-char num [file-desc])
+将一个字符写到屏幕上或一个已打开的文件中
+* write-line
+** (write-line string [file-desc])
+将字符串写到屏幕上或一个已打开的文件中
+* xdroom
+** (xdroom ename)
+返回对象可供使用的扩展数据 (Xdata) 空间的大小
+* xdsize
+** (xdsize lst)
+返回一个表作为扩展数据连接到对象（图元）上时所占用的空间大小（以字节表示）
+* xload
+** (xload application [onfailure])
+这个函数将装入一个AutoCAD高级开发系统(ADS)的应用程序。
+* xunload
+** "(xunload application [onfailure])
+此函数将卸载一个ADS应用程序。如果应用程序被成功地卸下。那么, 应用程序的名称将被返回。否则, 一个错误信息将被发出。"
+* zerop
+** (zerop number)
+检查一个数的值是否为 0
+* pi
+3.14159,圆周率
+* bpoly
+** (bpoly pt [ss vector])
+搜索点附近曲线,生成最小边界
+* cddr
+** (cddr lst)
+返回去掉了前两个元素的表
+* cdddr
+** (cdddr lst)
+返回去掉了前三个元素的表
+* cddddr
+** (cddddr lst)
+返回去掉了前四个元素的表
+* cdddar
+** (cdddar lst)
+返回表内第一个表，并去掉前三个元素。
+* cddar
+** (cddar lst)
+返回表内第一个表，并去掉前两个元素
+* cddadr
+** "(cddadr lst)
+数据库中没有收录这个函数!请帮助录入,谢谢"
+* cddaar
+** "(cddaar lst)
+数据库中没有收录这个函数!请帮助录入,谢谢"
+* cdar
+** (cdar list)
+返回表内第一个表中去掉了第一个元素的表
+* cdadr
+** "(cdadr lst)
+获取表第二个元素,然后再去除第一个元素"
+* cdaddr
+** "(cdaddr lst)
+数据库中没有收录这个函数!请帮助录入,谢谢"
+* cdadar
+** (cdadar lst)
+返回表内第一个子表的第二个子表，且去掉第一个元素！
+* cdaar
+** (cdaar lst)
+返回三层表以上，一层第1项，二层第1项，三层除掉第1项数据
+* cdaadr
+** "(cdaadr lst)
+数据库中没有收录这个函数!请帮助录入,谢谢"
+* cdaaar
+** (cdaaar lst)
+返回4层表，一层第1项，二层第1项，三层第1项，四层去掉第一项数据
+* cadddr
+** (cadddr lst)
+返回表的第四个元素（易云网络）
+* caddar
+** (caddar lst)
+返回表内第一个表的第三个元素。
+* cadar
+** (cadar lst)
+返回表内第一个表的第二个值
+* cadadr
+** (cadadr lst)
+返回表内第二个表的第二个值
+* cadaar
+** (cadaar lst)
+返回第三个内表里面的第一个值
+* caar
+** (caar lst)
+返回表内的第一个子表的第一个值
+* caadr
+** (caadr lst)
+反回表内第二个表的第一个值
+* caaddr
+** (caaddr lst)
+反回表内第三个表的第一个值
+* caadar
+** (caadar lst)
+相当于(car(car(cdr(car lst))))
+* caaar
+** (caaar lst)
+第3级子表的第一个元素
+相当于(car(car(car lst)))
+* caaadr
+** (caaadr lst)
+相当于(car(car(car(cdr lst))))的简写
+* caaaar
+** (caaaar lst)
+第4级子表的第一个元素

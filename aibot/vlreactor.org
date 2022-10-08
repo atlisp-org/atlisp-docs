@@ -1,0 +1,246 @@
+* vlr-reactors
+** (vlr-reactors [reactor-type...])
+返回由现有反应器组成的表
+* vlr-reaction-set
+** (vlr-reaction-set reactor event function)
+添加或替换反应器中的一个回调函数
+* vlr-reaction-name
+** (vlr-reaction-names reactor-type)
+返回由该类型反应器所有可能回调条件组成的表
+* vlr-pers-release
+** (vlr-pers-release reactor)
+使反应器成为临时反应器
+* vlr-pers-p
+** (vlr-pers-p reactor)
+确定反应器是否是永久反应器
+* vlr-pers-list
+** (vlr-pers-list [reactor])
+返回由当前图形文档中永久反应器组成的表
+* vlr-pers
+** (vlr-pers reactor)
+使反应器成为永久反应器
+* vlr-owners
+** (vlr-owners reactor)
+返回对象反应器的所有者列表
+* vlr-owner-remove
+** (vlr-owner-remove reactor owner)
+从对象反应器的所有者列表中删除对象
+* vlr-owner-add
+** (vlr-owner-add reactor owner)
+将对象添加到对象反应器的所有者列表
+* vlr-object-reactor
+** (vlr-object-reactor owners data callbacks)
+构造对象反应器对象
+* vlr-data-set
+** (vlr-data-set objdata)
+覆盖与反应器相关的应用程序特定数据
+* vlr-xref-reactor
+** (vlr-xref-reactor data callbacks)
+构造编辑器反应器对象，在发生附着或修改外部参照事件时通知应用程序
+* vlr-window-reactor
+** (vlr-window-reactor data callbacks)
+构造编辑器反应器对象，在发生与移动或缩放 AutoCAD 窗口相关的事件时通知应用程序
+* vlr-wblock-reactor
+** (vlr-wblock-reactor data callbacks)
+构造编辑器反应器对象，在发生与写块相关的事件时通知应用程序
+* vlr-undo-reactor
+** (vlr-undo-reactor data callbacks)
+构造通知放弃操作的编辑器反应器
+* vlr-types
+** (vlr-types)
+返回由所有反应器类型组成的表
+* vlr-type
+** (vlr-type reactor)
+返回代表反应器类型的符号
+* vlr-trace-reaction
+** (vlr-trace-reaction)
+预定义回调函数，在“跟踪”窗口显示一个或多个回调参数
+* vlr-toolbar-reactor
+** (vlr-toolbar-reactor data callbacks)
+构造编辑器反应器对象，在工具栏中的位图改变时通知应用程序
+* vlr-sysvar-reactor
+** (vlr-sysvar-reactor data callbacks)
+构造编辑器反应器对象，在修改系统变量时通知应用程序
+* vlr-set-notification
+** (vlr-set-notification reactor 'range)
+确定当反应器在其所关联的名称空间非活动时是否执行其回调函数
+* vlr-remove-all
+** (vlr-remove-all [reactor-type])
+禁用指定类型的所有反应器
+* vlr-remove
+** (vlr-remove reactor)
+禁用反应器
+* vlr-reactions
+** (vlr-reactions reactor)
+返回反应器的形如 (event-name . callback_function) 的点对表
+* vlr-object-reaction
+** (vlr-object-reactor owners data callbacks)
+构造对象反应器对象 。
+* vlr-notification
+** (vlr-notification reactor)
+确定当反应器相关联的名称空间不在活动状态时是否激发反应器
+* vlr-mouse-reactor
+** (vlr-mouse-reactor data callbacks)
+构造编辑器反应器对象，通知鼠标事件（如双击）
+* vlr-miscellaneous-reactor
+** (vlr-miscellaneous-reactor data callbacks)
+构造编辑器反应器对象，它不属于任何其他编辑器反应器类型
+* vlr-lisp-reactor
+** (vlr-lisp-reactor data callbacks)
+构造编辑器反应器对象，通知 LISP 事件
+* vlr-linker-reactor
+** (vlr-linker-reactor data callbacks)
+构造反应器对象，在每次应用程序加载或卸载 ObjectARX 应用程序时通知应用程序
+* vlr-insert-reactor
+** (vlr-insert-reactor data callbacks)
+构造反应器对象，通知与块插入相关的事件
+* vlr-editor-reactor
+** (vlr-editor-reactor data callbacks)
+构造编辑器反应器对象
+* vlr-dxf-reactor
+** (vlr-dxf-reactor datacallbacks)
+构造编辑器反应器对象，通知与读写 DXF 文件相关的事件
+* vlr-dwg-reactor
+** (vlr-dwg-reactor data callbacks)
+构造反应器对象，通知图形事件（如打开或关闭图形文件）
+* vlr-docmanager-reactor
+** (vlr-docmanager-reactor data callbacks)
+构造反应器对象，通知与图形文档相关的事件
+* vlr-deepclone-reactor
+** (vlr-deepclone-reactor datacallbacks)
+构造编辑器反应器对象，在发生 deepclone 事件时给出通知
+* vlr-data
+** (vlr-data obj)
+返回与反应器相关的应用程序特定数据
+* vlr-current-reaction-name
+** (vlr-current-reaction-name)
+如果在反应器回调函数中调用该函数，它返回当前事件的名称（符号）
+* vlr-command-reactor
+** (vlr-command-reactor data callbacks)
+构造 AutoCAD 命令反应器，对命令事件给出通知
+* vlr-beep-reaction
+** (vlr-beep-reaction [args])
+产生声音提示的回调函数
+* vlr-added-p
+** (vlr-added-p obj)
+测试以确定是否已启用反应器对象
+* vlr-add
+** (vlr-add obj)
+启动当前禁用的反应器对象
+* vlr-acdb-reactor
+** (vlr-acdb-reactor data callbacks)
+构造 AutoCAD 数据库反应器对象，在从图形数据库中加入、修改或删除对象时通知应用程序.
+* vl-owner-add
+** (vlr-owner-add reactor owner)
+将对象添加到对象反应器的所有者列表。
+* vl-owners
+** (vlr-owners reactor)
+返回对象反应器的所有者列表。
+* vl-pers
+** (vlr-pers reactor)
+使反应器成为永久反应器。
+* vl-pers-list
+** (vlr-pers-list [reactor])
+返回由当前图形文件中永久反应器组成的表。
+* vl-pers-p
+** (vlr-pers-p reactor)
+判断反应器是否是永久反应器。
+* vl-pers-release
+** (vlr-pers-release reactor)
+使反应器成为临时反应器。
+* vl-reaction-names
+** (vlr-reaction-names reactor-type)
+返回由该类型反应器所有可能回调条件组成的表。
+* vl-reaction-set
+** (vlr-reaction-set reactor event function)
+添加或替换反应器中的一个回调函数。
+* :vlr-dwg-reactor
+AutoCAD 图形事件反应器类型。
+* :vlr-objectClosed
+反应器；对对象的修改已经完成，将被触发。
+* :vlr-modified
+对象已被修改。如果取消修改，还将激发:vlr-cancelled 和:vlr-modifyUndone。
+* :vlr-documentToBeActivated
+docmanager反应器事件：有非活动的文档刚接受到激活信号，意味着将要成为活动文档。
+* :vlr-documentToBeDeactivated
+docmanager 反应器事件：另一个窗口（在 AutoCAD 内部或外部）已被激活。
+* :vlr-documentBecameCurrent
+docmanager 反应器事件：当前文档已经产生变更（并没有意味当前文档已被激活）。
+* :vlr-documentLockModeChanged
+docmanager 反应器事件：文档所定权已被占据或释放。
+* :vlr-documentLockModeChangeVetoed
+docmanager 反应器事件：documentLockModeChange 被拒绝
+* :vlr-documentLockModeWillChange
+docmanager 反应器事件：文档元素将被修改或完成修改将要引起对文档锁定权的占据或释放。
+* :vlr-documentToBeDestroyed
+docmanager 反应器事件：有文档将被“销毁”（内存中）。
+* :vlr-documentCreated
+docmanager 反应器事件：新文件加入（通过全文档范围的反应器可获取）。
+* :vlr-endDeepClone
+deepclone 反应器事件：深拷贝将要结束。
+* :vlr-abortDeepClone
+deepclone 反应器事件：正要取消深拷贝。
+* :vlr-beginDeepCloneXlation
+deepclone 反应器事件：完成深拷贝的对象拷贝部分，将要开始对象 ID 引用变换。
+* :vlr-beginDeepClone
+deepclone 反应器事件：深拷贝将要开始。
+* :vlr-commandFailed
+command 反应器事件：未能完成 AutoCAD 命令。
+* :vlr-commandCancelled
+command 反应器事件：以取消 AutoCAD 命令。
+* :vlr-commandEnded
+command 反应器事件：已完成完成 AutoCAD 命令。
+* :vlr-commandWillStart
+command 反应器事件：产生了 AutoCAD 命令调用。
+* :vlr-unknownCommand
+command 反应器事件：发出了 AutoCAD 未知的命令。
+* :vlr-objectUnErased
+acdb 反应器事件：有对象已被移除删除标记。
+* :vlr-objectErased
+acdb 反应器事件：有对象已被附上删除标记。
+* :vlr-objectModified
+acdb 反应器事件：有对象已被修改。
+* :vlr-objectOpenedForModify
+acdb 反应器事件：有对象将被修改。
+* :vlr-objectReAppended
+acdb 反应器事件：有被拆离的对象已在数据库中被恢复。
+* :vlr-objectUnAppended
+acdb 反应器事件：有对象被从图形数据库拆离。
+* :vlr-objectAppended
+acdb 反应器事件：有对象被附加到图形数据库中。
+* :vlr-object-reactor
+对象反应器类型。
+* :vlr-miscellaneous-reactor
+其他反应器类型。
+* :vlr-mouse-reactor
+鼠标事件反应器类型。
+* :vlr-toolbar-reactor
+工具栏位图变化反应器类型。
+* :vlr-window-reactor
+数据库反应器类型。
+* :vlr-undo-reactor
+撤销事件反应器类型。
+* :vlr-xref-reactor
+外部参照反应器类型。"
+* :vlr-deepclone-reactor
+深拷贝事件反应器类型。
+* :vlr-sysvar-reactor
+系统变量反应器类型。
+* :vlr-wblock-reactor
+写块反应器类型。
+* :vlr-insert-reactor
+块插入反应器类型。
+* :vlr-dxf-reactor
+DXF读写反应器类型。
+* :vlr-lisp-reactor
+LISP?事件反应器类型。
+* :vlr-command-reactor
+命令反应器类型。"
+* :vlr-docmanager-reactor
+文档管理反应器类型。
+* :vlr-acdb-reactor
+图形数据库反应器类型。
+* :vlr-editor-reactor
+通用编辑器反应器类型。
+* :vlr-linker-reactor
+链接器反应器类型。

@@ -1,0 +1,581 @@
+* dcl_MessageBox
+** (dcl-MessageBox Message [as String] {Title [as String]} {ButtonStyle [as Integer]} {IconStyle [as Integer]} {ShowHelpButton [as Boolean]})
+显示一条警告信息
+* dcl_Form_Close
+** (dcl_Form_Close 文件名_窗体名)
+关闭ODCL
+* dcl_project_import
+** (dcl_project_import '(OpenDCL编译代码))
+OpenDCL与lisp合并
+* dcl_project_load
+** "(dcl_project_load ""文件路径"" T)
+加载OpenDCL文件"
+* dcl_form_show
+** (dcl_form_show 文件名_窗体名)
+显示OpenDCL窗体
+* dcl_Control_GetCurrentSelection
+** (dcl_Control_GetCurrentSelection FriendlyName_APIName_Type)
+获取OptionList选择的值
+* dcl_Control_GetText
+** (dcl_Control_GetText FriendlyName_APIName_Type)
+获取textbox、combobox的text值
+* dcl_Control_SetText
+** (dcl_Control_SetText FriendlyName_APIName_Type string)
+设置textbox、combox的text值.
+* dcl-Form-StartTimer
+** 取消:(dcl-Form-StartTimer NTDCL/Form1)
+300毫秒后启动:(dcl-Form-StartTimer NTDCL/Form1 300)
+这个方法启动一个计时器。在指定的毫秒数过去之后，计时器将等待对话框到达空闲状态，然后触发Form-OnTimer事件。如果毫秒数小于零或未指定，则取消现有的计时器。当窗体关闭时，计时器被取消。
+* dcl-Grid-SetCellImages
+** (dcl-Grid-SetCellImages NT/Form1/grid1 nRow 1 0)
+nRow:行号,1:图像编号,0:第一列,此方法在指定行和列处设置单元格的单元格图像。ImageIndex是控件的图像列表中的图像，或-1将单元格图像重置为none。可选的AltImageIndex用于样式3的单元格的检查状态(切换图标)。请注意，当没有设置图像时，单元格使用列默认图像作为其列。
+* dcl-ImageComboBox-SetCurSel
+** (dcl-ImageComboBox-SetCurSel Grid/Dcl-1/IC-Images 0)
+此方法在图像组合列表框中设置当前选中的项。ItemIndex值为-1将取消当前选择。
+* dcl-Control-SetAllowResizing
+** (dcl-Control-SetAllowResizing <控件名> NewValue [as Boolean])
+如果设置了此属性，则窗体将显示一个调整大小的边框，该边框允许通过拖动边框调整对话框的大小。
+* dcl-Control-GetAllowResizing
+** (dcl-Control-GetAllowResizing <控件名> )
+返回窗体可调边框属性
+* dcl-ListBox-SelItemRange
+** (dcl-ListBox-SelItemRange <控件名> FirstItem [as Long] LastItem [as Long] Select [as Boolean])
+此方法选择或取消选择以FirstItem开始、以LastItem结束的一系列项。如果Select为T，则选中这些项；否则将取消选中它们。此方法不适用于单个选择列表。
+* dcl-Grid-GetRowCells
+** (dcl-Grid-GetRowCells <控件名> Row [as Long])
+此方法返回指定行中单元格的文本标签列表。
+* dcl-Grid-SetCellCheckState
+** (dcl-Grid-SetCellCheckState <控件名> Row [as Long] Column [as Long] State [as Integer])
+此方法设置指定行和列中单元格的单元格检查状态。
+State:
+0未选中
+1检查
+* dcl-Grid-InsertString
+** (dcl-Grid-InsertString <控件名> Row [as Long] CellLabels [as String] {Delimiter [as String]})
+此方法将新行插入网格。Row是应该插入新行的行索引。CellLabels参数是一个分隔字符串，包含新单元格的标签文本。分隔符是分隔符；如果未指定分隔符，则假定为制表符（“\t”）。新行中的每个单元格都预先填充了指定的标签文本。如果没有为列指定标签文本，则它将保持为空。新单元格继承为其列设置的默认样式和图像值。
+* dcl-ListBox-SelectItem
+** (dcl-ListBox-SelectItem <控件名> ItemIndex [as Long] {Select [as Boolean]})
+此方法选择或取消选择ItemIndex处的项。如果Select为T，则选中该项；否则将取消选中该项。此方法不适用于单个选择列表。
+* dcl-ListBox-GetCount
+** (dcl-ListBox-GetCount <控件名>)
+此方法返回列表中的项数。
+* dcl-ListBox-GetCurSel
+** (dcl-ListBox-GetCurSel <控件名>)
+此方法返回当前选定项的从零开始的索引，如果未选择任何项，则返回-1。
+* dcl-ListBox-InsertString
+** (dcl-ListBox-InsertString <控件名> Index NewItem)
+该方法在列表中插入一个新的项目
+* dcl-ListView-GetSelectedItems
+** (dcl-ListView-GetSelectedItems <控件名称>)
+该方法返回一个包含选定项目的标签文本的列表。
+* dcl-ListBox-GetSelectedNths
+** (dcl-ListBox-GetSelectedNths <控件名称>)
+该方法返回一个包含选定项目的索引的列表。
+* dcl-ListView-AddString
+** "(dcl-ListView-AddString <控件名称> ItemLabels [as String] {Delimiter [as String]})
+该方法将一个新的项目添加到列表中。ItemLabels参数是一个分隔符字符串，包含新项目的每一列的标签文本。Delimiter是分隔符；如果没有指定分隔符，则假定使用tab字符（""\t""）。新项目中的每一列都会被填充指定的标签文本。如果没有指定列的标签文本，则保持为空。返回值是新项目的索引（基于零）。"
+* dcl-Control-GetPos
+** (dcl-Control-GetPos <控件名称>)
+该方法返回窗体或控件的位置。如果控件是子窗口，返回的坐标是相对于父窗口的客户端区域左上角的坐标；否则就是屏幕坐标。
+* dcl-DelayedInvoke
+** (dcl-DelayedInvoke 延时毫米书 LispFunctionName [as String])
+该函数在指定的毫秒数过后，启动一个后台定时器，调用一个AutoLISP函数。这个函数不需要等待时间的推移就会立即返回。LispFunctionName必须是一个没有参数的AutoLISP函数的名称。
+* dcl-Control-SetPos
+** (dcl-Control-SetPos <控件名称> Left [as Long] Top [as Long] {Width [as Long]} {Height [as Long]})
+该方法设置窗体或控件的位置和大小。如果控件是子窗口，则指定的坐标是相对于父窗口的客户端区域的左上角；否则就是屏幕坐标。如果省略了可选的Width和Height参数，控件的大小将保持不变。宽度和高度都必须大于零。
+* dcl-ComboBox-GetLBText
+** (dcl-ComboBox-GetLBText <控件名称> Index)
+该方法返回Index处项目的组合列表框文本。
+* dcl-Grid-GetCurCell
+** (dcl-Grid-GetCurCell <表格控件>)
+该方法返回活动单元格List(行 列)。如果Row为-1，则整个列为活动单元格。如果列为-1，则整个行为活动单元格。
+* dcl-Grid-SetCellText
+** (dcl-Grid-SetCellText <表格控件> Row [as Long] Column [as Long] Label [as String])
+该方法在指定的行和列处为单元格设置文本标签。
+* dcl-Grid-SetCellDropList
+** (dcl-Grid-SetCellDropList <表格控件> Row [as Long] Column [as Long] Items [as List of Strings] {Images [as List of Integers]})
+该方法为指定的行和列的单元格设置下拉列表内容。Items包含列表的文本项，Images包含控件的图像列表中与每个列表项关联的图像的图像索引。下拉列表用于填充使用该控件的单元格的组合框控件。某些需要额外数据的单元格样式会使用下拉列表中的内容来获取该数据。
+* dcl-Grid-SetCellStyle
+** (dcl-Grid-SetCellStyle <表格控件> Row [as Long] Column [as Long] Style [as Integer])
+该方法为指定的行和列设置单元格的单元格样式。注意，当样式设置为-1时，单元格继承了列的默认样式。
+* dcl-Grid-AddRow
+** (dcl-Grid-AddRow <表格控件> {Column0ImageIndex [as Integer]} Column0Label [as String] {Column1Label [as String] Column2Label [as String]} ...)
+在表格控件中插入新行
+* dcl-Grid-AddColumns
+** (dcl-Grid-AddColumns <表格控件> NewColumns [as List of Lists as ((Caption [as String] {Justification [as Integer]} {ColumnWidth [as Long]} {ColumnImageIndex [as Integer]}) ...)])
+在表格控件中插入新列
+* dcl-ComboBox-SelectString
+** (dcl-ComboBox-SelectString <组合框列表> Search [as String] {StartAfter [as Long]})
+在组合框列表中以Search开头的项目执行不区分大小写的搜索，如果找到了匹配的项目，则将当前的选择改为第一个匹配的项目。搜索从StartAfter之后的项开始，并继续越过最后一个项回到第一个项，直到整个列表被搜索完毕。如果没有指定StartAfter，则从列表中的第一个项目开始搜索。返回值是第一个匹配项的索引，如果没有找到任何项，则返回-1。
+* dcl-ListBox-FindStringExact
+** (dcl-ListBox-FindStringExact <控件名称> Search [as String] {StartAfter [as Long]})
+在表中的项目进行大小写敏感搜索，以寻找与Search完全匹配的项目。搜索从StartAfter之后的项开始，然后从最后一个项开始，一直到第一个项，直到整个列表被搜索完毕。如果没有指定StartAfter，搜索将从列表中的第一个项目开始。返回值是第一个匹配项的索引，如果没有找到匹配项，则返回-1。
+* dcl-ListBox-AddString
+** (dcl-ListBox-AddString 控件变量或名称 NewItem [as String])
+此方法将一个新项目追加到列表中。 返回值是新项目的索引（基于零）。
+* dcl-Control-GetCurrentSelection
+** "(dcl-Control-GetCurrentSelection <控件名称>)
+获取Block List, List View, Option List控件当前所选项目的索引。"
+* dcl-Control-GetPicture
+** (dcl-Control-GetPicture <控件名>)
+获取控件的图标或图片
+* dcl-Control-SetPicture
+** (dcl-Control-SetPicture <控件名称> NewValue [as PictureID])
+设置控件要显示的图标或图片，-1表示什么也不显示。
+* dcl-SelectFiles
+** "(dcl-SelectFiles {FileTypes [as List of Strings]} {Title [as String]} {DefaultDirectory [as String]})
+选择一个或多个文件;(dcl-SelectFiles '(\""*.dwg\"" \""*.dxf\"") \""test\"")"
+* dcl-Control-SetTitleBarText
+** (dcl-Control-SetTitleBarText <控件名> NewValue [as String])
+设置标题栏文字
+* dcl-Grid-GetRowCount
+** (dcl-Grid-GetRowCount <表格控件>)
+获取表格控件总行数
+* dcl-Grid-SetCurCell
+** (dcl-Grid-SetCurCell <表格控件> Row [as Long] {Column [as Long]})
+设置活动单元格。如果Row为-1，则激活整个列。如果省略Column或-1，则激活整个行。如有必要，网格将被滚动，以确保显示活动单元格。
+* dcl-Grid-DeleteRow
+** (dcl-Grid-DeleteRow <表格控件> Row [as Long])
+删除ODCL 表格控件指定行
+* dcl-Grid-GetCellText
+** (dcl-Grid-GetCellText <表格控件> Row [as Long] Column [as Long])
+返回指定行和列单元格的文本。
+* dcl-Grid-AddString
+** (dcl-Grid-AddString ODCL表格控件 文本行 {间隔符})
+示例1:(dcl-Grid-AddString ODCL表格控件 \""列1\t列2\t列3\"")
+示例2:(dcl-Grid-AddString ODCL表格控件 \""列1,列2,列3\"" \""，\"" )
+在ODCL表格中插入数据行。如果没有指定间隔符，则默认为tab字符（\""\t\""）。返回值是添加的行的索引。
+* dcl-Form-Resize
+** (dcl-Form-Resize Form Width Height)
+该方法可以调整对话框的大小。Width和Height都必须大于零。
+* dcl-Form-Center
+** (dcl-Form-Center ODCL控件名称 wLong hLong)
+该方法将对话框居中显示。如果包含了可选的w和h参数，那么表单在居中之前会被调整大小。
+* dcl_ComboBox_Clear
+** (dcl_ComboBox_Clear ObjectListName)
+清除列表中的内容
+* ListBox-AddString
+** (dcl-ListBox-AddString 控件变量或名称 NewItem [as String])
+此方法将一个新项目追加到列表中。 返回值是新项目的索引（基于零）。
+* dcl-Control-GetCaption
+** (dcl-Control-GetCaption 控件变量或名称)
+opendcl函數获取控件的标题或标签文字，返回字符串
+* dcl-TextBox-SetFilter
+** (dcl-TextBox-SetFilter Lt/Ba/TextBox4 ""0123456789."")
+数据库中没有收录这个函数!请帮助录入,谢谢
+* dcl-Form-CloseAll
+** (dcl-Form-CloseAll [Bit])
+关闭所有opdcl对话框
+DialogTypes 位描述 
+ - 所有对话类型 
+ 0 模态对话框 
+ 1 非模型对话 
+ 2 可对接对话框 
+ 3 选项卡 
+ 4 标签页 
+ 5 文件对话框 
+ 6 调色板
+* dcl-ListBox-SetCurSel
+** (dcl-ListBox-SetCurSel 控件变量或名称 ItemIndex [as Long])
+此方法在列表框中设置当前选定的项目。 ItemIndex值为-1时，将取消选择当前选择。 此方法不适用于多选列表（请参阅SelectionStyle）。
+* dcl-ListBox-GetSelectedItems
+** (dcl-ListBox-GetSelectedItems <控件名称>)
+该方法返回一个包含选定项目文本的列表。
+* dcl-Control-GetList
+** (dcl-Control-GetList 控件变量或名称)
+此属性包含列表框中每个项目的文本列表。
+* dcl-Control-SetKeepFocus
+** (dcl-Control-SetKeepFocus 控件变量或名称 布尔值[T or nil])
+如果此属性为False，表单上的控件不保留键盘输入焦点; 所有键盘输入都将发送到AutoCAD命令行。 当表单包含接受键盘输入的控件时，将此属性设置为True。
+* dcl-Control-SetList
+** (dcl-Control-SetList 变量或对话框名称 NewValue [as List of Strings])
+此方法设置odcl列表中所有项目。
+* dcl-ListBox-DeleteItem
+** (dcl-ListBox-DeleteItem 控件变量或名称 ItemIndex [as Long])
+从0开始。,此方法从odcl列表中删除指定项目。
+* dcl-Control-GetBackColor
+** (dcl-Control-GetBackColor 控件变量或名称)
+获取odcl 指定控件的背景色
+* dcl-Control-SetBackColor
+** (dcl-Control-SetBackColor 控件变量或名称 颜色)
+设置odcl 指定控件的背景色
+* dcl-Control-SetValue
+** (dcl-Control-SetValue 控件变量或名称 值)
+设置odcl 指定控件的运行值的值
+* dcl-Control-GetValue
+** (dcl-Control-GetValue 控件变量或名称)
+获取odcl 指定控件的运行值的值
+* dcl-Tree-SelectItem
+** (dcl-Tree-SelectItem Tree控件变更或名称 指定项句柄)
+选择odcl Tree控件的指定项
+* dcl-DWGPreview-GetDwgName
+** (dcl-DWGPreview-GetDwgName DWGPreview控件变量或名称)
+获取odcl DWGPreview控件显示的图形全路径名
+* dcl-Control-GetTop
+** (dcl-Control-GetTop 控件变量或名称)
+获取odcl控件左上角与窗口上边沿的距离
+* dcl-Control-SetTop
+** (dcl-Control-SetTop 控件变量或名称 值)
+设置odcl控件左上角与窗口上边沿的距离
+* dcl-Control-GetLeft
+** (dcl-Control-GetLeft 控件变量或名称)
+获取odcl控件左上角与窗口左边沿的距离
+* dcl-Control-SetLeft
+** (dcl-Control-SetLeft 控件变量或名称 值)
+设置odcl控件左上角与窗口左边沿的距离
+* dcl-Control-SetEnabled
+** (dcl-Control-SetEnabled 控件变量或名称 值[T or nil])
+设置odcl控件是否可用
+* dcl-Control-GetEnabled
+** (dcl-Control-GetEnabled 控件变量或名称)
+获取odcl控件是否可用(返回T or nil)
+* dcl-Control-SetWidth
+** (dcl-Control-SetWidth 控件变量或名称 值)
+设置odcl控件的宽度
+* dcl-Control-GetWidth
+** (dcl-Control-GetWidth 控件变量或名称)
+获取odcl控件的宽度
+* dcl-Control-GetHeight
+** (dcl-Control-GetHeight 控件变量或名称)
+获取odcl控件的高度
+* dcl-Control-SetHeight
+** (dcl-Control-SetHeight 控件变量或名称 值)
+设置odcl控件的高度
+* dcl-Control-GetVisible
+** (dcl-Control-GetVisible 控件变量或名称)
+获取odcl控件是否可见(返回T or nil)
+* dcl-Control-SetVisible
+** (dcl-Control-SetVisible 控件变量或名称 值[T or nil])
+设置odcl控件是否可见
+* dcl-Control-SetProperty
+** (dcl-Control-SetProperty 控件变量或名称 属性名称[str] 值)
+设置odcl 指定控件的属性值
+* dcl-Control-GetProperty
+** (dcl-Control-GetProperty 控件变量或名称 属性名称[str])
+获取odcl控件的属性值
+* dcl-Form-GetControlArea
+** (dcl-Form-GetControlArea 窗口变量或名称)
+获取odcl当前窗口大小
+* dcl-BlockList-LoadDwg
+** (dcl-BlockList-LoadDwg BlockList控件变量或名称 DWG文件路径)
+控制ocdl BlockList控件显示DWG文件里的块列表预览图
+* dcl-DWGPreview-LoadDwg
+** (dcl-DWGPreview-LoadDwg DWGPreview控件变量或名称 DWG文件路径)
+控制ocdl DWGPreview控件显示DWG预览图
+* dcl-Tree-GetRootItem
+** (dcl-Tree-GetRootItem Tree控件变量或名称 )
+获取odcl Tree控件的顶级父项
+* dcl-Tree-GetParentItem
+** (dcl-Tree-GetParentItem Tree控件变量或名称指定项句柄或图元名)
+获取odcl Tree控件指项的父项句柄或图元名
+* dcl-Tree-GetItemLabel
+** (dcl-Tree-GetItemLabel Tree控件变量或名称项句柄或字符串)
+获取odcl Tree控件-指定项的文本标签
+* dcl-Tree-GetSelectedItem
+** (dcl-Tree-GetSelectedItem Tree控件变量或名称)
+获取odcl Tree控件-当前选择项的句柄或字符串
+* dcl_Tree_AddChild
+** (dcl_Tree_AddChild Tree控件变量或名称 数据)
+数据=(list (list 父项名柄 内容 [图像索引int 选择图像索引int 扩大图像索引int],设置odcl Tree控件-添加数据到指定父项中
+* dcl_Tree_SetItemData
+** (dcl_Tree_SetItemData Tree控件变量或名称 父项句柄 数据)
+此方法设置附加到指定项的自定义数据值。
+* dcl_Tree_AddParent
+** (dcl_Tree_AddParent Tree控件变量或名称 添加的字符串 图像索引int 选择图像索引int 扩大图像索引int)
+设置odcl Tree控件-将一个或多个新的顶级父项追加到树中
+返回句柄或布尔值
+* dcl_Tree_Clear
+** (dcl_Tree_Clear Tree控件变量或名称)
+清除odcl Tree控件所有项
+* dcl_Control_SetEnabled
+** (dcl_Control_SetEnabled 控件变量或名称 值[T启用 nil禁用])
+设置odcl 指定控件是否启用
+* dcl_Control_SetBackColor
+** (dcl_Control_SetBackColor 控件变量或名称)
+设置odcl 指定控件背景颜色
+* dcl_DWGPreview_Clear
+** (dcl_DWGPreview_Clear DWGPreview控件变量或名称)
+控制ocdl DWGPreview控件清除图像
+* dcl_Control_GetValue
+** (dcl_Control_GetValue 控件变量或名称)
+获取odcl 指定控件的运行值
+* dcl_ListBox_GetCount
+** (dcl_ListBox_GetCount  ListBox控件变量或名称)
+获取odcl ListBox控件列表的总数量
+* dcl-DWGPreview-Clear
+** (dcl-DWGPreview-Clear DWGPreview控件变量或名称)
+清除ocdl DWGPreview控件的图像
+* dcl_DWGPreview_LoadDwg
+** (dcl_DWGPreview_LoadDwg DWGPreview控件变量或名称 DWG文件路径)
+控制ocdl DWGPreview控件显示DWG预览图
+* dcl_Control_SetTitleBarText
+** (dcl_Control_SetTitleBarText 窗口变量或名称 字符串)
+设置ocdl 窗口标题
+* dcl_BlockView_DisplayDwg
+** (dcl_BlockView_DisplayDwg 控件变量或名称 DWG路径)
+控制odcl BlockView控件显示指定DWG图像
+* dcl_Control_SetValue
+** (dcl_Control_SetValue 控件变量或名称 值)
+设置odcl控件的值
+* dcl_ListBox_GetItemText
+** (dcl_ListBox_GetItemText 控件变量名或名称 位置整数0开始)
+获取指定列表项的项文本
+* dcl_ListBox_GetCurSel
+** (dcl_ListBox_GetCurSel 控件变量称或名称)
+获取odcl listbox控件选择的位置
+* dcl_ListBox_SetCurSel
+** (dcl_ListBox_SetCurSel 控件变更名或名称 位置整数0开始)
+设置odcl ListBox控件选择的位置
+* dcl_Control_SetProperty
+** (dcl_Control_SetProperty 控件变量或名称 控件属性 值)
+设置odcl控件属性
+* dcl-ListView-AddItem
+** (dcl-ListView-AddItem 文件名_窗体名_列表控件名 Col_1 Col_2 Col_3...)
+给OpenDCL的ListView控件表格添加子项(行)
+* dcl-ListView-AddColumns
+** (dcl-ListView-AddColumns 文件名_窗体名_列表控件名 )
+给OpenDCL的ListView控件表格添加表头
+* dcl-ListBox-AddList
+** (dcl-ListBox-AddList 变量或对话框名称 NewItems [as List of Strings])
+此方法将新项目附加到列表。 返回值是添加的最后一个项目的索引（基于零）。
+* dcl_ListBox_AddList
+** (dcl-ListBox-AddList 变量或对话框名称 NewItems [as List of Strings])
+此方法将新项目附加到列表。 返回值是添加的最后一个项目的索引（基于零）。
+* dcl-ListBox-Clear
+** (dcl-ListBox-Clear 变量或对话框名称)
+此方法从列表中删除所有项目。
+* dcl_ListBox_Clear
+** (dcl-ListBox-Clear 变量或对话框名称)
+此方法从列表中删除所有项目。
+* dcl-Form-Hide
+** (dcl-Form-Hide 变量或对话框名称 {Hide [as Boolean]})
+例子：
+(dcl_Form_Hide 0201_Form1 T)
+此方法隐藏或取消隐藏对话框。 如果可选的隐藏参数为T，则隐藏对话框; 否则为不隐藏。 注意，保留模态对话框隐藏也会禁用AutoCAD窗口，从而有效地锁定AutoCAD。
+* dcl_Form_Hide
+** (dcl-Form-Hide 变量或对话框名称 {Hide [as Boolean]})
+例子：
+(dcl_Form_Hide 0201_Form1 T)
+此方法隐藏或取消隐藏对话框。 如果可选的隐藏参数为T，则隐藏对话框; 否则为不隐藏。 注意，保留模态对话框隐藏也会禁用AutoCAD窗口，从而有效地锁定AutoCAD。
+* dcl-ComboBox-GetEBText
+** (dcl-ComboBox-GetEBText 变量或对话框名称)
+此方法返回组合框控件的编辑框文本。
+* dcl_ComboBox_GetEBText
+** (dcl-ComboBox-GetEBText 变量或对话框名称)
+此方法返回组合框控件的编辑框文本。
+* dcl-ComboBox-GetCurSel
+** (dcl-ComboBox-GetCurSel 变量或对话框名称)
+此方法返回组合列表框中当前选择的项目的索引（基于零），如果没有选择，则返回-1。
+* dcl_ComboBox_GetCurSel
+** (dcl-ComboBox-GetCurSel 变量或对话框名称)
+此方法返回组合列表框中当前选择的项目的索引（基于零），如果没有选择，则返回-1。
+* dcl-OptionList-GetCurSel
+** (dcl-OptionList-GetCurSel 变量或对话框名称)
+此方法返回当前所选选项按钮的基于零的索引，如果列表为空，则返回-1。
+* dcl_OptionList_GetCurSel
+** (dcl-OptionList-GetCurSel 变量或对话框名称)
+此方法返回当前所选选项按钮的基于零的索引，如果列表为空，则返回-1。
+* dcl-OptionList-GetButtonCaption
+** (dcl-OptionList-GetButtonCaption 变量或对话框名称 ButtonIndex [as Long])
+此方法返回指定的选项按钮的字幕文本。
+* dcl_OptionList_GetButtonCaption
+** (dcl-OptionList-GetButtonCaption 变量或对话框名称 ButtonIndex [as Long])
+此方法返回指定的选项按钮的字幕文本。
+* dcl-ComboBox-FindString
+** (dcl-ComboBox-FindString 变量或对话框名称 Search [as String] {StartAfter [as Long]})
+例子：
+(dcl_ComboBox_FindString 0201_Form1_ComboBox7			""折弯线"")
+此方法对列表中的项目执行不区分大小写的搜索。 搜索匹配以“搜索”开头的任何项目。 搜索从StartAfter之后的项开始，并继续经过最后一个项返回到第一个项，直到整个列表被搜索。 如果未指定StartAfter，则搜索从列表中的第一个项开始。 返回值是第一个匹配项的索引（基于零），如果没有找到匹配则返回-1。
+* dcl_ComboBox_FindString
+** (dcl-ComboBox-FindString 变量或对话框名称 Search [as String] {StartAfter [as Long]})
+例子：
+(dcl_ComboBox_FindString 0201_Form1_ComboBox7			""折弯线"")
+此方法对列表中的项目执行不区分大小写的搜索。 搜索匹配以“搜索”开头的任何项目。 搜索从StartAfter之后的项开始，并继续经过最后一个项返回到第一个项，直到整个列表被搜索。 如果未指定StartAfter，则搜索从列表中的第一个项开始。 返回值是第一个匹配项的索引（基于零），如果没有找到匹配则返回-1。
+* dcl-ComboBox-SetCurSel
+** (dcl-ComboBox-SetCurSel 变量或对话框名称 ItemIndex [as Long])
+例子：
+(dcl_ComboBox_SetCurSel 0201_Form1_ComboBox2 4)
+此方法在组合列表框中设置当前选定的项目。
+ItemIndex值为-1时，将取消选择当前选择。
+* dcl_ComboBox_SetCurSel
+** (dcl-ComboBox-SetCurSel 变量或对话框名称 ItemIndex [as Long])
+例子：
+(dcl_ComboBox_SetCurSel 0201_Form1_ComboBox2 4)
+此方法在组合列表框中设置当前选定的项目。
+ItemIndex值为-1时，将取消选择当前选择。
+* dcl-OptionList-SetCurSel
+** (dcl_OptionList_SetCurSel 0201_Form1_OptionList2 3) 
+初始值3,此方法设置列表中当前选择的选项按钮。
+* dcl_OptionList_SetCurSel
+** (dcl_OptionList_SetCurSel 0201_Form1_OptionList2 3) 
+初始值3,此方法设置列表中当前选择的选项按钮。
+* dcl-Project-Unload
+** (dcl_Project_Unload ""sld"")
+此方法卸载项目，释放其内存。
+ 如果可选的ForceUnload参数为T，
+则项目中的任何活动窗体都会关闭; 
+否则如果任何表单仍处于活动状态，函数将失败。
+* dcl-BlockView-LoadDwg
+** (setq ss (GetFiled ""打开文件"" "" ""dwg"" 4))(and ss (dcl_BlockView_LoadDwg sld_Form1_BlockView1 ss))
+此方法将图形文件预加载到控件中。
+ 预装入图形文件时，控件将显示预装入图形中的块，
+而不是在AutoCAD中打开的图形。
+* dcl-PictureBox-DrawLine
+** (dcl-PictureBox-DrawLine 变量 (List 起点X 起点Y 终点X 终点Y 颜色))
+
+(defun c:sld_Form1_TextButton1_OnClicked (/)
+(setq a1 (list (atoi (dcl_Control_GetText sld_Form1_TextBox1))						 (atoi (dcl_Control_GetText sld_Form1_TextBox2))						 (atoi (dcl_Control_GetText sld_Form1_TextBox6))	 						 (atoi (dcl_Control_GetText sld_Form1_TextBox7))						 (atoi (dcl_Control_GetText sld_Form1_TextBox5))					 ))
+(dcl_PictureBox_DrawLine sld_Form1_PictureBox1 (list a1))
+)
+此方法绘制图框上的一行或多行，从StartX，StartY到EndX，EndY。之后颜色， 所有点都在客户端坐标中指定（以像素为单位，相对于控件的左上角）。
+* dcl-SlideView-Load
+** ;;显示幻灯片
+(defun c:sld_Form1_TextButton3_OnClicked (/)
+  (setq ss (GetFiled ""打开文件"" "" ""sld"" 4))
+  (if ss (dcl_SlideView_Load sld_Form1_SlideView1 ss)
+    (dcl_MessageBox ""提示\r\r\n未读入幻灯片  "" ""提示"" 2 3))
+)
+此方法从文件名显示AutoCAD幻灯片。 文件可以是单个幻灯片（.sld）或幻灯片库（.slb）文件，并且必须在文件名中包含文件扩展名。 如果Filename指定幻灯片库，则必须包括ImageName参数，以指定要从库中显示哪个幻灯片。
+* dcl-SlideView-FillImage
+** ;;填充SlideView
+(defun c:sld_Form1_TextButton4_OnClicked (/)
+  (setq a1 (list
+                 (atoi (dcl_Control_GetText sld_Form1_TextBox1))
+                 (atoi (dcl_Control_GetText sld_Form1_TextBox2))
+                 (atoi (dcl_Control_GetText sld_Form1_TextBox3))
+                 (atoi (dcl_Control_GetText sld_Form1_TextBox4))
+                 (atoi (dcl_Control_GetText sld_Form1_TextBox5))
+               )
+  )
+  (dcl_SlideView_FillImage sld_form1_SlideView1 (list a1))
+)
+此方法绘制控件上从UpperLeftX，UpperLeftY开始并在指定的宽度和高度处的一个或多个实心填充矩形。
+ 所有点都在客户端坐标中指定（以像素为单位，相对于控件的左上角）。
+* dcl-SlideView-Clear
+** (dcl-SlideView-Clear 变量或对话框名称)
+此方法重置控件并清除显示。
+* dcl-BlockView-Clear
+** (dcl-BlockView-Clear 变量或对话框)
+此方法重置控件并清除显示。
+* dcl-PictureBox-Clear
+** (dcl-PictureBox-Clear 变量或对话框名称)
+此方法清除控件中显示的图形。
+* dcl_PictureBox_Clear
+** (dcl-PictureBox-Clear 变量或对话框名称)
+此方法清除控件中显示的图形。
+* dcl_BlockView_Clear
+** (dcl_BlockView_Clear 控件变量或名称)
+清除odcl BlockView控件显示图像
+* dcl_SlideView_Clear
+** (dcl_SlideView_Clear 变量或对话框名称)
+此方法重置控件并清除显示。
+* dcl_SlideView_FillImage
+** ;;填充SlideView
+(defun c:sld_Form1_TextButton4_OnClicked (/)
+  (setq a1 (list
+                 (atoi (dcl_Control_GetText sld_Form1_TextBox1))
+                 (atoi (dcl_Control_GetText sld_Form1_TextBox2))
+                 (atoi (dcl_Control_GetText sld_Form1_TextBox3))
+                 (atoi (dcl_Control_GetText sld_Form1_TextBox4))
+                 (atoi (dcl_Control_GetText sld_Form1_TextBox5))
+               )
+  )
+  (dcl_SlideView_FillImage sld_form1_SlideView1 (list a1))
+)
+此方法绘制控件上从UpperLeftX，UpperLeftY开始并在指定的宽度和高度处的一个或多个实心填充矩形。
+ 所有点都在客户端坐标中指定（以像素为单位，相对于控件的左上角）。
+* dcl_SlideView_Load
+** ;;显示幻灯片
+(defun c:sld_Form1_TextButton3_OnClicked (/)
+  (setq ss (GetFiled ""打开文件"" "" ""sld"" 4))
+  (if ss (dcl_SlideView_Load sld_Form1_SlideView1 ss)
+    (dcl_MessageBox ""提示\r\r\n未读入幻灯片  "" ""提示"" 2 3))
+)
+此方法从文件名显示AutoCAD幻灯片。 文件可以是单个幻灯片（.sld）或幻灯片库（.slb）文件，并且必须在文件名中包含文件扩展名。 如果Filename指定幻灯片库，则必须包括ImageName参数，以指定要从库中显示哪个幻灯片。
+* dcl_PictureBox_DrawLine
+** (dcl-PictureBox-DrawLine 变量 (List 起点X 起点Y 终点X 终点Y 颜色))
+
+(defun c:sld_Form1_TextButton1_OnClicked (/)
+(setq a1 (list (atoi (dcl_Control_GetText sld_Form1_TextBox1))						 (atoi (dcl_Control_GetText sld_Form1_TextBox2))						 (atoi (dcl_Control_GetText sld_Form1_TextBox6))	 						 (atoi (dcl_Control_GetText sld_Form1_TextBox7))						 (atoi (dcl_Control_GetText sld_Form1_TextBox5))					 ))
+(dcl_PictureBox_DrawLine sld_Form1_PictureBox1 (list a1))
+)
+此方法绘制图框上的一行或多行，从StartX，StartY到EndX，EndY。之后颜色， 所有点都在客户端坐标中指定（以像素为单位，相对于控件的左上角）。
+* dcl_Control_SetCaption
+** (defun c:MyProject/MyForm#OnInitialize (/)
+(dcl-Control-SetCaption MyProject/MyForm/Label1 ""Hello World!"")
+(dcl-Control-SetCaption SCLlbl1 (rtos dist 2 8))
+)
+设置控件的标题或标签文字。 
+(dcl-Control-SetCaption SCLlbl1 (rtos dist 2 8))
+SCLlbl1对话框控件名称
+(rtos dist 2 8)控件只能显示字符串
+* dcl_Control_SetFocus
+** (dcl-Control-SetFocus 变量名称或对话框名称)
+将键盘焦点设置为控件
+由用户自己输入后期调用
+* dcl_BlockView_LoadDwg
+** (setq ss (GetFiled ""打开文件"" "" ""dwg"" 4))
+  (and ss (dcl_BlockView_LoadDwg sld_Form1_BlockView1 ss)
+此方法将图形文件预加载到控件中。
+ 预装入图形文件时，控件将显示预装入图形中的块，
+而不是在AutoCAD中打开的图形。
+* dcl_Project_Unload
+** (dcl_Project_Unload ""sld"")
+此方法卸载项目，释放其内存。
+ 如果可选的ForceUnload参数为T，
+则项目中的任何活动窗体都会关闭; 
+否则如果任何表单仍处于活动状态，函数将失败。
+* dcl-Control-SetFocus
+** (dcl-Control-SetFocus 变量名称或对话框名称)
+将键盘焦点设置为控件
+由用户自己输入后期调用
+* dcl-Control-SetCaption
+** (dcl-Control-SetCaption <控件名称> NewValue [as String])
+设置控件的标题或标签文字。 
+适用控件:复选框，框架，图形按钮，超链接，标签，选项按钮，文本按钮
+* dcl-sendstring
+** (dcl-sendstring ""(abc)\n"")
+(princ)
+abc多用于调用子程序。,非模式對話框
+要用dcl-sendstring执行命令
+不能使用command命令
+(dcl-sendstring ""(abc)"") 
+相當于你輸入了(abc)到命令行
+爲什麽最後要加個\n
+這個相當于回車，執行了。
+* dcl-ComboBox-AddList
+** (dcl-ComboBox-AddList 变量 <新表(list ""值"")>)
+此方法将新项目追加到组合框列表。 返回值是添加的最后一个项目的索引（基于零）。
+* dcl-Form-IsActive
+** (dcl-Form-IsActive 变量名)
+如果指定的表单是活动的，此方法返回T; 否则返回NIL。
+* dcl-ComboBox-Clear
+** (dcl-ComboBox-Clear 变量名称)
+此方法从组合框列表中删除所有项目。
+* dcl-Control-SetFontSize
+** (dcl-Control-SetFontSize 文件名/窗体名/控件 NewValue [as Integer])
+设置窗体控件的字体大小
+* dcl-Form-Close
+** (dcl-Form-Close 文件名_窗体名)
+关闭ODCL
+* dcl-Control-SetText
+** (dcl-Control-SetText 文件名/窗体名/TextBox NewValue[as String])
+设置textbox、combox的text值.
+* dcl-Control-GetText
+** (dcl-Control-GetText 文件名/窗体名/TextBox的值)
+获取textbox、combobox的text值
+* dcl-project-import
+** (dcl-project-import '(OpenDCL编译代码) {NewPassword [as String]} {NewProjectKey [as String]})
+OpenDCL与lisp合并
+* dcl-Form-Show
+** (dcl-Form-Show 文体名_窗体名 {x} {y})
+显示OpenDCL窗体
+* dcl-Project-Load
+** "(dcl-Project-Load ""文件路径"" [T] [NewProjectKey])
+加载OpenDCL文件"
+* dcl-MessageBox
+** (dcl-MessageBox String {Title [String]} {ButtonStyle [as Integer]} {IconStyle [as Integer]} {ShowHelpButton [as Boolean]})
+显示一个标准的Windows消息框
+* dcl_ComboBox_AddList
+** (dcl_ComboBox_AddList Autolisp_Form1_ComboBox1 NewItems [as List of Strings])
+Combo Box列表

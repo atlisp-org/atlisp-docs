@@ -1,0 +1,3842 @@
+* MAXACTVP
+** 系统变量: MAXACTVP
+设置布局中可同时激活的视口的最大数目。
+* qaflags
+** QAFLAGS
+是个未公布的变量，用来控制LISP中使用EXPLODE炸开一个选择集的时候的表现。
+如果QAFLAGS＝0，那么用LISP执行(command ""explode"" ss """")的时候仅仅能炸开选择集的第一个实体，其他实体炸不了.如果QAFLAGS＝1，可以炸开选择集所有实体。"
+* *_TOOLPALETTEPATH
+** 系统变量: *_TOOLPALETTEPATH
+控制用于“工具选项板”窗口的路径。
+* _PKSER
+** 系统变量: _PKSER
+返回产品序列号。
+* _VERNUM
+** 系统变量: _VERNUM
+返回产品的内部版本号。
+* 3DCONVERSIONMODE
+** 系统变量: 3DCONVERSIONMODE
+用于将材质和光源定义转换为当前产品版本。
+* 3DDWFPREC
+** 系统变量: 3DDWFPREC
+控制三维 DWF 或三维 DWFx 发布的精度
+* 3DOSMODE
+** 系统变量: 3DOSMODE
+设置执行三维对象捕捉。
+* 3DSELECTIONMODE
+** 系统变量: 3DSELECTIONMODE
+控制使用三维视觉样式时视觉上和实际上重叠的对象的选择优先级。
+* ACADLSPASDOC
+** 系统变量: ACADLSPASDOC
+控制是将 acad.lsp 文件加载到每个图形中，还是仅加载到任务中打开的第一个图形中。
+* ACADPREFIX
+** 系统变量: ACADPREFIX
+列出“文件”选项卡的“选项”对话框中指定的“支持文件搜索”路径。
+* ACADVER
+** 系统变量: ACADVER
+返回产品的版本号。
+* ACTPATH
+** 系统变量: ACTPATH
+指定可从其中加载用于回放的动作宏的其他路径。
+* ACTRECORDERSTATE
+** 系统变量: ACTRECORDERSTATE
+指定动作录制器的当前状态。
+* ACTRECPATH
+** 系统变量: ACTRECPATH
+指定用于存储新动作宏的路径。
+* ACTUI
+** 系统变量: ACTUI
+控制录制和回放宏时“动作录制器”面板的行为。
+* ADCSTATE
+** 系统变量: ADCSTATE
+指示“设计中心”窗口处于打开还是关闭状态。
+* AFLAGS
+** 系统变量: AFLAGS
+设置属性选项。
+* ANGBASE
+** 系统变量: ANGBASE
+将相对于当前 UCS 的基准角设定为 0（零）。
+* ANGDIR
+** 系统变量: ANGDIR
+设置正角度的方向。
+* ANNOALLVISIBLE
+** 系统变量: ANNOALLVISIBLE
+隐藏或显示不支持当前注释比例的注释性对象
+* ANNOAUTOSCALE
+** 系统变量: ANNOAUTOSCALE
+更改注释比例时，将更新注释性对象以支持注释比例。
+* ANNOMONITOR
+** 系统变量: ANNOMONITOR
+打开或关闭注释监视器。当注释监视器打开时，所有非关联标注和引线上会显示黄色警告标记。
+* ANNOTATIVEDWG
+** 系统变量: ANNOTATIVEDWG
+指定图形插入其他图形是否表现为注释性块。
+* APBOX
+** 系统变量: APBOX
+打开或关闭自动捕捉靶框的显示。
+* 变量APERTURE
+** 系统变量: APERTURE
+控制对象目标框的大小。
+* APPAUTOLOAD
+** 系统变量: APPAUTOLOAD
+控制何时加载插件应用程序。
+* APPLYGLOBALOPACITIES
+** 系统变量: APPLYGLOBALOPACITIES
+将透明度设置应用到所有选项板。
+* APSTATE
+** 系统变量: APSTATE
+指示块编辑器中的“块编写选项板”窗口处于打开还是关闭状态。
+* 变量AREA
+** 系统变量: AREA
+存储由 AREA 命令计算出的上一个面积。
+* ARRAYASSOCIATIVITY
+** 系统变量: ARRAYASSOCIATIVITY
+设置要成为关联或非关联的新阵列的默认行为。
+* ARRAYEDITSTATE
+** 系统变量: ARRAYEDITSTATE
+指示图形是否处于阵列编辑状态，该状态在编辑关联阵列的源对象时激活。
+* ARRAYTYPE
+** 系统变量: ARRAYTYPE
+指定默认的阵列类型。
+* ATTDIA
+** 系统变量: ATTDIA
+控制 INSERT 命令是否使用对话框来输入属性值。
+* ATTIPE
+** 系统变量: ATTIPE
+控制修改多行属性时随在位编辑器一起显示的文字格式工具栏。
+* ATTMODE
+** 系统变量: ATTMODE
+控制属性的显示。
+* ATTMULTI
+** 系统变量: ATTMULTI
+控制是否可创建多行文字属性。
+* ATTREQ
+** 系统变量: ATTREQ
+在插入块过程中控制 INSERT 是否使用默认属性设置。
+* AUDITCTL
+** 系统变量: AUDITCTL
+控制 AUDIT 命令是否创建核查报告 (ADT) 文件。
+* AUNITS
+** 系统变量: AUNITS
+设定角度单位。
+* AUPREC
+** 系统变量: AUPREC
+设定角度单位和坐标的显示精度。
+* AUTODWFPUBLISH
+** 系统变量: AUTODWFPUBLISH
+控制保存或关闭图形(DWG) 文件时是否自动创建 DWF（Web 图形格式）文件。
+* AUTOMATICPUB
+** 系统变量: AUTOMATICPUB
+控制保存或关闭图形(DWG) 文件时是否自动创建电子文件 (DWF/PDF)。
+* AUTOSNAP
+** 系统变量: AUTOSNAP
+控制自动捕捉标记、工具提示和磁吸的显示。
+* BACKGROUNDPLOT
+** 系统变量: BACKGROUNDPLOT
+控制为打印和发布打开还是关闭后台打印。
+* BACKZ
+** 系统变量: BACKZ
+以图形单位存储当前视口后向剪裁平面到目标平面的偏移值。
+* BACTIONBARMODE
+** 系统变量: BACTIONBARMODE
+指示块编辑器中是否显示动作栏或传统动作对象。
+* BACTIONCOLOR
+** 系统变量: BACTIONCOLOR
+设置块编辑器中动作的文字颜色。
+* BCONSTATUSMODE
+** 系统变量: BCONSTATUSMODE
+打开或关闭约束显示状态，基于约束级别控制对象着色。
+* BDEPENDENCYHIGHLIGHT
+** 系统变量: BDEPENDENCYHIGHLIGHT
+控制在块编辑器中选定参数、动作或夹点时是否亮显相应依赖对象。
+* BGRIPOBJCOLOR
+** 系统变量: BGRIPOBJCOLOR
+设置块编辑器中夹点的颜色。
+* BGRIPOBJSIZE
+** 系统变量: BGRIPOBJSIZE
+设置块编辑器中相对于屏幕显示的自定义夹点的显示尺寸。
+* BINDTYPE
+** 系统变量: BINDTYPE
+控制对外部参照执行绑定操作或在位编辑操作后，如何将名称指定给该外部参照中的“命名对象”。
+* BLOCKEDITLOCK
+** 系统变量: BLOCKEDITLOCK
+禁止打开块编辑器以及编辑动态块定义。
+* BLOCKEDITOR
+** 系统变量: BLOCKEDITOR
+指示块编辑器是否处于打开状态。
+* BLOCKMRULIST
+** 系统变量: BLOCKMRULIST
+控制在“块”选项板的“最近使用”选项卡中显示的最近使用块的数量。
+* BLOCKNAVIGATE
+** 系统变量: BLOCKNAVIGATE
+控制在“块”选项板的“其他图形”选项卡中显示的文件和块。
+* BLOCKREDEFINEMODE
+** 系统变量: BLOCKREDEFINEMODE
+控制在从“块”选项板插入名称与现有块定义相同的块时是否显示对话框。
+* BLOCKSTATE
+** 系统变量: BLOCKSTATE
+报告“块”选项板处于打开状态还是关闭状态。
+* BLOCKTESTWINDOW
+** 系统变量: BLOCKTESTWINDOW
+指示某个测试块窗口是否为当前窗口。
+* BPARAMETERCOLOR
+** 系统变量: BPARAMETERCOLOR
+设置块编辑器中参数的颜色。
+* BPARAMETERFONT
+** 系统变量: BPARAMETERFONT
+设置块编辑器中的参数和动作所用的字体。
+* BPARAMETERSIZE
+** 系统变量: BPARAMETERSIZE
+设置块编辑器中相对于屏幕显示的参数文字和部件的显示尺寸。
+* BPTEXTHORIZONTAL
+** 系统变量: BPTEXTHORIZONTAL
+强制使块编辑器中为动作参数和约束参数显示的文字以水平方式显示。
+* BTMARKDISPLAY
+** 系统变量: BTMARKDISPLAY
+控制是否为动态块参照显示数值集标记。
+* BVMODE
+** 系统变量: BVMODE
+控制当前可见性状态下可见的对象在块编辑器中的显示方式。
+* CACHEMAXFILES
+** 系统变量: CACHEMAXFILES
+设置为产品保存的图形缓存文件的最大数量。
+* CACHEMAXTOTALSIZE
+** 系统变量: CACHEMAXTOTALSIZE
+设置为产品保存的所有图形缓存文件的总大小的最大值。
+* CALCINPUT
+** 系统变量: CALCINPUT
+控制是否计算文字中以及窗口和对话框的数字输入框中的数学表达式和全局常量。
+* CAMERADISPLAY
+** 系统变量: CAMERADISPLAY
+打开或关闭相机对象的显示。
+* CAMERAHEIGHT
+** 系统变量: CAMERAHEIGHT
+为新相机对象指定默认高度。
+* CANNOSCALE
+** 系统变量: CANNOSCALE
+为当前空间设置当前注释比例的名称。
+* CANNOSCALEVALUE
+** 系统变量: CANNOSCALEVALUE
+显示当前注释比例的值。
+* CAPTURETHUMBNAILS
+** 系统变量: CAPTURETHUMBNAILS
+指定是否及何时为回放工具捕捉缩略图。
+* CBARTRANSPARENCY
+** 系统变量: CBARTRANSPARENCY
+控制约束栏的透明度。
+* CCONSTRAINTFORM
+** 系统变量: CCONSTRAINTFORM
+控制是将注释性约束还是将动态约束应用于对象。
+* CDATE
+** 系统变量: CDATE
+以编码的小数格式存储当前的日期和时间。
+* CECOLOR
+** 系统变量: CECOLOR
+在创建新对象时设置它们的颜色。
+* CELTSCALE
+** 系统变量: CELTSCALE
+设置当前对象的线型比例缩放因子。
+* CELTYPE
+** 系统变量: CELTYPE
+设置新对象的线型。
+* CELWEIGHT
+** 系统变量: CELWEIGHT
+设置新对象的线宽。
+* CENTERCROSSGAP
+** 系统变量: CENTERCROSSGAP
+确定中心标记与其中心线之前的间隙。
+* CENTERCROSSSIZE
+** 系统变量: CENTERCROSSSIZE
+确定关联中心标记的尺寸。
+* CENTEREXE
+** 系统变量: CENTEREXE
+控制中心线延伸的长度。
+* CENTERLAYER
+** 系统变量: CENTERLAYER
+为新中心标记或中心线指定默认图层。
+* CENTERLTSCALE
+** 系统变量: CENTERLTSCALE
+设置中心标记和中心线所使用的线型比例。
+* CENTERLTYPE
+** 系统变量: CENTERLTYPE
+指定中心标记和中心线所使用的线型。
+* CENTERLTYPEFILE
+** 系统变量: CENTERLTYPEFILE
+指定用于创建中心标记和中心线的已加载的线型库文件。
+* CENTERMARKEXE
+** 系统变量: CENTERMARKEXE
+确定中心线是否会自动从新的中心标记延伸。
+* CENTERMT
+** 系统变量: CENTERMT
+控制通过夹点拉伸多行水平居中的文字的方式。
+* CETRANSPARENCY
+** 系统变量: CETRANSPARENCY
+设定新对象的透明度级别。
+* CGEOCS
+** 系统变量: CGEOCS
+存储指定给图形文件的 GIS 坐标系的名称。
+* CHAMFERA
+** 系统变量: CHAMFERA
+当 CHAMMODE 设定为 0 时设置第一个倒角距离。
+* CHAMFERB
+** 系统变量: CHAMFERB
+当 CHAMMODE 设定为 0 时设置第二个倒角距离。
+* CHAMFERC
+** 系统变量: CHAMFERC
+当 CHAMMODE 设定为 1 时设置倒角长度。
+* CHAMFERD
+** 系统变量: CHAMFERD
+当 CHAMMODE 设定为 1 时设置倒角角度。
+* CHAMMODE
+** 系统变量: CHAMMODE
+设置 CHAMFER 的输入方法。
+* CIRCLERAD
+** 系统变量: CIRCLERAD
+设置默认的圆半径。
+* CLAYER
+** 系统变量: CLAYER
+设置当前图层。
+* CLAYOUT
+** 系统变量: CLAYOUT
+设置当前布局。
+* CLEANSCREENSTATE
+** 系统变量: CLEANSCREENSTATE
+指示全屏显示状态是处于打开还是处于关闭状态。
+* CLIPROMPTLINES
+** 系统变量: CLIPROMPTLINES
+当浮动命令窗口设置为仅显示提示行时，设置将显示的临时提示行的数量。
+* CLIPROMPTUPDATE
+** 系统变量: CLIPROMPTUPDATE
+控制命令行是否显示在执行 AutoLISP 或脚本文件时生成的消息和提示。
+* CLISTATE
+** 系统变量: CLISTATE
+指示命令行处于打开还是关闭状态。
+* CMATERIAL
+** 系统变量: CMATERIAL
+设置新对象的材质。
+* CMDACTIVE
+** 系统变量: CMDACTIVE
+指示处于激活状态的是普通命令、透明命令、脚本还是对话框。
+* CMDDIA
+** 系统变量: CMDDIA
+控制执行 DIMEDIT 和 QLEADER 命令时在位文字编辑器的显示，以及基于 AutoCAD 的产品中的某些对话框的显示。
+* CMDECHO
+** 系统变量: CMDECHO
+控制在 AutoLISP 命令函数运行时是否回显提示和输入。
+* CMDINPUTHISTORYMAX
+** 系统变量: CMDINPUTHISTORYMAX
+设定存储在命令提示中的先前输入值的最大数量。
+* CMDNAMES
+** 系统变量: CMDNAMES
+显示活动命令和透明命令的名称。
+* CMFADECOLOR
+** 系统变量: CMFADECOLOR
+控制所有附着的协调模型上混合的黑色量。
+* CMFADEOPACITY
+** 系统变量: CMFADEOPACITY
+通过透明度控制所有附着的协调模型的暗显程度。
+* CMLEADERSTYLE
+** 系统变量: CMLEADERSTYLE
+设置当前多重引线样式的名称。
+* CMLJUST
+** 系统变量: CMLJUST
+指定多行对正。
+* CMLSCALE
+** 系统变量: CMLSCALE
+控制多行的全局宽度。
+* CMLSTYLE
+** 系统变量: CMLSTYLE
+设置用于控制多行外观的多行样式。
+* CMOSNAP
+** 系统变量: CMOSNAP
+决定是否为附着至图形的协调模型中的几何图形激活对象捕捉。
+* COLORTHEME
+** 系统变量: COLORTHEME
+将功能区、选项板和若干其他界面元素的颜色主题设置为深色或浅色。
+* COMMANDPREVIEW
+** 系统变量: COMMANDPREVIEW
+控制是否显示命令的可能结果的预览。
+* COMPARECOLOR1
+** 系统变量: COMPARECOLOR1
+设置比较图形文件中仅在第一个图形中存在的对象的颜色。
+* COMPARECOLOR2
+** 系统变量: COMPARECOLOR2
+设置比较结果图形文件中仅在第二个图形中存在的对象的颜色。
+* COMPARECOLORCOMMON
+** 系统变量: COMPARECOLORCOMMON
+设置进行比较的两个图形中相同对象的颜色。
+* COMPAREFRONT
+** 系统变量: COMPAREFRONT
+控制比较图形中重叠对象的默认显示次序。
+* COMPAREHATCH
+** 系统变量: COMPAREHATCH
+控制是否在图形比较中包含图案填充对象。
+* COMPAREPROPS
+** 系统变量: COMPAREPROPS
+控制是否将对象特性中的更改标识为两个图形版本之间的更改。
+* COMPARERCMARGIN
+** 系统变量: COMPARERCMARGIN
+指定比较图形中更改集边界与矩形/多边形修订云线之间的偏移距离。
+* COMPARERCSHAPE
+** 系统变量: COMPARERCSHAPE
+控制比较图形中单个差异是否合并为单个较大更改集或一系列较小更改集。
+* COMPARESHOW1
+** 系统变量: COMPARESHOW1
+显示仅在第一个图形中存在的对象。
+* COMPARESHOW2
+** 系统变量: COMPARESHOW2
+显示仅在第二个图形中存在的对象。
+* COMPARESHOWCOMMON
+** 系统变量: COMPARESHOWCOMMON
+显示进行比较的两个图形中相同的对象。
+* COMPARESHOWRC
+** 系统变量: COMPARESHOWRC
+控制比较图形中差异（更改集）周围修订云线的显示。
+* COMPARETEXT
+** 系统变量: COMPARETEXT
+控制是否在图形比较中包含文字对象。
+* COMPARETOLERANCE
+** 系统变量: COMPARETOLERANCE
+指定比较两个图形文件/对象时所使用的公差 - 如果它们低于或等于指定的小数点值，则认为它们是相同的。
+* COMPASS
+** 系统变量: COMPASS
+控制三维指南针在当前视口中打开还是关闭。
+* COMPLEXLTPREVIEW
+** 系统变量: COMPLEXLTPREVIEW
+控制是否在交互式操作期间显示复杂线型的预览。
+* CONSTRAINTBARDISPLAY
+** 系统变量: CONSTRAINTBARDISPLAY
+为随后应用的几何约束控制约束栏的显示并为选定的对象控制隐藏约束的显示。
+* CONSTRAINTBARMODE
+** 系统变量: CONSTRAINTBARMODE
+控制约束栏上几何约束的显示。
+* CONSTRAINTINFER
+** 系统变量: CONSTRAINTINFER
+控制在绘制和编辑几何图形时是否推断几何约束。
+* CONSTRAINTNAMEFORMAT
+** 系统变量: CONSTRAINTNAMEFORMAT
+控制标注约束的文字格式。
+* CONSTRAINTSOLVEMODE
+** 系统变量: CONSTRAINTSOLVEMODE
+控制应用或编辑约束时的约束行为。
+* COORDS
+** 系统变量: COORDS
+控制状态栏上的光标位置是连续进行更新还是仅在特定时间更新。它也控制坐标的显示格式。
+* COPYMODE
+** 系统变量: COPYMODE
+控制是否自动重复 COPY 命令。
+* CPLOTSTYLE
+** 系统变量: CPLOTSTYLE
+控制新对象的当前打印样式。
+* CPROFILE
+** 系统变量: CPROFILE
+显示当前配置的名称。
+* CROSSINGAREACOLOR
+** 系统变量: CROSSINGAREACOLOR
+控制窗交选择时选择区域的颜色。
+* CTAB
+** 系统变量: CTAB
+确定绘图区域显示“模型”选项卡还是指定的布局选项卡。
+* CTABLESTYLE
+** 系统变量: CTABLESTYLE
+设置当前表格样式的名称。
+* CULLINGOBJ
+** 系统变量: CULLINGOBJ
+控制是否可以亮显或选择从视图中隐藏的三维子对象。
+* CULLINGOBJSELECTION
+** 系统变量: CULLINGOBJSELECTION
+控制是否可以亮显或选择从视图中隐藏的三维对象。
+* CURSORBADGE
+** 系统变量: CURSORBADGE
+确定某些光标标记是否显示在绘图区域中。
+* CURSORSIZE
+** 系统变量: CURSORSIZE
+按屏幕大小的百分比确定十字光标的大小。
+* CURSORTYPE
+** 系统变量: CURSORTYPE
+确定定点设备显示的光标。
+* CVIEWDETAILSTYLE
+** 系统变量: CVIEWDETAILSTYLE
+设置当前局部视图样式的名称。当前局部视图样式控制所创建的所有新模型文档局部视图、详图边界和引线的外观。
+* CVIEWSECTIONSTYLE
+** 系统变量: CVIEWSECTIONSTYLE
+设置当前截面视图样式的名称。当前截面视图样式控制所创建的所有新模型文档截面视图和剖切线的外观。
+* CVPORT
+** 系统变量: CVPORT
+显示当前视口的标识码。
+* DATALINKNOTIFY
+** 系统变量: DATALINKNOTIFY
+控制关于已更新数据链接或缺少数据链接的通知。
+* DATE
+** 系统变量: DATE
+以约简儒略日期格式存储当前的日期和时间。
+* DBCSTATE
+** 系统变量: DBCSTATE
+指示数据库连接管理器处于打开还是关闭状态。
+* DBLCLKEDIT
+** 系统变量: DBLCLKEDIT
+控制绘图区域中的双击编辑操作。
+* DBMOD
+** 系统变量: DBMOD
+指示图形的修改状态。
+* DCTCUST
+** 系统变量: DCTCUST
+显示当前的自定义拼写词典的路径和文件名。
+* DCTMAIN
+** 系统变量: DCTMAIN
+显示当前主拼写词典的三字母关键字。
+* DEFAULTGIZMO
+** 系统变量: DEFAULTGIZMO
+选择子对象过程中将三维移动小控件、三维旋转小控件或三维缩放小控件设定为默认小控件。
+* DEFAULTLIGHTING
+** 系统变量: DEFAULTLIGHTING
+打开或关闭代替其他光源的默认光源。
+* DEFAULTLIGHTINGTYPE
+** 系统变量: DEFAULTLIGHTINGTYPE
+指定默认光源的类型（原有类型或新的类型）。
+* DEFLPLSTYLE
+** 系统变量: DEFLPLSTYLE
+指定在打开 AutoCAD 2000 之前的版本中创建的图形时，图形中所有图层的默认打印样式；或指定在不使用图形模板从头创建新图形时，图层 0 的默认打印样式。
+* DEFPLSTYLE
+** 系统变量: DEFPLSTYLE
+指定在打开 AutoCAD 2000 之前的版本中创建的图形或不使用图形模板从头创建新图形时，图形中新对象的默认打印样式。
+* DELOBJ
+** 系统变量: DELOBJ
+控制保留还是删除用于创建其他对象的几何图形。
+* DEMANDLOAD
+** 系统变量: DEMANDLOAD
+指定是否以及何时按需加载某些应用程序。
+* DGNFRAME
+** 系统变量: DGNFRAME
+确定 DGN 参考底图边框在当前图形中是否可见或是否打印。
+* DGNIMPORTMAX
+** 系统变量: DGNIMPORTMAX
+设置输入 DGN 文件时转换的元素的最大数目。
+* DGNIMPORTMODE
+** 系统变量: DGNIMPORTMODE
+控制 DGNIMPORT 命令的默认行为。
+* DGNMAPPINGPATH
+** 系统变量: DGNMAPPINGPATH
+指定用于存储 DGN 映射设置的 dgnsetups.ini 文件的位置。
+* DGNOSNAP
+** 系统变量: DGNOSNAP
+决定是否为附着在图形中的 DGN 参考底图中的几何图形激活对象捕捉。
+* DIASTAT
+** 系统变量: DIASTAT
+存储最近使用的对话框的退出方式。
+* DIGITIZER
+** 系统变量: DIGITIZER
+标识连接到系统的数字化仪。
+* DIMADEC
+** 系统变量: DIMADEC
+控制角度标注中显示的精度小数位数。
+* DIMALT
+** 系统变量: DIMALT
+控制标注中换算单位的显示。
+* DIMALTD
+** 系统变量: DIMALTD
+控制换算单位中的小数位数。
+* DIMALTF
+** 系统变量: DIMALTF
+控制换算单位的乘数。
+* DIMALTRND
+** 系统变量: DIMALTRND
+舍入换算标注单位。
+* DIMALTTD
+** 系统变量: DIMALTTD
+设置换算标注单位中的公差值的小数位数。
+* DIMALTTZ
+** 系统变量: DIMALTTZ
+控制对公差值的消零处理。
+* DIMALTU
+** 系统变量: DIMALTU
+为所有标注子样式（角度标注除外）的换算单位设定单位格式。
+* DIMALTZ
+** 系统变量: DIMALTZ
+控制对换算单位标注值的消零处理。
+* DIMANNO
+** 系统变量: DIMANNO
+指示当前标注样式是否为注释性样式。
+* DIMAPOST
+** 系统变量: DIMAPOST
+指定用于所有标注类型（角度标注除外）的换算标注测量值的文字前缀或后缀（或两者都指定）。
+* DIMARCSYM
+** 系统变量: DIMARCSYM
+控制弧长标注中圆弧符号的显示。
+* DIMASSOC
+** 系统变量: DIMASSOC
+控制标注对象的关联性以及是否分解标注。
+* DIMASZ
+** 系统变量: DIMASZ
+控制尺寸线和引线箭头的大小。并控制基线的大小。
+* DIMATFIT
+** 系统变量: DIMATFIT
+尺寸界线内的空间不足以同时放下标注文字和箭头时，此系统变量将确定这两者的排列方式。
+* DIMAUNIT
+** 系统变量: DIMAUNIT
+为角度标注设定单位格式。
+* DIMAZIN
+** 系统变量: DIMAZIN
+针对角度标注进行消零处理。
+* DIMBLK
+** 系统变量: DIMBLK
+设置尺寸线末端显示的箭头块。
+* DIMBLK1
+** 系统变量: DIMBLK1
+为尺寸线的第一个端点设置箭头（当 DIMSAH 处于打开状态时）。
+* DIMBLK2
+** 系统变量: DIMBLK2
+为尺寸线的第二个端点设置箭头（当 DIMSAH 处于打开状态时）。
+* DIMCEN
+** 系统变量: DIMCEN
+通过 DIMCENTER、DIMDIAMETER 和 DIMRADIUS 命令控制圆或圆弧圆心标记以及中心线的绘制。
+* DIMCLRD
+** 系统变量: DIMCLRD
+为尺寸线、箭头和标注引线指定颜色。
+* DIMCLRE
+** 系统变量: DIMCLRE
+为尺寸界线、圆心标记和中心线指定颜色。
+* DIMCLRT
+** 系统变量: DIMCLRT
+为标注文字指定颜色。
+* DIMCONSTRAINTICON
+** 系统变量: DIMCONSTRAINTICON
+控制标注约束的锁定图标的显示。
+* DIMCONTINUEMODE
+** 系统变量: DIMCONTINUEMODE
+确定连续标注或基线标注的标注样式和图层是否继承自正在连续使用的标注。
+* DIMDEC
+** 系统变量: DIMDEC
+设置标注主单位中显示的小数位数。
+* DIMDLE
+** 系统变量: DIMDLE
+当使用小斜线代替箭头进行标注时，设置尺寸线超出尺寸界线的距离。
+* DIMDLI
+** 系统变量: DIMDLI
+控制基线标注中尺寸线的间距。
+* DIMDSEP
+** 系统变量: DIMDSEP
+指定创建单位格式为小数的标注时要使用的单字符小数分隔符。
+* DIMEXE
+** 系统变量: DIMEXE
+指定尺寸界线超出尺寸线的距离。
+* DIMEXO
+** 系统变量: DIMEXO
+指定尺寸界线偏离原点的距离。
+* DIMFRAC
+** 系统变量: DIMFRAC
+设置分数格式（当 DIMLUNIT 设定为 4 [建筑] 或 5 [分数] 时）。
+* DIMFXL
+** 系统变量: DIMFXL
+设置起始于尺寸线，直至标注原点的尺寸界线总长度。
+* DIMFXLON
+** 系统变量: DIMFXLON
+控制是否将尺寸界线设定为固定长度。
+* DIMGAP
+** 系统变量: DIMGAP
+设置当打断尺寸线以符合标注文字时，标注文字周围的距离。
+* DIMJOGANG
+** 系统变量: DIMJOGANG
+决定折弯半径标注中，尺寸线的横向线段的角度。
+* DIMJUST
+** 系统变量: DIMJUST
+控制标注文字的水平位置。
+* DIMLAYER
+** 系统变量: DIMLAYER
+为新的标注指定默认图层。
+* DIMLDRBLK
+** 系统变量: DIMLDRBLK
+指定引线箭头的类型。
+* DIMLFAC
+** 系统变量: DIMLFAC
+为线性标注测量值设置比例因子。
+* DIMLIM
+** 系统变量: DIMLIM
+生成标注界限作为默认文字。
+* DIMLTEX1
+** 系统变量: DIMLTEX1
+设置第一条尺寸界线的线型。
+* DIMLTEX2
+** 系统变量: DIMLTEX2
+设置第二条尺寸界线的线型。
+* DIMLTYPE
+** 系统变量: DIMLTYPE
+设置尺寸线的线型。
+* DIMLUNIT
+** 系统变量: DIMLUNIT
+为所有标注类型（角度标注除外）设置单位。
+* DIMLWD
+** 系统变量: DIMLWD
+为尺寸线指定线宽。
+* DIMLWE
+** 系统变量: DIMLWE
+为尺寸界线指定线宽。
+* DIMPICKBOX
+** 系统变量: DIMPICKBOX
+在 DIM 命令中设置对象选择目标高度（以像素为单位）。
+* DIMPOST
+** 系统变量: DIMPOST
+为标注测量值指定文字前缀或后缀（或两者）。
+* DIMRND
+** 系统变量: DIMRND
+将所有标注距离舍入为指定值。
+* DIMSAH
+** 系统变量: DIMSAH
+控制尺寸线箭头块的显示。
+* DIMSCALE
+** 系统变量: DIMSCALE
+设置应用于标注变量（用于指定尺寸、距离或偏移量）的全局比例因子。
+* DIMSD1
+** 系统变量: DIMSD1
+控制是否隐去第一条尺寸线和箭头。
+* DIMSD2
+** 系统变量: DIMSD2
+控制是否隐去第二条尺寸线和箭头。
+* DIMSE1
+** 系统变量: DIMSE1
+控制是否隐去第一条尺寸界线。
+* DIMSE2
+** 系统变量: DIMSE2
+控制是否隐去第二条尺寸界线。
+* DIMSOXD
+** 系统变量: DIMSOXD
+如果尺寸界线内没有足够的空间，则隐去箭头。
+* DIMSTYLE
+** 系统变量: DIMSTYLE
+显示图形中的标注使用的单位类型（英制/标准或 iso-25/公制）。
+* DIMTAD
+** 系统变量: DIMTAD
+控制文字相对于尺寸线的垂直位置。
+* DIMTDEC
+** 系统变量: DIMTDEC
+设置标注主单位的公差值中显示的小数位数。
+* DIMTFAC
+** 系统变量: DIMTFAC
+与通过 DIMTXT 系统变量设置一样，指定分数和公差值的文字高度相对于标注文字高度的比例因子。
+* DIMTFILL
+** 系统变量: DIMTFILL
+控制标注文字的背景。
+* DIMTFILLCLR
+** 系统变量: DIMTFILLCLR
+为标注中的文字背景设置颜色。
+* DIMTIH
+** 系统变量: DIMTIH
+控制所有标注类型（坐标标注除外）的标注文字在尺寸界线内的位置。
+* DIMTIX
+** 系统变量: DIMTIX
+在尺寸界线之间绘制文字。
+* DIMTM
+** 系统变量: DIMTM
+为标注文字设置最小（即最低）公差限制（当 DIMTOL 或 DIMLIM 设定为开时）。
+* DIMTMOVE
+** 系统变量: DIMTMOVE
+设置标注文字的移动规则。
+* DIMTOFL
+** 系统变量: DIMTOFL
+控制是否在尺寸界线之间绘制尺寸线（即使标注文字被放置在尺寸界线之外）。
+* DIMTOH
+** 系统变量: DIMTOH
+控制标注文字在尺寸界线外的位置。
+* DIMTOL
+** 系统变量: DIMTOL
+将公差附在标注文字中。
+* DIMTOLJ
+** 系统变量: DIMTOLJ
+设置公差值相对于表面标注文字的垂直对正方式。
+* DIMTP
+** 系统变量: DIMTP
+为标注文字设置最大（即最高）公差限制（当 DIMTOL 或 DIMLIM 设定为开时）。
+* DIMTSZ
+** 系统变量: DIMTSZ
+指定线性标注、半径标注以及直径标注中绘制的代替箭头的小斜线的尺寸。
+* DIMTVP
+** 系统变量: DIMTVP
+控制标注文字在尺寸线上方或下方的垂直位置。
+* DIMTXSTY
+** 系统变量: DIMTXSTY
+指定标注的文字样式。
+* DIMTXT
+** 系统变量: DIMTXT
+指定标注文字的高度（除非当前文字样式具有固定的高度）。
+* DIMTXTDIRECTION
+** 系统变量: DIMTXTDIRECTION
+指定标注文字的阅读方向。
+* DIMTXTRULER
+** 系统变量: DIMTXTRULER
+在编辑标注文字时，控制标尺的显示。
+* DIMTZIN
+** 系统变量: DIMTZIN
+控制对公差值的消零处理。
+* DIMUPT
+** 系统变量: DIMUPT
+控制用户定位文字的选项。
+* DIMZIN
+** 系统变量: DIMZIN
+控制针对主单位值的消零处理。
+* DISPSILH
+** 系统变量: DISPSILH
+控制三维实体对象和曲面对象轮廓边在线框或二维线框视觉样式中的显示。
+* DISTANCE
+** 系统变量: DISTANCE
+存储 DIST 命令计算出的距离。
+* DIVMESHBOXHEIGHT
+** 系统变量: DIVMESHBOXHEIGHT
+为网格长方体沿 Z 轴的高度设置细分数目。
+* DIVMESHBOXLENGTH
+** 系统变量: DIVMESHBOXLENGTH
+为网格长方体沿 X 轴的长度设置细分数目。
+* DIVMESHBOXWIDTH
+** 系统变量: DIVMESHBOXWIDTH
+为网格长方体沿 Y 轴的宽度设置细分数目。
+* DIVMESHCONEAXIS
+** 系统变量: DIVMESHCONEAXIS
+设置绕网格圆锥体底面周长的细分数目。
+* DIVMESHCONEBASE
+** 系统变量: DIVMESHCONEBASE
+设置网格圆锥体底面周长与圆心之间的细分数目。
+* DIVMESHCONEHEIGHT
+** 系统变量: DIVMESHCONEHEIGHT
+设置网格圆锥体底面与顶点之间的细分数目。
+* DIVMESHCYLAXIS
+** 系统变量: DIVMESHCYLAXIS
+设置绕网格圆柱体底面周长的细分数目。
+* DIVMESHCYLBASE
+** 系统变量: DIVMESHCYLBASE
+设置从网格圆柱体底面圆心到其周长的半径细分数目。
+* DIVMESHCYLHEIGHT
+** 系统变量: DIVMESHCYLHEIGHT
+设置网格圆柱体的底面与顶面之间的细分数目。
+* DIVMESHPYRBASE
+** 系统变量: DIVMESHPYRBASE
+设置网格棱锥体底面圆心与其周长之间的半径细分数目。
+* DIVMESHPYRHEIGHT
+** 系统变量: DIVMESHPYRHEIGHT
+设置网格棱锥体的底面与顶面之间的细分数目。
+* DIVMESHSPHEREAXIS
+** 系统变量: DIVMESHSPHEREAXIS
+设置绕网格球体轴端点的半径细分数目。
+* DIVMESHSPHEREHEIGHT
+** 系统变量: DIVMESHSPHEREHEIGHT
+设置网格球体两个轴端点之间的细分数目。
+* DIVMESHTORUSPATH
+** 系统变量: DIVMESHTORUSPATH
+设置由网格圆环体轮廓扫掠的路径的细分数目。
+* DIVMESHTORUSSECTION
+** 系统变量: DIVMESHTORUSSECTION
+设置扫掠网格圆环体路径的轮廓中的细分数目。
+* DIVMESHWEDGEBASE
+** 系统变量: DIVMESHWEDGEBASE
+设置网格楔体的周长中点与三角形标注之间的细分数目。
+* DIVMESHWEDGEHEIGHT
+** 系统变量: DIVMESHWEDGEHEIGHT
+为网格楔体沿 Z 轴的高度设置细分数目。
+* DIVMESHWEDGELENGTH
+** 系统变量: DIVMESHWEDGELENGTH
+设置网格楔体沿 X 轴的长度细分数目。
+* DIVMESHWEDGESLOPE
+** 系统变量: DIVMESHWEDGESLOPE
+设置从楔体顶点到底面的边之间斜度的细分数目。
+* DIVMESHWEDGEWIDTH
+** 系统变量: DIVMESHWEDGEWIDTH
+设置网格楔体沿 Y 轴的宽度细分数目。
+* DONUTID
+** 系统变量: DONUTID
+设置圆环的默认内径。
+* DONUTOD
+** 系统变量: DONUTOD
+设置圆环的默认外径。
+* DRAGMODE
+** 系统变量: DRAGMODE
+控制进行拖动的对象的显示方式。
+* DRAGP1
+** 系统变量: DRAGP1
+当使用硬件加速时，控制在系统从鼠标检查新输入样例之前，当用户拖动二维视口中的对象时，系统将绘制多少矢量。
+* DRAGP2
+** 系统变量: DRAGP2
+当使用软件加速时，控制在系统从鼠标检查新输入样例之前，当用户拖动二维视口中的对象时，系统将绘制多少矢量。
+* DRAGVS
+** 系统变量: DRAGVS
+设置在创建三维实体、网格图元以及拉伸实体、曲面和网格时显示的视觉样式。
+* DRAWORDERCTL
+** 系统变量: DRAWORDERCTL
+控制创建或编辑重叠对象时这些对象的默认显示行为。
+* DRSTATE
+** 系统变量: DRSTATE
+指示“图形修复管理器”窗口处于打开还是关闭状态。
+* DTEXTED
+** 系统变量: DTEXTED
+指定编辑单行文字时显示的用户界面。
+* DWFFRAME
+** 系统变量: DWFFRAME
+决定 DWF 或 DWFx 参考底图边框在当前图形中是否可见或是否打印。
+* DWFOSNAP
+** 系统变量: DWFOSNAP
+决定是否为附加到图形的 DWF 或 DWFx 参考底图中的几何图形激活对象捕捉。
+* DWGCHECK
+** 系统变量: DWGCHECK
+打开图形时检查图形中是否存在潜在问题。
+* DWGCODEPAGE
+** 系统变量: DWGCODEPAGE
+与 SYSCODEPAGE 系统变量存储相同的值（由于兼容性原因）。
+* DWGNAME
+** 系统变量: DWGNAME
+存储当前图形的名称。
+* DWGPREFIX
+** 系统变量: DWGPREFIX
+存储当前图形的驱动器和文件夹路径。
+* DWGTITLED
+** 系统变量: DWGTITLED
+指示当前图形是否已命名。
+* DXEVAL
+** 系统变量: DXEVAL
+控制数据提取处理表何时与数据源相比较，如果数据不是当前数据，则显示更新通知。
+* DYNCONSTRAINTMODE
+** 系统变量: DYNCONSTRAINTMODE
+选定受约束的对象时显示隐藏的标注约束。
+* DYNDIGRIP
+** 系统变量: DYNDIGRIP
+控制在夹点拉伸编辑期间显示哪些动态标注。
+* DYNDIVIS
+** 系统变量: DYNDIVIS
+控制在夹点拉伸编辑期间显示的动态标注数量。
+* DYNINFOTIPS
+** 系统变量: DYNINFOTIPS
+控制在使用夹点进行编辑时是否显示使用 Shift 键和 Ctrl 键的提示。
+* DYNMODE
+** 系统变量: DYNMODE
+打开或关闭动态输入功能。
+* DYNPICOORDS
+** 系统变量: DYNPICOORDS
+控制指针输入是使用相对坐标格式，还是使用绝对坐标格式。
+* DYNPIFORMAT
+** 系统变量: DYNPIFORMAT
+控制指针输入是使用极轴坐标格式，还是使用笛卡尔坐标格式。
+* DYNPIVIS
+** 系统变量: DYNPIVIS
+控制何时显示指针输入。
+* DYNPROMPT
+** 系统变量: DYNPROMPT
+控制“动态输入”工具提示中提示的显示。
+* DYNTOOLTIPS
+** 系统变量: DYNTOOLTIPS
+控制受工具提示外观设置影响的工具提示。
+* EDGEMODE
+** 系统变量: EDGEMODE
+控制 TRIM 和 EXTEND 命令确定边界的边和剪切边的方式。
+* ELEVATION
+** 系统变量: ELEVATION
+存储新对象相对于当前 UCS 的当前标高。
+* ENTERPRISEMENU
+** 系统变量: ENTERPRISEMENU
+存储企业自定义文件名（如果已定义），其中包括文件名的路径。
+* ERHIGHLIGHT
+** 系统变量: ERHIGHLIGHT
+控制在“外部参照”选项板或图形窗口中选择参照的对应内容时，是亮显参照名还是参照对象。
+* ERRNO
+** 系统变量: ERRNO
+AutoLISP 函数调用导致 AutoCAD 检测到错误时，显示相应的错误代码的编号。
+* ERSTATE
+** 系统变量: ERSTATE
+指示“外部参照”选项板处于打开还是关闭状态。
+* EXPERT
+** 系统变量: EXPERT
+控制是否显示某些特定提示。
+* EXPLMODE
+** 系统变量: EXPLMODE
+控制 EXPLODE 命令是否支持按非统一比例缩放(NUS) 的块。
+* EXPORTMODELSPACE
+** 系统变量: EXPORTMODELSPACE
+指定要将图形中的哪些内容从模型空间中输出为 DWF、DWFx 或 PDF 文件
+* EXPORTPAGESETUP
+** 系统变量: EXPORTPAGESETUP
+指定是否按照当前页面设置输出为 DWF、DWFx 或 PDF 文件。
+* EXPORTPAPERSPACE
+** 系统变量: EXPORTPAPERSPACE
+指定要将图形中的哪些内容从图纸空间中输出为 DWF、DWFx 或 PDF 文件。
+* EXPVALUE
+** 系统变量: EXPVALUE
+指定渲染期间要应用的曝光值。
+* EXPWHITEBALANCE
+** 系统变量: EXPWHITEBALANCE
+指定渲染期间要应用的开尔文颜色温度（白平衡）。
+* EXTMAX
+** 系统变量: EXTMAX
+存储图形范围右上角点的值。
+* EXTMIN
+** 系统变量: EXTMIN
+存储图形范围左下角点的值。
+* EXTNAMES
+** 系统变量: EXTNAMES
+控制圖塊、標註型式、圖層以及其他具名物件的名稱所接受的字元。
+* FACETERDEVNORMAL
+** 系统变量: FACETERDEVNORMAL
+设置曲面法线与相邻网格面之间的最大角度。
+* FACETERDEVSURFACE
+** 系统变量: FACETERDEVSURFACE
+设置经转换的网格对象与实体或曲面的原始形状的相近程度。
+* FACETERGRIDRATIO
+** 系统变量: FACETERGRIDRATIO
+为转换为网格的实体和曲面而创建的网格细分设置最大宽高比。
+* FACETERMAXEDGELENGTH
+** 系统变量: FACETERMAXEDGELENGTH
+为通过从实体和曲面转换创建的网格对象设置边的最大长度。
+* FACETERMAXGRID
+** 系统变量: FACETERMAXGRID
+设置内部参数，它会在使用 MESHSMOOTH 命令将对象转换为网格对象时，影响 U 和 V 栅格线的最大数量。
+* FACETERMESHTYPE
+** 系统变量: FACETERMESHTYPE
+设置要创建的网格类型。
+* FACETERMINUGRID
+** 系统变量: FACETERMINUGRID
+设置内部参数，它会在使用 MESHSMOOTH 命令将对象转换为网格对象时，影响 U 栅格线的最小数量。
+* FACETERMINVGRID
+** 系统变量: FACETERMINVGRID
+设置内部参数，它会在使用 MESHSMOOTH 命令将对象转换为网格对象时，影响 V 栅格线的最小数量。
+* FACETERPRIMITIVEMODE
+** 系统变量: FACETERPRIMITIVEMODE
+指定转换为网格的对象的平滑度设置是来自“网格镶嵌选项”对话框还是来自“网格图元选项”对话框。
+* FACETERSMOOTHLEV
+** 系统变量: FACETERSMOOTHLEV
+设置转换为网格的对象的默认平滑度。
+* FACETRATIO
+** 系统变量: FACETRATIO
+控制圆柱和圆锥实体镶嵌面的宽高比。
+* FACETRES
+** 系统变量: FACETRES
+调整着色和渲染对象、渲染阴影以及删除了隐藏线的对象的平滑度。
+* FIELDDISPLAY
+** 系统变量: FIELDDISPLAY
+控制字段显示时是否带有灰色背景。
+* FIELDEVAL
+** 系统变量: FIELDEVAL
+控制字段的更新方式。
+* FILEDIA
+** 系统变量: FILEDIA
+不显示文件导航对话框。
+* FILETABPREVIEW
+** 系统变量: FILETABPREVIEW
+控制将光标悬停在图形文件选项卡上方时的预览类型。
+* FILETABSTATE
+** 系统变量: FILETABSTATE
+指示位于绘图区域顶部的文件选项卡的显示状态。
+* FILETABTHUMBHOVER
+** 系统变量: FILETABTHUMBHOVER
+指定当您将光标悬停在文件选项卡缩略图上时，是否在图形窗口中加载相应的模型或布局。
+* FILLETPOLYARC
+** 系统变量: FILLETPOLYARC
+确定多段线（包括当前圆弧或旧圆弧）的圆角行为。
+* FILLETRAD
+** 系统变量: FILLETRAD
+存储二维对象的当前圆角半径。
+* FILLETRAD3D
+** 系统变量: FILLETRAD3D
+存储三维对象的当前圆角半径。
+* FILLMODE
+** 系统变量: FILLMODE
+指定是否填充图案填充、二维实体以及宽多段线。
+* FONTALT
+** 系统变量: FONTALT
+指定找不到指定的字体文件时要使用的替换字体。
+* FONTMAP
+** 系统变量: FONTMAP
+指定要用于替换字体的字体映射文件。
+* FRAME
+** 系统变量: FRAME
+控制所有图像、贴图图像、参考底图、剪裁外部参照和区域覆盖对象的边框的显示。
+* FRAMESELECTION
+** 系统变量: FRAMESELECTION
+控制是否可以选择图像、参考底图、剪裁外部参照或区域覆盖的隐藏边框。
+* FRONTZ
+** 系统变量: FRONTZ
+以图形单位存储当前视口前向剪裁平面到目标平面的偏移。
+* FULLOPEN
+** 系统变量: FULLOPEN
+指示当前图形是否局部打开。
+* FULLPLOTPATH
+** 系统变量: FULLPLOTPATH
+控制是否将图形文件的完整路径发送到后台打印。
+* GALLERYVIEW
+** 系统变量: GALLERYVIEW
+控制功能区下拉库中的预览类型。
+* GEOLATLONGFORMAT
+** 系统变量: GEOLATLONGFORMAT
+控制“地理位置”对话框和状态栏中纬度值和经度值的格式。
+* GEOLOCATEMODE
+** 系统变量: GEOLOCATEMODE
+指示位置追踪是处于打开状态还是关闭状态。
+* GEOMAPMODE
+** 系统变量: GEOMAPMODE
+控制用于当前视口中的联机地图的样式。
+* GEOMARKERVISIBILITY
+** 系统变量: GEOMARKERVISIBILITY
+控制地理标记的可见性。
+* GEOMARKPOSITIONSIZE
+** 系统变量: GEOMARKPOSITIONSIZE
+指定在创建位置标记时，用于点对象和多行文字对象的比例因子。
+* GFANG
+** 系统变量: GFANG
+指定渐变填充的角度。
+* GFCLR1
+** 系统变量: GFCLR1
+指定单色渐变填充的颜色或双色渐变填充的第一种颜色。
+* GFCLR2
+** 系统变量: GFCLR2
+指定双色渐变填充的第二种颜色。
+* GFCLRLUM
+** 系统变量: GFCLRLUM
+控制单色渐变填充中的明级别或暗级别。
+* GFCLRSTATE
+** 系统变量: GFCLRSTATE
+指定渐变填充是使用单色还是双色。
+* GFNAME
+** 系统变量: GFNAME
+指定渐变填充的图案。
+* GFSHIFT
+** 系统变量: GFSHIFT
+指定渐变填充中的图案是居中还是向上和向左移动。
+* GLOBALOPACITY
+** 系统变量: GLOBALOPACITY
+控制所有选项板的透明度级别。
+* GRIDDISPLAY
+** 系统变量: GRIDDISPLAY
+控制栅格的显示行为和显示界限。
+* GRIDMAJOR
+** 系统变量: GRIDMAJOR
+控制主栅格线与次栅格线相比较的频率。
+* GRIDMODE
+** 系统变量: GRIDMODE
+指定栅格处于打开状态还是关闭状态。
+* GRIDSTYLE
+** 系统变量: GRIDSTYLE
+控制是将栅格显示为点还是线。
+* GRIDUNIT
+** 系统变量: GRIDUNIT
+指定当前视口的栅格间距（X 和 Y 方向）。
+* GRIPBLOCK
+** 系统变量: GRIPBLOCK
+控制块中夹点的显示。
+* GRIPCOLOR
+** 系统变量: GRIPCOLOR
+控制未选定夹点的颜色。
+* GRIPCONTOUR
+** 系统变量: GRIPCONTOUR
+控制夹点轮廓的颜色。
+* GRIPDYNCOLOR
+** 系统变量: GRIPDYNCOLOR
+控制动态块的自定义夹点的颜色。
+* GRIPHOT
+** 系统变量: GRIPHOT
+控制选定夹点的颜色。
+* GRIPHOVER
+** 系统变量: GRIPHOVER
+控制光标暂停在未选定夹点上时该夹点的填充颜色。
+* GRIPMULTIFUNCTIONAL
+** 系统变量: GRIPMULTIFUNCTIONAL
+指定多功能夹点选项的访问方法。
+* GRIPOBJLIMIT
+** 系统变量: GRIPOBJLIMIT
+选择集包括的对象多于指定数量时，不显示夹点。
+* GRIPS
+** 系统变量: GRIPS
+控制夹点在选定对象上的显示。
+* GRIPSIZE
+** 系统变量: GRIPSIZE
+设置夹点框的尺寸（以设备独立像素为单位）。
+* GRIPSUBOBJMODE
+** 系统变量: GRIPSUBOBJMODE
+控制在选定子对象时是否自动使夹点成为活动夹点。
+* GRIPTIPS
+** 系统变量: GRIPTIPS
+控制当光标悬停在支持夹点提示的动态块和自定义对象的夹点上时，夹点提示的显示。
+* GROUPDISPLAYMODE
+** 系统变量: GROUPDISPLAYMODE
+控制在组选择打开并且选定组中的对象时如何显示夹点。
+* GTAUTO
+** 系统变量: GTAUTO
+控制在具有三维视觉样式的视口中启动命令之前选择对象时，是否自动显示三维小控件。
+* GTDEFAULT
+** 系统变量: GTDEFAULT
+控制在具有三维视觉样式的视口中启动 MOVE、ROTATE 或 SCALE 命令时，是自动启动三维移动操作、三维旋转操作还是三维缩放操作。
+* GTLOCATION
+** 系统变量: GTLOCATION
+控制在具有三维视觉样式的视口中启动命令之前选择对象时，三维移动小控件、三维旋转小控件或三维缩放小控件的初始位置。
+* HALOGAP
+** 系统变量: HALOGAP
+指定一个对象被另一个对象遮挡时显示的间隙。
+* HANDLES
+** 系统变量: HANDLES
+报告应用程序是否可以访问对象句柄。
+* HELPPREFIX
+** 系统变量: HELPPREFIX
+设定帮助系统的文件路径。
+* HIDETEXT
+** 系统变量: HIDETEXT
+指定执行 HIDE 命令时是否处理由 TEXT 或 MTEXT 命令创建的文字对象。
+* HIGHLIGHT
+** 系统变量: HIGHLIGHT
+控制对象的亮显；不影响使用夹点选定的对象。
+* HIGHLIGHTSMOOTHING
+** 系统变量: HIGHLIGHTSMOOTHING
+控制对象亮显的反走样效果。
+* HPANG
+** 系统变量: HPANG
+在此会话中设置新填充图案的默认角度。
+* HPANNOTATIVE
+** 系统变量: HPANNOTATIVE
+控制新填充图案在此会话中是否为注释性。
+* HPASSOC
+** 系统变量: HPASSOC
+控制图案填充和填充是否为注释性。
+* HPBACKGROUNDCOLOR
+** 系统变量: HPBACKGROUNDCOLOR
+为当前图形中的新填充图案设置默认背景颜色。
+* HPBOUND
+** 系统变量: HPBOUND
+控制此会话中由 HATCH 和 BOUNDARY 创建的对象类型。
+* HPBOUNDRETAIN
+** 系统变量: HPBOUNDRETAIN
+控制是否在此会话中为新图案填充和填充创建边界对象。
+* HPCOLOR
+** 系统变量: HPCOLOR
+设置当前图形中新图案填充的默认颜色。
+* HPDLGMODE
+** 系统变量: HPDLGMODE
+控制“图案填充和渐变色”对话框以及“图案填充编辑”对话框的显示。
+* HPDOUBLE
+** 系统变量: HPDOUBLE
+控制此会话中是否为用户定义的图案翻倍填充图案。
+* HPDRAWORDER
+** 系统变量: HPDRAWORDER
+控制此会话中新图案填充和填充的默认绘制顺序。
+* HPGAPTOL
+** 系统变量: HPGAPTOL
+指定一组对象（几乎封闭一个仍视为闭合的图案填充边界的区域）之间的最大间隙。
+* HPINHERIT
+** 系统变量: HPINHERIT
+控制在当前图形中使用 HATCH 和 HATCHEDIT 中的“继承特性”选项时是否继承图案填充原点。
+* HPISLANDDETECTION
+** 系统变量: HPISLANDDETECTION
+在此会话中控制如何处理新图案填充边界中的孤岛。
+* HPISLANDDETECTIONMODE
+** 系统变量: HPISLANDDETECTIONMODE
+控制是否在此会话中检测新图案填充和填充内的孤岛。
+* HPLAYER
+** 系统变量: HPLAYER
+指定当前图形中新图案填充和填充的默认图层。
+* HPLINETYPE
+** 系统变量: HPLINETYPE
+控制非连续性线型在填充图案中的显示方式。
+* HPMAXAREAS
+** 系统变量: HPMAXAREAS
+设置单个图案填充对象可以拥有的、仍然可以在缩放操作过程中自动切换实体和图案填充的封闭区域的最大数量。
+* HPMAXLINES
+** 系统变量: HPMAXLINES
+设置在图案填充操作中生成的图案填充线的最大数目。
+* HPNAME
+** 系统变量: HPNAME
+在此会话中设置默认的填充图案名称。
+* HPOBJWARNING
+** 系统变量: HPOBJWARNING
+设定可以选择的图案填充边界对象的数量（超过此数量将显示警告消息）。
+* HPORIGIN
+** 系统变量: HPORIGIN
+在当前图形中相对于当前用户坐标系为新填充图案设置图案填充原点。
+* HPORIGINMODE
+** 系统变量: HPORIGINMODE
+控制默认图案填充原点的确定方式。
+* HPPICKMODE
+** 系统变量: HPPICKMODE
+控制用于指定图案填充区域的默认方法是在封闭位置中单击，还是选择边界对象。
+* HPQUICKPREVIEW
+** 系统变量: HPQUICKPREVIEW
+控制在指定填充区域时是否显示填充图案的预览。
+* HPQUICKPREVTIMEOUT
+** 系统变量: HPQUICKPREVTIMEOUT
+设置预览在自动取消之前生成填充图案预览的最长时间。
+* HPSCALE
+** 系统变量: HPSCALE
+在此会话中设置新填充图案的默认缩放因子。
+* HPSEPARATE
+** 系统变量: HPSEPARATE
+控制在几个闭合边界上进行操作时，是创建单个图案填充对象，还是创建独立的图案填充对象。
+* HPSPACE
+** 系统变量: HPSPACE
+在此会话中为用户定义的新填充图案设置默认行距。
+* HPTRANSPARENCY
+** 系统变量: HPTRANSPARENCY
+为当前图形中的新图案填充和填充设置默认透明度。
+* HYPERLINKBASE
+** 系统变量: HYPERLINKBASE
+指定图形中用于所有相对超链接的路径。
+* IBLENVIRONMENT
+** 系统变量: IBLENVIRONMENT
+启用基于图像的照明并指定当前图像贴图。
+* IMAGEFRAME
+** 系统变量: IMAGEFRAME
+控制是否显示和打印图像和贴图图像边框。
+* IMAGEHLT
+** 系统变量: IMAGEHLT
+控制是亮显整个光栅图像还是仅亮显光栅图像边框。
+* IMPLIEDFACE
+** 系统变量: IMPLIEDFACE
+控制隐含面的检测。
+* INDEXCTL
+** 系统变量: INDEXCTL
+控制是否创建图层和空间索引并将其保存到图形文件中。
+* INETLOCATION
+** 系统变量: INETLOCATION
+存储 BROWSER 命令和“浏览 Web”对话框所使用的 Internet 网址。
+* INPUTHISTORYMODE
+** 系统变量: INPUTHISTORYMODE
+控制用户输入历史记录的内容和位置。
+* INPUTSEARCHDELAY
+** 系统变量: INPUTSEARCHDELAY
+设置显示命令行建议列表之前要延迟的毫秒数。
+* INSBASE
+** 系统变量: INSBASE
+存储 BASE 命令设置的插入基点，用当前空间的 UCS 坐标表示。
+* INSNAME
+** 系统变量: INSNAME
+为 INSERT 命令设置默认块名。
+* INSUNITS
+** 系统变量: INSUNITS
+指定插入或附着到图形时，块、图像或外部参照进行自动缩放所使用的图形单位值。
+* INSUNITSDEFSOURCE
+** 系统变量: INSUNITSDEFSOURCE
+当 INSUNITS 设定为 0 时，设置源内容单位值。
+* INSUNITSDEFTARGET
+** 系统变量: INSUNITSDEFTARGET
+当 INSUNITS 设定为 0 时，设置目标图形单位值。
+* INTELLIGENTUPDATE
+** 系统变量: INTELLIGENTUPDATE
+控制图形的刷新率。
+* INTERFERECOLOR
+** 系统变量: INTERFERECOLOR
+为干涉对象设置颜色。
+* INTERFEREOBJVS
+** 系统变量: INTERFEREOBJVS
+为干涉对象设置视觉样式。
+* INTERFEREVPVS
+** 系统变量: INTERFEREVPVS
+指定检查干涉时视口的视觉样式。
+* INTERSECTIONCOLOR
+** 系统变量: INTERSECTIONCOLOR
+控制视觉样式设定为“二维线框”时三维曲面交线处的多段线的颜色。
+* INTERSECTIONDISPLAY
+** 系统变量: INTERSECTIONDISPLAY
+用于控制当视觉样式设置为“二维线框”以及执行 HIDE 时三维实体和曲面相交处的显示。
+* ISAVEBAK
+** 系统变量: ISAVEBAK
+提高增量保存的速度，特别是对于大型图形。
+* ISAVEPERCENT
+** 系统变量: ISAVEPERCENT
+控制在 DWG 文件中分配的用于增量保存的空间量，这会影响在要求完全保之前可以执行的快速保存操作数。
+* ISOLINES
+** 系统变量: ISOLINES
+指定显示在三维实体的曲面上的等高线数量。
+* LARGEOBJECTSUPPORT
+** 系统变量: LARGEOBJECTSUPPORT
+控制打开和保存图形时大型对象的大小限制。
+* LASTANGLE
+** 系统变量: LASTANGLE
+存储相对于当前 UCS 的 XY 平面输入的最后一个圆弧、直线或多段线的端点切向的角度。
+* LASTPOINT
+** 系统变量: LASTPOINT
+存储指定的最后一点，用当前空间的 UCS 坐标表示。
+* LASTPROMPT
+** 系统变量: LASTPROMPT
+存储回显到命令提示的上一个字符串。
+* LATITUDE
+** 系统变量: LATITUDE
+指定地理标记的纬度。
+* LAYERDLGMODE
+** 系统变量: LAYERDLGMODE
+控制打开传统还是当前图层特性管理器。
+* LAYEREVAL
+** 系统变量: LAYEREVAL
+指定将新图层添加至图形或附着的外部参照时是否计算新图层的图层列表。
+* LAYEREVALCTL
+** 系统变量: LAYEREVALCTL
+控制图层特性管理器中针对新图层计算的“未协调的新图层”过滤器列表。
+* LAYERFILTERALERT
+** 系统变量: LAYERFILTERALERT
+删除多余的图层过滤器可提高性能。
+* LAYERMANAGERSTATE
+** 系统变量: LAYERMANAGERSTATE
+指示图层特性管理器处于打开状态还是关闭状态。
+* LAYERNOTIFY
+** 系统变量: LAYERNOTIFY
+指定如果找到未协调的新图层，何时显示警告。
+* LAYEROVERRIDEHIGHLIGHT
+** 系统变量: LAYEROVERRIDEHIGHLIGHT
+针对具有替代的图层切换背景色亮显的可见性。
+* LAYLOCKFADECTL
+** 系统变量: LAYLOCKFADECTL
+控制锁定图层上对象的淡入程度。
+* LAYOUTCREATEVIEWPORT
+** 系统变量: LAYOUTCREATEVIEWPORT
+控制是否在添加到图形的每个新布局中自动创建视口。
+* LAYOUTREGENCTL
+** 系统变量: LAYOUTREGENCTL
+指定“模型”选项卡和布局选项卡中的显示列表的更新方式。
+* LAYOUTTAB
+** 系统变量: LAYOUTTAB
+切换“模型”和“布局”选项卡的可见性。
+* LEGACYCODESEARCH
+** 系统变量: LEGACYCODESEARCH
+控制搜索可执行文件是否包括启动程序所在的文件夹。
+* LEGACYCTRLPICK
+** 系统变量: LEGACYCTRLPICK
+指定用于循环选择和子对象选择的 Ctrl 键的行为。
+* LENSLENGTH
+** 系统变量: LENSLENGTH
+存储透视视图中使用的焦距（以毫米为单位）。
+* LIGHTGLYPHDISPLAY
+** 系统变量: LIGHTGLYPHDISPLAY
+打开和关闭光线轮廓的显示。
+* LIGHTINGUNITS
+** 系统变量: LIGHTINGUNITS
+指定图形的光源单位。
+* LIGHTLISTSTATE
+** 系统变量: LIGHTLISTSTATE
+指示“模型中的光源”选项板处于打开还是关闭状态。
+* LIGHTSINBLOCKS
+** 系统变量: LIGHTSINBLOCKS
+控制渲染时是否使用块中包含的光源。
+* LIMCHECK
+** 系统变量: LIMCHECK
+控制是否可以在栅格界限外创建对象。
+* LIMMAX
+** 系统变量: LIMMAX
+存储当前空间的右上方栅格界限，用世界坐标系坐标表示。
+* LIMMIN
+** 系统变量: LIMMIN
+存储当前空间的左下角的栅格界限，用世界坐标系坐标表示。
+* LINEFADING
+** 系统变量: LINEFADING
+控制当硬件加速处于启用状态且您已超出线密度限制时，是否淡入线显示。
+* LINEFADINGLEVEL
+** 系统变量: LINEFADINGLEVEL
+启用硬件加速后，控制线淡入效果的强度。
+* LINESMOOTHING
+** 系统变量: LINESMOOTHING
+控制是否将反走样应用于二维线框视觉样式中的二维对象。
+* LOCALE
+** 系统变量: LOCALE
+显示用于指示当前区域的代码。
+* LOCALROOTPREFIX
+** 系统变量: LOCALROOTPREFIX
+存储根文件夹的完整路径，该文件夹中安装了本地可自定义文件。
+* LOCKUI
+** 系统变量: LOCKUI
+锁定工具栏、面板及可固定窗口（例如“设计中心”和“特性”选项板）的位置和大小。
+* LOFTANG1
+** 系统变量: LOFTANG1
+设置在放样操作中通过第一个横截面的拔模斜度。
+* LOFTANG2
+** 系统变量: LOFTANG2
+设置在放样操作中通过最后一个横截面的拔模斜度。
+* LOFTMAG1
+** 系统变量: LOFTMAG1
+设置在放样操作中通过第一个横截面的拔模斜度的幅值。
+* LOFTMAG2
+** 系统变量: LOFTMAG2
+设置在放样操作中通过最后一个横截面的拔模斜度的幅值。
+* LOFTNORMALS
+** 系统变量: LOFTNORMALS
+控制放样对象通过横截面处的法线。
+* LOFTPARAM
+** 系统变量: LOFTPARAM
+控制放样实体和曲面的形状。
+* LOGFILEMODE
+** 系统变量: LOGFILEMODE
+指定是否将命令历史记录的内容写入日志文件。
+* LOGFILENAME
+** 系统变量: LOGFILENAME
+指定当前图形的命令历史记录日志文件的路径和名称。
+* LOGFILEPATH
+** 系统变量: LOGFILEPATH
+指定任务中所有图形的命令历史记录日志文件的路径。
+* LOGINNAME
+** 系统变量: LOGINNAME
+显示当前用户的登录名，并随 DWG 文件和相关文件的文件特性统计信息一起保存。
+* LONGITUDE
+** 系统变量: LONGITUDE
+指定地理标记的经度。
+* LTGAPSELECTION
+** 系统变量: LTGAPSELECTION
+控制是否可以在使用非连续性线型定义的对象上选择或捕捉到间隙。
+* LTSCALE
+** 系统变量: LTSCALE
+设定全局线型比例因子。
+* LUNITS
+** 系统变量: LUNITS
+设置用于创建对象的线性单位格式。
+* LUPREC
+** 系统变量: LUPREC
+设定线性单位和坐标的显示精度。
+* LWDEFAULT
+** 系统变量: LWDEFAULT
+设置默认线宽值。
+* LWDISPLAY
+** 系统变量: LWDISPLAY
+控制是否显示对象的线宽。
+* LWUNITS
+** 系统变量: LWUNITS
+控制线宽单位是以英寸显示还是以毫米显示。
+* MATBROWSERSTATE
+** 系统变量: MATBROWSERSTATE
+指示材质浏览器是处于打开还是关闭状态。
+* 系统变量Z
+** 该索引下有以下变量：
+ZOOMFACTOR
+ZOOMWHEEL
+请输入变量全称获取变量用途。
+* 系统变量X
+** 该索引下有以下变量：
+XCLIPFRAME
+XDWGFADECTL
+XEDIT
+XFADECTL
+XLOADCTL
+XLOADPATH
+XREFCTL
+XREFLAYER
+XREFNOTIFY
+XREFOVERRIDE
+XREFREGAPPCTL
+XREFTYPE
+请输入变量全称获取变量用途。
+* 系统变量W
+** 该索引下有以下变量：
+WHIPARC
+WHIPTHREAD
+WINDOWAREACOLOR
+WIPEOUTFRAME
+WMFBKGND
+WMFFOREGND
+WORKINGFOLDER
+WORKSPACELABEL
+WORLDUCS
+WORLDVIEW
+WRITESTAT
+WSAUTOSAVE
+WSCURRENT
+请输入变量全称获取变量用途。
+* 系统变量V
+** 该索引下有以下变量：
+VIEWBACKSTATUS
+VIEWCTR
+VIEWDIR
+VIEWFWDSTATUS
+VIEWMODE
+VIEWSIZE
+VIEWSKETCHMODE
+VIEWTWIST
+VIEWUPDATEAUTO
+VISRETAIN
+VISRETAINMODE
+VPCONTROL
+VPLAYEROVERRIDES
+VPLAYEROVERRIDESMODE
+VPMAXIMIZEDSTATE
+VPROTATEASSOC
+VSACURVATUREHIGH
+VSACURVATURELOW
+VSACURVATURETYPE
+VSADRAFTANGLEHIGH
+VSADRAFTANGLELOW
+VSAZEBRACOLOR1
+VSAZEBRACOLOR2
+VSAZEBRADIRECTION
+VSAZEBRASIZE
+VSAZEBRATYPE
+VSBACKGROUNDS
+VSEDGECOLOR
+VSEDGEJITTER
+VSEDGELEX
+VSEDGEOVERHANG
+VSEDGES
+VSEDGESMOOTH
+VSFACECOLORMODE
+VSFACEHIGHLIGHT
+VSFACEOPACITY
+VSFACESTYLE
+VSHALOGAP
+VSHIDEPRECISION
+VSINTERSECTIONCOLOR
+VSINTERSECTIONEDGES
+VSINTERSECTIONLTYPE
+VSISOONTOP
+VSLIGHTINGQUALITY
+VSMATERIALMODE
+VSMAX
+VSMIN
+VSMONOCOLOR
+VSOBSCUREDCOLOR
+VSOBSCUREDEDGES
+VSOBSCUREDLTYPE
+VSOCCLUDEDCOLOR
+VSOCCLUDEDEDGES
+VSOCCLUDEDLTYPE
+VSSHADOWS
+VSSILHEDGES
+VSSILHWIDTH
+VSSTATE
+VTDURATION
+VTENABLE
+VTFPS
+请输入变量全称获取变量用途。
+* 系统变量U
+** 该索引下有以下变量：
+UCS2DDISPLAYSETTING
+UCS3DPARADISPLAYSETTING
+UCS3DPERPDISPLAYSETTING
+UCSAXISANG
+UCSBASE
+UCSDETECT
+UCSFOLLOW
+UCSICON
+UCSNAME
+UCSORG
+UCSORTHO
+UCSSELECTMODE
+UCSVIEW
+UCSVP
+UCSXDIR
+UCSYDIR
+UNDOCTL
+UNDOMARKS
+UNITMODE
+UOSNAP
+UPDATETHUMBNAIL
+USERI1-5
+USERR1-5
+USERS1-5
+请输入变量全称获取变量用途。
+* 系统变量T
+** 该索引下有以下变量：
+TABLEINDICATOR
+TABLETOOLBAR
+TABMODE
+TARGET
+TBCUSTOMIZE
+TBSHOWSHORTCUTS
+TDCREATE
+TDINDWG
+TDUCREATE
+TDUPDATE
+TDUSRTIMER
+TDUUPDATE
+TEMPOVERRIDES
+TEMPPREFIX
+TEXTALIGNMODE
+TEXTALIGNSPACING
+TEXTALLCAPS
+TEXTAUTOCORRECTCAPS
+TEXTED
+TEXTEDITMODE
+TEXTEVAL
+TEXTFILL
+TEXTJUSTIFY
+TEXTOUTPUTFILEFORMAT
+TEXTQLTY
+TEXTSIZE
+TEXTSTYLE
+THICKNESS
+THUMBSAVE
+THUMBSIZE
+THUMBSIZE2D
+TILEMODE
+TIMEZONE
+TOOLTIPMERGE
+TOOLTIPS
+TOOLTIPSIZE
+TOOLTIPTRANSPARENCY
+TOUCHMODE
+TPSTATE
+TRACKPATH
+TRANSPARENCYDISPLAY
+TRAYICONS
+TRAYNOTIFY
+TRAYTIMEOUT
+TREEDEPTH
+TREEMAX
+TRIMMODE
+TRUSTEDDOMAINS
+TRUSTEDPATHS
+TSPACEFAC
+TSPACETYPE
+TSTACKALIGN
+TSTACKSIZE
+请输入变量全称获取变量用途。
+* 系统变量S
+** 该索引下有以下变量：
+SAFEMODE
+SAVEFIDELITY
+SAVEFILE
+SAVEFILEPATH
+SAVENAME
+SAVETIME
+SCREENMODE
+SCREENSIZE
+SECTIONOFFSETINC
+SECTIONTHICKNESSINC
+SECURELOAD
+SECUREREMOTEACCESS
+SELECTIONANNODISPLAY
+SELECTIONAREA
+SELECTIONAREAOPACITY
+SELECTIONCYCLING
+SELECTIONEFFECT
+SELECTIONEFFECTCOLOR
+SELECTIONOFFSCREEN
+SELECTIONPREVIEW
+SELECTIONPREVIEWLIMIT
+SELECTSIMILARMODE
+SETBYLAYERMODE
+SHADEDGE
+SHADEDIF
+SHADOWPLANELOCATION
+SHAREVIEWPROPERTIES
+SHAREVIEWTYPE
+SHORTCUTMENU
+SHORTCUTMENUDURATION
+SHOWHIST
+SHOWLAYERUSAGE
+SHOWMOTIONPIN
+SHOWNEWSTATE
+SHOWPAGESETUPFORNEWLAYOUTS
+SHOWPALETTESTATE
+SHPNAME
+SIGWARN
+SKETCHINC
+SKPOLY
+SKTOLERANCE
+SKYSTATUS
+SMOOTHMESHCONVERT
+SMOOTHMESHGRID
+SMOOTHMESHMAXFACE
+SMOOTHMESHMAXLEV
+SNAPANG
+SNAPBASE
+SNAPGRIDLEGACY
+SNAPISOPAIR
+SNAPMODE
+SNAPSTYL
+SNAPTYPE
+SNAPUNIT
+SOLIDCHECK
+SOLIDHIST
+SORTENTS
+SORTORDER
+SPACESWITCH
+SPLDEGREE
+SPLFRAME
+SPLINESEGS
+SPLINETYPE
+SPLKNOTS
+SPLMETHOD
+SPLPERIODIC
+SSFOUND
+SSLOCATE
+SSMAUTOOPEN
+SSMPOLLTIME
+SSMSHEETSTATUS
+SSMSTATE
+STANDARDSVIOLATION
+STARTINFOLDER
+STARTMODE
+STARTUP
+STATUSBAR
+STEPSIZE
+STEPSPERSEC
+STUDENTDRAWING
+SUBOBJSELECTIONMODE
+SUNPROPERTIESSTATE
+SUNSTATUS
+SUPPRESSALERTS
+SURFACEASSOCIATIVITY
+SURFACEASSOCIATIVITYDRAG
+SURFACEAUTOTRIM
+SURFACEMODELINGMODE
+SURFTAB1
+SURFTAB2
+SURFTYPE
+SURFU
+SURFV
+SYSCODEPAGE
+SYSMON
+请输入变量全称获取变量用途。
+* 系统变量R
+** 该索引下有以下变量：
+RASTERDPI
+RASTERPERCENT
+RASTERPREVIEW
+RASTERTHRESHOLD
+REBUILD2DCV
+REBUILD2DDEGREE
+REBUILD2DOPTION
+REBUILDDEGREEU
+REBUILDDEGREEV
+REBUILDOPTIONS
+REBUILDU
+REBUILDV
+RECOVERAUTO
+RECOVERYMODE
+REFEDITNAME
+REFPATHTYPE
+REGENMODE
+RE-INIT
+REMEMBERFOLDERS
+RENDERENVSTATE
+RENDERLEVEL
+RENDERLIGHTCALC
+RENDERPREFSSTATE
+RENDERTARGET
+RENDERTIME
+RENDERUSERLIGHTS
+REPORTERROR
+REVCLOUDCREATEMODE
+REVCLOUDGRIPS
+RIBBONBGLOAD
+RIBBONCONTEXTSELLIM
+RIBBONDOCKEDHEIGHT
+RIBBONICONRESIZE
+RIBBONSELECTMODE
+RIBBONSTATE
+ROAMABLEROOTPREFIX
+ROLLOVEROPACITY
+ROLLOVERTIPS
+RTDISPLAY
+请输入变量全称获取变量用途。
+* 系统变量Q
+** 该索引下有以下变量：
+QCSTATE
+QPLOCATION
+QPMODE
+QTEXTMODE
+QVDRAWINGPIN
+QVLAYOUTPIN
+请输入变量全称获取变量用途。
+* 系统变量P
+** 该索引下有以下变量：
+PALETTEOPAQUE
+PAPERUPDATE
+PARAMETERCOPYMODE
+PARAMETERSSTATUS
+PCMSTATE
+PDFFRAME
+PDFIMPORTFILTER
+PDFIMPORTIMAGEPATH
+PDFIMPORTLAYERS
+PDFIMPORTMODE
+PDFOSNAP
+PDFSHX
+PDFSHXBESTFONT
+PDFSHXLAYER
+PDFSHXTHRESHOLD
+PDMODE
+PDSIZE
+PEDITACCEPT
+PELLIPSE
+PERIMETER
+PERSPECTIVE
+PERSPECTIVECLIP
+PFACEVMAX
+PICKADD
+PICKAUTO
+PICKBOX
+PICKDRAG
+PICKFIRST
+PICKSTYLE
+PLATFORM
+PLINECONVERTMODE
+PLINEGCENMAX
+PLINEGEN
+PLINEREVERSEWIDTHS
+PLINETYPE
+PLINEWID
+PLOTOFFSET
+PLOTROTMODE
+PLOTTRANSPARENCYOVERRIDE
+PLQUIET
+POINTCLOUD2DVSDISPLAY
+POINTCLOUDAUTOUPDATE
+POINTCLOUDBOUNDARY
+POINTCLOUDCACHESIZE
+POINTCLOUDCLIPFRAME
+POINTCLOUDDENSITY
+POINTCLOUDLIGHTING
+POINTCLOUDLIGHTSOURCE
+POINTCLOUDLOCK
+POINTCLOUDLOD
+POINTCLOUDPOINTMAX
+POINTCLOUDPOINTMAXLEGACY
+POINTCLOUDPOINTSIZE
+POINTCLOUDRTDENSITY
+POINTCLOUDSHADING
+POINTCLOUDVISRETAIN
+POLARADDANG
+POLARANG
+POLARDIST
+POLARMODE
+POLYSIDES
+POPUPS
+PREVIEWCREATIONTRANSPARENCY
+PREVIEWFILTER
+PREVIEWTYPE
+PRODUCT
+PROGRAM
+PROJECTNAME
+PROJMODE
+PROPERTYPREVIEW
+PROPOBJLIMIT
+PROPPREVTIMEOUT
+PROXYGRAPHICS
+PROXYNOTICE
+PROXYSHOW
+PSLTSCALE
+PSOLHEIGHT
+PSOLWIDTH
+PSTYLEMODE
+PSTYLEPOLICY
+PSVPSCALE
+PUBLISHALLSHEETS
+PUBLISHCOLLATE
+PUBLISHHATCH
+PUCSBASE
+请输入变量全称获取变量用途。
+* 系统变量O
+** 该索引下有以下变量：
+OBJECTISOLATIONMODE
+OBSCUREDCOLOR
+OBSCUREDLTYPE
+OFFSETDIST
+OFFSETGAPTYPE
+OLEFRAME
+OLEHIDE
+OLEQUALITY
+OLESTARTUP
+OPMSTATE
+ORBITAUTOTARGET
+ORTHOMODE
+OSMODE
+OSNAPCOORD
+OSNAPNODELEGACY
+OSNAPOVERRIDE
+OSNAPZ
+OSOPTIONS
+请输入变量全称获取变量用途。
+* 系统变量N
+** 该索引下有以下变量：
+NAVBARDISPLAY
+NAVSWHEELMODE
+NAVSWHEELOPACITYBIG
+NAVSWHEELOPACITYMINI
+NAVSWHEELSIZEBIG
+NAVSWHEELSIZEMINI
+NAVVCUBEDISPLAY
+NAVVCUBELOCATION
+NAVVCUBEOPACITY
+NAVVCUBEORIENT
+NAVVCUBESIZE
+NOMUTT
+NORTHDIRECTION
+请输入变量全称获取变量用途。
+* 系统变量M
+** 该索引下有以下变量：
+MATBROWSERSTATE
+MATEDITORSTATE
+MAXACTVP
+MAXSORT
+MAXTOUCHES
+MBUTTONPAN
+MEASUREINIT
+MEASUREMENT
+MENUBAR
+MENUECHO
+MENUNAME
+MESHTYPE
+MILLISECS
+MIRRHATCH
+MIRRTEXT
+MLEADERSCALE
+MODEMACRO
+MSLTSCALE
+MSMSTATE
+MSOLESCALE
+MTEXTAUTOSTACK
+MTEXTCOLUMN
+MTEXTDETECTSPACE
+MTEXTED
+MTEXTFIXED
+MTEXTTOOLBAR
+MTJIGSTRING
+MVIEWPREVIEW
+MYDOCUMENTSPREFIX
+请输入变量全称获取变量用途。
+* 系统变量L
+** 该索引下有以下变量：
+LARGEOBJECTSUPPORT
+LASTANGLE
+LASTPOINT
+LASTPROMPT
+LATITUDE
+LAYERDLGMODE
+LAYEREVAL
+LAYEREVALCTL
+LAYERFILTERALERT
+LAYERMANAGERSTATE
+LAYERNOTIFY
+LAYEROVERRIDEHIGHLIGHT
+LAYLOCKFADECTL
+LAYOUTCREATEVIEWPORT
+LAYOUTREGENCTL
+LAYOUTTAB
+LEGACYCODESEARCH
+LEGACYCTRLPICK
+LENSLENGTH
+LIGHTGLYPHDISPLAY
+LIGHTINGUNITS
+LIGHTLISTSTATE
+LIGHTSINBLOCKS
+LIMCHECK
+LIMMAX
+LIMMIN
+LINEFADING
+LINEFADINGLEVEL
+LINESMOOTHING
+LOCALE
+LOCALROOTPREFIX
+LOCKUI
+LOFTANG1
+LOFTANG2
+LOFTMAG1
+LOFTMAG2
+LOFTNORMALS
+LOFTPARAM
+LOGFILEMODE
+LOGFILENAME
+LOGFILEPATH
+LOGINNAME
+LONGITUDE
+LTGAPSELECTION
+LTSCALE
+LUNITS
+LUPREC
+LWDEFAULT
+LWDISPLAY
+LWUNITS
+请输入变量全称获取变量用途。
+* 系统变量I
+** 该索引下有以下变量：
+IBLENVIRONMENT
+IMAGEFRAME
+IMAGEHLT
+IMPLIEDFACE
+INDEXCTL
+INETLOCATION
+INPUTHISTORYMODE
+INPUTSEARCHDELAY
+INSBASE
+INSNAME
+INSUNITS
+INSUNITSDEFSOURCE
+INSUNITSDEFTARGET
+INTELLIGENTUPDATE
+INTERFERECOLOR
+INTERFEREOBJVS
+INTERFEREVPVS
+INTERSECTIONCOLOR
+INTERSECTIONDISPLAY
+ISAVEBAK
+ISAVEPERCENT
+ISOLINES
+请输入变量全称获取变量用途。
+* 系统变量H
+** 该索引下有以下变量：
+HALOGAP
+HANDLES
+HELPPREFIX
+HIDETEXT
+HIGHLIGHT
+HIGHLIGHTSMOOTHING
+HPANG
+HPANNOTATIVE
+HPASSOC
+HPBACKGROUNDCOLOR
+HPBOUND
+HPBOUNDRETAIN
+HPCOLOR
+HPDLGMODE
+HPDOUBLE
+HPDRAWORDER
+HPGAPTOL
+HPINHERIT
+HPISLANDDETECTION
+HPISLANDDETECTIONMODE
+HPLAYER
+HPLINETYPE
+HPMAXAREAS
+HPMAXLINES
+HPNAME
+HPOBJWARNING
+HPORIGIN
+HPORIGINMODE
+HPPICKMODE
+HPQUICKPREVIEW
+HPQUICKPREVTIMEOUT
+HPSCALE
+HPSEPARATE
+HPSPACE
+HPTRANSPARENCY
+HYPERLINKBASE
+请输入变量全称获取变量用途。
+* 系统变量G
+** 该索引下有以下变量：
+GALLERYVIEW
+GEOLATLONGFORMAT
+GEOLOCATEMODE
+GEOMAPMODE
+GEOMARKERVISIBILITY
+GEOMARKPOSITIONSIZE
+GFANG
+GFCLR1
+GFCLR2
+GFCLRLUM
+GFCLRSTATE
+GFNAME
+GFSHIFT
+GLOBALOPACITY
+GRIDDISPLAY
+GRIDMAJOR
+GRIDMODE
+GRIDSTYLE
+GRIDUNIT
+GRIPBLOCK
+GRIPCOLOR
+GRIPCONTOUR
+GRIPDYNCOLOR
+GRIPHOT
+GRIPHOVER
+GRIPMULTIFUNCTIONAL
+GRIPOBJLIMIT
+GRIPS
+GRIPSIZE
+GRIPSUBOBJMODE
+GRIPTIPS
+GROUPDISPLAYMODE
+GTAUTO
+GTDEFAULT
+GTLOCATION
+请输入变量全称获取变量用途。
+* 系统变量F
+** 该索引下有以下变量：
+FACETERDEVNORMAL
+FACETERDEVSURFACE
+FACETERGRIDRATIO
+FACETERMAXEDGELENGTH
+FACETERMAXGRID
+FACETERMESHTYPE
+FACETERMINUGRID
+FACETERMINVGRID
+FACETERPRIMITIVEMODE
+FACETERSMOOTHLEV
+FACETRATIO
+FACETRES
+FIELDDISPLAY
+FIELDEVAL
+FILEDIA
+FILETABPREVIEW
+FILETABSTATE
+FILETABTHUMBHOVER
+FILLETPOLYARC
+FILLETRAD
+FILLETRAD3D
+FILLMODE
+FONTALT
+FONTMAP
+FRAME
+FRAMESELECTION
+FRONTZ
+FULLOPEN
+FULLPLOTPATH
+请输入变量全称获取变量用途。
+* 系统变量E
+** 该索引下有以下变量：
+EDGEMODE
+ELEVATION
+ENTERPRISEMENU
+ERHIGHLIGHT
+ERRNO
+ERSTATE
+EXPERT
+EXPLMODE
+EXPORTMODELSPACE
+EXPORTPAGESETUP
+EXPORTPAPERSPACE
+EXPVALUE
+EXPWHITEBALANCE
+EXTMAX
+EXTMIN
+EXTNAMES
+请输入变量全称获取变量用途。
+* 系统变量D
+** 该索引下有以下变量：
+DATALINKNOTIFY
+DATE
+DBCSTATE
+DBLCLKEDIT
+DBMOD
+DCTCUST
+DCTMAIN
+DEFAULTGIZMO
+DEFAULTLIGHTING
+DEFAULTLIGHTINGTYPE
+DEFLPLSTYLE
+DEFPLSTYLE
+DELOBJ
+DEMANDLOAD
+DGNFRAME
+DGNIMPORTMAX
+DGNIMPORTMODE
+DGNMAPPINGPATH
+DGNOSNAP
+DIASTAT
+DIGITIZER
+DIMADEC
+DIMALT
+DIMALTD
+DIMALTF
+DIMALTRND
+DIMALTTD
+DIMALTTZ
+DIMALTU
+DIMALTZ
+DIMANNO
+DIMAPOST
+DIMARCSYM
+DIMASSOC
+DIMASZ
+DIMATFIT
+DIMAUNIT
+DIMAZIN
+DIMBLK
+DIMBLK1
+DIMBLK2
+DIMCEN
+DIMCLRD
+DIMCLRE
+DIMCLRT
+DIMCONSTRAINTICON
+DIMCONTINUEMODE
+DIMDEC
+DIMDLE
+DIMDLI
+DIMDSEP
+DIMEXE
+DIMEXO
+DIMFRAC
+DIMFXL
+DIMFXLON
+DIMGAP
+DIMJOGANG
+DIMJUST
+DIMLAYER
+DIMLDRBLK
+DIMLFAC
+DIMLIM
+DIMLTEX1
+DIMLTEX2
+DIMLTYPE
+DIMLUNIT
+DIMLWD
+DIMLWE
+DIMPICKBOX
+DIMPOST
+DIMRND
+DIMSAH
+DIMSCALE
+DIMSD1
+DIMSD2
+DIMSE1
+DIMSE2
+DIMSOXD
+DIMSTYLE
+DIMTAD
+DIMTDEC
+DIMTFAC
+DIMTFILL
+DIMTFILLCLR
+DIMTIH
+DIMTIX
+DIMTM
+DIMTMOVE
+DIMTOFL
+DIMTOH
+DIMTOL
+DIMTOLJ
+DIMTP
+DIMTSZ
+DIMTVP
+DIMTXSTY
+DIMTXT
+DIMTXTDIRECTION
+DIMTXTRULER
+DIMTZIN
+DIMUPT
+DIMZIN
+DISPSILH
+DISTANCE
+DIVMESHBOXHEIGHT
+DIVMESHBOXLENGTH
+DIVMESHBOXWIDTH
+DIVMESHCONEAXIS
+DIVMESHCONEBASE
+DIVMESHCONEHEIGHT
+DIVMESHCYLAXIS
+DIVMESHCYLBASE
+DIVMESHCYLHEIGHT
+DIVMESHPYRBASE
+DIVMESHPYRHEIGHT
+DIVMESHPYRLENGTH
+DIVMESHSPHEREAXIS
+DIVMESHSPHEREHEIGHT
+DIVMESHTORUSPATH
+DIVMESHTORUSSECTION
+DIVMESHWEDGEBASE
+DIVMESHWEDGEHEIGHT
+DIVMESHWEDGELENGTH
+DIVMESHWEDGESLOPE
+DIVMESHWEDGEWIDTH
+DONUTID
+DONUTOD
+DRAGMODE
+DRAGP1
+DRAGP2
+DRAGVS
+DRAWORDERCTL
+DRSTATE
+DTEXTED
+DWFFRAME
+DWFOSNAP
+DWGCHECK
+DWGCODEPAGE
+DWGNAME
+DWGPREFIX
+DWGTITLED
+DXEVAL
+DYNCONSTRAINTMODE
+DYNDIGRIP
+DYNDIVIS
+DYNINFOTIPS
+DYNMODE
+DYNPICOORDS
+DYNPIFORMAT
+DYNPIVIS
+DYNPROMPT
+DYNTOOLTIPS
+请输入变量全称获取变量用途。
+* 系统变量C
+** 该索引下有以下变量：
+CACHEMAXFILES
+CACHEMAXTOTALSIZE
+CALCINPUT
+CAMERADISPLAY
+CAMERAHEIGHT
+CANNOSCALE
+CANNOSCALEVALUE
+CAPTURETHUMBNAILS
+CBARTRANSPARENCY
+CCONSTRAINTFORM
+CDATE
+CECOLOR
+CELTSCALE
+CELTYPE
+CELWEIGHT
+CENTERCROSSGAP
+CENTERCROSSSIZE
+CENTEREXE
+CENTERLAYER
+CENTERLTSCALE
+CENTERLTYPE
+CENTERLTYPEFILE
+CENTERMARKEXE
+CENTERMT
+CETRANSPARENCY
+CGEOCS
+CHAMFERA
+CHAMFERB
+CHAMFERC
+CHAMFERD
+CHAMMODE
+CIRCLERAD
+CLAYER
+CLAYOUT
+CLEANSCREENSTATE
+CLIPROMPTLINES
+CLIPROMPTUPDATE
+CLISTATE
+CMATERIAL
+CMDACTIVE
+CMDDIA
+CMDECHO
+CMDINPUTHISTORYMAX
+CMDNAMES
+CMFADECOLOR
+CMFADEOPACITY
+CMLEADERSTYLE
+CMLJUST
+CMLSCALE
+CMLSTYLE
+CMOSNAP
+COLORTHEME
+COMMANDPREVIEW
+COMPARECOLOR1
+COMPARECOLOR2
+COMPARECOLORCOMMON
+COMPAREFRONT
+COMPAREHATCH
+COMPAREPROPS
+COMPARERCMARGIN
+COMPARERCSHAPE
+COMPARESHOW1
+COMPARESHOW2
+COMPARESHOWCOMMON
+COMPARESHOWRC
+COMPARETEXT
+COMPARETOLERANCE
+COMPASS
+COMPLEXLTPREVIEW
+CONSTRAINTBARDISPLAY
+CONSTRAINTBARMODE
+CONSTRAINTINFER
+CONSTRAINTNAMEFORMAT
+CONSTRAINTSOLVEMODE
+COORDS
+COPYMODE
+CPLOTSTYLE
+CPROFILE
+CROSSINGAREACOLOR
+CTAB
+CTABLESTYLE
+CULLINGOBJ
+CULLINGOBJSELECTION
+CURSORBADGE
+CURSORSIZE
+CURSORTYPE
+CVIEWDETAILSTYLE
+CVIEWSECTIONSTYLE
+CVPORT
+请输入变量全称获取变量用途。
+* 系统变量B
+** 该索引下有以下变量：
+BACKGROUNDPLOT
+BACKZ
+BACTIONBARMODE
+BACTIONCOLOR
+BCONSTATUSMODE
+BDEPENDENCYHIGHLIGHT
+BGRIPOBJCOLOR
+BGRIPOBJSIZE
+BINDTYPE
+BLOCKEDITLOCK
+BLOCKEDITOR
+BLOCKMRULIST
+BLOCKNAVIGATE
+BLOCKREDEFINEMODE
+BLOCKSTATE
+BLOCKTESTWINDOW
+BPARAMETERCOLOR
+BPARAMETERFONT
+BPARAMETERSIZE
+BPTEXTHORIZONTAL
+BTMARKDISPLAY
+BVMODE
+请输入变量全称获取变量用途。
+* 系统变量A
+** 该索引下有以下变量：
+ACADLSPASDOC
+ACADPREFIX
+ACADVER
+ACTPATH
+ACTRECORDERSTATE
+ACTRECPATH
+ACTUI
+ADCSTATE
+AFLAGS
+ANGBASE
+ANGDIR
+ANNOALLVISIBLE
+ANNOAUTOSCALE
+ANNOMONITOR
+ANNOTATIVEDWG
+APBOX
+APERTURE
+APPAUTOLOAD
+APPLYGLOBALOPACITIES
+APSTATE
+AREA
+ARRAYASSOCIATIVITY
+ARRAYEDITSTATE
+ARRAYTYPE
+ATTDIA
+ATTIPE
+ATTMODE
+ATTMULTI
+ATTREQ
+AUDITCTL
+AUNITS
+AUPREC
+AUTODWFPUBLISH
+AUTOMATICPUB
+AUTOSNAP
+请输入变量全称获取变量用途。
+* ZOOMWHEEL
+** 系统变量: ZOOMWHEEL
+滚动鼠标中间的滑轮时，切换透明缩放操作的方向。
+* ZOOMFACTOR
+** 系统变量: ZOOMFACTOR
+控制向前或向后滑动鼠标滚轮时比例的变化程度。
+* XREFTYPE
+** 系统变量: XREFTYPE
+控制附着或覆盖外部参照时的默认参照类型。
+* XREFREGAPPCTL
+** 系统变量: XREFREGAPPCTL
+控制存储在加载的外部参照中的已注册应用程序(RegApp) 记录是否将复制到宿主图形中。
+* XREFOVERRIDE
+** 系统变量: XREFOVERRIDE
+控制参照图层上对象特性的显示。
+* XREFNOTIFY
+** 系统变量: XREFNOTIFY
+控制关于已更新外部参照或缺少外部参照的通知。
+* XREFLAYER
+** 系统变量: XREFLAYER
+为新的外部参照指定默认图层。
+* XREFCTL
+** 系统变量: XREFCTL
+控制是否创建外部参照日志(XLG) 文件。
+* XLOADPATH
+** 系统变量: XLOADPATH
+创建用于存储按需加载的外部参照文件临时副本的路径。
+* XLOADCTL
+** 系统变量: XLOADCTL
+打开或关闭外部参照的按需加载功能，并控制是打开参照的图形还是打开副本。
+* XFADECTL
+** 系统变量: XFADECTL
+控制要在位编辑的参照中的淡入程度。此设置仅影响不在参照中编辑的对象。
+* XEDIT
+** 系统变量: XEDIT
+控制当前图形被其他图形参照时是否可以在位编辑。
+* XDWGFADECTL
+** 系统变量: XDWGFADECTL
+控制所有 DWG 外部参照对象的淡入度。
+* XCLIPFRAME
+** 系统变量: XCLIPFRAME
+决定外部参照剪裁边界在当前图形中是否可见或进行打印。
+* WSCURRENT
+** 系统变量: WSCURRENT
+在命令提示下显示当前工作空间名称并将指定的工作空间设置为当前。
+* WSAUTOSAVE
+** 系统变量: WSAUTOSAVE
+切换到另一个工作空间时，将保存对工作空间所做的更改。
+* WRITESTAT
+** 系统变量: WRITESTAT
+指示图形文件是只读的还是可修改的。
+* WORLDVIEW
+** 系统变量: WORLDVIEW
+确定响应 DVIEW 和 VPOINT 命令的输入是相对于 WCS（默认）还是相对于当前 UCS。
+* WORLDUCS
+** 系统变量: WORLDUCS
+指示 UCS 是否应与 WCS 重合。
+* WORKSPACELABEL
+** 系统变量: WORKSPACELABEL
+控制是否在状态栏中显示当前工作空间的名称。
+* WORKINGFOLDER
+** 系统变量: WORKINGFOLDER
+存储开发人员可能关心的、操作系统工作文件夹的驱动器和文件夹路径以供处理。
+* WMFFOREGND
+** 系统变量: WMFFOREGND
+控制以 Windows 图元文件(WMF) 格式插入对象时前景色的指定。
+* WMFBKGND
+** 系统变量: WMFBKGND
+控制以 Windows 图元文件(WMF) 格式插入对象时背景的显示。
+* WIPEOUTFRAME
+** 系统变量: WIPEOUTFRAME
+控制区域覆盖对象的框架的显示。
+* WINDOWAREACOLOR
+** 系统变量: WINDOWAREACOLOR
+控制窗口选择时透明选择区域的颜色。
+* WHIPTHREAD
+** 系统变量: WHIPTHREAD
+控制是否使用额外的处理器来提高操作速度（例如用于重画或重生成图形的 ZOOM）。
+* WHIPARC
+** 系统变量: WHIPARC
+旧式的。覆盖圆和圆弧显示的平滑度。
+* VTFPS
+** 系统变量: VTFPS
+以帧/每秒为单位设置平滑视图转场的最小速度。
+* VTENABLE
+** 系统变量: VTENABLE
+控制何时使用平滑视图转场。
+* VTDURATION
+** 系统变量: VTDURATION
+以毫秒为单位设置平滑视图转场的时长。
+* VSSTATE
+** 系统变量: VSSTATE
+指示“视觉样式”窗口处于打开状态还是关闭状态。
+* VSSILHWIDTH
+** 系统变量: VSSILHWIDTH
+以像素为单位指定当前视口中轮廓边的宽度。
+* VSSILHEDGES
+** 系统变量: VSSILHEDGES
+控制应用于当前视口的视觉样式中实体对象轮廓边的显示。
+* VSSHADOWS
+** 系统变量: VSSHADOWS
+控制视觉样式是否显示阴影。
+* VSOCCLUDEDLTYPE
+** 系统变量: VSOCCLUDEDLTYPE
+指定为视觉样式显示的隐藏线的线型。
+* VSOCCLUDEDEDGES
+** 系统变量: VSOCCLUDEDEDGES
+控制是否为视觉样式显示隐藏的边。
+* VSOCCLUDEDCOLOR
+** 系统变量: VSOCCLUDEDCOLOR
+指定为视觉样式显示的隐藏线的颜色。
+* VSOBSCUREDLTYPE
+** 系统变量: VSOBSCUREDLTYPE
+旧式的。替换为 VSOCCLUDEDLTYPE 系统变量。
+* VSOBSCUREDEDGES
+** 系统变量: VSOBSCUREDEDGES
+旧式的。替换为 VSOCCLUDEDEDGES 系统变量。
+* VSOBSCUREDCOLOR
+** 系统变量: VSOBSCUREDCOLOR
+旧式的。替换为 VSOCCLUDEDCOLOR 系统变量。
+* VSMONOCOLOR
+** 系统变量: VSMONOCOLOR
+为应用于当前视口的视觉样式中面的单色和染色显示设置颜色。
+* VSMIN
+** 系统变量: VSMIN
+存储当前视口虚拟屏幕的左下角。
+* VSMAX
+** 系统变量: VSMAX
+存储当前视口虚拟屏幕的右上角。
+* VSMATERIALMODE
+** 系统变量: VSMATERIALMODE
+控制当前视口中材质的显示。
+* VSLIGHTINGQUALITY
+** 系统变量: VSLIGHTINGQUALITY
+设置当前视口中的光源质量。
+* VSISOONTOP
+** 系统变量: VSISOONTOP
+显示应用于当前视口的视觉样式中着色对象顶部的素线。
+* VSINTERSECTIONLTYPE
+** 系统变量: VSINTERSECTIONLTYPE
+设置独立三维实体、曲面和网格的交点线型以实现某种视觉样式。
+* VSINTERSECTIONEDGES
+** 系统变量: VSINTERSECTIONEDGES
+控制独立三维实体、曲面和网格相交边显示以实现某种视觉样式。
+* VSINTERSECTIONCOLOR
+** 系统变量: VSINTERSECTIONCOLOR
+设置独立三维实体、曲面和网格的相交边颜色以实现某种视觉样式。
+* VSHIDEPRECISION
+** 系统变量: VSHIDEPRECISION
+旧式的。控制应用于当前视口的视觉样式中的隐藏和着色精度。
+* VSHALOGAP
+** 系统变量: VSHALOGAP
+设置应用于当前视口的视觉样式中的光晕间隔。
+* VSFACESTYLE
+** 系统变量: VSFACESTYLE
+控制面、实体填充图案和渐变在当前视口中的显示方式。
+* VSFACEOPACITY
+** 系统变量: VSFACEOPACITY
+为三维对象打开和关闭透明度预设级别。
+* VSFACEHIGHLIGHT
+** 系统变量: VSFACEHIGHLIGHT
+控制当前视口中不具有材质的面上镜面亮显的显示。
+* VSFACECOLORMODE
+** 系统变量: VSFACECOLORMODE
+控制如何计算面的颜色。
+* VSEDGESMOOTH
+** 系统变量: VSEDGESMOOTH
+指定折缝边的显示角度。
+* VSEDGES
+** 系统变量: VSEDGES
+控制显示在视口中的边的类型。
+* VSEDGEOVERHANG
+** 系统变量: VSEDGEOVERHANG
+旧式的。替换为 VSOCCLUDEDCOLOR 系统变量。
+* VSEDGELEX
+** 系统变量: VSEDGELEX
+控制线和边显示延伸至其端点之外的像素数，以产生手绘效果。
+* VSEDGEJITTER
+** 系统变量: VSEDGEJITTER
+使对象上的边看起来具有多个线性笔划，就像它们是用铅笔绘制的。
+* VSEDGECOLOR
+** 系统变量: VSEDGECOLOR
+设置当前视口视觉样式中边的颜色。
+* VSBACKGROUNDS
+** 系统变量: VSBACKGROUNDS
+控制是否以应用于当前视口的视觉样式显示背景。
+* VSAZEBRATYPE
+** 系统变量: VSAZEBRATYPE
+设定在使用斑纹分析(ANALYSISZEBRA) 时斑纹显示的类型。
+* VSAZEBRASIZE
+** 系统变量: VSAZEBRASIZE
+控制在斑纹分析 (ANALYSISZEBRA) 过程中所显示的斑纹条纹的宽度。
+* VSAZEBRADIRECTION
+** 系统变量: VSAZEBRADIRECTION
+控制在斑纹分析 (ANALYSISBRA) 过程中斑纹条纹是水平显示、竖直显示还是以某一角度显示。
+* VSAZEBRACOLOR2
+** 系统变量: VSAZEBRACOLOR2
+设定在斑纹分析 (ANALYSISZEBRA) 过程中所显示的斑纹条纹的第二种（对比）颜色。
+* VSAZEBRACOLOR1
+** 系统变量: VSAZEBRACOLOR1
+设定在斑纹分析(ANALYSISZEBRA) 过程中所显示的斑纹条纹的第一种颜色。
+* VSADRAFTANGLELOW
+** 系统变量: VSADRAFTANGLELOW
+设定在拔模分析(ANALYSISDRAFT) 过程中使模型显示为蓝色的值。
+* VSADRAFTANGLEHIGH
+** 系统变量: VSADRAFTANGLEHIGH
+设定在拔模分析(ANALYSISDRAFT) 过程中使模型显示为绿色的值。
+* VSACURVATURETYPE
+** 系统变量: VSACURVATURETYPE
+控制使用(ANALYSISCURVATURE) 命令时进行哪种类型的曲率分析。
+* VSACURVATURELOW
+** 系统变量: VSACURVATURELOW
+设定在曲率分析(ANALYSISCURVATURE) 过程中使曲面显示为蓝色的值。
+* VSACURVATUREHIGH
+** 系统变量: VSACURVATUREHIGH
+设定在曲率分析(ANALYSISCURVATURE) 过程中使曲面显示为绿色的值。
+* VPROTATEASSOC
+** 系统变量: VPROTATEASSOC
+控制旋转视口时视口内的视图是否随视口一起旋转。
+* VPMAXIMIZEDSTATE
+** 系统变量: VPMAXIMIZEDSTATE
+指示是否将视口最大化。
+* VPLAYEROVERRIDESMODE
+** 系统变量: VPLAYEROVERRIDESMODE
+控制是否显示和打印布局视口的图层特性替代。
+* VPLAYEROVERRIDES
+** 系统变量: VPLAYEROVERRIDES
+指示对于当前图层视口是否存在任何具有视口(VP) 特性替代的图层。
+* VPCONTROL
+** 系统变量: VPCONTROL
+控制每个视口的左上角是否显示视口、视图和视觉样式的选项。
+* VISRETAINMODE
+** 系统变量: VISRETAINMODE
+当 VISRETAIN 系统变量设置为 1 时，控制其行为。
+* VISRETAIN
+** 系统变量: VISRETAIN
+控制外部参照相关图层的特性。
+* VIEWUPDATEAUTO
+** 系统变量: VIEWUPDATEAUTO
+控制在更改源模型时模型文档工程视图是否会自动更新。
+* VIEWTWIST
+** 系统变量: VIEWTWIST
+存储相对于 WCS 测量的当前视口的视图旋转角度。
+* VIEWSKETCHMODE
+** 系统变量: VIEWSKETCHMODE
+指示系统是否在符号草图模式中。
+* VIEWSIZE
+** 系统变量: VIEWSIZE
+存储当前视口中显示的视图的高度（按图形单位测量）。
+* VIEWMODE
+** 系统变量: VIEWMODE
+存储当前视口的视图设置。
+* VIEWFWDSTATUS
+** 系统变量: VIEWFWDSTATUS
+存储上一个视图是否可用于 VIEWFORWARD 命令。
+* VIEWDIR
+** 系统变量: VIEWDIR
+存储当前视口中的观察方向（用 UCS 坐标表示）。
+* VIEWCTR
+** 系统变量: VIEWCTR
+存储当前视口中视图的中心。
+* VIEWBACKSTATUS
+** 系统变量: VIEWBACKSTATUS
+存储上一个视图是否可用于 VIEWBACK 命令。
+* USERS1-5
+** 系统变量: USERS1-5
+提供文字字符串数据的存储和检索功能。
+* USERR1-5
+** 系统变量: USERR1-5
+提供实数的存储和检索功能。
+* USERI1-5
+** 系统变量: USERI1-5
+提供整数值的存储和检索功能。
+* UPDATETHUMBNAIL
+** 系统变量: UPDATETHUMBNAIL
+控制视图和布局的缩略图预览的更新。
+* UOSNAP
+** 系统变量: UOSNAP
+确定对象捕捉是否可用于 DWF、DWFx、PDF 和 DGN 参考底图中的几何图形。
+* UNITMODE
+** 系统变量: UNITMODE
+控制单位的显示格式。
+* UNDOMARKS
+** 系统变量: UNDOMARKS
+显示放置在 UNDO 控制流中的标记数。
+* UNDOCTL
+** 系统变量: UNDOCTL
+显示在 UNDO 命令中使用的选项。
+* UCSYDIR
+** 系统变量: UCSYDIR
+为当前空间中当前视口存储当前 UCS 的 Y 方向。
+* UCSXDIR
+** 系统变量: UCSXDIR
+为当前空间中当前视口存储当前 UCS 的 X 方向。
+* UCSVP
+** 系统变量: UCSVP
+确定在其他视口中的 UCS 是从属于还是独立于当前视口的 UCS。
+* UCSVIEW
+** 系统变量: UCSVIEW
+决定当前 UCS 是否随命名视图一起保存。
+* UCSSELECTMODE
+** 系统变量: UCSSELECTMODE
+控制是否可以使用夹点选择和操纵 UCS 图标。
+* UCSORTHO
+** 系统变量: UCSORTHO
+决定 UCS 的 XY 平面是否在正交视图恢复时自动与当前视图的平面恢复对齐。
+* UCSORG
+** 系统变量: UCSORG
+存储在当前空间中用于当前视口的当前用户坐标系的原点。
+* UCSNAME
+** 系统变量: UCSNAME
+存储在当前空间中用于当前视口的当前用户坐标系的名称。
+* UCSICON
+** 系统变量: UCSICON
+控制 UCS 图标可见性和位置。
+* UCSFOLLOW
+** 系统变量: UCSFOLLOW
+从一个 UCS 转换为另一个 UCS 时生成平面视图。
+* UCSDETECT
+** 系统变量: UCSDETECT
+控制创建涉及三维平整面的对象时是否激活动态 UCS 获取。
+* UCSBASE
+** 系统变量: UCSBASE
+存储定义正交 UCS 设置的原点和方向的 UCS 名称。
+* UCSAXISANG
+** 系统变量: UCSAXISANG
+使用 UCS 命令的 X、Y 或 Z 选项绕其一个轴旋转 UCS 时，存储默认角度。
+* UCS3DPERPDISPLAYSETTING
+** 系统变量: UCS3DPERPDISPLAYSETTING
+在透视视图处于启用状态且三维视觉样式设置为当前时显示 UCS 图标。
+* UCS3DPARADISPLAYSETTING
+** 系统变量: UCS3DPARADISPLAYSETTING
+在透视视图处于禁用状态且三维视觉样式设置为当前时显示 UCS 图标。
+* UCS2DDISPLAYSETTING
+** 系统变量: UCS2DDISPLAYSETTING
+在二维线框视觉样式设置为当前时显示 UCS 图标。
+* TSTACKSIZE
+** 系统变量: TSTACKSIZE
+控制堆叠文字分数高度相对于选定文字的当前高度的百分比。
+* TSTACKALIGN
+** 系统变量: TSTACKALIGN
+控制堆叠文字的垂直对齐。
+* TSPACETYPE
+** 系统变量: TSPACETYPE
+控制多行文字中使用的行间距类型。
+* TSPACEFAC
+** 系统变量: TSPACEFAC
+控制多行文字的行间距（按文字高度的因子测量）。
+* TRUSTEDPATHS
+** 系统变量: TRUSTEDPATHS
+指定哪些文件夹具有加载并执行包含代码的文件的权限。
+* TRUSTEDDOMAINS
+** 系统变量: TRUSTEDDOMAINS
+指定域名或 URL，以便 AutoCAD 可从其运行 JavaScript 代码。
+* TRIMMODE
+** 系统变量: TRIMMODE
+控制是否为倒角和圆角修剪选定边。
+* TREEMAX
+** 系统变量: TREEMAX
+通过限制空间索引（八分树）中的节点数目，从而限制重生成图形时占用的内存。
+* TREEDEPTH
+** 系统变量: TREEDEPTH
+指定最大深度，即树状结构的空间索引可以分出分支的次数。
+* TRAYTIMEOUT
+** 系统变量: TRAYTIMEOUT
+控制服务通知的显示时间长度（以秒为单位）。
+* TRAYNOTIFY
+** 系统变量: TRAYNOTIFY
+控制是否在状态栏托盘中显示服务通知。
+* TRAYICONS
+** 系统变量: TRAYICONS
+控制是否在状态栏上显示状态托盘。
+* TRANSPARENCYDISPLAY
+** 系统变量: TRANSPARENCYDISPLAY
+控制指定给单个对象或 ByLayer 的透明度特性是可见还是被禁用。
+* TRACKPATH
+** 系统变量: TRACKPATH
+控制极轴追踪和对象捕捉追踪对齐路径的显示。
+* TPSTATE
+** 系统变量: TPSTATE
+指示“工具选项板”窗口处于打开状态还是关闭状态。
+* MATEDITORSTATE
+** 系统变量: MATEDITORSTATE
+指示材质编辑器是处于打开状态还是关闭状态。
+* TOUCHMODE
+** 系统变量: TOUCHMODE
+对于那些使用支持触摸的屏幕或界面的用户，可以控制功能区上“触摸”面板的显示。
+* TOOLTIPTRANSPARENCY
+** 系统变量: TOOLTIPTRANSPARENCY
+设置绘图工具提示的透明度。
+* TOOLTIPSIZE
+** 系统变量: TOOLTIPSIZE
+设定绘图工具提示和动态输入文字的显示大小。
+* TOOLTIPS
+** 系统变量: TOOLTIPS
+控制工具提示在功能区、工具栏及其他用户界面元素中的显示。
+* TOOLTIPMERGE
+** 系统变量: TOOLTIPMERGE
+将草图工具提示合并为单个工具提示。
+* TIMEZONE
+** 系统变量: TIMEZONE
+设置图形中阳光的时区。
+* TILEMODE
+** 系统变量: TILEMODE
+控制是否可以访问图纸空间。
+* THUMBSIZE2D
+** 系统变量: THUMBSIZE2D
+指定二维线框缩略图预览的大小是否由 THUMBSIZE 系统变量控制。如果禁用，则使用二维线框视觉样式的图形预览的显示分辨率将设置为 256 x 256 像素。
+* THUMBSIZE
+** 系统变量: THUMBSIZE
+为所有缩略图预览图像指定显示分辨率（以像素为单位）。
+* THUMBSAVE
+** 系统变量: THUMBSAVE
+控制是否将缩略图预览图像保存在图形中。
+* THICKNESS
+** 系统变量: THICKNESS
+在创建二维几何对象时，设置默认的三维厚度特性。
+* TEXTSTYLE
+** 系统变量: TEXTSTYLE
+设置当前文字样式的名称。
+* TEXTSIZE
+** 系统变量: TEXTSIZE
+设置创建新文字对象时默认的文字高度。
+* TEXTQLTY
+** 系统变量: TEXTQLTY
+设置打印和渲染时 TrueType 文字的分辨率。
+* TEXTOUTPUTFILEFORMAT
+** 系统变量: TEXTOUTPUTFILEFORMAT
+提供日志文件的 Unicode 选项。
+* TEXTJUSTIFY
+** 系统变量: TEXTJUSTIFY
+显示 TEXT 命令在创建单行文字时使用的默认对正方式。
+* TEXTFILL
+** 系统变量: TEXTFILL
+控制是否填充 TrueType 字体以用于打印。
+* TEXTEVAL
+** 系统变量: TEXTEVAL
+控制如何判定用 TEXT（使用 AutoLISP）或 -TEXT 输入的文字字符串。
+* TEXTEDITMODE
+** 系统变量: TEXTEDITMODE
+控制是否自动重复 TEXTEDIT 命令。
+* TEXTED
+** 系统变量: TEXTED
+指定创建和编辑单行文字时显示的用户界面。
+* TEXTAUTOCORRECTCAPS
+** 系统变量: TEXTAUTOCORRECTCAPS
+更正因意外启用 Caps Lock 而导致的常见文本错误。
+* TEXTALLCAPS
+** 系统变量: TEXTALLCAPS
+将通过 TEXT 或 MTEXT 命令创建的所有新文字转换为大写。
+* TEXTALIGNSPACING
+** 系统变量: TEXTALIGNSPACING
+存储对齐文字的间距选项。
+* TEXTALIGNMODE
+** 系统变量: TEXTALIGNMODE
+存储对齐文字的对齐选项。
+* TEMPPREFIX
+** 系统变量: TEMPPREFIX
+存储为临时文件指定的文件夹名称，附带路径分隔符。
+* TEMPOVERRIDES
+** 系统变量: TEMPOVERRIDES
+打开或关闭用于绘图辅助的临时替代键。
+* TDUUPDATE
+** 系统变量: TDUUPDATE
+存储上次更新或保存时的世界标准时间和日期。
+* TDUSRTIMER
+** 系统变量: TDUSRTIMER
+存储用户花费时间计时器。
+* TDUPDATE
+** 系统变量: TDUPDATE
+存储上次更新/保存时的本地时间和日期。
+* TDUCREATE
+** 系统变量: TDUCREATE
+存储创建图形时的通用时间和日期。
+* TDINDWG
+** 系统变量: TDINDWG
+存储总的编辑时间，即在两次保存当前图形之间花费的总时间。
+* TDCREATE
+** 系统变量: TDCREATE
+存储创建图形时的本地时间和日期。
+* TBSHOWSHORTCUTS
+** 系统变量: TBSHOWSHORTCUTS
+指定使用 Ctrl 键和 Alt 键的快捷键是否显示在工具栏的工具提示上。
+* TBCUSTOMIZE
+** 系统变量: TBCUSTOMIZE
+控制是否可以自定义工具选项板组。
+* TARGET
+** 系统变量: TARGET
+存储目标点的 UCS 坐标以用于当前视口中的透视投影。
+* TABMODE
+** 系统变量: TABMODE
+控制数字化仪输入设备的使用。
+* TABLETOOLBAR
+** 系统变量: TABLETOOLBAR
+控制表格工具栏的显示。
+* TABLEINDICATOR
+** 系统变量: TABLEINDICATOR
+控制当打开在位文字编辑器以编辑表格单元时，行编号和列字母的显示。
+* SYSMON
+** 系统变量: SYSMON
+控制是否监视定义的系统变量列表。
+* SYSCODEPAGE
+** 系统变量: SYSCODEPAGE
+指示由操作系统决定的系统代码页。
+* SURFV
+** 系统变量: SURFV
+为 PEDIT 命令的“平滑”选项设置在 N 方向的曲面密度以及曲面对象上的 V 素线密度
+* SURFU
+** 系统变量: SURFU
+为 PEDIT 命令的“平滑”选项设置在 M 方向的曲面密度以及曲面对象上的 U 素线密度。
+* SURFTYPE
+** 系统变量: SURFTYPE
+控制 PEDIT 命令的“平滑”选项要执行的曲面拟合类型。
+* SURFTAB2
+** 系统变量: SURFTAB2
+为 REVSURF 和 EDGESURF 命令设置在 N 方向的网格密度。
+* SURFTAB1
+** 系统变量: SURFTAB1
+为 RULESURF 和 TABSURF 命令设置要生成的表格数目。
+* SURFACEMODELINGMODE
+** 系统变量: SURFACEMODELINGMODE
+控制是将曲面创建为程序曲面还是 NURBS 曲面。
+* SURFACEAUTOTRIM
+** 系统变量: SURFACEAUTOTRIM
+设定在将几何图形投影到曲面上时是否自动修剪曲面。
+* SURFACEASSOCIATIVITYDRAG
+** 系统变量: SURFACEASSOCIATIVITYDRAG
+设置关联曲面的拖动预览行为。
+* SURFACEASSOCIATIVITY
+** 系统变量: SURFACEASSOCIATIVITY
+控制曲面是否保留与从中创建了曲面的对象的关系。
+* SUPPRESSALERTS
+** 系统变量: SUPPRESSALERTS
+控制关于在早期版本的产品中打开和保存新图形时可能会丢失数据的警告。
+* SUNSTATUS
+** 系统变量: SUNSTATUS
+打开和关闭当前视口中阳光的光源效果。
+* SUNPROPERTIESSTATE
+** 系统变量: SUNPROPERTIESSTATE
+指示“阳光特性”窗口处于打开状态还是关闭状态。
+* SUBOBJSELECTIONMODE
+** 系统变量: SUBOBJSELECTIONMODE
+过滤在将鼠标悬停于面、边、顶点或实体历史记录子对象上时是否亮显它们。
+* STUDENTDRAWING
+** 系统变量: STUDENTDRAWING
+报告当前图形是否已与 Autodesk 学生版产品一起保存。
+* STEPSPERSEC
+** 系统变量: STEPSPERSEC
+指定漫游或飞行模式中每秒执行的步数。
+* STEPSIZE
+** 系统变量: STEPSIZE
+指定漫游或飞行模式中每一步的大小（以图形单位表示）。
+* STATUSBAR
+** 系统变量: STATUSBAR
+控制状态栏的显示。
+* STARTUP
+** 系统变量: STARTUP
+控制在应用程序启动时或打开新图形时显示的内容。
+* STARTMODE
+** 系统变量: STARTMODE
+控制“开始”选项卡的显示。
+* STARTINFOLDER
+** 系统变量: STARTINFOLDER
+存储从中启动产品的驱动器和文件夹路径。
+* STANDARDSVIOLATION
+** 系统变量: STANDARDSVIOLATION
+指定创建或修改非标准对象时，是否通知用户当前图形中存在标准冲突。
+* SSMSTATE
+** 系统变量: SSMSTATE
+指示“图纸集管理器”窗口处于打开状态还是关闭状态。
+* SSMSHEETSTATUS
+** 系统变量: SSMSHEETSTATUS
+控制图纸集中状态数据的刷新方式。
+* SSMPOLLTIME
+** 系统变量: SSMPOLLTIME
+控制图纸集中状态数据的自动刷新时间间隔。
+* SSMAUTOOPEN
+** 系统变量: SSMAUTOOPEN
+控制打开与图纸相关联的图形时图纸集管理器的显示行为。
+* SSLOCATE
+** 系统变量: SSLOCATE
+控制打开图形时是否找到并打开与该图形相关联的图纸集。
+* SSFOUND
+** 系统变量: SSFOUND
+如果搜索图纸集成功，则显示图纸集路径和文件名。
+* SPLPERIODIC
+** 系统变量: SPLPERIODIC
+控制是否生成具有周期性特性的闭合样条曲线和 NURBS 曲面以保持在闭合点或接合口处的最平滑的连续性。
+* SPLMETHOD
+** 系统变量: SPLMETHOD
+存储用于 SPLINE 命令的默认方法是拟合点还是控制点。
+* SPLKNOTS
+** 系统变量: SPLKNOTS
+当指定拟合点时，存储 SPLINE 命令的默认节点选项。
+* SPLINETYPE
+** 系统变量: SPLINETYPE
+设置由 PEDIT 命令的“样条曲线”选项生成的曲线类型。
+* SPLINESEGS
+** 系统变量: SPLINESEGS
+设置要为每条样曲线条拟合多段线（此多段线通过 PEDIT 命令的“样条曲线”选项生成）生成的线段数目。
+* SPLFRAME
+** 系统变量: SPLFRAME
+控制螺旋和平滑处理的网格对象的显示。
+* SPLDEGREE
+** 系统变量: SPLDEGREE
+存储最近使用的样条曲线阶数设置，并设定在指定控制点时 SPLINE 命令的默认阶数设置。
+* SPACESWITCH
+** 系统变量: SPACESWITCH
+控制是否可以通过在布局视口内双击来访问模型空间。
+* SORTORDER
+** 系统变量: SORTORDER
+指定是使用自然排序顺序还是 ASCII 值来排序图层列表。
+* SORTENTS
+** 系统变量: SORTENTS
+控制对象排序，以支持若干操作的绘图次序。
+* SOLIDHIST
+** 系统变量: SOLIDHIST
+控制新复合实体是否保留其原始零部件的历史记录。
+* SOLIDCHECK
+** 系统变量: SOLIDCHECK
+为当前任务打开和关闭三维实体校验。
+* SNAPUNIT
+** 系统变量: SNAPUNIT
+设置当前视口的捕捉间距。
+* SNAPTYPE
+** 系统变量: SNAPTYPE
+为当前视口设置捕捉类型（矩形或环形）。
+* SNAPSTYL
+** 系统变量: SNAPSTYL
+将栅格和栅格捕捉设置为当前视口的矩形或等轴测。
+* SNAPMODE
+** 系统变量: SNAPMODE
+在当前视口中打开和关闭捕捉模式。
+* SNAPISOPAIR
+** 系统变量: SNAPISOPAIR
+控制当前视口的等轴测平面。
+* SNAPGRIDLEGACY
+** 系统变量: SNAPGRIDLEGACY
+控制光标是否仅在操作正在进行时捕捉到捕捉栅格。
+* SNAPBASE
+** 系统变量: SNAPBASE
+相对于当前 UCS 设置当前视口的捕捉和栅格原点。
+* SNAPANG
+** 系统变量: SNAPANG
+相对于当前 UCS 设置当前视口的捕捉和栅格旋转角度。
+* SMOOTHMESHMAXLEV
+** 系统变量: SMOOTHMESHMAXLEV
+设置网格对象的最大平滑度。
+* SMOOTHMESHMAXFACE
+** 系统变量: SMOOTHMESHMAXFACE
+设置网格对象允许使用的最大面数。
+* SMOOTHMESHGRID
+** 系统变量: SMOOTHMESHGRID
+设置底层网格镶嵌面栅格显示在三维网格对象中时的最大平滑度。
+* SMOOTHMESHCONVERT
+** 系统变量: SMOOTHMESHCONVERT
+控制是对转换为三维实体或曲面的网格对象进行平滑处理还是进行镶嵌，以及是否合并它们的面。
+* SKYSTATUS
+** 系统变量: SKYSTATUS
+决定渲染时是否计算天空照明。
+* SKTOLERANCE
+** 系统变量: SKTOLERANCE
+确定样条曲线布满手画线草图的紧密程度。
+* SKPOLY
+** 系统变量: SKPOLY
+确定 SKETCH 命令生成的是直线、多段线还是样条曲线。
+* SKETCHINC
+** 系统变量: SKETCHINC
+设置用于 SKETCH 命令的记录增量。
+* SIGWARN
+** 系统变量: SIGWARN
+控制打开附着数字签名的文件时是否发出警告。
+* SHPNAME
+** 系统变量: SHPNAME
+设置默认的形名称（必须遵守符号命名约定）。
+* SHOWPALETTESTATE
+** 系统变量: SHOWPALETTESTATE
+指示是否通过 HIDEPALETTES 命令隐藏选项板或通过 SHOWPALETTES 命令恢复选项板。
+* SHOWPAGESETUPFORNEWLAYOUTS
+** 系统变量: SHOWPAGESETUPFORNEWLAYOUTS
+指定在创建新布局时是否显示页面设置管理器。
+* SHOWNEWSTATE
+** 系统变量: SHOWNEWSTATE
+指示更新中亮显的新功能是否处于活动状态。
+* SHOWMOTIONPIN
+** 系统变量: SHOWMOTIONPIN
+控制缩略图图像的默认状态。
+* SHOWLAYERUSAGE
+** 系统变量: SHOWLAYERUSAGE
+在图层特性管理器中显示图标以指示图层是否处于使用状态。
+* SHOWHIST
+** 系统变量: SHOWHIST
+控制图形中实体的“显示历史记录”特性。
+* SHORTCUTMENUDURATION
+** 系统变量: SHORTCUTMENUDURATION
+指定必须按下定点设备的右键多长时间才会在绘图区域中显示快捷菜单。
+* SHORTCUTMENU
+** 系统变量: SHORTCUTMENU
+控制“默认”、“编辑”和“命令”模式的快捷菜单在绘图区域是否可用。
+* SHAREVIEWTYPE
+** 系统变量: SHAREVIEWTYPE
+控制是从当前视图、模型空间或某一布局中创建共享视图，还是从整个图形中创建共享视图。
+* SHAREVIEWPROPERTIES
+** 系统变量: SHAREVIEWPROPERTIES
+控制共享视图是否包含图形特性。
+* SHADOWPLANELOCATION
+** 系统变量: SHADOWPLANELOCATION
+控制用于显示阴影的不可见地平面的位置。
+* SHADEDIF
+** 系统变量: SHADEDIF
+设置漫反射光与环境光的比率。
+* SHADEDGE
+** 系统变量: SHADEDGE
+控制边的着色。
+* SETBYLAYERMODE
+** 系统变量: SETBYLAYERMODE
+控制为 SETBYLAYER 命令选择哪些特性。
+* SELECTSIMILARMODE
+** 系统变量: SELECTSIMILARMODE
+控制对于将使用 SELECTSIMILAR 选择的同类型对象，必须匹配哪些特性。
+* SELECTIONPREVIEWLIMIT
+** 系统变量: SELECTIONPREVIEWLIMIT
+限制在窗口或窗交选择期间可以显示预览亮显的对象数。
+* SELECTIONPREVIEW
+** 系统变量: SELECTIONPREVIEW
+控制选择预览的显示。
+* SELECTIONOFFSCREEN
+** 系统变量: SELECTIONOFFSCREEN
+控制屏幕外对象的选择。
+* SELECTIONEFFECTCOLOR
+** 系统变量: SELECTIONEFFECTCOLOR
+设置对象选择上的光晕亮显效果的颜色。
+* SELECTIONEFFECT
+** 系统变量: SELECTIONEFFECT
+指定对象处于选中状态时所使用的视觉效果。
+* SELECTIONCYCLING
+** 系统变量: SELECTIONCYCLING
+控制与重叠对象和选择循环关联的显示选项。
+* SELECTIONAREAOPACITY
+** 系统变量: SELECTIONAREAOPACITY
+控制进行窗口选择和窗交选择时选择区域的透明度。
+* SELECTIONAREA
+** 系统变量: SELECTIONAREA
+控制选择区域的显示效果。
+* SELECTIONANNODISPLAY
+** 系统变量: SELECTIONANNODISPLAY
+控制选定注释性对象后，备用比例图示是否暂时以暗显状态显示。
+* SECUREREMOTEACCESS
+** 系统变量: SECUREREMOTEACCESS
+控制是否限制从 Internet 位置或远程服务器访问文件。
+* SECURELOAD
+** 系统变量: SECURELOAD
+控制可执行文件是否限于仅从受信任文件夹加载
+* SECTIONTHICKNESSINC
+** 系统变量: SECTIONTHICKNESSINC
+设置截面切片厚度控件增加或减少的点数。
+* SECTIONOFFSETINC
+** 系统变量: SECTIONOFFSETINC
+设定单击控件时截面对象到截面平面的偏移距离。
+* SCREENSIZE
+** 系统变量: SCREENSIZE
+以像素为单位存储当前视口大小（X 和 Y）。
+* SCREENMODE
+** 系统变量: SCREENMODE
+指示显示的状态。
+* SAVETIME
+** 系统变量: SAVETIME
+设置自动保存时间间隔，以分钟为测量单位。
+* SAVENAME
+** 系统变量: SAVENAME
+显示最近保存的图形的文件名和文件夹路径。
+* SAVEFILEPATH
+** 系统变量: SAVEFILEPATH
+指定当前任务中所有自动保存文件的文件夹路径。
+* SAVEFILE
+** 系统变量: SAVEFILE
+存储当前自动保存的文件名。
+* SAVEFIDELITY
+** 系统变量: SAVEFIDELITY
+在 AutoCAD 2007 及更早版本中控制注释性对象的视觉逼真度。
+* SAFEMODE
+** 系统变量: SAFEMODE
+指示是否可在当前 AutoCAD 任务中加载和执行可执行代码。
+* RTDISPLAY
+** 系统变量: RTDISPLAY
+控制执行实时 ZOOM 或 PAN 命令时光栅图像和 OLE 对象的显示。
+* ROLLOVERTIPS
+** 系统变量: ROLLOVERTIPS
+控制当光标悬停在对象上时鼠标悬停工具提示的显示。
+* ROLLOVEROPACITY
+** 系统变量: ROLLOVEROPACITY
+控制光标移动到选项板上时选项板的透明度。
+* ROAMABLEROOTPREFIX
+** 系统变量: ROAMABLEROOTPREFIX
+存储根文件夹的完整路径，该文件夹中安装了可漫游的可自定义文件。
+* RIBBONSTATE
+** 系统变量: RIBBONSTATE
+指示功能区选项板处于打开状态还是关闭状态。
+* RIBBONSELECTMODE
+** 系统变量: RIBBONSELECTMODE
+决定调用功能区上下文选项卡并完成命令后预先选择集是否仍处于选中状态。
+* RIBBONICONRESIZE
+** 系统变量: RIBBONICONRESIZE
+控制是否将功能区上的图标大小调整为标准大小。
+* RIBBONDOCKEDHEIGHT
+** 系统变量: RIBBONDOCKEDHEIGHT
+确定是将水平固定的功能区设定为当前选项卡的高度还是预先定义的高度。
+* RIBBONCONTEXTSELLIM
+** 系统变量: RIBBONCONTEXTSELLIM
+限制可以使用功能区特性控件或上下文选项卡一次更改的对象数。
+* RIBBONBGLOAD
+** 系统变量: RIBBONBGLOAD
+控制功能区选项卡是否在处理器空闲时间由后台进程加载到内存中。
+* REVCLOUDGRIPS
+** 系统变量: REVCLOUDGRIPS
+控制修订云线上显示的夹点数。
+* REVCLOUDCREATEMODE
+** 系统变量: REVCLOUDCREATEMODE
+指定用于创建修订云线的默认输入。
+* REPORTERROR
+** 系统变量: REPORTERROR
+控制程序异常关闭时是否可以向 Autodesk 发送错误报告。
+* RENDERUSERLIGHTS
+** 系统变量: RENDERUSERLIGHTS
+控制是否在渲染过程中替代视口光源的设置。
+* RENDERTIME
+** 系统变量: RENDERTIME
+指定渲染引擎用于反复细化渲染图像的分钟数。
+* RENDERTARGET
+** 系统变量: RENDERTARGET
+控制渲染引擎要使用的渲染持续时间类型。
+* RENDERPREFSSTATE
+** 系统变量: RENDERPREFSSTATE
+指示“渲染预设管理器”选项板是处于打开状态还是关闭状态。
+* RENDERLIGHTCALC
+** 系统变量: RENDERLIGHTCALC
+控制光源和材质的渲染精度。
+* RENDERLEVEL
+** 系统变量: RENDERLEVEL
+指定渲染引擎为创建渲染图像而执行的层级数或迭代数。
+* RENDERENVSTATE
+** 系统变量: RENDERENVSTATE
+指示“渲染预设管理器”选项板是处于打开状态还是关闭状态。
+* REMEMBERFOLDERS
+** 系统变量: REMEMBERFOLDERS
+控制显示在标准文件选择对话框中的默认路径。
+* RE-INIT
+** 系统变量: RE-INIT
+重新初始化数字化仪、数字化仪端口和 acad.pgp 文件。
+* REGENMODE
+** 系统变量: REGENMODE
+旧式的。控制图形的自动重生成。
+* REFPATHTYPE
+** 系统变量: REFPATHTYPE
+控制当参照文件第一次附着到宿主图形文件时是使用完整路径、相对路径还是无路径。
+* REFEDITNAME
+** 系统变量: REFEDITNAME
+显示正在编辑的参照名称。
+* RECOVERYMODE
+** 系统变量: RECOVERYMODE
+控制系统出现故障后是否记录图形修复信息。
+* RECOVERAUTO
+** 系统变量: RECOVERAUTO
+控制在打开损坏的图形文件之前或之后恢复通知的显示。
+* REBUILDV
+** 系统变量: REBUILDV
+设定重新生成 NURBS 曲面时 V 方向上的栅格线数量。
+* REBUILDU
+** 系统变量: REBUILDU
+设定重新生成 NURBS 曲面时 U 方向上的栅格线数量。
+* REBUILDOPTIONS
+** 系统变量: REBUILDOPTIONS
+控制重新生成 NURBS 曲面时的删除和修剪选项。
+* REBUILDDEGREEV
+** 系统变量: REBUILDDEGREEV
+设定重新生成 NURBS 曲面时 V 方向上的阶数。
+* REBUILDDEGREEU
+** 系统变量: REBUILDDEGREEU
+设定重新生成 NURBS 曲面时 U 方向上的阶数。
+* REBUILD2DOPTION
+** 系统变量: REBUILD2DOPTION
+控制重新生成样条曲线时是否删除原始曲线。
+* REBUILD2DDEGREE
+** 系统变量: REBUILD2DDEGREE
+设定重新生成样条曲线时的全局阶数。
+* REBUILD2DCV
+** 系统变量: REBUILD2DCV
+设定重新生成样条曲线时的控制点数量。
+* RASTERTHRESHOLD
+** 系统变量: RASTERTHRESHOLD
+以兆字节为单位指定打印时光栅图像的阈值。
+* RASTERPREVIEW
+** 系统变量: RASTERPREVIEW
+控制是否将缩略图预览图像随图形一起创建和保存。
+* RASTERPERCENT
+** 系统变量: RASTERPERCENT
+设置可用于打印光栅图像的可用虚拟内存的最大百分比。
+* RASTERDPI
+** 系统变量: RASTERDPI
+控制从有标注输出设备更改为无标注输出设备（或反之）时的图纸尺寸和打印缩放比例。
+* QVLAYOUTPIN
+** 系统变量: QVLAYOUTPIN
+控制图形中模型空间和布局的预览图像的默认显示状态。
+* QVDRAWINGPIN
+** 系统变量: QVDRAWINGPIN
+控制图形预览图像的默认显示状态。
+* QTEXTMODE
+** 系统变量: QTEXTMODE
+控制文字的显示方式。
+* QPMODE
+** 系统变量: QPMODE
+控制在选定对象时是否显示“快捷特性”选项板。
+* QPLOCATION
+** 系统变量: QPLOCATION
+设置“快捷特性”选项板的位置。
+* QCSTATE
+** 系统变量: QCSTATE
+指示“快速计算器”计算器处于打开状态还是关闭状态。
+* PUCSBASE
+** 系统变量: PUCSBASE
+存储定义正交 UCS 设置（仅用于图纸空间）的原点和方向的 UCS 名称。
+* PUBLISHHATCH
+** 系统变量: PUBLISHHATCH
+控制在 Autodesk Impression 中打开发布为 DWF 或 DWFx 格式的填充图案时，是否将其视为单个对象。
+* PUBLISHCOLLATE
+** 系统变量: PUBLISHCOLLATE
+控制打印图纸集、多页打印文件或后台打印文件时是否可以被其他打印作业中断。
+* PUBLISHALLSHEETS
+** 系统变量: PUBLISHALLSHEETS
+指定在“发布”对话框中是加载激活文档的内容还是加载所有打开文档的内容。
+* PSVPSCALE
+** 系统变量: PSVPSCALE
+为所有新创建的视口设置视图比例因子。
+* PSTYLEPOLICY
+** 系统变量: PSTYLEPOLICY
+控制打开在 AutoCAD 2000 之前的版本中创建的图形或不使用图形模板从头创建新图形时，使用的打印样式模式（颜色相关打印样式模式或命名打印样式模式）。
+* PSTYLEMODE
+** 系统变量: PSTYLEMODE
+指示当前图形处于颜色相关打印样式模式还是命名打印样式模式。
+* PSOLWIDTH
+** 系统变量: PSOLWIDTH
+控制使用 POLYSOLID 命令创建的扫掠实体对象的默认宽度。
+* PSOLHEIGHT
+** 系统变量: PSOLHEIGHT
+控制通过 POLYSOLID 命令创建的扫掠实体对象的默认高度。
+* PSLTSCALE
+** 系统变量: PSLTSCALE
+控制在图纸空间视口中显示的对象的线型比例缩放。
+* PROXYSHOW
+** 系统变量: PROXYSHOW
+控制代理对象在图形中的显示。
+* PROXYNOTICE
+** 系统变量: PROXYNOTICE
+创建代理时显示通知。
+* PROXYGRAPHICS
+** 系统变量: PROXYGRAPHICS
+指定是否将代理对象的图像保存在图形中。
+* PROPPREVTIMEOUT
+** 系统变量: PROPPREVTIMEOUT
+设置可用于生成特性预览的最大时间量。
+* PROPOBJLIMIT
+** 系统变量: PROPOBJLIMIT
+限制可以使用“特性”和“快捷特性”选项板一次更改的对象数。
+* PROPERTYPREVIEW
+** 系统变量: PROPERTYPREVIEW
+控制在将鼠标悬停在控制特性的下拉列表和库上时，是否可以预览对当前选定对象的更改。
+* PROJMODE
+** 系统变量: PROJMODE
+设置当前投影模式以进行修剪或延伸。
+* PROJECTNAME
+** 系统变量: PROJECTNAME
+为当前图形指定工程名称。
+* PROGRAM
+** 系统变量: PROGRAM
+显示程序名称。
+* PRODUCT
+** 系统变量: PRODUCT
+显示产品名称。
+* PREVIEWTYPE
+** 系统变量: PREVIEWTYPE
+控制要用于图形缩略图预览的视图。
+* PREVIEWFILTER
+** 系统变量: PREVIEWFILTER
+从选择预览中排除指定的对象类型。
+* PREVIEWCREATIONTRANSPARENCY
+** 系统变量: PREVIEWCREATIONTRANSPARENCY
+控制在使用 SURFBLEND、SURFPATCH、SURFFILLET、FILLETEDGE、CHAMFEREDGE 和 LOFT 时生成的预览透明度。
+* POPUPS
+** 系统变量: POPUPS
+显示当前配置的显示驱动程序状态。
+* POLYSIDES
+** 系统变量: POLYSIDES
+为 POLYGON 命令设置默认边数。
+* POLARMODE
+** 系统变量: POLARMODE
+控制极轴追踪和对象捕捉追踪的设置。
+* POLARDIST
+** 系统变量: POLARDIST
+当 SNAPTYPE 设定为 1 (PolarSnap) 时，设置捕捉增量。
+* POLARANG
+** 系统变量: POLARANG
+设置极轴角增量。
+* POLARADDANG
+** 系统变量: POLARADDANG
+存储极轴追踪和极轴捕捉的附加角度。
+* POINTCLOUDVISRETAIN
+** 系统变量: POINTCLOUDVISRETAIN
+控制传统图形（在 AutoCAD 2014 中创建）是否保留单个扫描（RCS 文件）的打开或关闭状态和由附着的点云项目文件（RCP 文件）参照的面域。
+* POINTCLOUDSHADING
+** 系统变量: POINTCLOUDSHADING
+指定点云中的点的亮度是漫射还是镜面反射。
+* POINTCLOUDRTDENSITY
+** 系统变量: POINTCLOUDRTDENSITY
+通过在缩放、平移或动态观察期间减少显示的点数，可以提高性能。
+* POINTCLOUDPOINTSIZE
+** 系统变量: POINTCLOUDPOINTSIZE
+控制新点云对象的点的大小。
+* POINTCLOUDPOINTMAXLEGACY
+** 系统变量: POINTCLOUDPOINTMAXLEGACY
+仅适用于传统（2015 之前）点云。设置可以为所有附着到图形的传统点云显示的最大点数。
+* POINTCLOUDPOINTMAX
+** 系统变量: POINTCLOUDPOINTMAX
+设置可以为所有附着到图形的点云显示的最大点数。不会影响传统（2015 之前）点云。
+* POINTCLOUDLOD
+** 系统变量: POINTCLOUDLOD
+为点云设置显示的细节级别。
+* POINTCLOUDLOCK
+** 系统变量: POINTCLOUDLOCK
+控制是否可以操纵、移动、裁剪或旋转附着的点云。
+* POINTCLOUDLIGHTSOURCE
+** 系统变量: POINTCLOUDLIGHTSOURCE
+当光源处于打开状态时，确定点云的光源。
+* POINTCLOUDLIGHTING
+** 系统变量: POINTCLOUDLIGHTING
+控制点云的光源效果的显示方式。
+* POINTCLOUDDENSITY
+** 系统变量: POINTCLOUDDENSITY
+仅适用于传统（2015 之前）点云对象。控制工程视图中为所有传统点云显示的点的百分比。
+* POINTCLOUDCLIPFRAME
+** 系统变量: POINTCLOUDCLIPFRAME
+控制传统点云上的剪裁边界是否显示在屏幕上和打印输出中。
+* POINTCLOUDCACHESIZE
+** 系统变量: POINTCLOUDCACHESIZE
+指定为显示点云而保留的内存量。
+* POINTCLOUDBOUNDARY
+** 系统变量: POINTCLOUDBOUNDARY
+控制是否显示点云边界框。
+* POINTCLOUDAUTOUPDATE
+** 系统变量: POINTCLOUDAUTOUPDATE
+仅适用于传统（2015 之前）点云对象。控制在操作、平移、缩放或动态观察后是否自动重新生成点云。
+* POINTCLOUD2DVSDISPLAY
+** 系统变量: POINTCLOUD2DVSDISPLAY
+在使用二维线框视觉样式查看点云时，切换边界框和文字消息的显示。
+* PLQUIET
+** 系统变量: PLQUIET
+控制可选的打印相关对话框和非致命脚本错误的显示。
+* PLOTTRANSPARENCYOVERRIDE
+** 系统变量: PLOTTRANSPARENCYOVERRIDE
+控制是否打印对象透明度。
+* PLOTROTMODE
+** 系统变量: PLOTROTMODE
+控制打印方向。
+* PLOTOFFSET
+** 系统变量: PLOTOFFSET
+控制打印偏移是相对于可打印区域还是相对于图纸边。
+* PLINEWID
+** 系统变量: PLINEWID
+存储默认的多段线宽度。
+* PLINETYPE
+** 系统变量: PLINETYPE
+指定是否使用优化的二维多段线。
+* PLINEREVERSEWIDTHS
+** 系统变量: PLINEREVERSEWIDTHS
+控制反转多段线的方向时多段线的外观。
+* PLINEGEN
+** 系统变量: PLINEGEN
+控制绘制时，绕二维多段线的顶点生成线型图案的方式。
+* PLINEGCENMAX
+** 系统变量: PLINEGCENMAX
+设置多段线可以拥有的最大线段数量，以便应用程序计算几何中心。
+* PLINECONVERTMODE
+** 系统变量: PLINECONVERTMODE
+指定将样条曲线转换为多段线时使用的拟合方法。
+* PLATFORM
+** 系统变量: PLATFORM
+指示正在使用的操作系统。
+* PICKSTYLE
+** 系统变量: PICKSTYLE
+控制组选择和关联图案填充选择的使用。
+* PICKFIRST
+** 系统变量: PICKFIRST
+控制是否可以在启动命令之前选择对象。
+* PICKDRAG
+** 系统变量: PICKDRAG
+控制绘制选择窗口的方法。
+* PICKBOX
+** 系统变量: PICKBOX
+设置对象选择目标的高度（以设备独立像素为单位）。
+* PICKAUTO
+** 系统变量: PICKAUTO
+控制用于对象选择的自动窗口选择。
+* PICKADD
+** 系统变量: PICKADD
+控制后续选择项是替换当前选择集还是添加到其中。
+* PFACEVMAX
+** 系统变量: PFACEVMAX
+设置多面网格中面顶点的最大数量。
+* PERSPECTIVECLIP
+** 系统变量: PERSPECTIVECLIP
+决定眼点剪裁的位置。
+* PERSPECTIVE
+** 系统变量: PERSPECTIVE
+指定当前视口是否显示透视视图。
+* PERIMETER
+** 系统变量: PERIMETER
+存储由 AREA 和 LIST 命令计算的上一个周长值。
+* PELLIPSE
+** 系统变量: PELLIPSE
+控制通过 ELLIPSE 命令创建的椭圆类型。
+* PEDITACCEPT
+** 系统变量: PEDITACCEPT
+自动将选定对象转换为多段线，而在使用 PEDIT 时不显示提示。
+* PDSIZE
+** 系统变量: PDSIZE
+设置点对象的显示大小。
+* PDMODE
+** 系统变量: PDMODE
+控制点对象的显示方式。
+* PDFSHXTHRESHOLD
+** 系统变量: PDFSHXTHRESHOLD
+设置所选几何图形在转换为文字对象之前必须匹配某个字体的百分比。
+* PDFSHXLAYER
+** 系统变量: PDFSHXLAYER
+控制在将 SHX 几何图形转换为文字对象时，指定给新创建的文字对象的图层。
+* PDFSHXBESTFONT
+** 系统变量: PDFSHXBESTFONT
+在将输入的 PDF 几何图形转换为文字时，控制 PDFSHXTEXT 命令使用最佳匹配字体或使用超过识别阈值的第一个选定字体。
+* PDFSHX
+** 系统变量: PDFSHX
+控制是否在将图形输出为 PDF 文件时，将使用 SHX 字体的文字对象存储在 PDF 文件中作为注释。
+* PDFOSNAP
+** 系统变量: PDFOSNAP
+决定是否为附着在图形中的 PDF 参考底图中的几何图形激活对象捕捉。
+* PDFIMPORTMODE
+** 系统变量: PDFIMPORTMODE
+控制从 PDF 文件输入对象时的默认处理。
+* PDFIMPORTLAYERS
+** 系统变量: PDFIMPORTLAYERS
+控制将哪些图层指定给输入自 PDF 文件的对象。
+* PDFIMPORTIMAGEPATH
+** 系统变量: PDFIMPORTIMAGEPATH
+指定在输入 PDF 文件后用于提取和保存参照图像文件的文件夹。
+* PDFIMPORTFILTER
+** 系统变量: PDFIMPORTFILTER
+控制哪些数据类型要从 PDF 文件中输入并转换为 AutoCAD 对象。
+* PDFFRAME
+** 系统变量: PDFFRAME
+确定 PDF 参考底图边框是否可见。
+* PCMSTATE
+** 系统变量: PCMSTATE
+指示点云管理器处于打开状态还是关闭状态。
+* PARAMETERSSTATUS
+** 系统变量: PARAMETERSSTATUS
+指示“参数管理器”是处于显示状态还是隐藏状态。
+* PARAMETERCOPYMODE
+** 系统变量: PARAMETERCOPYMODE
+控制在图形、模型空间和布局以及块定义之间复制约束对象时处理约束和参照的用户参数的方式。
+* PAPERUPDATE
+** 系统变量: PAPERUPDATE
+控制当尝试以不同于为绘图仪配置文件默认指定的图纸尺寸打印布局时，警告对话框的显示。
+* PALETTEOPAQUE
+** 系统变量: PALETTEOPAQUE
+控制是否可以使选项板透明。
+* OSOPTIONS
+** 系统变量: OSOPTIONS
+控制是否在图案填充对象、使用动态 UCS 时具有负 Z 值的几何图形或者尺寸界线上禁用对象捕捉。
+* OSNAPZ
+** 系统变量: OSNAPZ
+控制对象捕捉是否自动投影到与当前 UCS 中位于当前标高的 XY 平面平行的平面上。
+* OSNAPOVERRIDE
+** 系统变量: OSNAPOVERRIDE
+防止替代默认对象捕捉设置。
+* OSNAPNODELEGACY
+** 系统变量: OSNAPNODELEGACY
+控制“节点”对象捕捉是否可用于捕捉到多行文字对象。
+* OSNAPCOORD
+** 系统变量: OSNAPCOORD
+控制在命令行输入的坐标是否替代运行的对象捕捉。
+* OSMODE
+** 系统变量: OSMODE
+设置执行对象捕捉。
+* ORTHOMODE
+** 系统变量: ORTHOMODE
+限定光标在垂直方向移动。
+* ORBITAUTOTARGET
+** 系统变量: ORBITAUTOTARGET
+控制为 3DORBIT 命令获取目标点的方式。
+* OPMSTATE
+** 系统变量: OPMSTATE
+指示“特性”选项板处于打开、关闭还是隐藏状态。
+* OLESTARTUP
+** 系统变量: OLESTARTUP
+控制打印时是否加载嵌入 OLE 对象的源应用程序。
+* OLEQUALITY
+** 系统变量: OLEQUALITY
+为所有 OLE 对象设置默认打印质量。
+* OLEHIDE
+** 系统变量: OLEHIDE
+控制 OLE 对象的显示和打印。
+* OLEFRAME
+** 系统变量: OLEFRAME
+控制是否显示和打印图形中所有 OLE 对象的边框。
+* OFFSETGAPTYPE
+** 系统变量: OFFSETGAPTYPE
+控制偏移多段线时处理线段之间的潜在间隙的方式。
+* OFFSETDIST
+** 系统变量: OFFSETDIST
+设置默认的偏移距离。
+* OBSCUREDLTYPE
+** 系统变量: OBSCUREDLTYPE
+指定遮挡线的线型。
+* OBSCUREDCOLOR
+** 系统变量: OBSCUREDCOLOR
+指定遮挡线的颜色。
+* OBJECTISOLATIONMODE
+** 系统变量: OBJECTISOLATIONMODE
+控制隐藏的对象在绘图任务之间是否保持隐藏状态。
+* NORTHDIRECTION
+** 系统变量: NORTHDIRECTION
+指定 WCS 的 Y 轴和栅格北向之间的角度。
+* NOMUTT
+** 系统变量: NOMUTT
+不显示通常情况下显示的消息（即不进行消息反馈）。
+* NAVVCUBESIZE
+** 系统变量: NAVVCUBESIZE
+指定 ViewCube 工具的大小。
+* NAVVCUBEORIENT
+** 系统变量: NAVVCUBEORIENT
+控制 ViewCube 工具是反映当前 UCS 还是反映 WCS。
+* NAVVCUBEOPACITY
+** 系统变量: NAVVCUBEOPACITY
+控制 ViewCube 工具处于未激活状态时的不透明度。
+* NAVVCUBELOCATION
+** 系统变量: NAVVCUBELOCATION
+标识显示 ViewCube 工具的视口中的角点。
+* NAVVCUBEDISPLAY
+** 系统变量: NAVVCUBEDISPLAY
+控制 ViewCube 工具在当前视觉样式和当前视口中的显示。
+* NAVSWHEELSIZEMINI
+** 系统变量: NAVSWHEELSIZEMINI
+指定小型 SteeringWheels 的大小。
+* NAVSWHEELSIZEBIG
+** 系统变量: NAVSWHEELSIZEBIG
+指定大型 SteeringWheels 的大小。
+* NAVSWHEELOPACITYMINI
+** 系统变量: NAVSWHEELOPACITYMINI
+控制小型 SteeringWheels 的不透明度。
+* NAVSWHEELOPACITYBIG
+** 系统变量: NAVSWHEELOPACITYBIG
+控制大型 SteeringWheels 的不透明度。
+* NAVSWHEELMODE
+** 系统变量: NAVSWHEELMODE
+指定 SteeringWheel 的当前模式。
+* NAVBARDISPLAY
+** 系统变量: NAVBARDISPLAY
+控制导航栏在所有视口中的显示。
+* MYDOCUMENTSPREFIX
+** 系统变量: MYDOCUMENTSPREFIX
+存储用户当前登录的“我的文档”文件夹的完整路径。
+* MVIEWPREVIEW
+** 系统变量: MVIEWPREVIEW
+控制插入已命名或新布局视口时的预览行为。
+* MTJIGSTRING
+** 系统变量: MTJIGSTRING
+设置启动 MTEXT 命令时显示在光标位置的样例文字内容。
+* MTEXTTOOLBAR
+** 系统变量: MTEXTTOOLBAR
+控制“文字格式”工具栏的显示。
+* MTEXTFIXED
+** 系统变量: MTEXTFIXED
+为多行文字设置在位文字编辑器的显示大小和方向行为。
+* MTEXTED
+** 系统变量: MTEXTED
+设置用于编辑多行文字对象的应用程序。
+* MTEXTDETECTSPACE
+** 系统变量: MTEXTDETECTSPACE
+控制是否在 MTEXT 命令中将键盘上的空格键用于创建列表项。
+* MTEXTCOLUMN
+** 系统变量: MTEXTCOLUMN
+为多行文字对象设置默认分栏设置。
+* MTEXTAUTOSTACK
+** 系统变量: MTEXTAUTOSTACK
+控制 MTEXT 命令的自动堆叠。
+* MSOLESCALE
+** 系统变量: MSOLESCALE
+控制具有粘贴到模型空间中的文字的 OLE 对象的大小。
+* MSMSTATE
+** 系统变量: MSMSTATE
+指示标记集管理器处于打开状态还是关闭状态。
+* MSLTSCALE
+** 系统变量: MSLTSCALE
+按注释比例缩放“模型”选项卡上显示的线型。
+* MODEMACRO
+** 系统变量: MODEMACRO
+在状态行中显示文字字符串，例如当前图形的名称、时间/日期戳记或特殊模式。
+* MLEADERSCALE
+** 系统变量: MLEADERSCALE
+设置应用到多重引线对象的全局比例因子。
+* MIRRTEXT
+** 系统变量: MIRRTEXT
+控制 MIRROR 反映文字的方式。
+* MIRRHATCH
+** 系统变量: MIRRHATCH
+控制 MIRROR 反映填充图案的方式。
+* MILLISECS
+** 系统变量: MILLISECS
+存储自系统启动后已经过的毫秒数。
+* MESHTYPE
+** 系统变量: MESHTYPE
+控制通过 REVSURF、TABSURF、RULESURF 和 EDGESURF 命令创建的网格的类型。
+* MENUNAME
+** 系统变量: MENUNAME
+存储自定义文件名，包括文件名的路径。
+* MENUECHO
+** 系统变量: MENUECHO
+设置菜单回显和提示控制位。
+* MENUBAR
+** 系统变量: MENUBAR
+控制菜单栏的显示。
+* MEASUREMENT
+** 系统变量: MEASUREMENT
+控制当前图形是使用英制还是公制填充图案和线型文件。
+* MEASUREINIT
+** 系统变量: MEASUREINIT
+控制从头创建的图形是使用英制还是使用公制默认设置。
+* MBUTTONPAN
+** 系统变量: MBUTTONPAN
+控制定点设备上的第三个按钮或滚轮的行为。
+* MAXTOUCHES
+** 系统变量: MAXTOUCHES
+标识所连接数字化仪支持的触点数。
+* MAXSORT
+** 系统变量: MAXSORT
+设置项目的最大数目，例如，在对话框、下拉列表和选项板中按字母顺序进行排序的文件名、图层名和块名称。
+* DIVMESHPYRLENGTH
+** 系统变量: DIVMESHPYRLENGTH
+设置沿网格棱锥体底面每个标注的细分数目。

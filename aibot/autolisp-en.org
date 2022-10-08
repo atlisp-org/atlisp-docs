@@ -1,0 +1,641 @@
+* 转换函数
+** (angtof string [mode])
+将表示角度的字符串转换为以弧度表示的实数（浮点）值
+** (angtos angle [mode [precision]])
+将以弧度表示的角度值转换为字符串
+** (ascii string)
+将字符串的第一个字符转换为其 Unicode 字符代码并返回结果（一个整数）
+** (atof string)
+返回字符串转换为实数的结果
+** (atoi string)
+返回字符串转换为整数的结果
+** (chr integer)
+将表示 Unicode 字符代码的整数转换为单字符字符串
+** (cvunit value from to)
+将值从一种测量单位转换为另一种测量单位
+** (distof string [mode])
+将表示实数（浮点）值的字符串转换为实数值
+** (itoa int)
+返回整数转换为字符串的结果
+** (rtos number [mode [precision]])
+将数字转换为字符串
+** (trans pt from to [disp])
+将点（或位移）从一个坐标系转换到另一个坐标系
+* 注册表函数
+** (vl-registry-delete reg-key [val-name])
+Deletes the specified key from the Windows Registry or property list file on Mac OS
+** (vl-registry-descendents reg-key [val-names])
+Returns a list of subkeys or value names for the specified key of the Windows Registry or property list file on Mac OS
+** (vl-registry-read reg-key [val-name])
+Returns data stored by a specific key/value pair in the Windows Registry or property list file on Mac OS
+** (vl-registry-write reg-key [val-name val-data])
+Creates a key in the Windows Registry or property list file on Mac OS
+** (vlax-machine-product-key)
+Returns the AutoCAD Windows Registry path in the HKLM (HKEY_LOCAL_MACHINE)
+注意:Available on Windows only and requires a call to the vl-load-com function.
+** (vlax-product-key)
+Returns the AutoCAD Windows Registry path (Obsolete)
+注意:Use the vlax-machine-product-key function instead.
+** (vlax-user-product-key)
+Returns the AutoCAD Windows registry path in the HKCU (HKEY_CURRENT_USER)
+注意:Available on Windows only and requires a call to the vl-load-com function.
+* vlx 名空间函数
+** (vl-arx-import [ function | application])
+Imports ADS-DEFUN functions into a separate-namespace VLX
+** (vl-doc-export 'function)
+Makes a function loaded in a VLX namespace available to the current document
+** (vl-doc-import ['function | application])
+Imports a function that was previously exported from another separate-namespace VLX
+** (vl-doc-ref symbol)
+Retrieves the value of a variable from the namespace of the associated document
+** (vl-doc-set symbol value)
+Sets the value of a variable in the associated document's namespace
+** (vl-exit-with-error "msg")
+Passes control from a VLX error handler to the *error* function of the associated document namespace
+** (vl-exit-with-value value)
+Returns a value to the document namespace from which the VLX was invoked
+** (vl-list-exported-functions [“appname”])
+Lists all functions exported by the specified application, or all exported functions if no application is specified
+** (vl-list-loaded-vlx)
+Returns a list of all separate-namespace VLX files associated with the current document
+** (vl-unload-vlx "appname")
+Unloads a VLX that is loaded in its own namespace (a separate-namespace VLX)
+** (vl-vlx-loaded-p "appname")
+Determines whether a VLX is loaded in its own namespace
+* 用户输入函数
+** (entsel [msg])
+Prompts the user to select a single object (entity) by specifying a point
+** (getangle [pt] [msg])
+Pauses for user input of an angle, and returns that angle in radians
+** (getcorner pt [msg])
+Pauses for user input of a rectangle's second corner
+** (getdist [pt] [msg])
+Pauses for user input of a distance
+** (getfiled title default ext flags)
+Prompts the user for a file name with the standard AutoCAD file dialog box, and returns that file name
+** (getint [msg])
+Pauses for user input of an integer, and returns that integer
+** (getkword [msg])
+Pauses for user input of a keyword, and returns that keyword
+** (getorient [pt] [msg])
+Pauses for user input of an angle, and returns that angle in radians
+** (getpoint [pt] [msg])
+Pauses for user input of a point, and returns that point
+** (getreal [msg])
+Pauses for user input of a real number, and returns that real number
+** (getstring [cr] [msg])
+Pauses for user input of a string, and returns that string
+** (initget [bits] [string])
+Establishes keywords for use by the next user input function call
+** (nentsel [msg])
+Prompts the user to select an object (entity) by specifying a point, and provides access to the definition data contained within a complex object
+** (nentselp [msg] [pt])
+Provides similar functionality to that of the nentsel function without the need for user input
+* 符号表和字典处理函数
+** (dictadd ename symbol newobj)
+Adds a non-graphical object to the specified dictionary
+** (dictnext ename symbol [rewind])
+Finds the next item in a dictionary
+** (dictremove ename symbol)
+Removes an entry from the specified dictionary
+** (dictrename ename oldsym newsym)
+Renames a dictionary entry
+** (dictsearch ename symbol [setnext])
+Searches a dictionary for an item
+** (layoutlist)
+Returns a list of all paper space layouts in the current drawing
+** (namedobjdict)
+Returns the entity name of the current drawing's named object dictionary, which is the root of all non-graphical objects in the drawing
+** (setview view_description [vport_id])
+Establishes a view for a specified viewport
+** (snvalid sym_name)
+Checks the symbol table name for valid characters
+** (tblnext table-name [rewind])
+Finds the next item in a symbol table
+** (tblobjname table-name symbol)
+Returns the entity name of a specified symbol table entry
+** (tblsearch table-name symbol [setnext])
+Searches a symbol table for a symbol name
+** (vlax-ldata-delete dict key)
+Erases AutoLISP data from a drawing dictionary
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-ldata-get dict key [default-data])
+Retrieves AutoLISP data from a drawing dictionary
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-ldata-list dict)
+Lists AutoLISP data in a drawing dictionary
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-ldata-put dict key data)
+Stores AutoLISP data in a drawing dictionary
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-ldata-test data)
+Determines whether data can be saved over a session boundary
+注意:Extended AutoLISP extension: requires vl-load-com
+* 符号处理函数
+** (atom item)
+Verifies that an item is an atom
+** (atoms-family format [symlist])
+Returns a list of the currently defined symbols
+** (boundp sym)
+Verifies whether a value is bound to a symbol
+** (not item)
+Verifies that an item evaluates to nil
+** (null item)
+Verifies that an item is bound to nil
+** (numberp item)
+Verifies that an item is a real or an integer
+** (quote expr)
+Returns an expression without evaluating it
+** (set sym expr)
+Sets the value of a quoted symbol name to an expression
+** (setq sym1 expr1 [sym2 expr2 ...])
+Sets the value of a symbol or symbols to associated expressions
+** (type item)
+Returns the type of a specified item
+** (vl-symbol-name symbol)
+Returns a string containing the name of a symbol
+** (vl-symbol-value symbol)
+Returns the current value bound to a symbol
+** (vl-symbolp object)
+Identifies whether or not a specified object is a symbol
+* 字符串处理函数
+** (read [string])
+返回从字符串获取的第一个列表或 atom
+** (strcase string [which])
+返回字符串，其中的所有字母字符都被转换为大写或小写
+** (strcat [string1 [string2 ...])
+返回一个由多个字符串连接而成的字符串
+** (strlen [string ...])
+返回一个整数，即字符串中的字符数
+** (substr string start [length])
+返回字符串的子字符串
+** (vl-prin1-to-string object)
+返回任何 LISP 对象的字符串表示，就像它是由 prin1 函数输出一样
+** (vl-princ-to-string object)
+返回任何 LISP 对象的字符串表示，就像它是由 princ 函数输出一样
+** (vl-string->list string)
+将字符串转换为 Unicode 字符代码列表
+** (vl-string-elt string position)
+返回字符串中指定位置处字符的 Unicode 表示形式
+** (vl-string-left-trim character-set string)
+从字符串开头删除指定字符
+** (vl-string-mismatch str1 str2 [pos1 pos2 ignore-case-p])
+返回两个字符串从指定位置开始的最长公共前缀的长度
+** (vl-string-position char-code str [ start-pos [from-end-p]])
+查找字符串中具有指定 Unicode 代码的字符
+** (vl-string-right-trim character-set string)
+从字符串末尾删除指定字符
+** (vl-string-search pattern string [ start-pos])
+在字符串中搜索指定图案
+** (vl-string-subst new-str pattern string [start-pos])
+在字符串中将一个字符串替换另一个字符串
+** (vl-string-translate source-set dest-set str)
+将字符串中的字符替换为指定的字符集
+** (vl-string-trim char-set str)
+从字符串的开头和结尾删除指定字符
+** (wcmatch string pattern)
+对字符串执行通配符模式匹配
+* 选择集操作函数
+** (ssadd [ename [ss]])
+Adds an object (entity) to a selection set, or creates a new selection set
+** (ssdel ename ss)
+Deletes an object (entity) from a selection set
+** (ssget [mode] [pt1 [pt2]] [pt-list] [filter-list])
+Prompts the user to select objects (entities), and returns a selection set
+** (ssgetfirst)
+Determines which objects are selected and gripped
+** (sslength ss)
+Returns an integer containing the number of objects (entities) in a selection set
+** (ssmemb ename ss)
+Tests whether an object (entity) is a member of a selection set
+** (ssname ss index)
+Returns the object (entity) name of the indexed element of a selection set
+** (ssnamex ss index)
+Retrieves information about how a selection set was created
+** (sssetfirst gripset [pickset])
+Sets which objects are selected and gripped
+* 查询和命令函数
+** (acad_colordlg colornum [flag])
+Displays the standard AutoCAD Color Selection dialog box
+** (acad_helpdlg helpfile topic)
+Invokes the Help facility (obsolete)
+** (command [arguments] ...)
+Executes an AutoCAD command
+** (command-s [arguments] ...)
+Executes an AutoCAD command and the supplied input
+** (getcfg cfgname)
+Retrieves application data from the AppData section of the acadXXXX.cfg file
+** (getcname cname)
+Retrieves the localized or English name of an AutoCAD command
+** (getenv "variable-name")
+Returns the string value assigned to an environment variable
+** (getvar "varname")
+Retrieves the value of an AutoCAD system variable
+** (help [helpfile [topic [command]]])
+Invokes the Help facility
+** (setcfg cfgname cfgval)
+Writes application data to the AppData section of the acadXXXX.cfg file
+** (setenv "varname" "value")
+Sets an environment variable to a specified value
+** (setfunhelp "c:fname" ["helpfile" ["topic" ["command"]]])
+Registers a user-defined command with the Help facility so the appropriate help file and topic are called when the user requests help on that command
+** (setvar "varname" value)
+Sets an AutoCAD system variable to a specified value
+** (ver)
+Returns a string that contains the current AutoLISP version number
+** (vl-cmdf [arguments] ...)
+Executes an AutoCAD command after evaluating arguments
+** (vlax-add-cmd global-name func-sym [local-name cmd-flags])
+Adds commands to a group
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-remove-cmd global-name)
+Removes a single command or command group
+注意:Extended AutoLISP extension: requires vl-load-com
+* 对象处理函数
+** (dumpallproperties ename [context])
+Retrieves an entity’s supported properties
+** (entdel ename)
+Deletes objects (entities) or restores previously deleted objects
+** (entget ename [applist])
+Retrieves an object's definition data
+** (entlast)
+Returns the name of the last non-deleted main object in the drawing
+** (entmake [elist])
+Creates a new entity (graphical object) in the drawing
+** (entmakex [elist])
+Makes a new object, gives it a handle and entity name (but does not assign an owner), and then returns the new entity name
+** (entmod elist)
+Modifies the definition data of an object
+** (entnext [ename])
+Returns the name of the next object in the drawing
+** (entupd ename)
+Updates the screen image of an object
+** (getpropertyvalue ename propertyname [or collectionName index name])
+Returns the current value of an entity’s property
+** (handent handle)
+Returns an object name based on its handle
+** (ispropertyreadonly ename propertyname [or collectionName index name])
+Returns the read-only state of an entity’s property
+** (setpropertyvalue ename propertyname value [or collectionname index name val])
+Sets the property value for an entity
+** (vlax-dump-object obj)
+Lists an object's methods and properties
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-erased-p obj)
+Determines whether an object was erased
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-get-acad-object)
+Retrieves the top-level AutoCAD application object for the current AutoCAD session
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-method-applicable-p obj method)
+Determines whether an object supports a particular method
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-object-released-p obj)
+Determines whether an object has been released
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-read-enabled-p obj)
+Determines whether an object can be read
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-release-object obj)
+Releases a drawing object
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-typeinfo-available-p obj)
+Determines whether type library information is present for the specified type of object
+注意:Extended AutoLISP extension: requires vl-load-com
+** (vlax-write-enabled-p obj)
+Determines whether an AutoCAD drawing object can be modified
+注意:Extended AutoLISP extension: requires vl-load-com
+* 名空间通信函数
+** (vl-bb-ref 'variable)
+Returns the value of a variable from the blackboard namespace
+** (vl-bb-set 'variable value)
+Sets the value of a variable in the blackboard namespace
+** (vl-load-all "filename")
+Loads a file into all open AutoCAD documents, and into any document subsequently opened during the current AutoCAD session
+** (vl-propagate 'variable)
+Copies the value of a variable into all open AutoCAD documents, and into any document subsequently opened during the current AutoCAD session
+* 内存操作函数
+** (alloc int)
+Sets the segment size to a given number of nodes
+** (expand number)
+Allocates node space by requesting a specified number of segments
+** (gc)
+Forces a garbage collection, which frees up unused memory
+** (mem)
+Displays the current state of memory in AutoLISP
+* 表操作函数
+** (acad_strlsort lst)
+Sorts a list of strings by alphabetical order
+** (append lst ...)
+Takes any number of lists and runs them together as one list
+** (assoc item alist)
+Searches an association list for an element and returns that association list entry
+** (caddr lst)
+Returns the third element of a list
+** (cadr lst)
+Returns the second element of a list
+** (car lst)
+Returns the first element of a list
+** (cdr lst)
+Returns the specified list, except for the first element of the list
+** (cons new-first-element lst)
+The basic list constructor
+** (foreach name lst [expr ...])
+Evaluates expressions for all members of a list
+** (last lst)
+Returns the last element in a list
+** (length lst)
+Returns an integer indicating the number of elements in a list
+** (list [expr ...])
+Takes any number of expressions and combines them into one list
+** (listp item)
+Verifies that an item is a list
+** (mapcar function list1 ... listn)
+Returns a list of the result of executing a function with the individual elements of a list or lists supplied as arguments to the function
+** (member expr lst)
+Searches a list for an occurrence of an expression and returns the remainder of the list, starting with the first occurrence of the expression
+** (nth n lst)
+Returns the nth element of a list
+** (reverse lst)
+Returns a list with its elements reversed
+** (subst newitem olditem lst)
+Searches a list for an old item and returns a copy of the list with a new item substituted in place of every occurrence of the old item
+** (vl-consp list-variable)
+Determines whether or not a list is nil
+** (vl-every predicate-function list [ more-lists ...])
+Checks whether the predicate is true for every element combination
+** (vl-list* object [more-objects ...])
+Constructs and returns a list
+** (vl-list->string char-codes-list)
+Combines the Unicode characters associated with a list of integers into a string
+** (vl-list-length list-or-cons-object)
+Calculates list length of a true list
+** (vl-member-if predicate-function list)
+Determines whether the predicate is true for one of the list members
+** (vl-member-if-not predicate-function list)
+Determines whether the predicate is nil for one of the list members
+** (vl-position symbol list)
+Returns the index of the specified list item
+** (vl-remove element-to-remove list)
+Removes elements from a list
+** (vl-remove-if predicate-function list)
+Returns all elements of the supplied list that fail the test function
+** (vl-remove-if-not predicate-function list)
+Returns all elements of the supplied list that pass the test function
+** (vl-some predicate-function list [more-lists ...])
+Checks whether the predicate is not nil for one element combination
+** (vl-sort list comparison-function)
+Sorts the elements in a list according to a given compare function
+** (vl-sort-i list comparison-function)
+Sorts the elements in a list according to a given compare function, and returns the element index numbers
+** (vl-string->list string)
+Converts a string into a list of Unicode character codes
+* 几何函数
+** (angle pt1 pt2)
+Returns an angle in radians of a line defined by two endpoints
+** (distance pt1 pt2)
+Returns the 3D distance between two points
+** (inters pt1 pt2 pt3 pt4 [onseg])
+Finds the intersection of two lines
+** (osnap pt mode)
+Returns a 3D point that is the result of applying an Object Snap mode to a specified point
+** (polar pt ang dist)
+Returns the UCS 3D point at a specified angle and distance from a point
+** (textbox elist)
+Measures a specified text object, and returns the diagonal coordinates of a box that encloses the text
+* 函数处理函数
+** (apply function lst)
+Passes a list of arguments to a specified function
+** (defun sym ([arguments] [/variables ...]) expr ... )
+Defines a function
+** (defun-q sym ([arguments] [/ variables ...]) expr ...)
+Defines a function as a list (intended for backward-compatibility only)
+** (defun-q-list-ref 'function)
+Displays the list structure of a function defined with defun-q
+** (defun-q-list-set 'sym list)
+Defines a function as a list (intended for backward-compatibility only)
+** (eval expr)
+Returns the result of evaluating an AutoLISP expression
+** (lambda arguments expr ...)
+Defines an anonymous function
+** (progn [expr ...])
+Evaluates each expression sequentially, and returns the value of the last expression
+** (trace function ...)
+Aids in AutoLISP debugging
+** (untrace function ...)
+Clears the trace flag for the specified functions
+* 文件处理函数
+** (close file-desc)
+Closes an open file
+** (findfile filename)
+Searches the AutoCAD library path for the specified file
+** (findtrustedfile filename)
+Searches the AutoCAD trusted file paths for the specified file
+** (open filename mode)
+Opens a file for access by the AutoLISP I/O functions
+** (read-char [file-desc])
+Returns the decimal ASCII code representing the character read from the keyboard input buffer or from an open file
+(read-line [file-desc])
+Reads a string from the keyboard or from an open file
+** (vl-directory-files [ directory pattern directories])
+Lists all files in a given directory
+** (vl-file-copy "source-filename" "destination-filename" [append])
+Copies or appends the contents of one file to another file
+** (vl-file-delete "filename")
+Deletes a file
+** (vl-file-directory-p "filename")
+Determines if a file name refers to a directory
+** (vl-file-rename "old-filename" "new-filename")
+Renames a file
+** (vl-file-size "filename")
+Determines the size of a file, in bytes
+** (vl-file-systime "filename")
+Returns last modification time of the specified file
+** (vl-filename-base "filename")
+Returns the name of a file, after stripping out the directory path and extension
+** (vl-filename-directory "filename")
+Returns the directory path of a file, after stripping out the name and extension
+** (vl-filename-extension "filename")
+Returns the extension from a file name, after stripping out the rest of the name
+** (vl-filename-mktemp ["pattern" "directory" "extension"])
+Calculates a unique file name to be used for a temporary file
+** (write-char num [file-desc])
+Writes one character to the screen or to an open file
+** (write-line string [file-desc])
+Writes a string to the screen or to an open file
+* 扩展数据处理函数
+** (regapp application)
+Registers an application name with the current AutoCAD drawing in preparation for using extended object data
+** (xdroom ename)
+Returns the amount of extended data (xdata) space that is available for an object (entity)
+** (xdsize lst)
+Returns the size (in bytes) that a list occupies when it is linked to an object (entity) as extended data
+* 错误处理函数
+** (*error* string)
+A user-definable error-handling function
+** (*pop-error-mode*)
+Error-handling function that ends the previous call to *push-error-using-command* or *push-error-using-stack*
+** (*push-error-using-command*)
+Error-handling function that indicates the use of the command function within a custom *error* handler
+** (*push-error-using-stack*)
+Error-handling function that indicates the use of variables from the AutoLISP stack within a custom *error* handler
+** (alert string)
+Displays an alert dialog box with the error or warning message passed as a string
+** (exit)
+Forces the current application to quit
+** (quit)
+Forces the current application to quit
+** (vl-catch-all-apply 'function list)
+Passes a list of arguments to a specified function and traps any exceptions
+** (vl-catch-all-error-message error-obj)
+Returns a string from an error object
+** (vl-catch-all-error-p arg)
+Determines whether an argument is an error object returned from vl-catch-all-apply
+* 比较与条件函数
+** (= numstr [numstr ...])
+Returns T if all arguments are numerically equal, and returns nil otherwise
+** (/= numstr [numstr ...])
+Returns T if the arguments are not numerically equal, and nil if the arguments are numerically equal
+** (< numstr [numstr ...])
+Returns T if each argument is numerically less than the argument to its right, and returns nil otherwise
+** (<= numstr [numstr ...])
+Returns T if each argument is numerically less than or equal to the argument to its right, and returns nil otherwise
+** (> numstr [numstr ...])
+Returns T if each argument is numerically greater than the argument to its right, and returns nil otherwise
+** (>= numstr [numstr ...])
+Returns T if each argument is numerically greater than or equal to the argument to its right, and returns nil otherwise
+** (and [expr ...])
+Returns the logical AND of a list of expressions
+** (boole func int1 [int2 ...])
+Serves as a general bitwise Boolean function
+** (cond [(test result ...) ...])
+Serves as the primary conditional function for AutoLISP
+** (eq expr1 expr2)
+Determines whether two expressions are identical
+** (equal expr1 expr2 [fuzz])
+Determines whether two expressions are equal
+** (if testexpr thenexpr [elseexpr])
+Conditionally evaluates expressions
+** (or [expr ...])
+Returns the logical OR of a list of expressions
+** (repeat int [expr ...])
+Evaluates each expression a specified number of times, and returns the value of the last expression
+** (while testexpr [expr ...])
+Evaluates a test expression, and if it is not nil, evaluates other expressions; repeats this process until the test expression evaluates to nil
+* 显示控制函数
+** (graphscr)
+Displays the AutoCAD graphics screen
+** (grdraw from to color [highlight])
+Draws a vector between two points, in the current viewport
+** (grtext [box text [highlight]])
+Writes text to the status line or to screen menu areas
+** (grvecs vlist [trans])
+Draws multiple vectors on the graphics screen
+** (menucmd string)
+Issues menu commands, or sets and retrieves menu item status
+** (menugroup groupname)
+Verifies that a menu group is loaded
+** (prin1 [expr [file-desc]])
+Prints an expression to the command line or writes an expression to an open file
+** (princ [expr [file-desc]])
+Prints an expression to the command line, or writes an expression to an open file
+** (print [expr [file-desc]])
+Prints an expression to the command line, or writes an expression to an open file
+** (prompt msg)
+Displays a string on your screen's prompt area
+** (redraw [ename [mode]])
+Redraws the current viewport or a specified object (entity) in the current viewport
+** (terpri)
+Prints a newline to the Command line
+** (textpage)
+Switches from the graphics screen to the text screen
+** (textscr)
+Switches from the graphics screen to the text screen (like the AutoCAD Flip Screen function key)
+** (vports)
+Returns a list of viewport descriptors for the current viewport configuration
+* 设备存取函数
+** (grread [track] [allkeys [curtype]])
+Reads values from any of the AutoCAD input devices
+** (tablet code [row1 row2 row3 direction])
+Retrieves and sets digitizer (tablet) calibrations
+* 数学函数
+** (+ [number number ...])
+Returns the sum of all numbers
+** (- [number number ...])
+Subtracts the second and following numbers from the first and returns the difference
+** (* [number number ...])
+Returns the product of all numbers
+** (/ [number number ...])
+Divides the first number by the product of the remaining numbers and returns the quotient
+** (~ int)
+Returns the bitwise NOT (1's complement) of the argument
+** (1+ number)
+Returns the argument increased by 1 (incremented)
+** (1- number)
+Returns the argument reduced by 1 (decremented)
+** (abs number)
+Returns the absolute value of the argument
+** (atan num1 [num2])
+Returns the arctangent of a number in radians
+** (cos ang)
+Returns the cosine of an angle expressed in radians
+** (exp number)
+Returns the constant e (a real) raised to a specified power (the natural antilog)
+** (expt base power)
+Returns a number raised to a specified power
+** (fix number)
+Returns the conversion of a real into the nearest smaller integer
+** (float number)
+Returns the conversion of a number into a real
+** (gcd int1 int2)
+Returns the greatest common denominator of two integers
+** (log number)
+Returns the natural log of a number as a real
+** (logand [int int ...])
+Returns the result of the logical bitwise AND of a list of integers
+** (logior [int int ...])
+Returns the result of the logical bitwise inclusive OR of a list of integers
+** (lsh [int numbits])
+Returns the logical bitwise shift of an integer by a specified number of bits
+** (max [number number ...])
+Returns the largest of the numbers given
+** (min [number number ...])
+Returns the smallest of the numbers given
+** (minusp number)
+Verifies that a number is negative
+** (rem [num1 num2 ...])
+Divides the first number by the second, and returns the remainder
+** (sin ang)
+Returns the sine of an angle as a real expressed in radians
+** (sqrt number)
+Returns the square root of a number as a real
+** (zerop number)
+Verifies that a number evaluates to zero
+* 应用处理函数
+** (arx)
+Returns a list of the currently loaded ObjectARX applications
+** (arxload application [onfailure])
+Loads an ObjectARX application
+** (arxunload application [onfailure])
+Unloads an ObjectARX application
+** (autoarxload filename cmdlist)
+Predefines command names to load an associated ObjectARX file
+** (autoload filename cmdlist)
+Predefines command names to load an associated AutoLISP file
+** (initdia [dialogflag])
+Forces the display of the next command's dialog box
+** (load filename [onfailure])
+Evaluates the AutoLISP expressions in a file
+** (showhtmlmodalwindow uri)
+Displays a modal dialog box with a specified URI (Uniform Resource Identifier)
+** (startapp appcmd file)
+Starts a Windows application
+** (vl-load-all filename)
+Loads a file into all open AutoCAD documents
+** (vl-vbaload "filename")
+Loads a VBA project
+** (vl-vbarun "macroname")
+Runs a VBA macro
+** (vlax-add-cmd "global-name" 'func-sym [“local-name" cmd-flags])
+Adds commands to the AutoCAD built-in command set
+注意:Extended AutoLISP extension: requires vl-load-com
