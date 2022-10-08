@@ -1,0 +1,10 @@
+autolisp,acet-ui-progress,,,(acet-ui-progress String_Msg Int_Max)LINE_BREAK(acet-ui-progress Int_current)LINE_BREAK(acet-ui-progress)LINE_BREAK由ET定义的进度条函数,false,false
+autolisp,acet-sys-shift-down,,,"(acet-sys-shift-down)LINE_BREAK返回Shift按键的情况,返回T或者nil.(由acetutil.arx定义的拓展函数)",false,false
+autolisp,acet-ps-to-ms,,,(acet-ps-to-ms [value][viewport])LINE_BREAK从图纸空间单位转换实数值到模型空间单位,false,false
+autolisp,acet-ms-to-ps,,,(acet-ms-to-ps [value][viewport])LINE_BREAK从模型空间单位转换实数值到图纸空间单位,false,false
+autolisp,acet-laytrans,,,(acet-laytrans “filename” [settings])LINE_BREAK转换图形中的图层为其它图形或标准文件中所定义的标准,false,false
+autolisp,acet-layerp-mark,,,(acet-layerp-mark [status])LINE_BREAK放置图层先前记录的开始和结束标记,false,false
+autolisp,acet-layerp-mode,,,(acet-layerp-mode [status])LINE_BREAK查询和设置 LAYERPMODE 配置,false,false
+autolisp,_ACETAUTOQLOAD,,,(_ACETAUTOQLOAD   QUOI  APP  CMDLISTE )LINE_BREAKet函数库,false,false
+autolisp,_ACETAUTOLOAD,,,(_ACETAUTOLOAD   APP )LINE_BREAKet函数库,false,false
+autolisp,_ACETAUTOARXLOAD,,,(_ACETAUTOARXLOAD   APP )LINE_BREAKET函数,false,false

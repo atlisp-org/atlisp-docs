@@ -1,321 +1,321 @@
 * 转换函数
-** (angtof string [mode])
-** (angtos angle [mode [precision]])
-** (ascii string)
-** (atof string)
-** (atoi string)
-** (chr integer)
-** (cvunit value from to)
-** (distof string [mode])
-** (itoa int)
-** (rtos number [mode [precision]])
-** (trans pt from to [disp])
+=angtof=
+=angtos=
+=ascii=
+=atof=
+=atoi=
+=chr=
+=cvunit=
+=distof=
+=itoa=
+=rtos=
+=trans=
 * 注册表函数
-** (vl-registry-delete reg-key [val-name])
-** (vl-registry-descendents reg-key [val-names])
-** (vl-registry-read reg-key [val-name])
-** (vl-registry-write reg-key [val-name val-data])
-** (vlax-machine-product-key)
-** (vlax-product-key)
-** (vlax-user-product-key)
+=vl-registry-delete=
+=vl-registry-descendents=
+=vl-registry-read=
+=vl-registry-write=
+=vlax-machine-product-key=
+=vlax-product-key=
+=vlax-user-product-key=
 * vlx名空间函数
-** (vl-arx-import [ function | application])
-** (vl-doc-export 'function)
-** (vl-doc-import ['function | application])
-** (vl-doc-ref symbol)
-** (vl-doc-set symbol value)
-** (vl-exit-with-error "msg")
-** (vl-exit-with-value value)
-** (vl-list-exported-functions [“appname”])
-** (vl-list-loaded-vlx)
-** (vl-unload-vlx "appname")
-** (vl-vlx-loaded-p "appname")
+=vl-arx-import=
+=vl-doc-export=
+=vl-doc-import=
+=vl-doc-ref=
+=vl-doc-set=
+=vl-exit-with-error=
+=vl-exit-with-value=
+=vl-list-exported-functions=
+=vl-list-loaded-vlx=
+=vl-unload-vlx=
+=vl-vlx-loaded-p=
 * 用户输入函数
-** (entsel [msg])
-** (getangle [pt] [msg])
-** (getcorner pt [msg])
-** (getdist [pt] [msg])
-** (getfiled title default ext flags)
-** (getint [msg])
-** (getkword [msg])
-** (getorient [pt] [msg])
-** (getpoint [pt] [msg])
-** (getreal [msg])
-** (getstring [cr] [msg])
-** (initget [bits] [string])
-** (nentsel [msg])
-** (nentselp [msg] [pt])
+=entsel=
+=getangle=
+=getcorner=
+=getdist=
+=getfiled=
+=getint=
+=getkword=
+=getorient=
+=getpoint=
+=getreal=
+=getstring=
+=initget=
+=nentsel=
+=nentselp=
 * 符号表和字典处理函数
-** (dictadd ename symbol newobj)
-** (dictnext ename symbol [rewind])
-** (dictremove ename symbol)
-** (dictrename ename oldsym newsym)
-** (dictsearch ename symbol [setnext])
-** (layoutlist)
-** (namedobjdict)
-** (setview view_description [vport_id])
-** (snvalid sym_name)
-** (tblnext table-name [rewind])
-** (tblobjname table-name symbol)
-** (tblsearch table-name symbol [setnext])
-** (vlax-ldata-delete dict key)
-** (vlax-ldata-get dict key [default-data])
-** (vlax-ldata-list dict)
-** (vlax-ldata-put dict key data)
-** (vlax-ldata-test data)
+=dictadd=
+=dictnext=
+=dictremove=
+=dictrename=
+=dictsearch=
+=layoutlist=
+=namedobjdict=
+=setview=
+=snvalid=
+=tblnext=
+=tblobjname=
+=tblsearch=
+=vlax-ldata-delete=
+=vlax-ldata-get=
+=vlax-ldata-list=
+=vlax-ldata-put=
+=vlax-ldata-test=
 * 符号处理函数
-** (atom item)
-** (atoms-family format [symlist])
-** (boundp sym)
-** (not item)
-** (null item)
-** (numberp item)
-** (quote expr)
-** (set sym expr)
-** (setq sym1 expr1 [sym2 expr2 ...])
-** (type item)
-** (vl-symbol-name symbol)
-** (vl-symbol-value symbol)
-** (vl-symbolp object)
+=atom=
+=atoms-family=
+=boundp=
+=not=
+=null=
+=numberp=
+=quote=
+=set=
+=setq=
+=type=
+=vl-symbol-name=
+=vl-symbol-value=
+=vl-symbolp=
 * 字符串处理函数
-** (read [string])
-** (strcase string [which])
-** (strcat [string1 [string2 ...])
-** (strlen [string ...])
-** (substr string start [length])
-** (vl-prin1-to-string object)
-** (vl-princ-to-string object)
-** (vl-string->list string)
-** (vl-string-elt string position)
-** (vl-string-left-trim character-set string)
-** (vl-string-mismatch str1 str2 [pos1 pos2 ignore-case-p])
-** (vl-string-position char-code str [ start-pos [from-end-p]])
-** (vl-string-right-trim character-set string)
-** (vl-string-search pattern string [ start-pos])
-** (vl-string-subst new-str pattern string [start-pos])
-** (vl-string-translate source-set dest-set str)
-** (vl-string-trim char-set str)
-** (wcmatch string pattern)
+=read=
+=strcase=
+=strcat=
+=strlen=
+=substr=
+=vl-prin1-to-string=
+=vl-princ-to-string=
+=vl-string->list=
+=vl-string-elt=
+=vl-string-left-trim=
+=vl-string-mismatch=
+=vl-string-position=
+=vl-string-right-trim=
+=vl-string-search=
+=vl-string-subst=
+=vl-string-translate=
+=vl-string-trim=
+=wcmatch=
 * 选择集操作函数
-** (ssadd [ename [ss]])
-** (ssdel ename ss)
-** (ssget [mode] [pt1 [pt2]] [pt-list] [filter-list])
-** (ssgetfirst)
-** (sslength ss)
-** (ssmemb ename ss)
-** (ssname ss index)
-** (ssnamex ss index)
-** (sssetfirst gripset [pickset])
+=ssadd=
+=ssdel=
+=ssget=
+=ssgetfirst=
+=sslength=
+=ssmemb=
+=ssname=
+=ssnamex=
+=sssetfirst=
 * 查询和命令函数
-** (acad_colordlg colornum [flag])
-** (acad_helpdlg helpfile topic)
-** (command [arguments] ...)
-** (command-s [arguments] ...)
-** (getcfg cfgname)
-** (getcname cname)
-** (getenv "variable-name")
-** (getvar "varname")
-** (help [helpfile [topic [command]]])
-** (setcfg cfgname cfgval)
-** (setenv "varname" "value")
-** (setfunhelp "c:fname" ["helpfile" ["topic" ["command"]]])
-** (setvar "varname" value)
-** (ver)
-** (vl-cmdf [arguments] ...)
-** (vlax-add-cmd global-name func-sym [local-name cmd-flags])
-** (vlax-remove-cmd global-name)
+=acad_colordlg=
+=acad_helpdlg=
+=command=
+=command-s=
+=getcfg=
+=getcname=
+=getenv=
+=getvar=
+=help=
+=setcfg=
+=setenv=
+=setfunhelp=
+=setvar=
+=ver=
+=vl-cmdf=
+=vlax-add-cmd=
+=vlax-remove-cmd=
 * 对象处理函数
-** (dumpallproperties ename [context])
-** (entdel ename)
-** (entget ename [applist])
-** (entlast)
-** (entmake [elist])
-** (entmakex [elist])
-** (entmod elist)
-** (entnext [ename])
-** (entupd ename)
-** (getpropertyvalue ename propertyname [or collectionName index name])
-** (handent handle)
-** (ispropertyreadonly ename propertyname [or collectionName index name])
-** (setpropertyvalue ename propertyname value [or collectionname index name val])
-** (vlax-dump-object obj)
-** (vlax-erased-p obj)
-** (vlax-get-acad-object)
-** (vlax-method-applicable-p obj method)
-** (vlax-object-released-p obj)
-** (vlax-read-enabled-p obj)
-** (vlax-release-object obj)
-** (vlax-typeinfo-available-p obj)
-** (vlax-write-enabled-p obj)
+=dumpallproperties=
+=entdel=
+=entget=
+=entlast=
+=entmake=
+=entmakex=
+=entmod=
+=entnext=
+=entupd=
+=getpropertyvalue=
+=handent=
+=ispropertyreadonly=
+=setpropertyvalue=
+=vlax-dump-object=
+=vlax-erased-p=
+=vlax-get-acad-object=
+=vlax-method-applicable-p=
+=vlax-object-released-p=
+=vlax-read-enabled-p=
+=vlax-release-object=
+=vlax-typeinfo-available-p=
+=vlax-write-enabled-p=
 * 名空间通信函数
-** (vl-bb-ref 'variable)
-** (vl-bb-set 'variable value)
-** (vl-load-all "filename")
-** (vl-propagate 'variable)
+=vl-bb-ref=
+=vl-bb-set=
+=vl-load-all=
+=vl-propagate=
 * 内存操作函数
-** (alloc int)
-** (expand number)
-** (gc)
-** (mem)
+=alloc=
+=expand=
+=gc=
+=mem=
 * 表操作函数
-** (acad_strlsort lst)
-** (append lst ...)
-** (assoc item alist)
-** (caddr lst)
-** (cadr lst)
-** (car lst)
-** (cdr lst)
-** (cons new-first-element lst)
-** (foreach name lst [expr ...])
-** (last lst)
-** (length lst)
-** (list [expr ...])
-** (listp item)
-** (mapcar function list1 ... listn)
-** (member expr lst)
-** (nth n lst)
-** (reverse lst)
-** (subst newitem olditem lst)
-** (vl-consp list-variable)
-** (vl-every predicate-function list [ more-lists ...])
-** (vl-list* object [more-objects ...])
-** (vl-list->string char-codes-list)
-** (vl-list-length list-or-cons-object)
-** (vl-member-if predicate-function list)
-** (vl-member-if-not predicate-function list)
-** (vl-position symbol list)
-** (vl-remove element-to-remove list)
-** (vl-remove-if predicate-function list)
-** (vl-remove-if-not predicate-function list)
-** (vl-some predicate-function list [more-lists ...])
-** (vl-sort list comparison-function)
-** (vl-sort-i list comparison-function)
-** (vl-string->list string)
+=acad_strlsort=
+=append=
+=assoc=
+=caddr=
+=cadr=
+=car=
+=cdr=
+=cons=
+=foreach=
+=last=
+=length=
+=list=
+=listp=
+=mapcar=
+=member=
+=nth=
+=reverse=
+=subst=
+=vl-consp=
+=vl-every=
+=vl-list*=
+=vl-list->string=
+=vl-list-length=
+=vl-member-if=
+=vl-member-if-not=
+=vl-position=
+=vl-remove=
+=vl-remove-if=
+=vl-remove-if-not=
+=vl-some=
+=vl-sort=
+=vl-sort-i=
+=vl-string->list=
 * 几何函数
-** (angle pt1 pt2)
-** (distance pt1 pt2)
-** (inters pt1 pt2 pt3 pt4 [onseg])
-** (osnap pt mode)
-** (polar pt ang dist)
-** (textbox elist)
+=angle=
+=distance=
+=inters=
+=osnap=
+=polar=
+=textbox=
 * 函数处理函数
-** (apply function lst)
-** (defun sym ([arguments] [/variables ...]) expr ... )
-** (defun-q sym ([arguments] [/ variables ...]) expr ...)
-** (defun-q-list-ref 'function)
-** (defun-q-list-set 'sym list)
-** (eval expr)
-** (lambda arguments expr ...)
-** (progn [expr ...])
-** (trace function ...)
-** (untrace function ...)
+=apply=
+=defun=
+=defun-q=
+=defun-q-list-ref=
+=defun-q-list-set=
+=eval=
+=lambda=
+=progn=
+=trace=
+=untrace=
 * 文件处理函数
-** (close file-desc)
-** (findfile filename)
-** (findtrustedfile filename)
-** (open filename mode)
-** (read-char [file-desc])
-** (vl-directory-files [ directory pattern directories])
-** (vl-file-copy "source-filename" "destination-filename" [append])
-** (vl-file-delete "filename")
-** (vl-file-directory-p "filename")
-** (vl-file-rename "old-filename" "new-filename")
-** (vl-file-size "filename")
-** (vl-file-systime "filename")
-** (vl-filename-base "filename")
-** (vl-filename-directory "filename")
-** (vl-filename-extension "filename")
-** (vl-filename-mktemp ["pattern" "directory" "extension"])
-** (write-char num [file-desc])
-** (write-line string [file-desc])
+=close=
+=findfile=
+=findtrustedfile=
+=open=
+=read-char=
+=vl-directory-files=
+=vl-file-copy=
+=vl-file-delete=
+=vl-file-directory-p=
+=vl-file-rename=
+=vl-file-size=
+=vl-file-systime=
+=vl-filename-base=
+=vl-filename-directory=
+=vl-filename-extension=
+=vl-filename-mktemp=
+=write-char=
+=write-line=
 * 扩展数据处理函数
-** (regapp application)
-** (xdroom ename)
-** (xdsize lst)
+=regapp=
+=xdroom=
+=xdsize=
 * 错误处理函数
-** (*error* string)
-** (*pop-error-mode*)
-** (*push-error-using-command*)
-** (*push-error-using-stack*)
-** (alert string)
-** (exit)
-** (quit)
-** (vl-catch-all-apply 'function list)
-** (vl-catch-all-error-message error-obj)
-** (vl-catch-all-error-p arg)
+=*error*=
+=*pop-error-mode*=
+=*push-error-using-command*=
+=*push-error-using-stack*=
+=alert=
+=exit=
+=quit=
+=vl-catch-all-apply=
+=vl-catch-all-error-message=
+=vl-catch-all-error-p=
 * 比较与条件函数
-** (= numstr [numstr ...])
-** (/= numstr [numstr ...])
-** (< numstr [numstr ...])
-** (<= numstr [numstr ...])
-** (> numstr [numstr ...])
-** (>= numstr [numstr ...])
-** (and [expr ...])
-** (boole func int1 [int2 ...])
-** (cond [(test result ...) ...])
-** (eq expr1 expr2)
-** (equal expr1 expr2 [fuzz])
-** (if testexpr thenexpr [elseexpr])
-** (or [expr ...])
-** (repeat int [expr ...])
-** (while testexpr [expr ...])
+=
+/=
+=<=
+<=
+=>=
+>=
+=and=
+=boole=
+=cond=
+=eq=
+=equal=
+=if=
+=or=
+=repeat=
+=while=
 * 显示控制函数
-** (graphscr)
-** (grdraw from to color [highlight])
-** (grtext [box text [highlight]])
-** (grvecs vlist [trans])
-** (menucmd string)
-** (menugroup groupname)
-** (prin1 [expr [file-desc]])
-** (princ [expr [file-desc]])
-** (print [expr [file-desc]])
-** (prompt msg)
-** (redraw [ename [mode]])
-** (terpri)
-** (textpage)
-** (textscr)
-** (vports)
+=graphscr=
+=grdraw=
+=grtext=
+=grvecs=
+=menucmd=
+=menugroup=
+=prin1=
+=princ=
+=print=
+=prompt=
+=redraw=
+=terpri=
+=textpage=
+=textscr=
+=vports=
 * 设备存取函数
-** (grread [track] [allkeys [curtype]])
-** (tablet code [row1 row2 row3 direction])
+=grread=
+=tablet=
 * 数学函数
-** (+ [number number ...])
-** (- [number number ...])
-** (* [number number ...])
-** (/ [number number ...])
-** (~ int)
-** (1+ number)
-** (1- number)
-** (abs number)
-** (atan num1 [num2])
-** (cos ang)
-** (exp number)
-** (expt base power)
-** (fix number)
-** (float number)
-** (gcd int1 int2)
-** (log number)
-** (logand [int int ...])
-** (logior [int int ...])
-** (lsh [int numbits])
-** (max [number number ...])
-** (min [number number ...])
-** (minusp number)
-** (rem [num1 num2 ...])
-** (sin ang)
-** (sqrt number)
-** (zerop number)
+=+=
+=-=
+=*=
+=/=
+=~=
+=1+=
+=1-=
+=abs=
+=atan=
+=cos=
+=exp=
+=expt=
+=fix=
+=float=
+=gcd=
+=log=
+=logand=
+=logior=
+=lsh=
+=max=
+=min=
+=minusp=
+=rem=
+=sin=
+=sqrt=
+=zerop=
 * 应用处理函数
-** (arx)
-** (arxload application [onfailure])
-** (arxunload application [onfailure])
-** (autoarxload filename cmdlist)
-** (autoload filename cmdlist)
-** (initdia [dialogflag])
-** (load filename [onfailure])
-** (showhtmlmodalwindow uri)
-** (startapp appcmd file)
-** (vl-load-all filename)
-** (vl-vbaload "filename")
-** (vl-vbarun "macroname")
-** (vlax-add-cmd "global-name" 'func-sym [“local-name" cmd-flags])
+=arx=
+=arxload=
+=arxunload=
+=autoarxload=
+=autoload=
+=initdia=
+=load=
+=showhtmlmodalwindow=
+=startapp=
+=vl-load-all=
+=vl-vbaload=
+=vl-vbarun=
+=vlax-add-cmd=

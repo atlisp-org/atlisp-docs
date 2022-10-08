@@ -1,0 +1,477 @@
+autolisp,acHorzBottom,,,(4)LINE_BREAK底或顶水平格线，基于表格流向。,false,false
+autolisp,acHorzInside,,,(2)LINE_BREAK除了顶和底线外的所有水平格线。,false,false
+autolisp,acHorzTop,,,(1)LINE_BREAK顶或底水平格线，基于表格流向。,false,false
+autolisp,acInvalidGridLine,,,(0)LINE_BREAK无效的格线。,false,false
+autolisp,acVertInside,,,(16)LINE_BREAK除是最左边和最右边格线外的氖垂直格线。,false,false
+autolisp,acVertLeft,,,(8)LINE_BREAK最左边格线。,false,false
+autolisp,acAttachmentPointBottomRight,,,(9)LINE_BREAK右下,false,false
+autolisp,acAttachmentPointBottomCenter,,,(8)LINE_BREAK中下,false,false
+autolisp,acAttachmentPointBottomLeft,,,(7)LINE_BREAK左下,false,false
+autolisp,acAttachmentPointMiddleRight,,,(6)LINE_BREAK右中,false,false
+autolisp,acAttachmentPointMiddleCenter,,,(5)LINE_BREAK居中,false,false
+autolisp,acAttachmentPointMiddleLeft,,,(4)LINE_BREAK左中,false,false
+autolisp,acAttachmentPointTopRight,,,(3)LINE_BREAK右上,false,false
+autolisp,acAttachmentPointTopCenter,,,(2)LINE_BREAK中上,false,false
+autolisp,acAttachmentPointTopLeft,,,(1)LINE_BREAK左上,false,false
+autolisp,acAttributeModePreset,,,"8,指定属性定义的模式。",false,false
+autolisp,acAttributeModeVerify,,,"4,指定属性定义的模式。",false,false
+autolisp,acAttributeModeConstant,,,"2,指定属性定义的模式。",false,false
+autolisp,acAttributeModeInvisible,,,"1,指定属性定义的模式。",false,false
+autolisp,acDimEngineering,,,(3)LINE_BREAK工程,false,false
+autolisp,acDimWindowsDesktop,,,(8)LINE_BREAKWindows桌面,false,false
+autolisp,acDimFractional,,,(7)LINE_BREAK分数,false,false
+autolisp,acDimArchitectural,,,(6)LINE_BREAK建筑,false,false
+autolisp,acDimFractionalStacked,,,(5)LINE_BREAK分数,false,false
+autolisp,acDimArchitecturalStacked,,,(4)LINE_BREAK建筑**,false,false
+autolisp,acDimDecimal,,,(2)LINE_BREAK小数,false,false
+autolisp,acDimScientific,,,(1)LINE_BREAK科学,false,false
+autolisp,acDimLWindowsDesktop,,,(6)LINE_BREAKwindows桌面,false,false
+autolisp,acDimLFractional,,,(5)LINE_BREAK分数,false,false
+autolisp,acDimLArchitectural,,,(4)LINE_BREAK建筑,false,false
+autolisp,acDimLEngineering,,,(3)LINE_BREAK工程,false,false
+autolisp,acDimLDecimal,,,(2)LINE_BREAK小数,false,false
+autolisp,acDimLScientific,,,(1)LINE_BREAK科学,false,false
+autolisp,acColorMethodForeground,,,(197)LINE_BREAK颜色设置方式,false,false
+autolisp,acColorMethodByRGB,,,(194)LINE_BREAK颜色设置方式,false,false
+autolisp,acColorMethodByLayer,,,(192)LINE_BREAK颜色的设置方式,false,false
+autolisp,acColorMethodByBlock,,,(193)LINE_BREAK颜色的设置方式,false,false
+autolisp,acColorMethodByACI,,,(195)LINE_BREAK颜色的设置方式,false,false
+autolisp,acDemandLoadEnabledWithCopy,,,(2)LINE_BREAK打开按需加载但使用参照图形的临时副本。其他用户可以编辑被参照引用的原始图形文件。,false,false
+autolisp,acDemandLoadEnabled,,,(1)LINE_BREAK打开按需加载来提高AutoCAD性能。其他用户不能编辑被参照引用的图形文件。,false,false
+autolisp,acDemandLoadDisabled,,,(0)LINE_BREAK关闭按需加载，加载整个参照图形。,false,false
+autolisp,acKeyboardEntryExceptScripts,,,(2)LINE_BREAK当输入坐标时，严格按照键盘输入模式。但当坐标是通过脚本输入时，遵照对象捕捉模式。,false,false
+autolisp,acKeyboardEntry,,,(1)LINE_BREAK当输入坐标时，严格遵照键盘输入模式。,false,false
+autolisp,acKeyboardRunningObjSnap,,,(0)LINE_BREAK当输入坐标时，严格遵照对象捕捉模式。,false,false
+autolisp,acOQHighPhoto,,,(4)LINE_BREAK高质量照片,false,false
+autolisp,acOQPhoto,,,(3)LINE_BREAK照片,false,false
+autolisp,acOQGraphics,,,(2)LINE_BREAK图形,false,false
+autolisp,acOQText,,,(1)LINE_BREAK文字,false,false
+autolisp,acOQLineArt,,,(0)LINE_BREAK线条,false,false
+autolisp,acFractional,,,(5)LINE_BREAK数值格式,false,false
+autolisp,acArchitectural,,,(4)LINE_BREAK数值格式,false,false
+autolisp,acEngineering,,,(3)LINE_BREAK数值格式,false,false
+autolisp,acDecimal,,,(2)LINE_BREAK数值格式,false,false
+autolisp,acScientific,,,(1)LINE_BREAK数值格式,false,false
+autolisp,acDefaultUnits,,,(-1)LINE_BREAK数值格式,false,false
+autolisp,acHatchStyleIgnore,,,(2)LINE_BREAK忽略内部结构。该选项使图案填充通过所有的内部对象。,false,false
+autolisp,acHatchStyleOuter,,,(1)LINE_BREAK仅填充最外面的区域。该样式也是从最外面的区域边界向内进行图案填充，但是遇到内部边界时会关闭图案填充并且不再打开。,false,false
+autolisp,acHatchStyleNormal,,,(0)LINE_BREAK指定标准的样式，即普通。该选项从最外面的区域边界向内进行图案填充。如果 AutoCAD 遇到内部边界，则关闭填充，直到遇到另一个边界为止。,false,false
+autolisp,acTolBasic,,,(4)LINE_BREAK标注文字的标注公差显示模式,false,false
+autolisp,acTolLimits,,,(3)LINE_BREAK标注文字的标注公差显示模式,false,false
+autolisp,acTolDeviation,,,(2)LINE_BREAK标注文字的标注公差显示模式,false,false
+autolisp,acTolSymmetrical,,,(1)LINE_BREAK标注文字的标注公差显示模式,false,false
+autolisp,acTolNone,,,(0)LINE_BREAK标注文字的标注公差显示模式,false,false
+autolisp,acZoomScaledRelativePSpace,,,(2)LINE_BREAK相对于图纸空间的单位设置。,false,false
+autolisp,acZoomScaledRelative,,,(1)LINE_BREAK相对于当前视口。,false,false
+autolisp,acZoomScaledAbsolute,,,(0)LINE_BREAK相对于图形界限。,false,false
+autolisp,acDegreesUnknown,,,(-1)LINE_BREAK未知,false,false
+autolisp,acToolbarFloating,,,(4)LINE_BREAK工具栏浮动,false,false
+autolisp,acHatchPatternTypeCustomDefined,,,(2)LINE_BREAK自定义,false,false
+autolisp,acHatchPatternTypeUserDefined,,,(0)LINE_BREAK用户定义,false,false
+autolisp,acHatchPatternTypePreDefined,,,(1)LINE_BREAK预先定义,false,false
+autolisp,acPixels,,,(2)LINE_BREAK像素,false,false
+autolisp,acMillimeters,,,(1)LINE_BREAK毫米,false,false
+autolisp,acInches,,,(0)LINE_BREAK英寸,false,false
+autolisp,acPrinterNeverAlert,,,(3)LINE_BREAK从不警告也从不创建任何错误日志。,false,false
+autolisp,acPrinterNeverAlertLogOnce,,,(2)LINE_BREAK从不警告但创建所有错误日志。,false,false
+autolisp,acPrinterAlertOnce,,,(1)LINE_BREAK仅第一次警告但创建所有错误日志。,false,false
+autolisp,acPrinterAlwaysAlert,,,(0)LINE_BREAK始终警告并创建错误日志。,false,false
+autolisp,acNotStacked,,,(2)LINE_BREAK标注和公差的分数类型,false,false
+autolisp,acDiagonal,,,(1)LINE_BREAK标注和公差的分数类型,false,false
+autolisp,acHorizontal,,,(0)LINE_BREAK标注和公差的分数类型。,false,false
+autolisp,acSelectionSetAll,,,(5)LINE_BREAK选择所有对象,false,false
+autolisp,acSelectionSetLast,,,(4)LINE_BREAK选择最近生成的可见对象。,false,false
+autolisp,acSelectionSetPrevious,,,(3)LINE_BREAK选择最近的选择集。如果用户在图纸空间和模型空间之间进行切换并试图使用选择集，该模式将被忽略。,false,false
+autolisp,acSelectionSetCrossing,,,(1)LINE_BREAK选择在矩形区域内和与矩形区域相交的对象，矩形对角由 Point1 和 Point2 定义。,false,false
+autolisp,acSelectionSetWindow,,,(0)LINE_BREAK选择完全在矩形区域内的所有对象，矩形对角由 Point1 和 Point2 定义。,false,false
+autolisp,acCenterNone,,,(2)LINE_BREAK指定半径和直径标注上圆心标记的类型。,false,false
+autolisp,acCenterLine,,,(1)LINE_BREAK指定半径和直径标注上圆心标记的类型。,false,false
+autolisp,acCenterMark,,,(0)LINE_BREAK指定半径和直径标注上圆心标记的类型。,false,false
+autolisp,acFontBoldItalic,,,(3)LINE_BREAK加粗斜体,false,false
+autolisp,acFontBold,,,(2)LINE_BREAK加粗,false,false
+autolisp,acFontItalic,,,(1)LINE_BREAK斜体,false,false
+autolisp,acFontRegular,,,(0)LINE_BREAK常规字体,false,false
+autolisp,AcGradientObject,,,(1)LINE_BREAK渐变的图案填充,false,false
+autolisp,AcHatchObject,,,(0)LINE_BREAK标准的图案填充,false,false
+autolisp,acTolBottom,,,(0)LINE_BREAK指定公差值相对于标注文字的垂直对正。,false,false
+autolisp,acTolMiddle,,,(1)LINE_BREAK指定公差值相对于标注文字的垂直对正。,false,false
+autolisp,acTolTop,,,(2)LINE_BREAK指定公差值相对于标注文字的垂直对正。,false,false
+autolisp,acJIS,,,(3)LINE_BREAK按日本工业标准方式标注文字(JIS)。,false,false
+autolisp,acOutside,,,(2)LINE_BREAK将标注文字置于距定义点最远的基线一端。,false,false
+autolisp,acAbove,,,(1)LINE_BREAK除非尺寸线不是水平的或尺寸界线内的文本被强制设为水平(DIMTIH = 1)，否则将标注文字置于标线上方。尺寸线到最下行文字基线的距离是当前DIMGAP 值。,false,false
+autolisp,acVertCentered,,,(0)LINE_BREAK文字位置在尺寸界线中心。,false,false
+autolisp,acHatchLoopTypeTextbox,,,(8)LINE_BREAK无,false,false
+autolisp,acHatchLoopTypeDerived,,,(4)LINE_BREAK无,false,false
+autolisp,acHatchLoopTypePolyline,,,(2)LINE_BREAK无,false,false
+autolisp,acHatchLoopTypeExternal,,,(1)LINE_BREAK无,false,false
+autolisp,acHatchLoopTypeDefault,,,(0)LINE_BREAK无,false,false
+autolisp,acLineSpacingStyleExactly,,,(2)LINE_BREAK配置值强制 MText 对象中所有的行间距为相同尺寸，而不管格式替代。,false,false
+autolisp,acLineSpacingStyleAtLeast,,,(1)LINE_BREAK配置值根据一行文字中最大字符的高度自动调整行间距。,false,false
+autolisp,acToolbarDockRight,,,(3)LINE_BREAK工具栏固定到右边,false,false
+autolisp,acToolbarDockLeft,,,(2)LINE_BREAK工具栏固定到左边,false,false
+autolisp,acToolbarDockBottom,,,(1)LINE_BREAK工具栏固定到下边,false,false
+autolisp,acToolbarDockTop,,,(0)LINE_BREAK工具栏固定到上边,false,false
+autolisp,acArea,,,(3)LINE_BREAK指定用于属性的当前显示单位类型。,false,false
+autolisp,acDistance,,,(2)LINE_BREAK指定用于属性的当前显示单位类型。,false,false
+autolisp,acAngular,,,(1)LINE_BREAK指定用于属性的当前显示单位类型。,false,false
+autolisp,acNoUnits,,,(0)LINE_BREAK指定用于属性的当前显示单位类型。,false,false
+autolisp,ac270degrees,,,(3)LINE_BREAK指定布局或打印配置的旋转角度。,false,false
+autolisp,ac180degrees,,,(2)LINE_BREAK指定布局或打印配置的旋转角度。,false,false
+autolisp,ac90degrees,,,(1)LINE_BREAK指定布局或打印配置的旋转角度。,false,false
+autolisp,ac0degrees,,,(0)LINE_BREAK指定布局或打印配置的旋转角度。,false,false
+autolisp,acProxyBoundingBox,,,(2)LINE_BREAK仅显示所有代理对象的边框,false,false
+autolisp,acProxyShow,,,(1)LINE_BREAK显示所有代理对象的图形图像,false,false
+autolisp,acProxyNotShow,,,(0)LINE_BREAK不显示代理对象.,false,false
+autolisp,acEnableSCMOptions,,,(1)LINE_BREAK只在命令行提示中选项当前有效时启用命令快捷菜单。在命令行提示中，选项是在方括号[]中。如果没有有效的选项，右键为回车。,false,false
+autolisp,acEnableSCM,,,(2)LINE_BREAK启用命令快捷菜单。,false,false
+autolisp,acEnter,,,(0)LINE_BREAK禁用命令快捷菜单。结果为当命令期间按右键为回车。,false,false
+autolisp,acShadePlotWireframe,,,(1)LINE_BREAK不管显示，按线框打印模型空间视图,false,false
+autolisp,acShadePlotRendered,,,(3)LINE_BREAK不管显示，按渲染打印模型空间视图,false,false
+autolisp,acShadePlotHidden,,,(2)LINE_BREAK不管显示，按去掉隐藏线打印模型空间视图,false,false
+autolisp,acShadePlotAsDisplayed,,,(0)LINE_BREAK与所显示的一样打印模型空间视图,false,false
+autolisp,acMoveTextNoLeader,,,(2)LINE_BREAK文字独立于尺寸线移动，不添加从文字到尺寸线的引线。,false,false
+autolisp,acMoveTextAddLeader,,,(1)LINE_BREAK文字独立于尺寸线移动，但添加一条从文字到尺寸线的引线。,false,false
+autolisp,acDimLineWithText,,,(0)LINE_BREAK尺寸线跟随文字移动。,false,false
+autolisp,acRadians,,,(3)LINE_BREAK角度格式,false,false
+autolisp,acGrads,,,(2)LINE_BREAK角度格式,false,false
+autolisp,acDegrees,,,(0)LINE_BREAK角度格式,false,false
+autolisp,acUnknownRow,,,(0)LINE_BREAK需要更改的行类型,false,false
+autolisp,acTitleRow,,,(2)LINE_BREAK需要更改的行类型,false,false
+autolisp,acHeaderRow,,,(4)LINE_BREAK要更改的行类型。,false,false
+autolisp,acDataRow,,,(1)LINE_BREAK要更改的行类型。,false,false
+autolisp,acRightMask,,,(2)LINE_BREAK单元格的右边,false,false
+autolisp,acLeftMask,,,(8)LINE_BREAK单元格的左边,false,false
+autolisp,acTopMask,,,(1)LINE_BREAK单元格的顶边,false,false
+autolisp,acBottomMask,,,(4)LINE_BREAK单元格的底边,false,false
+autolisp,acUnknownCell,,,(0)LINE_BREAK设置指定行和列的单元格类型,false,false
+autolisp,acTextCell,,,(1)LINE_BREAK设置指定行和列的单元格类型,false,false
+autolisp,acBlockCell,,,(2)LINE_BREAK设置指定行和列的单元格类型,false,false
+autolisp,acZero,,,(1)LINE_BREAK指定多线的对其方式,false,false
+autolisp,acTop,,,(0)LINE_BREAK指定多线的对其方式,false,false
+autolisp,acBottom,,,(2)LINE_BREAK指定多线的对其方式,false,false
+autolisp,acSymNone,,,(2)LINE_BREAK指定弧长标注符号所放的位置。,false,false
+autolisp,acSymInFront,,,(0)LINE_BREAK指定弧长标注符号所放的位置,false,false
+autolisp,acSymAbove,,,(1)LINE_BREAK指定弧长标注符号所放的位置,false,false
+autolisp,acAlignPntAcquisitionShiftToAcquire,,,(1)LINE_BREAK用户必须使用 SHIFT 键来获取 AutoAlignment 点。,false,false
+autolisp,acAlignPntAcquisitionAutomatic,,,(0)LINE_BREAK自动获取 AutoAlignment 点。,false,false
+autolisp,acSCM,,,(1)LINE_BREAK启用默认快捷菜单。,false,false
+autolisp,acRepeatLastCommand,,,(0)LINE_BREAK禁用默认快捷菜单。结果是未选择对象时或不在命令期间时在图形区域中按右键为回车，即重复最后发出的命令。,false,false
+autolisp,acSelectionSetCrossingPolygon,,,(7)LINE_BREAK选择在多边形内和穿过多边形区域的对象。使用 PointsList 定义多边形的顶点坐标。多边形的最后顶点由 AutoCAD 自动封闭。定义的多边形不能自身相交。,false,false
+autolisp,acSelectionSetWindowPolygon,,,(6)LINE_BREAK选择在多边形中的对象，多边形由 PointsList 定义。,false,false
+autolisp,acSelectionSetFence,,,(2)LINE_BREAK选择穿过选定栅格的所有对象。该栅格由 PointsList 所列的坐标定义的。,false,false
+autolisp,acEdSCM,,,(1)LINE_BREAK启用编辑快捷菜单。决定处于编辑模式 (选中一个或多个对象且无命令在执行) 时绘图区域中右键单击的功能。,false,false
+autolisp,acEdRepeatLastCommand,,,(0)LINE_BREAK禁用编辑快捷菜单。结果是当选定了一个或多个对象并且不在命令过程中时在图形区域中右键为回车，即重复最后发出的命令。决定处于编辑模式 (选中一个或多个对象且无命令在执行) 时绘图区域中右键单击的功能。,false,false
+autolisp,acSubtraction,,,(2)LINE_BREAK执行差集运算（Boolean方法）,false,false
+autolisp,acIntersection,,,(1)LINE_BREAK执行交集运算（Boolean方法）,false,false
+autolisp,acUnion,,,(0)LINE_BREAK执行并集运算（Boolean方法）,false,false
+autolisp,acPaperSpace,,,(0)LINE_BREAK活动空间切换为图纸空间,false,false
+autolisp,acModelSpace,,,(1)LINE_BREAK活动空间切换为模型空间,false,false
+autolisp,acDimPrecisionEight,,,(8)LINE_BREAK指定换算单位中小数位数精度为8位,false,false
+autolisp,acDimPrecisionSeven,,,(7)LINE_BREAK指定换算单位中小数位数精度为7位,false,false
+autolisp,acDimPrecisionSix,,,(6)LINE_BREAK指定换算单位中小数位数精度为6位,false,false
+autolisp,acDimPrecisionFive,,,(5)LINE_BREAK指定换算单位中小数位数精度为5位,false,false
+autolisp,acDimPrecisionFour,,,(4)LINE_BREAK指定换算单位中小数位数精度为4位,false,false
+autolisp,acDimPrecisionThree,,,(3)LINE_BREAK指定换算单位中小数位数精度为3位,false,false
+autolisp,acDimPrecisionTwo,,,(2)LINE_BREAK指定换算单位中小数位数精度为2位小数,false,false
+autolisp,acDimPrecisionOne,,,(1)LINE_BREAK指定换算单位中小数位数精度为1位小数,false,false
+autolisp,acDimPrecisionZero,,,(0)LINE_BREAK指定换算单位中小数位数精度为0位小数,false,false
+autolisp,acBestFit,,,(3)LINE_BREAK该选项按照可用的空间的大小自动确定怎样放置文字和箭头。,false,false
+autolisp,acTextOnly,,,(2)LINE_BREAK该选项只将文字放到尺寸界线间。箭头放到尺寸界线外面。,false,false
+autolisp,acArrowsOnly,,,(1)LINE_BREAK该选项只将箭头放到尺寸界线间。文字放到箭头外面。,false,false
+autolisp,acTextAndArrows,,,"(0)LINE_BREAK该选项将文字和箭头均放到尺寸界线间（确定要移动哪个元素以使文字和箭头在尺寸界线间布局合适，Dim3PointAngular, DimAligned, DimAngular, DimArcLength, DimDiametric, DimRadial, DimRadialLarge, DimRotatedLINE_BREAK使用该属性的对象。 ）",false,false
+autolisp,acLsPlotStyle,,,(256)LINE_BREAK打印样式（设置用于恢复指定图层状态的屏蔽，LayerStateManager 对象）,false,false
+autolisp,acLsPlot,,,(8)LINE_BREAK打印开或关（设置用于恢复指定图层状态的屏蔽，LayerStateManager 对象）,false,false
+autolisp,acLsOn,,,"(1)LINE_BREAK开或关（设置用于恢复指定图层状态的屏蔽,LayerStateManager 对象）",false,false
+autolisp,acLsNone,,,(0)LINE_BREAK无（设置用于恢复指定图层状态的屏蔽，LayerStateManager 对象）,false,false
+autolisp,acLsNewViewport,,,(16)LINE_BREAK新视口图层冻结或锁定（设置用于恢复指定图层状态的屏蔽，LayerStateManager 对象）,false,false
+autolisp,acLsLocked,,,(4)LINE_BREAK锁定或解锁（设置用于恢复指定图层状态的屏蔽，LayerStateManager 对象）,false,false
+autolisp,acLsLineWeight,,,(128)LINE_BREAK线宽（设置用于恢复指定图层状态的屏蔽，LayerStateManager 对象）,false,false
+autolisp,acLsLineType,,,(64)LINE_BREAK线型（设置用于恢复指定图层状态的屏蔽，LayerStateManager 对象）,false,false
+autolisp,acLsFrozen,,,(2)LINE_BREAK冻结或解冻（设置用于恢复指定图层状态的屏蔽，LayerStateManager 对象）,false,false
+autolisp,acLsColor,,,(32)LINE_BREAK颜色（设置用于恢复指定图层状态的屏蔽，LayerStateManager 对象）,false,false
+autolisp,acLsAll,,,(65535)LINE_BREAK所有图层属性（设置用于恢复指定图层状态的屏蔽，LayerStateManager 对象）,false,false
+autolisp,acLayout,,,"(5)LINE_BREAK打印落在指定图纸页边距内的所有内容，原点从布局选项卡中的0,0坐标算起。此选项在模型空间中打印时无效（Layout 与 PlotConfiguration 使用）",false,false
+autolisp,acWindow,,,(4)LINE_BREAK打印由 SetWindowToPlot 方法指定的窗口内的所有内容（Layout 与 PlotConfiguration 使用）,false,false
+autolisp,acView,,,(3)LINE_BREAK打印由 ViewToPlot 属性指定的命名视口（Layout 与 PlotConfiguration 使用）,false,false
+autolisp,acLimits,,,(2)LINE_BREAK打印在当前空间界限内的所有内容（Layout 与 PlotConfiguration 使用）,false,false
+autolisp,acExtents,,,(1)LINE_BREAK打印落在当前选择空间范围内的所有内容（Layout 与 PlotConfiguration 使用）,false,false
+autolisp,acDisplay,,,(0)LINE_BREAK打印当前显示的所有内容（Layout 与 PlotConfiguration 使用）,false,false
+autolisp,acBezierSurfaceMesh,,,(8)LINE_BREAK贝塞尔曲面拟合（PolygonMesh 使用）,false,false
+autolisp,acCubicSurfaceMesh,,,(6)LINE_BREAK三次B样条曲面拟合（PolygonMesh 使用）,false,false
+autolisp,acQuadSurfaceMesh,,,(5)LINE_BREAK二次B样条曲面拟合（PolygonMesh 使用）,false,false
+autolisp,acSimpleMesh,,,(0)LINE_BREAK简单的网络不带曲面拟合或平滑（PolygonMesh 使用）,false,false
+autolisp,acCubicSplinePoly,,,(3)LINE_BREAK三次B样条曲线（Polyline使用）,false,false
+autolisp,acQuadSplinePoly,,,(2)LINE_BREAK二次B样条曲线（Polyline使用）,false,false
+autolisp,acFitCurvePoly,,,(1)LINE_BREAK拟合曲线多段线（Polyline 使用）,false,false
+autolisp,acSimplePoly,,,(0)LINE_BREAK简单多段线（Polyline 使用）,false,false
+autolisp,acCubicSpline3DPoly,,,(2)LINE_BREAK三次B样条线（3DPolyline 使用）,false,false
+autolisp,acQuadSpline3DPoly,,,(1)LINE_BREAK二次B样条线（3DPolyline 使用）,false,false
+autolisp,acSimple3DPoly,,,(0)LINE_BREAK简单多段线（3DPolyline 使用）,false,false
+autolisp,acToolbarSeparator,,,(1)LINE_BREAK分隔符（ToolbarItem 使用）,false,false
+autolisp,acToolbarControl,,,(2)LINE_BREAK控制按钮（ToolbarItem 使用）,false,false
+autolisp,acToolbarFlyout,,,(3)LINE_BREAK弹出式按钮（ToolbarItem 使用）,false,false
+autolisp,acToolbarButton,,,(0)LINE_BREAK常规按钮（ToolbarItem 使用）,false,false
+autolisp,acMenuSubMenu,,,(2)LINE_BREAK子菜单（PopupMenuItem 使用）,false,false
+autolisp,acMenuSeparator,,,(1)LINE_BREAK菜单分隔符（PopupMenuItem 使用）,false,false
+autolisp,acMenuItem,,,(0)LINE_BREAK菜单项（PopupMenuItem使用）,false,false
+autolisp,acPartialMenuGroup,,,(1)LINE_BREAK局部菜单组（MenuGroup使用）,false,false
+autolisp,acBaseMenuGroup,,,(0)LINE_BREAK基本菜单组（MenuGroup使用）,false,false
+autolisp,acSplineWithArrow,,,(3)LINE_BREAK带箭头的样条曲线（Leader对象）,false,false
+autolisp,acSplineNoArrow,,,(1)LINE_BREAK不带箭头的样条曲线（Leader对象）,false,false
+autolisp,acLineWithArrow,,,(2)LINE_BREAK带箭头的线（Leader对象）,false,false
+autolisp,acLineNoArrow,,,(0)LINE_BREAK不带箭头的线（Leader对象）,false,false
+autolisp,acWhite,,,(7)LINE_BREAK白色,false,false
+autolisp,acMagenta,,,(6)LINE_BREAK洋红,false,false
+autolisp,acBlue,,,(5)LINE_BREAK蓝色,false,false
+autolisp,acCyan,,,(4)LINE_BREAK青色,false,false
+autolisp,acGreen,,,(3)LINE_BREAK绿色,false,false
+autolisp,acYellow,,,(2)LINE_BREAK黄色,false,false
+autolisp,acRed,,,(1)LINE_BREAK红色,false,false
+autolisp,acByLayer,,,(256)LINE_BREAK颜色随层,false,false
+autolisp,acByBlock,,,(0)LINE_BREAK颜色随块,false,false
+autolisp,acAlignmentFit,,,(5)LINE_BREAK拟合,false,false
+autolisp,acAlignmentAligned,,,(3)LINE_BREAK对齐,false,false
+autolisp,acAlignmentBottomRight,,,(14)LINE_BREAK右下,false,false
+autolisp,acAlignmentBottomCenter,,,(13)LINE_BREAK中下,false,false
+autolisp,acAlignmentBottomLeft,,,(12)LINE_BREAK左下,false,false
+autolisp,acAlignmentMiddleRight,,,(11)LINE_BREAK右中,false,false
+autolisp,acAlignmentMiddleCenter,,,(10)LINE_BREAK正中,false,false
+autolisp,acAlignmentMiddleLeft,,,(9)LINE_BREAK左中,false,false
+autolisp,acAlignmentTopRight,,,(8)LINE_BREAK右上,false,false
+autolisp,acAlignmentTopCenter,,,(7)LINE_BREAK中上,false,false
+autolisp,acAlignmentTopLeft,,,(6)LINE_BREAK左上,false,false
+autolisp,acAlignmentMiddle,,,(4)LINE_BREAK中间,false,false
+autolisp,acAlignmentRight,,,(2)LINE_BREAK基准线右端,false,false
+autolisp,acAlignmentCenter,,,(1)LINE_BREAK基准线中心,false,false
+autolisp,acAlignmentLeft,,,(0)LINE_BREAK基准线左端,false,false
+autolisp,acLnWt005,,,(5)LINE_BREAKCAD线宽0.05mm。,false,false
+autolisp,c:renderupdate,,,(c:renderupdate [RU_value])LINE_BREAK在下一次渲染时生成 en2face 文件（外部定义：render ARX 应用程序）,false,false
+autolisp,C:fog,,,(c:fog enabled [color [near_dist [far_dist [near_percent [far_percent [background]]]]]])LINE_BREAK加大对象与相机之间的距离（外部定义：render ARX 应用程序）,false,false
+autolisp,acdimenableupdate,,,"(acdimenableupdate nil , T)LINE_BREAK控制关联标注的自动更新",false,false
+autolisp,acad_truecolordlg,,,(acad_truecolordlg color [allowbylayer] [currentlayercolor])LINE_BREAK显示 AutoCAD 真彩色选择对话框,false,false
+autolisp,acad_truecolorcli,,,(acad_truecolorcli color [allowbylayer] [alternatePrompt])LINE_BREAK从命令行中选择 AutoCAD 真彩色,false,false
+autolisp,acad-push-dbmod,,,(acad-push-dbmod)LINE_BREAK储存 DBMOD 系统变量的当前值,false,false
+autolisp,acad-pop-dbmod,,,(acad-pop-dbmod)LINE_BREAK恢复 DBMOD 系统变量的值到最近用 acad-push-dbmod   LINE_BREAK保存的值,false,false
+autolisp,acOCS,,,"acOCS,坐标系枚举值(4)",false,false
+autolisp,acPaperSpaceDCS,,,"acPaperSpaceDCS,坐标系枚举值(3)",false,false
+autolisp,acDisplayDCS,,,"acDisplayDCS,坐标系枚举值(2)",false,false
+autolisp,acUCS,,,"acUCS,坐标系枚举值(1)",false,false
+autolisp,acWorld,,,"acWorld,坐标系枚举值(0)",false,false
+autolisp,acVertRight,,,(32)LINE_BREAK最右边格线。,false,false
+autolisp,active-document-only,,,"'active-document-only,反应器 notification 值，必须与单引号或 quote 函数一同使用。",false,false
+autolisp,acNorm,,,(1)LINE_BREAK窗口为普通（非窗口最大化和最小化）,false,false
+autolisp,acMax,,,(3)LINE_BREAK窗口为最大化,false,false
+autolisp,acMin,,,(2)LINE_BREAK窗口为最小化,false,false
+autolisp,acAllViewports,,,(1)LINE_BREAK所有视口,false,false
+autolisp,acActiveViewport,,,"无,只重生成活动的视口",false,false
+autolisp,acInsertUnitsYards,,,"10,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsUnitless,,,"0,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsParsecs,,,"20,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsNanometers,,,"12,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsMils,,,"9,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsMillimeters,,,"4,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsMiles,,,"3,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsMicrons,,,"13,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsMicroinches,,,"8,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsMeters,,,"6,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsLightYears,,,"19,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsKilometers,,,"7,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsInches,,,"1,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsHectometers,,,"16,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsGigameters,,,"17,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsFeet,,,"2,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsDecimeters,,,"14,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsDecameters,,,"15,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsCentimeters,,,"5,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsAstronomicalUnits,,,"18,指定块的本地测量单位。",false,false
+autolisp,acInsertUnitsAngstroms,,,"11,指定块的本地测量单位。",false,false
+autolisp,AcUnknown,,,"-1,只读。图形类型未知或无效。",false,false
+autolisp,acR12_DXF,,,"1,AutoCAD Release12/LT2 DXF (*.dxf)",false,false
+autolisp,acByStyle,,,"5,指定多行文字段落的的阅读方向。",false,false
+autolisp,acBottomToTop,,,"4,指定多行文字段落的的阅读方向。",false,false
+autolisp,acRightToLeft,,,"2,指定多行文字段落的的阅读方向。",false,false
+autolisp,acTopToBottom,,,"3,指定多行文字段落的的阅读方向。",false,false
+autolisp,acLeftToRight,,,"1,指定多行文字段落的的阅读方向。",false,false
+autolisp,acArrowUserDefined,,,"20,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowArchTick,,,"4,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowIntegral,,,"18,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowDatumBlank,,,"16,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowDatumFilled,,,"17,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowClosedBlank,,,"1,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowBoxBlank,,,"14,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowBoxFilled,,,"15,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowOblique,,,"5,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowNone,,,"19,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowSmall,,,"13,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowClosed,,,"2,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowOpen30,,,"10,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowOpen90,,,"9,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowOpen,,,"6,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowOrigin2,,,"8,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowOrigin,,,"7,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowDotBlank,,,"12,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowDotSmall,,,"11,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowDot,,,"3,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acArrowDefault,,,"0,指定半径标注箭头或引线箭头的类型。",false,false
+autolisp,acAttributeModeNormal,,,"0,指定属性定义的模式。",false,false
+autolisp,acFullPreview,,,"1,按局部或完整视图预览方式显示打印预览对话框。",false,false
+autolisp,acPartialPreview,,,"0,按局部或完整视图预览方式显示打印预览对话框。",false,false
+autolisp,acPolicyNamed,,,"0,确定在创建新图形时对象颜色属性是否与打印样式名称关联。LINE_BREAK打印样式与颜色之间没有任何关联。 每一个对象的打印样式名称将设置为在属性 DefaultPlotStyleForObjects中定义的名称。",false,false
+autolisp,acPolicyLegacy,,,"1,确定在创建新图形时对象颜色属性是否与打印样式名称关联。LINE_BREAK对象的打印样式名称是通过 ACIx 命名规则与它的颜色相关联，其中 x 是按照AutoCAD 颜色索引中所规定的对象颜色号。",false,false
+autolisp,acUniform,,,"1,指定块的允许比例。",false,false
+autolisp,acAny,,,"0,指定块的允许比例。",false,false
+autolisp,acViewport4,,,"8,将视口分割为给定数目的视图。",false,false
+autolisp,acViewport3Below,,,"7,将视口分割为给定数目的视图。",false,false
+autolisp,acViewport3Above,,,"6,将视口分割为给定数目的视图。",false,false
+autolisp,acViewport3Vertical,,,"5,将视口分割为给定数目的视图。",false,false
+autolisp,acViewport3Horizontal,,,"4,将视口分割为给定数目的视图。",false,false
+autolisp,acViewport3Right,,,"3,将视口分割为给定数目的视图。",false,false
+autolisp,acViewport3Left,,,"2,将视口分割为给定数目的视图。",false,false
+autolisp,acViewport2Vertical,,,"1,将视口分割为给定数目的视图。",false,false
+autolisp,acViewport2Horizontal,,,"0,将视口分割为给定数目的视图。",false,false
+autolisp,acHorizontalAlignmentFit,,,"5,指定属性、属性参照或文字的水平对齐。",false,false
+autolisp,acHorizontalAlignmentMiddle,,,"4,指定属性、属性参照或文字的水平对齐。",false,false
+autolisp,acHorizontalAlignmentAligned,,,"3,指定属性、属性参照或文字的水平对齐。",false,false
+autolisp,acHorizontalAlignmentRight,,,"2,指定属性、属性参照或文字的水平对齐。",false,false
+autolisp,acHorizontalAlignmentCenter,,,"1,指定属性、属性参照或文字的水平对齐。",false,false
+autolisp,acHorizontalAlignmentLeft,,,"0,指定属性、属性参照或文字的水平对齐。",false,false
+autolisp,acOverSecondExtension,,,"4,指定标注文字的水平对齐。文字在第二条尺寸界线上并与其对齐。",false,false
+autolisp,acOverFirstExtension,,,"3,指定标注文字的水平对齐。文字在第一条尺寸界线上并与其对齐。",false,false
+autolisp,acSecondExtensionLine,,,"2,指定标注文字的水平对齐。文字紧邻第二条尺寸界线。",false,false
+autolisp,acHorzCentered,,,"0,指定标注文字的水平对齐。文字是在尺寸界线之间的尺寸线中间。",false,false
+autolisp,acFirstExtensionLine,,,"1,指定标注文字的水平对齐。",false,false
+autolisp,acVerticalAlignmentTop,,,"3,指定属性、属性参照或文字的垂直对齐方式。",false,false
+autolisp,acVerticalAlignmentMiddle,,,"2,指定属性、属性参照或文字的垂直对齐方式。",false,false
+autolisp,acVerticalAlignmentBottom,,,"1,指定属性、属性参照或文字的垂直对齐方式。",false,false
+autolisp,acVerticalAlignmentBaseline,,,"0,指定属性、属性参照或文字的垂直对齐方式。",false,false
+autolisp,acPenWidthUnk,,,"-1,指定 ISO 填充图案的 ISO 笔宽。",false,false
+autolisp,acPenWidth200,,,"200,指定 ISO 填充图案的 ISO 笔宽。2.00mm。",false,false
+autolisp,acPenWidth140,,,"140,指定 ISO 填充图案的 ISO 笔宽。1.40mm。",false,false
+autolisp,acPenWidth100,,,"100,指定 ISO 填充图案的 ISO 笔宽。1.00mm。",false,false
+autolisp,acPenWidth070,,,"70,指定 ISO 填充图案的 ISO 笔宽。0.70mm。",false,false
+autolisp,acPenWidth050,,,"50,指定 ISO 填充图案的 ISO 笔宽。0.50mm。",false,false
+autolisp,acPenWidth035,,,"35,指定 ISO 填充图案的 ISO 笔宽。0.35mm。",false,false
+autolisp,acPenWidth025,,,"25,指定 ISO 填充图案的 ISO 笔宽。0.25mm。",false,false
+autolisp,acPenWidth018,,,"18,指定 ISO 填充图案的 ISO 笔宽。0.18mm。",false,false
+autolisp,acPenWidth013,,,"13,指定 ISO 填充图案的 ISO 笔宽。0.13mm。",false,false
+autolisp,ac8_1,,,"30,打印比例",false,false
+autolisp,ac10_1,,,"31,打印比例",false,false
+autolisp,ac100_1,,,"32,打印比例",false,false
+autolisp,ac4_1,,,"29,打印比例",false,false
+autolisp,ac2_1,,,"28,打印比例",false,false
+autolisp,ac1_100,,,"27,打印比例",false,false
+autolisp,ac1_50,,,"26,打印比例",false,false
+autolisp,ac1_40,,,"25,打印比例",false,false
+autolisp,ac1_30,,,"24,打印比例",false,false
+autolisp,ac1_20,,,"23,打印比例",false,false
+autolisp,ac1_16,,,"22,打印比例",false,false
+autolisp,ac1_10,,,"21,打印比例",false,false
+autolisp,ac1_8,,,"20,打印比例",false,false
+autolisp,ac1_2,,,"17,打印比例",false,false
+autolisp,ac6in_1ft,,,"14,打印比例",false,false
+autolisp,ac1ft_1ft,,,"15,打印比例",false,false
+autolisp,ac1_1,,,"16,打印比例",false,false
+autolisp,ac3in_1ft,,,"13,打印比例",false,false
+autolisp,ac1in_1ft,,,"12,打印比例",false,false
+autolisp,ac1_8in_1ft,,,"6,打印比例",false,false
+autolisp,ac3_16in_1ft,,,"7,打印比例",false,false
+autolisp,ac1_4in_1ft,,,"8,打印比例",false,false
+autolisp,ac3_8in_1ft,,,"9,打印比例",false,false
+autolisp,ac1_2in_1ft,,,"10,打印比例",false,false
+autolisp,ac3_4in_1ft,,,"11,打印比例",false,false
+autolisp,ac3_32in_1ft,,,"5,打印比例",false,false
+autolisp,ac1_16in_1ft,,,"4,打印比例",false,false
+autolisp,ac1_32in_1ft,,,"3,打印比例",false,false
+autolisp,ac1_64in_1ft,,,"2,打印比例",false,false
+autolisp,ac1_128in_1ft,,,"1,打印比例",false,false
+autolisp,acScaleToFit,,,"0,打印比例",false,false
+autolisp,acVp100_1,,,"18,视口比例",false,false
+autolisp,acVp10_1,,,"17,视口比例",false,false
+autolisp,acVp8_1,,,"16,视口比例",false,false
+autolisp,acVp4_1,,,"15,视口比例",false,false
+autolisp,acVp2_1,,,"14,视口比例",false,false
+autolisp,acVp1_30,,,"10,视口比例",false,false
+autolisp,acVp1_40,,,"11,视口比例",false,false
+autolisp,acVp1_50,,,"12,视口比例",false,false
+autolisp,acVp1_100,,,"13,视口比例",false,false
+autolisp,acVp1_20,,,"9,视口比例",false,false
+autolisp,acVp1_16,,,"8,视口比例",false,false
+autolisp,acVp1_10,,,"7,视口比例",false,false
+autolisp,acVp1_8,,,"6,视口比例",false,false
+autolisp,acVp1_4,,,"4,视口比例",false,false
+autolisp,acVp1_2,,,"3,视口比例",false,false
+autolisp,acVp1_1,,,"2,视口比例",false,false
+autolisp,acVp1ft_1ft,,,"34,视口比例",false,false
+autolisp,acVp6in_1ft,,,"33,视口比例",false,false
+autolisp,acVp3in_1ft,,,"32,视口比例",false,false
+autolisp,acVp3_8in_1ft,,,"27,视口比例",false,false
+autolisp,acVp1_2in_1ft,,,"28,视口比例",false,false
+autolisp,acVp3_4in_1ft,,,"29,视口比例",false,false
+autolisp,acVp1in_1ft,,,"30,视口比例",false,false
+autolisp,acVp1_4in_1ft,,,"26,视口比例",false,false
+autolisp,acVp3_16in_1ft,,,"25,视口比例",false,false
+autolisp,acVp1_8in_1ft,,,"24,视口比例",false,false
+autolisp,acVp3_32in_1ft,,,"23,视口比例",false,false
+autolisp,acVp1_16in_1ft,,,"22,视口比例",false,false
+autolisp,acVp1_32in_1ft,,,"21,视口比例",false,false
+autolisp,acVp1_64in_1ft,,,"20,视口比例",false,false
+autolisp,acVp1_128in_1ft,,,"19,视口比例",false,false
+autolisp,acVpScaleToFit,,,"0,视口比例",false,false
+autolisp,acVpCustomScale,,,"1,视口比例",false,false
+autolisp,ac2013_dwg,,,"60,AutoCAD 2013 DWG (*.dwg)",false,false
+autolisp,ac2010_dwg,,,"48,AutoCAD 2010 DWG (*.dwg)",false,false
+autolisp,ac2013_dxf,,,"61,AutoCAD 2013 DXF (*.dxf)",false,false
+autolisp,ac2010_dxf,,,"49,AutoCAD 2010 DXF (*.dxf)",false,false
+autolisp,ac2013_Template,,,"62,AutoCAD 2013 图形样板文件 (*.dwt)",false,false
+autolisp,ac2010_Template,,,"50,AutoCAD 2010 图形样板文件 (*.dwt)",false,false
+autolisp,ac2007_Template,,,"38,AutoCAD 2007 图形样板文件 (*.dwt)",false,false
+autolisp,ac2007_dxf,,,"37,AutoCAD 2007 DXF (*.dxf)",false,false
+autolisp,ac2007_dwg,,,"36,AutoCAD 2007 DWG (*.dwg)",false,false
+autolisp,acNative,,,"60,与当前图形版本格式相同。如果需要应用程序保存图形为当前应用程序所运行在的 AutoCAD 版本，可使用 acNative 格式。",false,false
+autolisp,ac2004_Template,,,"26,AutoCAD 2004 图形样板文件 (*.dwt)",false,false
+autolisp,ac2004_dxf,,,"25,AutoCAD 2004 DXF (*.dxf)",false,false
+autolisp,ac2004_dwg,,,"24,AutoCAD 2004 DWG (*.dwg)",false,false
+autolisp,ac2000_Template,,,"14,AutoCAD 2000 图形样板文件 (*.dwt)",false,false
+autolisp,ac2000_dxf,,,"13,AutoCAD 2000 DXF (*.dxf)",false,false
+autolisp,ac2000_dwg,,,"12,AutoCAD 2000 DWG (*.dwg)",false,false
+autolisp,ACADSECURITYPARAMS_ADD_TIMESTAMP,,,"32,时间戳记",false,false
+autolisp,ACADSECURITYPARAMS_SIGN_DATA,,,"16,数字签名",false,false
+autolisp,ACADSECURITYPARAMS_ENCRYPT_PROPS,,,"2,图形属性加密",false,false
+autolisp,ACADSECURITYPARAMS_ENCRYPT_DATA,,,"1,图形加密",false,false
+autolisp,acMenuFileSource,,,"1,数据库中没有收录这个函数!请帮助录入,谢谢",false,false
+autolisp,acMenuFileCompiled,,,"0,编译的菜单文件 (MNC 文件类型)。",false,false
+autolisp,acTopRight,,,"3,以文字的顶边右对齐文字。",false,false
+autolisp,acTopLeft,,,"1,以文字的顶边左对齐文字。",false,false
+autolisp,acTopCenter,,,"2,以文字的顶边居中对齐文字。",false,false
+autolisp,acMiddleRight,,,"6,以文字的中间右对齐文字。",false,false
+autolisp,acMiddleLeft,,,"4,以文字的中间左对齐文字。",false,false
+autolisp,acMiddleCenter,,,"5,以文字的中间居中对齐文字。",false,false
+autolisp,acBottomRight,,,"9,以文字的底边右对齐文字。",false,false
+autolisp,acBottomLeft,,,"7,以文字的底边左对齐文字。",false,false
+autolisp,acBottomCenter,,,"8,以文字的底边居中对齐文字。",false,false
+autolisp,acLnWtByLwDefault,,,"-3,CAD线宽默认。",false,false
+autolisp,acLnWtByBlock,,,(-3)LINE_BREAKCAD线宽默认。,false,false
+autolisp,acLnWtByLayer,,,"-1,CAD线宽随层。",false,false
+autolisp,acLnWt211,,,(211)LINE_BREAKCAD线宽2.11mm。,false,false
+autolisp,acLnWt200,,,(200)LINE_BREAKCAD线宽2.00mm。,false,false
+autolisp,acLnWt158,,,(158)LINE_BREAKCAD线宽1.58mm。,false,false
+autolisp,acLnWt140,,,(140)LINE_BREAKCAD线宽1.40mm。,false,false
+autolisp,acLnWt120,,,(120)LINE_BREAKCAD线宽1.20mm。,false,false
+autolisp,acLnWt106,,,(106)LINE_BREAKCAD线宽1.06mm。,false,false
+autolisp,acLnWt100,,,(100)LINE_BREAKCAD线宽1.00mm。,false,false
+autolisp,acLnWt090,,,(90)LINE_BREAKCAD线宽0.90mm。,false,false
+autolisp,acLnWt080,,,(80)LINE_BREAKCAD线宽0.80mm。,false,false
+autolisp,acLnWt070,,,(70)LINE_BREAKCAD线宽0.70mm。,false,false
+autolisp,acLnWt060,,,(60)LINE_BREAKCAD线宽0.60mm。,false,false
+autolisp,acLnWt053,,,(53)LINE_BREAKCAD线宽0.53mm。,false,false
+autolisp,acLnWt050,,,(50)LINE_BREAKCAD线宽0.50mm。,false,false
+autolisp,acLnWt040,,,(40)LINE_BREAKCAD线宽0.40mm。,false,false
+autolisp,acLnWt035,,,(35)LINE_BREAKCAD线宽0.35mm。,false,false
+autolisp,acLnWt030,,,(30)LINE_BREAKCAD线宽0.30mm。,false,false
+autolisp,acLnWt025,,,(25)LINE_BREAKCAD线宽0.25mm。,false,false
+autolisp,acLnWt020,,,(20)LINE_BREAKCAD线宽0.20mm。,false,false
+autolisp,acLnWt018,,,(18)LINE_BREAKCAD线宽0.18mm。,false,false
+autolisp,acLnWt015,,,(15)LINE_BREAKCAD线宽0.15mm。,false,false
+autolisp,acLnWt013,,,(13)LINE_BREAKCAD线宽0.13mm。,false,false
+autolisp,acLnWt009,,,(9)LINE_BREAKCAD线宽0.09mm。,false,false
+autolisp,acLnWt000,,,(0)LINE_BREAKCAD线宽0.00mm。,false,false
