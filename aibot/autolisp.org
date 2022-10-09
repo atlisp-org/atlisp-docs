@@ -239,9 +239,11 @@
 * expand
 ** (expand n-expand)
 为 AutoLISP 分配附加空间
-* expt,求幂
+* expt,求幂,求平方,求立方
 ** (expt number power)
-返回以某指定数为底数的若干次幂的值
+返回以某指定数为底数的若干次幂的值.
+平方: (expt number 2)
+立方: (expt number 3)
 * fill_image
 ** (fill_image x1 y1 width height color)
 在当前激活的对话框图像控件中画一个填充矩形
@@ -308,6 +310,8 @@ flags:
 64（位6）--如果用户指定了URL，则不要传输远程文件。
 
 128（位7）--根本不允许URL。
+** 示例
+(getfield "指定图片文件" "D:\\" "png" 8)
 * getint
 ** (getint [msg])
 暂停以等待用户输入一个整数并返回该整数
@@ -350,28 +354,28 @@ flags:
 * grvecs
 ** (grvecs vlist [trans])
 在图形屏幕上绘制多个矢量
-* handent
+* handent,句柄
 ** (handent handle)
 根据对象（图元）的句柄返回它的对象（图元）名
-* if
+* if,条件分支
 ** (if testexpr thenexpr [elseexpr])
 根据对条件的判断结果，对两个表达式求值
 * initget
 ** (initget [bits] [string])
 为随后的用户输入函数调用创建关键字
-* inters
+* inters,求交点
 ** (inters pt1 pt2 pt3 pt4 [onseg])
 求两条直线的交点
-* itoa
+* itoa,整数转字符串
 ** (itoa int)
 将整数转换成字符串，并返回转换结果
-* lambda
+* lambda,匿名函数
 ** (lambda arguments expr...)
 定义无名函数
 * last
 ** (last lst)
 返回表的最后一个元素
-* length
+* length,求表长度
 ** (length lst)
 以整数形式返回表中元素的数目
 * 函数list
@@ -386,16 +390,16 @@ flags:
 * load_dialog
 ** (load_dialog dclfile)
 加载 DCL 文件
-* log
+* log,求自然对数
 ** (log num)
 返回一个实数的自然对数
-* logand
+* logand,逻辑与
 ** (logand [int int...])
 返回一个整数表中的各数按位逻辑与 (AND) 的结果
-* logior
+* logior,逻辑或
 ** (logior [intint...])
 返回一个整数表中的各数按位逻辑或 (OR) 的结果
-* lsh
+* lsh,逻辑移位
 ** (lsh int numbits)
 返回某整数作指定次逻辑移位后的结果
 * mapcar
@@ -419,7 +423,7 @@ flags:
 * min
 ** (min [number number...])
 返回给定各数中的最小者
-* minusp
+* minusp,检查负数
 ** (minusp num)
 检查某个数是否是负数
 * mode_tile
@@ -442,7 +446,7 @@ flags:
 检查一个项的求值结果是否为 nil
 * nth
 ** (nth n lst)
-返回表中的第 n个元素
+返回表中的第 n 个元素
 * null
 ** (null item)
 检查某项的值是否设置为 nil
@@ -466,7 +470,10 @@ mode: "r" 读取 "w" 写 "a" 追加
 * polar
 ** (polar pt ang dist)
 在 UCS 坐标系下，求某点的指定角度和指定距离处的点，并返回该点
-* princ
+* prin1,原样输出
+** (print [expr [file-desc]])
+在命令行打印表达式，或将表达式写入已打开的文件中，其结果可用 read 读入。
+* princ,输出
 ** (princ [expr [file-desc]])
 在命令行打印表达式，或将表达式写入已打开的文件中
 * print
@@ -475,7 +482,7 @@ mode: "r" 读取 "w" 写 "a" 追加
 * progn
 ** (progn [expr]...)
 顺序地对每一个表达式进行求值，并返回最后那个表达式的值
-* prompt
+* prompt,屏幕提示
 ** (prompt msg)
 在屏幕提示区显示一个字符串
 * 函数quit
@@ -496,19 +503,19 @@ mode: "r" 读取 "w" 写 "a" 追加
 * regapp
 ** (regapp application)
 为当前 AutoCAD 图形注册一个应用名，为使用扩展对象数据作准备
-* rem
+* rem,求余数
 ** (rem [number number...])
 将第一个数除以第二个数，并返回余数
-* repeat
+* repeat,循环指定次数
 ** (repeat int [expr...])
 对循环体中的每一个表达式进行指定次数的求值计算，并返回最后一个表达式的值
 * 函数reverse
 ** (reverse lst)
 将表的元素顺序倒置后返回
-* rtos
+* rtos,数字转字符串
 ** (rtos number [mode [precision]])
 将数字转换成字符串
-* set
+* set,赋值到符号
 ** (set sym expr)
 将引号中的符号名的值设置成一个表达式的值
 * setcfg
@@ -517,7 +524,7 @@ mode: "r" 读取 "w" 写 "a" 追加
 * setfunhelp
 ** (setfunhelp c:fname [helpfile [topic [command]]])
 给帮助工具注册一个用户定义函数，这样，用户在请求该命令的帮助时，就会调用正确的帮助文件和主题
-* setq
+* setq,赋值
 ** (setq sym expr [sym expr]...)
 将一个或多个符号的值设置为相应表达式的值
 * set_tile
@@ -529,7 +536,7 @@ mode: "r" 读取 "w" 写 "a" 追加
 * setview
 ** (setview view_descriptor [vport_id])
 为指定视口建立一个视图
-* sin
+* sin,正弦
 ** (sin ang)
 以实数形式返回角度的正弦值（以弧度为单位）
 * slide_image
@@ -538,7 +545,7 @@ mode: "r" 读取 "w" 写 "a" 追加
 * snvalid
 ** (snvalid sym_name [flag])
 检查组成符号表名的各字符的有效性
-* sqrt
+* sqrt,平方根
 ** (sqrt num)
 以实数形式返回一个数的平方根
 * ssadd
@@ -567,11 +574,12 @@ mode: "r" 读取 "w" 写 "a" 追加
 获取关于选择集创建方式的信息
 * sssetfirst
 ** (sssetfirst gripset [pickset])
-设置哪些对象既是被选取的又是被夹取的
-* startapp
+设置哪些对象既是被选取的又是被夹取的。
+gripset: 一般为 nil.
+* startapp,启动外部程序
 ** (startapp appcmd [file])
 启动 Windows 应用程序
-* start_dialog
+* start_dialog,显示对话框
 ** (start_dialog)
 显示对话框并将控制交给对话框
 * start_image
@@ -580,21 +588,22 @@ mode: "r" 读取 "w" 写 "a" 追加
 * start_list
 ** (start_list key [operation [index]])
 开始处理对话框中的列表框或弹出式列表框中的列表
-* strcase
+* strcase,字母转大写,字母转小写
 ** (strcase string [lcase])
 返回所有字母大写的字符串(如果 lcase 不为 nil 则小写)
-* strcat
+* strcat,组合字符串
 ** (strcat [string [string]...])
 返回从左到右拼接后的字符串
-* strlen
+* strlen,字符串长度
 ** (strlen [string]...)
-以整数形式返回一个字符串中字符的个数
-* subst
+以整数形式返回一个字符串中字符的个数(不一定是字节长度)
+unicode版本每个字的长度为 1. 
+* subst,替换表项,替换表元素
 ** (subst newitem olditem lst)
 在表中搜索某旧项，并将表中出现的每一个旧项用新项代替，然后返回修改后所得的表
-* substr
-** "(substr string start [length])
-返回字符串中的一个子字符串,字符串中的第一个字符的位置为 1"
+* substr,求子串
+** (substr string start [length])
+返回字符串中的一个子字符串,字符串中的第一个字符的位置为 1
 * 函数tablet
 ** (tablet code [row1 row2 row3 direction])
 获取和设置数字化仪校准
@@ -622,10 +631,10 @@ mode: "r" 读取 "w" 写 "a" 追加
 * 函数textscr
 ** (textscr)
 切换至文本屏幕（相当于 AutoCAD Flip Screen 功能键）
-* trace
+* trace,调试跟踪
 ** (trace [function...])
 调试 AutoLISP 程序时的辅助函数
-* trans
+* trans,坐标换算,坐标转换
 ** (trans pt from to [disp])
 将 pt 坐标(3维点)从坐标系换算到坐标系disp:
 
@@ -642,7 +651,7 @@ from to:
 * unload_dialog
 ** (unload_dialog dcl_id)
 卸载 DCL 文件
-* untrace
+* untrace,清除跟踪
 ** (untrace [function...])
 清除指定函数的跟踪标志
 * vector_image
@@ -654,9 +663,21 @@ from to:
 * 函数vports
 ** (vports)
 返回表示当前视口配置的视口描述符表
-* wcmatch
+* wcmatch,字符匹配
 ** (wcmatch string pattern)
 将模式字符串与某指定的字符串进行匹配比较
+** 通配符
+#（pound） 匹配任何单个数字。
+@（at）    匹配任何单个字母字符。
+.（period）匹配任何单个非字母数字字符。
+*（星号）  匹配任何字符序列，包括空字符序列，它可以在搜索模式中的任何位置使用：在开头、中间或结尾。
+? （问号） 匹配任何单个字符。
+~（颚化符）如果它是模式中的第一个字符，那么它将匹配除模式之外的任何字符。
+[...]      匹配包含的任何一个字符。
+[~...]     匹配任何未括起来的单个字符。
+-（连字符）在括号内用于指定单个字符的范围。
+，（逗号） 分隔两个图案。
+`（反引号）转义特殊字符（逐字读取下一个字符）。
 * while
 ** (while testexpr [expr...])
 对测试表达式进行求值，如果它不是 nil，则执行循环体中的表达式，重复这个过程，直到测试表达式的求值结果为 nil
