@@ -1,0 +1,16 @@
+* 源码
+公众号回复字数有限。不提供源码显示
+如需查看@lisp函数源码，请安装@lisp后，到CAD命令行输入
+(fun:src '函数名)
+查看源码，如 
+(fun:src 'string:to-list) 
+(fun:src 'm:mid)
+
+其它功能：
+搜索@lisp函数：
+(fun:search 'match) ;; 如 (fun:search 'string)
+查函数用法：
+(fun:usage '函数名) ;; 如 (fun:usage 'entity:make-line)
+
+也可以到 @lisp开源项目查看所有源码。
+http://gitee.com/atlisp
