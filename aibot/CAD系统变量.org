@@ -435,69 +435,298 @@ AUTOPUBLISH 命令用于控制其他选项。
 * BACKGROUNDPLOT
 ** 系统变量: BACKGROUNDPLOT
 控制为打印和发布打开还是关闭后台打印。
+类型:	整数
+保存位置:	注册表
+初始值:	2
+默认情况下，关闭后台打印，打开后台发布。
+
+值 | PLOT | PUBLISH
+0 | 前景 | 前景
+1 | 背景 | 前景
+2 | 前景 | 背景
+3 | 背景 | 背景
+
+如果脚本（SCR 文件）中使用了 -PLOT、PLOT、-PUBLISH 和 PUBLISH，则 BACKGROUNDPLOT 系统变量的值将被忽略，并将在前景中处理 -PLOT、PLOT、-PUBLISH 和 PUBLISH。
 * BACKZ
 ** 系统变量: BACKZ
 以图形单位存储当前视口后向剪裁平面到目标平面的偏移值。
+
+（只读）
+类型:	实数
+保存位置:	图形
+初始值:	0.0000
+仅当在 CAMERA、DVIEW 或 3DCLIP 中指定剪裁时才有意义。如果存在若干相机，则该值为用户置为当前的最后一个后向剪裁平面。后向剪裁平面到相机点之间的距离可以通过相机到目标的距离减去 BACKZ 的值得到。
 * BACTIONBARMODE
 ** 系统变量: BACTIONBARMODE
 指示块编辑器中是否显示动作栏或传统动作对象。
+
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 块编辑器中将显示传统动作对象
+1 | 块编辑器中将显示动作栏
+
+注意:BACTIONBARMODE 系统变量设定为 1 时，将禁用 BACTIONSET、BASSOCIATE 和 BLOOKUPTABLE 命令。
 * BACTIONCOLOR
 ** 系统变量: BACTIONCOLOR
 设置块编辑器中动作的文字颜色。
+
+类型:	字符串
+保存位置:	注册表
+初始值:	7
+有效值包括“BYLAYER”、“BYBLOCK”以及 1 到 255 之间的整数。
+
+真彩色的有效值是一个前面带有 RGB 的整数字符串，每个整数（1 到 255）之间用逗号分隔。真彩色设置的输入如下：
+
+RGB:000,000,000
 * BCONSTATUSMODE
 ** 系统变量: BCONSTATUSMODE
 打开或关闭约束显示状态，基于约束级别控制对象着色。
+
+类型:	整数
+保存位置:	未保存
+初始值:	0
+
+显示状态为打开时，将根据对象是局部受约束、完全受约束、受过度约束还是不受约束来对其进行着色。
+
+值 | 说明
+0 | 关闭约束显示状态
+1 | 打开约束显示状态
+
+可以在“块编辑器设置”对话框中修改与约束状态相对应的颜色。进入块编辑器时，值始终设定为 0。
+
 * BDEPENDENCYHIGHLIGHT
 ** 系统变量: BDEPENDENCYHIGHLIGHT
 控制在块编辑器中选定参数、动作或夹点时是否亮显相应依赖对象。
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 指定不亮显依赖对象
+1 | 指定亮显依赖对象
+
+依赖亮显显示带有光晕效果的对象。
+* BGCOREPUBLISH
+** 系统变量: BGCOREPUBLISH
+控制后台发布是使用单核还是多核。
+
+类型:	整数
+保存位置:	注册表
+初始值:	1
+
+默认情况下，后台发布会利用处理器的多个核心来提高输出到以下内容的性能：
+
+- 单页 DWF/DWFx 或 PDF 文件
+- 多页 PDF 文件（如果发布选项“包含超链接”处于未选中状态）
+- 这允许并行并同时输出多个图纸。
+
+注意:BACKGROUNDPLOT 系统变量必须设置为值 2 或 3，才能利用多个单核。
+值 | 说明
+0 | 关闭 - 单核用于后台发布；基于 AutoCAD 2021 的产品及更早版本的行为
+1 | 打开 - 多个核心用于后台发布
+
+此设置不会提高以下操作的性能：
+- 后台发布到硬拷贝设备或多页 DWF/DWFx 文件
+- 前台发布
+- 后台或前台打印
 * BGRIPOBJCOLOR
 ** 系统变量: BGRIPOBJCOLOR
 设置块编辑器中夹点的颜色。
+类型:	字符串
+保存位置:	注册表
+初始值:	141
+有效值包括“BYLAYER”、“BYBLOCK”以及 1 到 255 之间的整数。
+
+真彩色的有效值是一个前面带有 RGB 的整数字符串，每个整数（1 到 255）之间用逗号分隔。真彩色设置的输入如下：
+
+RGB:000,000,000
 * BGRIPOBJSIZE
 ** 系统变量: BGRIPOBJSIZE
 设置块编辑器中相对于屏幕显示的自定义夹点的显示尺寸。
+
+类型:	整数
+保存位置:	注册表
+初始值:	8
+有效值为 1 到 255 之间的整数。
 * BINDTYPE
 ** 系统变量: BINDTYPE
 控制对外部参照执行绑定操作或在位编辑操作后，如何将名称指定给该外部参照中的“命名对象”。
+类型:	整数
+保存位置:	未保存
+初始值:	0
+命名对象包括图层、标注和文字样式、块、视图等。
+
+例如，假设将图形文件命名为“Floorplan”，其中包含一个名为“Electrical”的图层。如果该图形作为外部参照附着到当前图形中，则该图层名称将显示为“drawingname | layername”，或在本例中，为“Floorplan|Electrical”。 此命名样式旨在避免与当前图形中的现有图层名称发生冲突。
+
+当 BINDTYPE 设置为 0（零）时（标准行为），如果对外部参照执行了绑定操作，则图层名称将变为“drawingname$0$layername”，或在本例中为“Floorplan$0$Electrical”。如果由于之前的绑定操作，图层“Floorplan$0$Electrical”已经存在，新的图层名称将为“Floorplan$1$Electrical”等等。
+
+当 BINDTYPE 设置为 1 时（合并行为），如果对外部参照执行了绑定操作，则图层名称将保持原样，在本例中为“Electrical”。这会将外部参照中的图层与当前图形中的图层合并，这类似于拆离和插入参照图形。
+
+值 | 说明
+0 | 标准行为
+1 | 合并行为
+
+以下是命令及其如何受此系统变量影响：
+
+-REFEDIT - 控制参照中的图层和其他命名对象是否具有唯一名称。这相当于“参照编辑”对话框（REFEDIT 命令）“设置”选项卡上的“创建唯一图层、样式和块名”选项。
+-XREF - 控制使用“绑定”选项时要使用的绑定类型。这相当于“绑定外部参照/DGN 参考底图”对话框（EXTERNALREFERNCES 和 XREF 命令）中的“绑定”和“插入”选项。
+EXTERNALREFERENCES 或 XREF - 指定要在“绑定外部参照/DGN 参考底图”对话框中使用的默认绑定类型，该对话框通过从“外部参照”选项板上的上下文菜单中选择“绑定”显示。
+注意:XBIND 和 REFEDIT 命令不受此系统变量影响。
+
+* BLOCKCREATEMODE
+** 系统变量: BLOCKCREATEMODE
+在使用 BLOCK 和 -BLOCK 命令创建块后，设置选定对象的行为。对象将被删除、保留或替换为块的实例。
+
+类型:	整数
+保存位置:	用户设置
+初始值:	0
+值 | 说明
+0 | 在使用 BLOCK 或 -BLOCK 命令创建块后，将选定对象转换为图形中的块实例。
+1 | 在使用 BLOCK 或 -BLOCK 命令创建块后，将选定对象保留为图形中的不同对象。
+2 | 在使用 BLOCK 或 -BLOCK 命令创建块后，从图形中删除选定对象。
 * BLOCKEDITLOCK
 ** 系统变量: BLOCKEDITLOCK
 禁止打开块编辑器以及编辑动态块定义。
+类型:	整数
+保存位置:	注册表
+初始值:	0
+BLOCKEDITLOCK 设定为 1 时，双击图形中的动态块可以打开“特性”选项板。如果动态块包含属性，则双击块参照将打开增强属性编辑器。双击可以使用“创建双击动作”自定义的动作。
+
+值 | 说明
+0 | 指定可以打开块编辑器
+1 | 指定不可以打开块编辑器
+
 * BLOCKEDITOR
 ** 系统变量: BLOCKEDITOR
 指示块编辑器是否处于打开状态。
+（只读）
+类型:	整数
+保存位置:	未保存
+初始值:	0
+值 | 说明
+0 | 指示块编辑器未打开
+1 | 指示块编辑器已打开
 * BLOCKMRULIST
 ** 系统变量: BLOCKMRULIST
 控制在“块”选项板的“最近使用”选项卡中显示的最近使用块的数量。
+
+类型:	整数
+保存位置:	注册表
+初始值:	50
+有效值为 0 到 100 之间的整数。
+
+提示将此系统变量设置为 0，可清除“最近使用”选项卡中显示的块。
 * BLOCKNAVIGATE
 ** 系统变量: BLOCKNAVIGATE
 控制在“块”选项板的“其他图形”选项卡中显示的文件和块。
+
+类型:	字符串
+保存位置:	注册表
+初始值:	无
+有效值为：文件夹路径；包括现有文件的路径、文件名和扩展名的完整文件名；或“.”表示“无”。如果设置为“无”，则将保留上次使用的文件或文件夹，并在下一次选项板打开时在会话中保持不变。
 * BLOCKREDEFINEMODE
 ** 系统变量: BLOCKREDEFINEMODE
 控制在从“块”选项板插入名称与现有块定义相同的块时是否显示对话框。
+
+类型:	整数
+保存位置:	注册表
+初始值:	1
+当尝试插入名称相同的其他块时，将显示一个对话框或一个命令行提示，以便可以选择将现有块重新定义为要插入的块。
+
+值	说明
+0	始终使用现有块定义，而不是要插入的新块定义
+1	显示一个对话框，可以重新定义现有块定义
+2	显示命令行提示，以允许用户重新定义现有块定义
+* BLOCKSRECENTFOLDER
+** 系统变量: BLOCKSRECENTFOLDER
+设置存储最近插入或创建的块的路径。
+
+类型:	字符串
+保存位置:	注册表
+初始值:	不确定
+登录到您的 Autodesk 帐户，并在 BLOCKSRECENTFOLDER 系统变量中指定云存储位置，以从任何设备访问最近使用的块和块库。
 * BLOCKSTATE
 ** 系统变量: BLOCKSTATE
 报告“块”选项板处于打开状态还是关闭状态。
+（只读）
+类型:	整数
+保存位置:	未保存
+初始值:	0
+值 | 说明
+0 | 关闭
+1 | 打开
 * BLOCKTESTWINDOW
 ** 系统变量: BLOCKTESTWINDOW
 指示某个测试块窗口是否为当前窗口。
+（只读）
+类型:	整数
+保存位置:	未保存
+初始值:	0
+BLOCKTESTWINDOW 系统变量可控制测试块窗口为当前窗口时出现的上下文面板的显示。测试块窗口为当前窗口时，此系统变量设定为 1，否则设定为 0。
 * BPARAMETERCOLOR
 ** 系统变量: BPARAMETERCOLOR
 设置块编辑器中参数的颜色。
+
+类型:	字符串
+保存位置:	注册表
+初始值:	170
+有效值包括“BYLAYER”、“BYBLOCK”以及 1 到 255 之间的整数。
+
+真彩色的有效值是一个前面带有 RGB 的整数字符串，每个整数（1 到 255）之间用逗号分隔。真彩色设置的输入如下：
+
+RGB:000,000,000
 * BPARAMETERFONT
 ** 系统变量: BPARAMETERFONT
 设置块编辑器中的参数和动作所用的字体。
+
+类型:	字符串
+保存位置:	注册表
+初始值:	Simplex.shx
+可以指定 True Type 字体或 SHX 字体（例如，Verdana 或 Verdana.ttf）。必须添加 .shx 扩展名以指定 AutoCAD SHX 字体。
+
+指定亚洲大字体时，使用以下命名惯例：SHX 文件后跟随一个逗号 (,)，再跟随一个大字体文件名（例如，Simplex.shx,Bigfont.shx）。
 * BPARAMETERSIZE
 ** 系统变量: BPARAMETERSIZE
 设置块编辑器中相对于屏幕显示的参数文字和部件的显示尺寸。
+
+类型:	整数
+保存位置:	注册表
+初始值:	12
+有效值为一个 1 到 255 之间的整数。
 * BPTEXTHORIZONTAL
 ** 系统变量: BPTEXTHORIZONTAL
 强制使块编辑器中为动作参数和约束参数显示的文字以水平方式显示。
+
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 将文字与参数的尺寸线对齐
+1 |在块编辑器中水平显示动作参数和约束参数的文字
+
+BPTEXTHORIZONTAL 系统变量适用于动作参数和块约束参数。
 * BTMARKDISPLAY
 ** 系统变量: BTMARKDISPLAY
 控制是否为动态块参照显示数值集标记。
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 指定不显示数值集标记
+1 | 指定显示数值集标记
+
 * BVMODE
 ** 系统变量: BVMODE
 控制当前可见性状态下可见的对象在块编辑器中的显示方式。
+类型:	整数
+保存位置:	未保存
+初始值:	0
+
+值 | 说明
+0 | 指定隐藏对象不可见
+1 | 指定隐藏对象可见但暗显
+
 * CACHEMAXFILES
 ** 系统变量: CACHEMAXFILES
 设置为产品保存的图形缓存文件的最大数量。
@@ -1788,6 +2017,2413 @@ AutoLISP 函数调用导致 AutoCAD 检测到错误时，显示相应的错误�
 * MATBROWSERSTATE
 ** 系统变量: MATBROWSERSTATE
 指示材质浏览器是处于打开还是关闭状态。
+
+
+* TSTACKSIZE
+** 系统变量: TSTACKSIZE
+控制堆叠文字分数高度相对于选定文字的当前高度的百分比。
+* TSTACKALIGN
+** 系统变量: TSTACKALIGN
+控制堆叠文字的垂直对齐。
+* TSPACETYPE
+** 系统变量: TSPACETYPE
+控制多行文字中使用的行间距类型。
+* TSPACEFAC
+** 系统变量: TSPACEFAC
+控制多行文字的行间距（按文字高度的因子测量）。
+* TRUSTEDPATHS
+** 系统变量: TRUSTEDPATHS
+指定哪些文件夹具有加载并执行包含代码的文件的权限。
+* TRUSTEDDOMAINS
+** 系统变量: TRUSTEDDOMAINS
+指定域名或 URL，以便 AutoCAD 可从其运行 JavaScript 代码。
+* TRIMMODE
+** 系统变量: TRIMMODE
+控制是否为倒角和圆角修剪选定边。
+* TREEMAX
+** 系统变量: TREEMAX
+通过限制空间索引（八分树）中的节点数目，从而限制重生成图形时占用的内存。
+* TREEDEPTH
+** 系统变量: TREEDEPTH
+指定最大深度，即树状结构的空间索引可以分出分支的次数。
+* TRAYTIMEOUT
+** 系统变量: TRAYTIMEOUT
+控制服务通知的显示时间长度（以秒为单位）。
+* TRAYNOTIFY
+** 系统变量: TRAYNOTIFY
+控制是否在状态栏托盘中显示服务通知。
+* TRAYICONS
+** 系统变量: TRAYICONS
+控制是否在状态栏上显示状态托盘。
+* TRANSPARENCYDISPLAY
+** 系统变量: TRANSPARENCYDISPLAY
+控制指定给单个对象或 ByLayer 的透明度特性是可见还是被禁用。
+* TRACKPATH
+** 系统变量: TRACKPATH
+控制极轴追踪和对象捕捉追踪对齐路径的显示。
+* TPSTATE
+** 系统变量: TPSTATE
+指示“工具选项板”窗口处于打开状态还是关闭状态。
+* MATEDITORSTATE
+** 系统变量: MATEDITORSTATE
+指示材质编辑器是处于打开状态还是关闭状态。
+* TOUCHMODE
+** 系统变量: TOUCHMODE
+对于那些使用支持触摸的屏幕或界面的用户，可以控制功能区上“触摸”面板的显示。
+* TOOLTIPTRANSPARENCY
+** 系统变量: TOOLTIPTRANSPARENCY
+设置绘图工具提示的透明度。
+* TOOLTIPSIZE
+** 系统变量: TOOLTIPSIZE
+设定绘图工具提示和动态输入文字的显示大小。
+* TOOLTIPS
+** 系统变量: TOOLTIPS
+控制工具提示在功能区、工具栏及其他用户界面元素中的显示。
+* TOOLTIPMERGE
+** 系统变量: TOOLTIPMERGE
+将草图工具提示合并为单个工具提示。
+* TIMEZONE
+** 系统变量: TIMEZONE
+设置图形中阳光的时区。
+* TILEMODE
+** 系统变量: TILEMODE
+控制是否可以访问图纸空间。
+* THUMBSIZE2D
+** 系统变量: THUMBSIZE2D
+指定二维线框缩略图预览的大小是否由 THUMBSIZE 系统变量控制。如果禁用，则使用二维线框视觉样式的图形预览的显示分辨率将设置为 256 x 256 像素。
+* THUMBSIZE
+** 系统变量: THUMBSIZE
+为所有缩略图预览图像指定显示分辨率（以像素为单位）。
+* THUMBSAVE
+** 系统变量: THUMBSAVE
+控制是否将缩略图预览图像保存在图形中。
+* THICKNESS
+** 系统变量: THICKNESS
+在创建二维几何对象时，设置默认的三维厚度特性。
+* TEXTSTYLE
+** 系统变量: TEXTSTYLE
+设置当前文字样式的名称。
+* TEXTSIZE
+** 系统变量: TEXTSIZE
+设置创建新文字对象时默认的文字高度。
+* TEXTQLTY
+** 系统变量: TEXTQLTY
+设置打印和渲染时 TrueType 文字的分辨率。
+* TEXTOUTPUTFILEFORMAT
+** 系统变量: TEXTOUTPUTFILEFORMAT
+提供日志文件的 Unicode 选项。
+* TEXTJUSTIFY
+** 系统变量: TEXTJUSTIFY
+显示 TEXT 命令在创建单行文字时使用的默认对正方式。
+* TEXTFILL
+** 系统变量: TEXTFILL
+控制是否填充 TrueType 字体以用于打印。
+* TEXTEVAL
+** 系统变量: TEXTEVAL
+控制如何判定用 TEXT（使用 AutoLISP）或 -TEXT 输入的文字字符串。
+* TEXTEDITMODE
+** 系统变量: TEXTEDITMODE
+控制是否自动重复 TEXTEDIT 命令。
+* TEXTED
+** 系统变量: TEXTED
+指定创建和编辑单行文字时显示的用户界面。
+* TEXTAUTOCORRECTCAPS
+** 系统变量: TEXTAUTOCORRECTCAPS
+更正因意外启用 Caps Lock 而导致的常见文本错误。
+* TEXTALLCAPS
+** 系统变量: TEXTALLCAPS
+将通过 TEXT 或 MTEXT 命令创建的所有新文字转换为大写。
+* TEXTALIGNSPACING
+** 系统变量: TEXTALIGNSPACING
+存储对齐文字的间距选项。
+* TEXTALIGNMODE
+** 系统变量: TEXTALIGNMODE
+存储对齐文字的对齐选项。
+* TEMPPREFIX
+** 系统变量: TEMPPREFIX
+存储为临时文件指定的文件夹名称，附带路径分隔符。
+* TEMPOVERRIDES
+** 系统变量: TEMPOVERRIDES
+打开或关闭用于绘图辅助的临时替代键。
+* TDUUPDATE
+** 系统变量: TDUUPDATE
+存储上次更新或保存时的世界标准时间和日期。
+* TDUSRTIMER
+** 系统变量: TDUSRTIMER
+存储用户花费时间计时器。
+* TDUPDATE
+** 系统变量: TDUPDATE
+存储上次更新/保存时的本地时间和日期。
+* TDUCREATE
+** 系统变量: TDUCREATE
+存储创建图形时的通用时间和日期。
+* TDINDWG
+** 系统变量: TDINDWG
+存储总的编辑时间，即在两次保存当前图形之间花费的总时间。
+* TDCREATE
+** 系统变量: TDCREATE
+存储创建图形时的本地时间和日期。
+* TBSHOWSHORTCUTS
+** 系统变量: TBSHOWSHORTCUTS
+指定使用 Ctrl 键和 Alt 键的快捷键是否显示在工具栏的工具提示上。
+* TBCUSTOMIZE
+** 系统变量: TBCUSTOMIZE
+控制是否可以自定义工具选项板组。
+* TARGET
+** 系统变量: TARGET
+存储目标点的 UCS 坐标以用于当前视口中的透视投影。
+* TABMODE
+** 系统变量: TABMODE
+控制数字化仪输入设备的使用。
+* TABLETOOLBAR
+** 系统变量: TABLETOOLBAR
+控制表格工具栏的显示。
+* TABLEINDICATOR
+** 系统变量: TABLEINDICATOR
+控制当打开在位文字编辑器以编辑表格单元时，行编号和列字母的显示。
+* SYSMON
+** 系统变量: SYSMON
+控制是否监视定义的系统变量列表。
+* SYSCODEPAGE
+** 系统变量: SYSCODEPAGE
+指示由操作系统决定的系统代码页。
+* SURFV
+** 系统变量: SURFV
+为 PEDIT 命令的“平滑”选项设置在 N 方向的曲面密度以及曲面对象上的 V 素线密度
+* SURFU
+** 系统变量: SURFU
+为 PEDIT 命令的“平滑”选项设置在 M 方向的曲面密度以及曲面对象上的 U 素线密度。
+* SURFTYPE
+** 系统变量: SURFTYPE
+控制 PEDIT 命令的“平滑”选项要执行的曲面拟合类型。
+* SURFTAB2
+** 系统变量: SURFTAB2
+为 REVSURF 和 EDGESURF 命令设置在 N 方向的网格密度。
+* SURFTAB1
+** 系统变量: SURFTAB1
+为 RULESURF 和 TABSURF 命令设置要生成的表格数目。
+* SURFACEMODELINGMODE
+** 系统变量: SURFACEMODELINGMODE
+控制是将曲面创建为程序曲面还是 NURBS 曲面。
+* SURFACEAUTOTRIM
+** 系统变量: SURFACEAUTOTRIM
+设定在将几何图形投影到曲面上时是否自动修剪曲面。
+* SURFACEASSOCIATIVITYDRAG
+** 系统变量: SURFACEASSOCIATIVITYDRAG
+设置关联曲面的拖动预览行为。
+* SURFACEASSOCIATIVITY
+** 系统变量: SURFACEASSOCIATIVITY
+控制曲面是否保留与从中创建了曲面的对象的关系。
+* SUPPRESSALERTS
+** 系统变量: SUPPRESSALERTS
+控制关于在早期版本的产品中打开和保存新图形时可能会丢失数据的警告。
+* SUNSTATUS
+** 系统变量: SUNSTATUS
+打开和关闭当前视口中阳光的光源效果。
+* SUNPROPERTIESSTATE
+** 系统变量: SUNPROPERTIESSTATE
+指示“阳光特性”窗口处于打开状态还是关闭状态。
+* SUBOBJSELECTIONMODE
+** 系统变量: SUBOBJSELECTIONMODE
+过滤在将鼠标悬停于面、边、顶点或实体历史记录子对象上时是否亮显它们。
+* STUDENTDRAWING
+** 系统变量: STUDENTDRAWING
+报告当前图形是否已与 Autodesk 学生版产品一起保存。
+* STEPSPERSEC
+** 系统变量: STEPSPERSEC
+指定漫游或飞行模式中每秒执行的步数。
+* STEPSIZE
+** 系统变量: STEPSIZE
+指定漫游或飞行模式中每一步的大小（以图形单位表示）。
+* STATUSBAR
+** 系统变量: STATUSBAR
+控制状态栏的显示。
+* STARTUP
+** 系统变量: STARTUP
+控制在应用程序启动时或打开新图形时显示的内容。
+* STARTMODE
+** 系统变量: STARTMODE
+控制“开始”选项卡的显示。
+* STARTINFOLDER
+** 系统变量: STARTINFOLDER
+存储从中启动产品的驱动器和文件夹路径。
+* STANDARDSVIOLATION
+** 系统变量: STANDARDSVIOLATION
+指定创建或修改非标准对象时，是否通知用户当前图形中存在标准冲突。
+* SSMSTATE
+** 系统变量: SSMSTATE
+指示“图纸集管理器”窗口处于打开状态还是关闭状态。
+* SSMSHEETSTATUS
+** 系统变量: SSMSHEETSTATUS
+控制图纸集中状态数据的刷新方式。
+* SSMPOLLTIME
+** 系统变量: SSMPOLLTIME
+控制图纸集中状态数据的自动刷新时间间隔。
+* SSMAUTOOPEN
+** 系统变量: SSMAUTOOPEN
+控制打开与图纸相关联的图形时图纸集管理器的显示行为。
+* SSLOCATE
+** 系统变量: SSLOCATE
+控制打开图形时是否找到并打开与该图形相关联的图纸集。
+* SSFOUND
+** 系统变量: SSFOUND
+如果搜索图纸集成功，则显示图纸集路径和文件名。
+* SPLPERIODIC
+** 系统变量: SPLPERIODIC
+控制是否生成具有周期性特性的闭合样条曲线和 NURBS 曲面以保持在闭合点或接合口处的最平滑的连续性。
+* SPLMETHOD
+** 系统变量: SPLMETHOD
+存储用于 SPLINE 命令的默认方法是拟合点还是控制点。
+* SPLKNOTS
+** 系统变量: SPLKNOTS
+当指定拟合点时，存储 SPLINE 命令的默认节点选项。
+* SPLINETYPE
+** 系统变量: SPLINETYPE
+设置由 PEDIT 命令的“样条曲线”选项生成的曲线类型。
+* SPLINESEGS
+** 系统变量: SPLINESEGS
+设置要为每条样曲线条拟合多段线（此多段线通过 PEDIT 命令的“样条曲线”选项生成）生成的线段数目。
+* SPLFRAME
+** 系统变量: SPLFRAME
+控制螺旋和平滑处理的网格对象的显示。
+* SPLDEGREE
+** 系统变量: SPLDEGREE
+存储最近使用的样条曲线阶数设置，并设定在指定控制点时 SPLINE 命令的默认阶数设置。
+* SPACESWITCH
+** 系统变量: SPACESWITCH
+控制是否可以通过在布局视口内双击来访问模型空间。
+* SORTORDER
+** 系统变量: SORTORDER
+指定是使用自然排序顺序还是 ASCII 值来排序图层列表。
+* SORTENTS
+** 系统变量: SORTENTS
+控制对象排序，以支持若干操作的绘图次序。
+* SOLIDHIST
+** 系统变量: SOLIDHIST
+控制新复合实体是否保留其原始零部件的历史记录。
+* SOLIDCHECK
+** 系统变量: SOLIDCHECK
+为当前任务打开和关闭三维实体校验。
+* SNAPUNIT
+** 系统变量: SNAPUNIT
+设置当前视口的捕捉间距。
+* SNAPTYPE
+** 系统变量: SNAPTYPE
+为当前视口设置捕捉类型（矩形或环形）。
+* SNAPSTYL
+** 系统变量: SNAPSTYL
+将栅格和栅格捕捉设置为当前视口的矩形或等轴测。
+* SNAPMODE
+** 系统变量: SNAPMODE
+在当前视口中打开和关闭捕捉模式。
+* SNAPISOPAIR
+** 系统变量: SNAPISOPAIR
+控制当前视口的等轴测平面。
+* SNAPGRIDLEGACY
+** 系统变量: SNAPGRIDLEGACY
+控制光标是否仅在操作正在进行时捕捉到捕捉栅格。
+* SNAPBASE
+** 系统变量: SNAPBASE
+相对于当前 UCS 设置当前视口的捕捉和栅格原点。
+* SNAPANG
+** 系统变量: SNAPANG
+相对于当前 UCS 设置当前视口的捕捉和栅格旋转角度。
+* SMOOTHMESHMAXLEV
+** 系统变量: SMOOTHMESHMAXLEV
+设置网格对象的最大平滑度。
+* SMOOTHMESHMAXFACE
+** 系统变量: SMOOTHMESHMAXFACE
+设置网格对象允许使用的最大面数。
+* SMOOTHMESHGRID
+** 系统变量: SMOOTHMESHGRID
+设置底层网格镶嵌面栅格显示在三维网格对象中时的最大平滑度。
+* SMOOTHMESHCONVERT
+** 系统变量: SMOOTHMESHCONVERT
+控制是对转换为三维实体或曲面的网格对象进行平滑处理还是进行镶嵌，以及是否合并它们的面。
+* SKYSTATUS
+** 系统变量: SKYSTATUS
+决定渲染时是否计算天空照明。
+* SKTOLERANCE
+** 系统变量: SKTOLERANCE
+确定样条曲线布满手画线草图的紧密程度。
+* SKPOLY
+** 系统变量: SKPOLY
+确定 SKETCH 命令生成的是直线、多段线还是样条曲线。
+* SKETCHINC
+** 系统变量: SKETCHINC
+设置用于 SKETCH 命令的记录增量。
+* SIGWARN
+** 系统变量: SIGWARN
+控制打开附着数字签名的文件时是否发出警告。
+* SHPNAME
+** 系统变量: SHPNAME
+设置默认的形名称（必须遵守符号命名约定）。
+* SHOWPALETTESTATE
+** 系统变量: SHOWPALETTESTATE
+指示是否通过 HIDEPALETTES 命令隐藏选项板或通过 SHOWPALETTES 命令恢复选项板。
+* SHOWPAGESETUPFORNEWLAYOUTS
+** 系统变量: SHOWPAGESETUPFORNEWLAYOUTS
+指定在创建新布局时是否显示页面设置管理器。
+* SHOWNEWSTATE
+** 系统变量: SHOWNEWSTATE
+指示更新中亮显的新功能是否处于活动状态。
+* SHOWMOTIONPIN
+** 系统变量: SHOWMOTIONPIN
+控制缩略图图像的默认状态。
+* SHOWLAYERUSAGE
+** 系统变量: SHOWLAYERUSAGE
+在图层特性管理器中显示图标以指示图层是否处于使用状态。
+* SHOWHIST
+** 系统变量: SHOWHIST
+控制图形中实体的“显示历史记录”特性。
+* SHORTCUTMENUDURATION
+** 系统变量: SHORTCUTMENUDURATION
+指定必须按下定点设备的右键多长时间才会在绘图区域中显示快捷菜单。
+* SHORTCUTMENU
+** 系统变量: SHORTCUTMENU
+控制“默认”、“编辑”和“命令”模式的快捷菜单在绘图区域是否可用。
+* SHAREVIEWTYPE
+** 系统变量: SHAREVIEWTYPE
+控制是从当前视图、模型空间或某一布局中创建共享视图，还是从整个图形中创建共享视图。
+* SHAREVIEWPROPERTIES
+** 系统变量: SHAREVIEWPROPERTIES
+控制共享视图是否包含图形特性。
+* SHADOWPLANELOCATION
+** 系统变量: SHADOWPLANELOCATION
+控制用于显示阴影的不可见地平面的位置。
+* SHADEDIF
+** 系统变量: SHADEDIF
+设置漫反射光与环境光的比率。
+* SHADEDGE
+** 系统变量: SHADEDGE
+控制边的着色。
+* SETBYLAYERMODE
+** 系统变量: SETBYLAYERMODE
+控制为 SETBYLAYER 命令选择哪些特性。
+* SELECTSIMILARMODE
+** 系统变量: SELECTSIMILARMODE
+控制对于将使用 SELECTSIMILAR 选择的同类型对象，必须匹配哪些特性。
+* SELECTIONPREVIEWLIMIT
+** 系统变量: SELECTIONPREVIEWLIMIT
+限制在窗口或窗交选择期间可以显示预览亮显的对象数。
+* SELECTIONPREVIEW
+** 系统变量: SELECTIONPREVIEW
+控制选择预览的显示。
+* SELECTIONOFFSCREEN
+** 系统变量: SELECTIONOFFSCREEN
+控制屏幕外对象的选择。
+* SELECTIONEFFECTCOLOR
+** 系统变量: SELECTIONEFFECTCOLOR
+设置对象选择上的光晕亮显效果的颜色。
+* SELECTIONEFFECT
+** 系统变量: SELECTIONEFFECT
+指定对象处于选中状态时所使用的视觉效果。
+* SELECTIONCYCLING
+** 系统变量: SELECTIONCYCLING
+控制与重叠对象和选择循环关联的显示选项。
+* SELECTIONAREAOPACITY
+** 系统变量: SELECTIONAREAOPACITY
+控制进行窗口选择和窗交选择时选择区域的透明度。
+* SELECTIONAREA
+** 系统变量: SELECTIONAREA
+控制选择区域的显示效果。
+* SELECTIONANNODISPLAY
+** 系统变量: SELECTIONANNODISPLAY
+控制选定注释性对象后，备用比例图示是否暂时以暗显状态显示。
+* SECUREREMOTEACCESS
+** 系统变量: SECUREREMOTEACCESS
+控制是否限制从 Internet 位置或远程服务器访问文件。
+* SECURELOAD
+** 系统变量: SECURELOAD
+控制可执行文件是否限于仅从受信任文件夹加载
+* SECTIONTHICKNESSINC
+** 系统变量: SECTIONTHICKNESSINC
+设置截面切片厚度控件增加或减少的点数。
+* SECTIONOFFSETINC
+** 系统变量: SECTIONOFFSETINC
+设定单击控件时截面对象到截面平面的偏移距离。
+* SCREENSIZE
+** 系统变量: SCREENSIZE
+以像素为单位存储当前视口大小（X 和 Y）。
+* SCREENMODE
+** 系统变量: SCREENMODE
+指示显示的状态。
+* SAVETIME
+** 系统变量: SAVETIME
+设置自动保存时间间隔，以分钟为测量单位。
+* SAVENAME
+** 系统变量: SAVENAME
+显示最近保存的图形的文件名和文件夹路径。
+* SAVEFILEPATH
+** 系统变量: SAVEFILEPATH
+指定当前任务中所有自动保存文件的文件夹路径。
+* SAVEFILE
+** 系统变量: SAVEFILE
+存储当前自动保存的文件名。
+* SAVEFIDELITY
+** 系统变量: SAVEFIDELITY
+在 AutoCAD 2007 及更早版本中控制注释性对象的视觉逼真度。
+* SAFEMODE
+** 系统变量: SAFEMODE
+指示是否可在当前 AutoCAD 任务中加载和执行可执行代码。
+* RTDISPLAY
+** 系统变量: RTDISPLAY
+控制执行实时 ZOOM 或 PAN 命令时光栅图像和 OLE 对象的显示。
+* ROLLOVERTIPS
+** 系统变量: ROLLOVERTIPS
+控制当光标悬停在对象上时鼠标悬停工具提示的显示。
+* ROLLOVEROPACITY
+** 系统变量: ROLLOVEROPACITY
+控制光标移动到选项板上时选项板的透明度。
+* ROAMABLEROOTPREFIX
+** 系统变量: ROAMABLEROOTPREFIX
+存储根文件夹的完整路径，该文件夹中安装了可漫游的可自定义文件。
+* RIBBONSTATE
+** 系统变量: RIBBONSTATE
+指示功能区选项板处于打开状态还是关闭状态。
+* RIBBONSELECTMODE
+** 系统变量: RIBBONSELECTMODE
+决定调用功能区上下文选项卡并完成命令后预先选择集是否仍处于选中状态。
+* RIBBONICONRESIZE
+** 系统变量: RIBBONICONRESIZE
+控制是否将功能区上的图标大小调整为标准大小。
+* RIBBONDOCKEDHEIGHT
+** 系统变量: RIBBONDOCKEDHEIGHT
+确定是将水平固定的功能区设定为当前选项卡的高度还是预先定义的高度。
+* RIBBONCONTEXTSELLIM
+** 系统变量: RIBBONCONTEXTSELLIM
+限制可以使用功能区特性控件或上下文选项卡一次更改的对象数。
+* RIBBONBGLOAD
+** 系统变量: RIBBONBGLOAD
+控制功能区选项卡是否在处理器空闲时间由后台进程加载到内存中。
+* REVCLOUDGRIPS
+** 系统变量: REVCLOUDGRIPS
+控制修订云线上显示的夹点数。
+* REVCLOUDCREATEMODE
+** 系统变量: REVCLOUDCREATEMODE
+指定用于创建修订云线的默认输入。
+* REPORTERROR
+** 系统变量: REPORTERROR
+控制程序异常关闭时是否可以向 Autodesk 发送错误报告。
+* RENDERUSERLIGHTS
+** 系统变量: RENDERUSERLIGHTS
+控制是否在渲染过程中替代视口光源的设置。
+* RENDERTIME
+** 系统变量: RENDERTIME
+指定渲染引擎用于反复细化渲染图像的分钟数。
+* RENDERTARGET
+** 系统变量: RENDERTARGET
+控制渲染引擎要使用的渲染持续时间类型。
+* RENDERPREFSSTATE
+** 系统变量: RENDERPREFSSTATE
+指示“渲染预设管理器”选项板是处于打开状态还是关闭状态。
+* RENDERLIGHTCALC
+** 系统变量: RENDERLIGHTCALC
+控制光源和材质的渲染精度。
+* RENDERLEVEL
+** 系统变量: RENDERLEVEL
+指定渲染引擎为创建渲染图像而执行的层级数或迭代数。
+* RENDERENVSTATE
+** 系统变量: RENDERENVSTATE
+指示“渲染预设管理器”选项板是处于打开状态还是关闭状态。
+* REMEMBERFOLDERS
+** 系统变量: REMEMBERFOLDERS
+控制显示在标准文件选择对话框中的默认路径。
+* RE-INIT
+** 系统变量: RE-INIT
+重新初始化数字化仪、数字化仪端口和 acad.pgp 文件。
+* REGENMODE
+** 系统变量: REGENMODE
+旧式的。控制图形的自动重生成。
+* REFPATHTYPE
+** 系统变量: REFPATHTYPE
+控制当参照文件第一次附着到宿主图形文件时是使用完整路径、相对路径还是无路径。
+* REFEDITNAME
+** 系统变量: REFEDITNAME
+显示正在编辑的参照名称。
+* RECOVERYMODE
+** 系统变量: RECOVERYMODE
+控制系统出现故障后是否记录图形修复信息。
+* RECOVERAUTO
+** 系统变量: RECOVERAUTO
+控制在打开损坏的图形文件之前或之后恢复通知的显示。
+* REBUILDV
+** 系统变量: REBUILDV
+设定重新生成 NURBS 曲面时 V 方向上的栅格线数量。
+* REBUILDU
+** 系统变量: REBUILDU
+设定重新生成 NURBS 曲面时 U 方向上的栅格线数量。
+* REBUILDOPTIONS
+** 系统变量: REBUILDOPTIONS
+控制重新生成 NURBS 曲面时的删除和修剪选项。
+* REBUILDDEGREEV
+** 系统变量: REBUILDDEGREEV
+设定重新生成 NURBS 曲面时 V 方向上的阶数。
+* REBUILDDEGREEU
+** 系统变量: REBUILDDEGREEU
+设定重新生成 NURBS 曲面时 U 方向上的阶数。
+* REBUILD2DOPTION
+** 系统变量: REBUILD2DOPTION
+控制重新生成样条曲线时是否删除原始曲线。
+* REBUILD2DDEGREE
+** 系统变量: REBUILD2DDEGREE
+设定重新生成样条曲线时的全局阶数。
+* REBUILD2DCV
+** 系统变量: REBUILD2DCV
+设定重新生成样条曲线时的控制点数量。
+* RASTERTHRESHOLD
+** 系统变量: RASTERTHRESHOLD
+以兆字节为单位指定打印时光栅图像的阈值。
+* RASTERPREVIEW
+** 系统变量: RASTERPREVIEW
+控制是否将缩略图预览图像随图形一起创建和保存。
+* RASTERPERCENT
+** 系统变量: RASTERPERCENT
+设置可用于打印光栅图像的可用虚拟内存的最大百分比。
+* RASTERDPI
+** 系统变量: RASTERDPI
+控制从有标注输出设备更改为无标注输出设备（或反之）时的图纸尺寸和打印缩放比例。
+* QVLAYOUTPIN
+** 系统变量: QVLAYOUTPIN
+控制图形中模型空间和布局的预览图像的默认显示状态。
+* QVDRAWINGPIN
+** 系统变量: QVDRAWINGPIN
+控制图形预览图像的默认显示状态。
+* QTEXTMODE
+** 系统变量: QTEXTMODE
+控制文字的显示方式。
+* QPMODE
+** 系统变量: QPMODE
+控制在选定对象时是否显示“快捷特性”选项板。
+* QPLOCATION
+** 系统变量: QPLOCATION
+设置“快捷特性”选项板的位置。
+* QCSTATE
+** 系统变量: QCSTATE
+指示“快速计算器”计算器处于打开状态还是关闭状态。
+* PUCSBASE
+** 系统变量: PUCSBASE
+存储定义正交 UCS 设置（仅用于图纸空间）的原点和方向的 UCS 名称。
+* PUBLISHHATCH
+** 系统变量: PUBLISHHATCH
+控制在 Autodesk Impression 中打开发布为 DWF 或 DWFx 格式的填充图案时，是否将其视为单个对象。
+* PUBLISHCOLLATE
+** 系统变量: PUBLISHCOLLATE
+控制打印图纸集、多页打印文件或后台打印文件时是否可以被其他打印作业中断。
+* PUBLISHALLSHEETS
+** 系统变量: PUBLISHALLSHEETS
+指定在“发布”对话框中是加载激活文档的内容还是加载所有打开文档的内容。
+* PSVPSCALE
+** 系统变量: PSVPSCALE
+为所有新创建的视口设置视图比例因子。
+* PSTYLEPOLICY
+** 系统变量: PSTYLEPOLICY
+控制打开在 AutoCAD 2000 之前的版本中创建的图形或不使用图形模板从头创建新图形时，使用的打印样式模式（颜色相关打印样式模式或命名打印样式模式）。
+* PSTYLEMODE
+** 系统变量: PSTYLEMODE
+指示当前图形处于颜色相关打印样式模式还是命名打印样式模式。
+* PSOLWIDTH
+** 系统变量: PSOLWIDTH
+控制使用 POLYSOLID 命令创建的扫掠实体对象的默认宽度。
+* PSOLHEIGHT
+** 系统变量: PSOLHEIGHT
+控制通过 POLYSOLID 命令创建的扫掠实体对象的默认高度。
+* PSLTSCALE
+** 系统变量: PSLTSCALE
+控制在图纸空间视口中显示的对象的线型比例缩放。
+* PROXYSHOW
+** 系统变量: PROXYSHOW
+控制代理对象在图形中的显示。
+* PROXYNOTICE
+** 系统变量: PROXYNOTICE
+创建代理时显示通知。
+* PROXYGRAPHICS
+** 系统变量: PROXYGRAPHICS
+指定是否将代理对象的图像保存在图形中。
+* PROPPREVTIMEOUT
+** 系统变量: PROPPREVTIMEOUT
+设置可用于生成特性预览的最大时间量。
+* PROPOBJLIMIT
+** 系统变量: PROPOBJLIMIT
+限制可以使用“特性”和“快捷特性”选项板一次更改的对象数。
+* PROPERTYPREVIEW
+** 系统变量: PROPERTYPREVIEW
+控制在将鼠标悬停在控制特性的下拉列表和库上时，是否可以预览对当前选定对象的更改。
+* PROJMODE
+** 系统变量: PROJMODE
+设置当前投影模式以进行修剪或延伸。
+* PROJECTNAME
+** 系统变量: PROJECTNAME
+为当前图形指定工程名称。
+* PROGRAM
+** 系统变量: PROGRAM
+显示程序名称。
+* PRODUCT
+** 系统变量: PRODUCT
+显示产品名称。
+* PREVIEWTYPE
+** 系统变量: PREVIEWTYPE
+控制要用于图形缩略图预览的视图。
+* PREVIEWFILTER
+** 系统变量: PREVIEWFILTER
+从选择预览中排除指定的对象类型。
+* PREVIEWCREATIONTRANSPARENCY
+** 系统变量: PREVIEWCREATIONTRANSPARENCY
+控制在使用 SURFBLEND、SURFPATCH、SURFFILLET、FILLETEDGE、CHAMFEREDGE 和 LOFT 时生成的预览透明度。
+* POPUPS
+** 系统变量: POPUPS
+显示当前配置的显示驱动程序状态。
+* POLYSIDES
+** 系统变量: POLYSIDES
+为 POLYGON 命令设置默认边数。
+* POLARMODE
+** 系统变量: POLARMODE
+控制极轴追踪和对象捕捉追踪的设置。
+* POLARDIST
+** 系统变量: POLARDIST
+当 SNAPTYPE 设定为 1 (PolarSnap) 时，设置捕捉增量。
+* POLARANG
+** 系统变量: POLARANG
+设置极轴角增量。
+* POLARADDANG
+** 系统变量: POLARADDANG
+存储极轴追踪和极轴捕捉的附加角度。
+* POINTCLOUDVISRETAIN
+** 系统变量: POINTCLOUDVISRETAIN
+控制传统图形（在 AutoCAD 2014 中创建）是否保留单个扫描（RCS 文件）的打开或关闭状态和由附着的点云项目文件（RCP 文件）参照的面域。
+* POINTCLOUDSHADING
+** 系统变量: POINTCLOUDSHADING
+指定点云中的点的亮度是漫射还是镜面反射。
+* POINTCLOUDRTDENSITY
+** 系统变量: POINTCLOUDRTDENSITY
+通过在缩放、平移或动态观察期间减少显示的点数，可以提高性能。
+* POINTCLOUDPOINTSIZE
+** 系统变量: POINTCLOUDPOINTSIZE
+控制新点云对象的点的大小。
+* POINTCLOUDPOINTMAXLEGACY
+** 系统变量: POINTCLOUDPOINTMAXLEGACY
+仅适用于传统（2015 之前）点云。设置可以为所有附着到图形的传统点云显示的最大点数。
+* POINTCLOUDPOINTMAX
+** 系统变量: POINTCLOUDPOINTMAX
+设置可以为所有附着到图形的点云显示的最大点数。不会影响传统（2015 之前）点云。
+* POINTCLOUDLOD
+** 系统变量: POINTCLOUDLOD
+为点云设置显示的细节级别。
+* POINTCLOUDLOCK
+** 系统变量: POINTCLOUDLOCK
+控制是否可以操纵、移动、裁剪或旋转附着的点云。
+* POINTCLOUDLIGHTSOURCE
+** 系统变量: POINTCLOUDLIGHTSOURCE
+当光源处于打开状态时，确定点云的光源。
+* POINTCLOUDLIGHTING
+** 系统变量: POINTCLOUDLIGHTING
+控制点云的光源效果的显示方式。
+* POINTCLOUDDENSITY
+** 系统变量: POINTCLOUDDENSITY
+仅适用于传统（2015 之前）点云对象。控制工程视图中为所有传统点云显示的点的百分比。
+* POINTCLOUDCLIPFRAME
+** 系统变量: POINTCLOUDCLIPFRAME
+控制传统点云上的剪裁边界是否显示在屏幕上和打印输出中。
+* POINTCLOUDCACHESIZE
+** 系统变量: POINTCLOUDCACHESIZE
+指定为显示点云而保留的内存量。
+* POINTCLOUDBOUNDARY
+** 系统变量: POINTCLOUDBOUNDARY
+控制是否显示点云边界框。
+* POINTCLOUDAUTOUPDATE
+** 系统变量: POINTCLOUDAUTOUPDATE
+仅适用于传统（2015 之前）点云对象。控制在操作、平移、缩放或动态观察后是否自动重新生成点云。
+* POINTCLOUD2DVSDISPLAY
+** 系统变量: POINTCLOUD2DVSDISPLAY
+在使用二维线框视觉样式查看点云时，切换边界框和文字消息的显示。
+* PLQUIET
+** 系统变量: PLQUIET
+控制可选的打印相关对话框和非致命脚本错误的显示。
+* PLOTTRANSPARENCYOVERRIDE
+** 系统变量: PLOTTRANSPARENCYOVERRIDE
+控制是否打印对象透明度。
+* PLOTROTMODE
+** 系统变量: PLOTROTMODE
+控制打印方向。
+* PLOTOFFSET
+** 系统变量: PLOTOFFSET
+控制打印偏移是相对于可打印区域还是相对于图纸边。
+* PLINEWID
+** 系统变量: PLINEWID
+存储默认的多段线宽度。
+* PLINETYPE
+** 系统变量: PLINETYPE
+指定是否使用优化的二维多段线。
+* PLINEREVERSEWIDTHS
+** 系统变量: PLINEREVERSEWIDTHS
+控制反转多段线的方向时多段线的外观。
+* PLINEGEN
+** 系统变量: PLINEGEN
+控制绘制时，绕二维多段线的顶点生成线型图案的方式。
+* PLINEGCENMAX
+** 系统变量: PLINEGCENMAX
+设置多段线可以拥有的最大线段数量，以便应用程序计算几何中心。
+* PLINECONVERTMODE
+** 系统变量: PLINECONVERTMODE
+指定将样条曲线转换为多段线时使用的拟合方法。
+* PLATFORM
+** 系统变量: PLATFORM
+指示正在使用的操作系统。
+* PICKSTYLE
+** 系统变量: PICKSTYLE
+控制组选择和关联图案填充选择的使用。
+* PICKFIRST
+** 系统变量: PICKFIRST
+控制是否可以在启动命令之前选择对象。
+* PICKDRAG
+** 系统变量: PICKDRAG
+控制绘制选择窗口的方法。
+* PICKBOX
+** 系统变量: PICKBOX
+设置对象选择目标的高度（以设备独立像素为单位）。
+* PICKAUTO
+** 系统变量: PICKAUTO
+控制用于对象选择的自动窗口选择。
+* PICKADD
+** 系统变量: PICKADD
+控制后续选择项是替换当前选择集还是添加到其中。
+* PFACEVMAX
+** 系统变量: PFACEVMAX
+设置多面网格中面顶点的最大数量。
+* PERSPECTIVECLIP
+** 系统变量: PERSPECTIVECLIP
+决定眼点剪裁的位置。
+* PERSPECTIVE
+** 系统变量: PERSPECTIVE
+指定当前视口是否显示透视视图。
+* PERIMETER
+** 系统变量: PERIMETER
+存储由 AREA 和 LIST 命令计算的上一个周长值。
+* PELLIPSE
+** 系统变量: PELLIPSE
+控制通过 ELLIPSE 命令创建的椭圆类型。
+* PEDITACCEPT
+** 系统变量: PEDITACCEPT
+自动将选定对象转换为多段线，而在使用 PEDIT 时不显示提示。
+* PDSIZE
+** 系统变量: PDSIZE
+设置点对象的显示大小。
+* PDMODE
+** 系统变量: PDMODE
+控制点对象的显示方式。
+* PDFSHXTHRESHOLD
+** 系统变量: PDFSHXTHRESHOLD
+设置所选几何图形在转换为文字对象之前必须匹配某个字体的百分比。
+* PDFSHXLAYER
+** 系统变量: PDFSHXLAYER
+控制在将 SHX 几何图形转换为文字对象时，指定给新创建的文字对象的图层。
+* PDFSHXBESTFONT
+** 系统变量: PDFSHXBESTFONT
+在将输入的 PDF 几何图形转换为文字时，控制 PDFSHXTEXT 命令使用最佳匹配字体或使用超过识别阈值的第一个选定字体。
+* PDFSHX
+** 系统变量: PDFSHX
+控制是否在将图形输出为 PDF 文件时，将使用 SHX 字体的文字对象存储在 PDF 文件中作为注释。
+* PDFOSNAP
+** 系统变量: PDFOSNAP
+决定是否为附着在图形中的 PDF 参考底图中的几何图形激活对象捕捉。
+* PDFIMPORTMODE
+** 系统变量: PDFIMPORTMODE
+控制从 PDF 文件输入对象时的默认处理。
+* PDFIMPORTLAYERS
+** 系统变量: PDFIMPORTLAYERS
+控制将哪些图层指定给输入自 PDF 文件的对象。
+* PDFIMPORTIMAGEPATH
+** 系统变量: PDFIMPORTIMAGEPATH
+指定在输入 PDF 文件后用于提取和保存参照图像文件的文件夹。
+* PDFIMPORTFILTER
+** 系统变量: PDFIMPORTFILTER
+控制哪些数据类型要从 PDF 文件中输入并转换为 AutoCAD 对象。
+* PDFFRAME
+** 系统变量: PDFFRAME
+确定 PDF 参考底图边框是否可见。
+* PCMSTATE
+** 系统变量: PCMSTATE
+指示点云管理器处于打开状态还是关闭状态。
+* PARAMETERSSTATUS
+** 系统变量: PARAMETERSSTATUS
+指示“参数管理器”是处于显示状态还是隐藏状态。
+* PARAMETERCOPYMODE
+** 系统变量: PARAMETERCOPYMODE
+控制在图形、模型空间和布局以及块定义之间复制约束对象时处理约束和参照的用户参数的方式。
+* PAPERUPDATE
+** 系统变量: PAPERUPDATE
+控制当尝试以不同于为绘图仪配置文件默认指定的图纸尺寸打印布局时，警告对话框的显示。
+* PALETTEOPAQUE
+** 系统变量: PALETTEOPAQUE
+控制是否可以使选项板透明。
+* OSOPTIONS
+** 系统变量: OSOPTIONS
+控制是否在图案填充对象、使用动态 UCS 时具有负 Z 值的几何图形或者尺寸界线上禁用对象捕捉。
+* OSNAPZ
+** 系统变量: OSNAPZ
+控制对象捕捉是否自动投影到与当前 UCS 中位于当前标高的 XY 平面平行的平面上。
+* OSNAPOVERRIDE
+** 系统变量: OSNAPOVERRIDE
+防止替代默认对象捕捉设置。
+* OSNAPNODELEGACY
+** 系统变量: OSNAPNODELEGACY
+控制“节点”对象捕捉是否可用于捕捉到多行文字对象。
+* OSNAPCOORD
+** 系统变量: OSNAPCOORD
+控制在命令行输入的坐标是否替代运行的对象捕捉。
+* OSMODE
+** 系统变量: OSMODE
+设置执行对象捕捉。
+类型: 位码
+保存位置: 注册表
+初始值: 4133
+系统将使用下列位码值之和将该设置存储为一个位码：
+
+值   说明
+0    无
+1  END（端点）
+2  MID（中点）
+4  CEN（圆心）
+8  NOD（节点）
+16 QUA（象限点）
+32 INT（交点）
+64 INS（插入点）
+128 PER（垂足）
+256 TAN（切点）
+512 NEA（最近点）
+1024 几何中心
+2048 APP（外观交点）
+4096 EXT（延伸）
+8192 PAR（平行）
+16384 禁用当前的执行对象捕捉
+
+要指定多个执行对象捕捉，请输入各值之和。例如，输入 3 可指定“端点”(位码 1) 和“中点”(位码 2) 对象捕捉模式。
+
+注意:创建自定义例程的开发人员可以使用 16384 位码来暂时禁用当前的执行对象捕捉设置，而不会丢失原始设置。
+* ORTHOMODE
+** 系统变量: ORTHOMODE
+限定光标在垂直方向移动。
+* ORBITAUTOTARGET
+** 系统变量: ORBITAUTOTARGET
+控制为 3DORBIT 命令获取目标点的方式。
+* OPMSTATE
+** 系统变量: OPMSTATE
+指示“特性”选项板处于打开、关闭还是隐藏状态。
+* OLESTARTUP
+** 系统变量: OLESTARTUP
+控制打印时是否加载嵌入 OLE 对象的源应用程序。
+* OLEQUALITY
+** 系统变量: OLEQUALITY
+为所有 OLE 对象设置默认打印质量。
+* OLEHIDE
+** 系统变量: OLEHIDE
+控制 OLE 对象的显示和打印。
+* OLEFRAME
+** 系统变量: OLEFRAME
+控制是否显示和打印图形中所有 OLE 对象的边框。
+* OFFSETGAPTYPE
+** 系统变量: OFFSETGAPTYPE
+控制偏移多段线时处理线段之间的潜在间隙的方式。
+* OFFSETDIST
+** 系统变量: OFFSETDIST
+设置默认的偏移距离。
+* OBSCUREDLTYPE
+** 系统变量: OBSCUREDLTYPE
+指定遮挡线的线型。
+* OBSCUREDCOLOR
+** 系统变量: OBSCUREDCOLOR
+指定遮挡线的颜色。
+* OBJECTISOLATIONMODE
+** 系统变量: OBJECTISOLATIONMODE
+控制隐藏的对象在绘图任务之间是否保持隐藏状态。
+* NORTHDIRECTION
+** 系统变量: NORTHDIRECTION
+指定 WCS 的 Y 轴和栅格北向之间的角度。
+* NOMUTT
+** 系统变量: NOMUTT
+不显示通常情况下显示的消息（即不进行消息反馈）。
+* NAVVCUBESIZE
+** 系统变量: NAVVCUBESIZE
+指定 ViewCube 工具的大小。
+* NAVVCUBEORIENT
+** 系统变量: NAVVCUBEORIENT
+控制 ViewCube 工具是反映当前 UCS 还是反映 WCS。
+* NAVVCUBEOPACITY
+** 系统变量: NAVVCUBEOPACITY
+控制 ViewCube 工具处于未激活状态时的不透明度。
+* NAVVCUBELOCATION
+** 系统变量: NAVVCUBELOCATION
+标识显示 ViewCube 工具的视口中的角点。
+* NAVVCUBEDISPLAY
+** 系统变量: NAVVCUBEDISPLAY
+控制 ViewCube 工具在当前视觉样式和当前视口中的显示。
+* NAVSWHEELSIZEMINI
+** 系统变量: NAVSWHEELSIZEMINI
+指定小型 SteeringWheels 的大小。
+* NAVSWHEELSIZEBIG
+** 系统变量: NAVSWHEELSIZEBIG
+指定大型 SteeringWheels 的大小。
+* NAVSWHEELOPACITYMINI
+** 系统变量: NAVSWHEELOPACITYMINI
+控制小型 SteeringWheels 的不透明度。
+* NAVSWHEELOPACITYBIG
+** 系统变量: NAVSWHEELOPACITYBIG
+控制大型 SteeringWheels 的不透明度。
+* NAVSWHEELMODE
+** 系统变量: NAVSWHEELMODE
+指定 SteeringWheel 的当前模式。
+* NAVBARDISPLAY
+** 系统变量: NAVBARDISPLAY
+控制导航栏在所有视口中的显示。
+
+* MYDOCUMENTSPREFIX
+** 系统变量: MYDOCUMENTSPREFIX
+存储用户当前登录的“我的文档”文件夹的完整路径。
+* MVIEWPREVIEW
+** 系统变量: MVIEWPREVIEW
+控制插入已命名或新布局视口时的预览行为。
+* MTJIGSTRING
+** 系统变量: MTJIGSTRING
+设置启动 MTEXT 命令时显示在光标位置的样例文字内容。
+* MTEXTTOOLBAR
+** 系统变量: MTEXTTOOLBAR
+控制“文字格式”工具栏的显示。
+* MTEXTFIXED
+** 系统变量: MTEXTFIXED
+为多行文字设置在位文字编辑器的显示大小和方向行为。
+* MTEXTED
+** 系统变量: MTEXTED
+设置用于编辑多行文字对象的应用程序。
+* MTEXTDETECTSPACE
+** 系统变量: MTEXTDETECTSPACE
+控制是否在 MTEXT 命令中将键盘上的空格键用于创建列表项。
+* MTEXTCOLUMN
+** 系统变量: MTEXTCOLUMN
+为多行文字对象设置默认分栏设置。
+* MTEXTAUTOSTACK
+** 系统变量: MTEXTAUTOSTACK
+控制 MTEXT 命令的自动堆叠。
+* MSOLESCALE
+** 系统变量: MSOLESCALE
+控制具有粘贴到模型空间中的文字的 OLE 对象的大小。
+* MSMSTATE
+** 系统变量: MSMSTATE
+指示标记集管理器处于打开状态还是关闭状态。
+* MSLTSCALE
+** 系统变量: MSLTSCALE
+按注释比例缩放“模型”选项卡上显示的线型。
+* MODEMACRO
+** 系统变量: MODEMACRO
+在状态行中显示文字字符串，例如当前图形的名称、时间/日期戳记或特殊模式。
+* MLEADERSCALE
+** 系统变量: MLEADERSCALE
+设置应用到多重引线对象的全局比例因子。
+* MIRRTEXT
+** 系统变量: MIRRTEXT
+控制 MIRROR 反映文字的方式。
+* MIRRHATCH
+** 系统变量: MIRRHATCH
+控制 MIRROR 反映填充图案的方式。
+* MILLISECS
+** 系统变量: MILLISECS
+存储自系统启动后已经过的毫秒数。
+* MESHTYPE
+** 系统变量: MESHTYPE
+控制通过 REVSURF、TABSURF、RULESURF 和 EDGESURF 命令创建的网格的类型。
+* MENUNAME
+** 系统变量: MENUNAME
+存储自定义文件名，包括文件名的路径。
+* MENUECHO
+** 系统变量: MENUECHO
+设置菜单回显和提示控制位。
+* MENUBAR
+** 系统变量: MENUBAR
+控制菜单栏的显示。
+* MEASUREMENT
+** 系统变量: MEASUREMENT
+控制当前图形是使用英制还是公制填充图案和线型文件。
+* MEASUREINIT
+** 系统变量: MEASUREINIT
+控制从头创建的图形是使用英制还是使用公制默认设置。
+* MBUTTONPAN
+** 系统变量: MBUTTONPAN
+控制定点设备上的第三个按钮或滚轮的行为。
+* MAXTOUCHES
+** 系统变量: MAXTOUCHES
+标识所连接数字化仪支持的触点数。
+* MAXSORT
+** 系统变量: MAXSORT
+设置项目的最大数目，例如，在对话框、下拉列表和选项板中按字母顺序进行排序的文件名、图层名和块名称。
+* DIVMESHPYRLENGTH
+** 系统变量: DIVMESHPYRLENGTH
+设置沿网格棱锥体底面每个标注的细分数目。
+
+
+* UCS2DDISPLAYSETTING
+** 系统变量: UCS2DDISPLAYSETTING
+在二维线框视觉样式设置为当前时显示 UCS 图标。
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 关闭。当二维线框视觉样式设置为当前时，不会显示 UCS 图标。
+1 | 打开。当二维线框视觉样式设置为当前时，会显示 UCS 图标。
+
+注意:UCSICON 命令也必须设置为“开”才能显示 UCS 图标。
+* UCS3DPARADISPLAYSETTING
+** 系统变量: UCS3DPARADISPLAYSETTING
+在透视视图处于禁用状态且三维视觉样式设置为当前时显示 UCS 图标。
+
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 关闭。当透视处于关闭状态并且三维视觉样式置为当前时，不会显示 UCS 图标。
+1 | 打开。当透视处于关闭状态并且三维视觉样式置为当前时，将显示 UCS 图标。
+
+注意:UCSICON 命令也必须设置为“开”才能显示 UCS 图标。
+* UCS3DPERPDISPLAYSETTING
+** 系统变量: UCS3DPERPDISPLAYSETTING
+在透视视图处于启用状态且三维视觉样式设置为当前时显示 UCS 图标。
+
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 关闭。当透视处于打开状态并且三维视觉样式置为当前时，不会显示 UCS 图标。
+1 | 打开。当透视处于打开状态并且三维视觉样式置为当前时，将显示 UCS 图标。
+
+注意:UCSICON 命令也必须设置为“开”才能显示 UCS 图标。
+* UCSAXISANG
+** 系统变量: UCSAXISANG
+使用 UCS 命令的 X、Y 或 Z 选项绕其一个轴旋转 UCS 时，存储默认角度。
+类型:	整数
+保存位置:	注册表
+初始值:	90
+该角度值必须以度数的形式输入（有效值包括：5、10、15、18、22.5、30、45、90、180）。
+* UCSBASE
+** 系统变量: UCSBASE
+存储定义正交 UCS 设置的原点和方向的 UCS 名称。
+
+类型:	字符串
+保存位置:	图形
+初始值:	""
+有效值可以是任何命名 UCS。
+* UCSDETECT
+** 系统变量: UCSDETECT
+控制创建涉及三维平整面的对象时是否激活动态 UCS 获取。
+
+类型:	整数
+保存位置:	注册表
+初始值:	1
+创建对象时，您可以在光标悬停在三维实体上的平整面、平面网格元素或平面点云线段上方时，动态地对齐 UCS。
+
+注意:动态 UCS 对齐不会检测平整面对象或二维几何图形。
+值 | 说明
+0 | 未激活
+1 | 已激活
+
+提示如果性能有问题，可能希望将 UCSDETECT 设置为 0。
+* UCSFOLLOW
+** 系统变量: UCSFOLLOW
+从一个 UCS 转换为另一个 UCS 时生成平面视图。
+类型:	整数
+保存位置:	图形
+初始值:	0
+将分别为每个视口单独保存 UCSFOLLOW 设置。如果某个视口的 UCSFOLLOW 处于打开状态，那么在每次更改为其他用户坐标系时，都会在该视口中生成平面视图。
+
+值 | 说明
+0 | 更改 UCS 不会影响当前视图
+1 | 更改 UCS 导致在当前视口中生成新 UCS 的平面视图
+
+注意:在图纸空间中，将忽略 UCSFOLLOW 设置。
+* UCSICON
+** 系统变量: UCSICON
+控制 UCS 图标可见性和位置。
+类型:	整数
+保存位置:	图形
+初始值:	3
+此系统变量的设置是特定于视口和布局的。
+
+值 | 说明
+0 | 关；不显示图标
+1 | 开；仅在当前视口或布局的左下角显示图标
+2 | 关；如果图标处于打开状态，将在 UCS 原点处显示图标（如果可能）
+3 | 开；在原点处显示 UCS 图标（如果可能）。
+
+注意:此系统变量的名称与 UCSICON 命令相同。使用 SETVAR 命令可访问此系统变量。
+* UCSNAME
+** 系统变量: UCSNAME
+存储在当前空间中用于当前视口的当前用户坐标系的名称。
+（只读）
+类型:	字符串
+保存位置:	图形
+如果当前 UCS 尚未命名，则返回一个空字符串。
+* UCSORG
+** 系统变量: UCSORG
+存储在当前空间中用于当前视口的当前用户坐标系的原点。
+（只读）
+类型:	三维点
+保存位置:	图形
+初始值:	0.0000,0.0000,0.0000
+将使用世界坐标系 (WCS) 存储坐标。
+* UCSORTHO
+** 系统变量: UCSORTHO
+决定 UCS 的 XY 平面是否在正交视图恢复时自动与当前视图的平面恢复对齐。
+
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 指定恢复正交视图时 UCS 保持不变
+1 | 指定恢复正交视图时 UCS 将自动对齐
+
+* UCSSELECTMODE
+** 系统变量: UCSSELECTMODE
+控制是否可以使用夹点选择和操纵 UCS 图标。
+
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | UCS 图标不可选。
+1 | UCS 图标可选。
+* UCSVIEW
+** 系统变量: UCSVIEW
+决定当前 UCS 是否随命名视图一起保存。
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 当前 UCS 不随命名视图一起保存
+1 | 一旦创建命名视图，就随之保存当前 UCS
+
+* UCSVP
+** 系统变量: UCSVP
+确定在其他视口中的 UCS 是从属于还是独立于当前视口的 UCS。
+
+类型:	整数
+保存位置:	图形
+初始值:	1
+此系统变量的设置是特定于视口的。
+
+值 | 说明
+0 | 解锁；UCS 反映当前视口的 UCS 状态
+1 | 锁定；UCS 存储在视口中并独立于当前视口的 UCS 状态
+
+* UCSXDIR
+** 系统变量: UCSXDIR
+为当前空间中当前视口存储当前 UCS 的 X 方向。
+（只读）
+类型:	三维点
+保存位置:	图形
+初始值:	1.0000,0.0000,0.0000
+对于每个视口，UCS 的 X 方向可以不同。
+* UCSYDIR
+** 系统变量: UCSYDIR
+为当前空间中当前视口存储当前 UCS 的 Y 方向。
+（只读）
+类型:	三维点
+保存位置:	图形
+初始值:	0.0000,1.0000,0.0000
+对于每个视口，UCS 的 Y 方向可以不同。
+* UNDOCTL
+** 系统变量: UNDOCTL
+显示在 UNDO 命令中使用的选项。
+（只读）
+类型:	整数
+保存位置:	未保存
+初始值:	53
+系统将使用下列位码值之和将该设置存储为一个位码：
+
+值 | 说明
+0 | UNDO 关闭
+1 | UNDO 打开
+2 | 只能放弃一条命令
+4 | 打开“自动”
+8 | 一个编组处于当前活动状态
+16 | 将缩放和平移操作编组为单个操作
+32 | 将图层特性操作编组为单个操作
+
+* UNDOMARKS
+** 系统变量: UNDOMARKS
+显示放置在 UNDO 控制流中的标记数。
+（只读）
+类型:	整数
+保存位置:	未保存
+初始值:	0
+如果一个编组处于当前活动状态，则“标记”和“后退”选项不可用。
+* UNITMODE
+** 系统变量: UNITMODE
+控制单位的显示格式。
+
+类型:	整数
+保存位置:	图形
+初始值:	0
+默认情况下，测量值的显示格式与用于输入测量值的格式略微不同。（输入测量值时，不能包括空格。）
+
+值 | 说明
+0 | 按照“报告”格式（将空格用作分隔符）来显示分数、英尺-英寸和勘测的角度
+1 | 按照“输入”格式（不包括空格，并且在某些情况下以划线代替空格）来显示分数、英尺-英寸和勘测的角度
+
+* UOSNAP
+** 系统变量: UOSNAP
+确定对象捕捉是否可用于 DWF、DWFx、PDF 和 DGN 参考底图中的几何图形。
+
+类型:	整数
+保存位置:	注册表
+初始值:	1
+UOSNAP 将替代 DWFOSNAP、PDFOSNAP 和 DGNOSNAP 设置。反之，用户可以通过为 DWFOSNAP、PDFOSNAP 或 DGNOSNAP 系统变量输入值来替代 DWF、DWFx、PDF 和 DGN 参考底图的 UOSNAP 设置。
+
+值 | 说明
+0 | 对图形中所有参考底图中的几何图形禁用对象捕捉
+1 | 对图形中所有参考底图中的几何图形启用对象捕捉
+2 | 图形中所有参考底图的各个设置有所不同：DWF、DWFx 和 DGN。
+
+* UPDATETHUMBNAIL
+** 系统变量: UPDATETHUMBNAIL
+控制视图和布局的缩略图预览的更新。
+类型:	位码
+保存位置:	图形
+初始值:	15
+系统将使用下列位码值之和将该设置存储为一个位码：
+
+值 |说明
+0 | 不更新预览
+1 | 更新模型空间视图的预览
+2 | 更新布局视图的预览
+4 | 更新布局的预览
+8 | 创建、修改或恢复布局或视图时更新预览
+16 | 保存图形时更新预览
+
+这些预览显示在图纸集管理器中。图纸预览显示在“图纸列表”选项卡中、图纸视图的预览显示在“视图列表”选项卡中，而模型空间视图的预览显示在“资源图形”选项卡中。
+* USERI1-5
+** 系统变量: USERI1-5
+提供整数值的存储和检索功能。
+
+类型:	整数
+保存位置:	图形
+初始值:	0
+共有五个系统变量：USERI1、USERI2、USERI3、USERI4 和 USERI5。
+* USERR1-5
+** 系统变量: USERR1-5
+提供实数的存储和检索功能。
+
+类型:	实数
+保存位置:	图形
+初始值:	0.0000
+* USERS1-5
+** 系统变量: USERS1-5
+提供文字字符串数据的存储和检索功能。
+
+类型:	字符串
+保存位置:	未保存
+初始值:	""
+* VIEWBACKSTATUS
+** 系统变量: VIEWBACKSTATUS
+存储上一个视图是否可用于 VIEWBACK 命令。
+
+类型:	参数
+保存位置:	未保存
+初始值:	不确定
+
+* VIEWCTR
+** 系统变量: VIEWCTR
+存储当前视口中视图的中心。
+（只读）
+类型:	三维点
+保存位置:	图形
+初始值:	不确定
+用 UCS 坐标表示。
+* VIEWDIR
+** 系统变量: VIEWDIR
+存储当前视口中的观察方向（用 UCS 坐标表示）。
+（只读）
+类型:	三维矢量
+保存位置:	图形
+初始值:	0.0000,0.0000,1.0000
+它将相机点描述为到目标点的三维偏移量。
+* VIEWFWDSTATUS
+** 系统变量: VIEWFWDSTATUS
+存储上一个视图是否可用于 VIEWFORWARD 命令。
+
+类型:	参数
+保存位置:	未保存
+初始值:	不确定
+* VIEWMODE
+** 系统变量: VIEWMODE
+存储当前视口的视图设置。
+（只读）
+类型:	整数
+保存位置:	图形
+初始值:	0
+系统将使用下列位码值之和将该设置存储为一个位码：
+
+值 | 说明
+0 | 关闭
+1 | 透视图
+2 | 前向剪裁
+4 | 后向剪裁
+8 | UCS 跟随模式
+16 | 前向剪裁不在相机上（在 AutoCAD LT 中不可用）
+16 | 如果启用，则 FRONTZ 将确定前向剪裁平面。
+16 | 如果禁用，则忽略 FRONTZ，并且前向剪裁平面将经过相机点。如果前向剪裁位 2 设定为关，则本设置将被忽略。
+* VIEWSIZE
+** 系统变量: VIEWSIZE
+存储当前视口中显示的视图的高度（按图形单位测量）。
+（只读）
+类型:	实数
+保存位置:	图形
+初始值:	不确定
+* VIEWSKETCHMODE
+** 系统变量: VIEWSKETCHMODE
+指示系统是否在符号草图模式中。
+（只读）
+类型:	参数
+保存位置:	注册表
+初始值:	0
+值 | 说明
+0 | 不在符号草图模式下
+1 | 在符号草图模式中
+* VIEWTWIST
+** 系统变量: VIEWTWIST
+存储相对于 WCS 测量的当前视口的视图旋转角度。
+（只读）
+类型:	实数
+保存位置:	图形
+初始值:	0.0000
+* VIEWUPDATEAUTO
+** 系统变量: VIEWUPDATEAUTO
+控制在更改源模型时模型文档工程视图是否会自动更新。
+类型:	整数
+保存位置:	图形
+初始值:	1
+值 | 说明
+0 | 在更改源模型时，工程视图不会自动更新。
+1 | 在更改源模型时，工程视图会自动更新。
+* VISRETAIN
+** 系统变量: VISRETAIN
+控制外部参照相关图层的特性。
+类型:	整数
+保存位置:	图形
+初始值:	1
+控制可见性、颜色、线型、线宽和打印样式。 将此系统变量与 VISRETAINMODE 系统变量结合使用，可管理重新加载时要自动同步哪些外部参照图层特性替代。
+
+值 | 说明
+0 | 存储在参照图形（外部参照）中的图层表具有优先权。对当前图形中依赖外部参照的图层所做的更改仅在当前任务中有效，并不随图形一起保存。当前图形重新打开时，将从参照图形重新加载图层表，当前图形将反映所有此类图层特性设置。
+1 | 在当前图形中对依赖外部参照的图层的修改具有优先权。图层设置将与当前图形的图层表一起保存，并且在各个任务中保持一致。
+* VISRETAINMODE
+** 系统变量: VISRETAINMODE
+当 VISRETAIN 系统变量设置为 1 时，控制其行为。
+
+类型:	位码
+保存位置:	注册表
+初始值:	0
+将此系统变量与 VISRETAIN 系统变量结合使用，可控制重新加载时要自动同步哪些外部参照图层特性。
+
+注意:重新加载外部参照时，不会同步带有替代的外部参照图层特性。若清除任何替代，请使用快捷菜单选项，在“图层特性管理器”上“重置以下对象的外部参照图层特性”。
+值 | 说明
+0 | 未同步设置。您将拥有与在 AutoCAD 2017 或早期版本中将 VISRETAIN 设置为 1 时相同的体验。
+1 | 启用/禁用同步。
+2 | 冻结/解冻同步。
+4 | 锁定/解锁同步。
+8 | 打印/不打印同步。
+16 | 颜色同步。
+32 | 线型同步。
+64 | 线宽同步。
+128 | 透明度同步。
+256 | 打印样式同步。
+512 | 新视口冻结同步。
+1024 | 描述同步。
+
+要指定多个图层特性以进行同步，请输入各位码值之和。例如，值 3 指定在重新加载外部参照时，“打开/关闭”(1) 和“冻结/解冻”(2) 图层特性将自动同步。
+* VPCONTROL
+** 系统变量: VPCONTROL
+控制每个视口的左上角是否显示视口、视图和视觉样式的选项。
+类型:	参数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 隐藏视口控件
+1 | 显示视口控件
+* VPLAYEROVERRIDES
+** 系统变量: VPLAYEROVERRIDES
+指示对于当前图层视口是否存在任何具有视口(VP) 特性替代的图层。
+（只读）
+类型:	整数
+保存位置:	图形
+初始值:	0
+值 | 说明
+0 | 当前视口没有任何关联的图层特性替代
+1 | 当前视口具有关联的图层特性替代
+* VPLAYEROVERRIDESMODE
+** 系统变量: VPLAYEROVERRIDESMODE
+控制是否显示和打印布局视口的图层特性替代。
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 在布局视口中不显示图层特性替代并且不打印
+1 | 在布局视口中显示图层特性替代并且打印
+* VPMAXIMIZEDSTATE
+** 系统变量: VPMAXIMIZEDSTATE
+指示是否将视口最大化。
+（只读）
+类型:	整数
+保存位置:	未保存
+初始值:	0
+如果启动 PLOT 命令，那么最大化视口状态将被取消。
+
+值 | 说明
+0 | 不最大化
+1 | 最大化
+* VPROTATEASSOC
+** 系统变量: VPROTATEASSOC
+控制旋转视口时视口内的视图是否随视口一起旋转。
+
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 旋转视口时，内部的视图不随之旋转。
+1 | 旋转视口时，内部的视图随之旋转以符合视口的旋转。
+
+* VSACURVATUREHIGH
+** 系统变量: VSACURVATUREHIGH
+设定在曲率分析(ANALYSISCURVATURE) 过程中使曲面显示为绿色的值。
+类型:	实数
+保存位置:	图形
+初始值:	1.0000
+* VSACURVATURELOW
+** 系统变量: VSACURVATURELOW
+设定在曲率分析(ANALYSISCURVATURE) 过程中使曲面显示为蓝色的值。
+类型:	实数
+保存位置:	图形
+初始值:	-1.0000
+* VSACURVATURETYPE
+** 系统变量: VSACURVATURETYPE
+控制使用(ANALYSISCURVATURE) 命令时进行哪种类型的曲率分析。
+
+类型:	整数
+保存位置:	图形
+初始值:	0
+值 | 说明
+0 | 高斯曲率（评估高曲率和低曲率的区域）
+1 | 平均曲率（评估 U 和 V 曲面曲率值的平均曲率）
+2 | 最大曲率（评估 U 和 V 曲面曲率值的最大曲率）
+3 | 最小曲率（评估 U 和 V 曲面曲率值的最小曲率）
+* VSADRAFTANGLEHIGH
+** 系统变量: VSADRAFTANGLEHIGH
+设定在拔模分析(ANALYSISDRAFT) 过程中使模型显示为绿色的值。
+类型:	实数
+保存位置:	图形
+初始值:	3.0000
+拔模斜度是曲面法线和 UCS 平面之间的角度（以度为单位）。通过此系统变量设定高值。
+
+值 | 说明
+-90 | 曲面与 UCS 平行，且曲面法线朝向与构造平面相反的方向
+0 | 曲面与构造平面垂直
+90 | 曲面与构造平面平行，且曲面法线朝向与 UCS 相同的方向
+* VSADRAFTANGLELOW
+** 系统变量: VSADRAFTANGLELOW
+设定在拔模分析(ANALYSISDRAFT) 过程中使模型显示为蓝色的值。
+类型:	实数
+保存位置:	图形
+初始值:	-3.0000
+拔模斜度是曲面法线和 UCS 平面之间的角度（以度为单位）。通过此系统变量设定低值。
+
+值 | 说明
+-90 | 曲面与 UCS 平行，且曲面法线朝向与构造平面相反的方向。
+0 | 曲面与构造平面垂直。
+90 |曲面与构造平面平行，且曲面法线朝向与 UCS 相同的方向。
+* VSAZEBRACOLOR1
+** 系统变量: VSAZEBRACOLOR1
+设定在斑纹分析(ANALYSISZEBRA) 过程中所显示的斑纹条纹的第一种颜色。
+
+类型:	字符串
+保存位置:	图形
+初始值:	RGB:255,255,255
+1 到 255 之间的值可指定 AutoCAD 颜色索引 (ACI) 颜色。
+
+RGB 真彩色的值表示为 000 到 255 之间的整数组成的字符串（以逗号分隔）。默认值为 RGB:255,255,255。
+
+注意:安装配色系统时，可以使用系统中定义的任何颜色。
+* VSAZEBRACOLOR2
+** 系统变量: VSAZEBRACOLOR2
+设定在斑纹分析 (ANALYSISZEBRA) 过程中所显示的斑纹条纹的第二种（对比）颜色。
+
+类型:	字符串
+保存位置:	图形
+初始值:	RGB:0,0,0
+1 到 255 之间的值可指定 AutoCAD 颜色索引 (ACI) 颜色。
+
+RGB 真彩色的值表示为 000 到 255 之间的整数组成的字符串（以逗号分隔）。默认值为 RGB:0,0,0。
+
+注意:安装配色系统时，可以使用系统中定义的任何颜色。
+* VSAZEBRADIRECTION
+** 系统变量: VSAZEBRADIRECTION
+控制在斑纹分析 (ANALYSISBRA) 过程中斑纹条纹是水平显示、竖直显示还是以某一角度显示。
+类型:	整数
+保存位置:	图形
+初始值:	90
+值 ｜ 说明
+0 | 水平
+90 | 垂直
+
+注意:输入介于 0 和 90 度之间的值以按该角度设定斑纹条纹。
+* VSAZEBRASIZE
+** 系统变量: VSAZEBRASIZE
+控制在斑纹分析 (ANALYSISZEBRA) 过程中所显示的斑纹条纹的宽度。
+
+类型:	整数
+保存位置:	图形
+初始值:	45
+有效值为 1 到 100。
+* VSAZEBRATYPE
+** 系统变量: VSAZEBRATYPE
+设定在使用斑纹分析(ANALYSISZEBRA) 时斑纹显示的类型。
+类型:	整数
+保存位置:	图形
+初始值:	1
+值 | 说明
+0 | 铬球
+1 | 圆柱体
+* VSBACKGROUNDS
+** 系统变量: VSBACKGROUNDS
+控制是否以应用于当前视口的视觉样式显示背景。
+类型:	整数
+保存位置:	图形
+初始值:	1
+值 | 说明
+0 | 关闭
+1 | 打开
+
+注意:输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSEDGECOLOR
+** 系统变量: VSEDGECOLOR
+设置当前视口视觉样式中边的颜色。
+
+类型:	字符串
+保存位置:	图形
+初始值:	BYENTITY
+值 0 指定“ByBlock”，值 256 指定“ByLayer”，值 257 指定“ByEntity”。1 到 255 之间的值可指定 AutoCAD 颜色索引 (ACI) 颜色。还可以指定真彩色和配色系统颜色。
+
+真彩色的有效值是一个前面带有 RGB 的整数字符串，每个整数（0 到 255）之间用逗号分隔。真彩色设置的输入如下：
+
+RGB:000,000,000
+
+如果已安装配色系统，则可以指定系统中定义的任意颜色。
+
+注意:
+当 VSFACESTYLE 设为 1 或 2 时，将 VSEDGECOLOR 系统变量设为 ByEntity 将使平移、缩放和动态观察操作的三维性能得到增强。
+当 VSFACESTYLE 设为 0（零）时，将 VSEDGECOLOR 系统变量设为与 VSOBSCUREDCOLOR 相同的值将使平移、缩放和动态观察操作的三维性能得到增强。
+输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSEDGEJITTER
+** 系统变量: VSEDGEJITTER
+使对象上的边看起来具有多个线性笔划，就像它们是用铅笔绘制的。
+
+类型:	整数
+保存位置:	图形
+初始值:	-2
+不能将抖动量设定为“低”、“中”或“高”。负数可存储值，但会关闭效果。打印样式不适用于应用了抖动边修改器的对象。
+
+值 | 说明
+0 | 标准边
+1 | 低
+2 | 中
+3 | 高
+
+注意:
+当 VSFACESTYLE 设为 1 或 2 时，将 VSEDGEJITTER 系统变量设为 0（零）或负值（关）将使平移、缩放和动态观察操作的三维性能得到增强。
+输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+* VSEDGELEX
+** 系统变量: VSEDGELEX
+控制线和边显示延伸至其端点之外的像素数，以产生手绘效果。
+类型:	整数
+保存位置:	图形
+初始值:	-6
+可以将线延伸量设置为 1 到 100 像素之间。负值可存储值，但会关闭效果。
+
+注意:输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSEDGEOVERHANG
+** 系统变量: VSEDGEOVERHANG
+旧式的。替换为 VSOCCLUDEDCOLOR 系统变量。
+类型:	整数
+保存位置:	图形
+初始值:	-6
+* VSEDGES
+** 系统变量: VSEDGES
+控制显示在视口中的边的类型。
+类型:	整数
+保存位置:	图形
+初始值:	1
+
+素线, 镶嵌面边
+
+值 | 说明
+0 | 不显示边
+1 | 显示素线
+2 | 显示镶嵌面边
+
+注意:输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSEDGESMOOTH
+** 系统变量: VSEDGESMOOTH
+指定折缝边的显示角度。
+类型:	整数
+保存位置:	图形
+初始值:	1
+取值范围为 0 到 180。
+
+注意: 输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSFACECOLORMODE
+** 系统变量: VSFACECOLORMODE
+控制如何计算面的颜色。
+类型:	整数
+保存位置:	图形
+初始值:	0
+值 | 说明
+0 | 常规：不应用面颜色修改器。
+1 | 单色：以在 VSMONOCOLOR 系统变量中指定的颜色显示所有面。
+2 | 染色：以在 VSMONOCOLOR 系统变量中指定的颜色，通过更改颜色的色调和饱和度值对所有面进行着色。
+3 | 降饱和度：通过将颜色的饱和度分量降低百分之三十来使颜色变柔和。
+
+注意:输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSFACEHIGHLIGHT
+** 系统变量: VSFACEHIGHLIGHT
+控制当前视口中不具有材质的面上镜面亮显的显示。
+类型:	整数
+保存位置:	图形
+初始值:	-30
+取值范围为 -100 到 100。数值越大，亮显区域越大。启用 VSMATERIALMODE 时，具有附着材质的对象将忽略 VSFACEHIGHLIGHT 的设置。
+
+注意:输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSFACEOPACITY
+** 系统变量: VSFACEOPACITY
+为三维对象打开和关闭透明度预设级别。
+类型:	整数
+保存位置:	图形
+初始值:	-60
+
+可以在 100% 不透明和 0% 不透明之间设置将三维实体和曲面的透明度。负数可存储值，但会关闭效果。
+
+
+注意:
+当 VSFACESTYLE 设为 1 或 2 时，将单个设置或全局设置的 VSFACEOPACITY 系统变量设为 100（不透明）将使平移、缩放和动态观察操作的三维性能得到增强。
+输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSFACESTYLE
+** 系统变量: VSFACESTYLE
+控制面、实体填充图案和渐变在当前视口中的显示方式。
+类型:	整数
+保存位置:	图形
+初始值:	0
+值 | 说明
+0 | 不使用样式
+1 | 真实：非常接近于面在现实中的表现方式
+2 | 古式：使用冷色和暖色（而不是暗色和亮色）来增强面的显示效果，这些面可以添加阴影并且很难在真实显示中看到
+
+“隐藏”和“勾画”视觉样式会自动将实体图案填充和渐变的颜色更改为背景色，从而使其不可见。若要使这些视觉样式的原始颜色可见，请将 VSFACESTYLE 设置为 1 或 2。
+
+注意:输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSHALOGAP
+** 系统变量: VSHALOGAP
+设置应用于当前视口的视觉样式中的光晕间隔。
+
+类型:	整数
+保存位置:	图形
+初始值:	0
+取值范围为 0 到 100。
+
+注意:
+当 VSFACESTYLE 设为 1 或 2 时，将 VSHALOGAP 系统变量设为 0（零）将使平移、缩放和动态观察操作的三维性能得到增强。
+输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSHIDEPRECISION
+** 系统变量: VSHIDEPRECISION
+旧式的。控制应用于当前视口的视觉样式中的隐藏和着色精度。
+
+类型:	整数
+保存位置:	图形
+初始值:	0
+此系统变量将不再起作用，但已保留以实现兼容性。
+
+值 | 说明
+0 | 单精度；使用较少内存
+1 | 双精度；使用较多内存
+
+注意:输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSINTERSECTIONCOLOR
+** 系统变量: VSINTERSECTIONCOLOR
+设置独立三维实体、曲面和网格的相交边颜色以实现某种视觉样式。
+
+类型:	整数
+保存位置:	图形
+初始值:	7
+- 必须启用 VSINTERSECTIONEDGES 系统变量才能使其生效。
+- 此系统变量不适用于“二维线框”、“线框”或“真实”视觉样式。
+
+通过该系统变量，您可以临时替代当前视口中的视觉样式设置。但是，现有视觉样式不会自动更新。若要执行此操作，您将需要创建新的视觉样式。
+
+注意: 对于已执行 HIDE 操作后的“二维线框”视觉样式，请使用 INTERSECTIONCOLOR 系统变量。
+
+* VSINTERSECTIONEDGES
+** 系统变量: VSINTERSECTIONEDGES
+控制独立三维实体、曲面和网格相交边显示以实现某种视觉样式。
+类型:	整数
+保存位置:	图形
+初始值:	0
+此系统变量不适用于“二维线框”、“线框”或“真实”视觉样式，因为它无需处理相交面。
+
+值 | 说明
+0 | 关闭
+1 | 显示相交边
+
+注意:
+当 VSFACESTYLE 设为 1 或 2 时，将 VSINTERSECTIONEDGES 系统变量设为 0（零）（关）将使平移、缩放和动态观察操作的三维性能得到增强。
+通过该系统变量，您可以临时替代当前视口中的视觉样式设置。但是，现有视觉样式不会自动更新。若要执行此操作，您将需要创建新的视觉样式。
+对于已执行 HIDE 操作后的“二维线框”视觉样式，请使用 INTERSECTIONDISPLAY 系统变量。
+
+* VSINTERSECTIONLTYPE
+** 系统变量: VSINTERSECTIONLTYPE
+设置独立三维实体、曲面和网格的交点线型以实现某种视觉样式。
+类型:	整数
+保存位置:	图形
+初始值:	1
+有效取值范围为 1 到 11。
+
+值 | 说明
+1 | 实体
+2 | 虚线
+3 | 点划线
+4 | 短划线
+5 | 中划线
+6 | 长划线
+7 | 双短划线
+8 | 双中划线
+9 | 双长划线
+10 | 中长划线
+11 | 疏点
+
+必须启用 VSINTERSECTIONEDGES 系统变量才能使其生效。
+此系统变量不适用于“二维线框”、“线框”或“真实”视觉样式。
+通过该系统变量，您可以临时替代当前视口中的视觉样式设置。但是，现有视觉样式不会自动更新。若要执行此操作，您将需要创建新的视觉样式。
+* VSISOONTOP
+** 系统变量: VSISOONTOP
+显示应用于当前视口的视觉样式中着色对象顶部的素线。
+
+类型:	整数
+保存位置:	图形
+初始值:	0
+值 | 说明
+0 | 关闭
+1 | 打开
+
+注意:输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSLIGHTINGQUALITY
+** 系统变量: VSLIGHTINGQUALITY
+设置当前视口中的光源质量。
+
+类型:	整数
+保存位置:	图形
+初始值:	1
+值 | 说明
+0 | 镶嵌面的。为曲面或三维实体的每个面计算单色。
+1 | 平滑。将颜色计算为各面顶点之间的渐变色。
+2 | 最平滑。如果在“手动性能调节”对话框中打开了“单像素光照”设置，则为各个像素计算颜色。如果未打开，则将使用平滑设置。
+
+注意:输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSMATERIALMODE
+** 系统变量: VSMATERIALMODE
+控制当前视口中材质的显示。
+
+类型:	整数
+保存位置:	图形
+初始值:	0
+关闭材质和纹理的显示以使执行无关操作时达到最高性能。
+
+关闭纹理的显示以修改材质或提升执行无关操作时的性能。
+
+将设置关闭后，可以恢复材质和纹理的显示。
+
+值 | 说明
+0 | 不显示材质
+1 | 显示材质，不显示纹理
+2 | 显示材质和纹理
+
+注意:输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSMAX
+** 系统变量: VSMAX
+存储当前视口虚拟屏幕的右上角。
+（只读）
+类型:	三维点
+保存位置:	图形
+初始值:	不确定
+该值用 UCS 坐标表示。
+* VSMIN
+** 系统变量: VSMIN
+存储当前视口虚拟屏幕的左下角。
+（只读）
+类型:	三维点
+保存位置:	图形
+初始值:	不确定
+该值用 UCS 坐标表示。
+* VSMONOCOLOR
+** 系统变量: VSMONOCOLOR
+为应用于当前视口的视觉样式中面的单色和染色显示设置颜色。
+
+类型:	字符串
+保存位置:	图形
+初始值:	RGB:255,255,255
+初始值为白色。
+
+注意:输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSOBSCUREDCOLOR
+** 系统变量: VSOBSCUREDCOLOR
+旧式的。替换为 VSOCCLUDEDCOLOR 系统变量。
+
+类型:	字符串
+保存位置:	图形
+初始值:	BYENTITY
+* VSOBSCUREDEDGES
+** 系统变量: VSOBSCUREDEDGES
+旧式的。替换为 VSOCCLUDEDEDGES 系统变量。
+
+类型:	整数
+保存位置:	图形
+初始值:	1
+* VSOBSCUREDLTYPE
+** 系统变量: VSOBSCUREDLTYPE
+旧式的。替换为 VSOCCLUDEDLTYPE 系统变量。
+
+类型:	整数
+保存位置:	图形
+初始值:	1
+* VSOCCLUDEDCOLOR
+** 系统变量: VSOCCLUDEDCOLOR
+指定为视觉样式显示的隐藏线的颜色。
+类型:	字符串
+保存位置:	图形
+初始值:	ByEntity
+有效值包括“ByLayer”(256)、“ByBlock”(0)、“ByEntity”(257) 以及任何 AutoCAD 颜色索引 (ACI) 颜色（1 到 255 之间的整数）。
+
+用户还可以指定一种真彩色或一种配色系统颜色。真彩色的有效值是一个前面带有 RGB 的整数字符串，每个整数（1 到 255）之间用逗号分隔。真彩色设置的输入如下：
+
+RGB:000,000,000
+
+输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。 此系统变量并不会影响二维线框视觉样式。
+
+注意: 当 VSFACESTYLE 设为 0（零）时，将 VSOCCLUDEDCOLOR 系统变量设为与 VSEDGECOLOR 系统变量相同的值将使平移、缩放和动态观察操作的三维性能得到增强。
+* VSOCCLUDEDEDGES
+** 系统变量: VSOCCLUDEDEDGES
+控制是否为视觉样式显示隐藏的边。
+类型:	整数
+保存位置:	图形
+初始值:	1
+值 | 说明
+0 | 关闭
+1 | 打开
+
+输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。 此系统变量并不会影响二维线框视觉样式。
+
+注意:
+当 VSFACESTYLE 设置为 1 或 2 时，将 VSOCCLUDEDEDGES 系统变量设置为 0（关）将使平移、缩放和动态观察操作的三维性能得到增强。
+当 VSFACESTYLE 设置为 0 时，将 VSOCCLUDEDEDGES 系统变量设置为 1（开）将使平移、缩放和动态观察操作的三维性能得到增强。
+* VSOCCLUDEDLTYPE
+** 系统变量: VSOCCLUDEDLTYPE
+指定为视觉样式显示的隐藏线的线型。
+
+类型:	整数
+保存位置:	图形
+初始值:	1
+有效取值范围为 0 到 11。
+
+值 | 说明
+0 | 关闭
+1 | 实体 ______________________________________________
+2 | 虚线 __  __  __  __  __  __  __  __  __  __  __  __
+3 | 点划线 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+4 | 短划线 __    __    __    __    __    __    __    __
+5 | 中划线 ___   ___   ___   ___   ___   ___   ___   ___
+6 | 长划线 ____  ____  ____  ____  ____  ____  ____  ____
+7 | 双短划线 ___        ___        ___        ___        ___
+8 | 双中划线 ______    ______    ______    ______    ______
+9 | 双长划线 _________   _________   _________   _________
+10 | 中长划线 ____   ____   ____   ____   ____   ____   ____
+11 | 疏点 .     .     .     .     .     .     .     .     .
+
+VSOCCLUDEDLTYPE 的初始值取决于当前的视觉样式。
+
+视觉样式 | 初始值
+二维线框 | 1
+概念 | 1
+消隐 | 2
+着色 | 1
+带边缘着色 | 2
+灰度 | 1
+勾画 | 1
+线框 | 1
+X 射线 | 1
+真实 | 1
+
+注意:输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSSHADOWS
+** 系统变量: VSSHADOWS
+控制视觉样式是否显示阴影。
+类型:	整数
+保存位置:	图形
+初始值:	0
+仅当硬件加速处于启用状态时才可以显示投射在对象上的阴影。使用 GRAPHICSCONFIG 命令访问“图形性能”对话框中的硬件加速设置。
+
+值 | 说明
+0 | 不显示阴影
+1 | 仅显示地面阴影
+2 | 显示全阴影
+
+注意:
+当 VSFACESTYLE 设为 1 或 2 时，将 VSSHADOWS 系统变量设为 0（零）（关）将使平移、缩放和动态观察操作的三维性能得到增强。
+输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSSILHEDGES
+** 系统变量: VSSILHEDGES
+控制应用于当前视口的视觉样式中实体对象轮廓边的显示。
+
+类型:	整数
+保存位置:	图形
+初始值:	0
+值 | 说明
+0 | 关闭
+1 | 打开
+
+VSSILHEDGES 的初始值取决于当前的视觉样式。
+
+视觉样式 | 初始值
+二维线框 | 0
+概念 | 1
+消隐 | 1
+着色 | 0
+带边缘着色 | 1
+灰度 | 1
+勾画 | 1
+线框 | 0
+X 射线 | 0
+真实 | 0
+
+注意:
+当 VSFACESTYLE 设为 1 或 2 时，将 VSSILHEDGES 系统变量设为 0（零）（关）将使平移、缩放和动态观察操作的三维性能得到增强。
+输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSSILHWIDTH
+** 系统变量: VSSILHWIDTH
+以像素为单位指定当前视口中轮廓边的宽度。
+类型:	整数
+保存位置:	图形
+初始值:	5
+取值范围为 1 到 25。
+
+注意: 输入此系统变量的新值时，现有视觉样式不会更改。为此系统变量临时输入的所有新值都将创建未保存的新视觉样式。
+
+* VSSTATE
+** 系统变量: VSSTATE
+指示“视觉样式”窗口处于打开状态还是关闭状态。
+（只读）
+类型:	整数
+保存位置:	未保存
+初始值:	0
+值 | 说明
+0 | 关闭
+1 | 打开
+* VTDURATION
+** 系统变量: VTDURATION
+以毫秒为单位设置平滑视图转场的时长。
+
+类型:	整数
+保存位置:	注册表
+初始值:	750
+有效取值范围为 0 到 5000。
+* VTENABLE
+** 系统变量: VTENABLE
+控制何时使用平滑视图转场。
+
+类型:	整数
+保存位置:	注册表
+初始值:	3
+对于平移和缩放、修改视图角度或脚本，可以打开或关闭平滑视图转场。有效取值范围为 0 到 7。
+
+值 | 平移/缩放 | 查看角度 | 脚本
+0 | 关闭 | 关闭 | 关闭
+1 | 打开 | 关闭 | 关闭
+2 | 关闭 | 打开 | 关闭
+3 | 打开 | 打开 | 关闭
+4 | 关闭 | 关闭 | 打开
+5 | 打开 | 关闭 | 打开
+6 | 关闭 | 打开 | 打开
+7 | 打开 | 打开 | 打开
+* VTFPS
+** 系统变量: VTFPS
+以帧/每秒为单位设置平滑视图转场的最小速度。
+
+类型:	整数
+保存位置:	注册表
+初始值:	7
+如果平滑视图过渡不能保持此速度，将使用即时过渡。有效取值范围为 1 到 30。
+* WBLOCKCREATEMODE
+** 系统变量: WBLOCKCREATEMODE
+在将块另存为文件后，使用 WBLOCK 和 -WBLOCK 命令设置选定对象的行为。
+
+类型:	整数
+保存位置:	用户设置
+初始值:	1
+值	说明
+0	在将选定对象另存为文件后，使用 WBLOCK 或 -WBLOCK 命令将选定对象转换为当前图形中的块。
+1	在将选定对象另存为文件后，使用 WBLOCK 或 -WBLOCK 命令将选定对象保留在当前图形中。
+2	在将选定对象另存为文件后，使用 WBLOCK 或 -WBLOCK 命令将选定对象从当前图形中删除。
+* WHIPARC
+** 系统变量: WHIPARC
+旧式的。覆盖圆和圆弧显示的平滑度。
+类型:	整数
+保存位置:	注册表
+初始值:	0
+值 | 说明
+0 | 曲线式对象将显示为由 VIEWRES 设置控制的一系列矢量（推荐）
+1 | 具有连续线型的圆、圆弧和多段线圆弧段将显示为真实的圆和圆弧
+
+注意:这是一项实验设置，用于测试内存使用情况以及圆和圆弧的显示性能。将 VIEWRES 设为 1000 或更高几乎总是能够提供更好的结果。
+* WHIPTHREAD
+** 系统变量: WHIPTHREAD
+控制是否使用额外的处理器来提高操作速度（例如用于重画或重生成图形的 ZOOM）。
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值 | 说明
+0 | 将操作限制为单个处理器。
+1 | 在多处理器计算机上，自动支持要在两个处理器之间分配的特定操作。
+2 | 旧式的。
+3 | 旧式的。
+
+WHIPTHREAD 对单处理器计算机无效。
+* WINDOWAREACOLOR
+** 系统变量: WINDOWAREACOLOR
+控制窗口选择时透明选择区域的颜色。
+
+类型:	整数
+保存位置:	注册表
+初始值:	150
+有效取值范围为 1 到 255。必须打开 SELECTIONAREA 系统变量以显示颜色。
+* WIPEOUTFRAME
+** 系统变量: WIPEOUTFRAME
+控制区域覆盖对象的框架的显示。
+
+类型:	整数
+保存位置:	图形
+初始值:	1
+值 | 说明
+0 | 不显示或不打印框架，为对象选择和选择预览临时显示框架。
+1 | 显示和打印框架
+2 | 显示框架但不打印
+
+注意:FRAME 系统变量将替代 WIPEOUTFRAME 设置。
+
+* WMFBKGND
+** 系统变量: WMFBKGND
+控制以 Windows 图元文件(WMF) 格式插入对象时背景的显示。
+类型:	参数
+保存位置:	未保存
+初始值:	0
+可以使用以下任意一种方法插入对象：
+
+使用 WMFOUT 输出为 Windows 图元文件
+复制到剪贴板并作为 Windows 图元文件粘贴
+作为 Windows 图元文件拖动
+值 | 说明
+0 | 背景色为透明。前景色取决于 WMFFOREGND 系统变量的设置。
+1 | 无论在模型空间还是在布局中，背景色均与图形中的当前背景色相同。前景色保持不变
+* WMFFOREGND
+** 系统变量: WMFFOREGND
+控制以 Windows 图元文件(WMF) 格式插入对象时前景色的指定。
+
+类型:	参数
+保存位置:	未保存
+初始值:	0
+可以使用以下任意一种方法插入对象：
+
+使用 WMFOUT 输出为 Windows 图元文件
+复制到剪贴板并作为 Windows 图元文件粘贴
+作为 Windows 图元文件拖动
+仅当 WMFBKGND 系统变量设置为“关”时才会应用 WMFFOREGND。
+
+值 | 说明
+0 | 如果需要，前景色和背景色将互换以确保前景色比背景色暗
+1 | 如果需要，前景色和背景色将互换以保证前景色比背景色亮
+
+* WORKINGFOLDER
+** 系统变量: WORKINGFOLDER
+存储开发人员可能关心的、操作系统工作文件夹的驱动器和文件夹路径以供处理。
+（只读）
+类型:	字符串
+保存位置:	注册表
+初始值:	不确定
+也称为“当前目录”，工作文件夹原本设置为“起始”文件夹，但通过文件操作进行了更新。
+* WORKSPACELABEL
+** 系统变量: WORKSPACELABEL
+控制是否在状态栏中显示当前工作空间的名称。
+
+类型:	整数
+保存位置:	注册表
+初始值:	0
+值 | 说明
+0 | 隐藏工作空间的名称
+1 | 显示工作空间的名称
+
+* WORLDUCS
+** 系统变量: WORLDUCS
+指示 UCS 是否应与 WCS 重合。
+（只读）
+类型:	整数
+保存位置:	未保存
+初始值:	1
+值 | 说明
+0 | UCS 与 WCS 不同
+1 | UCS 与 WCS 相同
+* WORLDVIEW
+** 系统变量: WORLDVIEW
+确定响应 DVIEW 和 VPOINT 命令的输入是相对于 WCS（默认）还是相对于当前 UCS。
+
+类型:	整数
+保存位置:	图形
+初始值:	1
+值 | 说明
+0 | UCS 保持不变
+1 | 在命令执行期间 UCS 转换为 WCS；命令输入相对于当前 UCS
+
+DVIEW 在 AutoCAD LT 中不可用。
+* WRITESTAT
+** 系统变量: WRITESTAT
+指示图形文件是只读的还是可修改的。
+（只读）
+类型:	整数
+保存位置:	未保存
+初始值:	1
+开发人员需要通过 AutoLISP 确定文件的读写状态。
+
+值 | 说明
+0 | 无法写入图形
+1 | 允许写入图形
+* WSAUTOSAVE
+** 系统变量: WSAUTOSAVE
+切换到另一个工作空间时，将保存对工作空间所做的更改。
+
+类型:	整数
+保存位置:	注册表
+初始值:	0
+此系统变量决定“工作空间设置”对话框的“切换工作空间时”区域中的默认设置。
+
+值 | 说明
+0 | 关闭
+1 | 打开
+* WSCURRENT
+** 系统变量: WSCURRENT
+在命令提示下显示当前工作空间名称并将指定的工作空间设置为当前。
+
+类型:	字符串
+保存位置:	用户设置
+初始值:	不确定
+* XCLIPFRAME
+** 系统变量: XCLIPFRAME
+决定外部参照剪裁边界在当前图形中是否可见或进行打印。
+类型:	整数
+保存位置:	图形
+初始值:	2
+FRAME 系统变量将替代 XCLIPFRAME 设置。在 FRAME 系统变量后使用 XCLIPFRAME 系统变量以重置剪裁外部参照边框设置
+
+值 | 说明
+0 | 边框不可见且不打印。在选择集预览或对象选择期间，将暂时重新显示该边框。
+1 | 显示并打印剪裁外部参照边框
+2 | 显示但不打印剪裁外部参照边框
+* XCOMPAREBAKPATH
+** 系统变量: XCOMPAREBAKPATH
+指定存储备份外部参照文件的路径。
+
+类型:	字符串
+保存位置:	注册表
+初始值:	不确定
+用户也可以在“选项”对话框中更改路径。
+* XCOMPAREBAKSIZE
+** 系统变量: XCOMPAREBAKSIZE
+设置存储备份外部参照文件的文件夹的大小。
+
+类型:	整数
+保存位置:	注册表
+初始值:	500
+有效范围为 200 到 32000 兆字节 (MB)。
+* XCOMPARECOLORMODE
+** 系统变量: XCOMPARECOLORMODE
+在外部参照比较期间，切换对象在宿主图形中的视觉效果。
+
+类型:	参数
+保存位置:	注册表
+初始值:	1
+值	说明
+0	在比较过程中，宿主图形中的对象会淡入。
+1	在比较过程中，宿主图形中的对象将以白色亮显。
+* XCOMPAREENABLE
+** 系统变量: XCOMPAREENABLE
+支持在外部参照和参照图形文件之间进行比较。
+
+类型:	整数
+保存位置:	注册表
+初始值:	1
+值	说明
+0	关闭
+1	打开
+相关参考
+* XDWGFADECTL
+** 系统变量: XDWGFADECTL
+控制所有 DWG 外部参照对象的淡入度。
+类型:	整数
+保存位置:	注册表
+初始值:	50
+
+XDWGFADECTL 系统变量的有效值从 -90 到 90。如果 XDWGFADECTL 设定为负值，则外部参照淡入功能将不会打开，但会存储设置。
+
+值 | 说明
+0 | DWG 外部参照对象不会淡入。
+>0 | 当该值为正时，将淡入百分比控制为最高淡入 90%。
+<0 | 当该值为负时，不淡入外部参照对象，但是将保存该值，以通过更改符号切换为该值。
+* XEDIT
+** 系统变量: XEDIT
+控制当前图形被其他图形参照时是否可以在位编辑。
+
+类型:	整数
+保存位置:	图形
+初始值:	1
+值 | 说明
+0 | 防止在位参照编辑
+1 | 允许在位参照编辑
+* XFADECTL
+** 系统变量: XFADECTL
+控制要在位编辑的参照中的淡入程度。此设置仅影响不在参照中编辑的对象。
+类型:	整数
+保存位置:	注册表
+初始值:	70
+有效值从 0 到 90。
+
+同时控制以较暗状态显示的换算对象图示（例如注释性对象的换算比例图示）的淡入度百分比。
+
+SELECTIONANNODISPLAY 控制是否显示注释性对象的换算比例图示。
+* XLOADCTL
+** 系统变量: XLOADCTL
+打开或关闭外部参照的按需加载功能，并控制是打开参照的图形还是打开副本。
+类型:	整数
+保存位置:	注册表
+初始值:	2
+值 | 说明
+0 | 关闭按需加载，加载整个图形
+1 | 打开按需加载。打开并锁定参照图形。
+2 | 打开按需加载。打开并锁定参照图形的副本；不锁定参照图形
+
+当 XLOADCTL 设定为 2 时，每个参照图形文件的副本将存储在由 XLOADPATH 系统变量指定的文件夹或临时文件夹（设置在“选项”对话框中）中。
+此外，如果跨网络进行操作，外部参照的加载速度会更快：打开带有多个外部参照的图形时，这种性能提高尤为明显。
+* XLOADPATH
+** 系统变量: XLOADPATH
+创建用于存储按需加载的外部参照文件临时副本的路径。
+类型:	字符串
+保存位置:	注册表
+初始值:	不确定
+详细信息请参见 XLOADCTL。
+* XREFCTL
+** 系统变量: XREFCTL
+控制是否创建外部参照日志(XLG) 文件。
+类型:	整数
+保存位置:	注册表
+初始值:	0
+
+值 | 说明
+0 | 不写入记录文件
+1 | 写入记录文件
+
+注意:XLG 文件仅记录最近执行的外部参照函数。
+* XREFLAYER
+** 系统变量: XREFLAYER
+为新的外部参照指定默认图层。
+
+类型:	字符串
+保存位置:	图形
+初始值:	使用当前值
+使用 XATTACH、ATTACH 和 XREF 命令控制 DWG 外部参照在附着时放置于其上的图层。
+
+除“.”以外的值（使用当前）值替代当前图层值（CLAYER 系统变量）。
+* XREFNOTIFY
+** 系统变量: XREFNOTIFY
+控制关于已更新外部参照或缺少外部参照的通知。
+类型:	整数
+保存位置:	注册表
+初始值:	2
+值 | 说明
+0 | 禁用外部参照通知
+1 | 启用外部参照通知。通过在状态栏托盘中显示外部参照图标，通知用户外部参照已附着至当前图形。打开图形时，将显示带有黄色警告符号 (!) 的外部参照图标，以警告用户缺少外部参照。
+2 | 启用外部参照通知和气泡式消息。如上面的 1 所示显示外部参照。当外部参照被修改时，还在相同的区域显示气泡式消息。检查修改的外部参照的时间间隔（分钟数）由 XNOTIFYTIME 环境变量控制。
+* XREFOVERRIDE
+** 系统变量: XREFOVERRIDE
+控制参照图层上对象特性的显示。
+类型:	整数
+保存位置:	图形
+初始值:	0
+XREFOVERRIDE 系统变量可影响显示和打印，还可以配合 VISRETAIN 系统变量一起使用。如果您希望外部参照图层仍保留其原始图层设置，建议将 VISRETAIN 和 XREFOVERRIDE 系统变量设置为 0（零）。
+
+值 | 说明
+0 | 当外部参照图形上的对象特性（例如颜色、线型、线宽、透明度或打印样式）设置为 ByLayer 时，对外部参照图层特性所做的任何更改将显示在当前图形中（传统行为）
+1 | 当外部参照图形上的对象的可视特性未设置为 ByLayer 时，外部参照图层上的对象将被视为已将其特性设置为 ByLayer 且每个外部参照图层都可以有其自己的图层替代集
+
+注意:XREFOVERRIDE 系统变量仅适用于 DWG 外部参照，而不适用于其他参照，例如参考底图。
+* XREFREGAPPCTL
+** 系统变量: XREFREGAPPCTL
+控制存储在加载的外部参照中的已注册应用程序(RegApp) 记录是否将复制到宿主图形中。
+类型:	字符串
+保存位置:	注册表
+初始值:	不确定
+用户也可以在“选项”对话框中更改路径。
+* XREFTYPE
+** 系统变量: XREFTYPE
+控制附着或覆盖外部参照时的默认参照类型。
+
+类型:	整数
+保存位置:	注册表
+初始值:	0
+值 | 说明
+0 | “附加型”为默认值
+1 | “覆盖”为默认值
+* ZOOMFACTOR
+** 系统变量: ZOOMFACTOR
+控制向前或向后滑动鼠标滚轮时比例的变化程度。
+类型:	整数
+保存位置:	注册表
+初始值:	60
+有效值为 3 到 100 之间的整数。数值越高，变化越大。
+
+注意:与基于 AutoCAD 2013 之前的版本的产品相反，相同数量的鼠标滚轮切口放大和缩小操作的结果不会对放大产生任何网状改变。
+* ZOOMWHEEL
+** 系统变量: ZOOMWHEEL
+滚动鼠标中间的滑轮时，切换透明缩放操作的方向。
+类型:	整数
+保存位置:	注册表
+初始值:	0
+值 | 说明
+0 | 向前滚动滑轮为放大操作，向后滚动滑轮为缩小操作。
+1 | 向前滚动滑轮为缩小操作，向后滚动滑轮为放大操作。
 * 系统变量Z
 ** 该索引下有以下变量：
 ZOOMFACTOR
@@ -2794,1376 +5430,3 @@ AUTODWFPUBLISH
 AUTOMATICPUB
 AUTOSNAP
 请输入变量全称获取变量用途。
-* ZOOMWHEEL
-** 系统变量: ZOOMWHEEL
-滚动鼠标中间的滑轮时，切换透明缩放操作的方向。
-* ZOOMFACTOR
-** 系统变量: ZOOMFACTOR
-控制向前或向后滑动鼠标滚轮时比例的变化程度。
-* XREFTYPE
-** 系统变量: XREFTYPE
-控制附着或覆盖外部参照时的默认参照类型。
-* XREFREGAPPCTL
-** 系统变量: XREFREGAPPCTL
-控制存储在加载的外部参照中的已注册应用程序(RegApp) 记录是否将复制到宿主图形中。
-* XREFOVERRIDE
-** 系统变量: XREFOVERRIDE
-控制参照图层上对象特性的显示。
-* XREFNOTIFY
-** 系统变量: XREFNOTIFY
-控制关于已更新外部参照或缺少外部参照的通知。
-* XREFLAYER
-** 系统变量: XREFLAYER
-为新的外部参照指定默认图层。
-* XREFCTL
-** 系统变量: XREFCTL
-控制是否创建外部参照日志(XLG) 文件。
-* XLOADPATH
-** 系统变量: XLOADPATH
-创建用于存储按需加载的外部参照文件临时副本的路径。
-* XLOADCTL
-** 系统变量: XLOADCTL
-打开或关闭外部参照的按需加载功能，并控制是打开参照的图形还是打开副本。
-* XFADECTL
-** 系统变量: XFADECTL
-控制要在位编辑的参照中的淡入程度。此设置仅影响不在参照中编辑的对象。
-* XEDIT
-** 系统变量: XEDIT
-控制当前图形被其他图形参照时是否可以在位编辑。
-* XDWGFADECTL
-** 系统变量: XDWGFADECTL
-控制所有 DWG 外部参照对象的淡入度。
-* XCLIPFRAME
-** 系统变量: XCLIPFRAME
-决定外部参照剪裁边界在当前图形中是否可见或进行打印。
-* WSCURRENT
-** 系统变量: WSCURRENT
-在命令提示下显示当前工作空间名称并将指定的工作空间设置为当前。
-* WSAUTOSAVE
-** 系统变量: WSAUTOSAVE
-切换到另一个工作空间时，将保存对工作空间所做的更改。
-* WRITESTAT
-** 系统变量: WRITESTAT
-指示图形文件是只读的还是可修改的。
-* WORLDVIEW
-** 系统变量: WORLDVIEW
-确定响应 DVIEW 和 VPOINT 命令的输入是相对于 WCS（默认）还是相对于当前 UCS。
-* WORLDUCS
-** 系统变量: WORLDUCS
-指示 UCS 是否应与 WCS 重合。
-* WORKSPACELABEL
-** 系统变量: WORKSPACELABEL
-控制是否在状态栏中显示当前工作空间的名称。
-* WORKINGFOLDER
-** 系统变量: WORKINGFOLDER
-存储开发人员可能关心的、操作系统工作文件夹的驱动器和文件夹路径以供处理。
-* WMFFOREGND
-** 系统变量: WMFFOREGND
-控制以 Windows 图元文件(WMF) 格式插入对象时前景色的指定。
-* WMFBKGND
-** 系统变量: WMFBKGND
-控制以 Windows 图元文件(WMF) 格式插入对象时背景的显示。
-* WIPEOUTFRAME
-** 系统变量: WIPEOUTFRAME
-控制区域覆盖对象的框架的显示。
-* WINDOWAREACOLOR
-** 系统变量: WINDOWAREACOLOR
-控制窗口选择时透明选择区域的颜色。
-* WHIPTHREAD
-** 系统变量: WHIPTHREAD
-控制是否使用额外的处理器来提高操作速度（例如用于重画或重生成图形的 ZOOM）。
-* WHIPARC
-** 系统变量: WHIPARC
-旧式的。覆盖圆和圆弧显示的平滑度。
-* VTFPS
-** 系统变量: VTFPS
-以帧/每秒为单位设置平滑视图转场的最小速度。
-* VTENABLE
-** 系统变量: VTENABLE
-控制何时使用平滑视图转场。
-* VTDURATION
-** 系统变量: VTDURATION
-以毫秒为单位设置平滑视图转场的时长。
-* VSSTATE
-** 系统变量: VSSTATE
-指示“视觉样式”窗口处于打开状态还是关闭状态。
-* VSSILHWIDTH
-** 系统变量: VSSILHWIDTH
-以像素为单位指定当前视口中轮廓边的宽度。
-* VSSILHEDGES
-** 系统变量: VSSILHEDGES
-控制应用于当前视口的视觉样式中实体对象轮廓边的显示。
-* VSSHADOWS
-** 系统变量: VSSHADOWS
-控制视觉样式是否显示阴影。
-* VSOCCLUDEDLTYPE
-** 系统变量: VSOCCLUDEDLTYPE
-指定为视觉样式显示的隐藏线的线型。
-* VSOCCLUDEDEDGES
-** 系统变量: VSOCCLUDEDEDGES
-控制是否为视觉样式显示隐藏的边。
-* VSOCCLUDEDCOLOR
-** 系统变量: VSOCCLUDEDCOLOR
-指定为视觉样式显示的隐藏线的颜色。
-* VSOBSCUREDLTYPE
-** 系统变量: VSOBSCUREDLTYPE
-旧式的。替换为 VSOCCLUDEDLTYPE 系统变量。
-* VSOBSCUREDEDGES
-** 系统变量: VSOBSCUREDEDGES
-旧式的。替换为 VSOCCLUDEDEDGES 系统变量。
-* VSOBSCUREDCOLOR
-** 系统变量: VSOBSCUREDCOLOR
-旧式的。替换为 VSOCCLUDEDCOLOR 系统变量。
-* VSMONOCOLOR
-** 系统变量: VSMONOCOLOR
-为应用于当前视口的视觉样式中面的单色和染色显示设置颜色。
-* VSMIN
-** 系统变量: VSMIN
-存储当前视口虚拟屏幕的左下角。
-* VSMAX
-** 系统变量: VSMAX
-存储当前视口虚拟屏幕的右上角。
-* VSMATERIALMODE
-** 系统变量: VSMATERIALMODE
-控制当前视口中材质的显示。
-* VSLIGHTINGQUALITY
-** 系统变量: VSLIGHTINGQUALITY
-设置当前视口中的光源质量。
-* VSISOONTOP
-** 系统变量: VSISOONTOP
-显示应用于当前视口的视觉样式中着色对象顶部的素线。
-* VSINTERSECTIONLTYPE
-** 系统变量: VSINTERSECTIONLTYPE
-设置独立三维实体、曲面和网格的交点线型以实现某种视觉样式。
-* VSINTERSECTIONEDGES
-** 系统变量: VSINTERSECTIONEDGES
-控制独立三维实体、曲面和网格相交边显示以实现某种视觉样式。
-* VSINTERSECTIONCOLOR
-** 系统变量: VSINTERSECTIONCOLOR
-设置独立三维实体、曲面和网格的相交边颜色以实现某种视觉样式。
-* VSHIDEPRECISION
-** 系统变量: VSHIDEPRECISION
-旧式的。控制应用于当前视口的视觉样式中的隐藏和着色精度。
-* VSHALOGAP
-** 系统变量: VSHALOGAP
-设置应用于当前视口的视觉样式中的光晕间隔。
-* VSFACESTYLE
-** 系统变量: VSFACESTYLE
-控制面、实体填充图案和渐变在当前视口中的显示方式。
-* VSFACEOPACITY
-** 系统变量: VSFACEOPACITY
-为三维对象打开和关闭透明度预设级别。
-* VSFACEHIGHLIGHT
-** 系统变量: VSFACEHIGHLIGHT
-控制当前视口中不具有材质的面上镜面亮显的显示。
-* VSFACECOLORMODE
-** 系统变量: VSFACECOLORMODE
-控制如何计算面的颜色。
-* VSEDGESMOOTH
-** 系统变量: VSEDGESMOOTH
-指定折缝边的显示角度。
-* VSEDGES
-** 系统变量: VSEDGES
-控制显示在视口中的边的类型。
-* VSEDGEOVERHANG
-** 系统变量: VSEDGEOVERHANG
-旧式的。替换为 VSOCCLUDEDCOLOR 系统变量。
-* VSEDGELEX
-** 系统变量: VSEDGELEX
-控制线和边显示延伸至其端点之外的像素数，以产生手绘效果。
-* VSEDGEJITTER
-** 系统变量: VSEDGEJITTER
-使对象上的边看起来具有多个线性笔划，就像它们是用铅笔绘制的。
-* VSEDGECOLOR
-** 系统变量: VSEDGECOLOR
-设置当前视口视觉样式中边的颜色。
-* VSBACKGROUNDS
-** 系统变量: VSBACKGROUNDS
-控制是否以应用于当前视口的视觉样式显示背景。
-* VSAZEBRATYPE
-** 系统变量: VSAZEBRATYPE
-设定在使用斑纹分析(ANALYSISZEBRA) 时斑纹显示的类型。
-* VSAZEBRASIZE
-** 系统变量: VSAZEBRASIZE
-控制在斑纹分析 (ANALYSISZEBRA) 过程中所显示的斑纹条纹的宽度。
-* VSAZEBRADIRECTION
-** 系统变量: VSAZEBRADIRECTION
-控制在斑纹分析 (ANALYSISBRA) 过程中斑纹条纹是水平显示、竖直显示还是以某一角度显示。
-* VSAZEBRACOLOR2
-** 系统变量: VSAZEBRACOLOR2
-设定在斑纹分析 (ANALYSISZEBRA) 过程中所显示的斑纹条纹的第二种（对比）颜色。
-* VSAZEBRACOLOR1
-** 系统变量: VSAZEBRACOLOR1
-设定在斑纹分析(ANALYSISZEBRA) 过程中所显示的斑纹条纹的第一种颜色。
-* VSADRAFTANGLELOW
-** 系统变量: VSADRAFTANGLELOW
-设定在拔模分析(ANALYSISDRAFT) 过程中使模型显示为蓝色的值。
-* VSADRAFTANGLEHIGH
-** 系统变量: VSADRAFTANGLEHIGH
-设定在拔模分析(ANALYSISDRAFT) 过程中使模型显示为绿色的值。
-* VSACURVATURETYPE
-** 系统变量: VSACURVATURETYPE
-控制使用(ANALYSISCURVATURE) 命令时进行哪种类型的曲率分析。
-* VSACURVATURELOW
-** 系统变量: VSACURVATURELOW
-设定在曲率分析(ANALYSISCURVATURE) 过程中使曲面显示为蓝色的值。
-* VSACURVATUREHIGH
-** 系统变量: VSACURVATUREHIGH
-设定在曲率分析(ANALYSISCURVATURE) 过程中使曲面显示为绿色的值。
-* VPROTATEASSOC
-** 系统变量: VPROTATEASSOC
-控制旋转视口时视口内的视图是否随视口一起旋转。
-* VPMAXIMIZEDSTATE
-** 系统变量: VPMAXIMIZEDSTATE
-指示是否将视口最大化。
-* VPLAYEROVERRIDESMODE
-** 系统变量: VPLAYEROVERRIDESMODE
-控制是否显示和打印布局视口的图层特性替代。
-* VPLAYEROVERRIDES
-** 系统变量: VPLAYEROVERRIDES
-指示对于当前图层视口是否存在任何具有视口(VP) 特性替代的图层。
-* VPCONTROL
-** 系统变量: VPCONTROL
-控制每个视口的左上角是否显示视口、视图和视觉样式的选项。
-* VISRETAINMODE
-** 系统变量: VISRETAINMODE
-当 VISRETAIN 系统变量设置为 1 时，控制其行为。
-* VISRETAIN
-** 系统变量: VISRETAIN
-控制外部参照相关图层的特性。
-* VIEWUPDATEAUTO
-** 系统变量: VIEWUPDATEAUTO
-控制在更改源模型时模型文档工程视图是否会自动更新。
-* VIEWTWIST
-** 系统变量: VIEWTWIST
-存储相对于 WCS 测量的当前视口的视图旋转角度。
-* VIEWSKETCHMODE
-** 系统变量: VIEWSKETCHMODE
-指示系统是否在符号草图模式中。
-* VIEWSIZE
-** 系统变量: VIEWSIZE
-存储当前视口中显示的视图的高度（按图形单位测量）。
-* VIEWMODE
-** 系统变量: VIEWMODE
-存储当前视口的视图设置。
-* VIEWFWDSTATUS
-** 系统变量: VIEWFWDSTATUS
-存储上一个视图是否可用于 VIEWFORWARD 命令。
-* VIEWDIR
-** 系统变量: VIEWDIR
-存储当前视口中的观察方向（用 UCS 坐标表示）。
-* VIEWCTR
-** 系统变量: VIEWCTR
-存储当前视口中视图的中心。
-* VIEWBACKSTATUS
-** 系统变量: VIEWBACKSTATUS
-存储上一个视图是否可用于 VIEWBACK 命令。
-* USERS1-5
-** 系统变量: USERS1-5
-提供文字字符串数据的存储和检索功能。
-* USERR1-5
-** 系统变量: USERR1-5
-提供实数的存储和检索功能。
-* USERI1-5
-** 系统变量: USERI1-5
-提供整数值的存储和检索功能。
-* UPDATETHUMBNAIL
-** 系统变量: UPDATETHUMBNAIL
-控制视图和布局的缩略图预览的更新。
-* UOSNAP
-** 系统变量: UOSNAP
-确定对象捕捉是否可用于 DWF、DWFx、PDF 和 DGN 参考底图中的几何图形。
-* UNITMODE
-** 系统变量: UNITMODE
-控制单位的显示格式。
-* UNDOMARKS
-** 系统变量: UNDOMARKS
-显示放置在 UNDO 控制流中的标记数。
-* UNDOCTL
-** 系统变量: UNDOCTL
-显示在 UNDO 命令中使用的选项。
-* UCSYDIR
-** 系统变量: UCSYDIR
-为当前空间中当前视口存储当前 UCS 的 Y 方向。
-* UCSXDIR
-** 系统变量: UCSXDIR
-为当前空间中当前视口存储当前 UCS 的 X 方向。
-* UCSVP
-** 系统变量: UCSVP
-确定在其他视口中的 UCS 是从属于还是独立于当前视口的 UCS。
-* UCSVIEW
-** 系统变量: UCSVIEW
-决定当前 UCS 是否随命名视图一起保存。
-* UCSSELECTMODE
-** 系统变量: UCSSELECTMODE
-控制是否可以使用夹点选择和操纵 UCS 图标。
-* UCSORTHO
-** 系统变量: UCSORTHO
-决定 UCS 的 XY 平面是否在正交视图恢复时自动与当前视图的平面恢复对齐。
-* UCSORG
-** 系统变量: UCSORG
-存储在当前空间中用于当前视口的当前用户坐标系的原点。
-* UCSNAME
-** 系统变量: UCSNAME
-存储在当前空间中用于当前视口的当前用户坐标系的名称。
-* UCSICON
-** 系统变量: UCSICON
-控制 UCS 图标可见性和位置。
-* UCSFOLLOW
-** 系统变量: UCSFOLLOW
-从一个 UCS 转换为另一个 UCS 时生成平面视图。
-* UCSDETECT
-** 系统变量: UCSDETECT
-控制创建涉及三维平整面的对象时是否激活动态 UCS 获取。
-* UCSBASE
-** 系统变量: UCSBASE
-存储定义正交 UCS 设置的原点和方向的 UCS 名称。
-* UCSAXISANG
-** 系统变量: UCSAXISANG
-使用 UCS 命令的 X、Y 或 Z 选项绕其一个轴旋转 UCS 时，存储默认角度。
-* UCS3DPERPDISPLAYSETTING
-** 系统变量: UCS3DPERPDISPLAYSETTING
-在透视视图处于启用状态且三维视觉样式设置为当前时显示 UCS 图标。
-* UCS3DPARADISPLAYSETTING
-** 系统变量: UCS3DPARADISPLAYSETTING
-在透视视图处于禁用状态且三维视觉样式设置为当前时显示 UCS 图标。
-* UCS2DDISPLAYSETTING
-** 系统变量: UCS2DDISPLAYSETTING
-在二维线框视觉样式设置为当前时显示 UCS 图标。
-* TSTACKSIZE
-** 系统变量: TSTACKSIZE
-控制堆叠文字分数高度相对于选定文字的当前高度的百分比。
-* TSTACKALIGN
-** 系统变量: TSTACKALIGN
-控制堆叠文字的垂直对齐。
-* TSPACETYPE
-** 系统变量: TSPACETYPE
-控制多行文字中使用的行间距类型。
-* TSPACEFAC
-** 系统变量: TSPACEFAC
-控制多行文字的行间距（按文字高度的因子测量）。
-* TRUSTEDPATHS
-** 系统变量: TRUSTEDPATHS
-指定哪些文件夹具有加载并执行包含代码的文件的权限。
-* TRUSTEDDOMAINS
-** 系统变量: TRUSTEDDOMAINS
-指定域名或 URL，以便 AutoCAD 可从其运行 JavaScript 代码。
-* TRIMMODE
-** 系统变量: TRIMMODE
-控制是否为倒角和圆角修剪选定边。
-* TREEMAX
-** 系统变量: TREEMAX
-通过限制空间索引（八分树）中的节点数目，从而限制重生成图形时占用的内存。
-* TREEDEPTH
-** 系统变量: TREEDEPTH
-指定最大深度，即树状结构的空间索引可以分出分支的次数。
-* TRAYTIMEOUT
-** 系统变量: TRAYTIMEOUT
-控制服务通知的显示时间长度（以秒为单位）。
-* TRAYNOTIFY
-** 系统变量: TRAYNOTIFY
-控制是否在状态栏托盘中显示服务通知。
-* TRAYICONS
-** 系统变量: TRAYICONS
-控制是否在状态栏上显示状态托盘。
-* TRANSPARENCYDISPLAY
-** 系统变量: TRANSPARENCYDISPLAY
-控制指定给单个对象或 ByLayer 的透明度特性是可见还是被禁用。
-* TRACKPATH
-** 系统变量: TRACKPATH
-控制极轴追踪和对象捕捉追踪对齐路径的显示。
-* TPSTATE
-** 系统变量: TPSTATE
-指示“工具选项板”窗口处于打开状态还是关闭状态。
-* MATEDITORSTATE
-** 系统变量: MATEDITORSTATE
-指示材质编辑器是处于打开状态还是关闭状态。
-* TOUCHMODE
-** 系统变量: TOUCHMODE
-对于那些使用支持触摸的屏幕或界面的用户，可以控制功能区上“触摸”面板的显示。
-* TOOLTIPTRANSPARENCY
-** 系统变量: TOOLTIPTRANSPARENCY
-设置绘图工具提示的透明度。
-* TOOLTIPSIZE
-** 系统变量: TOOLTIPSIZE
-设定绘图工具提示和动态输入文字的显示大小。
-* TOOLTIPS
-** 系统变量: TOOLTIPS
-控制工具提示在功能区、工具栏及其他用户界面元素中的显示。
-* TOOLTIPMERGE
-** 系统变量: TOOLTIPMERGE
-将草图工具提示合并为单个工具提示。
-* TIMEZONE
-** 系统变量: TIMEZONE
-设置图形中阳光的时区。
-* TILEMODE
-** 系统变量: TILEMODE
-控制是否可以访问图纸空间。
-* THUMBSIZE2D
-** 系统变量: THUMBSIZE2D
-指定二维线框缩略图预览的大小是否由 THUMBSIZE 系统变量控制。如果禁用，则使用二维线框视觉样式的图形预览的显示分辨率将设置为 256 x 256 像素。
-* THUMBSIZE
-** 系统变量: THUMBSIZE
-为所有缩略图预览图像指定显示分辨率（以像素为单位）。
-* THUMBSAVE
-** 系统变量: THUMBSAVE
-控制是否将缩略图预览图像保存在图形中。
-* THICKNESS
-** 系统变量: THICKNESS
-在创建二维几何对象时，设置默认的三维厚度特性。
-* TEXTSTYLE
-** 系统变量: TEXTSTYLE
-设置当前文字样式的名称。
-* TEXTSIZE
-** 系统变量: TEXTSIZE
-设置创建新文字对象时默认的文字高度。
-* TEXTQLTY
-** 系统变量: TEXTQLTY
-设置打印和渲染时 TrueType 文字的分辨率。
-* TEXTOUTPUTFILEFORMAT
-** 系统变量: TEXTOUTPUTFILEFORMAT
-提供日志文件的 Unicode 选项。
-* TEXTJUSTIFY
-** 系统变量: TEXTJUSTIFY
-显示 TEXT 命令在创建单行文字时使用的默认对正方式。
-* TEXTFILL
-** 系统变量: TEXTFILL
-控制是否填充 TrueType 字体以用于打印。
-* TEXTEVAL
-** 系统变量: TEXTEVAL
-控制如何判定用 TEXT（使用 AutoLISP）或 -TEXT 输入的文字字符串。
-* TEXTEDITMODE
-** 系统变量: TEXTEDITMODE
-控制是否自动重复 TEXTEDIT 命令。
-* TEXTED
-** 系统变量: TEXTED
-指定创建和编辑单行文字时显示的用户界面。
-* TEXTAUTOCORRECTCAPS
-** 系统变量: TEXTAUTOCORRECTCAPS
-更正因意外启用 Caps Lock 而导致的常见文本错误。
-* TEXTALLCAPS
-** 系统变量: TEXTALLCAPS
-将通过 TEXT 或 MTEXT 命令创建的所有新文字转换为大写。
-* TEXTALIGNSPACING
-** 系统变量: TEXTALIGNSPACING
-存储对齐文字的间距选项。
-* TEXTALIGNMODE
-** 系统变量: TEXTALIGNMODE
-存储对齐文字的对齐选项。
-* TEMPPREFIX
-** 系统变量: TEMPPREFIX
-存储为临时文件指定的文件夹名称，附带路径分隔符。
-* TEMPOVERRIDES
-** 系统变量: TEMPOVERRIDES
-打开或关闭用于绘图辅助的临时替代键。
-* TDUUPDATE
-** 系统变量: TDUUPDATE
-存储上次更新或保存时的世界标准时间和日期。
-* TDUSRTIMER
-** 系统变量: TDUSRTIMER
-存储用户花费时间计时器。
-* TDUPDATE
-** 系统变量: TDUPDATE
-存储上次更新/保存时的本地时间和日期。
-* TDUCREATE
-** 系统变量: TDUCREATE
-存储创建图形时的通用时间和日期。
-* TDINDWG
-** 系统变量: TDINDWG
-存储总的编辑时间，即在两次保存当前图形之间花费的总时间。
-* TDCREATE
-** 系统变量: TDCREATE
-存储创建图形时的本地时间和日期。
-* TBSHOWSHORTCUTS
-** 系统变量: TBSHOWSHORTCUTS
-指定使用 Ctrl 键和 Alt 键的快捷键是否显示在工具栏的工具提示上。
-* TBCUSTOMIZE
-** 系统变量: TBCUSTOMIZE
-控制是否可以自定义工具选项板组。
-* TARGET
-** 系统变量: TARGET
-存储目标点的 UCS 坐标以用于当前视口中的透视投影。
-* TABMODE
-** 系统变量: TABMODE
-控制数字化仪输入设备的使用。
-* TABLETOOLBAR
-** 系统变量: TABLETOOLBAR
-控制表格工具栏的显示。
-* TABLEINDICATOR
-** 系统变量: TABLEINDICATOR
-控制当打开在位文字编辑器以编辑表格单元时，行编号和列字母的显示。
-* SYSMON
-** 系统变量: SYSMON
-控制是否监视定义的系统变量列表。
-* SYSCODEPAGE
-** 系统变量: SYSCODEPAGE
-指示由操作系统决定的系统代码页。
-* SURFV
-** 系统变量: SURFV
-为 PEDIT 命令的“平滑”选项设置在 N 方向的曲面密度以及曲面对象上的 V 素线密度
-* SURFU
-** 系统变量: SURFU
-为 PEDIT 命令的“平滑”选项设置在 M 方向的曲面密度以及曲面对象上的 U 素线密度。
-* SURFTYPE
-** 系统变量: SURFTYPE
-控制 PEDIT 命令的“平滑”选项要执行的曲面拟合类型。
-* SURFTAB2
-** 系统变量: SURFTAB2
-为 REVSURF 和 EDGESURF 命令设置在 N 方向的网格密度。
-* SURFTAB1
-** 系统变量: SURFTAB1
-为 RULESURF 和 TABSURF 命令设置要生成的表格数目。
-* SURFACEMODELINGMODE
-** 系统变量: SURFACEMODELINGMODE
-控制是将曲面创建为程序曲面还是 NURBS 曲面。
-* SURFACEAUTOTRIM
-** 系统变量: SURFACEAUTOTRIM
-设定在将几何图形投影到曲面上时是否自动修剪曲面。
-* SURFACEASSOCIATIVITYDRAG
-** 系统变量: SURFACEASSOCIATIVITYDRAG
-设置关联曲面的拖动预览行为。
-* SURFACEASSOCIATIVITY
-** 系统变量: SURFACEASSOCIATIVITY
-控制曲面是否保留与从中创建了曲面的对象的关系。
-* SUPPRESSALERTS
-** 系统变量: SUPPRESSALERTS
-控制关于在早期版本的产品中打开和保存新图形时可能会丢失数据的警告。
-* SUNSTATUS
-** 系统变量: SUNSTATUS
-打开和关闭当前视口中阳光的光源效果。
-* SUNPROPERTIESSTATE
-** 系统变量: SUNPROPERTIESSTATE
-指示“阳光特性”窗口处于打开状态还是关闭状态。
-* SUBOBJSELECTIONMODE
-** 系统变量: SUBOBJSELECTIONMODE
-过滤在将鼠标悬停于面、边、顶点或实体历史记录子对象上时是否亮显它们。
-* STUDENTDRAWING
-** 系统变量: STUDENTDRAWING
-报告当前图形是否已与 Autodesk 学生版产品一起保存。
-* STEPSPERSEC
-** 系统变量: STEPSPERSEC
-指定漫游或飞行模式中每秒执行的步数。
-* STEPSIZE
-** 系统变量: STEPSIZE
-指定漫游或飞行模式中每一步的大小（以图形单位表示）。
-* STATUSBAR
-** 系统变量: STATUSBAR
-控制状态栏的显示。
-* STARTUP
-** 系统变量: STARTUP
-控制在应用程序启动时或打开新图形时显示的内容。
-* STARTMODE
-** 系统变量: STARTMODE
-控制“开始”选项卡的显示。
-* STARTINFOLDER
-** 系统变量: STARTINFOLDER
-存储从中启动产品的驱动器和文件夹路径。
-* STANDARDSVIOLATION
-** 系统变量: STANDARDSVIOLATION
-指定创建或修改非标准对象时，是否通知用户当前图形中存在标准冲突。
-* SSMSTATE
-** 系统变量: SSMSTATE
-指示“图纸集管理器”窗口处于打开状态还是关闭状态。
-* SSMSHEETSTATUS
-** 系统变量: SSMSHEETSTATUS
-控制图纸集中状态数据的刷新方式。
-* SSMPOLLTIME
-** 系统变量: SSMPOLLTIME
-控制图纸集中状态数据的自动刷新时间间隔。
-* SSMAUTOOPEN
-** 系统变量: SSMAUTOOPEN
-控制打开与图纸相关联的图形时图纸集管理器的显示行为。
-* SSLOCATE
-** 系统变量: SSLOCATE
-控制打开图形时是否找到并打开与该图形相关联的图纸集。
-* SSFOUND
-** 系统变量: SSFOUND
-如果搜索图纸集成功，则显示图纸集路径和文件名。
-* SPLPERIODIC
-** 系统变量: SPLPERIODIC
-控制是否生成具有周期性特性的闭合样条曲线和 NURBS 曲面以保持在闭合点或接合口处的最平滑的连续性。
-* SPLMETHOD
-** 系统变量: SPLMETHOD
-存储用于 SPLINE 命令的默认方法是拟合点还是控制点。
-* SPLKNOTS
-** 系统变量: SPLKNOTS
-当指定拟合点时，存储 SPLINE 命令的默认节点选项。
-* SPLINETYPE
-** 系统变量: SPLINETYPE
-设置由 PEDIT 命令的“样条曲线”选项生成的曲线类型。
-* SPLINESEGS
-** 系统变量: SPLINESEGS
-设置要为每条样曲线条拟合多段线（此多段线通过 PEDIT 命令的“样条曲线”选项生成）生成的线段数目。
-* SPLFRAME
-** 系统变量: SPLFRAME
-控制螺旋和平滑处理的网格对象的显示。
-* SPLDEGREE
-** 系统变量: SPLDEGREE
-存储最近使用的样条曲线阶数设置，并设定在指定控制点时 SPLINE 命令的默认阶数设置。
-* SPACESWITCH
-** 系统变量: SPACESWITCH
-控制是否可以通过在布局视口内双击来访问模型空间。
-* SORTORDER
-** 系统变量: SORTORDER
-指定是使用自然排序顺序还是 ASCII 值来排序图层列表。
-* SORTENTS
-** 系统变量: SORTENTS
-控制对象排序，以支持若干操作的绘图次序。
-* SOLIDHIST
-** 系统变量: SOLIDHIST
-控制新复合实体是否保留其原始零部件的历史记录。
-* SOLIDCHECK
-** 系统变量: SOLIDCHECK
-为当前任务打开和关闭三维实体校验。
-* SNAPUNIT
-** 系统变量: SNAPUNIT
-设置当前视口的捕捉间距。
-* SNAPTYPE
-** 系统变量: SNAPTYPE
-为当前视口设置捕捉类型（矩形或环形）。
-* SNAPSTYL
-** 系统变量: SNAPSTYL
-将栅格和栅格捕捉设置为当前视口的矩形或等轴测。
-* SNAPMODE
-** 系统变量: SNAPMODE
-在当前视口中打开和关闭捕捉模式。
-* SNAPISOPAIR
-** 系统变量: SNAPISOPAIR
-控制当前视口的等轴测平面。
-* SNAPGRIDLEGACY
-** 系统变量: SNAPGRIDLEGACY
-控制光标是否仅在操作正在进行时捕捉到捕捉栅格。
-* SNAPBASE
-** 系统变量: SNAPBASE
-相对于当前 UCS 设置当前视口的捕捉和栅格原点。
-* SNAPANG
-** 系统变量: SNAPANG
-相对于当前 UCS 设置当前视口的捕捉和栅格旋转角度。
-* SMOOTHMESHMAXLEV
-** 系统变量: SMOOTHMESHMAXLEV
-设置网格对象的最大平滑度。
-* SMOOTHMESHMAXFACE
-** 系统变量: SMOOTHMESHMAXFACE
-设置网格对象允许使用的最大面数。
-* SMOOTHMESHGRID
-** 系统变量: SMOOTHMESHGRID
-设置底层网格镶嵌面栅格显示在三维网格对象中时的最大平滑度。
-* SMOOTHMESHCONVERT
-** 系统变量: SMOOTHMESHCONVERT
-控制是对转换为三维实体或曲面的网格对象进行平滑处理还是进行镶嵌，以及是否合并它们的面。
-* SKYSTATUS
-** 系统变量: SKYSTATUS
-决定渲染时是否计算天空照明。
-* SKTOLERANCE
-** 系统变量: SKTOLERANCE
-确定样条曲线布满手画线草图的紧密程度。
-* SKPOLY
-** 系统变量: SKPOLY
-确定 SKETCH 命令生成的是直线、多段线还是样条曲线。
-* SKETCHINC
-** 系统变量: SKETCHINC
-设置用于 SKETCH 命令的记录增量。
-* SIGWARN
-** 系统变量: SIGWARN
-控制打开附着数字签名的文件时是否发出警告。
-* SHPNAME
-** 系统变量: SHPNAME
-设置默认的形名称（必须遵守符号命名约定）。
-* SHOWPALETTESTATE
-** 系统变量: SHOWPALETTESTATE
-指示是否通过 HIDEPALETTES 命令隐藏选项板或通过 SHOWPALETTES 命令恢复选项板。
-* SHOWPAGESETUPFORNEWLAYOUTS
-** 系统变量: SHOWPAGESETUPFORNEWLAYOUTS
-指定在创建新布局时是否显示页面设置管理器。
-* SHOWNEWSTATE
-** 系统变量: SHOWNEWSTATE
-指示更新中亮显的新功能是否处于活动状态。
-* SHOWMOTIONPIN
-** 系统变量: SHOWMOTIONPIN
-控制缩略图图像的默认状态。
-* SHOWLAYERUSAGE
-** 系统变量: SHOWLAYERUSAGE
-在图层特性管理器中显示图标以指示图层是否处于使用状态。
-* SHOWHIST
-** 系统变量: SHOWHIST
-控制图形中实体的“显示历史记录”特性。
-* SHORTCUTMENUDURATION
-** 系统变量: SHORTCUTMENUDURATION
-指定必须按下定点设备的右键多长时间才会在绘图区域中显示快捷菜单。
-* SHORTCUTMENU
-** 系统变量: SHORTCUTMENU
-控制“默认”、“编辑”和“命令”模式的快捷菜单在绘图区域是否可用。
-* SHAREVIEWTYPE
-** 系统变量: SHAREVIEWTYPE
-控制是从当前视图、模型空间或某一布局中创建共享视图，还是从整个图形中创建共享视图。
-* SHAREVIEWPROPERTIES
-** 系统变量: SHAREVIEWPROPERTIES
-控制共享视图是否包含图形特性。
-* SHADOWPLANELOCATION
-** 系统变量: SHADOWPLANELOCATION
-控制用于显示阴影的不可见地平面的位置。
-* SHADEDIF
-** 系统变量: SHADEDIF
-设置漫反射光与环境光的比率。
-* SHADEDGE
-** 系统变量: SHADEDGE
-控制边的着色。
-* SETBYLAYERMODE
-** 系统变量: SETBYLAYERMODE
-控制为 SETBYLAYER 命令选择哪些特性。
-* SELECTSIMILARMODE
-** 系统变量: SELECTSIMILARMODE
-控制对于将使用 SELECTSIMILAR 选择的同类型对象，必须匹配哪些特性。
-* SELECTIONPREVIEWLIMIT
-** 系统变量: SELECTIONPREVIEWLIMIT
-限制在窗口或窗交选择期间可以显示预览亮显的对象数。
-* SELECTIONPREVIEW
-** 系统变量: SELECTIONPREVIEW
-控制选择预览的显示。
-* SELECTIONOFFSCREEN
-** 系统变量: SELECTIONOFFSCREEN
-控制屏幕外对象的选择。
-* SELECTIONEFFECTCOLOR
-** 系统变量: SELECTIONEFFECTCOLOR
-设置对象选择上的光晕亮显效果的颜色。
-* SELECTIONEFFECT
-** 系统变量: SELECTIONEFFECT
-指定对象处于选中状态时所使用的视觉效果。
-* SELECTIONCYCLING
-** 系统变量: SELECTIONCYCLING
-控制与重叠对象和选择循环关联的显示选项。
-* SELECTIONAREAOPACITY
-** 系统变量: SELECTIONAREAOPACITY
-控制进行窗口选择和窗交选择时选择区域的透明度。
-* SELECTIONAREA
-** 系统变量: SELECTIONAREA
-控制选择区域的显示效果。
-* SELECTIONANNODISPLAY
-** 系统变量: SELECTIONANNODISPLAY
-控制选定注释性对象后，备用比例图示是否暂时以暗显状态显示。
-* SECUREREMOTEACCESS
-** 系统变量: SECUREREMOTEACCESS
-控制是否限制从 Internet 位置或远程服务器访问文件。
-* SECURELOAD
-** 系统变量: SECURELOAD
-控制可执行文件是否限于仅从受信任文件夹加载
-* SECTIONTHICKNESSINC
-** 系统变量: SECTIONTHICKNESSINC
-设置截面切片厚度控件增加或减少的点数。
-* SECTIONOFFSETINC
-** 系统变量: SECTIONOFFSETINC
-设定单击控件时截面对象到截面平面的偏移距离。
-* SCREENSIZE
-** 系统变量: SCREENSIZE
-以像素为单位存储当前视口大小（X 和 Y）。
-* SCREENMODE
-** 系统变量: SCREENMODE
-指示显示的状态。
-* SAVETIME
-** 系统变量: SAVETIME
-设置自动保存时间间隔，以分钟为测量单位。
-* SAVENAME
-** 系统变量: SAVENAME
-显示最近保存的图形的文件名和文件夹路径。
-* SAVEFILEPATH
-** 系统变量: SAVEFILEPATH
-指定当前任务中所有自动保存文件的文件夹路径。
-* SAVEFILE
-** 系统变量: SAVEFILE
-存储当前自动保存的文件名。
-* SAVEFIDELITY
-** 系统变量: SAVEFIDELITY
-在 AutoCAD 2007 及更早版本中控制注释性对象的视觉逼真度。
-* SAFEMODE
-** 系统变量: SAFEMODE
-指示是否可在当前 AutoCAD 任务中加载和执行可执行代码。
-* RTDISPLAY
-** 系统变量: RTDISPLAY
-控制执行实时 ZOOM 或 PAN 命令时光栅图像和 OLE 对象的显示。
-* ROLLOVERTIPS
-** 系统变量: ROLLOVERTIPS
-控制当光标悬停在对象上时鼠标悬停工具提示的显示。
-* ROLLOVEROPACITY
-** 系统变量: ROLLOVEROPACITY
-控制光标移动到选项板上时选项板的透明度。
-* ROAMABLEROOTPREFIX
-** 系统变量: ROAMABLEROOTPREFIX
-存储根文件夹的完整路径，该文件夹中安装了可漫游的可自定义文件。
-* RIBBONSTATE
-** 系统变量: RIBBONSTATE
-指示功能区选项板处于打开状态还是关闭状态。
-* RIBBONSELECTMODE
-** 系统变量: RIBBONSELECTMODE
-决定调用功能区上下文选项卡并完成命令后预先选择集是否仍处于选中状态。
-* RIBBONICONRESIZE
-** 系统变量: RIBBONICONRESIZE
-控制是否将功能区上的图标大小调整为标准大小。
-* RIBBONDOCKEDHEIGHT
-** 系统变量: RIBBONDOCKEDHEIGHT
-确定是将水平固定的功能区设定为当前选项卡的高度还是预先定义的高度。
-* RIBBONCONTEXTSELLIM
-** 系统变量: RIBBONCONTEXTSELLIM
-限制可以使用功能区特性控件或上下文选项卡一次更改的对象数。
-* RIBBONBGLOAD
-** 系统变量: RIBBONBGLOAD
-控制功能区选项卡是否在处理器空闲时间由后台进程加载到内存中。
-* REVCLOUDGRIPS
-** 系统变量: REVCLOUDGRIPS
-控制修订云线上显示的夹点数。
-* REVCLOUDCREATEMODE
-** 系统变量: REVCLOUDCREATEMODE
-指定用于创建修订云线的默认输入。
-* REPORTERROR
-** 系统变量: REPORTERROR
-控制程序异常关闭时是否可以向 Autodesk 发送错误报告。
-* RENDERUSERLIGHTS
-** 系统变量: RENDERUSERLIGHTS
-控制是否在渲染过程中替代视口光源的设置。
-* RENDERTIME
-** 系统变量: RENDERTIME
-指定渲染引擎用于反复细化渲染图像的分钟数。
-* RENDERTARGET
-** 系统变量: RENDERTARGET
-控制渲染引擎要使用的渲染持续时间类型。
-* RENDERPREFSSTATE
-** 系统变量: RENDERPREFSSTATE
-指示“渲染预设管理器”选项板是处于打开状态还是关闭状态。
-* RENDERLIGHTCALC
-** 系统变量: RENDERLIGHTCALC
-控制光源和材质的渲染精度。
-* RENDERLEVEL
-** 系统变量: RENDERLEVEL
-指定渲染引擎为创建渲染图像而执行的层级数或迭代数。
-* RENDERENVSTATE
-** 系统变量: RENDERENVSTATE
-指示“渲染预设管理器”选项板是处于打开状态还是关闭状态。
-* REMEMBERFOLDERS
-** 系统变量: REMEMBERFOLDERS
-控制显示在标准文件选择对话框中的默认路径。
-* RE-INIT
-** 系统变量: RE-INIT
-重新初始化数字化仪、数字化仪端口和 acad.pgp 文件。
-* REGENMODE
-** 系统变量: REGENMODE
-旧式的。控制图形的自动重生成。
-* REFPATHTYPE
-** 系统变量: REFPATHTYPE
-控制当参照文件第一次附着到宿主图形文件时是使用完整路径、相对路径还是无路径。
-* REFEDITNAME
-** 系统变量: REFEDITNAME
-显示正在编辑的参照名称。
-* RECOVERYMODE
-** 系统变量: RECOVERYMODE
-控制系统出现故障后是否记录图形修复信息。
-* RECOVERAUTO
-** 系统变量: RECOVERAUTO
-控制在打开损坏的图形文件之前或之后恢复通知的显示。
-* REBUILDV
-** 系统变量: REBUILDV
-设定重新生成 NURBS 曲面时 V 方向上的栅格线数量。
-* REBUILDU
-** 系统变量: REBUILDU
-设定重新生成 NURBS 曲面时 U 方向上的栅格线数量。
-* REBUILDOPTIONS
-** 系统变量: REBUILDOPTIONS
-控制重新生成 NURBS 曲面时的删除和修剪选项。
-* REBUILDDEGREEV
-** 系统变量: REBUILDDEGREEV
-设定重新生成 NURBS 曲面时 V 方向上的阶数。
-* REBUILDDEGREEU
-** 系统变量: REBUILDDEGREEU
-设定重新生成 NURBS 曲面时 U 方向上的阶数。
-* REBUILD2DOPTION
-** 系统变量: REBUILD2DOPTION
-控制重新生成样条曲线时是否删除原始曲线。
-* REBUILD2DDEGREE
-** 系统变量: REBUILD2DDEGREE
-设定重新生成样条曲线时的全局阶数。
-* REBUILD2DCV
-** 系统变量: REBUILD2DCV
-设定重新生成样条曲线时的控制点数量。
-* RASTERTHRESHOLD
-** 系统变量: RASTERTHRESHOLD
-以兆字节为单位指定打印时光栅图像的阈值。
-* RASTERPREVIEW
-** 系统变量: RASTERPREVIEW
-控制是否将缩略图预览图像随图形一起创建和保存。
-* RASTERPERCENT
-** 系统变量: RASTERPERCENT
-设置可用于打印光栅图像的可用虚拟内存的最大百分比。
-* RASTERDPI
-** 系统变量: RASTERDPI
-控制从有标注输出设备更改为无标注输出设备（或反之）时的图纸尺寸和打印缩放比例。
-* QVLAYOUTPIN
-** 系统变量: QVLAYOUTPIN
-控制图形中模型空间和布局的预览图像的默认显示状态。
-* QVDRAWINGPIN
-** 系统变量: QVDRAWINGPIN
-控制图形预览图像的默认显示状态。
-* QTEXTMODE
-** 系统变量: QTEXTMODE
-控制文字的显示方式。
-* QPMODE
-** 系统变量: QPMODE
-控制在选定对象时是否显示“快捷特性”选项板。
-* QPLOCATION
-** 系统变量: QPLOCATION
-设置“快捷特性”选项板的位置。
-* QCSTATE
-** 系统变量: QCSTATE
-指示“快速计算器”计算器处于打开状态还是关闭状态。
-* PUCSBASE
-** 系统变量: PUCSBASE
-存储定义正交 UCS 设置（仅用于图纸空间）的原点和方向的 UCS 名称。
-* PUBLISHHATCH
-** 系统变量: PUBLISHHATCH
-控制在 Autodesk Impression 中打开发布为 DWF 或 DWFx 格式的填充图案时，是否将其视为单个对象。
-* PUBLISHCOLLATE
-** 系统变量: PUBLISHCOLLATE
-控制打印图纸集、多页打印文件或后台打印文件时是否可以被其他打印作业中断。
-* PUBLISHALLSHEETS
-** 系统变量: PUBLISHALLSHEETS
-指定在“发布”对话框中是加载激活文档的内容还是加载所有打开文档的内容。
-* PSVPSCALE
-** 系统变量: PSVPSCALE
-为所有新创建的视口设置视图比例因子。
-* PSTYLEPOLICY
-** 系统变量: PSTYLEPOLICY
-控制打开在 AutoCAD 2000 之前的版本中创建的图形或不使用图形模板从头创建新图形时，使用的打印样式模式（颜色相关打印样式模式或命名打印样式模式）。
-* PSTYLEMODE
-** 系统变量: PSTYLEMODE
-指示当前图形处于颜色相关打印样式模式还是命名打印样式模式。
-* PSOLWIDTH
-** 系统变量: PSOLWIDTH
-控制使用 POLYSOLID 命令创建的扫掠实体对象的默认宽度。
-* PSOLHEIGHT
-** 系统变量: PSOLHEIGHT
-控制通过 POLYSOLID 命令创建的扫掠实体对象的默认高度。
-* PSLTSCALE
-** 系统变量: PSLTSCALE
-控制在图纸空间视口中显示的对象的线型比例缩放。
-* PROXYSHOW
-** 系统变量: PROXYSHOW
-控制代理对象在图形中的显示。
-* PROXYNOTICE
-** 系统变量: PROXYNOTICE
-创建代理时显示通知。
-* PROXYGRAPHICS
-** 系统变量: PROXYGRAPHICS
-指定是否将代理对象的图像保存在图形中。
-* PROPPREVTIMEOUT
-** 系统变量: PROPPREVTIMEOUT
-设置可用于生成特性预览的最大时间量。
-* PROPOBJLIMIT
-** 系统变量: PROPOBJLIMIT
-限制可以使用“特性”和“快捷特性”选项板一次更改的对象数。
-* PROPERTYPREVIEW
-** 系统变量: PROPERTYPREVIEW
-控制在将鼠标悬停在控制特性的下拉列表和库上时，是否可以预览对当前选定对象的更改。
-* PROJMODE
-** 系统变量: PROJMODE
-设置当前投影模式以进行修剪或延伸。
-* PROJECTNAME
-** 系统变量: PROJECTNAME
-为当前图形指定工程名称。
-* PROGRAM
-** 系统变量: PROGRAM
-显示程序名称。
-* PRODUCT
-** 系统变量: PRODUCT
-显示产品名称。
-* PREVIEWTYPE
-** 系统变量: PREVIEWTYPE
-控制要用于图形缩略图预览的视图。
-* PREVIEWFILTER
-** 系统变量: PREVIEWFILTER
-从选择预览中排除指定的对象类型。
-* PREVIEWCREATIONTRANSPARENCY
-** 系统变量: PREVIEWCREATIONTRANSPARENCY
-控制在使用 SURFBLEND、SURFPATCH、SURFFILLET、FILLETEDGE、CHAMFEREDGE 和 LOFT 时生成的预览透明度。
-* POPUPS
-** 系统变量: POPUPS
-显示当前配置的显示驱动程序状态。
-* POLYSIDES
-** 系统变量: POLYSIDES
-为 POLYGON 命令设置默认边数。
-* POLARMODE
-** 系统变量: POLARMODE
-控制极轴追踪和对象捕捉追踪的设置。
-* POLARDIST
-** 系统变量: POLARDIST
-当 SNAPTYPE 设定为 1 (PolarSnap) 时，设置捕捉增量。
-* POLARANG
-** 系统变量: POLARANG
-设置极轴角增量。
-* POLARADDANG
-** 系统变量: POLARADDANG
-存储极轴追踪和极轴捕捉的附加角度。
-* POINTCLOUDVISRETAIN
-** 系统变量: POINTCLOUDVISRETAIN
-控制传统图形（在 AutoCAD 2014 中创建）是否保留单个扫描（RCS 文件）的打开或关闭状态和由附着的点云项目文件（RCP 文件）参照的面域。
-* POINTCLOUDSHADING
-** 系统变量: POINTCLOUDSHADING
-指定点云中的点的亮度是漫射还是镜面反射。
-* POINTCLOUDRTDENSITY
-** 系统变量: POINTCLOUDRTDENSITY
-通过在缩放、平移或动态观察期间减少显示的点数，可以提高性能。
-* POINTCLOUDPOINTSIZE
-** 系统变量: POINTCLOUDPOINTSIZE
-控制新点云对象的点的大小。
-* POINTCLOUDPOINTMAXLEGACY
-** 系统变量: POINTCLOUDPOINTMAXLEGACY
-仅适用于传统（2015 之前）点云。设置可以为所有附着到图形的传统点云显示的最大点数。
-* POINTCLOUDPOINTMAX
-** 系统变量: POINTCLOUDPOINTMAX
-设置可以为所有附着到图形的点云显示的最大点数。不会影响传统（2015 之前）点云。
-* POINTCLOUDLOD
-** 系统变量: POINTCLOUDLOD
-为点云设置显示的细节级别。
-* POINTCLOUDLOCK
-** 系统变量: POINTCLOUDLOCK
-控制是否可以操纵、移动、裁剪或旋转附着的点云。
-* POINTCLOUDLIGHTSOURCE
-** 系统变量: POINTCLOUDLIGHTSOURCE
-当光源处于打开状态时，确定点云的光源。
-* POINTCLOUDLIGHTING
-** 系统变量: POINTCLOUDLIGHTING
-控制点云的光源效果的显示方式。
-* POINTCLOUDDENSITY
-** 系统变量: POINTCLOUDDENSITY
-仅适用于传统（2015 之前）点云对象。控制工程视图中为所有传统点云显示的点的百分比。
-* POINTCLOUDCLIPFRAME
-** 系统变量: POINTCLOUDCLIPFRAME
-控制传统点云上的剪裁边界是否显示在屏幕上和打印输出中。
-* POINTCLOUDCACHESIZE
-** 系统变量: POINTCLOUDCACHESIZE
-指定为显示点云而保留的内存量。
-* POINTCLOUDBOUNDARY
-** 系统变量: POINTCLOUDBOUNDARY
-控制是否显示点云边界框。
-* POINTCLOUDAUTOUPDATE
-** 系统变量: POINTCLOUDAUTOUPDATE
-仅适用于传统（2015 之前）点云对象。控制在操作、平移、缩放或动态观察后是否自动重新生成点云。
-* POINTCLOUD2DVSDISPLAY
-** 系统变量: POINTCLOUD2DVSDISPLAY
-在使用二维线框视觉样式查看点云时，切换边界框和文字消息的显示。
-* PLQUIET
-** 系统变量: PLQUIET
-控制可选的打印相关对话框和非致命脚本错误的显示。
-* PLOTTRANSPARENCYOVERRIDE
-** 系统变量: PLOTTRANSPARENCYOVERRIDE
-控制是否打印对象透明度。
-* PLOTROTMODE
-** 系统变量: PLOTROTMODE
-控制打印方向。
-* PLOTOFFSET
-** 系统变量: PLOTOFFSET
-控制打印偏移是相对于可打印区域还是相对于图纸边。
-* PLINEWID
-** 系统变量: PLINEWID
-存储默认的多段线宽度。
-* PLINETYPE
-** 系统变量: PLINETYPE
-指定是否使用优化的二维多段线。
-* PLINEREVERSEWIDTHS
-** 系统变量: PLINEREVERSEWIDTHS
-控制反转多段线的方向时多段线的外观。
-* PLINEGEN
-** 系统变量: PLINEGEN
-控制绘制时，绕二维多段线的顶点生成线型图案的方式。
-* PLINEGCENMAX
-** 系统变量: PLINEGCENMAX
-设置多段线可以拥有的最大线段数量，以便应用程序计算几何中心。
-* PLINECONVERTMODE
-** 系统变量: PLINECONVERTMODE
-指定将样条曲线转换为多段线时使用的拟合方法。
-* PLATFORM
-** 系统变量: PLATFORM
-指示正在使用的操作系统。
-* PICKSTYLE
-** 系统变量: PICKSTYLE
-控制组选择和关联图案填充选择的使用。
-* PICKFIRST
-** 系统变量: PICKFIRST
-控制是否可以在启动命令之前选择对象。
-* PICKDRAG
-** 系统变量: PICKDRAG
-控制绘制选择窗口的方法。
-* PICKBOX
-** 系统变量: PICKBOX
-设置对象选择目标的高度（以设备独立像素为单位）。
-* PICKAUTO
-** 系统变量: PICKAUTO
-控制用于对象选择的自动窗口选择。
-* PICKADD
-** 系统变量: PICKADD
-控制后续选择项是替换当前选择集还是添加到其中。
-* PFACEVMAX
-** 系统变量: PFACEVMAX
-设置多面网格中面顶点的最大数量。
-* PERSPECTIVECLIP
-** 系统变量: PERSPECTIVECLIP
-决定眼点剪裁的位置。
-* PERSPECTIVE
-** 系统变量: PERSPECTIVE
-指定当前视口是否显示透视视图。
-* PERIMETER
-** 系统变量: PERIMETER
-存储由 AREA 和 LIST 命令计算的上一个周长值。
-* PELLIPSE
-** 系统变量: PELLIPSE
-控制通过 ELLIPSE 命令创建的椭圆类型。
-* PEDITACCEPT
-** 系统变量: PEDITACCEPT
-自动将选定对象转换为多段线，而在使用 PEDIT 时不显示提示。
-* PDSIZE
-** 系统变量: PDSIZE
-设置点对象的显示大小。
-* PDMODE
-** 系统变量: PDMODE
-控制点对象的显示方式。
-* PDFSHXTHRESHOLD
-** 系统变量: PDFSHXTHRESHOLD
-设置所选几何图形在转换为文字对象之前必须匹配某个字体的百分比。
-* PDFSHXLAYER
-** 系统变量: PDFSHXLAYER
-控制在将 SHX 几何图形转换为文字对象时，指定给新创建的文字对象的图层。
-* PDFSHXBESTFONT
-** 系统变量: PDFSHXBESTFONT
-在将输入的 PDF 几何图形转换为文字时，控制 PDFSHXTEXT 命令使用最佳匹配字体或使用超过识别阈值的第一个选定字体。
-* PDFSHX
-** 系统变量: PDFSHX
-控制是否在将图形输出为 PDF 文件时，将使用 SHX 字体的文字对象存储在 PDF 文件中作为注释。
-* PDFOSNAP
-** 系统变量: PDFOSNAP
-决定是否为附着在图形中的 PDF 参考底图中的几何图形激活对象捕捉。
-* PDFIMPORTMODE
-** 系统变量: PDFIMPORTMODE
-控制从 PDF 文件输入对象时的默认处理。
-* PDFIMPORTLAYERS
-** 系统变量: PDFIMPORTLAYERS
-控制将哪些图层指定给输入自 PDF 文件的对象。
-* PDFIMPORTIMAGEPATH
-** 系统变量: PDFIMPORTIMAGEPATH
-指定在输入 PDF 文件后用于提取和保存参照图像文件的文件夹。
-* PDFIMPORTFILTER
-** 系统变量: PDFIMPORTFILTER
-控制哪些数据类型要从 PDF 文件中输入并转换为 AutoCAD 对象。
-* PDFFRAME
-** 系统变量: PDFFRAME
-确定 PDF 参考底图边框是否可见。
-* PCMSTATE
-** 系统变量: PCMSTATE
-指示点云管理器处于打开状态还是关闭状态。
-* PARAMETERSSTATUS
-** 系统变量: PARAMETERSSTATUS
-指示“参数管理器”是处于显示状态还是隐藏状态。
-* PARAMETERCOPYMODE
-** 系统变量: PARAMETERCOPYMODE
-控制在图形、模型空间和布局以及块定义之间复制约束对象时处理约束和参照的用户参数的方式。
-* PAPERUPDATE
-** 系统变量: PAPERUPDATE
-控制当尝试以不同于为绘图仪配置文件默认指定的图纸尺寸打印布局时，警告对话框的显示。
-* PALETTEOPAQUE
-** 系统变量: PALETTEOPAQUE
-控制是否可以使选项板透明。
-* OSOPTIONS
-** 系统变量: OSOPTIONS
-控制是否在图案填充对象、使用动态 UCS 时具有负 Z 值的几何图形或者尺寸界线上禁用对象捕捉。
-* OSNAPZ
-** 系统变量: OSNAPZ
-控制对象捕捉是否自动投影到与当前 UCS 中位于当前标高的 XY 平面平行的平面上。
-* OSNAPOVERRIDE
-** 系统变量: OSNAPOVERRIDE
-防止替代默认对象捕捉设置。
-* OSNAPNODELEGACY
-** 系统变量: OSNAPNODELEGACY
-控制“节点”对象捕捉是否可用于捕捉到多行文字对象。
-* OSNAPCOORD
-** 系统变量: OSNAPCOORD
-控制在命令行输入的坐标是否替代运行的对象捕捉。
-* OSMODE
-** 系统变量: OSMODE
-设置执行对象捕捉。
-类型: 位码
-保存位置: 注册表
-初始值: 4133
-系统将使用下列位码值之和将该设置存储为一个位码：
-
-值   说明
-0    无
-1  END（端点）
-2  MID（中点）
-4  CEN（圆心）
-8  NOD（节点）
-16 QUA（象限点）
-32 INT（交点）
-64 INS（插入点）
-128 PER（垂足）
-256 TAN（切点）
-512 NEA（最近点）
-1024 几何中心
-2048 APP（外观交点）
-4096 EXT（延伸）
-8192 PAR（平行）
-16384 禁用当前的执行对象捕捉
-
-要指定多个执行对象捕捉，请输入各值之和。例如，输入 3 可指定“端点”(位码 1) 和“中点”(位码 2) 对象捕捉模式。
-
-注意:创建自定义例程的开发人员可以使用 16384 位码来暂时禁用当前的执行对象捕捉设置，而不会丢失原始设置。
-* ORTHOMODE
-** 系统变量: ORTHOMODE
-限定光标在垂直方向移动。
-* ORBITAUTOTARGET
-** 系统变量: ORBITAUTOTARGET
-控制为 3DORBIT 命令获取目标点的方式。
-* OPMSTATE
-** 系统变量: OPMSTATE
-指示“特性”选项板处于打开、关闭还是隐藏状态。
-* OLESTARTUP
-** 系统变量: OLESTARTUP
-控制打印时是否加载嵌入 OLE 对象的源应用程序。
-* OLEQUALITY
-** 系统变量: OLEQUALITY
-为所有 OLE 对象设置默认打印质量。
-* OLEHIDE
-** 系统变量: OLEHIDE
-控制 OLE 对象的显示和打印。
-* OLEFRAME
-** 系统变量: OLEFRAME
-控制是否显示和打印图形中所有 OLE 对象的边框。
-* OFFSETGAPTYPE
-** 系统变量: OFFSETGAPTYPE
-控制偏移多段线时处理线段之间的潜在间隙的方式。
-* OFFSETDIST
-** 系统变量: OFFSETDIST
-设置默认的偏移距离。
-* OBSCUREDLTYPE
-** 系统变量: OBSCUREDLTYPE
-指定遮挡线的线型。
-* OBSCUREDCOLOR
-** 系统变量: OBSCUREDCOLOR
-指定遮挡线的颜色。
-* OBJECTISOLATIONMODE
-** 系统变量: OBJECTISOLATIONMODE
-控制隐藏的对象在绘图任务之间是否保持隐藏状态。
-* NORTHDIRECTION
-** 系统变量: NORTHDIRECTION
-指定 WCS 的 Y 轴和栅格北向之间的角度。
-* NOMUTT
-** 系统变量: NOMUTT
-不显示通常情况下显示的消息（即不进行消息反馈）。
-* NAVVCUBESIZE
-** 系统变量: NAVVCUBESIZE
-指定 ViewCube 工具的大小。
-* NAVVCUBEORIENT
-** 系统变量: NAVVCUBEORIENT
-控制 ViewCube 工具是反映当前 UCS 还是反映 WCS。
-* NAVVCUBEOPACITY
-** 系统变量: NAVVCUBEOPACITY
-控制 ViewCube 工具处于未激活状态时的不透明度。
-* NAVVCUBELOCATION
-** 系统变量: NAVVCUBELOCATION
-标识显示 ViewCube 工具的视口中的角点。
-* NAVVCUBEDISPLAY
-** 系统变量: NAVVCUBEDISPLAY
-控制 ViewCube 工具在当前视觉样式和当前视口中的显示。
-* NAVSWHEELSIZEMINI
-** 系统变量: NAVSWHEELSIZEMINI
-指定小型 SteeringWheels 的大小。
-* NAVSWHEELSIZEBIG
-** 系统变量: NAVSWHEELSIZEBIG
-指定大型 SteeringWheels 的大小。
-* NAVSWHEELOPACITYMINI
-** 系统变量: NAVSWHEELOPACITYMINI
-控制小型 SteeringWheels 的不透明度。
-* NAVSWHEELOPACITYBIG
-** 系统变量: NAVSWHEELOPACITYBIG
-控制大型 SteeringWheels 的不透明度。
-* NAVSWHEELMODE
-** 系统变量: NAVSWHEELMODE
-指定 SteeringWheel 的当前模式。
-* NAVBARDISPLAY
-** 系统变量: NAVBARDISPLAY
-控制导航栏在所有视口中的显示。
-* MYDOCUMENTSPREFIX
-** 系统变量: MYDOCUMENTSPREFIX
-存储用户当前登录的“我的文档”文件夹的完整路径。
-* MVIEWPREVIEW
-** 系统变量: MVIEWPREVIEW
-控制插入已命名或新布局视口时的预览行为。
-* MTJIGSTRING
-** 系统变量: MTJIGSTRING
-设置启动 MTEXT 命令时显示在光标位置的样例文字内容。
-* MTEXTTOOLBAR
-** 系统变量: MTEXTTOOLBAR
-控制“文字格式”工具栏的显示。
-* MTEXTFIXED
-** 系统变量: MTEXTFIXED
-为多行文字设置在位文字编辑器的显示大小和方向行为。
-* MTEXTED
-** 系统变量: MTEXTED
-设置用于编辑多行文字对象的应用程序。
-* MTEXTDETECTSPACE
-** 系统变量: MTEXTDETECTSPACE
-控制是否在 MTEXT 命令中将键盘上的空格键用于创建列表项。
-* MTEXTCOLUMN
-** 系统变量: MTEXTCOLUMN
-为多行文字对象设置默认分栏设置。
-* MTEXTAUTOSTACK
-** 系统变量: MTEXTAUTOSTACK
-控制 MTEXT 命令的自动堆叠。
-* MSOLESCALE
-** 系统变量: MSOLESCALE
-控制具有粘贴到模型空间中的文字的 OLE 对象的大小。
-* MSMSTATE
-** 系统变量: MSMSTATE
-指示标记集管理器处于打开状态还是关闭状态。
-* MSLTSCALE
-** 系统变量: MSLTSCALE
-按注释比例缩放“模型”选项卡上显示的线型。
-* MODEMACRO
-** 系统变量: MODEMACRO
-在状态行中显示文字字符串，例如当前图形的名称、时间/日期戳记或特殊模式。
-* MLEADERSCALE
-** 系统变量: MLEADERSCALE
-设置应用到多重引线对象的全局比例因子。
-* MIRRTEXT
-** 系统变量: MIRRTEXT
-控制 MIRROR 反映文字的方式。
-* MIRRHATCH
-** 系统变量: MIRRHATCH
-控制 MIRROR 反映填充图案的方式。
-* MILLISECS
-** 系统变量: MILLISECS
-存储自系统启动后已经过的毫秒数。
-* MESHTYPE
-** 系统变量: MESHTYPE
-控制通过 REVSURF、TABSURF、RULESURF 和 EDGESURF 命令创建的网格的类型。
-* MENUNAME
-** 系统变量: MENUNAME
-存储自定义文件名，包括文件名的路径。
-* MENUECHO
-** 系统变量: MENUECHO
-设置菜单回显和提示控制位。
-* MENUBAR
-** 系统变量: MENUBAR
-控制菜单栏的显示。
-* MEASUREMENT
-** 系统变量: MEASUREMENT
-控制当前图形是使用英制还是公制填充图案和线型文件。
-* MEASUREINIT
-** 系统变量: MEASUREINIT
-控制从头创建的图形是使用英制还是使用公制默认设置。
-* MBUTTONPAN
-** 系统变量: MBUTTONPAN
-控制定点设备上的第三个按钮或滚轮的行为。
-* MAXTOUCHES
-** 系统变量: MAXTOUCHES
-标识所连接数字化仪支持的触点数。
-* MAXSORT
-** 系统变量: MAXSORT
-设置项目的最大数目，例如，在对话框、下拉列表和选项板中按字母顺序进行排序的文件名、图层名和块名称。
-* DIVMESHPYRLENGTH
-** 系统变量: DIVMESHPYRLENGTH
-设置沿网格棱锥体底面每个标注的细分数目。
