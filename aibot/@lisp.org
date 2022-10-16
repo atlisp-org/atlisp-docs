@@ -1,0 +1,53 @@
+* @:add-menu,添加菜单
+** (@:add-menu "类别" "功能名称" 'expr)
+向 @lisp 添加菜单 、 命令面板项。
+** 示例
+(@:add-menu "大绘图" "附着签名" '(@:attach-sign))
+* @:add-menus,添加多个菜单
+** (@:add-menus lst)
+向 @lisp 添加菜单组 、 命令面板项。
+** 示例
+(@:add-menus
+   '("类别"
+     ("功能1" (expr1)) ; 本身在 quote 中，不用重复 quote
+     ("功能2" (expr2))
+     ("功能3" (expr3))))
+;; 多个类别，多个功能
+(@:add-menus
+   '(("类别1"
+      ("功能1" (expr1))
+      ("功能2" (expr2))
+      ("功能3" (expr3)))
+     ("类别2"
+      ("功能4" (expr6))
+      ("功能5" (expr5))
+      ("功能6" (expr4)))))
+* @:define-hotkey,定义加速键
+** (@:define-hotkey "SHORT"  'expr)
+* @:define-config
+#+BEGIN_SRC lisp 
+(@:define-config 'test:projects-output "D:\\Output" "本地PDF输出目录")
+#+END_SRC
+* @:define-configs
+
+#+BEGIN_SRC lisp 
+  (@:define-configs
+      '(test:projects-output "D:\\Output" "本地PDF输出目录"))
+
+  (@:define-configs
+      '((test:projects-output "D:\\Output" "本地PDF输出目录")
+        (test:option1 5  "配置项1")
+        (test:option2 "str"  "配置项2")
+        (test:option3 3.14  "配置项3")
+        ))
+#+END_SRC
+* @:set-config,设置@lisp变量及修改值
+#+begin_src lisp
+  (@:set-config 可供用户修改的变量名(符号)  用户设定值)
+#+end_src
+* @:get-config,变量读值
+#+begin_src lisp
+   (@:get-config 可供用户修改的变量名(符号)  )
+#+end_src  
+* _
+i18n ，翻译
