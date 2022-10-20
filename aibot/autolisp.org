@@ -10,7 +10,7 @@
 * =
 ** (= numstr [numstr] ...)
 比较参数是否相等
-* *
+* 乘积,＊
 ** (* [number number] ...)
 返回所有数的乘积
 * /
@@ -76,6 +76,7 @@
 * apply
 ** (apply 'function list)
 传递一个列表作为指定函数的参数，并执行该函数
+详见： https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E8%BF%9B%E9%98%B6/lisp.org
 * 函数arx
 ** (arx)
 此函数将返回一个目前已装入的 ARX 应用程序的表。
@@ -91,6 +92,8 @@
 * assoc
 ** (assoc element alist)
 从关联表中搜索一个元素，如果找到则返回该关联表条目
+详见：
+https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * atan,反正切值
 ** (atan num1 [num2])
 返回一个数的反正切值（以弧度为单位）
@@ -142,9 +145,13 @@
 * cond
 ** (cond [(test result ...) ...])
 多条件、多处理结果函数
+详见：
+https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * cons
 ** (cons new-first-element list-or-atom)
 向表的头部添加一个元素，或构造一个点对
+详见：
+https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * cos,余弦值
 ** (cos ang)
 返回弧度角度的余弦值
@@ -154,6 +161,8 @@
 * defun,定义函数
 ** (defun sym ([arguments] [/ variables...]) expr...)
 定义函数
+详见：
+https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * dictadd
 ** (dictadd ename symbol newobj)
 在指定词典内添加非图形对象
@@ -293,8 +302,9 @@ default: 默认路径
 ext:扩展表。不含 .
 flags:
 控制对话框行为的整数值（位编码字段）。要一次设置多个条件，请将这些值相加，以创建一个介于0和15之间的标志值。getfield可以识别以下标志参数：
-1（位0）--提示输入要创建的新文件的名称。当提示打开现有文件的名称时，不要设置此位。在后一种情况下，如果用户输入不存在的文件名，对话框将在底部显示错误消息。
-如果设置了此位，并且用户选择了一个已经存在的文件，AutoCAD将显示一个警告框，并提供继续或取消操作的选择。
+=getfiled续=
+* getfiled续
+1（位0）--提示输入要创建的新文件的名称。当提示打开现有文件的名称时，不要设置此位。在后一种情况下，如果用户输入不存在的文件名，对话框将在底部显示错误消息。如果设置了此位，并且用户选择了一个已经存在的文件，AutoCAD将显示一个警告框，并提供继续或取消操作的选择。
 
 4（位2）--让用户输入任意文件扩展名，或者根本不输入扩展名。
 如果未设置此位，getfield只接受ext参数中指定的扩展名，如果用户未在file文本框中输入扩展名，则将此扩展名附加到文件名。
@@ -302,7 +312,9 @@ flags:
 8（位3）——如果设置了该位，而未设置位0，getfield将对输入的文件名执行库搜索。如果它在库搜索路径中找到文件及其目录，则会删除路径并仅返回文件名。（如果发现同名文件位于不同的目录中，则不会删除路径名。）
 如果未设置该位，getfield将返回整个文件名，包括路径名。
 如果使用对话框打开要在图形（或其他数据库）中保存其名称的现有文件，请设置此位。
+更多内容 =getfiled续2=
 
+* getfiled续2
 16（位4）--如果设置了此位，或者默认参数以路径分隔符结尾，则该参数仅被解释为路径名。getfield函数假定没有默认文件名。它在“查找范围：”行中显示路径，并将“文件名”框留空。
 
 32（位5）--如果设置了此位，并且设置了位0（表示正在指定一个新文件），则用户将不会收到覆盖现有文件的警告。不会显示警告用户已存在同名文件的警告框；旧文件将被替换。
@@ -360,6 +372,8 @@ flags:
 * if,条件分支
 ** (if testexpr thenexpr [elseexpr])
 根据对条件的判断结果，对两个表达式求值
+详见：
+https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * initget
 ** (initget [bits] [string])
 为随后的用户输入函数调用创建关键字
@@ -372,6 +386,7 @@ flags:
 * lambda,匿名函数
 ** (lambda arguments expr...)
 定义无名函数
+详见： https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E8%BF%9B%E9%98%B6/lisp.org
 * last
 ** (last lst)
 返回表的最后一个元素
@@ -381,6 +396,8 @@ flags:
 * 函数list
 ** (list [expr...])
 将任意数目的表达式组合成一个表
+详见：
+https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * listp
 ** (listp item)
 检查某个项是否是表
@@ -405,6 +422,7 @@ flags:
 * mapcar
 ** (mapcar 'function list1... listn)
 循环取list1至listn相同位置的元素同时作为function的参数进行求值，并将求值结果构成的表返回
+详见： https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E8%BF%9B%E9%98%B6/lisp.org
 * max
 ** (max [number number...])
 返回给定各数中的最大者
@@ -414,6 +432,8 @@ flags:
 * member
 ** (member expr lst)
 搜索表中是否包含某表达式，并从该表达式的第一次出现处返回表的其余部分
+详见：
+https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * menucmd
 ** (menucmd string)
 发出菜单命令，或设置并检索菜单项状态
@@ -482,6 +502,7 @@ mode: "r" 读取 "w" 写 "a" 追加
 * progn
 ** (progn [expr]...)
 顺序地对每一个表达式进行求值，并返回最后那个表达式的值
+详见： https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E8%BF%9B%E9%98%B6/lisp.org
 * prompt,屏幕提示
 ** (prompt msg)
 在屏幕提示区显示一个字符串
@@ -491,6 +512,8 @@ mode: "r" 读取 "w" 写 "a" 追加
 * quote
 ** (quote expr)
 返回表达式而不对其求值
+详见：
+https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * read
 ** (read [string])
 返回字符串中的第一个表或第一个原子
@@ -554,9 +577,16 @@ mode: "r" 读取 "w" 写 "a" 追加
 * ssdel
 ** (ssdel ename ss)
 从选择集中撤消对象（图元）
-* ssget
+* ssget,创建选择集
 ** (ssget [sel-method] [pt1 [pt2]] [pt-list] [filter-list])
 根据选定对象创建选择集
+** (ssget "c" pt1 pt2 [filter-list])
+** (ssget "w" pt1 pt2 [filter-list])
+** (ssget "cp" pt-list [filter-list])
+** (ssget "wp" pt-list [filter-list])
+** (ssget "x" [filter-list])
+
+https://gitee.com/atlisp/atlisp-docs/blob/main/AutoLisp/ssget.org
 * ssgetfirst
 ** (ssgetfirst)
 判断哪些对象是被选取的和被夹取的
@@ -601,6 +631,8 @@ unicode版本每个字的长度为 1.
 * subst,替换表项,替换表元素
 ** (subst newitem olditem lst)
 在表中搜索某旧项，并将表中出现的每一个旧项用新项代替，然后返回修改后所得的表
+详见：
+https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * substr,求子串
 ** (substr string start [length])
 返回字符串中的一个子字符串,字符串中的第一个字符的位置为 1

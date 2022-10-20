@@ -14,3 +14,8 @@
 
 也可以到 @lisp开源项目查看所有源码。
 http://gitee.com/atlisp
+* @lisp函数
+@lisp 函数库是一个开源、共享、可云端加载的 autolisp 函数库。由像您一样热爱开源共享的爱好者所构筑并维护。可依据开放许可协议自由使用。
+
+@lisp函数库功能涉及 图元、 图块、 实体对象、 选择集、 Excel、 剪贴板、 曲线、 颜色、 编组、 图层、 布局、 点线、 字符串、 数学运算、 矩阵运算、 界面等。
+更多内容 请访问 <a href="https://atlisp.cn/doc/function-lib.html">@lisp函数库</a>

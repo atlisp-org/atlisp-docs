@@ -1,7 +1,7 @@
-* 3DALIGN
+* 3DALIGN,三维对齐
 在二维和三维空间中将对象与其他对象对齐。
 
-* 3DARRAY
+* 3DARRAY,三维阵列
 创建非关联三维矩形或环形阵列。
 
 * 3DCLIP
@@ -425,13 +425,13 @@
 * CENTERRESET
 将中心线重置为在 CENTEREXE 系统变量中指定的当前值。
 
-* CHAMFER
+* CHAMFER,倒角,斜角
 为两个二维对象的边或三维实体的相邻面创建斜角或者倒角。
 
 * CHAMFEREDGE
 为三维实体边和曲面边建立倒角。
 
-* CHANGE
+* CHANGE,更改特性
 更改现有对象的特性。
 
 * CHECKSTANDARDS
@@ -447,7 +447,7 @@
 (Express Tool)
 提供一种方法，用来编辑以前为选定对象附着的 URL。
 
-* CIRCLE
+* CIRCLE,圆
 创建圆。
 
 * CLASSICGROUP
@@ -994,7 +994,7 @@
 * FILL
 控制诸如图案填充、二维实体和宽多段线等填充对象的显示。
 
-* FILLET
+* FILLET,圆角
 两个二维对象的圆角或倒角，或者三维实体的相邻面。
 
 * FILLETEDGE
@@ -1118,16 +1118,16 @@
 * GRAPHSCR
 将使文本窗口显示在应用程序窗口的后面。
 
-* GRID
+* GRID,栅格
 在当前视口中显示栅格图案。
 
-* GROUP
+* GROUP,编组
 创建和管理已保存的对象集（称为编组）。
 
 * GROUPEDIT
 将对象添加到选定的组以及从选定组中删除对象，或重命名选定的组。
 
-* HATCH
+* HATCH,填充
 使用填充图案、实体填充或渐变填充来填充封闭区域或选定对象。
 
 * HATCHEDIT
@@ -1252,7 +1252,7 @@
 * LAYDEL
 删除图层上的所有对象并清理该图层。
 
-* LAYER
+* LAYER,图层
 管理图层和图层特性。
 
 * LAYERCLOSE
@@ -1835,10 +1835,10 @@
 * PUBLISH
 将图形发布为 DWF、DWFx 和 PDF 文件，或发布到打印机或绘图仪。
 
-* PURGE
+* PURGE,清理
 删除图形中未使用的项目，例如块定义和图层。
 
-* PURGEAECDATA
+* PURGEAECDATA,清理AEC
 在命令提示下删除图形中不可见的 AEC 数据（AutoCAD Architecture 和 AutoCAD Civil 3D 自定义对象）。
 
 * PUSHTODOCSCLOSE
@@ -2703,5 +2703,5 @@
 * XREF
 启动 EXTERNALREFERENCES 命令。
 
-* ZOOM,缩放
+* ZOOM,缩放显示
 增大或减小当前视口中视图的比例。
