@@ -577,27 +577,26 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * ssdel
 ** (ssdel ename ss)
 从选择集中撤消对象（图元）
-* ssget,创建选择集
+* ssget,生成选择集
 ** (ssget [sel-method] [pt1 [pt2]] [pt-list] [filter-list])
 根据选定对象创建选择集
 ** 用法
- (ssget "c" pt1 pt2 [filter-list]) ;; 反选
- (ssget "w" pt1 pt2 [filter-list]) ;; 正选
- (ssget "cp" pt-list [filter-list]) ;; 反多边形
- (ssget "wp" pt-list [filter-list]) ;; 正多边形
- (ssget "f" pt-list [filter-list]) ;; 栏选
- (ssget "p" [filter-list]) ;; 上一个选择集
- (ssget "l"  [filter-list]) ;; 最后创建的 (entlast)
- (ssget "i" [filter-list]) ;; 隐含选择，先选择后执行
- (ssget "x"  [filter-list]) ;; 整个文件
- (ssget ":E" [filter-list]) ;; 用鼠标拾取框选择对象
- (ssget ":S" [filter-list]) ;; 点选一次
- (ssget ":S:E" [filter-list])
- (ssget ":S" [filter-list]) ;; 可重复
- (ssget ":L" [filter-list]) ;;不选择锁定图层对象
+*** 两点参数:c 反选 w 正选
+(ssget "c" pt1 pt2 [filter-list])
+*** 点列表参数:多边形cp wp，f栏选
+(ssget "cp" pt-list [filter-list])
+*** 无点参数的选择模式
+(ssget "p" [filter-list]) ;; 上一个选择集
+"l" 最后创建的 (entlast)
+"i" 隐含选择，先选择后执行
+"x" 整个文件
+":E" 用鼠标拾取框选择对象
+":S" 点选一次
+":S:E" 
+":D" 可重复
+":L" 不选择锁定图层对象
 
-详见：
-https://gitee.com/atlisp/atlisp-docs/blob/main/AutoLisp/ssget.org
+详：https://gitee.com/atlisp/atlisp-docs/blob/main/AutoLisp/ssget.org
 * ssgetfirst
 ** (ssgetfirst)
 判断哪些对象是被选取的和被夹取的
