@@ -1,3 +1,4 @@
+#+prefix: autolisp
 * -
 ** (– [数值 数值] ...)
 将第一个数减去其他数的和并返回差值
@@ -706,7 +707,7 @@ from to:
 ** (vports)
 返回表示当前视口配置的视口描述符表
 * wcmatch,字符匹配
-** (wcmatch string pattern)
+    ** (wcmatch string pattern)
 将模式字符串与某指定的字符串进行匹配比较
 ** 通配符
 #（pound） 匹配任何单个数字。

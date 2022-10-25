@@ -1,3 +1,4 @@
+#+prefix: visuallisp
 * vla-put-SCMDefaultMode
 ** (vla-put-SCMDefaultMode Object value)
 设定[默认]模式（未选择任何对象以及没有任何命令在执行中）下在绘图区中按一下鼠标右键的功能。
@@ -4411,3 +4412,27 @@ WCS坐标值指定UCS、图块、配置或光栅图像的原点。
 * !vla-put-SCMCommandMode
 ** (vla-put-SCMCommandMode Object value)
 判断命令模式下（正在执行命令）在绘图区中按一下鼠标右键的功能。
+
+
+* variant,变体
+调用 ActiveX 或 Visuallisp 时使用的数据类型。
+vlax-vbEmpty (0) - 未初始化
+vlax-vbNull (1) - Contains no valid data
+vlax-vbInteger (2) - 整型
+vlax-vbLong (3) - 长整型
+vlax-vbSingle (4) - 单精度浮点数
+vlax-vbDouble (5) - 双精度浮点数
+vlax-vbString (8) - 字符串
+vlax-vbObject (9) - 对象
+vlax-vbBoolean (11) - 布尔
+vlax-vbArray (8192) - 数组
+
+nil -- vlax-vbEmpty
+:vlax-null -- vlax-vbNull
+integer -- vlax-vbLong
+real -- vlax-vbDouble
+string -- vlax-vbString
+VLA-object -- vlax-vbObject
+:vlax-true/:vlax-false -- vlax-vbBoolean
+variant -- Same as the type of initial value
+vlax-make-safearray -- vlax-vbArray
