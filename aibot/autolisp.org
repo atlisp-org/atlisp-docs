@@ -11,7 +11,7 @@
 * =
 ** (= numstr [numstr] ...)
 比较参数是否相等
-* 乘积,＊
+* 乘积
 ** (* [number number] ...)
 返回所有数的乘积
 * /
@@ -588,14 +588,14 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 (ssget "cp" pt-list [filter-list])
 *** 无点参数的选择模式
 (ssget "p" [filter-list]) ;; 上一个选择集
-"l" 最后创建的 (entlast)
-"i" 隐含选择，先选择后执行
-"x" 整个文件
-":E" 用鼠标拾取框选择对象
-":S" 点选一次
-":S:E" 
-":D" 可重复
-":L" 不选择锁定图层对象
+l 最后创建的 (entlast)
+i 隐含选择，先选择后执行
+x 整个文件
+:E 用鼠标拾取框选择对象
+:S 点选一次
+:S:E 
+:D 可重复
+:L 不选择锁定图层对象
 
 详：https://gitee.com/atlisp/atlisp-docs/blob/main/AutoLisp/ssget.org
 * ssgetfirst
@@ -1062,3 +1062,39 @@ from to:
 * vl-vlx-loaded-p
 ** (vl-vlx-loaded-p appname)
 确定某独立名称空间当前是否加载
+
+
+* error,自定义错误处理
+** (*error* msg)
+用户定义的错误处理函数。
+* pop-error-mode,恢复错误模式
+** (*pop-error-mode*)
+错误处理函数，使用 *push-error-using-command* 或 *push-error-using-stack* 的前一次调用
+
+返回T值。
+
+在用之前定义的 *error*处理程序替换自定义的*error*处理程序函数后，应调用*pop-error-mode*。
+
+
+注意:在*error*处理程序中使用command-s函数时，不需要此函数。
+
+* push-error-using-command
+** (*push-error-using-command*)
+错误处理函数，指示在自定义*Error*处理程序中使用命令函数
+返回T值。
+
+在定义包含命令函数用法的自定义*error*处理程序函数后，应使用command*调用*push error。
+
+使用命令*push-error-using-command*时，您只能访问全局变量，而不能访问自定义*error*处理程序中发生错误的函数中定义的任何局部变量。如果需要访问局部变量，请将命令函数的任何实例替换为command-s函数，并使用 *push-error-using-stack*代替。
+
+注意:在本地自定义*error*处理程序中使用命令函数时，无法使用此函数。
+* push-error-using-stack
+** (*push-error-using-stack*)
+错误处理函数，指示在自定义*Error*处理程序中使用AutoLISP堆栈中的变量
+
+Remarks
+Allows access to the local AutoLISP variables on the stack defined within the function where the error occurred from your custom *error* handler. A call to the *push-error-using-stack* function overrides a previous call to *push-error-using-command*.
+
+If *push-error-using-command* or *push-error-using-stack* are not called, by default AutoLISP works as if *push-error-using-stack* was called.
+
+注意:This function cannot be used when the command function is used within the local custom *error* handler.
