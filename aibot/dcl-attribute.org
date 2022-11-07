@@ -1,148 +1,198 @@
+#+prefix: DCL属性
 * action 
 ** All active tiles
 AutoLISP action expression
-Specifies an AutoLISP expression to perform an action when this tile is selected. Also known as a callback.
+指定AutoLISP表达式以在选择此控件时执行操作。也称为回调。
+
 * alignment
 ** All tiles
-Horizontal or vertical position in a cluster
-Specifies the horizontal or vertical positioning (justification) of a tile within its cluster.
+框集中的水平或垂直位置
+
+指定框件在其框集内的水平或垂直定位（对齐）。
 * allow_accept
 ** edit_box, image_button, list_box
-Activates is_default button when this tile is selected
-Warn:This attribute isn't supported by the edit_box tile on Mac OS.
-Specifies whether the tile is activated when the user presses the accept key (usually Enter).
+选择此互动程序时激活is_default按钮
+
+警告：Mac OS上的edit_box互动程序不支持此属性。
+
+指定当用户按下接受键（通常为Enter）时是否激活互动程序。
+
 * aspect_ratio
 ** image, image_button
-Aspect ratio of an image
-Specifies the ratio of the width of the image to its height (width divided by height).
+图像的纵横比
+
+指定图像的宽度与高度的比率（宽度除以高度）。
 * big_increment
 ** slider
+要移动的增量距离
+警告：仅在Windows上支持。
+指定滑块的增量控件使用的值。
+
 Incremental distance to move
 Warn:Supported on Windows only.
 Specifies the value used by the slider's incremental controls.
 * children_alignment
 ** row, column, radio_row, radio_column, boxed_row, boxed_column, boxed_radio_row, boxed_radio_column
+框集子级的对齐
+指定框集中所有框件的默认对齐方式（类似于对齐方式）。
+
 Alignment of a cluster's children
 Specifies the default alignment (similar to alignment) for all tiles in a cluster.
 * children_fixed_height
 ** row, column, radio_row, radio_column, boxed_row, boxed_column, boxed_radio_row, boxed_radio_column
+在布局期间，框集子级的高度不会增长
+指定框集中所有框件的默认高度（类似于高度）。
+
 Height of a cluster's children doesn't grow during layout
 Specifies the default height (similar to height) for all tiles in a cluster.
 * children_fixed_width
 ** row, column, radio_row, radio_column, boxed_row, boxed_column, boxed_radio_row, boxed_radio_column
-Width of a cluster's children doesn't grow during layout
-Specifies the default width (similar to width) for all tiles in a cluster.
+框集的子级宽度在布局期间不会增长
+指定框集中所有框件的默认宽度（类似于宽度）。
 * color attribute
 ** image, image_button
-Background (fill) color of an image
-Specifies the background (fill) color of the image.
+图像的背景（填充）颜色
+指定图像的背景（填充）颜色。
+
 * edit_limit
 ** edit_box
+用户可以输入的最大字符数
+警告：仅在Windows上支持。
+指定允许用户在编辑框中输入的最大字符数。
+
 Maximum number of characters users can enter
 Warn:Supported on Windows only.
 Specifies the maximum number of characters a user is allowed to enter in the edit box.
 * edit_width
 ** edit_box, popup_list
+框件的编辑（输入）部分的宽度
+以字符宽度单位指定框的编辑（输入）部分的宽度，即edit_box图块的实际框部分。
 Width of the edit (input) portion of the tile
 Specifies the width in character-width units of the edit (input) portion of the box—the actual boxed portion of the edit_box tile.
 * fixed_height
 ** All tiles
+布局期间高度不会增长
+指定是否允许框件的高度填充可用空间。
 Height doesn't grow during layout
 Specifies if a tile's height is allowed to fill the available space.
 * fixed_width
 ** All tiles
+布局期间宽度不增长
+指定是否允许框件的宽度填充可用空间。
 Width doesn't grow during layout
 Specifies if a tile's width is allowed to fill the available space.
 * fixed_width_font
 ** list_box, popup_list
-Displays text in a fixed pitch font
-Warn:Supported on Windows only.
-Specifies whether a list box or pop-up list will display text in a fixed pitch font.
+以固定间距字体显示文本
+警告：仅在Windows上支持。
+指定列表框或弹出列表是否以固定间距字体显示文本。
 * height
 ** All tiles
-Height of the tile
-Specifies the height of a tile.
+框件的高度
+指定框件的高度。
+
 * initial_focus
 ** Dialog
-Key of the tile with initial focus
-Warn:Supported on Windows only.
-Specifies the key of the tile within the dialog box that receives the initial keyboard focus.
+具有初始焦点的互动程序的键
+警告：仅在Windows上支持。
+指定对话框中接收初始键盘焦点的互动程序的键。
+
 * is_bold
 ** Text
-Displays as bold
-Specifies whether the text is displayed in bold characters.
+显示为粗体
+指定文本是否以粗体字符显示。
 * is_cancel
 ** Button
-Button is activated when the cancel key—usually ESC—is pressed
-Specifies whether the button is selected when the user presses the Esc key.
+当取消键通常按下ESC时，按钮被激活
+指定用户按Esc键时是否选中该按钮。
+
 * is_default
 ** Button
-Button is activated when the accept key—usually ENTER—is pressed
-Specifies whether the button is the default button selected ("pushed") when the user presses the accept key.
+当按下接受键（通常为ENTER键）时，按钮被激活
+指定当用户按下接受键时，该按钮是否为默认选中（“按下”）按钮。
 * is_enabled
 ** All active tiles
+框件最初已启用
+指定框件最初是否可用。
 Tile is initially enabled
 Specifies whether or not the tile is initially available.
 * is_tab_stop
 ** All active tiles
-Tile is a tab stop
-Warn:Supported on Windows only.
-Specifies whether the tile receives keyboard focus when the user moves between tiles by pressing the Tab key.
+框件是制表位
+警告：仅在Windows上支持。
+指定当用户通过按Tab键在框件之间移动时，框件是否接收键盘焦点。
+
 * key
 ** All active tiles
+应用程序使用的磁贴名称
+指定程序用于引用此特定磁贴的名称。
 Tile name used by the application
 Specifies a name that the program uses to refer to this specific tile.
 * label
 ** boxed_row, boxed_column, boxed_radio_row, boxed_radio_column, button, dialog, edit_box, list_box, popup_list, radio_button, text, toggle
+互动程序的显示标签
+指定框件中显示的文本。
 Displayed label of the tile
 Specifies the text displayed within the tile.
 * layout Attribute
 ** slider
-Whether the slider is horizontal or vertical
-Specifies the text displayed within the tile.
+滑块是水平还是垂直
+指定框件中显示的文本。
 * list attribute
 ** list_box, popup_list
-Initial values to display in list
-Specifies the initial set of lines (choices) to be placed in the popup_list or list_box.
+要在列表中显示的初始值
+指定要放置在popup_list或list_box中的初始行集（选项）。
+
 * max_value
 ** slider
-Maximum value of a slider
-Specifies the upper range of values that a slider returns.
+滑块的最大值
+指定滑块返回的值的上限范围。
 * min_value
 ** slider
-Minimum value of a slider
-Specifies the lower range of values that a slider returns.
+滑块的最小值
+指定滑块返回的值的下限范围。
 * mnemonic
 ** all active tiles
-Mnemonic character for the tile
-Warn:Supported on Windows only.
-Specifies a keyboard mnemonic character for the tile.
+磁贴的记忆字符
+警告：仅在Windows上支持。
+为互动程序指定键盘助记符。
+
 * multiple_select
 ** list_box
-List box allows multiple items to be selected
-Specifies whether multiple items in the list_box can be selected (highlighted) at the same time.
+列表框允许选择多个项目
+指定是否可以同时选择（突出显示）列表框中的多个项目。
 * password_char
 ** edit_box
-Masks characters entered in edit_box
-Specifies the character to be used to mask user input.
+屏蔽编辑框中输入的字符
+指定用于屏蔽用户输入的字符。
+
 * small_increment
 ** slider
-Incremental distance to move
-Specifies the value used by the slider's incremental controls.
+要移动的增量距离
+指定滑块的增量控件使用的值。
+
 * tabs
 ** list_box, popup_list
-Tab stops for list display
-Specifies the placement of tabs in character width units.
+列表显示的制表位
+以字符宽度单位指定制表符的位置。
 * tab_truncate
 ** list_box, popup_list
-Truncates text that is larger than the associated tab stop
-Warn:Supported on Windows only.
-Specifies whether the text in a list box or pop-up list is truncated if it is larger than the associated tab stop.
+截断大于相关制表位的文本
+
+警告：仅在Windows上支持。
+
+指定如果列表框或弹出列表中的文本大于关联的制表位，则是否截断该文本。
+
 * value
 ** Text, active tiles (except buttons and image buttons)
-Tile's initial value
-Specifies the initial value of a tile. Possible value is a quoted string.
+框件的初始值
+
+指定框件的初始值。可能的值是带引号的字符串。
+
 * width
 ** All tiles
-Width of the tile
-Specifies the width of a tile.
+框件的宽度
+
+指定框件的宽度。
+
+

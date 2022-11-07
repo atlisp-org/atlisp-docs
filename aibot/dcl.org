@@ -1,62 +1,18 @@
-* boxed_column
-Grouping tile used to organize tiles into a column with a border around it.
-* boxed_radio_column
-Grouping tile used to organize radio_button tiles into a column with a border around it.
-* boxed_radio_row
-Grouping tile used to organize radio_button tiles into a row with a border around it.
-* boxed_row
-Grouping tile used to organize tiles into a row with a border around it.
-* button
-A Button tile resembles a push button.
-* column
-Grouping tile used to organize tiles into a column without a border around it.
-* concatenation
-A concatenation is a line of text made up of multiple, concatenated text_part tiles.
-* dialog
-A dialog is the tile that defines the dialog box.
-* edit_box
-An edit box is a field that enables the user to enter or edit a single line of text.
-* errtile
-An error tile is a text tile that appears at the bottom of a dialog box.
-* image Tile
-An image is a rectangle in which a vector graphic picture is displayed.
-* image_button
-The image button tile is a button that displays a graphic image rather than a label.
-* list_box
-A list box contains a list of text strings, arranged in rows.
-* ok_cancel
-The ok_cancel tile is a combination of the OK and Cancel buttons, and is the standard combination for dialog boxes that can originate changes to data.
-* ok_cancel_help
-This tile is the ok_cancel cluster combined with the Help button.
-* ok_cancel_help_errtile
-The ok_cancel_help_errtile tile provides a convenient way to specify the exit buttons and error tile all at once.
-* ok_cancel_help_info
-The ok_cancel_help_info tile does everything that the ok_cancel_help tile does, but it also includes an information button for displaying additional material.
-* ok_only
-The ok_only tile is a solitary OK button, such as the kind that alert boxes use.
-* paragraph
-A paragraph is a cluster of text_part or concatenation tiles that are arranged vertically.
-* popup_list
-A pop-up list, or simply pop-up, is functionally equivalent to a list box.
-* radio_button
-A radio button is one of a group of buttons composing a radio column or radio row.
-* radio_column
-A radio column contains radio button tiles, only one of which can be selected at a time.
-* radio_row
-A radio row, like a radio column, contains radio button tiles, only one of which can be selected at a time.
-* row
-Grouping tile used to organize tiles into a row without a border around it.
-* slider
-A slider obtains a numeric value.
-* spacer
-Tile used to add space between other tiles in a dialog definition.
-* spacer_0
-Tile used to add space between other tiles in a dialog definition.
-* spacer_1
-Tile used to add space between other tiles in a dialog definition.
-* text tile
-A text tile displays a text string for titling or informational purposes.
-* text_part
-A text part is a text tile that is part of a larger piece of text.
-* toggle
-A toggle appears as a small box with an optional label to the right of the box.
+#+prefix: DCL
+* DCL
+** 术语
+*** tile,框件
+在 DCL 中的组成对话框中的最小显示部件
+=boxed_column=
+*** clusters,框集
+用于容纳框件 tile 的上级框件。
+** 框件
+=boxed_column=
+** 属性
+=action=
+* DCL框件
+CAD内部 DCL 常用的框件定义有 32 个。
+=boxed_column=
+* DCL属性
+CAD内部 DCL 框件的属性有 35 个。
+=action=

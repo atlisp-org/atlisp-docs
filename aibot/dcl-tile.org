@@ -1,14 +1,15 @@
-* boxed_column,带框竖向容器
+#+prefix: DCL框件
+* boxed_column,带框竖向框集
 Grouping tile used to organize tiles into a column with a border around it.
-* boxed_radio_column,带框单选竖向容器
+* boxed_radio_column,带框单选竖向框集
 Grouping tile used to organize radio_button tiles into a column with a border around it.
-* boxed_radio_row,带框单选水平容器
+* boxed_radio_row,带框单选水平框集
 Grouping tile used to organize radio_button tiles into a row with a border around it.
-* boxed_row,带框水平容器
+* boxed_row,带框水平框集
 Grouping tile used to organize tiles into a row with a border around it.
 * button,按钮
 A Button tile resembles a push button.
-* clusters
+* clusters,框集,dcl框集
 You can group tiles into composite rows or columns (known collectively as clusters).
 For layout purposes, a cluster is treated as a single tile. The row or column can be boxed, with an optional label (a cluster without a box cannot be labeled).
 Users cannot select a cluster, only individual tiles within the cluster. Clusters cannot have actions assigned to them, with the exception of radio rows and radio columns. The following tiles define clusters:
@@ -23,7 +24,7 @@ Users cannot select a cluster, only individual tiles within the cluster. Cluster
 ** column
 
  
-* column,竖向容器
+* column,竖向框集
 Grouping tile used to organize tiles into a column without a border around it.
 * concatenation
 A concatenation is a line of text made up of multiple, concatenated text_part tiles.
@@ -31,13 +32,13 @@ A concatenation is a line of text made up of multiple, concatenated text_part ti
 A dialog is the tile that defines the dialog box.
 * edit_box,编辑框
 An edit box is a field that enables the user to enter or edit a single line of text.
-* errtile,错误信息控件
+* errtile,错误信息框件
 An error tile is a text tile that appears at the bottom of a dialog box.
 * image Tile,图像
 An image is a rectangle in which a vector graphic picture is displayed.
 * image_button,图像按钮
 The image button tile is a button that displays a graphic image rather than a label.
-* list_box,列表控件
+* list_box,列表框件
 A list box contains a list of text strings, arranged in rows.
 * ok_cancel
 The ok_cancel tile is a combination of the OK and Cancel buttons, and is the standard combination for dialog boxes that can originate changes to data.
@@ -49,19 +50,19 @@ The ok_cancel_help_errtile tile provides a convenient way to specify the exit bu
 The ok_cancel_help_info tile does everything that the ok_cancel_help tile does, but it also includes an information button for displaying additional material.
 * ok_only
 The ok_only tile is a solitary OK button, such as the kind that alert boxes use.
-* paragraph,段落容器
+* paragraph,段落框集
 A paragraph is a cluster of text_part or concatenation tiles that are arranged vertically.
 * popup_list,弹出列表
 A pop-up list, or simply pop-up, is functionally equivalent to a list box.
 * radio_button,单选按钮
 A radio button is one of a group of buttons composing a radio column or radio row.
-* radio_column,单选竖向容器
+* radio_column,单选竖向框集
 A radio column contains radio button tiles, only one of which can be selected at a time.
-* radio_row,单选水平容器
+* radio_row,单选水平框集
 A radio row, like a radio column, contains radio button tiles, only one of which can be selected at a time.
-* row,水平容器
+* row,水平框集
 Grouping tile used to organize tiles into a row without a border around it.
-* slider,滑块控件
+* slider,滑块框件
 A slider obtains a numeric value.
 * spacer
 Tile used to add space between other tiles in a dialog definition.
@@ -69,9 +70,9 @@ Tile used to add space between other tiles in a dialog definition.
 Tile used to add space between other tiles in a dialog definition.
 * spacer_1
 Tile used to add space between other tiles in a dialog definition.
-* text tile,文本控件
+* text tile,文本框件
 A text tile displays a text string for titling or informational purposes.
-* text_part,文本片断控件
+* text_part,文本片断框件
 A text part is a text tile that is part of a larger piece of text.
-* toggle,开关控件
+* toggle,开关框件
 A toggle appears as a small box with an optional label to the right of the box.
