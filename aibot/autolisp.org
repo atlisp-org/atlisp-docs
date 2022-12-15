@@ -1,36 +1,36 @@
-#+prefix: autolisp
+ #+prefix: autolisp
 * -
-** (– [数值 数值] ...)
+** (– [number number] &rest)
 将第一个数减去其他数的和并返回差值
 * ~
 ** (~ int)
 返回参数的按位非（即 1 的补码）
 * +
-** (+ [number number] ...)
+** (+ [number number] &rest)
 返回所有数的和
 * =
-** (= numstr [numstr] ...)
+** (= numstr [numstr] &rest)
 比较参数是否相等
 * 乘积
-** (* [number number] ...)
+** (* [number number] &rest)
 返回所有数的乘积
 * /
-** (/ [number number] ...)
+** (/ [number number] &rest)
 将第一个数除以其他数的乘积并返回商
 * 1+
 ** (1+ number)
 将参数加 1
 * <
-** (< numstr [numstr] ...)
+** (< numstr [numstr] &rest)
 如果每个参数值都小于它右边的参数则返回 T，否则返回 nil
 * <=
-** (<= numstr [numstr] ...)
+** (<= numstr [numstr] &rest)
 如果每个参数值都小于或等于它右边的参数则返回 T，否则返回 nil
 * >
-** (> numstr [numstr] ...)
+** (> numstr [numstr] &rest)
 如果每个参数值都大于它右边的参数则返回 T，否则返回 nil
 * >=
-** (>= numstr [numstr] ...)
+** (>= numstr [numstr] &rest)
 如果每个参数值都大于或等于它右边的参数则返回 T，否则返回 nil
 * abs,绝对值
 ** (abs number)
@@ -60,7 +60,7 @@
 ** (alloc n-alloc)
 设置段长度以供 expand 函数使用
 * and
-** (and [expr ...])
+** (and [expr &rest])
 返回表达式的逻辑与 (AND) 运算结果
 * angle,弧度
 ** (angle pt1 pt2)
@@ -72,7 +72,7 @@
 ** (angtos angle [unit [precision]])
 将一个以弧度为单位的角度值转换成字符串
 * append,组合表
-** (append [list ...])
+** (append [list &rest])
 将任意多个表组合成一个表
 * apply
 ** (apply 'function list)
@@ -117,10 +117,10 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (autoxload filename cmdlist)
 此函数是事先定义命令名称来装入一已连接的 ADS 应用程序。
 * /=
-** (/= numstr [numstr] ...)
+** (/= numstr [numstr] &rest)
 比较参数是否值不相等
 * boole,布尔运算
-** (Boole operator int1 [int2 ...])
+** (Boole operator int1 [int2 &rest])
 11123,用作一个通用的按位逻辑运算函数
 * boundp
 ** (boundp sym)
@@ -141,10 +141,10 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (close file-desc)
 关闭一个已打开的文件
 * command
-** (command [arguments] ...)
+** (command [arguments] &rest)
 执行一条 AutoCAD 命令
 * cond
-** (cond [(test result ...) ...])
+** (cond [(test result &rest) &rest])
 多条件、多处理结果函数
 详见：
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
@@ -160,7 +160,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (cvunit value from-unit to-unit)
 在不同测量单位之间进行换算
 * defun,定义函数
-** (defun sym ([arguments] [/ variables...]) expr...)
+** (defun sym ([arguments] [/ variables &rest]) expr &rest)
 定义函数
 详见：
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
@@ -267,7 +267,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (float number)
 将一个数转换为实数后返回
 * foreach
-** (foreach name list [expr...])
+** (foreach name list [expr &rest])
 将表中的所有成员以指定变量的身份带入表达式求值
 * gc
 ** (gc)
@@ -303,8 +303,7 @@ default: 默认路径
 ext:扩展表。不含 .
 flags:
 控制对话框行为的整数值（位编码字段）。要一次设置多个条件，请将这些值相加，以创建一个介于0和15之间的标志值。getfield可以识别以下标志参数：
-=getfiled续=
-* getfiled续
+
 1（位0）--提示输入要创建的新文件的名称。当提示打开现有文件的名称时，不要设置此位。在后一种情况下，如果用户输入不存在的文件名，对话框将在底部显示错误消息。如果设置了此位，并且用户选择了一个已经存在的文件，AutoCAD将显示一个警告框，并提供继续或取消操作的选择。
 
 4（位2）--让用户输入任意文件扩展名，或者根本不输入扩展名。
@@ -313,9 +312,7 @@ flags:
 8（位3）——如果设置了该位，而未设置位0，getfield将对输入的文件名执行库搜索。如果它在库搜索路径中找到文件及其目录，则会删除路径并仅返回文件名。（如果发现同名文件位于不同的目录中，则不会删除路径名。）
 如果未设置该位，getfield将返回整个文件名，包括路径名。
 如果使用对话框打开要在图形（或其他数据库）中保存其名称的现有文件，请设置此位。
-更多内容 =getfiled续2=
 
-* getfiled续2
 16（位4）--如果设置了此位，或者默认参数以路径分隔符结尾，则该参数仅被解释为路径名。getfield函数假定没有默认文件名。它在“查找范围：”行中显示路径，并将“文件名”框留空。
 
 32（位5）--如果设置了此位，并且设置了位0（表示正在指定一个新文件），则用户将不会收到覆盖现有文件的警告。不会显示警告用户已存在同名文件的警告框；旧文件将被替换。
@@ -385,7 +382,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (itoa int)
 将整数转换成字符串，并返回转换结果
 * lambda,匿名函数
-** (lambda arguments expr...)
+** (lambda arguments expr &rest)
 定义无名函数
 详见： https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E8%BF%9B%E9%98%B6/lisp.org
 * last
@@ -395,16 +392,16 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (length lst)
 以整数形式返回表中元素的数目
 * 函数list
-** (list [expr...])
+** (list [expr &rest])
 将任意数目的表达式组合成一个表
 详见：
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * listp
 ** (listp item)
 检查某个项是否是表
-* 函数load
-** "(load filename [onfailure])
-此函数将装入一个包含AutoLISP表达式的文件, 同时判别这些表达式。filename是一个代表文件名称的字符串, 而且不须加上扩展名(因为扩展名.lsp是自动设定)。"
+* load
+** (load filename [onfailure])
+此函数将装入一个包含AutoLISP表达式的文件, 同时判别这些表达式。filename是一个代表文件名称的字符串, 而且不须加上扩展名(因为扩展名.lsp是自动设定)。
 * load_dialog
 ** (load_dialog dclfile)
 加载 DCL 文件
@@ -412,20 +409,20 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (log num)
 返回一个实数的自然对数
 * logand,逻辑与
-** (logand [int int...])
+** (logand [int int &rest])
 返回一个整数表中的各数按位逻辑与 (AND) 的结果
 * logior,逻辑或
-** (logior [intint...])
+** (logior [intint &rest])
 返回一个整数表中的各数按位逻辑或 (OR) 的结果
 * lsh,逻辑移位
 ** (lsh int numbits)
 返回某整数作指定次逻辑移位后的结果
 * mapcar
-** (mapcar 'function list1... listn)
+** (mapcar 'function list1 &rest listn)
 循环取list1至listn相同位置的元素同时作为function的参数进行求值，并将求值结果构成的表返回
 详见： https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E8%BF%9B%E9%98%B6/lisp.org
 * max
-** (max [number number...])
+** (max [number number &rest])
 返回给定各数中的最大者
 * mem
 ** (mem)
@@ -442,7 +439,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (menugroup groupname)
 检查是否加载了指定的菜单组
 * min
-** (min [number number...])
+** (min [number number &rest])
 返回给定各数中的最小者
 * minusp,检查负数
 ** (minusp num)
@@ -483,7 +480,7 @@ mode: "r" 读取 "w" 写 "a" 追加
 (read-line fp)
 (close fp)
 * or
-** (or [expr...])
+** (or [expr &rest])
 返回对表达式进行逻辑或 (OR) 运算的结果
 * 函数osnap
 ** (osnap pt mode)
@@ -501,7 +498,7 @@ mode: "r" 读取 "w" 写 "a" 追加
 ** (print [expr [file-desc]])
 在命令行打印表达式，或将表达式写入已打开的文件中
 * progn
-** (progn [expr]...)
+** (progn [expr] &rest)
 顺序地对每一个表达式进行求值，并返回最后那个表达式的值
 详见： https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E8%BF%9B%E9%98%B6/lisp.org
 * prompt,屏幕提示
@@ -528,10 +525,10 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (regapp application)
 为当前 AutoCAD 图形注册一个应用名，为使用扩展对象数据作准备
 * rem,求余数
-** (rem [number number...])
+** (rem [number number &rest])
 将第一个数除以第二个数，并返回余数
 * repeat,循环指定次数
-** (repeat int [expr...])
+** (repeat int [expr &rest])
 对循环体中的每一个表达式进行指定次数的求值计算，并返回最后一个表达式的值
 * 函数reverse
 ** (reverse lst)
@@ -549,7 +546,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (setfunhelp c:fname [helpfile [topic [command]]])
 给帮助工具注册一个用户定义函数，这样，用户在请求该命令的帮助时，就会调用正确的帮助文件和主题
 * setq,赋值
-** (setq sym expr [sym expr]...)
+** (setq sym expr [sym expr] &rest)
 将一个或多个符号的值设置为相应表达式的值
 * set_tile
 ** (set_tile key value)
@@ -633,10 +630,10 @@ gripset: 一般为 nil.
 ** (strcase string [lcase])
 返回所有字母大写的字符串(如果 lcase 不为 nil 则小写)
 * strcat,组合字符串
-** (strcat [string [string]...])
+** (strcat [string [string] &rest])
 返回从左到右拼接后的字符串
 * strlen,字符串长度
-** (strlen [string]...)
+** (strlen [string] &rest)
 以整数形式返回一个字符串中字符的个数(不一定是字节长度)
 unicode版本每个字的长度为 1. 
 * subst,替换表项,替换表元素
@@ -675,7 +672,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (textscr)
 切换至文本屏幕（相当于 AutoCAD Flip Screen 功能键）
 * trace,调试跟踪
-** (trace [function...])
+** (trace [function &rest])
 调试 AutoLISP 程序时的辅助函数
 * trans,坐标换算,坐标转换
 ** (trans pt from to [disp])
@@ -695,7 +692,7 @@ from to:
 ** (unload_dialog dcl_id)
 卸载 DCL 文件
 * untrace,清除跟踪
-** (untrace [function...])
+** (untrace [function &rest])
 清除指定函数的跟踪标志
 * vector_image
 ** (vector_image x1 y1 x2 y2 color)
@@ -707,7 +704,7 @@ from to:
 ** (vports)
 返回表示当前视口配置的视口描述符表
 * wcmatch,字符匹配
-    ** (wcmatch string pattern)
+** (wcmatch string pattern)
 将模式字符串与某指定的字符串进行匹配比较
 ** 通配符
 #（pound） 匹配任何单个数字。
@@ -722,7 +719,7 @@ from to:
 ，（逗号） 分隔两个匹配模式。
 `（反引号）转义特殊字符（逐字读取下一个字符）。
 * while
-** (while testexpr [expr...])
+** (while testexpr [expr &rest])
 对测试表达式进行求值，如果它不是 nil，则执行循环体中的表达式，重复这个过程，直到测试表达式的求值结果为 nil
 * write-char
 ** (write-char num [file-desc])
@@ -740,8 +737,8 @@ from to:
 ** (xload application [onfailure])
 这个函数将装入一个AutoCAD高级开发系统(ADS)的应用程序。
 * xunload
-** "(xunload application [onfailure])
-此函数将卸载一个ADS应用程序。如果应用程序被成功地卸下。那么, 应用程序的名称将被返回。否则, 一个错误信息将被发出。"
+** (xunload application [onfailure])
+此函数将卸载一个ADS应用程序。如果应用程序被成功地卸下。那么, 应用程序的名称将被返回。否则, 一个错误信息将被发出。
 * zerop
 ** (zerop number)
 检查一个数的值是否为 0
@@ -766,20 +763,20 @@ from to:
 ** (cddar lst)
 返回表内第一个表，并去掉前两个元素
 * cddadr
-** "(cddadr lst)
-数据库中没有收录这个函数!请帮助录入,谢谢"
+** (cddadr lst)
+数据库中没有收录这个函数!请帮助录入,谢谢
 * cddaar
-** "(cddaar lst)
-数据库中没有收录这个函数!请帮助录入,谢谢"
+** (cddaar lst)
+数据库中没有收录这个函数!请帮助录入,谢谢
 * cdar
 ** (cdar list)
 返回表内第一个表中去掉了第一个元素的表
 * cdadr
-** "(cdadr lst)
-获取表第二个元素,然后再去除第一个元素"
+** (cdadr lst)
+获取表第二个元素,然后再去除第一个元素
 * cdaddr
-** "(cdaddr lst)
-数据库中没有收录这个函数!请帮助录入,谢谢"
+** (cdaddr lst)
+数据库中没有收录这个函数!请帮助录入,谢谢
 * cdadar
 ** (cdadar lst)
 返回表内第一个子表的第二个子表，且去掉第一个元素！
@@ -787,8 +784,8 @@ from to:
 ** (cdaar lst)
 返回三层表以上，一层第1项，二层第1项，三层除掉第1项数据
 * cdaadr
-** "(cdaadr lst)
-数据库中没有收录这个函数!请帮助录入,谢谢"
+** (cdaadr lst)
+数据库中没有收录这个函数!
 * cdaaar
 ** (cdaaar lst)
 返回4层表，一层第1项，二层第1项，三层第1项，四层去掉第一项数据
@@ -845,7 +842,7 @@ from to:
 ** (vl-filename-directory filename)
 去掉文件的名称和扩展名，返回文件的路径。
 * vl-list*
-** (vl-list*  object[object]...)
+** (vl-list*  object[object] &rest)
 构造并返回表
 * _vl-times
 ** (_vl-times)
@@ -861,12 +858,6 @@ from to:
 * vl-bt
 ** (vl-bt)
 错误跟踪
-;(defun c:tt6 ( / *ERROR* )
-;	(defun *ERROR* (ERROR )
-;		(vl-bt)
-;	)	
-;	(+ 12 ""asd"")
-;)
 * vl-acad-defun
 ** (vl-acad-defun 'symbol)
 将 Visual LISP 函数符号定义为外部子例程
@@ -874,7 +865,7 @@ from to:
 ** (vl-acad-undefun 'symbol)
 取消对 Visual LISP 函数符号的定义，使 ObjectARX 应用程序不能再使用它。
 * vl-arx-import
-** (vl-arx-import ['function , "application"])
+** (vl-arx-import [function-or-application])
 将 ObjectARX/ADSRX 函数输入到独立名称空间 VLX
 * vl-bb-ref
 ** (vl-bb-ref 'variable)
@@ -892,7 +883,7 @@ from to:
 ** (vl-catch-all-error-p arg)
 确定参数是否是 vl-catch-all-apply 返回的错误对象
 * vl-cmdf
-** (vl-cmdf  [arguments] ...)
+** (vl-cmdf  [arguments]  &rest)
 执行 AutoCAD 命令
 * vl-consp
 ** (vl-consp list-variable)
@@ -904,7 +895,7 @@ from to:
 ** (vl-doc-export 'function)
 使函数在当前文档中可用
 * vl-doc-import
-** (vl-doc-import application [’function...])
+** (vl-doc-import application [’function &rest])
 将早先输出的函数输入到 VLX 名称空间
 * vl-doc-ref
 ** (vl-doc-ref 'symbol)
@@ -913,7 +904,7 @@ from to:
 ** (vl-doc-set 'symbol value)
 设置当前文档名称空间中变量的值
 * vl-every
-** (vl-every  predicate-function list [list]...)
+** (vl-every  predicate-function list [list] &rest)
 检查论断结合每个元素后是否均为真
 * vl-exit-with-error
 ** (vl-exit-with-error msg)
@@ -1006,7 +997,7 @@ from to:
 ** (vl-remove-if-not  predicate-function list)
 返回由所提供表中的所有能通过测试函数的元素组成的表
 * vl-some
-** (vl-some  predicate-functionlist [list]...)
+** (vl-some  predicate-functionlist [list] &rest)
 检查论断是否对某个元素组合不为 nil
 * vl-sort
 ** (vl-sort  list comparison-function)

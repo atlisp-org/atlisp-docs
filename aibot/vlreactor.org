@@ -1,5 +1,5 @@
 * vlr-reactors,现有反应器
-** (vlr-reactors [reactor-type...])
+** (vlr-reactors [reactor-types])
 返回由现有反应器组成的表
 * vlr-reaction-set
 ** (vlr-reaction-set reactor event function)
