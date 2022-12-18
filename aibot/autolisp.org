@@ -48,13 +48,13 @@
 ** (action_tile key action-expression)
 为某一对话框控件指定一个动作表达式，用户在对话框中选中这个控件时，就会执行该动作表达式
 * add_list
-** (add_list string)
+** (add_list "string")
 在当前激活的对话框的列表框中增加一个字符串或修改其中的一个字符串
 * ads
 ** (ads)
 此函数将返回一串目前装入的AutoCAD高级开发系统(ADS)应用程序。每一个应用程序和它的路径在这个表中都是一个以引号括起来的字符串。
 * alert,警告框
-** (alert string)
+** (alert "string")
 显示一个警告框，其中显示一条出错或警告信息
 * alloc
 ** (alloc n-alloc)
@@ -66,7 +66,7 @@
 ** (angle pt1 pt2)
 以弧度为单位返回两点之间连线与当前 UCS 下 X 轴之间的夹角
 * angtof,角度转实数
-** (angtof string [units])
+** (angtof "string" [units])
 将表示角度的字符串转换为实数（浮点数）形式的弧度值
 * angtos,角度转字符串
 ** (angtos angle [unit [precision]])
@@ -88,7 +88,7 @@
 ** (arxunload application [onfailure])
 卸载 ObjectARX 应用程序
 * ascii
-** (ascii string)
+** (ascii "string")
 将字符串中的第一个字符转换成其 ASCII 码(整数)后返回
 * assoc
 ** (assoc element alist)
@@ -99,10 +99,10 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (atan num1 [num2])
 返回一个数的反正切值（以弧度为单位）
 * atof,字符串转实数
-** (atof string)
+** (atof "string")
 将一个字符串转换成实数
 * atoi,字符串转整数
-** (atoi string)
+** (atoi "string")
 将一个字符串转换成整数
 * atom
 ** (atom item)
@@ -160,7 +160,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (cvunit value from-unit to-unit)
 在不同测量单位之间进行换算
 * defun,定义函数
-** (defun sym ([arguments] [/ variables &rest]) expr &rest)
+** (defun NAME (arguments / private-variables) "函数功能说明" "函数返回值" exprs)
 定义函数
 详见：
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
@@ -189,7 +189,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (distance pt1 pt2)
 返回两个点之间的距离
 * distof
-** (distof string [mode])
+** (distof "string" [mode])
 将一个表示实（浮点）数的字符串转换成一个实数
 * done_dialog
 ** (done_dialog [status])
@@ -223,7 +223,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (entnext [ename])
 如果调用entnext时没有参数，则返回数据库中第一个未删除实体的实体名。如果向entnext提供了一个ename参数，则函数返回数据库中ename后面第一个未删除实体的实体名。如果数据库中没有下一个实体，则返回nil。entnext函数返回主实体和子实体。
 * entsel,选择图元
-** (entsel [msg])
+** (entsel "[msg]")
 提示用户通过指定一个点来选择单个对象（图元）
 * entupd,更新图元
 ** (entupd ename)
@@ -235,7 +235,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (equal expr1 expr2 [fuzz])
 确定两个表达式的值是否相等
 * *error*
-** (*error* string)
+** (*error* "string")
 可由用户定义的错误处理函数
 * eval,求值
 ** (eval expr)
@@ -267,7 +267,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (float number)
 将一个数转换为实数后返回
 * foreach
-** (foreach name list [expr &rest])
+** (foreach name list [exprs])
 将表中的所有成员以指定变量的身份带入表达式求值
 * gc
 ** (gc)
@@ -276,7 +276,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (gcd int1 int2)
 返回两个整数的最大公约数
 * getangle
-** (getangle [pt] [msg])
+** (getangle [pt] "[msg]")
 暂停以等待用户输入角度，然后以弧度形式返回该角度
 * get_attr
 ** (get_attr key attribute)
@@ -288,13 +288,13 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (getcname cname)
 获取 AutoCAD 命令的本地化名或英文名
 * getcorner
-** (getcorner pt [msg])
+** (getcorner pt "[msg]")
 暂停等待用户输入矩形第二个角点的坐标
 * getdist
-** (getdist [pt] [msg])
+** (getdist [pt] "[msg]")
 暂停以等待用户输入距离
 * getenv
-** (getenv variable-name)
+** (getenv "variable-name")
 以字符串方式返回指定的环境变量的值
 * getfiled
 ** (getfiled title default ext flags)
@@ -323,28 +323,31 @@ flags:
 ** 示例
 (getfield "指定图片文件" "D:\\" "png" 8)
 * getint
-** (getint [msg])
+** (getint "[msg]")
 暂停以等待用户输入一个整数并返回该整数
 * getkword
-** (getkword [msg])
+** (getkword "[msg]")
 暂停以等待用户输入一个关键字并返回该关键字
 * getorient
-** (getorient [pt] [msg])
+** (getorient [pt] "[msg]")
 暂停以等待用户输入角度，并返回该角度
+pt 相对点
 * getpoint
-** (getpoint [pt] [msg])
+** (getpoint [pt] "[msg]")
 暂停以等待用户输入点，并返回该点
+pt 相对点
 * getreal
-** (getreal [msg])
+** (getreal "[msg]")
 暂停以让用户输入一个实数并返回该实数
 * getstring
-** (getstring [cr] [msg])
+** (getstring [cr] "[msg]")
 暂停以等待用户输入字符串，并返回该字符串
+cr : T or nil 控制输入的字符串能否含有空格。
 * get_tile
 ** (get_tile key)
 获取对话框指定控件的当前运行时的值
 * getvar
-** (getvar varname)
+** (getvar "varname")
 获取一个 AutoCAD 系统变量的值
 * 函数graphscr
 ** (graphscr)
@@ -373,7 +376,7 @@ flags:
 详见：
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * initget
-** (initget [bits] [string])
+** (initget [bits] "[string]")
 为随后的用户输入函数调用创建关键字
 * inters,求交点
 ** (inters pt1 pt2 pt3 pt4 [onseg])
@@ -433,7 +436,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 详见：
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * menucmd
-** (menucmd string)
+** (menucmd "string")
 发出菜单命令，或设置并检索菜单项状态
 * menugroup
 ** (menugroup groupname)
@@ -451,10 +454,10 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (namedobjdict)
 返回当前图形的命名对象词典的图元名，它是所有非图形对象的根
 * nentsel
-** (nentsel [msg])
+** (nentsel "[msg]")
 提示用户指定点来选择对象（图元），得到这个对象所指片段的对象名
 * nentselp
-** (nentselp [msg] [pt])
+** (nentselp "[msg]" [pt])
 在没有用户输入的情况下，本函数的功能与 nentsel 函数类似
 * new_dialog
 ** (new_dialog dlgname dcl_id [action [screen-pt]])
@@ -513,7 +516,7 @@ mode: "r" 读取 "w" 写 "a" 追加
 详见：
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * read
-** (read [string])
+** (read "[string]")
 返回字符串中的第一个表或第一个原子
 * read-line
 ** (read-line [file-desc])
@@ -537,7 +540,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (rtos number [mode [precision]])
 将数字转换成字符串
 * set,赋值到符号
-** (set sym expr)
+** (set 'sym expr)
 将引号中的符号名的值设置成一个表达式的值
 * setcfg
 ** (setcfg cfgname cfgval)
@@ -546,13 +549,14 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (setfunhelp c:fname [helpfile [topic [command]]])
 给帮助工具注册一个用户定义函数，这样，用户在请求该命令的帮助时，就会调用正确的帮助文件和主题
 * setq,赋值
-** (setq sym expr [sym expr] &rest)
+** (setq sym expr)
 将一个或多个符号的值设置为相应表达式的值
+[sym expr] 可以重复，以实现多个赋值
 * set_tile
-** (set_tile key value)
+** (set_tile "key" value)
 设置对话框控件的值
 * 函数setvar
-** (setvar varname value)
+** (setvar "varname" value)
 设置 AutoCAD 系统变量为指定值
 * setview
 ** (setview view_descriptor [vport_id])
@@ -576,7 +580,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (ssdel ename ss)
 从选择集中撤消对象（图元）
 * ssget,生成选择集
-** (ssget [sel-method] [pt1 [pt2]] [pt-list] [filter-list])
+** (ssget "[sel-method]" [pt1 [pt2]] [pt-list] [filter-list])
 根据选定对象创建选择集
 ** 用法
 *** 两点参数:c 反选 w 正选
@@ -627,13 +631,13 @@ gripset: 一般为 nil.
 ** (start_list key [operation [index]])
 开始处理对话框中的列表框或弹出式列表框中的列表
 * strcase,字母转大写,字母转小写
-** (strcase string [lcase])
+** (strcase "string" [lcase])
 返回所有字母大写的字符串(如果 lcase 不为 nil 则小写)
 * strcat,组合字符串
-** (strcat [string [string] &rest])
+** (strcat "string" "[strings]")
 返回从左到右拼接后的字符串
 * strlen,字符串长度
-** (strlen [string] &rest)
+** (strlen "[string]" &rest)
 以整数形式返回一个字符串中字符的个数(不一定是字节长度)
 unicode版本每个字的长度为 1. 
 * subst,替换表项,替换表元素
@@ -642,7 +646,7 @@ unicode版本每个字的长度为 1.
 详见：
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * substr,求子串
-** (substr string start [length])
+** (substr "string" start [length])
 返回字符串中的一个子字符串,字符串中的第一个字符的位置为 1
 * 函数tablet
 ** (tablet code [row1 row2 row3 direction])
@@ -704,7 +708,7 @@ from to:
 ** (vports)
 返回表示当前视口配置的视口描述符表
 * wcmatch,字符匹配
-** (wcmatch string pattern)
+** (wcmatch "string" pattern)
 将模式字符串与某指定的字符串进行匹配比较
 ** 通配符
 #（pound） 匹配任何单个数字。
@@ -725,7 +729,7 @@ from to:
 ** (write-char num [file-desc])
 将一个字符写到屏幕上或一个已打开的文件中
 * write-line
-** (write-line string [file-desc])
+** (write-line "string" [file-desc])
 将字符串写到屏幕上或一个已打开的文件中
 * xdroom
 ** (xdroom ename)
@@ -827,7 +831,7 @@ from to:
 ** (caaaar lst)
 第4级子表的第一个元素
 * vl-string->list
-** (vl-string->list  string)
+** (vl-string->list  "string")
 将字符串转换为字符代码表
 * vl-princ-to-string
 ** (vl-princ-to-string  data)
@@ -1006,10 +1010,10 @@ from to:
 ** (vl-sort-i  list comparison-function)
 根据给定的比较函数对表中的元素排序，并返回元素的索引号
 * vl-string-elt
-** (vl-string-elt string position)
+** (vl-string-elt "string" position)
 返回字符串中指定位置字符的 ASCII 表示
 * vl-string-left-trim
-** (vl-string-left-trim char-set string)
+** (vl-string-left-trim char-set "string")
 返回从源字符串首端开始，挨个删除所提供的字符集中的字符(遇到不属于字符集中的则结束)后的字符串
 * vl-string-mismatch
 ** (vl-string-mismatch str1 str2 [pos1 pos2 ignore-case-p])
@@ -1018,13 +1022,13 @@ from to:
 ** (vl-string-position char-code str [start-pos [from-end-p]])
 在字符串中查找具有指定 ASCII 码的字符
 * vl-string-right-trim
-** (vl-string-right-trim char-set string)
+** (vl-string-right-trim char-set "string")
 返回从源字符串尾端开始，挨个删除所提供的字符集中的字符(遇到不属于字符集中的则结束)后的字符串
 * vl-string-search
-** (vl-string-search pattern string [start-pos])
+** (vl-string-search pattern "string" [start-pos])
 在字符串中搜索指定子串
 * vl-string-subst
-** (vl-string-subst new-str pattern string [start-pos])
+** (vl-string-subst new-str pattern "string" [start-pos])
 返回从头起或从指定位置起，替换一次子字符串后的字符串
 * vl-string-translate
 ** (vl-string-translate source-set dest-set str)
