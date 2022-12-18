@@ -28,23 +28,16 @@ AutoLISP action expression
 警告：仅在Windows上支持。
 指定滑块的增量控件使用的值。
 
-Incremental distance to move
-Warn:Supported on Windows only.
-Specifies the value used by the slider's incremental controls.
 * children_alignment
 ** row, column, radio_row, radio_column, boxed_row, boxed_column, boxed_radio_row, boxed_radio_column
 框集子级的对齐
 指定框集中所有框件的默认对齐方式（类似于对齐方式）。
 
-Alignment of a cluster's children
-Specifies the default alignment (similar to alignment) for all tiles in a cluster.
 * children_fixed_height
 ** row, column, radio_row, radio_column, boxed_row, boxed_column, boxed_radio_row, boxed_radio_column
 在布局期间，框集子级的高度不会增长
 指定框集中所有框件的默认高度（类似于高度）。
 
-Height of a cluster's children doesn't grow during layout
-Specifies the default height (similar to height) for all tiles in a cluster.
 * children_fixed_width
 ** row, column, radio_row, radio_column, boxed_row, boxed_column, boxed_radio_row, boxed_radio_column
 框集的子级宽度在布局期间不会增长
@@ -60,27 +53,20 @@ Specifies the default height (similar to height) for all tiles in a cluster.
 警告：仅在Windows上支持。
 指定允许用户在编辑框中输入的最大字符数。
 
-Maximum number of characters users can enter
-Warn:Supported on Windows only.
-Specifies the maximum number of characters a user is allowed to enter in the edit box.
 * edit_width
 ** edit_box, popup_list
 框件的编辑（输入）部分的宽度
 以字符宽度单位指定框的编辑（输入）部分的宽度，即edit_box图块的实际框部分。
-Width of the edit (input) portion of the tile
-Specifies the width in character-width units of the edit (input) portion of the box—the actual boxed portion of the edit_box tile.
 * fixed_height
 ** All tiles
 布局期间高度不会增长
 指定是否允许框件的高度填充可用空间。
-Height doesn't grow during layout
-Specifies if a tile's height is allowed to fill the available space.
+
 * fixed_width
 ** All tiles
 布局期间宽度不增长
 指定是否允许框件的宽度填充可用空间。
-Width doesn't grow during layout
-Specifies if a tile's width is allowed to fill the available space.
+
 * fixed_width_font
 ** list_box, popup_list
 以固定间距字体显示文本
@@ -114,8 +100,6 @@ Specifies if a tile's width is allowed to fill the available space.
 ** All active tiles
 框件最初已启用
 指定框件最初是否可用。
-Tile is initially enabled
-Specifies whether or not the tile is initially available.
 * is_tab_stop
 ** All active tiles
 框件是制表位
@@ -126,14 +110,11 @@ Specifies whether or not the tile is initially available.
 ** All active tiles
 应用程序使用的磁贴名称
 指定程序用于引用此特定磁贴的名称。
-Tile name used by the application
-Specifies a name that the program uses to refer to this specific tile.
 * label
 ** boxed_row, boxed_column, boxed_radio_row, boxed_radio_column, button, dialog, edit_box, list_box, popup_list, radio_button, text, toggle
 互动程序的显示标签
 指定框件中显示的文本。
-Displayed label of the tile
-Specifies the text displayed within the tile.
+
 * layout Attribute
 ** slider
 滑块是水平还是垂直
@@ -178,21 +159,17 @@ Specifies the text displayed within the tile.
 * tab_truncate
 ** list_box, popup_list
 截断大于相关制表位的文本
-
 警告：仅在Windows上支持。
-
 指定如果列表框或弹出列表中的文本大于关联的制表位，则是否截断该文本。
 
 * value
 ** Text, active tiles (except buttons and image buttons)
 框件的初始值
-
 指定框件的初始值。可能的值是带引号的字符串。
 
 * width
 ** All tiles
 框件的宽度
-
 指定框件的宽度。
 
 
