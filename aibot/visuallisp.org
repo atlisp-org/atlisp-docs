@@ -47,7 +47,7 @@ com接口(true,真,-1)
 1/acTextCell -> 文本
 2/acBlockCell -> 块,设置指定行和列的单元格类型。
 * vla-InsertRows
-** (vla-GetPlotStyleTableNames object row Height Rows)
+** (vla-InsertRows object row Height Rows)
 在表格中插入行。
 * vla-GetPlotStyleTableNames
 ** (vla-GetPlotStyleTableNames object)
@@ -4369,7 +4369,7 @@ WCS坐标值指定UCS、图块、配置或光栅图像的原点。
 * vla-put-ScaleLineweights
 ** (vla-put-ScaleLineweights Object value)
 设定当打印布局时线宽是否要和其余的元素一起调整比例。
-* !vla-put-SCMCommandMode
+* vla-put-SCMCommandMode
 ** (vla-put-SCMCommandMode Object value)
 判断命令模式下（正在执行命令）在绘图区中按一下鼠标右键的功能。
 
