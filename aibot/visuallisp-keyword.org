@@ -1,0 +1,45 @@
+* acDegreeMinuteSeconds
+枚举常数,角度格式,该值等于1,在某些vla函数里面调用
+* :vlax-null
+com接口(null)
+* vla-object
+** (= 'vla-object (type obj))
+vla对象(= 'vla-object (type obj))
+* :vlax-false
+com接口(false,假,0)
+* :vlax-true
+com接口(true,真,-1)
+* :constants-prefix
+** (vlax-import-type-library :tlb-filename filename [:methods-prefix mprefix :properties-prefix pprefix :constants-prefix  cprefix])
+指示符号，指示函数 vlax-import-type-library 的参数 cprefix 
+* :properties-prefix
+** (vlax-import-type-library :tlb-filename      filename [:methods-prefix    mprefix  :properties-prefix pprefix  :constants-prefix  cprefix])
+指示符号，指示函数 vlax-import-type-library 的参数 pprefix
+* :methods-prefix
+** (vlax-import-type-library  :tlb-filename      filename [:methods-prefix    mprefix  :properties-prefix pprefix  :constants-prefix  cprefix])
+指示符号，指示函数 vlax-import-type-library 的参数 mprefix 
+* :tlb-filename
+** (vlax-import-type-library  :tlb-filename      filename [:methods-prefix    mprefix  :properties-prefix pprefix  :constants-prefix  cprefix])
+指示符号，指示函数 vlax-import-type-library 的参数 filename
+* variant,变体
+调用 ActiveX 或 Visuallisp 时使用的数据类型。
+vlax-vbEmpty (0) - 未初始化
+vlax-vbNull (1) - Contains no valid data
+vlax-vbInteger (2) - 整型
+vlax-vbLong (3) - 长整型
+vlax-vbSingle (4) - 单精度浮点数
+vlax-vbDouble (5) - 双精度浮点数
+vlax-vbString (8) - 字符串
+vlax-vbObject (9) - 对象
+vlax-vbBoolean (11) - 布尔
+vlax-vbArray (8192) - 数组
+
+nil -- vlax-vbEmpty
+:vlax-null -- vlax-vbNull
+integer -- vlax-vbLong
+real -- vlax-vbDouble
+string -- vlax-vbString
+VLA-object -- vlax-vbObject
+:vlax-true/:vlax-false -- vlax-vbBoolean
+variant -- Same as the type of initial value
+vlax-make-safearray -- vlax-vbArray

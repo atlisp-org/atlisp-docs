@@ -1,0 +1,1458 @@
+* Activate
+Makes the specified drawing active.
+
+* Add
+Creates a member object and adds it to the appropriate collection.
+
+* Add3DFace
+Creates a 3DFace object given four vertices.
+
+* Add3DMesh
+Creates a free-form 3D mesh, given the number of points in the M and N directions and the coordinates of the points in the M and N directions.
+
+* Add3DPoly
+Creates a 3D polyline from the given array of coordinates.
+
+* AddArc
+Creates an arc given the center, radius, start angle, and end angle of the arc.
+
+* AddAttribute
+Creates an attribute definition at the given location with the specified properties.
+
+* AddBox
+Creates a 3D solid box with edges parallel to the axes of the WCS.
+
+* AddCircle
+Creates a circle given a center point and radius.
+
+* AddCone
+Creates a 3D solid cone with the base on the XY plane of the WCS.
+
+* AddCustomInfo
+Adds a custom property field at the end of the existing list of fields.
+
+* AddCustomObject
+Creates a custom object.
+
+* AddCylinder
+Creates a 3D solid cylinder whose base is on the XY plane of the WCS.
+
+* AddDim3PointAngular
+Creates an angular dimension using 3 points.
+
+* AddDimAligned
+Creates an aligned dimension object.
+
+* AddDimAngular
+Creates an angular dimension for an arc, two lines, or a circle.
+
+* AddDimArc
+Creates an arc length dimension for an arc.
+
+* AddDimDiametric
+Creates a diametric dimension for a circle or arc given the two points on the diameter and the length of the leader line.
+
+* AddDimOrdinate
+Creates an ordinate dimension given the definition point and the leader endpoint.
+
+* AddDimRadial
+Creates a radial dimension for the selected object at the given location.
+
+* AddDimRadialLarge
+Creates a jogged radial dimension for an arc, circle, or polyline arc segment.
+
+* AddDimRotated
+Creates a rotated linear dimension.
+
+* AddEllipse
+Creates an ellipse in the XY plane of the WCS given the center point, a point on the major axis, and the radius ratio.
+
+* AddEllipticalCone
+Creates a 3D solid elliptical cone on the XY plane of the WCS given the Center, MajorRadius, MinorRadius, and Height.
+
+* AddEllipticalCylinder
+Creates a 3D solid elliptical cylinder whose base is on the XY plane of the WCS, given the Center, MajorRadius, MinorRadius, and Height.
+
+* AddExtrudedSolid
+Creates an extruded solid given the profile, height, and taper angle.
+
+* AddExtrudedSolidAlongPath
+Creates an extruded solid given the profile and an extrusion path.
+
+* AddFitPoint
+Adds the fit point to the spline at a given index.
+
+* AddHatch
+Creates a Hatch object.
+
+* AddItems
+Adds one or more objects to the specified selection set.
+
+* AddLeader
+Creates a leader line based on the provided coordinates or adds a new leader cluster to the MLeader object.
+
+* AddLeaderLine
+Adds a leader line to the leader cluster with specified index.
+
+* AddLeaderLineEx
+Adds a leader line to the leader cluster.
+
+* AddLightWeightPolyline
+Creates a lightweight polyline from a list of vertices.
+
+* AddLine
+Creates a line passing through two points.
+
+* AddMenuItem
+Adds a popup menu item to a popup menu.
+
+* AddMInsertBlock
+Inserts an array of blocks.
+
+* AddMLeader
+Creates an mleader line, given coordinates.
+
+* AddMLine
+Creates multiple lines passing through an array of points.
+
+* AddMText
+Creates an MText entity in a rectangle defined by the insertion point and width of the bounding box.
+
+* AddObject
+Adds an object to a named dictionary.
+
+* AddPoint
+Creates a Point object at a given location.
+
+* AddPolyfaceMesh
+Creates a polyface mesh from a list of vertices.
+
+* AddPolyline
+Creates a polyline from a list of vertices.
+
+* AddPViewport
+Adds a paper space viewport, given the center, height, and width.
+
+* AddRaster
+Creates a new raster image based on an existing image file.
+
+* AddRay
+Creates a ray passing through two unique points.
+
+* AddRegion
+Creates a region from a set of entities. The given entities must form a closed coplanar region.
+
+* AddRevolvedSolid
+Creates a revolved solid, given the region around an axis.
+
+* AddSection
+Creates a section plane.
+
+* AddSeparator
+Adds a separator to an existing menu or toolbar.
+
+* AddShape
+Creates a Shape object based on a template identified by name, at the given insertion point, scale factor, and rotation.
+
+* AddSolid
+Creates a 2D solid polygon.
+
+* AddSphere
+Creates a sphere given the center and radius.
+
+* AddSpline
+Creates a quadratic or cubic NURBS (nonuniform rational B-spline) curve.
+
+* AddSubMenu
+Adds a submenu to an existing menu.
+
+* AddTable
+Adds a table to a drawing.
+
+* AddText
+Creates a single line of text.
+
+* AddTolerance
+Creates a tolerance entity.
+
+* AddToolbarButton
+Adds a toolbar item to a toolbar at a specified position.
+
+* AddTorus
+Creates a torus at the given location.
+
+* AddTrace
+Creates a Trace object from an array of points.
+
+* AddVertex
+Adds a vertex to a lightweight polyline or a section.
+
+* AddWedge
+Creates a wedge with edges parallel to the axes given the length, width, and height.
+
+* AddXLine
+Creates an xline (an infinite line) passing through two specified points.
+
+* AddXRecord
+Creates an XRecord object in any dictionary.
+
+* AngleFromXAxis
+Gets the angle of a line from the X axis.
+
+* AngleToReal
+Converts an angle as a string to a real (double) value.
+
+* AngleToString
+Converts an angle from a real (double) value to a string.
+
+* AppendInnerLoop
+Appends an inner loop to the hatch.
+
+* AppendItems
+Appends one or more entities to the specified group.
+
+* AppendOuterLoop
+Appends an outer loop to the hatch.
+
+* AppendVertex
+Appends a vertex to the end of a 3DPolyline, Polyline, or PolygonMesh object.
+
+* ArrayPolar
+Creates a polar array of objects given a NumberOfObjects, AngleToFill, and CenterPoint.
+
+* ArrayRectangular
+Creates a 2D or 3D rectangular array of objects.
+
+* AttachExternalReference
+Attaches an external reference (xref) to the drawing.
+
+* AttachToolbarToFlyout
+Attaches a toolbar to a toolbar button defined as a flyout.
+
+* AuditInfo
+Evaluates the integrity of the drawing.
+* Bind
+Binds an external reference (xref) to a drawing.
+
+* Block
+Returns the block of a SortentsTable object.
+
+* Boolean
+Performs a Boolean operation (union, intersect, or subtract) between the object and another 3DSolid or Region object.
+
+
+* CheckInterference
+Checks for interference between two solids and, if specified, creates a solid from the interference.
+
+* Clear
+Clears the specified selection set of all items.
+
+* ClearSubSelection
+Removes a subselection set of cells from a table.
+
+* ClearTableStyleOverrides
+Clears table style overrides.
+
+* ClipBoundary
+Specifies the clipping boundary for a raster image or an underlay.
+
+* Close
+Closes the specified drawing, or all open drawings.
+
+* ConvertToAnonymousBlock
+Converts a dynamic block to a regular anonymous block.
+
+* ConvertToStaticBlock
+Converts a dynamic block to a regular named block.
+
+* Copy
+Duplicates the given object to the same location.
+
+* CopyFrom
+Copies the settings for a dimension style, layout, or plot configuration.
+
+* CopyObjects
+Duplicates multiple objects (deep cloning).
+
+* CopyProfile
+Copies the specified profile.
+
+* CreateCellStyle
+Creates a cell style with the given name.
+
+* CreateCellStyleFromStyle
+Creates a cell style from a given name.
+
+* CreateContent
+Creates new content in a cell.
+
+* CreateJog
+Creates a jog on the section plane.
+
+* CreateTypedArray
+Creates a variant that contains an array of typed arguments.
+
+* Delete
+Deletes a specified object or a set of saved layer settings.
+
+* DeleteCellContent
+Deletes the cell content in the specified row and column.
+
+* DeleteCellStyle
+Deletes a cell style.
+
+* DeleteColumns
+Deletes columns from a table.
+
+* DeleteConfiguration
+Deletes a viewport configuration.
+
+* DeleteContent
+Deletes content of a cell.
+
+* DeleteFitPoint
+Deletes the fit point of a spline at a given index.
+
+* DeleteProfile
+Deletes the specified profile.
+
+* DeleteRows
+Deletes rows from a table.
+
+* Detach
+Detaches an external reference (xref) from a drawing.
+
+* Display
+Toggles the display control of the PViewport object on or off.
+
+* DisplayPlotPreview
+Displays the Plot Preview dialog box with the full view preview.
+
+* DistanceToReal
+Converts a distance from a string to a real (double) value.
+
+* Dock
+Docks the toolbar to the owning frame window.
+
+* ElevateOrder
+Elevates the order of the spline to the given order.
+
+* EnableMergeAll
+Controls cell merging.
+
+* EndUndoMark
+Marks the end of a block of operations.
+
+* Erase
+Erases all the objects in a selection set.
+
+* Eval
+Evaluates an expression in VBA.
+
+* Evaluate
+Evaluates the given hatch or leader.
+
+* Explode
+Explodes the compound object into subentities.
+
+* Export
+Exports an AutoCAD drawing or a group of saved layer settings to a file.
+
+* ExportProfile
+Exports the active profile so it can be shared with other users.
+
+* FieldCode
+Returns a text string containing field codes.
+
+* Float
+Floats the toolbar.
+
+* FormatValue
+Gets the formatted text string for the specified row and column.
+
+* GenerateLayout
+Generates the layout of a table.
+
+* GenerateSectionGeometry
+Generates 2D or 3D section geometry.
+
+* GenerateUsageData
+Generates data specifying whether a layer is in use.
+
+* GetAcadState
+Gets an AcadState object to monitor the state of AutoCAD from out-of-process applications.
+
+* GetAlignment
+Returns the cell alignment for a row type.
+
+* GetAlignment2
+Gets the cell alignment.
+
+* GetAllProfileNames
+Gets all available profiles for the system.
+
+* GetAngle
+Gets the angle specified. Considers the setting of the ANGBASE system variable.
+
+* GetAttachmentPoint
+Returns the attachment point for the specified row and column.
+
+* GetAttributes
+Gets the attributes in the block reference.
+
+* GetAutoScale
+Returns the value specifying whether auto scale is used in the specified row and column.
+
+* GetAutoScale2
+Gets the auto scale flag value for a cell.
+
+* GetBackgroundColor
+Returns the background color value for the specified row type.
+
+* GetBackgroundColor2
+Returns the background color value for the specified cell style.
+
+* GetBackgroundColorNone
+Returns the value specifying that there is no background color for the specified row type.
+
+* GetBitmaps
+Gets the large and small bitmaps used as icons for the toolbar item.
+
+* GetBlockAttributeValue
+Gets the attribute value in the block content with an attribute definition id.
+
+* GetBlockAttributeValue2
+Gets the attribute value associated to a specified block cell.
+
+* GetBlockRotation
+Returns the block rotation angle for the specified row and column.
+
+* GetBlockScale
+Returns the block scale value for the specified row and column.
+
+* GetBlockTableRecordId
+Returns the block table record ID of the cell.
+
+* GetBlockTableRecordId2
+Gets the block table record object id associated to a specified cell.
+
+* GetBoundingBox
+Gets two points of a box enclosing the specified object.
+
+* GetBreakHeight
+Get the break height of the table.
+
+* GetBulge
+Gets the bulge value at a given index of the polyline.
+
+* GetCanonicalMediaNames
+Gets all available canonical media names for the specified plot device.
+
+* GetCellAlignment
+Returns the alignment for the cell in the specified row and column.
+
+* GetCellBackgroundColor
+Returns the background true color value of a cell in the specified row and column.
+
+* GetCellBackgroundColorNone
+Returns the value specifying that there is no background color for the specified row and column.
+
+* GetCellClass
+Gets the class of a cell style.
+
+* GetCellContentColor
+Returns the true color value for the content of the specified row and column.
+
+* GetCellContentColor2
+Gets the true color value for a cell.
+
+* GetCellDataType
+Gets the cell data and unit type for the given row and column.
+
+* GetCellExtents
+Returns the cell extents for the specified row and column.
+
+* GetCellFormat
+Gets the cell format for the given row and column.
+
+* GetCellGridColor
+Returns the grid color value for an edge of the specified row and column.
+
+* GetCellGridLineWeight
+Returns the grid lineweight value for an edge of the specified row and column.
+
+* GetCellGridVisibility
+Returns the grid visibility value for an edge of the specified row and column.
+
+* GetCellState
+Get a cell's state.
+
+* GetCellStyle
+Gets the cell style.
+
+* GetCellStyleOverrides
+Returns the cell style overrides.
+
+* GetCellStyles
+Gets an array of all the named cell styles associated with the table style.
+
+* GetCellTextHeight
+Returns the text height for the specified row and column.
+
+* GetCellTextStyle
+Returns the text style name for the specified row and column.
+
+* GetCellType
+Returns the cell type for the specified row and column.
+
+* GetCellValue
+Gets the cell value for the given row and column.
+
+* GetColor
+Returns the true color value for the specified row type.
+
+* GetColor2
+Returns the color value for the specified named cell style.
+
+* GetColumnName
+Gets a column's name.
+
+* GetColumnWidth
+Returns the column width for the column at the specified column index in the table.
+
+* GetConstantAttributes
+Gets the constant attributes in the block or external reference.
+
+* GetContentColor
+Returns the true color value for the specified row type.
+
+* GetContentColor2
+Returns the color value for the specified content located at the provided row, column, and content index.
+
+* GetContentLayout
+Get a cell's content layout.
+
+* GetContentType
+Get a cell's content type.
+
+* GetControlPoint
+Gets the coordinates of the control point at a given index.
+
+* GetCorner
+Gets a corner of a rectangle.
+
+* GetCustomByIndex
+Returns the custom property name (key) and value that correspond to an index value.
+
+* GetCustomByKey
+Returns the custom property value that corresponds to a name (key) value.
+
+* GetCustomData
+Gets the custom data associated to a cell.
+
+* GetCustomScale
+Gets the custom scale for a layout or plot configuration.
+
+* GetDataFormat
+Gets a cell's format.
+
+* GetDataType
+Returns the data type and unit type for the specified row type.
+
+* GetDataType2
+Gets the row data type and unit type for cell content.
+
+* GetDistance
+Gets the distance from the prompt line or a selected set of points on the screen.
+
+* GetDoglegDirection
+Gets the dog leg direction of the specific leader.
+
+* GetDynamicBlockProperties
+Gets the properties of the dynamic block.
+
+* GetEntity
+Gets an object interactively.
+
+* GetExtensionDictionary
+Gets the extension dictionary associated with an object.
+
+* GetFieldId
+Returns the field ObjectID of the specified cell.
+
+* GetFieldId2
+Gets the field object id associated to the specified cell.
+
+* GetFitPoint
+Gets the fit point of a spline at a given index.
+
+* GetFont
+Gets the definition data of the font for the TextStyle.
+
+* GetFormat
+Returns the format for the specified row type.
+
+* GetFormat2
+Gets the format of a cell style.
+
+* GetFormula
+Get a cell's formula.
+
+* GetFullDrawOrder
+Returns all of the objects in a block, sorted by draw order with the bottom object first.
+
+* GetGridColor
+Returns the grid color value for a grid linetype and row type.
+
+* GetGridColor2
+Gets the grid color for the specified cell.
+
+* GetGridDoubleLineSpacing
+Gets the line spacing value for the specified cell.
+
+* GetGridLineStyle
+Get a cell's grid line style.
+
+* GetGridLinetype
+Gets the ObjectId of the linetype with the grid linetype value for the specified cell.
+
+* GetGridLineWeight
+Returns a grid lineweight value for a grid linetype and row type.
+
+* GetGridLineWeight2
+Gets the grid lineweight value for the specified cell.
+
+* GetGridSpacing
+Gets the grid spacing for the viewport.
+
+* GetGridVisibility
+Returns a grid visibility value for the specified grid linetype and row type.
+
+* GetGridVisibility2
+Returns the grid visibility value for the specified cell.
+
+* GetHasFormula
+Check if a cell has a formula.
+
+* GetInput
+Converts a user's input string into a keyword index.
+
+* GetInteger
+Gets an integer value from the user.
+
+* GetInterfaceObject
+Accepts a program ID and attempts to load it into AutoCAD as an in-process server.
+
+* GetInvisibleEdge
+Gets the visibility setting for an edge of a 3DFace object at a given index.
+
+* GetIsCellStyleInUse
+Gets the usage status of a cell style.
+
+* GetIsMergeAllEnabled
+Gets value of the "merge all" property.
+
+* GetKeyword
+Gets a keyword string from the user.
+
+* GetLeaderIndex
+Gets the index of leader cluster which the specified leader line is in.
+
+* GetLeaderLineIndexes
+Gets the indexes of leader lines of the specific leader.
+
+* GetLeaderLineVertices
+Gets the vertices of leaderLine with specified index.
+
+* GetLiveSection
+Gets the live section plane that is currently enabled in the database.
+
+* GetLocaleMediaName
+Gets the localized version of the canonical media name.
+
+* GetLoopAt
+Gets the hatch loop at a given index.
+
+* GetMargin
+Get a cell's margin value.
+
+* GetMinimumColumnWidth
+Gets the minimum column width for the column at the specified column index in the table.
+
+* GetMinimumRowHeight
+Returns the minimum row height for the specified row.
+
+* GetName
+Gets the name (keyword) of an object in a dictionary.
+
+* GetObject
+Gets the object in a dictionary, given the name (keyword) of the object.
+
+* GetObjectIdString
+Returns an object's ID as a string.
+
+* GetOrientation
+Gets the angle specified. Ignores the setting of the ANGBASE system variable.
+
+* GetOverride
+Get a cell's overrides.
+
+* GetPaperMargins
+Gets the margins for the layout or plot configuration.
+
+* GetPaperSize
+Gets the width and height of the configured paper.
+
+* GetPlotDeviceNames
+Gets all available plot device names.
+
+* GetPlotStyleTableNames
+Gets all available plot style table names.
+
+* GetPoint
+Gets the point selected in AutoCAD.
+
+* GetProjectFilePath
+Gets the directory in which AutoCAD looks for external reference files.
+
+* GetReal
+Gets a real (double) value from the user.
+
+* GetRelativeDrawOrder
+Returns the objects specified, sorted by the draw order, with the bottom object first.
+
+* GetRemoteFile
+Downloads the file specified by a URL.
+
+* GetRotation
+Gets the rotation value for a cell or cell style.
+
+* GetRowHeight
+Returns the row height for the row at the specified row index in the table.
+
+* GetRowType
+Returns the row type for the specified row.
+
+* GetScale
+Gets the scale value for a cell.
+
+* GetSectionTypeSettings
+Gets the section type settings object.
+
+* GetSnapSpacing
+Gets the snap spacing for the viewport.
+
+* GetString
+Gets a string from the user.
+
+* GetSubEntity
+Gets an object or subentity interactively.
+
+* GetSubSelection
+Returns the row and column indexes of the cells in a subselection set.
+
+* GetText
+Returns the text value for the specified row and column.
+
+* GetTextHeight
+Returns the text height for the specified row type.
+
+* GetTextHeight2
+Gets the text height for a cell.
+
+* GetTextRotation
+Returns the text rotation for the specified row and column.
+
+* GetTextString
+Gets the text value of a cell.
+
+* GetTextStyle
+Gets the text style name for the specified row types.
+
+* GetTextStyle2
+Gets the text style name for a cell.
+
+* GetTextStyleId
+Gets the ObjectId for the text style of the named cell style.
+
+* GetUCSMatrix
+Gets the transformation matrix consisting of UCS coordinate system data.
+
+* GetUniqueCellStyleName
+Gets a unique cell style name with the base name that is passed as the prefix.
+
+* GetUniqueSectionName
+Finds a unique section plane name.
+
+* GetValue
+Gets the value of a cell.
+
+* GetVariable
+Gets the current setting of an AutoCAD system variable.
+
+* GetVertexCount
+Gets the number of vertices in the specified leader line.
+
+* GetWeight
+Gets the weight of the control point at a given index.
+
+* GetWidth
+Gets the start and end width for a polyline.
+
+* GetWindowToPlot
+Gets the coordinates that define the portion of the layout to plot.
+
+* GetXData
+Gets the extended data (XData) associated with an object.
+
+* GetXRecordData
+Gets the extended record data (XRecordData) associated with a dictionary.
+
+* HandleToObject
+Gets the object that corresponds to the given handle.
+
+* Highlight
+Sets the highlight status for the given object, or for all objects in a given selection set.
+
+* HitTest
+Performs a hit test on the section plane or table cell at the specified location.
+
+* Import
+Imports a drawing or a group of saved layer settings from a file.
+
+* ImportProfile
+Imports a profile created by another user.
+
+* InitializeUserInput
+Initializes the GetKeyword method.
+
+* InsertBlock
+Inserts a drawing file or a named block that has been defined in the current drawing.
+
+* InsertColumns
+Inserts columns in a table.
+
+* InsertColumnsAndInherit
+Insert columns into a table from another table.
+
+* InsertInMenuBar
+Inserts the popup menu into the AutoCAD menu bar at a specified location.
+
+* InsertLoopAt
+Inserts a loop at a given index of a hatch.
+
+* InsertMenuInMenuBar
+Inserts a menu into the AutoCAD menu bar.
+
+* InsertRows
+Inserts rows in a table.
+
+* InsertRowsAndInherit
+Insert rows into a table from another table.
+
+* IntersectWith
+Gets the points where one object intersects another object in the drawing.
+
+* IsContentEditable
+Check if a cell has editable content.
+
+* IsEmpty
+Determines if a cell is empty based on its row and column position.
+
+* IsFormatEditable
+Check if a cell has editable format.
+
+* IsMergeAllEnabled
+Checks if cell merging is on.
+
+* IsMergedCell
+Returns the merge status of a cell.
+
+* IsRemoteFile
+Returns the URL from which a remote file was downloaded.
+
+* IsURL
+Validates a given URL.
+
+* Item
+Gets the member object at a given index in a collection, group, or selection set.
+
+* LaunchBrowserDialog
+Launches a dialog box in which a user can enter a URL.
+
+* ListARX
+Gets the currently loaded ObjectARX applications.
+
+* Load
+Loads a menu group from a customization (CUIx) file or the definition of a linetype from a library (LIN) file.
+
+* LoadARX
+Loads the specified ObjectARX application.
+
+* LoadDVB
+Loads the specified AutoCAD VBA project file.
+
+* LoadShapeFile
+Loads a shape file (SHX).
+
+* MergeCells
+Merges cells in a table.
+
+* Mirror
+Creates a mirror-image copy of a planar object around an axis.
+
+* Mirror3D
+Creates a mirror image of the given object about a plane.
+
+* Move
+Moves an object along a vector.
+
+* MoveAbove
+Moves objects above the target in the draw order.
+
+* MoveBelow
+Moves objects below the target in the draw order.
+
+* MoveContent
+Moves the index content of a cell.
+
+* MoveToBottom
+Moves objects to the bottom of the draw order.
+
+* MoveToTop
+Moves objects to the top of the draw order.
+
+* New
+Creates a new document in SDI mode.
+
+* NumCustomInfo
+Returns the number of custom property fields that have been set.
+
+* ObjectIDToObject
+Gets the object that corresponds to the given object ID.
+
+* Offset
+Creates a new object at a specified offset distance from an existing object.
+
+* Open
+Opens an existing drawing file (DWG) and makes it the active document.
+
+* PlotToDevice
+Plots a layout to a device.
+
+* PlotToFile
+Plots a layout to the specified file.
+
+* PolarPoint
+Gets the point at a specified angle and distance from a given point.
+
+* PostCommand
+Posts a command string to the document for execution when the document enters an idle state.
+
+* Prompt
+Displays a prompt on the command line.
+
+* PurgeAll
+Removes unused named references such as unused blocks or layers from the document.
+
+* PurgeFitData
+Purges the fit data of a spline.
+
+* PutRemoteFile
+Uploads a file to a remote FTP location specified by a URL known to AutoCAD.
+
+* Quit
+Closes the drawing file and exits the AutoCAD application.
+
+* RealToString
+Converts a real (double) value to a string.
+
+* RecomputeTableBlock
+Updates a table block.
+
+* RefreshPlotDeviceInfo
+Updates the plot, canonical media, and plot style table information to reflect the current system state.
+
+* Regen
+Regenerates the entire drawing and recomputes the screen coordinates and view resolution for all objects.
+
+* Reload
+Reloads the external reference (xref).
+
+* Remove
+Removes a named object from the dictionary.
+
+* RemoveAllOverrides
+Removes all the overrides for a cell.
+
+* RemoveCustomByIndex
+Deletes the custom property name (key) and value that correspond to an index value.
+
+* RemoveCustomByKey
+Deletes the custom property value that corresponds to a name (key) value.
+
+* RemoveFromMenuBar
+Removes the popup menu from the AutoCAD menu bar.
+
+* RemoveItems
+Removes specified items from the group or selection set.
+
+* RemoveLeader
+Removes the leader cluster with specified index.
+
+* RemoveLeaderLine
+Removes the leaderLine with specified index.
+
+* RemoveMenuFromMenuBar
+Removes the popup menu, as specified from the collection, from the AutoCAD menu bar.
+
+* RemoveVertex method (ActiveX)
+Removes a vertex in the section line.
+
+* Rename
+Renames an item in a dictionary or a set of saved layer settings.
+
+* RenameCellStyle
+Renames a cell style.
+
+* RenameProfile
+Renames the specified profile.
+
+* Replace
+Replaces an item in the dictionary by a given item.
+
+* ReselectSubRegion
+Returns subentities of a selection set in a table.
+
+* ResetBlock
+Resets the dynamic block to the default state.
+
+* ResetCellValue
+Reset the cell value for the given row and column.
+
+* ResetProfile
+Resets the value in the specified profile to its default values.
+
+* Restore
+Restores a group of layer property settings.
+
+* Reverse
+Reverses the direction of a spline.
+
+* Rotate
+Rotates an object around a base point.
+
+* Rotate3D
+Rotates an object around a 3D axis. Point1 and Point2 define the line that becomes the axis of rotation.
+
+* RunMacro
+Runs a VBA macro from the Application object.
+
+* Save
+Saves a document or group of layer property settings; no longer supported for menu groups.
+
+* SaveAs
+Saves the document to a specified file; no longer supported for menu groups.
+
+* ScaleEntity
+Scales an object equally in the X, Y, and Z directions.
+
+* SectionSolid
+Creates a region that represents the intersection of a plane defined by three points and the solid.
+
+* Select
+Selects objects and places them into a selection set, or selects a cell in a table.
+
+* SelectAtPoint
+Selects an object passing through a given point and places it into a selection set.
+
+* SelectByPolygon
+Selects objects within a fence and adds them to the selection set.
+
+* SelectOnScreen
+Prompts the user to pick an object from the screen.
+
+* SelectSubRegion
+Selects a set of cells in a table.
+
+* SendCommand
+Sends a command string from a VB or VBA application to the document for processing.
+
+* SendModelessOperationEnded
+Indicates a modeless operation has ended.
+
+* SendModelessOperationStart
+Indicates a modeless operation will start.
+
+* SetAlignment
+Sets a cell alignment for the specified row types.
+
+* SetAlignment2
+Sets the cell alignment.
+
+* SetAutoScale
+Sets the value specifying whether auto scale is used in the specified row and column.
+
+* SetAutoScale2
+Sets the auto-scale flag value for a cell.
+
+* SetBackgroundColor
+Sets a background color value for the specified row types.
+
+* SetBackgroundColor2
+Sets a background color value for the specified named cell style.
+
+* SetBackgroundColorNone
+Sets the value specifying whether there is no background color for the specified row types.
+
+* SetBitmaps
+Sets the large and small bitmaps used as icons for the toolbar item.
+
+* SetBlockAttributeValue
+Sets the attribute value for an attribute in a block contained within a MLeader or Table object.
+
+* SetBlockAttributeValue2
+Sets the attribute value associated to a specified block cell.
+
+* SetBlockRotation
+Sets the block rotation angle for the specified row and column.
+
+* SetBlockScale
+Sets the block scale value for the specified row and column.
+
+* SetBlockTableRecordId
+Sets the block table record ID of the cell.
+
+* SetBlockTableRecordId2
+Sets the block table record object id associated to a specified cell.
+
+* SetBreakHeight
+Sets the break height for the table.
+
+* SetBulge
+Sets the bulge for the polyline at the given index.
+
+* SetCellAlignment
+Sets the cell alignment for the specified row and column.
+
+* SetCellBackgroundColor
+Sets the background true color value for the specified row and column.
+
+* SetCellBackgroundColorNone
+Sets the value specifying that there is no background color for the specified row and column.
+
+* SetCellClass
+Sets the class of a cell style.
+
+* SetCellContentColor
+Sets the true color value for the content of the specified row and column.
+
+* SetCellDataType
+Sets the cell data and unit type for the given row and column.
+
+* SetCellFormat
+Sets the cell format for the given row and column.
+
+* SetCellGridColor
+Sets the grid color value for an edge of the specified row and column.
+
+* SetCellGridLineWeight
+Sets the grid lineweight value for an edge of the specified row and column.
+
+* SetCellGridVisibility
+Sets the grid visibility value for an edge of the specified row and column.
+
+* SetCellState
+Sets the state for a cell.
+
+* SetCellStyle
+Sets a cell style to the cell.
+
+* SetCellTextHeight
+Sets the text height for the specified row and column.
+
+* SetCellTextStyle
+Sets the text style name for the specified row and column.
+
+* SetCellType
+Sets the cell type for the specified row and column.
+
+* SetCellValue
+Sets the cell value for the given row and column.
+
+* SetCellValueFromText
+Sets the cell value for the given row and column.
+
+* SetColor
+Sets the true color value for the specified row types.
+
+* SetColor2
+Sets the color value for the specified named cell style.
+
+* SetColorBookColor
+Specifies the color name from an existing color book.
+
+* SetColumnName
+Sets a name to a column.
+
+* SetColumnWidth
+Sets the column width for the column at the specified column index in the table.
+
+* SetContentColor
+Sets the true color value for the specified row types.
+
+* SetContentColor2
+Sets the color value for the cell content based on the row, column, and content location.
+
+* SetContentLayout
+Sets the content layout for a cell.
+
+* SetControlPoint
+Sets the control point of the spline at a given index.
+
+* SetCustomByIndex
+Sets the custom property name (key) and value that correspond to an index value.
+
+* SetCustomByKey
+Sets the custom property value that corresponds to a name (key) value.
+
+* SetCustomData
+Sets the custom data associated to a cell.
+
+* SetCustomScale
+Sets the custom scale for a layout or plot configuration.
+
+* SetDatabase
+Associates an AutoCAD database with the LayerStateManager object.
+
+* SetDataFormat
+Sets the format for the cell.
+
+* SetDataType
+Sets the data type and unit type for the specified row type.
+
+* SetDataType2
+Sets the row data type and unit type for the specified row type and content.
+
+* SetDoglegDirection
+Sets the dog leg direction of the specific leader.
+
+* SetFieldId
+Sets the field object ID of the specified cell.
+
+* SetFieldId2
+Sets the field object id associated to a specified cell.
+
+* SetFitPoint
+Sets a fit point for the spline.
+
+* SetFont
+Sets the definition data of the font for the TextStyle.
+
+* SetFormat
+Sets the format for the specified row type.
+
+* SetFormat2
+Sets the format of a cell style.
+
+* SetFormula
+Sets the formula for a cell.
+
+* SetGridColor
+Sets the grid color value for the specified grid linetypes and row types.
+
+* SetGridColor2
+Sets the grid color for the specified cell.
+
+* SetGridDoubleLineSpacing
+Sets the line spacing value for the specified cell.
+
+* SetGridLineStyle
+Sets the grid line style for a cell.
+
+* SetGridLinetype
+Sets the object with the grid linetype value for the specified cell.
+
+* SetGridLineWeight
+Sets the grid lineweight value for the specified grid linetypes and row types.
+
+* SetGridLineWeight2
+Sets the grid lineweight value for the specified cell.
+
+* SetGridSpacing
+Sets the grid spacing for the viewport.
+
+* SetGridVisibility
+Sets the grid visibility value for the specified grid linetype and row types.
+
+* SetGridVisibility2
+Sets the grid visibility value for the specified cell or cell style.
+
+* SetInvisibleEdge
+Sets the visibility state of an edge at a given index.
+
+* SetLayoutsToPlot
+Specifies the layout or layouts to plot.
+
+* SetLeaderLineVertices
+Sets the vertices of leader line with specified index.
+
+* SetMargin
+Sets the margin for a cell.
+
+* SetNames
+Specifies the color name and book name of the color.
+
+* SetOverride
+Sets the overrides for a cell.
+
+* SetPattern
+Sets the pattern name and pattern type for the hatch.
+
+* SetProjectFilePath
+Sets the directory in which AutoCAD looks for external reference files.
+
+* SetRelativeDrawOrder
+Sets the relative draw order specified, with the bottom objects first.
+
+* SetRGB
+Specifies the RGB values of the True Color.
+
+* SetRotation
+Sets the rotation value for a cell.
+
+* SetRowHeight
+Sets the height for the row at the specified row index in the table.
+
+* SetScale
+Sets the scale value for a cell.
+
+* SetSnapSpacing
+Sets the snap spacing for the viewport.
+
+* SetSubSelection
+Sets the row and column indices of the cells in a subselection set.
+
+* SetTemplateId
+Sets a template using an object ID to the table style.
+
+* SetText
+Sets the text value for the specified row and column.
+
+* SetTextHeight
+Sets the text height for the specified row types.
+
+* SetTextHeight2
+Sets the text height for a cell.
+
+* SetTextRotation
+Sets the text rotation for the specified row and column.
+
+* SetTextString
+Sets the text value of a cell.
+
+* SetTextStyle
+Sets the text style name for the specified row types.
+
+* SetTextStyle2
+Sets the text style name for a cell.
+
+* SetTextStyleId
+Sets a text style using an object ID to a named cell style.
+
+* SetToolTip
+Sets the tooltip for a cell.
+
+* SetValue
+Sets the value of a cell.
+
+* SetValueFromText
+Sets the value of a cell by parsing the text.
+
+* SetVariable
+Sets the value of an AutoCAD system variable.
+
+* SetView
+Sets the view in a viewport to a saved view in the Views collection object.
+
+* SetWeight
+Sets the weight of the control point at a given index.
+
+* SetWidth
+Sets the start and end width of a polyline, given the segment index.
+
+* SetWindowToPlot
+Sets the coordinates that define the portion of the layout to plot.
+
+* SetXData
+Sets the extended data (XData) associated with an object.
+
+* SetXRecordData
+Sets the extended record data (XRecordData) associated with a dictionary.
+
+* SliceSolid
+Creates a slice of the 3DSolid object given three points that define the plane.
+
+* Split
+Splits a viewport into the given number of views.
+
+* StartBatchMode
+Starts printing in batch mode. (Obsolete)
+
+* StartUndoMark
+Marks the beginning of a block of operations.
+
+* SwapOrder
+Swaps the draw order positions of two objects.
+
+* SyncModelView
+Updates the viewport parameters with the parameters in the associated model view.
+
+* TransformBy
+Moves, scales, or rotates an object given a 4x4 transformation matrix.
+
+* TranslateCoordinates
+Translates a point from one coordinate system to another.
+
+* Unload
+Unloads the menu group or external reference.
+
+* UnloadARX
+Unloads the specified AutoCAD ARX application.
+
+* UnloadDVB
+Unloads the specified AutoCAD VBA project file.
+
+* UnmergeCells
+Splits merged cells in a table.
+
+* Update
+Updates the object to the drawing screen.
+
+* UpdateMTextAttribute
+Updates attribute from the multiline text and multiline text from an attribute.
+
+* WBlock
+Writes out the given selection set as a new drawing file.
+
+* ZoomAll
+Zooms the current viewport to display the entire drawing.
+
+* ZoomCenter
+Zooms the current viewport to a specified center point and magnification.
+
+* ZoomExtents
+Zooms the current viewport to the drawing extents.
+
+* ZoomPickWindow
+Zooms the current viewport to a window defined by points picked on the screen.
+
+* ZoomPrevious
+Zooms the current viewport to its previous extents.
+
+* ZoomScaled
+Zooms the current viewport to given scale factor.
+
+* ZoomWindow
+Zooms the current viewport to the area specified by two opposite corners of a rectangle.
+

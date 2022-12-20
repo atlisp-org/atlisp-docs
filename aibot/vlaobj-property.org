@@ -1,0 +1,2556 @@
+* Action
+Specifies the security-related operations to be performed on a drawing.
+
+* Active
+Determines if the document is the active document for the session.
+
+* ActiveDimStyle
+Specifies the active dimension style.
+
+* ActiveDocument
+Specifies the active document (drawing file).
+
+* ActiveInvProject
+Specifies the active Inventor project being used by the Model Documentation feature. (Internal Use Only)
+
+* ActiveLayer
+Specifies the active layer.
+
+* ActiveLayout
+Specifies the active layout.
+
+* ActiveLinetype
+Specifies the active linetype for the drawing.
+
+* ActiveMaterial
+Specifies the current default material for this document.
+
+* ActiveProfile
+Specifies the active profile for the AutoCAD session.
+
+* ActivePViewport
+Specifies the active paper space viewport for the drawing.
+
+* ActiveSelectionSet
+Gets the active selection set for the drawing.
+
+* ActiveSpace
+Toggles the active space between paper space and model space.
+
+* ActiveTextStyle
+Specifies the active text style for the drawing.
+
+* ActiveUCS
+Specifies the active UCS for the drawing.
+
+* ActiveViewport
+Specifies the active viewport for the drawing.
+
+* ADCInsertUnitsDefaultSource
+Determines the units to use automatically for objects in DesignCenter for a source drawing that does not have assigned insert units.
+
+* ADCInsertUnitsDefaultTarget
+Determines the units to use automatically for objects in DesignCenter for a target drawing that does not have assigned insert units.
+
+* AdjustForBackground
+Determines whether the underlay colors are adjusted for the current background color.
+
+* Alignment
+Specifies both the vertical and horizontal alignments for the attribute, attribute reference, or text.
+
+* AlignmentPointAcquisition
+Specifies how AutoAlignment points are acquired.
+
+* AlignSpace
+Specifies the AlignSpace of the mleaderstyle.
+
+* AllowedValues
+Specifies the allowed values for the property.
+
+* AllowLongSymbolNames
+Determines if symbol names may include extended character sets, or more than 31 characters.
+
+* AllowManualHeights
+Toggles the manual heights in a table.
+
+* AllowManualPositions
+Toggles the manual positions in a table.
+
+* AltFontFile
+Specifies the location of the font file to use if AutoCAD cannot locate the original font and an alternate font is not specified in the font mapping file.
+
+* Altitude
+Specifies the elevation of the position marker.
+
+* AltRoundDistance
+Specifies the rounding of alternate units.
+
+* AltSubUnitsFactor
+Specifies the scale factor for the alternate dimension when unit changes to sub-unit.
+
+* AltSubUnitsSuffix
+Specifies the text suffix for the alternate dimension when unit changes to sub-unit.
+
+* AltSuppressLeadingZeros
+Specifies the suppression of leading zeros in alternate dimension values.
+
+* AltSuppressTrailingZeros
+Specifies the suppression of trailing zeros in alternate dimension values.
+
+* AltSuppressZeroFeet
+Specifies the suppression of a zero foot measurement in alternate dimension values.
+
+* AltSuppressZeroInches
+Specifies the suppression of a zero inch measurement in alternate dimension values.
+
+* AltTabletMenuFile
+Specifies the path for an alternate menu to swap with the standard AutoCAD tablet menu.
+
+* AltTextPrefix
+Specifies a prefix for the alternate dimension measurement for all dimension types except angular.
+
+* AltTextSuffix
+Specifies a suffix for the alternate dimension measurement for all dimension types except angular.
+
+* AltTolerancePrecision
+Specifies the precision of tolerance values in alternate dimensions.
+
+* AltToleranceSuppressLeadingZeros
+Specifies the suppression of leading zeros in alternate dimension values.
+
+* AltToleranceSuppressTrailingZeros
+Specifies the suppression of trailing zeros in alternate tolerance values.
+
+* AltToleranceSuppressZeroFeet
+Specifies the suppression of a zero foot measurement in alternate tolerance values.
+
+* AltToleranceSuppressZeroInches
+Specifies the suppression of a zero inch measurement in alternate tolerance values.
+
+* AltUnits
+Enables dimensioning in alternate units.
+
+* AltUnitsFormat
+Specifies the units format for alternate units of all dimensions except angular.
+
+* AltUnitsPrecision
+Specifies the number of decimal places in alternate units.
+
+* AltUnitsScale
+Specifies the scale factor for alternate units.
+
+* Angle
+Gets the angle of a line.
+
+* AngleFormat
+Specifies the unit format for angular dimensions.
+
+* AngleVertex
+Specifies the angle vertex for the three-point angular dimension.
+
+* Annotation
+Specifies the annotation object for a leader.
+
+* Annotative
+Specifies the Annotative of the mleaderstyle.
+
+* Application
+Gets the Application object.
+
+* ArcEndParam
+Specifies the end parameter of the arc.
+
+* ArcLength
+Gets the length of the arc.
+
+* ArcPoint
+Specifies a point on the arc.
+
+* ArcSmoothness
+Specifies the smoothness of circles, arcs, and ellipses.
+
+* ArcStartParam
+Specifies the start parameter of the arc.
+
+* Area
+Specifies the enclosed area of an arc, circle, ellipse, hatch, lightweight polyline, polyline, region, or planar-closed spline.
+
+* Arrowhead1Block
+Specifies the block to use as the custom arrowhead for the first end of the dimension line.
+
+* Arrowhead1Type
+Specifies the type of arrowhead for the first end of the dimension line.
+
+* Arrowhead2Block
+Specifies the block to use as the custom arrowhead for the second end of the dimension line.
+
+* Arrowhead2Type
+Specifies the type of arrowhead for the second end of the dimension line.
+
+* ArrowheadBlock
+Specifies the block to use as the custom arrowhead for a radial dimension or leader line.
+
+* ArrowheadSize
+Specifies the size of dimension line arrowheads, leader and mleader line arrowheads, and hook lines.
+
+* ArrowheadType
+Specifies the type of arrowhead for the radial dimension, leader, or mleader.
+
+* ArrowSize
+Specifies the arrow size of the mleaderstyle.
+
+* ArrowSymbol
+Specifies the arrow symbol of the mleaderstyle.
+
+* AssociativeHatch
+Specifies whether the hatch is associative.
+
+* AttachmentPoint
+Specifies the attachment point for an MText object.
+
+* Author
+Specifies the author of the drawing.
+
+* AutoAudit
+Specifies whether AutoCAD should perform an audit after you render a DXFIN or DXBIN interchange command.
+
+* AutomaticPlotLog
+Specifies whether to automatically save a Plot or Publish log.
+
+* AutoSaveInterval
+Specifies an automatic save interval in minutes.
+
+* AutoSavePath
+Specifies the path for the file that is created if you enable automatic save using the AutoSaveInterval property.
+
+* AutoSnapAperture
+Toggles the display of the AutoSnap aperture.
+
+* AutoSnapApertureSize
+Specifies the size of the AutoSnap aperture.
+
+* AutoSnapMagnet
+Toggles the AutoSnap magnet.
+
+* AutoSnapMarker
+Toggles the AutoSnap marker.
+
+* AutoSnapMarkerColor
+Specifies the color of the AutoSnap marker.
+
+* AutoSnapMarkerSize
+Specifies the size of the AutoSnap marker.
+
+* AutoSnapToolTip
+Toggles the AutoSnap tooltips.
+
+* AutoTrackingVecColor
+Specifies the color of the auto tracking vector.
+
+* AutoTrackTooltip
+Toggles the display of the AutoTrack tooltips.
+
+* AxisDirection
+Displays the direction of the axis of revolution.
+
+* AxisPosition
+Specifies the start point of the axis of revolution.
+
+* BackgroundColor
+Specifies the background color of the hatch object.
+
+* BackgroundFill
+Specifies whether multiline text has a background fill.
+
+* BackgroundLinesColor
+Specifies the color of background lines.
+
+* BackgroundLinesHiddenLine
+Specifies the hidden line visibility of background lines.
+
+* BackgroundLinesLayer
+Specifies the layer of background lines.
+
+* BackgroundLinesLinetype
+Specifies the linetype of background lines.
+
+* BackgroundLinesLinetypeScale
+Specifies the linetype scale of background lines.
+
+* BackgroundLinesLineweight
+Specifies the line weight of background lines.
+
+* BackgroundLinesPlotStyleName
+Specifies the plot style name of background lines.
+
+* BackgroundLinesVisible
+Specifies the visibility of background lines.
+
+* Backward
+Specifies the direction of text.
+
+* Bank
+Specifies whether or not the profile curve twists and rotates along a 3D path.
+
+* BasePoint
+Specifies the point through which the ray or construction line passes.
+
+* BaseRadius
+Specifies the base radius of the helix.
+
+* BatchPlotProgress
+Gets the current status of the batch plot, or terminates the batch plot.
+
+* BeepOnError
+Specifies if AutoCAD should sound an alarm beep when it detects an invalid entry.
+
+* BigFontFile
+Specifies the name of the Big Font file associated with the text or attribute.
+
+* BitFlags
+Specifies the bit flag values of a style.
+
+* Block
+Specifies the block associated with the layout or multileader style.
+
+* BlockColor
+Specifies the block color of the mleaderstyle.
+
+* BlockConnectionType
+The types of block connection a multileader can have.
+
+* BlockRotation
+Specifies the block rotation value of an mleader style.
+
+* Blocks
+Gets the Blocks collection for the drawing.
+
+* BlockScale
+Specifies the BlockScale of the mleader style.
+
+* BlockScaling
+Specifies the scaling allowed for the block.
+
+* Blue
+Specifies the blue component of the True Color.
+
+* BookName
+Specifies the book name (if any) of the color.
+
+* BottomHeight
+Specifies elevation of section plane bottom extents relative to the object’s elevation.
+
+* BreaksEnabled
+Specifies if table breaks are enabled.
+
+* BreakSize
+Specifies the BreakSize of the mleader style.
+
+* BreakSpacing
+Specifies the break spacing for a table.
+
+* Brightness
+Specifies the current brightness value of an image.
+
+* CanonicalMediaName
+Specifies the paper size by name.
+
+* Caption
+Gets the text that the user sees displayed for the application or a menu item.
+
+* CategoryName
+Specifies the category name of a view.
+
+* Center
+Specifies the center of an arc, circle, ellipse, view, or viewport.
+
+* CenterMarkSize
+Specifies the size of the center mark for radial and diameter dimensions.
+
+* CenterPlot
+Specifies the centering of the plot on the media.
+
+* CenterPoint
+Specifies the center of the arc.
+
+* CenterType
+Specifies the type of center mark for radial and diameter dimensions.
+
+* Centroid
+Gets the center of area or mass for a region or solid.
+
+* Check
+Specifies the check status for the popup menu item.
+
+* ChordPoint
+Specifies the chord point for the arc.
+
+* Circumference
+Specifies the circumference of a circle.
+
+* Clipped
+Determines if the viewport has been clipped.
+
+* ClippingEnabled
+Enables or disables the clipping boundary.
+
+* Closed
+Specifies whether the 3D polyline, lightweight polyline, lofted surface, polyline, or spline is open or closed.
+
+* Closed2
+Specifies whether the spline is open or closed.
+
+* Color
+Specifies the color of an object or layer.
+
+* ColorBookPath
+Sets the color book path.
+
+* ColorIndex
+Specifies the color index.
+
+* ColorMethod
+Specifies the color method.
+
+* ColorName
+Specifies the name (if any) of the color.
+
+* ColorScheme
+Specifies the color scheme to display point cloud.
+
+* Columns
+Specifies the number of columns in a block array or table.
+
+* ColumnSpacing
+Specifies the spacing of the columns in a block array.
+
+* ColumnWidth
+Specifies the uniform width of all columns in the table.
+
+* CommandDisplayName
+Specifies the displayed command name for a button on the toolbar.
+
+* Comment
+Specifies the comment to be included with a digital signature.
+
+* Comments
+Specifies the comments for the block or drawing.
+
+* ConfigFile
+Gets the location of the configuration file used to store hardware device driver information.
+
+* ConfigName
+Specifies the plotter configuration name.
+
+* Constant
+Specifies whether the attribute or attribute reference is constant or not.
+
+* ConstantWidth
+Specifies a global width for all segments in a polyline.
+
+* Constrain
+Controls which property is constrained when editing other property values.
+
+* ContentBlockName
+The name of the content block.
+
+* ContentBlockType
+The type of the content block.
+
+* ContentType
+Specifies the content type.
+
+* ContinuousPlotLog
+Specifies whether to save a continuous Plot log.
+
+* ContourLinesPerSurface
+Specifies the number of contour lines (isolines) per surface on objects.
+
+* Contrast
+Specifies the current contrast value of an image or underlay.
+
+* ControlPoints
+Specifies the control points of a spline.
+
+* Coordinate
+Specifies the coordinate of a single vertex in the object.
+
+* Coordinates
+Specifies the coordinates for each vertex in the object.
+
+* Count
+Gets the number of items in the object.
+
+* CreaseLevel
+Specifies the crease level for the subentity of the SubD mesh.
+
+* CreaseType
+Specifies the crease type to apply to the subentity of a SubD mesh.
+
+* CreateBackup
+Specifies the use of a backup file.
+
+* CurrentSectionType
+Specifies the current section type.
+
+* CursorSize
+Specifies the crosshairs size as a percentage of the screen size.
+
+* CurveTangencyLinesColor
+Specifies the color of curve tangency lines.
+
+* CurveTangencyLinesLayer
+Specifies the layer of curve tangency lines.
+
+* CurveTangencyLinesLinetype
+Specifies the linetype of curve tangency lines.
+
+* CurveTangencyLinesLinetypeScale
+Specifies the linetype scale of curve tangency lines.
+
+* CurveTangencyLinesLineweight
+Specifies the lineweight of curve tangency lines.
+
+* CurveTangencyLinesPlotStyleName
+Specifies the plot style name of curve tangency lines.
+
+* CurveTangencyLinesVisible
+Specifies the visibility of curve tangency lines.
+
+* CustomDictionary
+Specifies a custom dictionary to use if you have one.
+
+* CustomIconPath
+Specifies the search path for custom icons.
+
+* CustomScale
+Specifies the custom scale factor for the viewport.
+
+* CvHullDisplay
+Specifies if the control vertices (CV) Hull is displayed for the NURBS surface.
+
+* Database
+Gets the database in which the object belongs.
+
+* DecimalSeparator
+Specifies the character to be used as the decimal separator in decimal dimension and tolerance values.
+
+* DefaultInternetURL
+Specifies the default Internet address.
+
+* DefaultOutputDevice
+Specifies the default output device for new layouts and model space.
+
+* DefaultPlotStyleForLayer
+Specifies the default plot style for Layer 0 for new drawings or drawings created with earlier releases of AutoCAD that have never been saved in AutoCAD 2000 or later format.
+
+* DefaultPlotStyleForObjects
+Specifies the default plot style name for newly created objects.
+
+* DefaultPlotStyleTable
+Specifies the default plot style table to attach to new drawings.
+
+* DefaultPlotToFilePath
+Specifies the default path for plotting to a file.
+
+* Degree
+Gets the degree of the spline's polynomial representation.
+
+* Degree2
+Specifies the degree of the spline's polynomial representation.
+
+* Delta
+Gets the delta of a line.
+
+* DemandLoadARXApp
+Specifies whether AutoCAD demand-loads a third-party application if a drawing contains custom objects.
+
+* Description
+Specifies the description of an object.
+
+* DestinationBlock
+Specifies the destination block for section generation.
+
+* DestinationFile
+Specifies the destination file for section generation.
+
+* Diameter
+Specifies the diameter of a circle.
+
+* Dictionaries
+Gets the Dictionaries collection for the document.
+
+* DimConstrDesc
+Specifies a description for the constraint.
+
+* DimConstrExpression
+Specifies the expression or value of the constraint.
+
+* DimConstrForm
+Specifies the type of constraint.
+
+* DimConstrName
+Specifies a name for the constraint.
+
+* DimConstrReference
+Specifies the parameter is a reference constraint.
+
+* DimConstrValue
+Specifies the value of the constraint.
+
+* DimensionLineColor
+Specifies the color of the dimension line for a dimension, leader, or tolerance object.
+
+* DimensionLineExtend
+Specifies the distance the dimension line extends beyond the extension line when oblique strokes are drawn instead of arrowheads.
+
+* DimensionLinetype
+Specifies the linetype of the dimension line.
+
+* DimensionLineWeight
+Specifies the lineweight for the dimension lines.
+
+* DimLine1Suppress
+Specifies the suppression of the first dimension line.
+
+* DimLine2Suppress
+Specifies the suppression of the second dimension line.
+
+* DimLineInside
+Specifies the display of dimension lines inside the extension lines only.
+
+* DimLineSuppress
+Specifies the suppression of the dimension line for radial dimensions.
+
+* DimStyles
+Gets the DimStyles collection for the document.
+
+* DimTxtDirection
+Specifies the direction of the dimension text.
+
+* Direction
+Specifies the viewing direction for a 3D visualization of the drawing, or the direction vector of the table.
+
+* DirectionVector
+Specifies the direction for the ray, tolerance, or xline through a vector.
+
+* Display
+Gets the PreferencesDisplay object.
+
+* DisplayGrips
+Controls the display of selection set grips for the Stretch, Move, Rotate, Scale, and Mirror grip modes.
+
+* DisplayGripsWithinBlocks
+Controls the assignment of grips within blocks.
+
+* DisplayLayoutTabs
+Specifies whether to display the Model and layout tabs in the drawing editor.
+
+* DisplayLocked
+Specifies whether the viewport is locked.
+
+* DisplayOLEScale
+Determines whether the OLE scaling dialog is displayed when OLE objects are inserted into a drawing.
+
+* DisplayScreenMenu
+Specifies whether to display the screen menu on the right side of the drawing window. (Obsolete)
+
+* DisplayScrollBars
+Specifies whether to display scroll bars at the bottom and right sides of the drawing window.
+
+* DisplaySilhouette
+Controls whether silhouette curves of solid objects are displayed in Wireframe mode.
+
+* DockedVisibleLines
+Specifies the number of lines of text to display in the command window. (Obsolete)
+
+* DockStatus
+Specifies whether the toolbar is docked or floating.
+
+* Document
+Gets the document (drawing) in which the object belongs.
+
+* Documents
+Gets the Documents collection.
+
+* DogLegged
+The status of the dog-leg.
+
+* DoglegLength
+The length of the dog-leg.
+
+* Drafting
+Gets the PreferencesDrafting object.
+
+* DrawingDirection
+Specifies the direction in which the mtext paragraph is to be read.
+
+* DrawLeaderOrderType
+Specifies the drawLeaderOrderType of the mleaderstyle.
+
+* DrawMLeaderOrderType
+Specifies the drawMLeaderOrderType of the mleaderstyle.
+
+* DriversPath
+Specifies the directory in which AutoCAD looks for ADI device drivers for the video display, pointing devices, printers, and plotters.
+
+* DWFFormat
+Specifies the format of the DWF file.
+
+* EdgeExtensionDistances
+Specifies the distance by which the edges of surface are extended to merge to an existing surface.
+
+* EffectiveName
+Specifies the original block name.
+
+* Elevation
+Specifies the current elevation of the hatch, polyline, or section.
+
+* ElevationModelSpace
+Specifies the elevation setting in model space.
+
+* ElevationPaperSpace
+Specifies the elevation setting in paper space.
+
+* Enable
+Enables the popup menu item. Specifies the name of the object.
+
+* EnableBlockRotation
+Specifies the EnableBlockRotation of the mleaderstyle.
+
+* EnableBlockScale
+Specifies the EnableBlockScale of the mleaderstyle.
+
+* EnableBreak
+Toggles table breaking.
+
+* EnableDogleg
+Specifies the enableDogleg of the mleaderstyle.
+
+* EnableFrameText
+Specifies the EnableFrameText of the mleaderstyle.
+
+* EnableLanding
+Specifies the enableLanding of the mleaderstyle.
+
+* EnableStartupDialog
+Specifies whether a startup dialog box is displayed when AutoCAD is launched or a new drawing is created.
+
+* EndAngle
+Specifies the end angle of an arc or ellipse.
+
+* EndDraftAngle
+Specifies the draft angle of the surface for the last cross section.
+
+* EndDraftMagnitude
+Specifies the draft magnitude of the surface for the last cross section.
+
+* EndParameter
+Specifies the end parameter for an ellipse.
+
+* EndPoint
+Specifies the endpoint for the arc, line, or ellipse.
+
+* EndSmoothContinuity
+Specifies the tangency and curvature of the last cross section.
+
+* EndSmoothMagnitude
+Specifies the size of the curve of the last cross section.
+
+* EndSubMenuLevel
+Specifies the last item in a submenu.
+
+* EndTangent
+Specifies the end tangent of the spline as a directional vector.
+
+* EnterpriseMenuFile
+Specifies the location of the enterprise customization (CUIx) file.
+
+* EntityColor
+Specifies the color value of the true color.
+
+* EntityTransparency
+Specifies the transparency value for the entity.
+
+* Explodable
+Specifies whether the block can be exploded.
+
+* ExtensionLineColor
+Specifies the color for dimension extension lines.
+
+* ExtensionLineExtend
+Specifies the distance the extension line extends beyond the dimension line.
+
+* ExtensionLineOffset
+Specifies the distance the extension lines are offset from the origin points.
+
+* ExtensionLineWeight
+Specifies the lineweight for the extension lines.
+
+* ExtLine1EndPoint
+Specifies the endpoint of the first extension line.
+
+* ExtLine1Linetype
+Specifies the linetype of the first extension line.
+
+* ExtLine1Point
+Specifies the origin of extension line 1.
+
+* ExtLine1StartPoint
+Specifies the start point of the first extension line.
+
+* ExtLine1Suppress
+Specifies the suppression of the first extension line.
+
+* ExtLine2EndPoint
+Specifies the endpoint of the second extension line.
+
+* ExtLine2Linetype
+Specifies the linetype of the second extension line.
+
+* ExtLine2Point
+Specifies the origin of extension line 2.
+
+* ExtLine2StartPoint
+Specifies the start point of the second extension line.
+
+* ExtLine2Suppress
+Specifies the suppression of the second extension line.
+
+* ExtLineFixedLen
+Set extension line fixed length.
+
+* ExtLineFixedLenSuppress
+Sets suppression of extension line fixed length On or Off.
+
+* FaceCount
+Returns the number of faces in the SubD mesh.
+
+* Fade
+Specifies the current fade value of a raster or underlay image.
+
+* FieldLength
+Specifies the field length of the attribute.
+
+* File
+Specifies the path to the underlay file.
+
+* Files
+Gets the PreferencesFiles object.
+
+* FirstSegmentAngleConstraint
+Specifies the FirstSegmentAngleConstraint of the mleaderstyle.
+
+* Fit
+Specifies the placement of text and arrowheads inside or outside extension lines, based on the available space between the extension lines.
+
+* FitPoints
+Specifies the fit points of a spline.
+
+* FitTolerance
+Refits the spline to the existing points with new tolerance values.
+
+* FloatingRows
+Specifies the number of rows for a floating toolbar.
+
+* FlowDirection
+Specifies whether the title and header rows are at the bottom or the top of the table.
+
+* Flyout
+Gets the toolbar associated with a flyout toolbar item.
+
+* FontFile
+Specifies the primary font file name and the path.
+
+* FontFileMap
+Specifies the location of the file that defines how AutoCAD should convert unfound fonts.
+
+* ForceLineInside
+Specifies whether a dimension line is drawn between the extension lines even when the text is placed outside the extension lines.
+
+* ForegroundLinesColor
+Specifies the color of foreground lines.
+
+* ForegroundLinesEdgeTransparency
+Specifies the edge transparency of foreground lines.
+
+* ForegroundLinesFaceTransparency
+Specifies the face transparency of foreground lines.
+
+* ForegroundLinesHiddenLine
+Specifies the hidden line visibility of foreground lines.
+
+* ForegroundLinesLayer
+Specifies the layer of foreground lines.
+
+* ForegroundLinesLinetype
+Specifies the linetype of foreground lines.
+
+* ForegroundLinesLinetypeScale
+Specifies the linetype scale of foreground lines.
+
+* ForegroundLinesLineweight
+Specifies the lineweight of foreground lines.
+
+* ForegroundLinesPlotStyleName
+Specifies the plot style name of foreground lines.
+
+* ForegroundLinesVisible
+Specifies the visibility of foreground lines.
+
+* FractionFormat
+Specifies the format of fractional values in dimensions and tolerances.
+
+* Freeze
+Specifies the freeze status of a layer.
+
+* FullCRCValidation
+Specifies whether a cyclic redundancy check (CRC) should be performed each time an object is read into the drawing.
+
+* FullName
+Gets the name of the application or document, including the path.
+
+* FullScreenTrackingVector
+Toggles the display of full-screen tracking vectors.
+
+* GenerationOptions
+Specifies the section generation options.
+
+* GeoImageBrightness
+Specifies the brightness value of the embedded image.
+
+* GeoImageContrast
+Specifies the contrast value of the embedded image.
+
+* GeoImageFade
+Specifies the current fade value of the embedded image.
+
+* GeoImageHeight
+Specifies the height of the embedded image.
+
+* GeoImagePosition
+Specifies the bottom left corner of the embedded image.
+
+* GeoImageWidth
+Specifies the width of the embedded image.
+
+* Geolocate
+Specifies whether the point cloud is geographically located.
+
+* GradientAngle
+Specifies the gradient angle.
+
+* GradientCentered
+Specifies whether the gradient is centered.
+
+* GradientColor1
+Specifies the start color of the gradient.
+
+* GradientColor2
+Specifies the end color of the gradient.
+
+* GradientName
+Specifies the pattern name of the gradient.
+
+* GraphicsWinLayoutBackgrndColor
+Specifies the background color for the paper space layouts.
+
+* GraphicsWinModelBackgrndColor
+Specifies the background color for the model space window.
+
+* Green
+Specifies the green component of the True Color.
+
+* GridOn
+Specifies the status of the viewport grid.
+
+* GripColorSelected
+Specifies the color of selected grips.
+
+* GripColorUnselected
+Specifies the color of unselected grips.
+
+* GripSize
+Specifies the size of grips.
+
+* Groups
+Gets the Groups collection for the document.
+
+* Handle
+Gets the handle of an object.
+
+* HasAttributes
+Specifies whether the block has any attributes in it.
+
+* HasExtensionDictionary
+Determines whether the object has an extension dictionary associated with it.
+
+* HasLeader
+Specifies whether the dimension has a leader.
+
+* HasSheetView
+Specifies whether the viewport is linked to a corresponding sheet view.
+
+* HasSubSelection
+Specifies whether the table contains a subselection set.
+
+* HasVpAssociation
+Specifies whether the view is associated with a paper space viewport.
+
+* HatchObjectType
+Specifies the type of the hatch, classic or gradient.
+
+* HatchStyle
+Specifies the hatch style.
+
+* HeaderSuppressed
+Specifies whether the header of the table is suppressed.
+
+* Height
+Changes the height of the object.
+
+* HelpFilePath
+Specifies the location of the AutoCAD Help file.
+
+* HelpString
+Specifies the Help string for the toolbar, toolbar item, or menu item.
+
+* History
+Specifies whether history is saved.
+
+* HistoryLines
+Specifies the number of lines of text in the text window to keep in memory.
+
+* HorizontalTextPosition
+Specifies the horizontal justification for dimension text.
+
+* HorzCellMargin
+Specifies the value of the horizontal margin of cells.
+
+* HWND
+Gets the window handle of the window frame.
+
+* HyperlinkBase
+Specifies the base address used for all relative links inserted within the drawing.
+
+* HyperlinkDisplayCursor
+Toggles the display of the hyperlink cursor and shortcut menu.
+
+* Hyperlinks
+Gets the Hyperlinks collection for an entity.
+
+* ImageFile
+Specifies the full path and file name of the raster image file.
+
+* ImageFrameHighlight
+Controls the display of raster images during selection.
+
+* ImageHeight
+Specifies the height of the raster image.
+
+* ImageVisibility
+Specifies whether image visibility is on or off.
+
+* ImageWidth
+Specifies the width of the raster image.
+
+* IncrementalSavePercent
+Specifies the percentage of wasted space allowed in a drawing file.
+
+* Index
+Specifies the index of the menu or toolbar item.
+
+* IndicatorFillColor
+Specifies color of section plane when shading is turned on.
+
+* IndicatorTransparency
+Specifies transparency of section plane when shading is turned on.
+
+* InsertionPoint
+Insertion point for a tolerance, text, block, or shape, and the origin (upper-left corner) of an OLE object.
+
+* InsUnits
+Specifies the insert units saved with the block.
+
+* InsUnitsFactor
+Specifies the conversion factor between block units and drawing units.
+
+* IntensityColorScheme
+Specifies the color scheme to use for displaying intensity values.
+
+* IntersectionBoundaryColor
+Specifies the color of intersection boundary.
+
+* IntersectionBoundaryDivisionLines
+Specifies whether division lines are shown in intersection boundary.
+
+* IntersectionBoundaryLayer
+Specifies the layer of intersection boundary.
+
+* IntersectionBoundaryLinetype
+Specifies the linetype of intersection boundary.
+
+* IntersectionBoundaryLinetypeScale
+Specifies the linetype scale of intersection boundary.
+
+* IntersectionBoundaryLineweight
+Specifies the lineweight of intersection boundary.
+
+* IntersectionBoundaryPlotStyleName
+Specifies the plot style name of intersection boundary.
+
+* IntersectionBoundaryVisible
+Specifies the visibility of intersection boundary.
+
+* IntersectionFillColor
+Specifies the color of intersection fill.
+
+* IntersectionFillFaceTransparency
+Specifies the face transparency of intersection fill.
+
+* IntersectionFillHatchAngle
+Specifies the hatch angle for intersection fill.
+
+* IntersectionFillHatchPatternName
+Specifies the hatch pattern name for intersection fill.
+
+* IntersectionFillHatchPatternType
+Specifies the hatch pattern type for intersection fill.
+
+* IntersectionFillHatchScale
+Specifies the hatch scale for intersection fill.
+
+* IntersectionFillHatchSpacing
+Specifies the hatch spacing for intersection fill.
+
+* IntersectionFillLayer
+Specifies the layer of intersection fill.
+
+* IntersectionFillLinetype
+Specifies the linetype of intersection fill.
+
+* IntersectionFillLinetypeScale
+Specifies the linetype scale of intersection fill.
+
+* IntersectionFillLineweight
+Specifies the lineweight of intersection fill.
+
+* IntersectionFillPlotStyleName
+Specifies the plot style name of intersection fill.
+
+* IntersectionFillVisible
+Specifies the visibility of intersection fill.
+
+* Invisible
+Specifies whether the attribute or attribute reference is invisible.
+
+* IsCloned
+Determines whether the source object in a CopyObjects operation has been cloned.
+
+* IsDynamicBlock
+Specifies whether this is a dynamic block.
+
+* IsLayout
+Determines whether the given block is a layout block.
+
+* ISOPenWidth
+Specifies the ISO pen width of an ISO hatch pattern.
+
+* IsOwnerXlated
+Determines whether the owning object in a CopyObjects operation has been translated.
+
+* IsPartial
+Specifies whether the dimension is for a partial arc.
+
+* IsPeriodic
+Determines whether the given spline is periodic.
+
+* IsPlanar
+Determines whether the given spline is planar.
+
+* IsPrimary
+Determines whether the source object in a CopyObjects operation was part of the primary set of objects being copied, or if it was simply owned by a member in the primary set.
+
+* IsQuiescent
+Checks whether AutoCAD is idle and ready to accept automation calls from out-of-process applications.
+
+* IsRational
+Determines whether the given spline is rational.
+
+* Issuer
+Specifies the issuer name of the digital certificate.
+
+* IsXRef
+Determines whether the given block is an XRef block.
+
+* ItemName
+Specifies the item of the underlay file.
+
+* JogAngle
+Specifies the jog angle.
+
+* JogLocation
+Specifies the jog location.
+
+* Justification
+Specifies the justification of the MLine.
+
+* Key
+The ObjectId of the source object in the CopyObjects operation.
+
+* KeyboardAccelerator
+Specifies the Windows standard or AutoCAD classic keyboard.
+
+* KeyboardPriority
+Controls how AutoCAD responds to the input of coordinate data.
+
+* Keywords
+Specifies the keywords you want to use to locate the drawing.
+
+* KnotParameterization
+Specifies the knot parameterization for a spline created by fit points.
+
+* Knots
+Gets the knot vector for a spline.
+
+
+* Label
+Specifies the content and formatting of menu items as they appear to the user.
+
+* LabelBlockId
+Returns and sets the label block ID associated with the viewport.
+
+* LandingGap
+Specifies the text landing gap.
+
+* LargeButtons
+Specifies whether the toolbar button is large or small.
+
+* LastHeight
+Specifies the last text height used.
+
+* LastSavedBy
+Specifies the name of the last person who modified the file.
+
+* Latitude
+Specifies the latitude of the position marker.
+
+* Layer
+Specifies the layer for an object.
+
+* LayerOn
+Specifies the state of a layer.
+
+* LayerPropertyOverrides
+Specifies whether the external reference or viewport has layer property overrides.
+
+* Layers
+Gets the Layers collection for the document.
+
+* LayerState
+Specifies the name of the layer state of the view.
+
+* Layout
+Specifies the layout associated with the model space, paper space, or block object.
+
+* LayoutCreateViewport
+Toggles the automatic creation of a viewport for new layouts.
+
+* LayoutCrosshairColor
+Specifies the color of the crosshairs and text for paper space layouts.
+
+* LayoutDisplayMargins
+Toggles the display of margins in layouts.
+
+* LayoutDisplayPaper
+Toggles the display of the paper background in layouts.
+
+* LayoutDisplayPaperShadow
+Toggles the display of the paper background shadow in layouts.
+
+* LayoutID
+Specifies the layout of the view.
+
+* Layouts
+Gets the Layouts collection for the document.
+
+* LayoutShowPlotSetup
+Toggles the display of the Plot Setup dialog when a new layout is created.
+
+* Leader1Point
+Specifies the origin of leader 1.
+
+* Leader2Point
+Specifies the origin of leader 2.
+
+* LeaderCount
+Gets the number of leader line clusters in this MLeader object.
+
+* LeaderLength
+Specifies the length of the leader on the diameter or radius dimension.
+
+* LeaderLineColor
+Specifies the color of the leader lines.
+
+* LeaderLinetype
+Specifies the type of the leader lines.
+
+* LeaderLineTypeId
+Specifies the linetype of leader lines of the mleaderstyle.
+
+* LeaderLineWeight
+Specifies the lineweight of the leader lines.
+
+* LeaderType
+Specifies the type of the leader.
+
+* Left
+Specifies the left edge of a toolbar.
+
+* Length
+Gets the length of an object.
+
+* LensLength
+Specifies the lens length used in perspective viewing.
+
+* Limits
+Specifies the drawing limits.
+
+* LinearScaleFactor
+Specifies a global scale factor for linear dimensioning measurements.
+
+* LineSpacingDistance
+Specifies the spacing of multiline text.
+
+* LineSpacingFactor
+Specifies the relative line spacing factor for the MText object.
+
+* LineSpacingStyle
+Specifies the line spacing style for the MText object.
+
+* Linetype
+Specifies the linetype of an object.
+
+* LinetypeGeneration
+Specifies the linetype generation of a 2D polyline or a lightweight polyline.
+
+* Linetypes
+Gets the Linetypes collection for the document.
+
+* LinetypeScale
+Specifies the linetype scale of an object.
+
+* Lineweight
+Specifies the lineweight of an individual object or the default lineweight for the drawing.
+
+* LineweightDisplay
+Specifies whether lineweights are displayed in model space for the drawing.
+
+* LiveSectionEnabled
+Turns live section on or off for this section object.
+
+* LoadAcadLspInAllDocuments
+Specifies whether acad.lsp is loaded at startup or with each drawing.
+
+* LocaleID
+Gets the locale ID of the current AutoCAD session.
+
+* Lock
+Locks or unlocks a layer.
+
+* LockAspectRatio
+Ensures that the width and height of the object stay in proportion.
+
+* Locked
+Specifies if the point cloud is locked.
+
+* LockPosition
+Specifies whether the attribute or attribute reference may be moved relative to the geometry in the block.
+
+* LogFileOn
+Specifies whether the contents of the text window are written to a log file.
+
+* LogFilePath
+Specifies the location for the log file.
+
+* Longitude
+Specifies the longitude of the position marker.
+
+* LowerLeftCorner
+Gets the lower-left corner of the current active viewport.
+
+* Macro
+Specifies the macro for the menu or toolbar item.
+
+* MainDictionary
+Specifies the current dictionary to use for spell checking.
+
+* MaintainAssociativity
+Specifies if a surface maintains its associativity with another surface.
+
+* MajorAxis
+Specifies the direction of the major axis of the ellipse.
+
+* MajorRadius
+Specifies the length of the major axis of the ellipse.
+
+* Mask
+Specifies the layer properties to be restored.
+
+* Material
+Specifies the name of the material.
+
+* Materials
+Returns the materials collection for the database.
+
+* MaxActiveViewports
+Specifies the maximum number of active viewports.
+
+* MaxAutoCADWindow
+Specifies whether the AutoCAD window should fill the entire screen area when you start.
+
+* MaxLeaderSegmentsPoints
+Specifies the maximum leader segments points of the mleaderstyle.
+
+* MClose
+Specifies whether the PolygonMesh is closed in the M direction.
+
+* MDensity
+Specifies the surface density of a PolygonMesh in the M direction.
+
+* Measurement
+Gets the measurement for the dimension.
+
+* MenuBar
+Gets the MenuBar object for the session.
+
+* MenuFile
+Specifies the location of the AutoCAD customization file for the session.
+
+* MenuFileName
+Gets the customization file name where the menu group is located.
+
+* MenuGroups
+Gets the MenuGroups collection for the session.
+
+* Menus
+Gets the PopupMenus collection.
+
+* MinimumTableHeight
+Specifies the minimum height of the table.
+
+* MinimumTableWidth
+Specifies the minimum width of the table.
+
+* MinorAxis
+Specifies the direction of the minor axis of an ellipse.
+
+* MinorRadius
+Specifies the length of the minor axis of the ellipse.
+
+* MLineScale
+Specifies the scale of the MLine.
+
+* Mode
+Specifies the mode of the attribute definition.
+
+* ModelCrosshairColor
+Specifies the color of the crosshairs and text for model space.
+
+* ModelSpace
+Gets the ModelSpace collection for the document.
+
+* ModelType
+Specifies whether a plot configuration applies to model space or to all layouts.
+
+* ModelView
+Returns and sets the model view associated with the viewport.
+
+* MomentOfInertia
+Gets the moment of inertia for the solid.
+
+* Monochrome
+Determines whether underlay is monochrome.
+
+* MRUNumber
+Specifies the number of most recently used files that is shown in the File menu.
+
+* MSpace
+Allows editing of the model from floating paper space viewports.
+
+* MTextAttribute
+Determines if the attribute is multiline.
+
+* MTextAttributeContent
+Gets the multiline attribute content.
+
+* MTextBoundaryWidth
+Determines the width of the text boundary for the multiline attribute.
+
+* MTextDrawingDirection
+Determines the drawing direction for the multiline attribute.
+
+* MVertexCount
+Gets the vertex count in the M direction for a PolygonMesh.
+
+* Name
+Specifies the name of the object.
+
+* NameNoMnemonic
+Specifies the name of the popup menu without the underscore mnemonic.
+
+* NClose
+Specifies whether the PolygonMesh is closed in the N direction.
+
+* NDensity
+Specifies the smooth surface density of a PolygonMesh in the N direction.
+
+* Normal
+Specifies the three-dimensional normal unit vector for the object.
+
+* Notes
+Specifies the notes for the position marker.
+
+* NumberOfControlPoints
+Gets the number of control points of the spline.
+
+* NumberOfCopies
+Specifies the number of copies to plot.
+
+* NumberOfFaces
+Gets the number of faces for the PolyfaceMesh.
+
+* NumberOfFitPoints
+Gets the number of fit points of the spline.
+
+* NumberOfLoops
+Gets the number of loops in the hatch boundary.
+
+* NumberOfVertices
+Gets the number of vertices for the PolyfaceMesh.
+
+* NumCellStyles
+Gets the number of cell styles a table has.
+
+* NumCrossSections
+Gets the number of cross-section curves used.
+
+* NumGuidePaths
+Gets the number of guide paths used.
+
+* NumVertices
+Gets the number of vertices in the section line.
+
+* NVertexCount
+Gets the vertex count in the N direction for a PolygonMesh.
+
+* ObjectID
+Gets the object ID.
+
+* ObjectName
+Gets the AutoCAD class name of the object.
+
+* ObjectSnapMode
+Specifies the setting of the object snap mode.
+
+* ObjectSortByPlotting
+Toggles sorting of drawing objects by plotting order.
+
+* ObjectSortByPSOutput
+Toggles sorting of drawing objects by PostScript output order.
+
+* ObjectSortByRedraws
+Toggles sorting of drawing objects by redraw order.
+
+* ObjectSortByRegens
+Toggles sorting of drawing objects by regeneration order.
+
+* ObjectSortBySelection
+Toggles sorting of drawing objects by object selection.
+
+* ObjectSortBySnap
+Toggles sorting of drawing objects by object snap.
+
+* ObliqueAngle
+Specifies the oblique angle of the object.
+
+* OleItemType
+Specifies whether the OLE object is linked to the original pasted file when opening the object for editing.
+
+* OLELaunch
+Determines whether to launch the parent application when plotting OLE objects.
+
+* OlePlotQuality
+Controls the plot quality of an OLE object based on the file type selected from the list.
+
+* OLEQuality
+Specifies the plot quality of OLE objects.
+
+* OleSourceApp
+Specifies the application for editing the OLE object.
+
+* OnMenuBar
+Determines if the specified popup menu is on the menu bar.
+
+* OpenSave
+Gets the PreferencesOpenSave object.
+
+* Origin
+Specifies the origin of the UCS, block, hatch, or raster image in WCS coordinates.
+
+* OrthoOn
+Specifies the status of the Isometric snap mode for the viewport.
+
+* Output
+Gets the PreferencesOutput object.
+
+* OverrideCenter
+Specifies the override center location.
+
+* OverwritePropChanged
+Indicates whether properties were changed.
+
+* OwnerID
+Gets the object ID of the owner (parent) object.
+
+* PageSetupOverridesTemplateFile
+Specifies the default template for Page Setup overrides.
+
+* PaperSpace
+Gets the PaperSpace collection for the document.
+
+* PaperUnits
+Specifies the units for the display of layout or plot configuration properties.
+
+* Parent
+Gets the parent of the object.
+
+* Path
+Gets the path of the block, document, application, or external reference.
+
+* PatternAngle
+Specifies the angle of the hatch pattern.
+
+* PatternDouble
+Specifies if the user-defined hatch is double-hatched.
+
+* PatternName
+Specifies the hatch pattern name.
+
+* PatternScale
+Specifies the hatch pattern scale.
+
+* PatternSpace
+Specifies the user-defined hatch pattern spacing.
+
+* PatternType
+Gets the pattern type used for the hatch.
+
+* Perimeter
+Gets the total length of the inner and outer region loops.
+
+* Periodic
+Specifies that a smooth and closed surface is created without a kink if it is reshaped.
+
+* PickAdd
+Determines if objects are added to the selection set using the Shift key.
+
+* PickAuto
+Controls automatic windowing at the Select Objects prompt.
+
+* PickBoxSize
+Specifies the size of the object selection target.
+
+* PickDrag
+Controls the method of drawing a selection window.
+
+* PickFirst
+Determines if you select objects before (noun-verb selection) or after you issue a command.
+
+* PickfirstSelectionSet
+Gets the pickfirst selection set.
+
+* PickGroup
+Determines if picking a single object in a group selects the entire group.
+
+* Plot
+Gets the Plot object for the document.
+
+* PlotConfigurations
+Gets the PlotConfigurations collection for the document.
+
+* PlotHidden
+Specifies if objects are to be hidden during a plot.
+
+* PlotLegacy
+Toggles whether legacy plot scripts are allowed to run.
+
+* PlotLogFilePath
+Specifies the path of the Plot log file.
+
+* PlotOrigin
+Specifies the origin of the layout or plot configuration in WCS coordinates.
+
+* PlotPolicy
+Determines whether an object's color property is associated with its plot style name when a new drawing is created.
+
+* PlotRotation
+Specifies the rotation angle for the layout or plot configuration.
+
+* PlotStyleName
+Specifies the plot style name for an object, group of objects, or layer.
+
+* Plottable
+Specifies if the layer is plottable.
+
+* PlotType
+Specifies the type of layout or plot configuration.
+
+* PlotViewportBorders
+Specifies if the viewport borders are to be plotted.
+
+* PlotViewportsFirst
+Specifies if all geometry in paper space viewports is plotted first.
+
+* PlotWithLineweights
+Specifies whether objects plot with the lineweights they are assigned in the plot file, or with the lineweights in the drawing file.
+
+* PlotWithPlotStyles
+Specifies whether or not to plot using the plot styles that are applied to objects and defined in the plot style table.
+
+* PolarTrackingVector
+Toggles the display of polar tracking vectors.
+
+* Position
+Specifies the X, Y, Z coordinate for center of the base or center of the solid, or the origin for the position marker, helix, or underlay.
+
+* PostScriptPrologFile
+Specifies a name for a customized prolog section in the acad.psf file.
+
+* Preferences
+Gets the Preferences object.
+
+* Preset
+Specifies if the attribute is preset.
+
+* PrimaryUnitsPrecision
+Specifies the number of decimal places displayed for the primary units of a dimension or tolerance.
+
+* PrincipalDirections
+Gets the principal directions of the solid or region.
+
+* PrincipalMoments
+Gets the principal moments property of the solid or region.
+
+* PrinterConfigPath
+Specifies the location for printer configuration files.
+
+* PrinterDescPath
+Specifies the location for printer description files.
+
+* PrinterPaperSizeAlert
+Specifies whether to alert the user when a layout is configured with a paper size that is different than the default setting for the PC3 file.
+
+* PrinterSpoolAlert
+Specifies whether to alert the user when the output to a device must be spooled through a system printer due to a conflict with the I/O port.
+
+* PrinterStyleSheetPath
+Specifies the location for printer style sheet files.
+
+* PrintFile
+Specifies an alternate name to use for the temporary plot file name.
+
+* PrintSpoolerPath
+Specifies the directory for the print spool files. AutoCAD writes the plot to this location.
+
+* PrintSpoolExecutable
+Specifies the application to use for print spooling.
+
+* ProductOfInertia
+Gets the product of inertia of the solid or region.
+
+* ProfileRotation
+Specifies the rotation of the sweep profile.
+
+* Profiles
+Gets the PreferencesProfiles object.
+
+* PromptString
+Specifies the prompt string for an attribute.
+
+* PropertyName
+Specifies the name for the property.
+
+* ProxyImage
+Controls the display of objects in a drawing that were created in a third-party application.
+
+* QNewTemplateFile
+Sets the default template file name for the QNEW command.
+
+* QuietErrorMode
+Toggles the quiet error mode for plot-error reporting.
+
+* RadiiOfGyration
+Gets the radius of gyration of the solid or region.
+
+* Radius
+Specifies the radius of an arc, circle, or position marker.
+
+* RadiusRatio
+Specifies the major to minor axis ratio of an ellipse.
+
+* ReadOnly
+Specifies if the document or property is read-only or read-write.
+
+* Red
+Specifies the red component of the True Color.
+
+* RegenerateTableSuppressed
+Enables or disables regeneration of the table block.
+
+* RegisteredApplications
+Gets the RegisteredApplications collection for the document.
+
+* RemoveHiddenLines
+Specifies if hidden lines are to be plotted on a paper space viewport. (Obsolete)
+
+* RenderSmoothness
+Specifies the smoothness of shaded, rendered, and hidden line-removed objects.
+
+* RepeatBottomLabels
+Determines whether the bottom set of label rows is repeated at the bottom of each broken table part.
+
+* RepeatTopLabels
+Determines whether the first set of label rows will be repeated at the top of each broken table part.
+
+* RevisionNumber
+Specifies the revision number.
+
+* RevolutionAngle
+Specifies the angle of revolution.
+
+* Rotation
+Specifies the rotation angle for the object.
+
+* RoundDistance
+Specifies the rounding of dimension units.
+
+* RowHeight
+Specifies a uniform height for all rows in the table.
+
+* Rows
+Specifies the number of rows in a block array or table.
+
+* RowSpacing
+Specifies the spacing of the rows in a block array.
+
+* SaveAsType
+Specifies the drawing type for saving the drawing.
+
+* Saved
+Specifies if the document has any unsaved changes.
+
+* SavePreviewThumbnail
+Specifies if BMP preview images are saved with the drawing.
+
+* Scale
+Specifies the scale factor from start to the end of the sweep path.
+
+* ScaleFactor
+Specifies the scale factor for the object.
+
+* ScaleHeight
+Specifies the height of the object as a percentage of its original height.
+
+* ScaleLineweights
+Specifies if the lineweight is scaled with the rest of the geometry when a layout is printed.
+
+* ScaleWidth
+Specifies the width of the object as a percentage of its original width.
+
+* SCMCommandMode
+Determines right-click functionality in the drawing area while in Command mode, which means that a command is currently in progress.
+
+* SCMDefaultMode
+Determines right-click functionality in the drawing area while in Default mode, which means that no objects are selected and no commands are in progress.
+
+* SCMEditMode
+Determines right-click functionality in the drawing area while in Edit mode, which means that one or more objects are selected and no commands are in progress.
+
+* SCMTimeMode
+Controls time-sensitive right-click behavior.
+
+* SCMTimeValue
+Controls time-sensitive right-click behavior by setting the duration of the long click that displays a shortcut menu.
+
+* SecondPoint
+Specifies the second point of the ray or xline.
+
+* SecondSegmentAngleConstraint
+Specifies the second segment angle constraint value of the mleaderstyle.
+
+* SectionManager
+Returns the section manager object.
+
+* SectionPlaneOffset
+Specifies the offset distance of the section plane.
+
+* Segmentation
+Returns the segmentation data status of the point cloud.
+
+* SegmentPerPolyline
+Specifies the number of line segments to be generated for each polyline curve.
+
+* Selection
+Gets the PreferencesSelection object.
+
+* SelectionSets
+Gets the SelectionSets collection for the document.
+
+* SerialNumber
+Specifies the serial number of the digital certificate.
+
+* Settings
+Retrieves the section geometry settings for the Section object.
+
+* ShadePlot
+Specifies the shaded viewport plotting mode of a viewport.
+
+* SheetView
+Returns and sets the sheet view associated with the viewport.
+
+* ShortcutMenu
+Determines if the specified popup menu is the shortcut menu.
+
+* ShortCutMenuDisplay
+Controls whether right-clicking in the drawing area displays a shortcut menu or issues Enter.
+
+* Show
+Specifies whether the property is shown in the user interface.
+
+* ShowAssociativity
+Specifies if dependent surfaces are highlighted when the surface is selected.
+
+* ShowClipped
+Enables or disables the clipping boundary.
+
+* ShowCropped
+Specifies if the point cloud is shown cropped.
+
+* ShowHistory
+Specifies whether to show history of the solid.
+
+* ShowIntensity
+Specifies if the point cloud is displayed using a shaded color scheme.
+
+* ShowPlotStyles
+Specifies whether or not plot styles and plot style names are displayed in the drawing.
+
+* ShowProxyDialogBox
+Specifies if AutoCAD displays a warning message when you open a drawing that contains custom objects.
+
+* ShowRasterImage
+Controls the display of raster images during real-time pan and zooms.
+
+* ShowRotation
+Determines if a geomap image, raster image, or wipeout is displayed at its rotation value.
+
+* ShowWarningMessages
+Resets all dialog boxes that have the "Don't Display This Warning Again" check box so they display again.
+
+* SingleDocumentMode
+Determines if AutoCAD runs in single- or multiple-document mode.
+
+* SliceDepth
+Specifies the thickness of a section plane.
+
+* Smoothness
+Specifies the level of smoothness for the SubD mesh.
+
+* SnapBasePoint
+Specifies the snap base point for the viewport.
+
+* SnapOn
+Specifies the status of snap.
+
+* SnapRotationAngle
+Specifies the snap rotation angle of the viewport relative to the current UCS.
+
+* SolidFill
+Specifies if traces, solids, all hatches (including solid-fill), and wide polylines are filled in.
+
+* SolidType
+Indicates the type of solid.
+
+* SourceObjects
+Specifies the source objects for section generation.
+
+* SplineFrame
+Specifies the display of the control vertices (CVs) for a spline.
+
+* SplineMethod
+Specifies the type of the spline.
+
+* StandardScale
+Specifies the standard scale for the layout, viewport, or plot configuration.
+
+* StandardScale2
+Specifies a standard scale for the viewport.
+
+* StartAngle
+Specifies the start angle of an arc or an ellipse.
+
+* StartDraftAngle
+Specifies the draft angle of the surface for the first cross section.
+
+* StartDraftMagnitude
+Specifies the draft magnitude of the surface for the first cross section.
+
+* StartParameter
+Specifies the start parameter for an ellipse.
+
+* StartPoint
+Specifies the start point for the arc, line, or ellipse.
+
+* StartSmoothContinuity
+Specifies the tangency and curvature of the first cross section.
+
+* StartSmoothMagnitude
+Specifies the size of the curve of the first cross section.
+
+* StartTangent
+Specifies the start tangent for the spline.
+
+* State
+Specifies section object type.
+
+* State2
+Specifies section object type.
+
+* StatusID
+Gets the current active status of the viewport.
+
+* StoreSQLIndex
+Determines if the SQL index is stored in the drawing.
+
+* StyleName
+Specifies the name of the style used with the object.
+
+* StyleSheet
+Specifies the style sheet for the layout or plot configuration.
+
+* Stylization
+Specifies color stylization for selected point cloud.
+
+* Subject
+Specifies the subject name of the digital ID (certificate) or drawing.
+
+* SubMenu
+Gets the popup menu associated with a sub menu.
+
+* SubUnitsFactor
+Specifies the sub-units scale factor for dimension when unit changes to sub-unit.
+
+* SubUnitsSuffix
+Specifies the sub-units suffix for dimensions when unit changes to sub-unit.
+
+* SummaryInfo
+Specifies the properties of a drawing.
+
+* SupportPath
+Specifies the directories where AutoCAD searches for support files.
+
+* SuppressLeadingZeros
+Specifies the suppression of leading zeros in dimension values.
+
+* SuppressTrailingZeros
+Specifies the suppression of trailing zeros in dimension values.
+
+* SuppressZeroFeet
+Specifies the suppression of a zero foot measurement in dimension values.
+
+* SuppressZeroInches
+Specifies the suppression of a zero inch measurement in dimension values.
+
+* SurfaceNormals
+Specifies for which cross-section curves the surface is normal to the cross section.
+
+* SurfaceType
+Indicates the type of surface.
+
+* SurfTrimAssociativity
+Specifies if associativity is maintained between the surface and the objects used to trim the object.
+
+* SymbolPosition
+Specifies placement of the arc length dimension symbol.
+
+* System
+Gets the PreferencesSystem object.
+* TableBreakFlowDirection
+Determines the direction that parts of the table flow.
+
+* TableBreakHeight
+Sets the breaking height for the initial table part and any other table parts that do not have manual heights set.
+
+* TablesReadOnly
+Determines whether to open database tables in read-only mode.
+
+* TableStyleOverrides
+Specifies the table style overrides.
+
+* TabOrder
+Specifies the tab order of a layout.
+
+* TagString
+Specifies the tag string of the object.
+
+* TaperAngle
+Specifies the taper angle of the extrusion.
+
+* Target
+Specifies the target point for the view or viewport.
+
+* TempFileExtension
+Specifies the extension for temporary files.
+
+* TempFilePath
+Specifies the directory AutoCAD uses to store temporary files.
+
+* TemplateDWGPath
+Specifies the path for the template files used by the start-up wizards.
+
+* TemplateId
+Specifies the template ID for the table style.
+
+* TempXRefPath
+Specifies the location of external reference files.
+
+* TextAlignmentPoint
+Specifies the alignment point for text and attributes.
+
+* TextAlignmentType
+Specifies the text alignment type of the mleader style.
+
+* TextAngleType
+Specifies the TextAngleType of the mleaderstyle.
+
+* TextAttachmentDirection
+Specifies if the text content uses a horizontal or vertical attachment direction.
+
+* TextAttachmentType
+Specify how leaders connect with the text.
+
+* TextBackgroundFill
+Specifies if background mask ought to be used.
+
+* TextBottomAttachmentType
+Specifies the attachment of the leader to the bottom of the text content.
+
+* TextColor
+Specifies the color of the text for dimension and tolerance objects.
+
+* TextDirection
+Specifies the drawing direction of the MText.
+
+* TextEditor
+Specifies the name of the text editor for the MTEXT command.
+
+* TextFill
+Sets fill color on or off.
+
+* TextFillColor
+Sets text fill color.
+
+* TextFont
+Specifies the font for new text.
+
+* TextFontSize
+Specifies the font size for new text.
+
+* TextFontStyle
+Specifies the font style for new text.
+
+* TextFrameDisplay
+Toggles the display of frames around the multileader text content with a text box or for text objects instead of displaying the text itself.
+
+* TextGap
+Specifies the distance between the dimension text and the dimension line when you break the dimension line to accommodate dimension text.
+
+* TextGenerationFlag
+Specifies the attribute text generation flag.
+
+* TextHeight
+Specifies the height for the dimension or tolerance text.
+
+* TextInside
+Specifies if the dimension text is to be drawn inside the extension lines.
+
+* TextInsideAlign
+Specifies the position of dimension text inside the extension lines for all dimension types except ordinate.
+
+* TextJustify
+Specifies the attachment point of the MText.
+
+* TextLeftAttachmentType
+Specify how leaders on the left side connect with the text.
+
+* TextLineSpacingDistance
+Specifies the line spacing distance of the MText content in the multileader object.
+
+* TextLineSpacingFactor
+Specifies the line spacing factor of the MText content in the multileader object.
+
+* TextLineSpacingStyle
+Specifies the line spacing style of the MText content in the multileader object.
+
+* TextMovement
+Specifies how dimension text is drawn when text is moved.
+
+* TextOutsideAlign
+Specifies the position of dimension text outside the extension lines for all dimension types except ordinate.
+
+* TextOverride
+Specifies the text string for the dimension.
+
+* TextPosition
+Specifies the dimension text position.
+
+* TextPrecision
+Specifies the precision of angular dimension text.
+
+* TextPrefix
+Specifies the dimension value prefix.
+
+* TextRightAttachmentType
+Specify how leaders on the right side connect with the text.
+
+* TextRotation
+Specifies the rotation angle of the dimension text.
+
+* TextString
+Specifies the text string for the entity.
+
+* TextStyle
+Specifies the text style for the dimension or tolerance text.
+
+* TextStyleName
+Specifies the style name of the MText.
+
+* TextStyles
+Gets the TextStyles collection for the document.
+
+* TextSuffix
+Specifies the dimension value suffix.
+
+* TextTopAttachmentType
+Specifies the attachment of the leader to the top center of the text content.
+
+* TextureMapPath
+Specifies the directory in which AutoCAD searches for rendering texture maps.
+
+* TextWidth
+Specifies the width of the MText.
+
+* TextWinBackgrndColor
+Specifies the background color for the text window.
+
+* TextWinTextColor
+Specifies the text color for the text window.
+
+* Thickness
+Specifies the distance a 2D AutoCAD object is extruded above or below its elevation.
+
+* TimeServer
+Specifies the name of the time server to be used for a digital signature.
+
+* Title
+Specifies the title you want to use to locate the drawing.
+
+* TitleSuppressed
+Specifies whether the title of the table is suppressed.
+
+* ToleranceDisplay
+Specifies if tolerances are displayed with the dimension text.
+
+* ToleranceHeightScale
+Specifies a scale factor for the text height of tolerance values relative to the dimension text height.
+
+* ToleranceJustification
+Specifies the vertical justification of tolerance values relative to the nominal dimension text.
+
+* ToleranceLowerLimit
+Specifies the minimum tolerance limit for dimension text.
+
+* TolerancePrecision
+Specifies the precision of tolerance values in primary dimensions.
+
+* ToleranceSuppressLeadingZeros
+Specifies the suppression of leading zeros in tolerance values.
+
+* ToleranceSuppressTrailingZeros
+Specifies the suppression of trailing zeros in dimension values.
+
+* ToleranceSuppressZeroFeet
+Specifies the suppression of a zero foot measurement in tolerance values.
+
+* ToleranceSuppressZeroInches
+Specifies the suppression of a zero inch measurement in tolerance values.
+
+* ToleranceUpperLimit
+Specifies the maximum tolerance limit for dimension text.
+
+* Toolbars
+Gets the Toolbars collection.
+
+* ToolPalettePath
+Sets the tool palette path.
+
+* Top
+Specifies the top edge of a toolbar.
+
+* TopHeight
+Specifies elevation of section plane top extents relative to the object’s elevation.
+
+* TopRadius
+Specifies the top radius of the helix.
+
+* TotalAngle
+Gets the total angle for the arc.
+
+* TotalLength
+Specifies the total length of the helix.
+
+* TranslateIDs
+Specifies the translation of any contained object IDs during deepClone or wblockClone operations.
+
+* Transparency
+Specifies if the transparency for a particular bitonal image is on or off.
+
+* TrueColor
+Specifies the True Color of an object.
+
+* TrueColorImages
+Determines if raster and render images are displayed at true color or palletized color.
+
+* TurnHeight
+Specifies the height of one full turn for the helix.
+
+* Turns
+Specifies the number of turns for the helix.
+
+* TurnSlope
+Displays the constant incline angle for the helix path.
+
+* Twist
+Controls the twist direction of the helix or specifies the amount of rotation along the entire length of the sweep path.
+
+* TwistAngle
+Specifies the twist angle for the viewport.
+
+* Type
+Specifies type of a Leader, MenuGroup, PopupMenuItem, ToolbarItem, Polyline, or PolygonMesh object.
+
+* UCSIconAtOrigin
+Specifies if the UCS icon is displayed at the origin.
+
+* UCSIconOn
+Specifies if the UCS icon is on.
+
+* UCSPerViewport
+Specifies if the UCS is saved with the viewport.
+
+* UIsolineDensity
+Specifies the number of U isolines that are displayed.
+
+* UnderlayLayerOverrideApplied
+Determines whether underlay layer overrides are applied or not.
+
+* UnderlayName
+Specifies the name of the underlay file.
+
+* UnderlayVisibility
+Specifies the visibility of the underlay file.
+
+* Unit
+Gets the unit of the point cloud file.
+
+* UnitFactor
+Gets the insertion unit factor of the point cloud file.
+
+* Units
+Specifies the native units of measure for the block.
+
+* UnitsFormat
+Specifies the unit format for all dimensions except angular.
+
+* UnitsType
+Specifies the current display units type for the property.
+
+* UpperRightCorner
+Gets the upper-right corner of the current active viewport.
+
+* UpsideDown
+Specifies the direction of text.
+
+* URL
+Specifies the URL for the Hyperlink object.
+
+* URLDescription
+Specifies the URL description for the Hyperlink object.
+
+* URLNamedLocation
+Specifies the named location for the Hyperlink object.
+
+* Used
+Specifies whether a layer is in use.
+
+* UseEntityColor
+Specifies the color source for the point cloud.
+
+* UseLastPlotSettings
+Applies the plotting settings of the last successful plot.
+
+* User
+Gets the PreferencesUser object.
+
+* UserCoordinateSystems
+Gets the UCSs collection for the document.
+
+* UseStandardScale
+Specifies if the plot is to use a standard or custom scale.
+
+* Utility
+Gets the Utility object for the document.
+
+* Value
+Specifies the current value for the property, or the object ID of the newly created cloned object.
+
+* VBE
+Gets the VBAIDE extensibility object.
+
+* Verify
+Specifies if the attribute is set for verification.
+
+* Version
+Gets the version of the AutoCAD application you are using.
+
+* VertCellMargin
+Specifies the value of the vertical margin of cells.
+
+* VertexCount
+Returns the number of vertices in the SubD mesh.
+
+* VerticalDirection
+Specifies the vertical direction for the section plane.
+
+* VerticalTextPosition
+Specifies the vertical position of text in relation to the dimension line.
+
+* Vertices
+Gets the vertices in the section line.
+
+* ViewingDirection
+Specifies the viewing direction for the section plane.
+
+* ViewportDefault
+Specifies if the layer is to be frozen in new viewports.
+
+* ViewportOn
+Specifies the display status of the viewport.
+
+* Viewports
+Gets the Viewports collection for the document.
+
+* Views
+Gets the Views collection for the document.
+
+* ViewToPlot
+Specifies the name of the view to plot.
+
+* VisibilityEdge1
+Specifies the visibility of a 3DFace edge 1.
+
+* VisibilityEdge2
+Specifies the visibility of a 3DFace edge 2.
+
+* VisibilityEdge3
+Specifies the visibility of a 3DFace edge 3.
+
+* VisibilityEdge4
+Specifies the visibility of a 3DFace edge 4.
+
+* Visible
+Specifies the visibility of an object or the application.
+
+* VIsolineDensity
+Specifies the number of V isolines that are displayed.
+
+* VisualStyle
+Specifies the visual style for a viewport.
+
+* Volume
+Gets the volume of the solid.
+
+* Weights
+Gets the weight vector for spline.
+
+* Width
+Specifies the width of the object.
+
+* WindowLeft
+Specifies the left edge of the application window.
+
+* WindowState
+Specifies the state of the application or document window.
+
+* WindowTitle
+Gets the title of the document window.
+
+* WindowTop
+Specifies the top edge of the application window.
+
+* WireframeType
+Specifies the wireframe display type of the surface.
+
+* WorkspacePath
+Specifies the path for the database workspace file.
+
+* XEffectiveScaleFactor
+Specifies the effective XScale factor of the block.
+
+* XRefDatabase
+Gets the Database object that defines the contents of the block.
+
+* XRefDemandLoad
+Specifies demand loading of external references.
+
+* XRefEdit
+Determines if the current drawing can be edited in place when being referenced by another user.
+
+* XRefFadeIntensity
+Controls the dimming intensity for XRefs.
+
+* XRefLayerVisibility
+Determines the visibility of xref-dependent layers and specifies if nested xref path changes are saved.
+
+* XScaleFactor
+Specifies the X scale factor for the block or external reference (xref).
+
+* XVector
+Specifies the X direction of the given UCS.
+
+* YEffectiveScaleFactor
+Specifies the effective YScale factor of the block.
+
+* YScaleFactor
+Specifies the Y scale factor for the block or external reference (xref).
+
+* YVector
+Specifies the Y direction of the given UCS.
+
+* ZEffectiveScaleFactor
+Specifies the effective ZScale factor of the block.
+
+* ZScaleFactor
+Specifies the Z scale factor for the block or external reference (xref).
+
