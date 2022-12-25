@@ -14,11 +14,11 @@
       E-->F(Atlisp函数库)
       F-->G(Atlisp应用开发)
 
-      click A "https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org" _top
-      click B "https://gitee.com/atlisp/atlisp-docs/blob/main/AutoLisp/learning-autolisp.md" "_blank" _top
-      click E "https://gitee.com/atlisp/atlisp-docs/blob/main/@lisp/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8@lisp.org" _top
-      click F "https://gitee.com/atlisp/atlisp-docs/blob/main/@lisp/@lisp%E5%87%BD%E6%95%B0%E5%BA%93.org" _top
-      click G "https://gitee.com/atlisp/atlisp-docs/blob/main/@lisp/@lisp%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E8%AF%B4%E6%98%8E.org" _top
+      %% click A "https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org" _blank
+      %% click B "https://gitee.com/atlisp/atlisp-docs/blob/main/AutoLisp/learning-autolisp.md" "_blank" _blank
+      %% click E "https://gitee.com/atlisp/atlisp-docs/blob/main/@lisp/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8@lisp.org" _blank
+      %% click F "https://gitee.com/atlisp/atlisp-docs/blob/main/@lisp/@lisp%E5%87%BD%E6%95%B0%E5%BA%93.org" _blank
+      %% click G "https://gitee.com/atlisp/atlisp-docs/blob/main/@lisp/@lisp%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E8%AF%B4%E6%98%8E.org" _blank
 #+end_src
 
 * 介绍
