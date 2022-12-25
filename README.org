@@ -47,10 +47,15 @@ AutoLisp 与 Dxf 相关内容
 
 [[https://gitee.com/atlisp/atlisp-docs/blob/main/ssget.org][ssget 用法说明]]
 ** DCL
+autolisp 的图形化交互界面
+
 * VisualLisp
 
 VisualLisp 与 ActiveX 相关
 
+面向对象的 lisp 开发。需要有基本的面向对象知识。
+
+Visuallisp 里没有类的相关用法。只需了解对象，对象的属性和方法即可。
 
 * @lisp
 ** @lisp 函数库相关
