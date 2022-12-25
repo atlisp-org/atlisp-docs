@@ -39,6 +39,11 @@ Git 使用指南及示例
 
 AutoLisp 与 Dxf 相关内容
 
+推荐:
+
+[[https://gitee.com/atlisp/atlisp-docs/blob/main/AutoLisp/learning-autolisp.md][一步一步学autolisp]]
+
+[[https://gitee.com/atlisp/atlisp-docs/blob/main/ssget.org][ssget 用法说明]]
 ** DCL
 * VisualLisp
 
