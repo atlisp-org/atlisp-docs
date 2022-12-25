@@ -7,12 +7,10 @@
 图中 Atlisp 指 @ lisp.
 #+begin_src mermaid
   graph LR
-      A(Lisp入门)-->B(AutoLisp DXF);
-      B-->C(DCL);
+      A(Lisp入门)-->B(AutoLisp DXF)-->C(DCL);
       A-->D(VisualLisp ActiveX);
-      A-->E(Atlisp);
-      E-->F(Atlisp函数库)
-      F-->G(Atlisp应用开发)
+      A-->E(Atlisp)-->F(Atlisp函数库)-->G(Atlisp应用开发);
+      A-->H(lisp进阶);    
 
       %% click A "https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org" _blank
       %% click B "https://gitee.com/atlisp/atlisp-docs/blob/main/AutoLisp/learning-autolisp.md" "_blank" _blank
