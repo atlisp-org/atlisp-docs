@@ -18,15 +18,6 @@
 * vla-put-TextHeight
 ** (vla-put-TextHeight Object Height_Real)
 修改标注文字的高度.该属性将覆盖给定标注对象的 DIMTXT 系统变量。
-* vlax-invoke
-** (vlax-invoke obj method [args])
-调用指定的 ActiveX 方法。
-* vlax-put
-** (vlax-put obj property arg)
-设置 ActiveX 对象的特性
-* vlax-get
-** (vlax-get object property)
-检索 VLA 对象的特性
 * vla-GetCustomByIndex
 ** (vla-GetCustomByIndex object Index pKey pValue)
 返回与索引值对应的自定义属性的名称(键)和值。
@@ -1143,201 +1134,7 @@
 * vla-AddBox
 ** (vla-AddBox object Origin Length Width Height)
 创建边与WCS的轴相平行的三维实体长方体。
-* vlax-safearray-fill
-** (vlax-safearray-fill var 'element-values)
-在 SafeArray 的元素中存储数据
-* vlax-remove-cmd
-** (vlax-remove-cmd global-name)
-删除一个命令或一组命令
-* vlax-release-object
-** (vlax-release-object obj)
-释放图形对象
-* vlax-read-enabled-p
-** (vlax-read-enabled-p obj)
-确定对象是否可读
-* vlax-put-property
-** (vlax-put-property obj property arg)
-设置 ActiveX 对象的特性
-* vlax-property-available-p
-** (vlax-property-available-p obj prop [check-modify])
-确定对象是否具有指定特性
-* vlax-product-key
-** (vlax-product-key)
-返回 AutoCAD 的 Window 注册表路径
-* vlax-object-released-p
-** (vlax-object-released-p obj)
-确定对象是否已被释放
-* vlax-method-applicable-p
-** (vlax-method-applicable-p objmethod)
-确定对象是否支持某个方法
-* vlax-map-collection
-** (vlax-map-collection obj function)
-将函数应用到集合中的所有对象
-* vlax-make-variant
-** (vlax-make-variant [value] [type])
-创建变体数据类型
-* vlax-curve-getParamAtPoint
-** (vlax-curve-getParamAtPoint curve-obj point)
-返回曲线指定点的参数
-* vlax-curve-getClosestPointToProjection
-** (vlax-curve-getClosestPointToProjection curve-obj givenPnt normal[extend])
-在将曲线投影到平面上之后，返回曲线上的最近点（在 WCS 上）
-* vlax-curve-getClosestPointTo
-** (vlax-curve-getClosestPointTo curve-obj givenPnt [extend])
-返回曲线上离指定点最近的点（在 WCS 上）
-* vla-GetBoundingBox
-** (vla-GetBoundingBox obj 'Minp 'Maxp)
-返回图元对象边框的最大和最小点。
-* vlax-write-enabled-p
-** (vlax-write-enabled-p obj)
-确定是否能够修改 AutoCAD 图形
-* vlax-vla-object->ename
-** (vlax-vla-object->ename obj)
-将 VLA 对象转换为 AutoLISP 对象名。
-* vlax-variant-value
-** (vlax-variant-value var)
-返回变体的值
-* vlax-variant-type
-** (vlax-variant-type var)
-确定变体的数据类型
-* vlax-variant-change-type
-** (vlax-variant-change-type var type)
-在改变变体的数据类型后返回该变体的值
-* vlax-typeinfo-available-p
-** (vlax-typeinfo-available-p obj)
-确定在指定类型的对象中是否存在 TypeLib 信息
-* vlax-tmatrix
-** (vlax-tmatrix list)
-返回 VLA 方法可用的 4x4 转换矩阵的适当表示
-* vlax-safearray-type
-** (vlax-safearray-type var)
-返回 SafeArray 的数据类型
-* vlax-safearray-put-element
-** (vlax-safearray-put-element var index value)
-给 Safearray 中的某元素赋值
-* vlax-safearray-get-u-bound
-** (vlax-safearray-get-u-bound var dim)
-返回 Safearray 某一维的上界（结束索引）
-* vlax-safearray-get-l-bound
-** (vlax-safearray-get-l-bound var dim)
-返回 Safearray 某一维的下界（开始索引）
-* vlax-safearray-get-element
-** (vlax-safearray-get-element var element)
-返回 Safearray 中的元素
-* vlax-safearray-get-dim
-** (vlax-safearray-get-dim var)
-返回 SafeArray 对象的维数
-* vlax-make-safearray
-** (vlax-make-safearray type boundpair [boundpair])
-创建 SafeArray 。
-type 决定数组元素数据类型
-boundpair 为索引的上下界点对表，如'(0 . 2)，表示这一维有 0~2 共 3 个元素；
-多个 boundpair 表示数组嵌套维度的多少，最多 16个；
-所有 boundpair 从左到右对应从外向内的数组嵌套，与表的嵌套相同。
-(说明优化:くつした)
-* vlax-ldata-test
-** (vlax-ldata-test data)
-确定数据是否能越任务边界保存
-* vlax-ldata-put
-** (vlax-ldata-put dict key data [private])
-存储图形词典或对象中的 LISP 数据
-* vlax-ldata-list
-** (vlax-ldata-list dict [private])
-列出图形词典中的 LISP 数据,测试cad2007有bug！
-* vlax-ldata-get
-** (vlax-ldata-get dict key [default-data] [private])
-在图形词典或对象中检索 LISP 数据
-* vlax-ldata-delete
-** (vlax-ldata-delete dict key [private])
-从图形词典中删除 LISP 数据
-* vlax-invoke-method
-** (vlax-invoke-method obj method arg [args])
-调用指定的 ActiveX 方法
-* vlax-import-type-library
-** (vlax-import-type-library :tlb-filename filename [:methods-prefix mprefix :properties-prefix pprefix :constants-prefix cprefix])
-从类型库中输出信息
-* vlax-get-property
-** (vlax-get-property object property)
-检索 VLA 对象的特性
-* vlax-get-or-create-object
-** (vlax-get-or-create-object prog-id)
-返回应用程序对象的运行实例。如果应用程序当前未运行，则创建新实例
-* vlax-get-object
-** (vlax-get-object prog-id)
-返回应用程序对象的运行实例
-* vlax-get-acad-object
-** (vlax-get-acad-object)
-检索当前 AutoCAD 任务中的顶层 AutoCAD 应用程序对象
-* vlax-for
-** (vlax-for symbol collection [expression1 [expression2]])
-遍历对象集，对每个表达式进行求值
-* vlax-erased-p
-** (vlax-erased-p obj)
-确定对象是否被删除
-* vlax-ename->vla-object
-** (vlax-ename->vla-object entname)
-将 AutoLISP 类型的对象名转换为 VLA 对象。
-* vlax-dump-object
-** (vlax-dump-object obj [T])
-列出对象特性，也可选择列出对象的方法
-* vlax-curve-isPlanar
-** (vlax-curve-isPlanar curve-obj)
-确定是否存在包含曲线的平面
-* vlax-curve-isPeriodic
-** (vlax-curve-isPeriodic curve-obj)
-确定指定曲线是否在各个方向上都是无限的，同时存在一个周期值 dT，使得对于任何参数 u，都有曲线上的点 (u + dT) = 点 (u) 成立
-* vlax-curve-isClosePointToProjection
-** (vlax-curve-getClosestPointToProjection curve-obj givenPnt normal [extend])
-在将曲线投影到平面上之后，返回曲线上的最近点（在 WCS 上）
-* vlax-curve-isClosed
-** (vlax-curve-isClosed curve-obj)
-确定指定曲线是否闭合（即起点与端点是否重合）
-* vlax-curve-getStartPoint
-** (vlax-curve-getStartPoint curve-obj)
-返回曲线的开始点（在 WCS 中）
-* vlax-curve-getStartParam
-** (vlax-curve-getStartParam curve-obj)
-返回曲线的开始参数
-* vlax-curve-getsecondDeriv
-** (vlax-curve-getSecondDeriv curve-obj param)
-返回曲线在指定位置的二阶导数（在 WCS 中）
-* vlax-curve-getPointAtParam
-** (vlax-curve-getPointAtParam curve-obj param)
-返回曲线上具有指定参数值的点
-* vlax-curve-getPointAtDist
-** (vlax-curve-getPointAtDist curve dist)
-返回曲线上距开始点为指定距离的点（在 WCS 中）
-* vlax-curve-getParamAtDist
-** (vlax-curve-getParamAtDist curve-obj dist)
-返回距曲线开始点为指定距离的曲线参数
-* vlax-curve-getFirstDeriv
-** (vlax-curve-getFirstDeriv curve-obj param)
-返回曲线在指定位置的一阶导数（在 WCS 中）
-* vlax-curve-getEndPoint
-** (vlax-curve-getEndPoint curve-obj)
-返回曲线的端点（按 WCS 表示）
-* vlax-curve-getEndParam
-** (vlax-curve-getEndParam curve-obj)
-返回曲线终点的参数
-* vlax-curve-getDistAtPoint
-** (vlax-curve-getDistAtPoint curve-obj point)
-返回曲线从开始点到指定点的曲线段的长度
-* vlax-curve-getDistAtParam
-** (vlax-curve-getDistAtParam curve-obj param)
-返回曲线从开始到指定参数的曲线段的长度
-* vlax-curve-getArea
-** (vlax-curve-getArea curve-obj)
-返回曲线的面积
-* vlax-create-object
-** (vlax-create-object prog-id)
-创建应用程序对象的新实例
-* vlax-add-cmd
-** (vlax-add-cmd global-name func-sym [local-name cmd-flags])
-将命令添加到 AutoCAD 内置命令集中
-* vlax-3D-point
-** (vlax-3D-point list)
-(vlax-3D-point x y [z])
-创建与 ActiveX 兼容的（变体）三维点结构
+
 * vla-put-ZScaleFactor
 ** (vla-put-ZScaleFactor Object value)
 设定块或XRef的Z比例系数。
@@ -1726,7 +1523,7 @@ acTableBottomToTop / 1 -> 从下到上,设置表格方向
 * vla-get-YEffectiveScaleFactor
 ** (vla-get-YEffectiveScaleFactor obj)
 指定块的有效 Y 比例因子
-* carvla-get-XEffectiveScaleFactor
+* vla-get-XEffectiveScaleFactor
 ** (vla-get-XEffectiveScaleFactor obj)
 指定块的有效X比例因子。
 * vla-get-file
@@ -1738,8 +1535,6 @@ acTableBottomToTop / 1 -> 从下到上,设置表格方向
 * vla-put-AdjustForBackground
 ** (vla-put-AdjustForBackground obj Boolean)
 设置对象是否根据背景调整颜色(适用于 DgnUnderlay, DwfUnderlay, PdfUnderlay)
-* vlax-vbArray
-** 8192,变体类型：Array(SafeArray)
 * vla-get-BlockScaling
 ** (vla-get-BlockScaling summaryinfo)
 读取块是否为允许统一比例，0为不允许，1为允许
@@ -1821,11 +1616,6 @@ i为行数，j为列数
 * vla-put-path
 ** (vla-put-path blkdef path)
 指定外部参照路径
-* vlax-machine-product-key
-** (vlax-machine-product-key)
-返回AutoCAD在HKEY_LOCAL_MACHINE下的Windows注册表路径。
-注：仅AutoCAD 2013以上版本支持。
-此函数用来替换vlax-product-key函数。
 * vla-put-regeneratetablesuppressed
 ** (vla-put-regeneratetablesuppressed table logic)
 ;table 表格对象，vla类型
@@ -1900,7 +1690,7 @@ i为行数，j为列数
 为document文件设置关键词
 * vla-put-HyperlinkBase
 ** (vla-put-HyperlinkBase summaryInfo link)
-;(vla-put-HyperlinkBase summaryInfo "http://www.autodesk.com")
+;(vla-put-HyperlinkBase summaryInfo "https://atlisp.cn")
 为document文件设置链接地址
 * vla-put-Comments
 ** (vla-put-Comments summaryInfo Comments)
@@ -4349,21 +4139,215 @@ WCS坐标值指定UCS、图块、配置或光栅图像的原点。
 * vla-put-SCMCommandMode
 ** (vla-put-SCMCommandMode Object value)
 判断命令模式下（正在执行命令）在绘图区中按一下鼠标右键的功能。
-* :vlax-null
-com接口(null)
-* :vlax-false
-com接口(false,假,0)
-* :vlax-true
-com接口(true,真,-1)
-* :constants-prefix
-(vlax-import-type-library :tlb-filename filename [:methods-prefix mprefix :properties-prefix pprefix :constants-prefix  cprefix])
-指示符号，指示函数 vlax-import-type-library 的参数 cprefix 
-* :properties-prefix
-(vlax-import-type-library :tlb-filename      filename [:methods-prefix    mprefix  :properties-prefix pprefix  :constants-prefix  cprefix])
-指示符号，指示函数 vlax-import-type-library 的参数 pprefix
-* :methods-prefix
-(vlax-import-type-library  :tlb-filename      filename [:methods-prefix    mprefix  :properties-prefix pprefix  :constants-prefix  cprefix])
-指示符号，指示函数 vlax-import-type-library 的参数 mprefix 
-* :tlb-filename
-(vlax-import-type-library  :tlb-filename      filename [:methods-prefix    mprefix  :properties-prefix pprefix  :constants-prefix  cprefix])
-指示符号，指示函数 vlax-import-type-library 的参数 filename
+
+* vlax-invoke
+** (vlax-invoke obj method [args])
+调用指定的 ActiveX 方法。
+* vlax-put
+** (vlax-put obj property arg)
+设置 ActiveX 对象的特性
+* vlax-get
+** (vlax-get object property)
+检索 VLA 对象的特性
+* vlax-safearray-fill
+** (vlax-safearray-fill var 'element-values)
+在 SafeArray 的元素中存储数据
+* vlax-remove-cmd
+** (vlax-remove-cmd global-name)
+删除一个命令或一组命令
+* vlax-release-object
+** (vlax-release-object obj)
+释放图形对象
+* vlax-read-enabled-p
+** (vlax-read-enabled-p obj)
+确定对象是否可读
+* vlax-put-property
+** (vlax-put-property obj property arg)
+设置 ActiveX 对象的特性
+* vlax-property-available-p
+** (vlax-property-available-p obj prop [check-modify])
+确定对象是否具有指定特性
+* vlax-product-key
+** (vlax-product-key)
+返回 AutoCAD 的 Window 注册表路径
+* vlax-object-released-p
+** (vlax-object-released-p obj)
+确定对象是否已被释放
+* vlax-method-applicable-p
+** (vlax-method-applicable-p objmethod)
+确定对象是否支持某个方法
+* vlax-map-collection
+** (vlax-map-collection obj function)
+将函数应用到集合中的所有对象
+* vlax-make-variant
+** (vlax-make-variant [value] [type])
+创建变体数据类型
+* vlax-curve-getParamAtPoint
+** (vlax-curve-getParamAtPoint curve-obj point)
+返回曲线指定点的参数
+* vlax-curve-getClosestPointToProjection
+** (vlax-curve-getClosestPointToProjection curve-obj givenPnt normal[extend])
+在将曲线投影到平面上之后，返回曲线上的最近点（在 WCS 上）
+* vlax-curve-getClosestPointTo
+** (vlax-curve-getClosestPointTo curve-obj givenPnt [extend])
+返回曲线上离指定点最近的点（在 WCS 上）
+* vla-GetBoundingBox
+** (vla-GetBoundingBox obj 'Minp 'Maxp)
+返回图元对象边框的最大和最小点。
+* vlax-write-enabled-p
+** (vlax-write-enabled-p obj)
+确定是否能够修改 AutoCAD 图形
+* vlax-vla-object->ename
+** (vlax-vla-object->ename obj)
+将 VLA 对象转换为 AutoLISP 对象名。
+* vlax-variant-value
+** (vlax-variant-value var)
+返回变体的值
+* vlax-variant-type
+** (vlax-variant-type var)
+确定变体的数据类型
+* vlax-variant-change-type
+** (vlax-variant-change-type var type)
+在改变变体的数据类型后返回该变体的值
+* vlax-typeinfo-available-p
+** (vlax-typeinfo-available-p obj)
+确定在指定类型的对象中是否存在 TypeLib 信息
+* vlax-tmatrix
+** (vlax-tmatrix list)
+返回 VLA 方法可用的 4x4 转换矩阵的适当表示
+* vlax-safearray-type
+** (vlax-safearray-type var)
+返回 SafeArray 的数据类型
+* vlax-safearray-put-element
+** (vlax-safearray-put-element var index value)
+给 Safearray 中的某元素赋值
+* vlax-safearray-get-u-bound
+** (vlax-safearray-get-u-bound var dim)
+返回 Safearray 某一维的上界（结束索引）
+* vlax-safearray-get-l-bound
+** (vlax-safearray-get-l-bound var dim)
+返回 Safearray 某一维的下界（开始索引）
+* vlax-safearray-get-element
+** (vlax-safearray-get-element var element)
+返回 Safearray 中的元素
+* vlax-safearray-get-dim
+** (vlax-safearray-get-dim var)
+返回 SafeArray 对象的维数
+* vlax-make-safearray
+** (vlax-make-safearray type boundpair [boundpair])
+创建 SafeArray 。
+type 决定数组元素数据类型
+boundpair 为索引的上下界点对表，如'(0 . 2)，表示这一维有 0~2 共 3 个元素；
+多个 boundpair 表示数组嵌套维度的多少，最多 16个；
+所有 boundpair 从左到右对应从外向内的数组嵌套，与表的嵌套相同。
+(说明优化:くつした)
+* vlax-ldata-test
+** (vlax-ldata-test data)
+确定数据是否能越任务边界保存
+* vlax-ldata-put
+** (vlax-ldata-put dict key data [private])
+存储图形词典或对象中的 LISP 数据
+* vlax-ldata-list
+** (vlax-ldata-list dict [private])
+列出图形词典中的 LISP 数据,测试cad2007有bug！
+* vlax-ldata-get
+** (vlax-ldata-get dict key [default-data] [private])
+在图形词典或对象中检索 LISP 数据
+* vlax-ldata-delete
+** (vlax-ldata-delete dict key [private])
+从图形词典中删除 LISP 数据
+* vlax-invoke-method
+** (vlax-invoke-method obj method arg [args])
+调用指定的 ActiveX 方法
+* vlax-import-type-library
+** (vlax-import-type-library :tlb-filename filename [:methods-prefix mprefix :properties-prefix pprefix :constants-prefix cprefix])
+从类型库中输出信息
+* vlax-get-property
+** (vlax-get-property object property)
+检索 VLA 对象的特性
+* vlax-get-or-create-object
+** (vlax-get-or-create-object prog-id)
+返回应用程序对象的运行实例。如果应用程序当前未运行，则创建新实例
+* vlax-get-object
+** (vlax-get-object prog-id)
+返回应用程序对象的运行实例
+* vlax-get-acad-object
+** (vlax-get-acad-object)
+检索当前 AutoCAD 任务中的顶层 AutoCAD 应用程序对象
+* vlax-for
+** (vlax-for symbol collection [expression1 [expression2]])
+遍历对象集，对每个表达式进行求值
+* vlax-erased-p
+** (vlax-erased-p obj)
+确定对象是否被删除
+* vlax-ename->vla-object
+** (vlax-ename->vla-object entname)
+将 AutoLISP 类型的对象名转换为 VLA 对象。
+* vlax-dump-object
+** (vlax-dump-object obj [T])
+列出对象特性，也可选择列出对象的方法
+* vlax-curve-isPlanar
+** (vlax-curve-isPlanar curve-obj)
+确定是否存在包含曲线的平面
+* vlax-curve-isPeriodic
+** (vlax-curve-isPeriodic curve-obj)
+确定指定曲线是否在各个方向上都是无限的，同时存在一个周期值 dT，使得对于任何参数 u，都有曲线上的点 (u + dT) = 点 (u) 成立
+* vlax-curve-isClosePointToProjection
+** (vlax-curve-getClosestPointToProjection curve-obj givenPnt normal [extend])
+在将曲线投影到平面上之后，返回曲线上的最近点（在 WCS 上）
+* vlax-curve-isClosed
+** (vlax-curve-isClosed curve-obj)
+确定指定曲线是否闭合（即起点与端点是否重合）
+* vlax-curve-getStartPoint
+** (vlax-curve-getStartPoint curve-obj)
+返回曲线的开始点（在 WCS 中）
+* vlax-curve-getStartParam
+** (vlax-curve-getStartParam curve-obj)
+返回曲线的开始参数
+* vlax-curve-getsecondDeriv
+** (vlax-curve-getSecondDeriv curve-obj param)
+返回曲线在指定位置的二阶导数（在 WCS 中）
+* vlax-curve-getPointAtParam
+** (vlax-curve-getPointAtParam curve-obj param)
+返回曲线上具有指定参数值的点
+* vlax-curve-getPointAtDist
+** (vlax-curve-getPointAtDist curve dist)
+返回曲线上距开始点为指定距离的点（在 WCS 中）
+* vlax-curve-getParamAtDist
+** (vlax-curve-getParamAtDist curve-obj dist)
+返回距曲线开始点为指定距离的曲线参数
+* vlax-curve-getFirstDeriv
+** (vlax-curve-getFirstDeriv curve-obj param)
+返回曲线在指定位置的一阶导数（在 WCS 中）
+* vlax-curve-getEndPoint
+** (vlax-curve-getEndPoint curve-obj)
+返回曲线的端点（按 WCS 表示）
+* vlax-curve-getEndParam
+** (vlax-curve-getEndParam curve-obj)
+返回曲线终点的参数
+* vlax-curve-getDistAtPoint
+** (vlax-curve-getDistAtPoint curve-obj point)
+返回曲线从开始点到指定点的曲线段的长度
+* vlax-curve-getDistAtParam
+** (vlax-curve-getDistAtParam curve-obj param)
+返回曲线从开始到指定参数的曲线段的长度
+* vlax-curve-getArea
+** (vlax-curve-getArea curve-obj)
+返回曲线的面积
+* vlax-create-object
+** (vlax-create-object prog-id)
+创建应用程序对象的新实例
+* vlax-add-cmd
+** (vlax-add-cmd global-name func-sym [local-name cmd-flags])
+将命令添加到 AutoCAD 内置命令集中
+* vlax-3D-point
+** (vlax-3D-point list)
+(vlax-3D-point x y [z])
+创建与 ActiveX 兼容的（变体）三维点结构
+* vlax-machine-product-key
+** (vlax-machine-product-key)
+返回AutoCAD在HKEY_LOCAL_MACHINE下的Windows注册表路径。
+注：仅AutoCAD 2013以上版本支持。
+此函数用来替换vlax-product-key函数。
+* vlax-vbArray
+** 8192,变体类型：Array(SafeArray)

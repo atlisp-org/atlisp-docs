@@ -183,49 +183,7 @@
 * vlr-acdb-reactor,数据库反应器
 ** (vlr-acdb-reactor data callbacks)
 构造 AutoCAD 数据库反应器对象，在从图形数据库中加入、修改或删除对象时通知应用程序.
-* :vlr-objectClosed
-反应器；对对象的修改已经完成，将被触发。
-* :vlr-modified
-对象已被修改。如果取消修改，还将激发:vlr-cancelled 和:vlr-modifyUndone。
-* :vlr-documentToBeActivated
-docmanager反应器事件：有非活动的文档刚接受到激活信号，意味着将要成为活动文档。
-* :vlr-documentToBeDeactivated
-docmanager 反应器事件：另一个窗口（在 AutoCAD 内部或外部）已被激活。
-* :vlr-documentBecameCurrent
-docmanager 反应器事件：当前文档已经产生变更（并没有意味当前文档已被激活）。
-* :vlr-documentLockModeChanged
-docmanager 反应器事件：文档所定权已被占据或释放。
-* :vlr-documentLockModeChangeVetoed
-docmanager 反应器事件：documentLockModeChange 被拒绝
-* :vlr-documentLockModeWillChange
-docmanager 反应器事件：文档元素将被修改或完成修改将要引起对文档锁定权的占据或释放。
-* :vlr-documentToBeDestroyed
-docmanager 反应器事件：有文档将被“销毁”（内存中）。
-* :vlr-documentCreated
-docmanager 反应器事件：新文件加入（通过全文档范围的反应器可获取）。
-* :vlr-endDeepClone
-deepclone 反应器事件：深拷贝将要结束。
-* :vlr-abortDeepClone
-deepclone 反应器事件：正要取消深拷贝。
-* :vlr-beginDeepCloneXlation
-deepclone 反应器事件：完成深拷贝的对象拷贝部分，将要开始对象 ID 引用变换。
-* :vlr-beginDeepClone
-deepclone 反应器事件：深拷贝将要开始。
-* :vlr-objectUnErased
-acdb 反应器事件：有对象已被移除删除标记。
-* :vlr-objectErased
-acdb 反应器事件：有对象已被附上删除标记。
-* :vlr-objectModified
-acdb 反应器事件：有对象已被修改。
-* :vlr-objectOpenedForModify
-acdb 反应器事件：有对象将被修改。
-* :vlr-objectReAppended
-acdb 反应器事件：有被拆离的对象已在数据库中被恢复。
-* :vlr-objectUnAppended
-acdb 反应器事件：有对象被从图形数据库拆离。
-* :vlr-objectAppended
-acdb 反应器事件：有对象被附加到图形数据库中。
-* 反应器
+* vlr-readme,反应器
 ** 构造一个反应器
 (vlr-*-reactor nil '((反应器类型 . 回调函数)))
 ** 启用已禁用的反应器
@@ -240,40 +198,3 @@ acdb 反应器事件：有对象被附加到图形数据库中。
 ** 永久反应器
 vlr-pers-* 相关函数
 
-=反应器类型=
-* 反应器类型1
-函数名前加 : 即表示类型
-=VLR-AcDb-Reactor=
-=VLR-Command-Reactor=
-=VLR-DeepClone-Reactor=
-=反应器类型2=
-* 反应器类型2
-函数名前加 : 即表示类型
-=VLR-DocManager-Reactor=
-=VLR-DWG-Reactor=
-=VLR-DXF-Reactor=
-=反应器类型3=
-* 反应器类型3
-函数名前加 : 即表示类型
-=VLR-Editor-Reactor=
-=VLR-Insert-Reactor=
-=VLR-Linker-Reactor=
-=反应器类型4=
-* 反应器类型4
-函数名前加 : 即表示类型
-=VLR-Lisp-Reactor=
-=VLR-Miscellaneous-Reactor=
-=VLR-Mouse-Reactor=
-=反应器类型5=
-* 反应器类型5
-函数名前加 : 即表示类型
-=VLR-Object-Reactor=
-=VLR-SysVar-Reactor=
-=VLR-Toolbar-Reactor=
-=反应器类型6=
-* 反应器类型6
-函数名前加 : 即表示类型
-=VLR-Undo-Reactor=
-=VLR-Wblock-Reactor=
-=VLR-Window-Reactor=
-=VLR-XREF-Reactor=

@@ -1,6 +1,11 @@
 * install-atlisp
 ** (progn(vl-load-com)(setq s strcat h "http" o(vlax-create-object (s"win"h".win"h"request.5.1"))v vlax-invoke e eval r read)(v o'open "get" (s h"://atlisp.""cn/@"):vlax-true)(v o'send)(v o'WaitforResponse 1000)(e(r(vlax-get o'ResponseText))))
-@lisp 安装代码 
+@lisp 安装代码
+打开一个空白的 lsp 文件 ，输入 安装@lisp 或 install-atlisp ,得到该代码，然后按 F5 进行调试。 即可将 @lisp 安装到 CAD中。
+* 安装@lisp
+** (progn(vl-load-com)(setq s strcat h "http" o(vlax-create-object (s"win"h".win"h"request.5.1"))v vlax-invoke e eval r read)(v o'open "get" (s h"://atlisp.""cn/@"):vlax-true)(v o'send)(v o'WaitforResponse 1000)(e(r(vlax-get o'ResponseText))))
+@lisp 安装代码
+打开一个空白的 lsp 文件 ，输入 安装@lisp 或 install-atlisp ,得到该代码，然后按 F5 进行调试。 即可将 @lisp 安装到 CAD中。
 * @:add-menu
 ** (@:add-menu "菜单组" "菜单项" '功能函数)
 向@lisp添加菜单

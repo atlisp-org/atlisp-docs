@@ -201,7 +201,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (end_list)
 结束对当前激活的对话框列表的操作
 * entdel,删除图元
-** (entdel  ename)
+** (entdel ename)
 删除对象（图元）或恢复先前删除的对象
 * entget
 ** (entget ename [applist])
@@ -297,7 +297,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (getenv "variable-name")
 以字符串方式返回指定的环境变量的值
 * getfiled
-** (getfiled title default ext flags)
+** (getfiled "title" "default-path" "ext" flags)
 用标准的 AutoCAD 文件对话框提示用户输入一个文件名，并返回该文件名。
 default: 默认路径
 ext:扩展表。不含 .
@@ -415,7 +415,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (logand [int int &rest])
 返回一个整数表中的各数按位逻辑与 (AND) 的结果
 * logior,逻辑或
-** (logior [intint &rest])
+** (logior [int int &rest])
 返回一个整数表中的各数按位逻辑或 (OR) 的结果
 * lsh,逻辑移位
 ** (lsh int numbits)
@@ -448,8 +448,14 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (minusp num)
 检查某个数是否是负数
 * mode_tile
-** (mode_tile key mode)
+** (mode_tile "key" |mode,0,1,2,3,4|)
 设置对话框控件的状态
+mode 
+0 -- 使框件可用
+1 -- 不可用
+2 -- 获得焦点
+3 -- 选择编辑框内容
+4 -- 点击图像高亮与否
 * namedobjdict
 ** (namedobjdict)
 返回当前图形的命名对象词典的图元名，它是所有非图形对象的根
@@ -475,7 +481,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (numberp item)
 检查某个项是否是实数或整数
 * 函数open,打开文件
-** (open filename mode)
+** (open filename "|r,w,a|")
 打开一个文件，供其他 AutoLISP I/O 函数访问
 mode: "r" 读取 "w" 写 "a" 追加
 ** 示例
@@ -524,6 +530,12 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * 函数redraw
 ** (redraw [ename [mode]])
 重画当前视口或当前视口中的一个指定对象（图元）
+mode <Integer>
+1 -- 显示
+2 -- 隐藏(blank it out)
+3 -- 亮显
+4 -- 不亮显
+The use of entity highlighting (mode 3) must be balanced with entity unhighlighting (mode 4).
 * regapp
 ** (regapp application)
 为当前 AutoCAD 图形注册一个应用名，为使用扩展对象数据作准备
@@ -553,7 +565,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 将一个或多个符号的值设置为相应表达式的值
 [sym expr] 可以重复，以实现多个赋值
 * set_tile
-** (set_tile "key" value)
+** (set_tile "key" "value")
 设置对话框控件的值
 * 函数setvar
 ** (setvar "varname" value)
@@ -565,7 +577,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (sin ang)
 以实数形式返回角度的正弦值（以弧度为单位）
 * slide_image
-** (slide_image x1 y1 width height sldname)
+** (slide_image x1 y1 width height "sldname")
 在当前激活的对话框图像控件中显示 AutoCAD 幻灯片
 * snvalid
 ** (snvalid sym_name [flag])
@@ -580,7 +592,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (ssdel ename ss)
 从选择集中撤消对象（图元）
 * ssget,生成选择集
-** (ssget "[sel-method]" [pt1 [pt2]] [pt-list] [filter-list])
+** (ssget "|[method],c,w,cp,wp,x,l,i,p,:E,:S,:S:E,:D,:L|" [pt1 [pt2]] [pt-list] [filter-list])
 根据选定对象创建选择集
 ** 用法
 *** 两点参数:c 反选 w 正选
@@ -652,13 +664,13 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (tablet code [row1 row2 row3 direction])
 获取和设置数字化仪校准
 * tblnext
-** (tblnext table-name [rewind])
-在符号表中查找下一项
+** (tblnext "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" [rewind])
+在符号表中查找下一项,
 * tblobjname
-** (tblobjname table-name symbol)
+** (tblobjname "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" symbol)
 返回指定符号表条目的图元名
 * tblsearch
-** (tblsearch table-name symbol [setnext])
+** (tblsearch "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" symbol [setnext])
 在指定的符号表中搜索符号名
 * term_dialog
 ** (term_dialog)
@@ -831,10 +843,10 @@ from to:
 ** (caaaar lst)
 第4级子表的第一个元素
 * vl-string->list
-** (vl-string->list  "string")
+** (vl-string->list "string")
 将字符串转换为字符代码表
 * vl-princ-to-string
-** (vl-princ-to-string  data)
+** (vl-princ-to-string data)
 返回 LISP 数据的字符串表示，就象它是由 princ 函数输出的一样
 * vl-mkdir,创建目录
 ** (vl-mkdir directoryname)
@@ -846,7 +858,7 @@ from to:
 ** (vl-filename-directory filename)
 去掉文件的名称和扩展名，返回文件的路径。
 * vl-list*
-** (vl-list*  object[object] &rest)
+** (vl-list* object [object] &rest)
 构造并返回表
 * _vl-times
 ** (_vl-times)
@@ -857,7 +869,7 @@ from to:
 计时器函数，可用于计算程序运行效率
 * vl-infp
 ** (vl-infp num)
-(vl-infp 333)  返回nil
+(vl-infp 333) 返回nil
 (vl-infp 1e2222) 返回T,判断一个数是否无穷大
 * vl-bt
 ** (vl-bt)
@@ -887,7 +899,7 @@ from to:
 ** (vl-catch-all-error-p arg)
 确定参数是否是 vl-catch-all-apply 返回的错误对象
 * vl-cmdf
-** (vl-cmdf  [arguments]  &rest)
+** (vl-cmdf [arguments] &rest)
 执行 AutoCAD 命令
 * vl-consp
 ** (vl-consp list-variable)
@@ -908,7 +920,7 @@ from to:
 ** (vl-doc-set 'symbol value)
 设置当前文档名称空间中变量的值
 * vl-every
-** (vl-every  predicate-function list [list] &rest)
+** (vl-every predicate-function list [list] &rest)
 检查论断结合每个元素后是否均为真
 * vl-exit-with-error
 ** (vl-exit-with-error msg)
@@ -917,28 +929,28 @@ from to:
 ** (vl-exit-with-value value)
 将值返回到从其他名称空间调用 VLX 的函数
 * vl-file-copy
-** (vl-file-copy  source-file destination-file [append])
+** (vl-file-copy source-file destination-file [append])
 将一个文件的内容复制或附加到另一个文件
 * vl-file-delete
-** (vl-file-delete  filename)
+** (vl-file-delete filename)
 删除文件
 * vl-file-directory-p
 ** (vl-file-directory-p path)
 判断文件夹是否存在
 * vl-filename-base
-** (vl-filename-base  filename)
+** (vl-filename-base filename)
 去掉文件的路径和扩展名，返回文件的名称
 * vl-filename-extension
-** (vl-filename-extension  filename)
+** (vl-filename-extension filename)
 返回文件的扩展名，而去掉文件名中的其他部分
 * vl-filename-mktemp
 ** (vl-filename-mktemp [pattern directory extension])
 为临时文件计算唯一的文件名
 * vl-file-rename
-** (vl-file-rename  old-filename new-filename)
+** (vl-file-rename old-filename new-filename)
 重命名文件
 * vl-file-size
-** (vl-file-size  filename)
+** (vl-file-size filename)
 确定文件的大小（字节）
 * vl-file-systime
 ** (vl-file-systime filename)
@@ -950,7 +962,7 @@ from to:
 ** (vl-list-exported-functions [appname])
 列出输出的函数
 * vl-list-length
-** (vl-list-length  list-or-cons-object)
+** (vl-list-length list-or-cons-object)
 计算表的长度
 * vl-list->string
 ** (vl-list->string char-codes-list)
@@ -965,16 +977,16 @@ from to:
 ** (vl-load-reactors)
 加载反应器支持函数
 * vl-member-if
-** (vl-member-if  predicate-function list)
+** (vl-member-if predicate-function list)
 确定论断是否对每一个表成员都正确
 * vl-member-if-not
 ** (vl-member-if-not predicate-function list)
 确定论断是否对表成员中的一个为 nil
 * vl-position
-** (vl-position  symbol list)
+** (vl-position symbol list)
 返回指定表项目的索引
 * vl-prin1-to-string
-** (vl-prin1-to-string  data)
+** (vl-prin1-to-string data)
 返回 LISP 数据的字符串表示，就象它是由 prin1 函数输出的一样
 * vl-propagate
 ** (vl-propagate 'symbol)
@@ -992,22 +1004,22 @@ from to:
 ** (vl-registry-write reg-key [val-name val-data])
 在 Windows 注册表中创建主键
 * vl-remove
-** (vl-remove  element-to-remove list)
+** (vl-remove element-to-remove list)
 删除表中的元素
 * vl-remove-if
-** (vl-remove-if  predicate-function list)
+** (vl-remove-if predicate-function list)
 返回由所提供表中的所有不满足测试函数的元素组成的表
 * vl-remove-if-not
-** (vl-remove-if-not  predicate-function list)
+** (vl-remove-if-not predicate-function list)
 返回由所提供表中的所有能通过测试函数的元素组成的表
 * vl-some
-** (vl-some  predicate-functionlist [list] &rest)
+** (vl-some predicate-functionlist [list] &rest)
 检查论断是否对某个元素组合不为 nil
 * vl-sort
-** (vl-sort  list comparison-function)
+** (vl-sort list comparison-function)
 根据给定的比较函数来对表中的元素排序
 * vl-sort-i
-** (vl-sort-i  list comparison-function)
+** (vl-sort-i list comparison-function)
 根据给定的比较函数对表中的元素排序，并返回元素的索引号
 * vl-string-elt
 ** (vl-string-elt "string" position)
@@ -1037,7 +1049,7 @@ from to:
 ** (vl-string-trim char-set str)
 返回从源字符串首端和尾端开始，分别挨个删除所提供的字符集中的字符(分别遇到不属于字符集中的则分别结束)后的字符串
 * vl-symbol-name
-** (vl-symbol-name  symbol)
+** (vl-symbol-name symbol)
 返回包含某符号名的字符串
 * vl-symbolp
 ** (vl-symbolp object)
@@ -1052,12 +1064,11 @@ from to:
 ** (vl-vbaload filename)
 加载 Visual Basic 工程
 * vl-vbarun
-** (vl-vbarun  macroname)
+** (vl-vbarun macroname)
 运行 Visual Basic 宏
 * vl-vlx-loaded-p
 ** (vl-vlx-loaded-p appname)
 确定某独立名称空间当前是否加载
-
 
 * error,自定义错误处理
 ** (*error* msg)
