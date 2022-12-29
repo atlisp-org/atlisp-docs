@@ -10,8 +10,21 @@
 ** (@:add-menu "菜单组" "菜单项" '功能函数)
 向@lisp添加菜单
 * @:add-menus
-** (@:add-menus lst)
+** (@:add-menus '(("menugroup1" ("menuItem1" expr1)("menuItem2" expr2)("menuItem3" expr3))("menugroup2" ("menuItem4" expr4)("menuItem5" expr5)("menuItem6" expr6))))
 向@lisp添加一组菜单
+示例:
+(@:add-menus
+ '(("菜单组1"
+    ("功能1" expr1)
+    ("功能2" expr2)
+    ("功能3" expr3)
+    )
+   ("菜单组2"
+    ("功能4" expr1)
+    ("功能5" expr2)
+    ("功能6" expr3)
+    )))
+    
 * @:define-config
 ** (@:define-config 'prefix:sym value "配置项说明")
 定义配置项，用于永久保存。
@@ -24,12 +37,15 @@
 设置 @lisp配置项的值
 示例: (@:set-config '@:user-phone "1398888888")
 * @:help
-** (@:help lst-str)
+** (@:help '("description line1" "description line2"))
 功能提示
+用于菜单功能函数定义体内的前面，当用户执行某功能时，显示或说出功能说明信息及注意事项。
 * @:log
-** (@:log "INFO" "记录内容")
+** (@:log "|INFO,WARR,ERROR|" "记录内容")
 记录日志，可作为显示类别信息，如 INFO WARR ERROR 类等。
 * @:debug
-** (@:debug "WARR" "记录内容")
+** (@:debug "|INFO,WARR,ERROR|" "记录内容")
 记录日志，可作为显示类别信息，如 INFO WARR ERROR 类等。
-
+* _
+** (_"i10n string")
+将 "i10n string" 标记为可翻译字符串，对照本地化语言包，显示本地语言。

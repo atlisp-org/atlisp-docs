@@ -22,8 +22,11 @@ APP：扩展数据 (XDATA) 标记（固定）
 第二步，选择一个图元并返回组码
 (setq En (entget (car (entsel))))
 
-第三步，定义加入图元的扩展数据
-(setq data ‘((-3 (“xapp” (1000 . “你好中国”)))))
+第三步，定义加入图元的扩展数据,可用组码 1000~1071。
+常用组码 1000-1009 字符串，1010 点坐标，用途不同，不能乱用。
+(setq str "附加字串")
+(setq data (list (list -3 (list "xapp" (cons 1000 str)))))
+;; (setq data ‘((-3 (“xapp” (1000 . “你好中国”)))))
 
 第四步，将扩展数据附着更新图元
 (entmod (append En data))
