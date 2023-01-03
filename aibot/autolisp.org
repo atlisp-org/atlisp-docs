@@ -42,7 +42,7 @@
 ** (acad_helpdlg helpfile topic)
 启动帮助工具（已废弃）
 * acad_strlsort
-** (acad_strlsort list)
+** (acad_strlsort lst)
 以ASCII码字母顺序对字符串表进行排序
 * action_tile
 ** (action_tile key action-expression)
@@ -72,10 +72,10 @@
 ** (angtos angle [unit [precision]])
 将一个以弧度为单位的角度值转换成字符串
 * append,组合表
-** (append [list &rest])
+** (append [lst &rest])
 将任意多个表组合成一个表
 * apply
-** (apply 'function list)
+** (apply 'function lst)
 传递一个列表作为指定函数的参数，并执行该函数
 详见： https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E8%BF%9B%E9%98%B6/lisp.org
 * 函数arx
@@ -107,6 +107,11 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * atom
 ** (atom item)
 验证一个项是否是原子
+* atoms-family
+** (atoms-family |0,1| [symlist])
+返回当前系统中已定义的符号的列表
+0 返回符号, 1 返回符号的字符串名
+symlist: 字符串列表，用于指定要搜索的atoms族的符号名称。
 * autoarxload
 ** (autoarxload filename cmdlist)
 预定义可自动加载某相关 ObjectARX 应用程序的命令名
@@ -121,15 +126,15 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 比较参数是否值不相等
 * boole,布尔运算
 ** (Boole operator int1 [int2 &rest])
-11123,用作一个通用的按位逻辑运算函数
+用作一个通用的按位逻辑运算函数
 * boundp
 ** (boundp sym)
 检验符号是否被设置为某个值
 * car
-** (car list)
+** (car lst)
 返回表的第一个元素
 * cdr
-** (cdr list)
+** (cdr lst)
 返回去掉了第一个元素的表或点对表的第二个元素
 * chr
 ** (chr integer)
@@ -267,7 +272,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 ** (float number)
 将一个数转换为实数后返回
 * foreach
-** (foreach name list [exprs])
+** (foreach name lst [exprs])
 将表中的所有成员以指定变量的身份带入表达式求值
 * gc
 ** (gc)
@@ -404,7 +409,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 检查某个项是否是表
 * load
 ** (load filename [onfailure])
-此函数将装入一个包含AutoLISP表达式的文件, 同时判别这些表达式。filename是一个代表文件名称的字符串, 而且不须加上扩展名(因为扩展名.lsp是自动设定)。
+此函数将装入一个包含AutoLISP表达式的文件， 同时判别这些表达式。filename是一个代表文件名称的字符串， 而且不须加上扩展名(因为扩展名.lsp是自动设定)。
 * load_dialog
 ** (load_dialog dclfile)
 加载 DCL 文件
@@ -498,14 +503,14 @@ mode: "r" 读取 "w" 写 "a" 追加
 ** (polar pt ang dist)
 在 UCS 坐标系下，求某点的指定角度和指定距离处的点，并返回该点
 * prin1,原样输出
-** (print [expr [file-desc]])
+** (prin1 [expr [file-desc]])
 在命令行打印表达式，或将表达式写入已打开的文件中，其结果可用 read 读入。
 * princ,输出
 ** (princ [expr [file-desc]])
-在命令行打印表达式，或将表达式写入已打开的文件中
+在命令行打印表达式，或将表达式写入已打开的文件中，处理转义。
 * print
 ** (print [expr [file-desc]])
-在命令行打印表达式，或将表达式写入已打开的文件中
+在命令行打印表达式，或将表达式写入已打开的文件中，原样输出。
 * progn
 ** (progn [expr] &rest)
 顺序地对每一个表达式进行求值，并返回最后那个表达式的值
@@ -659,13 +664,13 @@ unicode版本每个字的长度为 1.
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * substr,求子串
 ** (substr "string" start [length])
-返回字符串中的一个子字符串,字符串中的第一个字符的位置为 1
+返回字符串中的一个子字符串，字符串中的第一个字符的位置为 1
 * 函数tablet
 ** (tablet code [row1 row2 row3 direction])
 获取和设置数字化仪校准
 * tblnext
 ** (tblnext "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" [rewind])
-在符号表中查找下一项,
+在符号表中查找下一项
 * tblobjname
 ** (tblobjname "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" symbol)
 返回指定符号表条目的图元名
@@ -754,15 +759,15 @@ from to:
 这个函数将装入一个AutoCAD高级开发系统(ADS)的应用程序。
 * xunload
 ** (xunload application [onfailure])
-此函数将卸载一个ADS应用程序。如果应用程序被成功地卸下。那么, 应用程序的名称将被返回。否则, 一个错误信息将被发出。
+此函数将卸载一个ADS应用程序。如果应用程序被成功地卸下。那么， 应用程序的名称将被返回。否则， 一个错误信息将被发出。
 * zerop
 ** (zerop number)
 检查一个数的值是否为 0
 * pi
-3.14159,圆周率
+3.14159，圆周率
 * bpoly
 ** (bpoly pt [ss vector])
-搜索点附近曲线,生成最小边界
+搜索点附近曲线，生成最小边界
 * cddr
 ** (cddr lst)
 返回去掉了前两个元素的表
@@ -780,19 +785,19 @@ from to:
 返回表内第一个表，并去掉前两个元素
 * cddadr
 ** (cddadr lst)
-数据库中没有收录这个函数!请帮助录入,谢谢
+取坐标用1
 * cddaar
 ** (cddaar lst)
-数据库中没有收录这个函数!请帮助录入,谢谢
+取坐标用2
 * cdar
-** (cdar list)
+** (cdar lst)
 返回表内第一个表中去掉了第一个元素的表
 * cdadr
 ** (cdadr lst)
-获取表第二个元素,然后再去除第一个元素
+获取表第二个元素，然后再去除第一个元素
 * cdaddr
 ** (cdaddr lst)
-数据库中没有收录这个函数!请帮助录入,谢谢
+取坐标用3
 * cdadar
 ** (cdadar lst)
 返回表内第一个子表的第二个子表，且去掉第一个元素！
@@ -870,7 +875,7 @@ from to:
 * vl-infp
 ** (vl-infp num)
 (vl-infp 333) 返回nil
-(vl-infp 1e2222) 返回T,判断一个数是否无穷大
+(vl-infp 1e2222) 返回T，判断一个数是否无穷大
 * vl-bt
 ** (vl-bt)
 错误跟踪
@@ -890,7 +895,7 @@ from to:
 ** (vl-bb-set 'symbol value)
 设置黑板名称空间中的变量
 * vl-catch-all-apply
-** (vl-catch-all-apply 'function list)
+** (vl-catch-all-apply 'function lst)
 将参数表传递给指定函数并截取错误
 * vl-catch-all-error-message
 ** (vl-catch-all-error-message error-obj)
@@ -905,8 +910,14 @@ from to:
 ** (vl-consp list-variable)
 确定表是否不为 nil
 * vl-directory-files
-** (vl-directory-files [directory pattern directories])
-获取指定目录中的所有文件夹列表
+** (vl-directory-files "directory" "|pattern,*.*,*.dwg|" |directories,-1,0,1|)
+获取指定目录中的所有文件列表，三个参数均可省略。
+directory : 指定的目录,默认为当前 dwg文件所在目录
+pattern : 匹配字符串 当为 nil时,等同于"*.*"
+directorys: -1 只列出目录，0 列出目录和文件，1 只列出文件
+
+返回值:列表 或 nil
+
 * vl-doc-export
 ** (vl-doc-export 'function)
 使函数在当前文档中可用
@@ -920,7 +931,7 @@ from to:
 ** (vl-doc-set 'symbol value)
 设置当前文档名称空间中变量的值
 * vl-every
-** (vl-every predicate-function list [list] &rest)
+** (vl-every predicate-function lst [lst] &rest)
 检查论断结合每个元素后是否均为真
 * vl-exit-with-error
 ** (vl-exit-with-error msg)
@@ -969,21 +980,21 @@ from to:
 将一系列与整数表相关联的字符组合成字符串 。
 * vl-load-all
 ** (vl-load-all filename)
-将文件加载到所有打开的 AutoCAD 文档中,以及在当前 AutoCAD 任务中后续打开的任何文档中
+将文件加载到所有打开的 AutoCAD 文档中，以及在当前 AutoCAD 任务中后续打开的任何文档中
 * vl-load-com
 ** (vl-load-com)
-将 Visual LISP 扩展功能加载到 * false,false
+将 Visual LISP 扩展功能加载到 * false，false
 * vl-load-reactors
 ** (vl-load-reactors)
 加载反应器支持函数
 * vl-member-if
-** (vl-member-if predicate-function list)
+** (vl-member-if predicate-function lst)
 确定论断是否对每一个表成员都正确
 * vl-member-if-not
-** (vl-member-if-not predicate-function list)
+** (vl-member-if-not predicate-function lst)
 确定论断是否对表成员中的一个为 nil
 * vl-position
-** (vl-position symbol list)
+** (vl-position symbol lst)
 返回指定表项目的索引
 * vl-prin1-to-string
 ** (vl-prin1-to-string data)
@@ -1004,22 +1015,22 @@ from to:
 ** (vl-registry-write reg-key [val-name val-data])
 在 Windows 注册表中创建主键
 * vl-remove
-** (vl-remove element-to-remove list)
+** (vl-remove element-to-remove lst)
 删除表中的元素
 * vl-remove-if
-** (vl-remove-if predicate-function list)
+** (vl-remove-if predicate-function lst)
 返回由所提供表中的所有不满足测试函数的元素组成的表
 * vl-remove-if-not
-** (vl-remove-if-not predicate-function list)
+** (vl-remove-if-not predicate-function lst)
 返回由所提供表中的所有能通过测试函数的元素组成的表
 * vl-some
 ** (vl-some predicate-functionlist [list] &rest)
 检查论断是否对某个元素组合不为 nil
 * vl-sort
-** (vl-sort list comparison-function)
+** (vl-sort lst comparison-function)
 根据给定的比较函数来对表中的元素排序
 * vl-sort-i
-** (vl-sort-i list comparison-function)
+** (vl-sort-i lst comparison-function)
 根据给定的比较函数对表中的元素排序，并返回元素的索引号
 * vl-string-elt
 ** (vl-string-elt "string" position)
