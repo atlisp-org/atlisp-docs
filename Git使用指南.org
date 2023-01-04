@@ -6,6 +6,8 @@
 * 下载安装
   链接：[[https://pan.baidu.com/s/1rpfm3pLYIU3wS1V4gXLN0w?pwd=zgl5]]
 
+  或到 Git 官网下载 https://git-scm.com/
+
   双击 PortableGit.7z.exe 安装 Git，记住安装位置。一般是解压到安装文件所在文件夹下的 PortableGit 这个文件夹下。
 * 准备 Git 环境
   进入 PortableGit 文件夹，双击 git-bash.exe 打开 终端命令行。
@@ -34,6 +36,9 @@ $ git config --global user.name  "yourname"
 #+END_SRC
 
 ** 配置 Git
+
+因 Windows 系统与服务器系统不同，使用的文件系统不同。需要统一文件格式和权限。
+
 #+begin_src
   # 提交的代码换行均按 LF 格式
   git config --global core.autocrlf input
