@@ -54,7 +54,7 @@ $ git config --global user.name  "yourname"
 
 SSH方式可以设置证书，实现无密码登录，执行过程中不用输入密码。
 
-http方式: https://gitee.com/yournmae/atlisp-lib.git
+http方式: https://gitee.com/yourname/atlisp-lib.git
 
 SSH 方式: git@gitee.com:yourname/atlisp-lib.git
 #+END_QUOTE
