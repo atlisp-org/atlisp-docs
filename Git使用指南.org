@@ -6,7 +6,7 @@
 * 下载安装
   链接：[[https://pan.baidu.com/s/1rpfm3pLYIU3wS1V4gXLN0w?pwd=zgl5]]
 
-  或到 Git 官网下载 https://git-scm.com/
+  或到 Git 官网下载 [[https://git-scm.com]]
 
   双击 PortableGit.7z.exe 安装 Git，记住安装位置。一般是解压到安装文件所在文件夹下的 PortableGit 这个文件夹下。
 * 准备 Git 环境
