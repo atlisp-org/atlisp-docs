@@ -169,6 +169,19 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 定义函数
 详见：
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
+
+* defvar
+** (defvar *sym* value)
+定义全局变量。习惯上一般以 * 号包围名字，使用 defvar 设置的变量，可以显示在 vscode 的大纲中，需要@lisp支持。
+在 cl 中，只有 sym 为 nil 时，才会赋值。
+* defparameter
+** (defparameter *sym* value)
+定义全局变量。习惯上一般以 * 号包围名字，使用 defparameter 设置的变量，可以显示在 vscode 的大纲中，需要@lisp支持。
+在 cl 中，不同于 defvar, 该函数总是将 value 赋值给 sym 。
+* defconstant
+** (defconstant +sym+ value)
+设置变量。习惯上一般以 + 号包围名字，使用 defparameter 设置的变量，可以显示在 vscode 的大纲中，需要@lisp支持。
+在 cl 中，不同于 defvar, 该函数总是将 value 赋值给 sym 。
 * dictadd
 ** (dictadd ename symbol newobj)
 在指定词典内添加非图形对象
