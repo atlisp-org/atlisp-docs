@@ -45,8 +45,11 @@
 ** (acad_strlsort lst)
 以ASCII码字母顺序对字符串表进行排序
 * action_tile
-** (action_tile key action-expression)
-为某一对话框控件指定一个动作表达式，用户在对话框中选中这个控件时，就会执行该动作表达式
+** (action_tile "key" "action-expression")
+为某一对话框控件指定一个动作表达式，用户在对话框中选中这个控件时，就会执行该动作表达式.
+action_tile指定的操作将取代对话框的默认操作（由new_dialog指定）或 Tile 的操作属性（如果已指定）。
+表达式 action-expression 中可以将 Tile 的当前值称为$value，将其名称称为$key，
+将其特定于应用程序的数据（由client_data_tile设置）称为$data，将其回调原因称为$reason，将其图像坐标（如果磁贴是图像按钮）称为 $x和$y。
 * add_list
 ** (add_list "string")
 在当前激活的对话框的列表框中增加一个字符串或修改其中的一个字符串
