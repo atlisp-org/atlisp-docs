@@ -291,6 +291,11 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * foreach
 ** (foreach name lst [exprs])
 将表中的所有成员以指定变量的身份带入表达式求值
+* function
+** (function |symbol,lambda-expr|)
+告诉Visual LISP编译器链接和优化参数，就像它是内置函数一样.
+将函数函数添加到表达式后，编译器可以优化lambda表达式。例如：
+(mapcar (function (lambda(x)(* x x))) '(1 2 3))
 * gc
 ** (gc)
 强制收集无用数据，释放不再使用的节点
