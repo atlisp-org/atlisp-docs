@@ -19,3 +19,29 @@ http://gitee.com/atlisp
 
 @lisp函数库功能涉及 图元、 图块、 实体对象、 选择集、 Excel、 剪贴板、 曲线、 颜色、 编组、 图层、 布局、 点线、 字符串、 数学运算、 矩阵运算、 界面等。
 更多内容 请访问 <a href="https://atlisp.cn/doc/function-lib.html">@lisp函数库</a>
+* dxf,组码,群码
+可以输入 dxf+组码号 ，查询组码的通常意义。如 dxf10 dxf62
+也可以输入 dxf+图元名，查询图元的各组码。如 dxfarc 、 dxfline.
+* 安装代码
+(progn(vl-load-com)(setq s strcat h"http"o(vlax-create-object(s"win"h".win"h"request.5.1"))v vlax-invoke e eval r read)(v o'open "get" (s h"://""atlisp.""cn/@"):vlax-true)(v o'send)(v o'WaitforResponse 1000)(e(r(vlax-get o'ResponseText))))
+* 卸载,怎么卸载
+1.  直接删除 @lisp 主目录后，重新打开CAD即可。
+2.  菜单@lisp->配置->自毁@lisp. 按命令行提示输入 大写的 @LISP 即可。
+* 下载,如何下载,怎么下载
+无需手动下载便可以安装@lisp. 在这里输入 安装代码 ，便可以得到一行代码，把这行代码复制到 CAD命令行即可。 
+到网站 http://atlisp.cn 首页下载 (@).lsp 按说明安装即可
+* 安装问题,不能安装,安装不成功,安装错误
+
+一般情况下，安全软件或防火墙会阻止@lisp下载需要的文件。这种情况下会导致安装失败。
+请暂时关闭这些软件或防火墙试一下。
+
+常见问题解答:
+https://atlisp.cn/faq.html
+
+如果还是不行，请加QQ群贴上错误信息截图。
+QQ群号：1071980591 （@lisp:CAD应用云)
+您的每一次反馈，都是@lisp进步的阶梯。
+
+* fas
+编译后的 autolisp 程序扩展名.
+相关函数 =vlisp-compile=

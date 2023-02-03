@@ -1,4 +1,4 @@
- #+prefix: autolisp
+#+prefix: autolisp
 * -
 ** (– [number number] &rest)
 将第一个数减去其他数的和并返回差值
@@ -994,7 +994,7 @@ directorys: -1 只列出目录，0 列出目录和文件，1 只列出文件
 返回 VLX 中保存的 .txt 文件中的文字
 * vl-list-exported-functions
 ** (vl-list-exported-functions [appname])
-列出输出的函数
+列出输出的函数，appname为已加载的vlx应用，不包含.vlx扩展名。
 * vl-list-length
 ** (vl-list-length list-or-cons-object)
 计算表的长度
@@ -1103,7 +1103,40 @@ directorys: -1 只列出目录，0 列出目录和文件，1 只列出文件
 * vl-vlx-loaded-p
 ** (vl-vlx-loaded-p appname)
 确定某独立名称空间当前是否加载
+* vlisp-compile
+** (vlisp-compile |'mode,'st,'lsm,'lsa| filename [output-filename])
+将 AutoLISP 源代码编译到 FAS 文件
+支持的平台：仅 Windows
+参数：
+'mode 
+类型：符号
+编译器模式，可以是以下符号之一：
 
+st 标准版本模式 - 生成最小的输出文件，适合包含单个文件的程序。
+
+lsm间接优化和链接 - 优化编译后的文件，但不创建对编译代码中编译函数的直接引用。
+
+lsa直接优化和链接 - 优化编译后的文件，并创建对编译代码中编译函数的直接引用（而不是创建对函数符号的直接引用）。
+
+注意:这两个优化选项最适合大型和复杂程序。
+优化的基本功能如下：
+链接函数调用可创建对编译代码中编译函数的直接引用，而不是函数符号。此功能可提高编译代码的性能，并在运行时保护代码以防止函数重定义。
+删除函数名称以提高编译代码的安全性并减少程序大小和加载时间。
+删除所有局部变量的名称并直接链接其引用。这还使编译的代码更加安全，并减少程序大小和加载时间。
+
+filename
+类型：字符串
+AutoLISP 源文件名。如果源文件位于 AutoCAD 支持文件搜索路径中，则指定文件名时可以省略路径。如果省略文件扩展名，则假定使用 .lsp。
+
+output-filename
+类型：字符串
+编译的输出文件名。如果未指定输出文件，vlisp-compile将使用与输入文件相同的名称命名输出，但将扩展名替换为 .fas。
+
+注意:如果指定输出文件名但未指定输入或输出文件的路径名，vlisp-compile 会将输出文件放置在 AutoCAD 安装目录中。
+
+返回值
+类型：T 或 nil
+如果编译成功，则为 T；否则为 nil。
 * error,自定义错误处理
 ** (*error* msg)
 用户定义的错误处理函数。
