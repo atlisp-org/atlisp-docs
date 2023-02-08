@@ -45,3 +45,6 @@ QQ群号：1071980591 （@lisp:CAD应用云)
 * fas
 编译后的 autolisp 程序扩展名.
 相关函数 =vlisp-compile=
+* 安全频道支持出错
+win7 中某些版本的联网功能对安全连接支持有限。可安装下面的链接修复。
+http://atlisp.cn/stable/bin/MicrosoftEasyFix51044.msi
