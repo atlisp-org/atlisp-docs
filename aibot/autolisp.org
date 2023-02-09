@@ -516,6 +516,16 @@ mode: "r" 读取 "w" 写 "a" 追加
 (setq fp (open (findfile "acad.pgp") "r"))
 (read-line fp)
 (close fp)
+* openutf8,打开utf8文件
+** (open filename "|r,w,a|" "utf8")
+打开一个utf8编码文件，供其他 AutoLISP I/O 函数访问
+
+需CAD2021及以后的版本，且 lispsys = 1 或 2
+mode: "r" 读取 "w" 写 "a" 追加
+** 示例
+(setq fp (open (findfile "acad.pgp") "r" "utf8"))
+(read-line fp)
+(close fp)
 * or
 ** (or [expr &rest])
 返回对表达式进行逻辑或 (OR) 运算的结果
