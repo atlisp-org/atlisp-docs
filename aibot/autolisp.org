@@ -607,7 +607,7 @@ The use of entity highlighting (mode 3) must be balanced with entity unhighlight
 设置对话框控件的值
 * 函数setvar
 ** (setvar "varname" value)
-设置 AutoCAD 系统变量为指定值
+设置 AutoCAD 系统变量为指定值，varname 为只读时会提示被拒。value值的类型需与 varname 所需的类型一致。
 * setview
 ** (setview view_descriptor [vport_id])
 为指定视口建立一个视图
