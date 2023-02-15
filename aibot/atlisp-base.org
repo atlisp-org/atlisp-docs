@@ -50,3 +50,25 @@
 * _
 ** (_"i10n string")
 将 "i10n string" 标记为可翻译字符串，对照本地化语言包，显示本地语言。
+* type-of
+** (type-of symbol)
+返回符号指向的值的类型。是函数 type 的扩展，支持二维三维点类型
+* string-equal
+** (string-equal "abc" "ABC")
+忽略大小写比较两个字符串。
+* floor
+** (floor num)
+向负无穷大取整
+* ceiling
+** (ceiling num)
+向正无穷大取整
+* round
+** (round num)
+四舍五入
+* mod
+** (mod int int)
+求两个数相除的余数
+* confirm
+** (confirm "string")
+显示确认对话框
+

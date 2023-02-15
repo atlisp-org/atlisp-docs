@@ -48,3 +48,8 @@ QQ群号：1071980591 （@lisp:CAD应用云)
 * 安全频道支持出错
 win7 中某些版本的联网功能对安全连接支持有限。可安装下面的链接修复。
 http://atlisp.cn/stable/bin/MicrosoftEasyFix51044.msi
+
+
+* vscode
+打开 vscode,按 Ctrl+Shift+X 打开扩展面板，搜索 atlisp，安装 @lisp函数库。
+即可使用 vscode 快捷开发 autolisp程序。
