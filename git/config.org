@@ -121,6 +121,12 @@ git config --global user.email kl222@126.com
     name = KangLin
     email = kl222@126.com
 #+end_src
+* 文件权限
+#+begin_src 
+git config --add core.filemode false
+#+end_src
+该配置设置在 全局设置中不起做用。需为每个仓库单独设置。
+
 * 设置git默认编辑器
 #+begin_src 
 git config --global core.editor vim
