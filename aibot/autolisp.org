@@ -63,7 +63,7 @@ action_tile指定的操作将取代对话框的默认操作（由new_dialog指�
 * alloc
 ** (alloc n-alloc)
 设置段长度以供 expand 函数使用
-* and
+* 函数and
 ** (and [expr &rest])
 返回表达式的逻辑与 (AND) 运算结果
 * angle,弧度
@@ -129,8 +129,24 @@ symlist: 字符串列表，用于指定要搜索的atoms族的符号名称。
 ** (/= numstr [numstr] &rest)
 比较参数是否值不相等
 * boole,布尔运算
-** (Boole operator int1 [int2 &rest])
+** (Boole |operator,1,6,7,8| int1 [int2&rest])
 用作一个通用的按位逻辑运算函数
+*** operator
+Type: Integer
+0 - 15 之间的整数
+*** int1, int2...
+Type: Integer
+A numeric value.
+注意:boole will accept a single integer argument, but the result is unpredictable.
+
+*** Boole function bit values
+Operator Operation Resulting bit is 1 if
+1 AND Both input bits are 1
+6 XOR Only one of the two input bits is 1
+7 OR Either or both of the input bits are 1
+8 NOR Both input bits are 0 (1's complement)
+
+您可以使用运算符的其他值来执行没有标准名称的其他布尔运算。例如，如果运算符为4，则如果相应的位设置在int2而不是int1中，则设置结果位.
 * boundp
 ** (boundp sym)
 检验符号是否被设置为某个值
@@ -152,6 +168,9 @@ symlist: 字符串列表，用于指定要搜索的atoms族的符号名称。
 * command
 ** (command [arguments] &rest)
 执行一条 AutoCAD 命令
+* command-s
+** (command [arguments] &rest)
+执行一条 AutoCAD 命令，可用于*error*中。
 * cond
 ** (cond [(test result &rest) &rest])
 多条件、多处理结果函数
@@ -397,7 +416,7 @@ cr : T or nil 控制输入的字符串能否含有空格。
 * handent,句柄
 ** (handent handle)
 根据对象（图元）的句柄返回它的对象（图元）名
-* if,条件分支
+* 函数if,条件分支
 ** (if testexpr thenexpr [elseexpr])
 根据对条件的判断结果，对两个表达式求值
 详见：
@@ -496,7 +515,7 @@ mode
 * new_dialog
 ** (new_dialog dlgname dcl_id [action [screen-pt]])
 开始一个新的对话框并显示该对话框，而且能指定一个缺省操作
-* not
+* 函数not
 ** (not item)
 检查一个项的求值结果是否为 nil
 * nth
@@ -526,7 +545,7 @@ mode: "r" 读取 "w" 写 "a" 追加
 (setq fp (open (findfile "acad.pgp") "r" "utf8"))
 (read-line fp)
 (close fp)
-* or
+* 函数or
 ** (or [expr &rest])
 返回对表达式进行逻辑或 (OR) 运算的结果
 * 函数osnap
@@ -757,7 +776,7 @@ from to:
 * 函数vports
 ** (vports)
 返回表示当前视口配置的视口描述符表
-* wcmatch,字符匹配
+* wcmatch,字符匹配,通配符
 ** (wcmatch "string" pattern)
 将模式字符串与某指定的字符串进行匹配比较
 ** 通配符

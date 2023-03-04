@@ -51,5 +51,9 @@ http://atlisp.cn/stable/bin/MicrosoftEasyFix51044.msi
 
 
 * vscode
-打开 vscode,按 Ctrl+Shift+X 打开扩展面板，搜索 atlisp，安装 @lisp函数库。
+打开 vscode、按 Ctrl+Shift+X 打开扩展面板，搜索 atlisp，安装 @lisp函数库。
 即可使用 vscode 快捷开发 autolisp程序。
+
+* shx, pkpmeng.shx, tssdeng.shx
+@lisp字体库提供了一些常用的字体。安装应用包 @lisp字体库，即可下载并使用这些字体。
+https://atlisp.cn/package-info/fonts-stable.html
