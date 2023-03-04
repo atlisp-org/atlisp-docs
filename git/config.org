@@ -112,8 +112,8 @@ safecrlf = true
 
 * 用户信息设置
 #+begin_src 
-git config --global user.name KangLin
-git config --global user.email kl222@126.com
+git config --global user.name VitalGG
+git config --global user.email vitalgg@gmail.com
 #+end_src
 
 或者编辑git配置文件：vi ~/.gitconfig
