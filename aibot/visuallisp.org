@@ -459,34 +459,34 @@
 选择表格中一些单元格。 参数11
 * vla-DeleteRows
 ** (vla-DeleteRows object row Rows)
-删除表格中的行,参数3
+删除表格中的行。 参数3
 * vla-GetMinimumColumnWidth
 ** (vla-GetMinimumColumnWidth object col)
-获取表格中指定列索引所在的列的最小列宽,参数2
+获取表格中指定列索引所在的列的最小列宽。参数2
 * vla-GetCustomByKey
 ** (vla-GetCustomByKey object key pValue)
-返回与名称(键)值对应的自定义属性值,参数3
+返回与名称(键)值对应的自定义属性值。参数3
 * vla-SetGridLineWeight
 ** (vla-SetGridLineWeight object gridLineTypes rowTypes Lineweight)
-设置指定格线类型和行类型的格线线宽值,参数4
+设置指定格线类型和行类型的格线线宽值。参数4
 * vla-GetCellExtents
 ** (vla-GetCellExtents object row col bOuterCell)
-返回指行和列的单元格区域,参数4
+返回指行和列的单元格区域。参数4
 * vla-GetCellTextStyle
 ** (vla-GetCellTextStyle object row col)
-返回指定行和列的文字样式名称,参数3
+返回指定行和列的文字样式名称。参数3
 * vla-GetRowHeight
 ** (vla-GetRowHeight object row)
-返回表格中指定行索引所在的行的行高,参数2
+返回表格中指定行索引所在的行的行高。参数2
 * vla-GetCellBackgroundColorNone
 ** (vla-GetCellBackgroundColorNone object row col)
-返回指定的行和列是否无背景颜色,参数3
+返回指定的行和列是否无背景颜色。参数3
 * vla-SetCellContentColor
 ** (vla-SetCellContentColor object row col pColor)
-设置指定行和列中内容的真彩色值,参数4
+设置指定行和列中内容的真彩色值。参数4
 * vla-SetSubSelection
 ** (SetSubSelection object rowMin rowMax colMin colMax)
-设置在子选择集中单元格的行和列索引,参数5
+设置在子选择集中单元格的行和列索引。参数5
 * vla-FieldCode
 ** (vla-FieldCode object)
 返回包含字段代码的文字字符串。
@@ -848,8 +848,6 @@
 * vla-LoadDVB
 ** (vla-LoadDVB Application Name)
 加载指定的 AutoCAD VBA 工程文件。
-* vla-Name
-** nil,没有这个函数
 * vla-ReselectSubRegion
 ** (vla-ReselectSubRegion Table)
 返回表格中选择集的子图元。
@@ -1176,7 +1174,7 @@
 设定应用程序窗口的左边界。
 * vla-put-Width
 ** (vla-put-Width Object value)
-设定文字边界, 视图, 图象, 工具栏, 或主应用程序窗口的宽度。
+设定文字边界。 视图。 图象。 工具栏。 或主应用程序窗口的宽度。
 * vla-put-Weights
 ** (vla-put-Weights Object value)
 设定样条曲线的权值矢量。
@@ -1486,7 +1484,7 @@
 * vla-put-FlowDirection
 ** (vla-put-FlowDirection object mode)
 acTableTopToBottom / 0 -> 从上到下
-acTableBottomToTop / 1 -> 从下到上,设置表格方向
+acTableBottomToTop / 1 -> 从下到上。设置表格方向
 * vla-get-TextBackgroundFill
 ** (vla-get-TextBackgroundFill obj)
 获取多重引线文本遮罩状态
@@ -1531,10 +1529,10 @@ acTableBottomToTop / 1 -> 从下到上,设置表格方向
 返回 obj 的 file property
 * vla-get-AdjustForBackground
 ** (vla-get-AdjustForBackground obj)
-获取对象是否根据背景调整颜色(适用于 DgnUnderlay, DwfUnderlay, PdfUnderlay)
+获取对象是否根据背景调整颜色(适用于 DgnUnderlay。 DwfUnderlay。 PdfUnderlay)
 * vla-put-AdjustForBackground
 ** (vla-put-AdjustForBackground obj Boolean)
-设置对象是否根据背景调整颜色(适用于 DgnUnderlay, DwfUnderlay, PdfUnderlay)
+设置对象是否根据背景调整颜色(适用于 DgnUnderlay。 DwfUnderlay。 PdfUnderlay)
 * vla-get-BlockScaling
 ** (vla-get-BlockScaling summaryinfo)
 读取块是否为允许统一比例，0为不允许，1为允许
@@ -1573,20 +1571,20 @@ AutoCAD 2016 新增，与 sendcommand 的同步执行相比为异步执行。
 ** (vla-get-LeaderLineType vla-obj)
 获取对象的线型。
 返回线型的序号代表
-适用于MLeader, MLeaderLeader, MLeaderStyle
+适用于MLeader。 MLeaderLeader。 MLeaderStyle
 * vla-get-ContentType
 ** (vla-get-ContentType vla-obj)
 指定内容类型，返回整数值。
 类型分为：块类型，多行文字类型，无。
-适用于MLeader, MLeaderStyle
+适用于MLeader。 MLeaderStyle
 * vla-get-Annotative
 ** (vla-get-Annotative vla-obj)
-对象是否具有注释性,
+对象是否具有注释性。
 如果是返回:vlax-true
 否则返回:vlax-false
 * vla-get-Textfill
 ** (vla-get-Textfill dimobj)
-获取标注文本背景遮罩打开或关闭的状态,返回:vlax-true则为打开，返回:vlax-false则为关闭
+获取标注文本背景遮罩打开或关闭的状态。返回:vlax-true则为打开，返回:vlax-false则为关闭
 * vla-get-Textfillcolor
 ** (vla-get-Textfillcolor dimobl)
 获得标注文本填充遮罩颜色号
@@ -1607,7 +1605,7 @@ AutoCAD 2016 新增，与 sendcommand 的同步执行相比为异步执行。
 atable:单元格对象，vla类型;
 row:行数；
 column:列数；
-value：值，string,设置CAD自带表格某个单元格的值
+value：值，string。设置CAD自带表格某个单元格的值
 * vla-getcellvalue
 ** (vla-getcellvalue tableobj i j)
 获取cad自带表格特定单元格的值
@@ -1621,7 +1619,7 @@ i为行数，j为列数
 ;table 表格对象，vla类型
 ;logic Boolean[布尔值]; 可读写 
         TRUE: 禁用表格重新生成。 
-        FALSE: 启用表格重新生成。,启用或禁用表格块的重新生成
+        FALSE: 启用表格重新生成。。启用或禁用表格块的重新生成
 * vla-get-TextHeight
 ** (vla-get-TextHeight obj)
 获取标注或公差的文字高度(争对已标注的对像
@@ -1633,20 +1631,20 @@ i为行数，j为列数
 设置对象的ACI颜色索引值
 * vla-get-Blue
 ** (vla-get-Blue retcolor)
-;retcolor是(vla-get-TrueColor obj)的返回值,获取真彩色值的Blue值
+;retcolor是(vla-get-TrueColor obj)的返回值。获取真彩色值的Blue值
 * vla-get-Green
 ** (vla-get-Green retcolor)
-;retcolor是(vla-get-TrueColor obj)的返回值,获取真彩色值的Green值
+;retcolor是(vla-get-TrueColor obj)的返回值。获取真彩色值的Green值
 * vla-get-Red
 ** (vla-get-Red retcolor)
-;retcolor是(vla-get-TrueColor obj)的返回值,获取真彩色值的Red值
+;retcolor是(vla-get-TrueColor obj)的返回值。获取真彩色值的Red值
 * vla-get-truecolor
 ** (vla-get-truecolor vlaobj)
 ;后续可用
 ;(vla-get-Red   retcolor)
 ;(vla-get-Green retcolor)
 ;(vla-get-Blue  retcolor)
-;获取R，G，B的值,获取对象的真彩色值，即RGB值
+;获取R，G，B的值。获取对象的真彩色值，即RGB值
 * vla-get-Title
 ** (vla-get-Title summaryInfo)
 获取document的标题信息
@@ -2494,7 +2492,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得线宽是否显示在图形的模型空间中。
 * vla-get-LoadAcadLspInAllDocuments
 ** (vla-get-LoadAcadLspInAllDocuments Object)
-取得在启动时加载acad.lsp ,或者在每个图形中加载。
+取得在启动时加载acad.lsp 。或者在每个图形中加载。
 * vla-get-LocaleID
 ** (vla-get-LocaleID Object)
 取得当前的AutoCAD工作任务中的语言环境标识码（ID）。
@@ -3235,7 +3233,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得样条曲线的权值矢量。
 * vla-get-Width
 ** (vla-get-Width Object )
-取得文字边界, 视图, 图象, 工具栏, 或主应用程序窗口的宽度。
+取得文字边界。 视图。 图象。 工具栏。 或主应用程序窗口的宽度。
 * vla-get-WindowLeft
 ** (vla-get-WindowLeft Object )
 取得应用程序窗口的左边界。
@@ -3880,7 +3878,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 设定线宽是否显示在图形的模型空间中。
 * vla-put-LoadAcadLspInAllDocuments
 ** (vla-put-LoadAcadLspInAllDocuments Object Value)
-设定是否在启动时加载acad.lsp ,还是和第一个图形一起加载。
+设定是否在启动时加载acad.lsp 。还是和第一个图形一起加载。
 * vla-put-Lock
 ** (vla-put-Lock Object value)
 设定图层锁写或解锁。
@@ -4249,7 +4247,7 @@ boundpair 为索引的上下界点对表，如'(0 . 2)，表示这一维有 0~2 
 存储图形词典或对象中的 LISP 数据
 * vlax-ldata-list
 ** (vlax-ldata-list dict [private])
-列出图形词典中的 LISP 数据,测试cad2007有bug！
+列出图形词典中的 LISP 数据。测试cad2007有bug！
 * vlax-ldata-get
 ** (vlax-ldata-get dict key [default-data] [private])
 在图形词典或对象中检索 LISP 数据
@@ -4349,5 +4347,3 @@ boundpair 为索引的上下界点对表，如'(0 . 2)，表示这一维有 0~2 
 返回AutoCAD在HKEY_LOCAL_MACHINE下的Windows注册表路径。
 注：仅AutoCAD 2013以上版本支持。
 此函数用来替换vlax-product-key函数。
-* vlax-vbArray
-** 8192,变体类型：Array(SafeArray)
