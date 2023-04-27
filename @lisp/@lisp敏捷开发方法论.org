@@ -1,0 +1,170 @@
+* 从一个小需求说起
+直接需求：求两个图层的线的交点形成圆
+
+操作过程描述：提示选择第一个图层，然后提示选择第二个图层，然后选择图纸范围，范围内的图层一和图层二的线的交点形成圆形
+* 编程关键点
+1 选择第一个图层，
+2 选择第二个图层，
+3 然后选择图纸范围，
+4 计算交点
+5 绘制圆形
+
+** 关键步骤功能点
+*** 取得图层名
+我们有两个方法取得图层名，1 从图层列表中选择。2 从图元对象得到图层名。
+
+如果不知道怎么写代码，可以打开 CAD应用云 微信公众号。
+输入要求查询有没有可用的函数。
+
+*** 取得图纸范围
+常用的是 ssget 的矩形和多边形选择。初始代码我们使用简单的矩形
+#+begin_src lisp
+(ssget "w" pt1 pt2)
+#+end_src
+或
+#+begin_src lisp
+(ssget "C" pt1 pt2)
+#+end_src
+*** 曲线交点
+查询是否有可用的函数
+
+*** 绘制圆形
+由于命令创建圆和ActiveX方法创建圆的影响，不容易命中我们的@lisp函数要创建圆。输入 make-circle 也很容易搜到我们需要的函数。
+* 组织代码
+前面所有的技术问题都有解决的函数了。我们把这些函数组织到一起来完成需求
+
+#+begin_src lisp
+  ;; 取第一、二个图层名
+  (setq layer1 (entity:get-layer (car (entsel))))
+  (setq layer2 (entity:get-layer (car (entsel))))
+  ;; 取图纸范围
+  (setq pt1 (getpoint "取图纸范围的第一个点"))
+  ;; 为了直观些，我们使用 getcorner 函数
+  (setq pt1 (getcorner pt1 "取图纸范围的第二个点"))
+
+  ;; 取图纸范围内的两个图层上的曲线
+
+  (setq ents1
+        (pickset:to-list
+         (ssget "c" pt1 pt2  (list (cons 0 (@:get-config '@curve:types))(cons 8 layer1)))))
+  (setq ents2
+        (pickset:to-list
+         (ssget "c" pt1 pt2  (list (cons 0 (@:get-config '@curve:types))(cons 8 layer2)))))
+
+  ;; 需求中要求不需要同一图层的曲线
+  (setq res nil)
+  (foreach ent1 ents1
+    (foreach ent2 ents2
+      (setq res (append res
+                    (curve:inters ent1 ent2 acextendnone)
+      ))))
+  ;; 去掉空值
+  (setq res (vl-remove nil res))
+
+  ;; 画圆,半径 50
+  (entity:make-circle res 50)
+#+end_src
+至此，基本的需求就完成了。
+
+* 封装与迭代优化
+将上面的过程封装成函数,私有化变量
+
+#+begin_src lisp
+  (defun get-cross-from-2layer (/ layer1 layer2 pt1 pt2 ents1 ents2 res)
+    ;; 取第一、二个图层名
+    (setq layer1 (entity:get-layer (car (entsel))))
+    (setq layer2 (entity:get-layer (car (entsel))))
+    ;; 取图纸范围
+    (setq pt1 (getpoint "取图纸范围的第一个点"))
+    ;; 为了直观些，我们使用 getcorner 函数
+    (setq pt2 (getcorner pt1 "取图纸范围的第二个点"))
+
+    ;; 取图纸范围内的两个图层上的曲线
+
+    (setq ents1
+          (pickset:to-list
+           (ssget "c" pt1 pt2  (list (cons 0 (@:get-config '@curve:types))(cons 8 layer1)))))
+    (setq ents2
+          (pickset:to-list
+           (ssget "c" pt1 pt2  (list (cons 0 (@:get-config '@curve:types))(cons 8 layer2)))))
+
+    ;; 需求中要求不需要同一图层的曲线
+    (setq res nil)
+    (foreach ent1 ents1
+             (foreach ent2 ents2
+                      (setq res (append res
+                                        (curve:inters ent1 ent2 acextendnone)
+                                        ))))
+    ;; 去掉空值
+    (setq res (vl-remove nil res))
+    ;; 画圆,半径 50
+    (entity:make-circle res 50)
+    )
+#+end_src
+
+对于只使用了一次的符号变量，我们可以直接用表达式将其代替掉。
+
+#+begin_src lisp
+  (defun get-cross-from-2layer (/ layer1 layer2 pt1 pt2 ents1 ents2 res)
+    ;; 取第一、二个图层名
+    (setq layer1 (entity:get-layer (car (entsel))))
+    (setq layer2 (entity:get-layer (car (entsel))))
+    ;; 取图纸范围
+    (setq pt1 (getpoint "取图纸范围的第一个点"))
+    ;; 为了直观些，我们使用 getcorner 函数
+    (setq pt2 (getcorner pt1 "取图纸范围的第二个点"))
+
+    ;; 需求中要求不需要同一图层的曲线
+    (setq res nil)
+    (foreach ent1 (pickset:to-list
+                   (ssget "c" pt1 pt2  (list (cons 0 (@:get-config '@curve:types))(cons 8 layer1))))
+             (foreach ent2 (pickset:to-list
+                            (ssget "c" pt1 pt2  (list (cons 0 (@:get-config '@curve:types))(cons 8 layer2))))
+                      (setq res (append res
+                                        (curve:inters ent1 ent2 acextendnone)
+                                        ))))
+    ;; 去掉空值
+    (setq res (vl-remove nil res))
+    ;; 画圆,半径 50
+    (entity:make-circle res 50)
+    )
+#+end_src
+
+** 添加帮助说明，并加入到 @lisp 菜单系统
+
+#+begin_src lisp
+  (@:add-menu "@试验室" "层间线交点" '(@lab:get-cross-from-2layer))
+  (defun @lab:get-cross-from-2layer (/ layer1 layer2 pt1 pt2 ents1 ents2 res)
+    (@:help '("求两个图层的线的交点形成圆"
+              " 操作：选择第一个图层，然后提示选择第二个图层，然后选择图纸范围，范围内的图层一和图层二的线的交点形成圆形"))
+    ;; 取第一、二个图层名
+    (setq layer1 (entity:get-layer (car (entsel))))
+    (setq layer2 (entity:get-layer (car (entsel))))
+    ;; 取图纸范围
+    (setq pt1 (getpoint "取图纸范围的第一个点"))
+    ;; 为了直观些，我们使用 getcorner 函数
+    (setq pt2 (getcorner pt1 "取图纸范围的第二个点"))
+
+    ;; 需求中要求不需要同一图层的曲线
+    (setq res nil)
+    (foreach ent1 (pickset:to-list
+                   (ssget "c" pt1 pt2  (list (cons 0 (@:get-config '@curve:types))(cons 8 layer1))))
+             (foreach ent2 (pickset:to-list
+                            (ssget "c" pt1 pt2  (list (cons 0 (@:get-config '@curve:types))(cons 8 layer2))))
+                      (setq res (append res
+                                        (curve:inters ent1 ent2 acextendnone)
+                                        ))))
+    ;; 去掉空值
+    (setq res (vl-remove nil res))
+    ;; 画圆,半径 50
+    (entity:make-circle res 50)
+    )
+#+end_src
+
+* 发布
+把上面的包括有菜单和功能函数的代码保存到一个单独的文件 get-cross-from-2layer.lsp ，并保存到 atlisp/packages/at-lab/ 目录下。
+
+修改 @试验室 的包定义文件，加入 get-cross-from-2layer 到 定义的 :files 字段下。
+
+
+增加版本号，使用 CAD下的 @lisp开发工具发布即可。
