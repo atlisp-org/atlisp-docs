@@ -670,7 +670,7 @@ x 整个文件
 详：https://gitee.com/atlisp/atlisp-docs/blob/main/AutoLisp/ssget.org
 * ssgetfirst
 ** (ssgetfirst)
-判断哪些对象是被选取的和被夹取的
+判断哪些对象是被选取的和被夹取的，使用该函数可以实现先选择后执行。
 * sslength
 ** (sslength ss)
 求出一个选择集中的对象（图元）数目，并将其作为一个整数返回
