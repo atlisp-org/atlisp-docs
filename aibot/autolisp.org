@@ -193,6 +193,17 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 详见：
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 
+* defun-q,将函数定义为列表形式
+** (defun-q NAME (arguments / private-variables) "函数功能说明" "函数返回值" exprs)
+将函数定义为列表形式，可以明文查看函数的定义。
+
+* defun-q-list-ref,显示使用defun-q定义的函数的列表结构
+** (defun-q-list-ref 'function)
+显示使用defun-q定义的函数的列表结构
+* defun-q-list-set,将符号的值设置为列表定义的函数
+** (defun-q-list-set 'sym list)
+将符号的值设置为列表定义的函数
+
 * defvar
 ** (defvar *sym* value)
 定义全局变量。习惯上一般以 * 号包围名字，使用 defvar 设置的变量，可以显示在 vscode 的大纲中，需要@lisp支持。

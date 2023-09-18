@@ -1462,7 +1462,7 @@
 设定在绘图区中按一下鼠标右键时显示快捷菜单或产生ENTER。
 * vla-put-SegmentPerPolyline
 ** (vla-put-SegmentPerPolyline Object value)
-设定每一个多段线曲线产生的线段数目。
+设定显示精度中每条多段线的线段数。
 * vla-put-SecondPoint
 ** (vla-put-SecondPoint Object value)
 设定射线或建构线的第二点。
@@ -2894,7 +2894,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得射线或建构线的第二点。
 * vla-get-SegmentPerPolyline
 ** (vla-get-SegmentPerPolyline Object )
-取得每一个多段线曲线产生的线段数目。
+取得显示精度中每条多段线的线段数。
 * vla-get-Selection
 ** (vla-get-SelectionSets Object )
 取得PreferencesSelection对象。
