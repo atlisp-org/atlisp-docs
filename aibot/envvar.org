@@ -1,0 +1,45 @@
+#+prefix: 环境变量
+* 环境变量
+系统环境变量可以用函数 getenv 获得。
+=appdata=
+=computername=
+=homedrive=
+=homepath=
+=os=
+=path=
+=systemdrive=
+=systemroot=
+=tmp=
+=temp=
+=username=
+=userdomain=
+=userdomainprofile=
+=userprofile=
+
+* appdata
+用于指定应用程序数据存储的路径。
+* computername
+当前计算机的名称
+* homedrive
+当前用户的主目录所在的驱动器。
+* HOMEPATH
+用于指定当前用户的主目录下的相对路径。
+* OS
+操作系统名称
+* path
+用于指定系统搜索可执行文件的路径，通常包括系统目录、用户目录、第三方工具等。
+* SystemDrive
+用于指定Windows安装的驱动器
+* SystemRoot,windir
+和Windows系统目录的路径。
+* tmp,temp
+用于指定临时文件的存储路径，许多应用程序和系统组件都会使用这些变量。
+* username
+系统当前登录的用户名
+* USERPROFILE
+用于指定当前用户的主目录路径。
+* userdomain
+系统用户的域名或工作组
+* userdomainprofile
+系统用户的域名或工作组简称
+
