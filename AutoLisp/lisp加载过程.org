@@ -3,20 +3,15 @@
 * 打开Acad.exe
 1 执行 acad.lsp
 * 打开 dwg 文档时
-1 开始图形初始化,同时执行下面的步骤。
+1. 开始图形初始化,同时执行下面的步骤。
+2. 如果系统变量 ACADLSPASDOC = 1 ， 加载 acad.lsp
+3. 加载 acaddoc.lsp
+4. 加载菜单相关的各个 mnl 文件
+5. 图形初始化完成
 
-2 如果系统变量 ACADLSPASDOC = 1 ， 加载 acad.lsp
+   在图形始化完成之前，加载并执行的 acaddoc.lsp 和*.mnl 文件。
 
-3 加载 acaddoc.lsp
+   acaddoc.lsp 及 .mnl 文件中有 加载其它 lsp fas vlx 文件时,如 load 函数。会加载并执行这些文件。
 
-4 加载菜单相关的各个 mnl 文件
-
-5 图形初始化完成
-
-  在图形始化完成之前，加载并执行的 acaddoc.lsp 和*.mnl 文件。
-
-  acaddoc.lsp 及 .mnl 文件中有 加载其它 lsp fas vlx 文件时,如 load 函数。会加载并执行这些文件。
-
-  加载并执行这些lsp/fas/vlx 文件时因为图形数据还可能还没有初始化完成，这种情况下进行图形操作时就会出错如(ssget entsel 之类的)。
-
-6 执行 s::startup
+   加载并执行这些lsp/fas/vlx 文件时因为图形数据还可能还没有初始化完成，这种情况下进行图形操作时就会出错如(ssget entsel 之类的)。
+6. 执行 s::startup
