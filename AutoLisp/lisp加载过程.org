@@ -1,7 +1,7 @@
 #+title: Autolisp程序加载过程
 
 * 打开Acad.exe
-1 执行 acad.lsp
+1. 执行 acad.lsp
 * 打开 dwg 文档时
 1. 开始图形初始化,同时执行下面的步骤。
 2. 如果系统变量 ACADLSPASDOC = 1 ， 加载 acad.lsp
@@ -15,3 +15,6 @@
 
    加载并执行这些lsp/fas/vlx 文件时因为图形数据还可能还没有初始化完成，这种情况下进行图形操作时就会出错如(ssget entsel 之类的)。
 6. 执行 s::startup
+
+* 注意事项
+当打开 dwg 需要自动执行lsp进行图形操作时。我们需要把要执行的代码写入到 s::startup 中，这样才能保证图形初始化完成并正确地自动执行。
