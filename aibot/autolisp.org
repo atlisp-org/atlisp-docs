@@ -733,7 +733,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 获取和设置数字化仪校准
 * tblnext
 ** (tblnext "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" [rewind])
-在符号表中查找下一项
+在符号表中查找下一项。当 rewind 为 t 时，指向符号表的第一项。
 * tblobjname
 ** (tblobjname "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" symbol)
 返回指定符号表条目的图元名
