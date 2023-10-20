@@ -282,10 +282,10 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 更新对象（图元）的屏幕显示
 * eq
 ** (eq expr1 expr2)
-确定两个表达式是否具有相同的约束条件
+检测测试两个表达式是否具有相同的约束条件
 * equal,等价
 ** (equal expr1 expr2 [fuzz])
-确定两个表达式的值是否相等
+检测测试两个表达式的值是否相等
 * *error*
 ** (*error* "string")
 可由用户定义的错误处理函数
@@ -965,13 +965,13 @@ from to:
 从错误对象返回字符串
 * vl-catch-all-error-p
 ** (vl-catch-all-error-p arg)
-确定参数是否是 vl-catch-all-apply 返回的错误对象
+检测测试参数是否是 vl-catch-all-apply 返回的错误对象
 * vl-cmdf
 ** (vl-cmdf [arguments] &rest)
 执行 AutoCAD 命令
 * vl-consp
 ** (vl-consp list-variable)
-确定表是否不为 nil
+检测测试表是否不为 nil
 * vl-directory-files
 ** (vl-directory-files "directory" "|pattern,*.*,*.dwg|" |directories,-1,0,1|)
 获取指定目录中的所有文件列表，三个参数均可省略。
@@ -1025,7 +1025,7 @@ directorys: -1 只列出目录，0 列出目录和文件，1 只列出文件
 重命名文件
 * vl-file-size
 ** (vl-file-size filename)
-确定文件的大小（字节）
+获取文件的大小（字节）
 * vl-file-systime
 ** (vl-file-systime filename)
 返回指定文件的上一次修改时间
@@ -1052,10 +1052,10 @@ directorys: -1 只列出目录，0 列出目录和文件，1 只列出文件
 加载反应器支持函数
 * vl-member-if
 ** (vl-member-if predicate-function lst)
-确定论断是否对每一个表成员都正确
+检测测试每一个表成员都符合给定的测试函数
 * vl-member-if-not
 ** (vl-member-if-not predicate-function lst)
-确定论断是否对表成员中的一个为 nil
+检测测试论断是否对表成员中的一个为 nil
 * vl-position
 ** (vl-position symbol lst)
 返回指定表项目的索引
@@ -1126,8 +1126,8 @@ directorys: -1 只列出目录，0 列出目录和文件，1 只列出文件
 ** (vl-symbol-name symbol)
 返回包含某符号名的字符串
 * vl-symbolp
-** (vl-symbolp object)
-确定指定对象是否为符号
+** (vl-symbolp obj)
+检测测试指定对象是否为符号
 * vl-symbol-value
 ** (vl-symbol-value symbol)
 返回当前绑定到符号的值
@@ -1142,7 +1142,7 @@ directorys: -1 只列出目录，0 列出目录和文件，1 只列出文件
 运行 Visual Basic 宏
 * vl-vlx-loaded-p
 ** (vl-vlx-loaded-p appname)
-确定某独立名称空间当前是否加载
+检测测试某独立名称空间当前是否加载
 * vlisp-compile
 ** (vlisp-compile 'mode filename [output-filename])
 将 AutoLISP 源代码编译到 FAS 文件
