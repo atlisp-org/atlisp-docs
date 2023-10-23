@@ -73,7 +73,7 @@ ok_only框件是一个单独的ok按钮，例如警报框使用的那种。
 文本本框件显示用于标题或信息目的的文本字符串。
 * text_part,文本片断框件
 文本部分是一块较大文本的一部分的文本框件。
-* toggle,开关框件
+* toggle,开关框件,复选框件
 切换显示为一个小框，框右侧有一个可选标签。
 * destroy_button
 ** destroy_button : retirement_button {label = "&Destroy"; key = "destroy";}
