@@ -7871,7 +7871,7 @@ UOSNAP 将替代 DWFOSNAP、PDFOSNAP 和 DGNOSNAP 设置。反之，用户可以
 * VIEWBACKSTATUS
 存储上一个视图是否可用于 VIEWBACK 命令。
 
-类型: 参数
+类型: 参数 
 保存位置: 未保存
 初始值: 不确定
 
