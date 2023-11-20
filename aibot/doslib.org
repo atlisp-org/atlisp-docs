@@ -1,108 +1,7 @@
-* dos_strremove
-** (dos_strremove string char)
-在字符串中移去指定字符
-* dos_cmdline
-** (dos_cmdline [T])
-从AutoCAD的命令行或历史窗口返回文本。
-Example
-Command: (dos_cmdline)
-Command: (dos_cmdline),false
-* dos_curvearea
-** (dos_curvearea entity)
-返回闭合曲线实体所限定的面积。
-Example
-Command: (dos_curvearea (car (entsel ""\nSelect a closed curve:"")))
-6.43372
-* dos_closeall
-** (dos_closeall)
-关闭所有打开的AutoCAD绘图文件。
-Example
-Command: (dos_closeall)
-* dos_cleardbmod
-** (dos_cleardbmod [T])
-清除DBMOD(或绘图修改状态)系统变量。警告，在清除此变量后，将不会在关闭绘图或关闭AutoCAD时提示保存绘图。
-Example
-Command: (dos_cleardbmod)
-* dos_arxlist
-** (dos_arxlist [T])
-返回加载的ARX应用程序列表,类似于(arx)。
-Example
-Command: (dos_arxlist)
+#+prefix: doslib
 * dos_acadname
 ** (dos_acadname)
 返回正在运行的AutoCAD的产品名称。在确定是否运行AutoCAD的“垂直”版本时非常有用。
-* dos_acitorgb
-** (dos_acitorgb aci-value)
-将AutoCAD颜色索引(ACI)值转换为红绿蓝(RGB)颜色值。
-Example
-Command: (dos_acitorgb 1)
-(255 0 0)
-Command: (dos_acitorgb 128)
-(0 76 57)"
-* dos_acadmem
-** (dos_acadmem)
-返回AutoCAD内存统计信息
-Example
-Command: (dos_acadmem)
-(16003072 73891840 43562 57044992 58130432 469140 481864 46140 49708)
-* dos_shellexe
-** (dos_shellexe file parameters [operation [show]])
-打开或打印指定的文件。 
-operation： 0：打开可执行文件或文档。1：打印文档。2：浏览指定的文件夹。
-Example
-Command: (dos_shellexe ""notepad.exe"" ""readme.txt"")
-T
-(dos_shellexe ""c:\\drawings\\"" nil 2)
-T
-* dos_processes
-** (dos_processes [T])
-返回在系统上运行的进程或任务的列表。
-T：如果指定，则返回运行进程的完全限定路径。否则，只返回文件名。  
-Example
-Command: (dos_processes)
-(""smss.exe"" ""winlogon.exe"" ""services.exe"" ""lsass.exe"" ""mdm.exe"" ""RegSrvc.exe""  ""svchost.exe"" ""acad.exe"")
-* dos_setprn
-** (dos_setprn printername)
-设置当前或默认的Windows打印机。打印机名称必须是名称 
-Example
-Command: (dos_setprn (cadr (dos_printers)))
-* dos_spool
-** (dos_spool filename printername)
-将磁盘文件假脱机或打印到Windows打印机。spool文件必须为“raw”打印机格式。 
-Example
-Command: (dos_spool "readme.txt" (dos_getprn))
-* dos_command
-** (dos_command command [show])
-运行内部命令。内部命令是操作系统命令解释器固有的命令（例如command.com或cmd.exe）。 
-show：默认为0. 
-0：正常 1：不激活 2：最小化窗 3：最小且不激活 4：最大化
-Example
-Command: (dos_command ""copy *.dwg c:/temp"")
-* dos_execute
-** (dos_execute command [show])
-执行外部程序。path环境变量用于查找要执行的程序。 
-Example
-Command: (dos_execute "Notepad.exe")
-"Notepad.exe"
-* dos_exewait
-** (dos_exewait command [show])
-执行外部程序，然后等待终止，然后将控制权返回到调用应用程序。 
-Example
-Command: (dos_exewait ""Notepad.exe"")
-Running external process, please wait...
-T"
-* dos_getprn
-** (dos_getprn)
-返回当前或默认的Windows打印机。 
-Example
-Command: (dos_getprn)
-""HP LaserJet 8100 Series PCL"
-* dos_printers
-** (dos_printers)
-返回已安装的Windows打印机的列表。这些打印机是通过Windows控制面板安装的。 
-Example
-Command: (dos_printers)
-("HP LaserJet 8100 Series PCL 6" "hp LaserJet 1300 PCL 6" "HP DeskJet 935C""HP Color LaserJet 4500")
 * dos_zerop
 ** (dos_zerop vector)
 确定二维或三维矢量是零矢量还是空矢量。 
@@ -128,7 +27,6 @@ Command: (dos_vector '(3 2 2) '(1 1 5))
 * dos_unitp
 ** (dos_unitp vector)
 确定二维或三维矢量是单位矢量。 
-
 Example
 Command: (dos_unitp (dos_unitize '(2 1)))
 T
@@ -155,7 +53,6 @@ Command: (dos_tripleproduct '(1 0 0) '(0 1 0) '(0 0 1))
 ** (dos_tinyp vector [tiny_tol])
 确定二维或三维矢量是否非常短。 
 tiny_tol：用于确定向量是否很小的公差。如果省略，则使用1.0e-12的公差。 
-
 Example
 Command: (dos_tinyp '(1 0 0))
 nil
@@ -180,7 +77,7 @@ Command: (dos_tan 0.785)
 Command: (dos_tan (dos_dtr 45))
 1.0
 * dos_sum
-** (dos_sum number0 ...)
+** (dos_sum number0 number1)
 累加数字，包括数字列表，并返回和。 
 Example
 Command: (dos_sum 1 1 2 2 2 3 4 4 5 6 7 7 8 9)
@@ -260,26 +157,15 @@ T
 Command: (dos_righthandp '(0 1) '(1 0))
 nil
 * dos_range
-** (dos_range number0 ...)
+** (dos_range number0 number1)
 返回数字列表或序列的范围（最小值和最大值之间的差异）。 
 Example
 Command: (dos_range '(1 1 2 2 2 3 4 4 5 6 7 7 8 9))
 8
 Command: (dos_range 1 1 2 2 2 3 4 4 5 6 7 7 8 9)
 8
-* dos_random
-** (dos_random)
-返回伪随机数。 
-Command: (dos_random)
-13395
-Command: (rem (dos_random) 100) 'in 0-99
-37
-Command: (+ (rem (dos_random) 100) 1) 'in 1-100
-69
-Command: (+ (rem (dos_random) 30) 1985) 'in 1985-2014
-2003
 * dos_quotient
-** (dos_quotient number0 ...)
+** (dos_quotient number0 number1)
 对数字（包括数字列表）进行除法，并返回商。 
 Example
 Command: (dos_quotient 50 2 5)
@@ -299,7 +185,7 @@ Example
 Command: (dos_quadratic 1 -3 -4)
 (0 -1 4)
 * dos_product
-** (dos_product number0 ...)
+** (dos_product number0 [number1])
 将数字（包括数字列表）相乘，并返回乘积。 
 Example
 Command: (dos_product 50 2 5)
@@ -387,7 +273,7 @@ Command: (dos_normalize 39 0 255)
 Command: (dos_parameterize 0.152941 0 255)
 39.0
 * dos_negate
-** (dos_negate number0 ...)
+** (dos_negate number0 [number1])
 否定一个数字的列表或序列。注意，一个否定的向量和以前一样大，但是它的方向现在是相反的。 
 Example
 Command: (dos_negate 1 2 2 3 4 9)
@@ -395,7 +281,7 @@ Command: (dos_negate 1 2 2 3 4 9)
 Command: (dos_negate '(3 2))
 (-3 -2)
 * dos_moment
-** (dos_moment number0 ...)
+** (dos_moment number0 [number1])
 包含平均值、平均偏差、标准偏差、方差、偏度和峰度（如果成功）的列表。注意，如果方差=0，那么偏度和峰度将为零。
 * dos_modf
 ** (dos_modf number)
@@ -408,7 +294,7 @@ Command: (dos_modf (dos_pi))
 Command: (dos_modf -14.87654321)
 (-14.0 -0.876543)
 * dos_mode
-** (dos_mode number0 ...)
+** (dos_mode number0 [number1])
 返回数字列表或序列的模式（最常出现的值）。 
 Example
 Command: (dos_mode '(1 1 2 2 2 3 4 4 5 6 7 7 8 9))
@@ -416,7 +302,7 @@ Command: (dos_mode '(1 1 2 2 2 3 4 4 5 6 7 7 8 9))
 Command: (dos_mode 1 1 2 2 2 3 4 4 5 6 7 7 8 9)
 (2)
 * dos_min
-** (dos_min number0 ...)
+** (dos_min number0 [number1])
 返回列表或数字系列中的最小数字。 
 Example
 Command: (dos_min '(1 2 3 4 5 6 7 8 9))
@@ -424,7 +310,7 @@ Command: (dos_min '(1 2 3 4 5 6 7 8 9))
 Command: (dos_min 1 2 3 4 5 6 7 8 9)
 1
 * dos_median
-** (dos_median number0 ...)
+** (dos_median number0 [number1])
 返回数字列表或序列的中间值或中间值。 
 Example
 Command: (dos_median '(1 2 3 4 5 6 7 8 9))
@@ -432,7 +318,7 @@ Command: (dos_median '(1 2 3 4 5 6 7 8 9))
 Command: (dos_median 1 2 3 4 5 6 7 8 9)
 5
 * dos_mean
-** (dos_mean number0 ...)
+** (dos_mean number0 [number1])
 返回数字列表或序列的平均值。 
 Example
 Command: (dos_mean 1 2 3 4 5 6 7 8 9)
@@ -442,7 +328,7 @@ Command: (dos_mean '(1 2 3 4 5 6 7 8 9))
 Command: (dos_mean '(1 2) '(3 6) '(1 7))
 (1.66667 5)
 * dos_max
-** (dos_max number0 ...)
+** (dos_max number0 [number1])
 返回列表或数字系列中的最大数字。 
 Example
 Command: (dos_max '(1 2 3 4 5 6 7 8 9))
@@ -454,11 +340,8 @@ Command: (dos_max 1 2 3 4 5 6 7 8 9)
 计算一个数的二进制对数（以2为底）。 
 Example
 Command: (dos_log2 1)
-
 0
-
  
-
 Command: (dos_log2 2)
 1
 Command: (dos_log2 3)
@@ -600,7 +483,7 @@ Example
 Command: (dos_div 876 13)
 (67 5)
 * dos_difference
-** (dos_difference number0 ...)
+** (dos_difference number0 [number1])
 减去数字，包括数字列表，并返回差。 
 Example
 Command: (dos_difference 10)
@@ -615,7 +498,6 @@ Command: (dos_difference '(10 3) '(2 7))
 ** (dos_cullnumbers list [tolerance])
 从数字列表中剔除或删除重复值。 
 剔除容忍度。如果省略，则使用1.0e-12的公差。 
-
 Command: (dos_cullnumbers '(3 8 4 8 2 3 9 5 8))
 (3 8 4 2 9 5)
 * dos_crossproduct
@@ -751,6 +633,5112 @@ Command: (dos_acosh 10)
 * dos_acos
 ** (dos_acos number)
 反余弦
-* dos_abs number
+* dos_abs
 ** (dos_abs number)
 返回数字的绝对值或数字的数值，而不考虑其符号。
+* dos_chkdsk
+** (dos_chkdsk [drive])
+返回当前或指定驱动器的磁盘空间统计信息. 有必要的话可以使用rtos函数把返回值转换成字符串.
+*** 参数 
+drive 
+盘符(如, C:, D:). 如果未指定, 使用当前驱动器. 
+*** 返回 
+如果成功, 返回包含三个实数的表: 总大小, 已用空间,可用空间, 以字节为单位. 
+nil 失败时.
+*** 示例
+Command: (dos_chkdsk) 
+(1.94292e+010 1.23667e+010 7.06254e+009) 
+ 
+Command: (rtos (cadr (dos_chkdsk)) 2 0) 
+"12366708736" 
+Command: (dos_chkdsk "Z:") 
+(5.03223e+010 4.86313e+010 1.69095e+009) 
+* dos_drive
+** (dos_drive [drive])
+返回当前驱动器, 或更改为指定的驱动器. 
+*** 参数 
+drive 
+盘符(如, C:, D:). 如果未指定, 使用当前驱动器. 
+*** 返回 
+如果成功, 返回当前或新驱动器的名称. 
+nil 失败时. 
+*** 示例 
+Command: (dos_drive) 
+"C:" 
+Command: (dos_drive "D:") 
+"D:" 
+Colder: 
+对于这个命令我曾经一度感到费解. 事实上它并不能影响AutoCAD中的路径 (如 _.open _.saveas), 而且在AutoCAD中使用带有选择路径功能的对话框以后, 会覆盖dos_drive之前的设置. 
+其实这个修改盘符的目的是给其它DOSLib函数使用的. 试一试下面两条命令有什么区别, 你就会明白了. 
+(progn (dos_drive "C:") (dos_chkdsk)) 和 (progn (dos_drive "D:") (dos_chkdsk)) 
+ 
+* dos_drivep
+** (dos_drivep drive)
+检查驱动器是否存在.
+*** 参数
+drive 
+盘符(如, C:, D:).
+*** 返回
+T 如果指定的驱动器存在.
+nil 失败时.
+*** 示例 
+Command: (dos_drivep "D:")
+T
+Command: (dos_drivep "Z:")
+nil
+* dos_drives
+** (dos_drives)
+返回可用驱动器的列表.
+*** 参数
+n/a
+*** 返回
+如果成功, 返回可用的本地和网络驱动器的列表.
+nil 失败时.
+*** Example 
+Command: (dos_drives) 
+("A:" "C:" "D:" "E:" "F:") 
+* dos_drivetype
+** (dos_drivetype [drive])
+返回指定驱动器类型; removable(可移动磁盘), fixed(本地磁盘), CD-ROM(光驱), RAM disk(闪存), network drive(网络驱动器).
+*** 参数 
+drive 
+盘符 (如, C:, D:). 如果未指定, 使用当前驱动器. 
+*** 返回 
+如果成功, 返回一个描述驱动器类型的字符串. 
+nil 失败时. 
+*** 示例 
+Command: (dos_drivetype) 
+"FIXED" 
+ 
+Command: (dos_drivetype "F:") 
+"CDROM" 
+ 
+Command: (dos_drivetype "Z:") 
+"REMOTE" 
+* dos_filesys
+** (dos_filesys [drive])
+返回指定驱动器的文件系统; FAT, FAT32, NTFS, HPFS, CDFS, network drive.
+*** 参数 
+drive 
+盘符 (如, C:, D:). 如果未指定, 使用当前驱动器. 
+*** 返回 
+如果成功, 返回指明文件系统的字符串. 
+nil 失败时. 
+*** 示例
+Command: (dos_filesys) 
+"NTFS" 
+Command: (dos_drive "F:") 
+"CDFS" 
+ 
+* dos_format
+** (dos_format drive) 
+显示Windows的格式化对话框. 
+*** 参数 
+drive 
+盘符 (如, A:, B:). 
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+*** 示例 
+Command: (dos_format "A:") 
+T 
+* dos_label
+** (dos_label [drive [label]]) 
+返回或更改指定驱动器的卷标. 
+*** 参数 
+drive 
+盘符 (如, C:, D:). 如果未指定, 使用当前驱动器. 
+label 
+卷标. 如果未指定, 将返回卷标. 
+*** 返回 
+如果成功, 返回用于识别卷标的字符串. 
+nil 失败时. 
+*** 示例 
+Command: (dos_label) 
+"DRIVE-C" 
+ 
+Command: (dos_label "D:" "drive-d") 
+"DRIVE-D" 
+* dos_serialno
+** (dos_serialno [drive]) 
+返回指定驱动器的卷序列号. 
+*** 参数 
+drive 
+盘符 (如, C:, D:). 如果未指定, 使用当前驱动器. 
+*** 返回 
+如果成功, 返回一个指明卷序列号的字符串. 
+nil 失败时. 
+*** 示例 
+Command: (dos_serialno) 
+"4216120B" 
+ 
+Command: (dos_serialno "D:") 
+"FCF9CE6C" 
+Colder: 
+这里需要说明的是, 卷序列号并不是硬盘的物理序列号, 前者是可变的, 而后者是唯一不变的. 
+每个盘都拥有各自的卷序列号, 彼此各不相同, 并且格式化分区会导致卷序列号发生变化. 一些软件声称可以修改硬盘序列号, 其实所指的就是这个卷序列号, 也就是说卷序列号也可以用软件修改. 
+在Windows系统的命令提示符中, 输入vol可以方便的得到卷序列号. 
+ 
+* dos_absolutepath
+** (dos_absolutepath path_from path_to)
+创建从一个文件或文件夹到另一个的绝对路径.
+*** 参数
+path_from
+包含定义开始绝对路径的字符串.
+ 
+path_to
+要转换成绝对路径的相对路径.
+*** 返回
+如果成功, 返回包含绝对路径的字符串.
+nil 失败时.
+示例
+Command: (dos_absolutepath "C:\\Program Files\\AutoCAD 2006\\" "..\\..\\Drawings\\Xrefs\\") 
+"C:\\Drawings\\Xrefs"
+* dos_compactpath
+** (dos_compactpath path maxchars) 
+用省略号替换截短路径的内部以适应宽度. 
+*** 参数 
+path 
+包含有效路径的字符串.
+ 
+maxchars
+新字符串允许的最大字符数.
+*** 返回 
+如果成功, 返回一个紧凑的路径字符串.
+nil 失败时.
+示例
+Command: (dos_compactpath "C:\\Program Files\\AutoCAD 2006\\acad.exe" 30) 
+"C:\\Program Files\\...\\acad.exe"
+ 
+Command: (dos_compactpath "C:\\Windows\\win.ini" 12) 
+"...\\win.ini" 
+Colder: 
+这是我们在一些安装包中经常见到的效果, 较长的路径被缩短并用省略号替代, 当你需要在对话框中滚动显示路径时, 这种方法要比末尾被截断的路径看起来更漂亮一些. 
+ 
+* dos_fullpath
+** (dos_fullpath path) 
+把不完整的路径转换成完整的. 与dos_makepath不同, 这个函数可以使用 .\\ 和 ..\\ 作为*** 参数部分. 
+dos_fullpath函数合并当前驱动器名和指定的目录名用来确定完整路径. 它也会计算完整路径的地址部分. 但这个函数不会去验证合成的路径是否存在或有效. 
+*** 参数 
+path 
+如果path指定了一个驱动器 (C:, D:, 等.), 驱动器的当前目录将会结合到路径中. 
+*** 返回 
+如果成功, 返回完整路径. 
+nil 失败时. 
+示例
+Command: (dos_fullpath "acad.exe") 
+"C:\\Program Files\\AutoCAD 2006\\acad.exe"
+ 
+Command: (dos_fullpath "..\\..\\Windows\\win.ini") 
+"C:\\Windows\\win.ini" 
+* dos_ispathrelative
+** (dos_ispathrelative  path) 
+判断是否是相对路径. 
+*** 参数 
+path 
+路径名.
+*** 返回 
+T 如果路径是相对的. 
+nil 如果不是或失败时. 
+示例 
+Command: (dos_ispathrelative "C:\\Program Files\\AutoCAD 2006\\") 
+nil
+ 
+Command: (dos_ispathrelative "..\\..\\drawings\\xrefs\\") 
+T
+ 
+* dos_ispathroot
+** (dos_ispathroot  path) 
+分析路径并判断是否是根目录. 
+*** 参数 
+path 
+要验证的路径.
+*** 返回 
+T 如果路径是根目录. 
+nil 如果不是或失败时. 
+示例
+Command: (dos_ispathroot "C:\\Program Files\\AutoCAD 2006\\") 
+nil 
+ 
+Command: (dos_ispathroot "C:\\") 
+T 
+* dos_ispathsameroot
+** (dos_ispathsameroot path1 path2) 
+比较两个路径, 判断根路径是否相同. 
+*** 参数 
+path1
+待比较的第一个路径.
+ 
+path2
+第二个路径.
+*** 返回 
+T 如果路径的根部分相同. 
+nil 如果不是或失败时. 
+示例 
+Command: (dos_ispathsameroot "C:\\Program Files\\AutoCAD 2006\\") 
+T 
+ 
+Command: (dos_ispathsameroot "C:\\Program Files\\AutoCAD 2006\\" "e:\\drawings\\xrefs\\") 
+nil 
+ 
+* dos_ispathunc
+** (dos_ispathunc path)
+判断字符串是否是有效的UNC路径.
+*** 参数 
+path 
+等判断的路径.
+返回
+T 如果路径是UNC路径. 
+nil 如果不是或失败时. 
+示例 
+Command: (dos_ispathunc "C:\\Program Files\\AutoCAD 2006\\") 
+nil 
+ 
+Command: (dos_ispathroot "\\\\Server\\Shared Folder") 
+T 
+* dos_ispathurl
+** (dos_ispathurl path)
+检测给出的字符串, 判断是否符合有效的URL格式.
+*** 参数 
+path 
+待验证的字符串.
+*** 返回 
+T 如果字符串符合URL格式. 
+nil 如果不是或失败时. 
+示例 
+Command: (dos_ispathurl "C:\\Program Files\\AutoCAD 2006\\") 
+nil 
+ 
+Command: (dos_ispathurl "http://www.mcneel.com") 
+T 
+* dos_longpath
+** (dos_longpath path) 
+短路径名转换成长路径名. 
+*** 参数 
+path 
+包含短路径名的字符串. 
+*** 返回 
+如果成功, 返回长路径名. 
+nil on error. 
+示例 
+Command: (setq x (dos_shortpath "C:\\Program Files\\AutoCAD 2006\\"))
+"C:\\PROGRA~1\\AUTOCA~1\\" 
+ 
+Command: (dos_longpath x) 
+"C:\\Program Files\\AutoCAD 2006\\" 
+Colder: 
+原文中*** 参数path解释为(A string containing a qualified, long path.), 应该是笔误, 在此更正. 
+ 
+* dos_makepath
+** (dos_makepath drive directory filename extension) 
+创建一个路径, 由盘符, 路径, 文件名, 和扩展名组成. 
+*** 参数 
+drive 
+盘符 (A, B, 等.) 对应想要的驱动器, 冒号(:)为可选. 如果不写冒号, 函数会在合成路径时自动插入. 如果盘符为空字符串(""), 结果中就不会包含盘符和冒号. 
+ 
+directory 
+目录, 不包含盘符和文件名. 末尾的斜杠为可选. 斜杠(/)和双反斜杠(\\)都是可用的. 如果末尾没有加斜杠(/ or \\), 函数会自动插入. 如果目录为空字符串(""), 结果中就不会包含斜杠. 
+ 
+filename 
+文件名不带扩展名. 如果文件名为空字符串(""), 结果中就不会包含文件名. 
+ 
+extension 
+文件扩展名, 前面的点(.)可选. 函数会自动插入. 如果扩展名为空字符串(""), 结果中就不会包含扩展名. 
+*** 返回 
+如果成功, 返回一个完整合格的路径. 
+nil 失败时. 
+示例 
+Command: (dos_makepath "C:" "\\Program Files\\AutoCAD 2006" "acad" "exe") 
+"C:\\Program Files\\AutoCAD 2006\\acad.exe" 
+ 
+Command: (dos_makepath "C:" "\\Program Files\\AutoCAD 2006" "" "") 
+"C:\\Program Files\\AutoCAD 2006\\" 
+Colder: 
+说明部分过于详细, 其实就是用盘符,目录,文件名,后缀四部分组成一个完整的路径. 
+另: 在我的电脑上, (dos_makepath "C:" "windows" "notepad" "exe") 返回 "C:windows\\notepad.exe", 貌似是个BUG. @_@ 
+ 
+* dos_path
+** (dos_path)
+返回当前由PATH环境变量指定的可执行程序搜索路径列表. 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回PATH环境变量中包含的路径列表. 
+nil 失败时. 
+示例 
+Command: (dos_path) 
+("C:\\WINDOWS\\system32" "C:\\WINDOWS" "C:\\WINDOWS\\System32\\Wbem" "C:\\Program Files\\Microsoft SDK\\Bin\\." "C:\\Program Files\\Microsoft SDK\\Bin\\WinNT\\." "C:\\Program Files\\Common Files\\Autodesk Shared\\" "C:\\Program Files\\Rational\\common" "C:\\Program Files\\Microsoft Visual Studio 8\\" "C:\\Program Files\\Microsoft Visual Studio 8\\VC\\bin")
+ 
+Colder: 
+AutoCAD中的(getvar "ACADPREFIX")和Windows中的path两个命令结果的并集 
+* dos_pathbackslash
+** (dos_pathbackslash path [T])
+添加或移除路径字符串末尾的反斜杠. 
+*** 参数
+path 
+要操作的路径.
+ 
+T
+如果指定, 移除反斜杠. 否则添加.
+返回
+如果成功, 返回修改后的路径. 
+nil 失败时. 
+示例
+Command: (dos_pathbackslash "C:\\Program Files\\AutoCAD 2006") 
+"C:\\Program Files\\AutoCAD 2006\\"
+ 
+Command: (dos_pathbackslash "C:\\Program Files\\AutoCAD 2006\\" T) 
+"C:\\Program Files\\AutoCAD 2006"
+ 
+* dos_pathextension
+** (dos_pathextension path [extension]) 
+添加, 替换, 或移除路径末尾的文件扩展名. 
+*** 参数 
+path 
+要操作的路径.
+ 
+extension
+扩展名, 未指定代表移除. 否则代表替换. 如果原始路径没有扩展名则代表添加.
+*** 返回 
+如果成功, 返回修改后的路径. 
+nil 失败时. 
+示例 
+Command: (dos_pathextension "C:\\Program Files\\AutoCAD 2006\\acad.exe") 
+"C:\\Program Files\\AutoCAD 2006\\acad"
+ 
+Command: (dos_pathextension "C:\\Program Files\\AutoCAD 2006\\acad" ".exe") 
+"C:\\Program Files\\AutoCAD 2006\\acad.exe"
+ 
+Command: (dos_pathextension "C:\\Program Files\\AutoCAD 2006\\acad.exe" ".xyz")
+"C:\\Program Files\\AutoCAD 2006\\acad.xyz"
+* dos_pathquotes
+** (dos_pathquotes path [T]) 
+添加或移除路径两边的双引号. 
+*** 参数
+path 
+要操作的路径.
+ 
+T
+如果指定, 代表移除. 否则代表添加.
+*** 返回
+如果成功, 返回修改后的路径. 
+nil 失败时. 
+ 
+* dos_relativepath
+** (dos_relativepath path_from path_to)
+创建从一个文件或文件夹到另一个的相对路径. 路径不必是完整的, 但它们必须有相同的前缀, 否则函数失败并返回nil.
+*** 参数
+path_from
+包含定义开始相对路径的字符串.
+ 
+path_to
+包含定义结束相对路径的字符串.
+返回
+如果成功, 返回相对路径.
+nil on error.
+示例
+Command: (setq x (dos_relativepath "C:\\Program Files\\AutoCAD 2006" "C:\\Drawings\\Xrefs"))
+"..\\..\\Drawings\\Xrefs"
+* dos_shortpath
+** (dos_shortpath path) 
+长路径名转换成短路径名.
+*** 参数 
+path 
+长路径名. 
+返回
+如果成功, 返回短路径名. 
+nil on error. 
+示例 
+Command: (setq x (dos_shortpath "C:\\Program Files\\AutoCAD 2006\\"))
+"C:\\PROGRA~1\\AUTOCA~1\\" 
+ 
+Command: (dos_longpath x) 
+"C:\\Program Files\\AutoCAD 2006\\" 
+ 
+* dos_splitpath
+** (dos_splitpath path) 
+把一个完整的路径分割成四部分. 
+*** 参数 
+path 
+完整路径. 
+*** 返回 
+包含以下四个元素的表:
+ 
+盘符 
+ 包含冒号(:)的盘符.
+ 
+目录 
+ 开始和末尾包含斜框的目录.
+ 
+文件名 
+ 不带扩展名的文件名.
+ 
+扩展名 
+ 前面带点(.)的扩展名.
+ 
+ 
+nil 失败时. 
+示例 
+Command: (dos_splitpath "C:\\Program Files\\AutoCAD 2006\\acad.exe") 
+("C:" "\\Program Files\\AutoCAD 2006\\" "acad" ".exe") 
+ 
+Command: (dos_splitpath "C:\\Program Files\\AutoCAD 2006\\") 
+("C:" "\\Program Files\\AutoCAD 2006\\" "" "")
+ 
+* dos_uncpath
+** (dos_uncpath localpath) 
+把一个以驱动器名开头的路径, 转换成一个适合网络资源使用的, 按照通用命名惯例(Universal Naming Convention : UNC)命名的路径. 
+*** 参数 
+localpath 
+一个包含有效网址路径的字符串. 
+*** 返回 
+如果成功, 返回包含UNC路径的字符串. 
+nil 失败时.
+示例s
+Command: (dos_uncpath "P:\\Drawings\\") 
+"\\\\cadserver\\projects\\drawings\\" 
+ 
+Command: (dos_uncpath "P:\\Drawing1.dwg") 
+"\\\\cadserver\\projects\\drawings\\drawing1.dwg" 
+ 
+* dos_chdir
+** (dos_chdir path) 
+更改当前目录到指定的目录. 函数可以更改当前目录到任何驱动器; 它不能用于更改当前驱动器. 使用dos_drive修改当前驱动器. 
+*** 参数 
+path 
+包含现在路径的字符串. 
+*** 返回 
+如果成功, 返回当前目录. 
+nil 失败时. 
+示例
+Command: (dos_chdir "\\Program Files\\AutoCAD 2006\\Sample\\") 
+"C:\\Program Files\\AutoCAD 2006\\Sample\\" 
+ 
+Command: (dos_chdir "..\\Support\\") 
+"C:\\Program Files\\AutoCAD 2006\\Support\\"
+ 
+* dos_deltree
+** (dos_deltree path) 
+删除目录及所有子目录. 
+*** 参数 
+path 
+包含路径的字符串. 
+*** 返回 
+如果成功, 返回指定的路径. 
+nil on error. 
+示例 
+Command: (dos_deltree "C:\\Temp\\") 
+"C:\\Temp\\"
+ 
+* dos_dirattrib
+** (dos_dirattrib [pathspec [bits]]) 
+返回目录属性, 或按位设置属性. 
+*** 参数 
+pathspec 
+欲操作的目录. 路径中可以包含通配符("*" and "?"). 如果未指明路径则假定*.*. 
+ 
+bits 
+用来确定目录属性的位值. 以下为可用的位值: 
+ 
+0
+ 普通
+ 
+1
+ 只读
+ 
+2
+ 隐藏
+ 
+4
+ 系统
+ 
+8
+ 存档
+ 
+*** 返回 
+如果成功, 返回包含目录名和属性的关联表. 
+nil 失败时. 
+示例 
+Command: (dos_dirattrib "C:\\Program Files\\AutoCAD 2006\\*.*") 
+(("Data Links" . 0) ("Drv" . 0) ("en-US" . 0) ("Express" . 0) ("Fonts" . 0) ("Help" . 0) ("Plot Styles" . 0) ("Plotters" . 0) ("Sample" . 0) ("Support" . 0) ("Template" . 0) ("Textures" . 0) ("UserDataCache" . 2) ("WebDepot" . 0) ("WebServices" . 0))
+ 
+Command: (dos_dirattrib "C:\\Program Files\\AutoCAD 2006\\Sample\\" 1) 
+(("Sample" . 1)) 
+ 
+* dos_dirp
+** (dos_dirp path) 
+检验目录是否存在. 
+*** 参数 
+path 
+路径字符串. 
+*** 返回 
+T 如果存在. 
+nil 如果不存在或失败时. 
+示例 
+Command: (dos_dirp "C:\\Program Files\\AutoCAD 2006\\") 
+T 
+ 
+Command: (dos_dirp "C:\\Program Files\\AutoCAD 2005\\") 
+nil
+* dos_dirsize
+** (dos_dirsize path [T]) 
+返回指定目录的总大小, 子目录数, 文件数. 
+*** 参数 
+path 
+包含路径的字符串.
+ 
+T
+包含子目录.
+*** 返回 
+如果成功, 返回包含总字节数, 子目录数, 文件数的表. 注意, 返回的字节数是实数.
+nil 失败时. 
+示例 
+Command: (dos_dirsize "C:\\Program Files\\AutoCAD 2007\\")
+(1.78669e+008 0 533)
+ 
+Command: (dos_dirsize "C:\\Program Files\\AutoCAD 2007\\" T)
+(3.86812e+008 81 1620)
+* dos_dirtree
+** (dos_dirtree [path]) 
+返回指定目录中的所有目录及子目录. 
+*** 参数 
+path 
+路径字符串. 如果未指定则使用当前目录. 
+*** 返回 
+如果成功, 返回子目录列表. 
+nil 失败时. 
+示例 
+Command: (dos_dirtree "C:\\Program Files\\AutoCAD 2006\\Support\\")
+("C:\\Program Files\\AutoCAD 2006\\Support\\" "C:\\Program Files\\AutoCAD 2006\\Support\\Color\\")
+ 
+* dos_getdir
+** (dos_getdir [title [path [message [T]]]]) 
+显示Windows"浏览文件夹"对话框. dos_getdir也有能力创建文件夹. 
+*** 参数 
+title
+对话框标题.
+ 
+path
+指定一个存在的目录. 如果指定nil则使用当前目录. 
+ 
+message
+可选消息. 
+ 
+T
+显示"新建文件夹"按钮.
+*** 返回 
+如果成功, 返回用户选择目录的完整路径. 
+nil 取消或出错时. 
+示例 
+Command: (dos_getdir "Browse for folder" "C:\\Program Files\\AutoCAD 2002\\" "Select a folder to use" T) 
+"C:\\Program Files\\AutoCAD 2002\\Support\\" 
+* dos_mkdir
+** (dos_mkdir path) 
+创建新目录. dos_mkdir函数在指定目录中创建所有目录. 
+*** 参数 
+path 
+存在的路径. 
+*** 返回 
+如果成功, 返回新创建目录的完整路径. 
+nil 失败时. 
+示例
+Command: (dos_mkdir "c:\\temp\\") 
+"c:\\temp\\" 
+ 
+Command: (dos_mkdir "c:\\temp\\autocad\\drawings\\project") 
+"c:\\temp\\autocad\\drawings\\project" 
+ 
+* dos_pwdir
+** (dos_pwdir [drive]) 
+返回当前或指定驱动器的当前目录. 
+*** 参数 
+drive 
+盘符 (for example, C:, D:). 
+*** 返回 
+如果成功, 返回指定驱动器的当前目录. 
+nil 失败时. 
+示例 
+Command: (dos_pwdir) 
+"c:\\temp\\" 
+ 
+Command: (dos_pwdir "D:") 
+"d:\\projects\\drawings\\" 
+ 
+* dos_rendir
+** (dos_rendir old_path new_path) 
+重命令目录. 
+*** 参数 
+old_path
+已存在的旧目录路径.
+ 
+new_path
+不存在的新目录路径.
+*** 返回 
+如果成功, 返回新目录的完整路径. 
+nil 失败时. 
+示例
+Command: (dos_rmdir "c:\\temp\\" "c:\\mydrawings") 
+"c:\\mydrawings" 
+ 
+* dos_rmdir
+** (dos_rmdir path) 
+删除空目录. 
+*** 参数 
+path 
+包含已存在路径的字符串. 指定的目录必须是空的, 并且不能是当前目录或根目录. 
+*** 返回 
+如果成功, 返回被删除的完整路径. 
+nil 失败时. 
+示例 
+Command: (dos_rmdir "c:\\temp\\) 
+"c:\\temp\\" 
+ 
+* dos_specialdir
+** (dos_specialdir item) 
+检索特殊目录. 注意, 许多项目是由操作系统和Windows shell共同指定的. 
+*** 参数 
+item 
+指定特殊目录的整数. 可用值如下: 
+ 
+0 桌面
+1 Internet Explorer (桌面图标)
+
+2  开始程序
+ 
+3
+ 我的电脑/控制面板 
+ 
+4
+ 我的电脑/打印机
+ 
+5
+ 我的文档
+ 
+6
+  <用户名>/收藏夹
+ 
+7
+ 开始/程序/启动 
+ 
+8
+ <用户名>/我最近的文档 
+ 
+9
+ <用户名>/发送到 
+ 
+10
+ <桌面>/回收站 
+ 
+11
+ <用户名>/「开始」菜单 
+ 
+12
+ "我的文档" (桌面图标)
+ 
+13
+ "我的音乐" (文件夹)
+ 
+14
+ "我的视频" (文件夹)
+ 
+15
+ <用户名>/桌面
+ 
+16
+ 未使用
+ 
+17
+ 我的电脑
+ 
+18
+ 网上邻居 (我的网络地址) 
+ 
+19
+ <用户名>/nethood 
+ 
+20
+ Windows/fonts 
+ 
+21
+ Templates 
+ 
+22
+ All Users/「开始」菜单
+ 
+23
+ All Users/「开始」菜单/程序 
+ 
+24
+ All Users/启动
+ 
+25
+ All Users/桌面
+ 
+26
+ <用户名>/Application Data
+ 
+27
+ <用户名>/PrintHood 
+ 
+28
+ <用户名>/Local Settings/Application Data (non roaming) 
+ 
+29
+ Non localized startup 
+ 
+30
+  Non localized common startup
+ 
+31
+ Non localized favorites
+ 
+32
+ Internet cache
+ 
+33
+ Internet cookies 
+ 
+34
+  Internet 历史
+ 
+35
+ All Users/Application Data
+ 
+36
+ Windows目录
+ 
+37
+ System32目录
+ 
+38
+ C:/Program Files
+ 
+39
+ C:/Program Files/My Pictures
+ 
+40
+ User profile
+ 
+41
+ x86 system directory on RISC
+ 
+42
+ x86 C:/Program Files on RISC
+ 
+43
+ C:/Program Files/Common
+ 
+44
+ x86 Program Files/Common on RISC
+ 
+45
+ All Users/Templates
+ 
+46
+ All Users/共享文档
+ 
+47
+ All Users/「开始」菜单/程序/管理工具
+ 
+48
+ <user name>/「开始」菜单/程序/管理工具
+ 
+49
+ 网络和拔号连接
+ 
+50
+ 未使用
+ 
+51
+ 未使用
+ 
+52
+ 未使用
+ 
+53
+ All Users/我的音乐
+ 
+54
+ All Users/图片收藏
+ 
+55
+ All Users/我的视频
+ 
+56
+ ./WINDOWS/resources
+ 
+57
+ Localized Resource Directory
+ 
+58
+ 链接到All Users的OEM特殊应用程序
+ 
+59
+ USERPROFILE/Local Settings/Application Data/Microsoft/CD Burning
+ 
+60
+ 未使用
+ 
+61
+ 邻近的计算机(查看工作组计算机)
+ 
+*** 返回 
+如果成功, 返回目录路径. 
+nil 失败时. 
+示例 
+Command: (dos_specialdir 0) 
+"C:\\Documents and Settings\\dale\\Desktop\\" 
+ 
+Command: (dos_specialdir 5) 
+"C:\\Documents and Settings\\dale\\My Documents\\" 
+ 
+* dos_subdir
+** (dos_subdir [path [T]]) 
+返回指定目录中的子目录列表. 这个函数返回值中的路径不包括反斜杠(\\). 
+*** 参数 
+path
+包含现有路径的字符串. 如果未指定则使用当前目录.
+ 
+T
+返回当前目录"."和父目录标签"..". 默认是不返回这些标签的.
+*** 返回 
+如果成功, 返回子目录列表. 
+nil 失败时. 
+示例 
+(dos_subdir) 
+("Data Links" "Drv" "en-US" "Express" "Fonts" "Help" "Plot Styles" "Plotters" "Sample" "Support" "Template" "Textures" "UserDataCache" "WebDepot" "WebServices")
+ 
+* dos_sysdir
+** (dos_sysdir) 
+返回Windows系统目录. 系统目录包含Windows运行库, 驱动程序, 和字体文件. 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回系统目录路径. 
+nil 失败时. 
+示例 
+Command: (dos_sysdir) 
+"C:\\WINDOWS\\system32\\"
+ 
+* dos_tempdir
+** (dos_tempdir) 
+检索指定为临时文件夹的目录路径. 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回临时文件夹路径. 
+nil 失败时. 
+示例 
+Command: (dos_tempdir) 
+"C:\\DOCUME~1\\dale\\LOCALS~1\\Temp\\"
+ 
+Command: (dos_longpath (dos_tempdir))
+"C:\\Documents and Settings\\dale\\Local Settings\\Temp\\"
+* dos_windir
+** (dos_windir) 
+检索Windows目录的路径. Windows目录包含Windows基础应用程序, 初始化文件, 和帮助文件. 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回包含Windows目录路径的字符串. 
+nil 失败时. 
+示例 
+Command: (dos_windir) 
+"C:\\WINDOWS\\"
+* dos_attrib
+** (dos_attrib [filespec [bits]]) 
+返回文件属性, 或用位描述设置属性. 
+*** 参数 
+filespec 
+欲操作的文件. 可以包含通配符("*"和"?"). 如果未指定则假定*.*. 
+ 
+bits 
+一个定义文件属性描述的位码. 添加以下位值指定属性: 
+ 
+0 (bit 0)
+ 普通
+ 
+1 (bit 1)
+ 只读
+ 
+2 (bit 2)
+ 隐藏
+ 
+4 (bit 3)
+ 系统
+ 
+8 (bit 4)
+ 存档
+ 
+*** 返回 
+*** 返回 
+如果成功, 返回包含文件名和属性位码的关联表. 
+nil 失败时. 
+示例 
+Command: (dos_attrib "C:\\Program Files\\AutoCAD 2006\\acad.exe")
+(("acad.exe" . 8))
+ 
+Command: (dos_attrib "C:\\Program Files\\AutoCAD 2006\\acad.exe" 1)
+(("acad.exe" . 1))
+* dos_copy
+** (dos_copy source destination) 
+复制单个或多个文件. 这个函数可以用于从一个目录或驱动器复制到另一个. 
+*** 参数 
+source 
+源文件. 支持通配符("*"和"?"). 
+ 
+destination 
+目标路径或文件. 
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_copy "C:\\Drawings\\test1.dwg" "C:\\Drawings\\test2.dwg")
+T
+ 
+Command: (dos_copy "C:\\Drawings\\test1.dwg" "C:\\Temp\\")
+T
+ 
+Command: (dos_copy "C:\\Drawings\\*.dwg" "C:\\Temp\\")
+T
+* dos_delete
+** (dos_delete filespec) 
+删除文件. 
+*** 参数 
+filespec 
+欲操作的文件. 支持通配符("*"和"?"). 
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_delete "C:\\Temp\\test1.dwg")
+T
+ 
+Command: (dos_delete "C:\\Temp\\*.dwg")
+T
+* dos_dir
+** (dos_dir [filespec [format]]) 
+返回目录中的文件列表. 这个函数很像Windows命令提示符下的DIR命令. 
+*** 参数 
+filespec 
+文件名. 支持通配符("*"和"?"). 如果未指定则返回当前目录的所有文件(*.*). 
+ 
+format 
+返回文件名的格式. 默认值为0. 可用值如下: 
+ 
+0
+ 无.
+ 
+1
+ 按字母升序.
+ 
+2
+ 按字母降序. 
+ 
+3
+ 按日期升序.
+ 
+4
+ 按日期降序.
+ 
+5
+ 按大小升序. 
+ 
+6
+ 按大小降序.
+ 
+*** 返回 
+如果成功, 返回文件名列表A list of filenames if successful. 
+nil 失败时. 
+示例 
+Command: (dos_dir)
+("Blocks and Tables - Imperial.3dm" "Blocks and Tables - Imperial.bak" "Blocks and Tables - Imperial.dwg" "Blocks and Tables - Metric.3dm" "Blocks and Tables - Metric.dwg" "Blocks and Tables.dwf" "colorwh.dwg" "db_samp.3dm" "db_samp.dwg" "db_samples.mdb" "Hotel Model.dwg" "Hummer Elevation.dwg" "Lineweights.dwg" "Plot Screening and Fill Patterns.dwg" "Stadium North Elevation.dwg" "Tablet.dwg" "Taisei Detail Plan.dwg" "Taisei Door Window Sheet.dwg" "Taisei Interior Elv.dwg")
+ 
+Command: (dos_dir "t*.dwg" 1)
+("Tablet.dwg" "Taisei Detail Plan.dwg" "Taisei Door Window Sheet.dwg" "Taisei Interior Elv.dwg")
+ 
+Command: (dos_dir "t*.dwg" 3)
+("Tablet.dwg" "Taisei Detail Plan.dwg" "Taisei Door Window Sheet.dwg" "Taisei Interior Elv.dwg")
+ 
+Command: (dos_dir "t*.dwg" 5)
+("Taisei Door Window Sheet.dwg" "Taisei Interior Elv.dwg" "Taisei Detail Plan.dwg" "Tablet.dwg")
+* dos_dos2unix
+** (dos_dos2unix source destination) 
+DOS类型文本文件转换成UNIX类型. DOS和Unix系统使用不同的方法识别文本文件中的行末信息. DOS及所有版本的Windows使用一对回车/换行(CR/LF), UNIX仅使用LF. 
+*** 参数 
+source 
+源文件. 
+ 
+destination 
+目标文件. 
+*** 返回 
+如果成功, 返回目标文件的完整路径. 
+nil 失败时. 
+示例 
+Command: (dos_dos2unix "readme.dos" "readme.unix") 
+"C:\\temp\\readme.unix" 
+ 
+Colder: 
+在开源软件中经常见到这类UNIX类型文档, 当我们使用Windows记事本打开时会发现文字不能正确换行, 出现黑色方块. 
+* dos_encrypt
+** (dos_encrypt filename password)
+用指定的密码加密或解密文件.
+警告: 一旦加密文件, 如果丢失密码的话文件将无法找回. 小心使用. 
+这个函数从你指定的密码产生一个"变异"序列数, 使用一种简单(但不可逆)的单向处理过程. 这一处理过程类似于John Conway's描述的于1970年10月发表于美国科学杂志的研究成果. 这些变异数字之后通过异或运算写入指定的文件. 
+*** 参数 
+filename 
+文件名. 
+ 
+password 
+密码(加密/解密) 
+*** 返回 
+如果成功, 返回加密/解密的文件完整路径. 
+nil 失败时. 
+示例 
+Command: (dos_encrypt "C:\\Program Files\\Autocad 2006\\Sample\\colorwh.dwg" "password") 
+"C:\\Program Files\\Autocad 2006\\Sample\\colorwh.dwg"
+ 
+Colder: 
+记得曾经有过与此对应的dos_unencrypt, 用于解密文件的, 但是不知道因为什么原因取消了. 
+使用相同的密码对加密过的文件再进行一次dos_encrypt, 文件将会解密. 但如果搞错了密码, 文件就会变成两次加密. 因此请小心保管密码, 不要使用没有把握的密码去解密文件, 否则可能越弄越糟... 
+* dos_file
+** (dos_file filename) 
+返回文件的详细信息. 
+*** 参数 
+filename 
+文件名. 
+*** 返回 
+如果成功, 返回描述文件详细信息的字符串列表. 返回信息如下: 
+ 
+filename
+ 文件名称.
+ 
+size
+ 文件的字节数.
+ 
+date and time
+ 按AutoCAD的日历格式显示文件的日期和时间.
+ 
+attributes
+ 表明文件属性的位码. 位码如下:
+0 (bit 0)
+ 普通
+ 
+1 (bit 1)
+ 只读
+ 
+2 (bit 2)
+ 隐藏
+ 
+4 (bit 3)
+ 系统
+ 
+8 (bit 4)
+ 存档
+ 
+ 
+ 
+nil 失败时. 
+示例 
+Command: (dos_file "C:\\Program Files\\AutoCAD 2007\\acad.exe")
+("acad.exe" 9.48746e+006 2.00603e+007 8)
+ 
+* dos_filedate
+** (dos_filedate filespec) 
+返回包含文件名和AutoCAD日历格式的日期. 使用rtos和substr 或dos_strleft来提取相应的元素. 
+*** 参数 
+filespec 
+文件名. 支持通配符("*"和"?"). 如果未指定则假定*.*. 
+*** 返回 
+如果成功, 返回包含文件名和对应日期的关联表. 
+nil 失败时. 
+示例 
+Command: (dos_filedate "C:\\Program Files\\Autocad 2006\\Support\\*.dwg")
+(("chroma.dwg" . 2.00301e+007) ("direct.dwg" . 2.00301e+007) ("overhead.dwg" . 2.00301e+007) ("rm_sdb.dwg" . 2.00301e+007) ("sh_spot.dwg" . 2.00301e+007))
+* dos_filep
+** (dos_filep filename) 
+检查文件是否存在. 
+*** 参数 
+filename 
+文件名. 
+*** 返回 
+T 如果存在. 
+nil 如果不存在或出错. 
+示例 
+Command: (dos_filep "C:\\Program Files\\Autocad 2006\\acad.exe") 
+T 
+ 
+Command: (dos_filep "C:\\Program Files\\Autocad 2006\\drawing1.dwg") 
+nil 
+ 
+* dos_filesize
+** (dos_filesize filespec) 
+返回一个包含文件名和字节数大小的表. 
+*** 参数 
+filespec 
+要查询的文件. 支持通配符("*"和"?"). 如果未指定则假定*.*. 
+*** 返回 
+如果成功, 返回包含文件名及各自对应大小的关联表. 注意, 返回的文件尺寸是实数. 
+nil 失败时. 
+示例 
+Command: (dos_filesize "C:\\Program Files\\Autocad 2006\\Support\\*.dwg") 
+(("chroma.dwg" . 42419.0) ("direct.dwg" . 34704.0) ("overhead.dwg" . 34991.0) ("rm_sdb.dwg" . 35183.0) ("sh_spot.dwg" . 35248.0))
+ 
+* dos_find
+** (dos_find [filespec [format]]) 
+递归搜索文件的多个实例. 这个函数与Windows命令提示符下的DIR /S命令非常相似. 
+*** 参数 
+filespec 
+要寻找的文件. 可以包含通配符("*"和"?").如果未指定, 将返回当前目录及子目录的所有文件(*.*). 
+ 
+format 
+返回文件名的格式. 默认值0. 允许值如下: 
+ 
+0
+ 无.
+ 
+1
+ 按字母升序.
+ 
+2
+ 按字母降序. 
+ 
+3
+ 按日期升序.
+ 
+4
+ 按日期降序.
+ 
+5
+ 按大小升序. 
+ 
+6
+ 按大小降序.
+ 
+*** 返回 
+如果成功, 返回文件名的完整路径列表. 
+nil 失败时. 
+示例 
+Command: (dos_find "C:\\Program Files\\Autocad 2006\\b*.dwg")
+("C:\\Program Files\\Autocad 2006\\Express\\brkline.dwg" "C:\\Program Files\\Autocad 2006\\Help\\Tutorials\\createTransmittal\\Brush Roller.dwg" "C:\\Program Files\\Autocad 2006\\Help\\Tutorials\\PlaceView\\Building Elevations.dwg" "C:\\Program Files\\Autocad 2006\\Help\\Tutorials\\sheetListTable\\Base Plate.dwg" "C:\\Program Files\\Autocad 2006\\Sample\\DesignCenter\\Basic Electronics.dwg" "C:\\Program Files\\Autocad 2006\\Sample\\Sheet Sets\\Architectural\\Res\\Building Section.dwg" "C:\\Program Files\\Autocad 2006\\Sample\\Blocks and Tables - Imperial.dwg" "C:\\Program Files\\Autocad 2006\\Sample\\Blocks and Tables - Metric.dwg")
+Colder: 
+如果子目录过多, 将会消耗较长的时间, 甚至导致AutoCAD暂时失去响应, 需要要耐心等待... 这一过程对系统内存占用很大, 并且在AutoCAD关闭之前难以释放. 
+另: 相同目录第二次时速度会快许多倍. 
+* dos_getfiled
+** (dos_getfiled title path filter) 
+显示一个可缩放的Windows通用文件打开对话框, 只允许选择一个文件. 
+*** 参数 
+title 
+对话框标题. 
+ 
+path 
+初始化目录. 
+ 
+filter 
+文件过滤. 过滤字符串由两部分组成: 描述(如果, "文本文档"), 后缀(如, "*.TXT"). 多个后缀必须用分号分隔(如, "*.TXT;*.DOC;*.BAK"). 组合之间必须用竖线分隔("|"). 文件名过滤可以由一个或多个过滤字符串组成, 每个之间用竖线分隔("|"). 整个字符串必须用双竖线结束("||"). 
+*** 返回 
+返回选择的文件. 
+nil 取消或出错时. 
+示例
+Command: (dos_getfiled "Select a file" "C:\\Program Files\\Autocad 2006\\" "Drawing files (*.dwg)|*.dwg|All files (*.*)|*.*||")
+ "C:\\Program Files\\AutoCAD 2006\\Sample\\colorwh.dwg"
+ 
+* dos_getfilem
+** (dos_getfilem title path filter) 
+显示一个可缩放的Windows通用文件打开对话框, 允许选择多个文件. 
+*** 参数 
+title 
+对话框标题. 
+ 
+path 
+初始化目录. 
+ 
+filter 
+文件过滤. 过滤字符串由两部分组成: 描述(如果, "文本文档"), 后缀(如, "*.TXT"). 多个后缀必须用分号分隔(如, "*.TXT;*.DOC;*.BAK"). 组合之间必须用竖线分隔("|"). 文件名过滤可以由一个或多个过滤字符串组成, 每个之间用竖线分隔("|"). 整个字符串必须用双竖线结束("||"). 
+*** 返回 
+如果成功, 返回文件名列表. 表的第一项是所选目录的完整路径. 
+nil 取消或出错时. 
+示例 
+Command: (dos_getfilem "Select a file" "C:\\Program Files\\Autocad 2006\\" "Drawing files (*.dwg)|*.dwg|All files (*.*)|*.*||") 
+("C:\\Program Files\\AutoCAD 2006\\Sample\\" "Taisei Interior Elv.dwg" "Taisei Detail Plan.dwg" "Taisei Door Window Sheet.dwg")
+* dos_getfilenav
+** (dos_getfilenav title default ext flags) 
+显示AutoCAD风格的文件选择对话框. 
+*** 参数 
+title 
+对话框标题.
+ 
+default 
+默认文件名; 可以是空字符串("").
+ 
+ext
+默认文件扩展名. 如果扩展名是空字符串("")则默认为*(所有文件). 
+Colder: 
+破例出现在这里, 是因为我要提醒你以下的内容可能会让你抓狂, 我实在没有能力让这些绕口令变得更容易理解. 不过正如文末所说的, 这个函数其实就是dos_getfiled dos_getdir和dos_getfilem这三个函数的组合加强美化版... 它所能带来的好处仅仅是让界面显得更加Autodesk. 
+我并不是要在这里打消你的积极性, 如果你真的想要知道这些位码有什么区别, 建议亲自到AutoCAD中去试一试, 可能会比读这些差劲的翻译理解的更快些. ^_^ 
+ 
+flags
+一个整数值(位码), 控制对话框的行为. 可用的位码如下.
+ 
+1 (bit 0)
+ 新建文件.
+ 如果即没有设置位码0(打开)也没有设置位码2, 只接受默认的扩展名(或无).  如果没有输入扩展名, 将使用默认的扩展名.  如果用户输入的扩展名不在默认范围内, 会显示一个"无效文件名"的消息框并且用户必须再次尝试或取消.  如果设置了位码0(新建)但没有设置位码2, 当输入的文件名不包含扩展名时会自动加上默认的扩展名.  注意如果扩展名不在默认范围内, 默认的扩展名仍然会添加在文件名之后从而形成多级扩展名.  例如, 如果用户输入test.dwg而默认的扩展名是.txt, 那么文件名将返回test.dwg.txt.  如果输入符合默认的扩展名, 就不会出现多余的扩展名了.  例如, 如果默认扩展名是.txt并且用户输入的是test.txt, 那么将返回test.txt.  如果没有设置位码0(打开)而设置了位码2, 任何扩展名(包括空的)都是可以接受的. 如果用户没有输入扩展名, 也不会使用默认的; 文件会没有扩展名. 如果即设置了位码0(新建)也设置了位码2, 那么任何输入的文件名都是可接受的(带不带扩展名都行)
+ 
+ 
+2 (bit 1)
+ 未使用
+ 位码1未使用并保留.
+ 
+ 
+4 (bit 2)
+ 允许用户输入任意的文件扩展名
+ 控制使用文件扩展名.  如果设置了位码2, 任何扩展名(包括空的)都可以使用. 如果没有设置位码2, 并且用户也没有输入扩展名, 这个函数仅接受指定的扩展名并且会把扩展名连接到文件名之后. (请看上面关于位码0和位码2的不同组合产生的不同效果.)
+ 
+ 
+8 (bit 3)
+ 首先在库中搜索输入的文件名
+ 如果指字一位码8但没有指定位码0, 这个函数会首先在库中搜索输入的文件名.  如果在库搜索路径中找到文件, 将会去掉目录仅返回文件名. (如果在不同的目录中发现了同名文件时路径名不会去掉.)  如果没有设置位码3, 这个函数会返回完整的文件名, 包含路径名.  如果你想要使用这个对话框打开一个最后调用搜索(FindFile)找到的已经存在的文件名并保存图形(或其它数据)时, 设置位码3.
+ 
+ 
+16 (bit 4)
+ 把第二个*** 参数解释成路径或目录, 而不是文件名.
+ 
+ 如果设置了这个位码(或默认*** 参数末尾采用了分界符, 例如"/acad/support/"), 则路径仅解释成路径名, 这个函数假定没有默认的文件名.  它会在目录列表中显示路径, 保持文件名输入框留空, 并禁用默认按钮.
+ 
+32 (bit 5)
+ 禁止显示警告对话框, 其中包括当新文件已经存在, 相同文件名已经打开.
+ 
+ 如果设置了这个位码并且同时设置了位码0(意思是文件存在), 即使文件已经存在, 通知用户文件已存在的警告对话框也不会显示.
+ 
+64 (bit 6)
+ 当用户输入URL时禁止跳转到远程文件
+ 
+ 如果设置了这个位码同时用户输入一个URL, 系统不会跳转, 取而代之的是返回URL.
+ 
+128 (bit 7) 
+ 禁止URL
+ 
+ 如果设置了这个位码同时用户输入了URL, 将会返回一个错误. 注意这个位码会取代"禁止跳转"位码(6).
+ 
+256 (bit 8)
+ 强制指定的初始化目录
+ 
+ 如果指定了这个位码, 初始化目录被强制指定为第二个*** 参数. 如果不设置, 初始化目录会从Windows注册表查找上一次使用时所浏览的目录.  如果这是第一次使用, 则指定初始化目录为当前目录.
+ 
+512 (bit 9)
+ 禁止FTP站点
+ 
+ 如果设置了这个位码, FTP站点不会出现也不准浏览.
+ 
+1024 (bit 10)
+ 禁止Buzzsaw
+ 
+ 如果设置了这个位码, Buzzsaw不可见或不能浏览..
+ 
+2048 (bit 11)
+ 只能浏览和选择文件夹.
+ 
+ 如果设置了这个位码, 对话框将只显示文件夹, 只允许选择文件夹.
+ 
+4096 (bit 12)
+ 允许多项选择
+ 如果设置了这个位码, 对话框允许选择多个文件(不支持位码11).
+ 
+*** 返回 
+如果位码11(2048)和12(4096)未指定, 返回被选文件名的完整路径. 类似于dos_getfiled.
+ 
+如果指定位码11(2048), 返回所选文件夹的完整路径. 类似于dos_getdir.
+ 
+如果指定位码12(4096), 返回所选文件名的列表. 类似于dos_getfilem. 注意, 第一个元素是被选文件的完整路径.
+ 
+nil 取消或出错时. 
+示例s
+Command: (dos_getfilenav "Select Lisp Files" "C:\\Program Files\\AutoCAD 2007\\Support\\" "lsp" 8)
+"C:\\Program Files\\AutoCAD 2006\\Support\\3d.lsp"
+ 
+Command: (dos_getfilenav "Select Lisp Files" "C:\\Program Files\\AutoCAD 2007\\Support\\" "lsp" 4104)
+("C:\\Program Files\\AutoCAD 2007\\Support\\" "3darray.lsp" "3d.lsp")
+* dos_mergefiles
+** (dos_move source [destination]) 
+把两个以上的文件合并或联合成单个文件. 
+*** 参数 
+source 
+要合并的文件名列表
+ 
+destination 
+要创建的目标文件. 如果省略则默认为源文件列表中的第一个文件名.
+*** 返回 
+如果成功, 返回目标文件名. 
+nil 失败时. 
+示例 
+Command: (setq z '("one.txt" "two.txt" "three.txt"))
+("one.txt" "two.txt" "three.txt")
+ 
+Command: (dos_mergefiles z)
+"one.txt"
+ 
+Command: (dos_mergefiles z "four.txt")
+"four.txt"
+* dos_move
+** (dos_move source destination) 
+移动一个或多个文件. 这个文件可以把文件从一个目录或驱动器移动到另一个. 
+*** 参数 
+source 
+文件名. 可以包含通配符("*"和"?"). 
+ 
+destination 
+目标路径或文件. 
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_move "C:\\Program Files\\AutoCAD 2006\\drawing1.dwg" "C:\\Temp\\") 
+T 
+ 
+Command: (dos_move "C:\\Program Files\\AutoCAD 2006\\drawing1.dwg" "C:\\Temp\\drawing1.bak") 
+T 
+ 
+* dos_openp
+** (dos_openp filename) 
+返回文件的打开状态. 这个函数可用于网络环境. DOSLib可以在共享访问时使用尝试的方式确定一个文件是否已经被打开. 如果尝试过程中发生了共享违规, 代表文件已经打开同时返回T. 如果尝试过程中发生了不同的错误,如果拒绝访问或文件未找到, 那么DOSLib 将不会回答文件是否已经打开, 同时返回nil. 
+*** 参数 
+filename 
+文件名. 
+*** 返回 
+T 如果文件已经打开. 
+nil 如果文件是关闭的或发生了错误. 
+示例 
+Command: (dos_openp "C:\\Program Files\\Autocad 2006\\Sample\\colorwh.dwg")
+T
+ 
+* dos_recent
+** (dos_recent [filename]) 
+添加或清除Windows最近打开的文件列表. 
+*** 参数 
+filename 
+源文件名. 如果未指定*** 参数则最近使用的文件列表将被清空. 
+*** 返回 
+nil. 
+示例 
+Command: (dos_recent "C:\\Program Files\\Autocad 2006\\drawing1.dwg") 
+nil 
+ 
+* dos_rename
+** (dos_rename old-filename new-filename) 
+重命名文件. 你不能用它来重命名多个文件. 重命名多个请使用dos_move. 
+*** 参数 
+old-filename 
+旧文件名. 
+ 
+new-filename 
+新文件名. 新文件名必须是不存在的. 
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_rename "drawing1.dwg" "drawing1.bak") 
+T 
+ 
+Command: (dos_rename "C:\\Program Files\\Autocad 2006\\drawing1.dwg" "C:\\Program Files\\Autocad 2006\\drawing1.bak") 
+T 
+ 
+* dos_search
+** (dos_search filename [path]) 
+在指定的目录中搜索文件. 这个函数在指定的path中搜索匹配的文件. 如果path是nil, 将按以下顺序搜索目录: 
+ 
+读取应用程序的目录
+当前目录
+Windows系统目录
+Windows目录
+PATH环境变量列出的目录
+*** 参数 
+filespec 
+源文件名. 
+ 
+path 
+搜索路径格式(如. "C:\\Windows;C:\\Windows\\System;..."). 
+*** 返回 
+如果成功, 返回符合条件的文件名. 
+nil 如果不成功或出错. 
+示例 
+Command: (dos_search "kernel32.dll") 
+"C:\\WINNT\\System32\\kernel32.dll" 
+ 
+Command: (dos_search "3d.lsp" (getvar "acadprefix"))
+"C:\\Program Files\\AutoCAD 2006\\support\\3d.lsp"
+* dos_tempfile
+** (dos_tempfile) 
+创建一个临时文件名. 文件名连接指定的路径和前缀"~ac", 指定的十六进制字符串, 和.tmp扩展名. 
+*** 参数 
+n/a 
+ 
+*** 返回 
+如果成功, 返回临时文件完整路径. 
+nil 失败时. 
+示例 
+Command: (dos_tempfile)
+"C:\\Documents and Settings\\dale\\Local Settings\\Temp\\~acA04B.tmp"
+ 
+Command: (dos_tempfile)
+"C:\\Documents and Settings\\dale\\Local Settings\\Temp\\~acA3BC.tmp"
+ 
+Command: (dos_tempfile)
+"C:\\Documents and Settings\\dale\\Local Settings\\Temp\\~acA679.tmp"
+Colder: 
+总的来说, 这个函数不如vl-filename-mktemp强大灵活! 
+* dos_touch
+** (dos_touch filespec [date [time]]) 
+使用当前或指定的日期和时间改写文件的最后写入的日期和时间.
+*** 参数 
+filename 
+欲操作的文件. 可以包含通配符("*"和"?"). 如果未指定则假定*.*. 
+ 
+date
+年月日的列表. 详细信息请看dos_date. 省略则使用当前日期.
+ 
+time
+24小时格式的时和分的列表. 秒和毫秒为可选. 详细信息请看dos_time. 省略则使用当前时间.
+ 
+*** 返回 
+如果成功, 被修改的文件列表. 
+nil 失败时. 
+示例 
+Command: (dos_touch "C:\\Program Files\\Autocad 2006\\*.dwg") 
+("Drawing2.dwg" "Drawing1.dwg") 
+ 
+* dos_unix2dos
+** (dos_unix2dos source destination) 
+UNIX类型文本文件转换成DOS类型. DOS和Unix系统使用不同的方法识别文本文件中的行末信息. DOS及所有版本的Windows使用一对回车/换行(CR/LF), UNIX仅使用LF. 
+*** 参数 
+source 
+源文件名. 
+ 
+destination 
+目标文件名. 
+*** 返回 
+如果成功, 返回目标文件的完整路径. 
+nil 失败时. 
+示例 
+Command: (dos_unix2dos "readme.unix" "readme.dos") 
+"C:\\temp\\readme.dos" 
+ 
+* dos_getprn
+** (dos_getprn) 
+返回当前或默认的Windows打印机. 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回当前Windows打印机的完整名称. 
+nil 失败时. 
+示例 
+Command: (dos_getprn) 
+"HP LaserJet 8100 Series PCL" 
+ 
+* dos_printers
+返回已安装的Windows打印机. 这些打印机是已经通过Windows控制面板安装过的. 
+** 
+(dos_printers) 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回已安装的Windows打印机列表. 
+nil 失败时. 
+示例 
+Command: (dos_printers)
+("HP LaserJet 8100 Series PCL 6" "hp LaserJet 1300 PCL 6" "HP DeskJet 935C" "HP Color LaserJet 4500")
+* dos_setprn
+** (dos_setprn printername) 
+设置当前或默认的Windows打印机. 打印机名必须是dos_printers函数返回的名称. 
+*** 参数 
+printername 
+已存在的打印机名, 使用dos_printers获取. 
+*** 返回 
+如果成功, 返回当前Windows打印机的完整名称. 
+nil 失败时. 
+示例 
+Command: (dos_setprn (cadr (dos_printers)))
+"hp LaserJet 1300 PCL 6"
+* dos_spool
+** (dos_spool filename printername) 
+将一个磁盘文件打印到Windows打印机. 打印文件必须是"raw"打印机格式. 
+*** 参数 
+filename 
+源文件名. 文件必须同时包含文字和打印信息. 
+ 
+printername 
+已存在的打印机名, 可以使用dos_getprn或dos_printers函数的返回结果. 
+*** 返回 
+如果成功, 返回打印文件的完整路径. 
+nil 失败时. 
+示例 
+Command: (dos_spool "readme.txt" (dos_getprn)) 
+"C:\\temp\\readme.txt" 
+Colder: 
+注意这并不是传统意义上的PLOT命令, 它是将已有的打印文件发往打印机, 例如AutoCAD产生的.PLT文件. 
+ 
+* dos_getini
+** (dos_getini section entry filename [default]) 
+返回Windows类型配置文件(.INI)指定的section. 预置文件必须具备以下形式: 
+ 
+[section] 
+entry=string 
+... 
+*** 参数 
+section 
+包含entry的section. 
+ 
+entry 
+与所要返回字符串相关联的entry. 
+ 
+filename 
+配置文件(.INI)的文件名. 
+ 
+default 
+如果entry未找到时, 默认返回值. 
+ 
+注意, *** 参数不区分大小写, 所以section和entry可以采用任意大小写的组合. 
+*** 返回 
+如果section是nil, 返回section列表. 
+如果entry是nil,返回指定section下的entry列表. 
+如果entry未找到, 返回default. 
+否则, 返回与entry相关联的字符串Otherwise. 
+nil 失败时. 
+示例 
+Command: (dos_getini nil nil "C:\\Windows\\win.ini")
+("AeDebug" "Clock" "Colors" "Compatibility" "Console" "Cursors" "DeskTop" "Devices" "Embedding" "Extensions" "Fonts" "FontSubstitutes" "GRE_Initialize" "Intl" "IOProcs" "MCI Extensions" "ModuleCompatibility" "MSCharMap" "Net_Files" "NWCS" "Ports" "PrinterPorts" "Sounds" "TrueType" "Twain" "Windows Help" "Winlogon" "Network" "Windows" "fonts" "extensions" "mci extensions" "files" "Mail" "MCI Extensions.BAK" "MSUCE" "SciCalc" "WS_FTP" "CKSN")
+ 
+Command: (dos_getini "Mail" nil "C:\\Windows\\win.ini")
+("MAPI" "CMC" "CMCDLLNAME" "CMCDLLNAME32" "MAPIX" "MAPIXVER" "OLEMessaging")
+ 
+Command: (dos_getini "Mail" "CMCDLLNAME32" "C:\\Windows\\win.ini")
+"mapi32.dll"
+* dos_regaddkey
+** (dos_regaddkey hive key) 
+添加一个新项到注册表. 这个函数创建所有必要的项.
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+hive
+注册表根键. 可用值如下:
+ 
+HKEY_CURRENT_USER
+ 
+HKEY_LOCAL_MACHINE
+ 
+HKEY_USERS
+ 
+HKEY_CURRENT_CONFIG
+ 
+HKEY_CLASSES_ROOT
+ 
+HKEY_PERFORMANCE_DATA
+ 
+HKEY_DYN_DATA
+ 
+ 
+key 
+要添加的项.
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+(dos_regaddkey "HKEY_CURRENT_USER" "Software\\MyCompany\\MyProduct")
+T
+* dos_regdel
+** (dos_regdel key [name]) 
+声明, 不赞成使用这个函数. 请使用dos_regdelkey或dos_regdelval.
+ 
+从注册表中删除项及所有子项.
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+key 
+注册表项. 
+ 
+name
+要删除的注册表值的名称, 如果未指定将删除该项及所有子项.
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_regdel "HKEY_CURRENT_USER\\Software\\MyApp" "MyItem")
+T
+ 
+Command: (dos_regdel "HKEY_CURRENT_USER\\Software\\MyApp")
+T
+* dos_regdelkey
+** (dos_regaddkey hive key subkey) 
+从注册表中删除项. 这个函数也会删除所有子项.
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+hive
+注册表根键, 可用值如下:
+ 
+HKEY_CURRENT_USER
+ 
+HKEY_LOCAL_MACHINE
+ 
+HKEY_USERS
+ 
+HKEY_CURRENT_CONFIG
+ 
+HKEY_CLASSES_ROOT
+ 
+HKEY_PERFORMANCE_DATA
+ 
+HKEY_DYN_DATA
+ 
+ 
+key 
+注册表项.
+ 
+subkey 
+注册表子项.
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_regdelkey "HKEY_CURRENT_USER" "Software\\MyCompany" "MyProduct")
+T
+* dos_regdelval
+** (dos_regdelval hive key name) 
+从注册表中删除值. 
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+hive
+注册表根键, 可用值如下:
+ 
+HKEY_CURRENT_USER
+ 
+HKEY_LOCAL_MACHINE
+ 
+HKEY_USERS
+ 
+HKEY_CURRENT_CONFIG
+ 
+HKEY_CLASSES_ROOT
+ 
+HKEY_PERFORMANCE_DATA
+ 
+HKEY_DYN_DATA
+ 
+ 
+key 
+注册表项.
+ 
+name
+要删除的注册表值的名称.
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+(dos_regdelval "HKEY_CURRENT_USER" "Software\\MyCompany\\MyProduct" "Name")
+T
+* dos_regenumkeys
+** (dos_regenumkey hive key) 
+枚举注册表中指定项的所有子项. 
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+hive
+注册表根键, 可用值如下:
+ 
+HKEY_CURRENT_USER
+ 
+HKEY_LOCAL_MACHINE
+ 
+HKEY_USERS
+ 
+HKEY_CURRENT_CONFIG
+ 
+HKEY_CLASSES_ROOT
+ 
+HKEY_PERFORMANCE_DATA
+ 
+HKEY_DYN_DATA
+ 
+ 
+key 
+要枚举的项.
+*** 返回 
+如果成功, 返回子项列表. 
+nil on error. 
+示例 
+(dos_regenumkeys "HKEY_CURRENT_USER" "")
+("AppEvents" "Console" "Control Panel" "Environment" "Identities" "Keyboard Layout" "Network" "Printers" "Software" "SYSTEM" "UNICODE Program Groups" "Windows 3.1 Migration Status" "SessionInformation" "Volatile Environment")
+ 
+Command: (dos_regenumkeys "HKEY_CURRENT_USER" "Software\\Autodesk")
+("ACPROJECT" "AutoCAD" "Autodesk Digital Signatures" "DWFWriter" "Express Viewer" "FTPConnect" "ObjectARX AppWizard" "ObjectDBX")
+ 
+Command: (dos_regenumkeys "HKEY_CURRENT_USER" "Software\\Autodesk\\AutoCAD")
+("R16.2" "R17.0")
+* dos_regenumnames
+** (dos_regenumnames hive key) 
+枚举注册表中指定项的所有值的名称. 
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+hive
+注册表根键, 可用值如下:
+ 
+HKEY_CURRENT_USER
+ 
+HKEY_LOCAL_MACHINE
+ 
+HKEY_USERS
+ 
+HKEY_CURRENT_CONFIG
+ 
+HKEY_CLASSES_ROOT
+ 
+HKEY_PERFORMANCE_DATA
+ 
+HKEY_DYN_DATA
+ 
+ 
+key 
+要枚举的注册表项.
+*** 返回 
+如果成功, 返回名称列表. 
+nil 失败时. 
+示例 
+Command: (dos_regenumnames "HKEY_CURRENT_USER" "Software\\Autodesk\\AutoCAD\\R16.2")
+("CurVer")
+ 
+Command: (dos_regenumnames "HKEY_CURRENT_USER" "Software\\Autodesk\\AutoCAD\\R16.2\\ACAD-4001:409")
+("LocalRootFolder" "RoamableRootFolder" "" "NFWFile" "LaunchNFW" "AutoMigrate")
+* dos_regget
+** (dos_regget key [name]) 
+声明, 不赞成使用这个函数. 请使用dos_reggetint或dos_reggetstr.
+ 
+从注册表读取字符串值或值的名称列表. 
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+key 
+注册表项, 如果名称未指定则返回该项下所有值的名称列表.
+ 
+name
+要查询的值.
+*** 返回 
+如果未指定name则返回值的名称列表..
+如果指定了name则返回该值. 
+nil 失败时. 
+示例 
+Command: (dos_regget "HKEY_CURRENT_USER\\Software\\MyApp" "MyItem1")
+"True"
+ 
+Command: (dos_regget "HKEY_CURRENT_USER\\Software\\MyApp" "MyItem2")
+"False"
+ 
+Command: (dos_regget "HKEY_CURRENT_USER\\Software\\MyApp")
+("MyItem1" "MyItem2" "MyItem3")
+* dos_reggetint
+** (dos_reggetint hive key name) 
+从注册表返回整数值或DWORD值. 
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+hive
+注册表根键, 可用值如下:
+ 
+HKEY_CURRENT_USER
+ 
+HKEY_LOCAL_MACHINE
+ 
+HKEY_USERS
+ 
+HKEY_CURRENT_CONFIG
+ 
+HKEY_CLASSES_ROOT
+ 
+HKEY_PERFORMANCE_DATA
+ 
+HKEY_DYN_DATA
+ 
+ 
+key 
+注册表项.
+ 
+name
+要查询的值.
+*** 返回 
+如果成功, 返回整数值. 
+nil 失败时. 
+示例 
+Command: (dos_reggetint "HKEY_CURRENT_USER" "Software\\Autodesk\\AutoCAD\\R16.2\\ACAD-4001:409" "AutoMigrate")
+2
+* dos_reggetstr
+** (dos_reggetstr hive key name) 
+从注册表返回字符串值. 
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+hive
+注册表根键, 可用值如下:
+ 
+HKEY_CURRENT_USER
+ 
+HKEY_LOCAL_MACHINE
+ 
+HKEY_USERS
+ 
+HKEY_CURRENT_CONFIG
+ 
+HKEY_CLASSES_ROOT
+ 
+HKEY_PERFORMANCE_DATA
+ 
+HKEY_DYN_DATA
+ 
+ 
+key 
+注册表项.
+ 
+name
+要查询的值.
+*** 返回 
+如果成功, 返回字符串值. 
+nil 失败时. 
+示例 
+Command: (dos_reggetstr "HKEY_CURRENT_USER" "Software\\Autodesk\\AutoCAD\\R16.2" "CurVer")
+"ACAD-4001:409"
+* dos_reggettype
+** (dos_regenumkey hive key name) 
+从注册表返回值的数据类型.
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+hive
+注册表根键, 可用值如下:
+ 
+HKEY_CURRENT_USER
+ 
+HKEY_LOCAL_MACHINE
+ 
+HKEY_USERS
+ 
+HKEY_CURRENT_CONFIG
+ 
+HKEY_CLASSES_ROOT
+ 
+HKEY_PERFORMANCE_DATA
+ 
+HKEY_DYN_DATA
+ 
+ 
+key 
+注册表项.
+ 
+name
+要查询的值.
+*** 返回 
+如果成功, 返回用于识别数据类型的整数. 包括以下几种:
+ 
+0
+ REG_NONE
+ 无类型
+ 
+1
+ REG_SZ
+ Unicode无结尾字符串
+ 
+2
+ REG_EXPAND_SZ
+ Unicode无结尾字符串(带环境变量引用)
+ 
+3
+ REG_BINARY
+ 二进制形式
+ 
+4
+ REG_DWORD
+ 32位数字
+ 
+4
+ REG_DWORD_LITTLE_ENDIAN
+ 32位数字(类似REG_DWORD)
+ 
+5
+ REG_DWORD_BIG_ENDIAN
+ 32位数字
+ 
+6
+ REG_LINK
+ 符号链接(unicode)
+ 
+7
+ REG_MULTI_SZ
+ 多行Unicode字符串
+ 
+8
+ REG_RESOURCE_LIST
+ 资源映射列表
+ 
+9
+ REG_FULL_RESOURCE_DESCRIPTOR
+ 硬件资源描述列表
+ 
+10
+ REG_RESOURCE_REQUIREMENTS_LIST
+ 保留
+ 
+11
+ REG_QWORD
+ 64位数字
+ 
+11
+ REG_QWORD_LITTLE_ENDIAN
+ 64位数字(类似REG_QWORD)
+ 
+ 
+ 
+nil 失败时. 
+示例 
+(dos_reggettype "HKEY_CURRENT_USER" "Software\\Autodesk\\AutoCAD\\R16.2" "CurVer")
+1
+* dos_regkey
+** (dos_regkey key) 
+声明, 不赞成使用这个函数. 请使用dos_regenumkeys或dos_regenumnames.
+ 
+枚举注册表中指定项的所有子项. 
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+key 
+要枚举的项.
+*** 返回 
+如果成功, 返回子项列表. 
+nil on error. 
+示例 
+Command: (dos_regkey "HKEY_CURRENT_USER\\")
+("AppEvents" "Console" "Control Panel" "Environment" "Identities" "Keyboard Layout" "Network" "Printers" "Software" "SYSTEM" "UNICODE Program Groups" "Windows 3.1 Migration Status" "SessionInformation" "Volatile Environment")
+ 
+Command: (dos_regkey "HKEY_CURRENT_USER\\Software\\Autodesk")
+("ACPROJECT" "AutoCAD" "Autodesk Digital Signatures" "FTPConnect"
+)
+* dos_regset
+** (dos_regset key [name [value]]) 
+声明, 不赞成使用这个函数. 请使用dos_regsetint或dos_regsetstr.
+ 
+在注册表中添加一个字符串值Sets a string value or adds a key in the Windows Registry. 
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+key 
+注册表项.
+ 
+name
+要修改的值的名称.
+ 
+value
+要设置的值
+*** 返回 
+如果未指定name则创建项.
+如果未指定value则创建值. 
+否则如果成功, 返回设定的值.
+nil 失败时. 
+示例 
+Command: (dos_regset "HKEY_CURRENT_USER\\Software\\MyApp")
+"HKEY_CURRENT_USER\\Software\\MyApp"
+ 
+Command: (dos_regset "HKEY_CURRENT_USER\\Software\\MyApp" "MyItem1")
+"MyItem1"
+ 
+Command: (dos_regset "HKEY_CURRENT_USER\\Software\\MyApp" "MyItem1" "True")
+"True"
+ 
+Command: (dos_regset "HKEY_CURRENT_USER\\Software\\MyApp" "MyItem1" "False")
+"False"
+* dos_regsetint
+** (dos_regsetint hive key name int-value) 
+在注册表中设置整数值或DWORD值. 
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+hive
+注册表根键, 可用值如下:
+ 
+HKEY_CURRENT_USER
+ 
+HKEY_LOCAL_MACHINE
+ 
+HKEY_USERS
+ 
+HKEY_CURRENT_CONFIG
+ 
+HKEY_CLASSES_ROOT
+ 
+HKEY_PERFORMANCE_DATA
+ 
+HKEY_DYN_DATA
+ 
+ 
+key 
+注册表项.
+ 
+name
+要修改的值名称.
+ 
+int-value
+要设置的值
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_regsetint "HKEY_CURRENT_USER" "Software\\MyCompany\\MyProduct" "Number" 4)
+4
+* dos_regsetstr
+** (dos_regsetstr hive key name str-value) 
+在注册表中设置字符串值. 
+ 
+警告: 使用不当会导致严重的问题, 甚至需要你重装系统. 小心使用. 
+*** 参数 
+hive
+注册表根键, 可用值如下:
+ 
+HKEY_CURRENT_USER
+ 
+HKEY_LOCAL_MACHINE
+ 
+HKEY_USERS
+ 
+HKEY_CURRENT_CONFIG
+ 
+HKEY_CLASSES_ROOT
+ 
+HKEY_PERFORMANCE_DATA
+ 
+HKEY_DYN_DATA
+ 
+ 
+key 
+注册表项.
+ 
+name
+要修改的值名称.
+ 
+str-value
+要设置的值
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_regsetstr "HKEY_CURRENT_USER" "Software\\MyCompany\\MyProduct" "Name" "Value")
+"Value"
+* dos_setini
+** (dos_setini section entry string filename) 
+复制字符串到Windows类型配置文件(.INI)的指定section,. 配置文件必须具备以下形式: 
+ 
+[section] 
+entry=string 
+... 
+*** 参数 
+section 
+字符串要复制到哪个section. 当section不存在时会自动创建. 
+ 
+entry 
+关联到字符串的entry. 当entry在指定的section中不存在时会自动创建. 如果entry是nil, 整个section包括所有在它下面的的entry都将被删除. 
+ 
+string 
+要写入的字符串. 如果这个*** 参数为nil, entry条目将被删除. 
+ 
+filename 
+配置文件(.INI)的文件名. 如果文件不存在将自动创建. 但是指定的目录必须是存在的. 
+ 
+注意, *** 参数不区分大小写, 所以section和entry可以采用任意大小写的组合.  为了提高性能, Windows为许多最近访问的配置文件(.INI)设置缓存. 如果指定了文件名而其它*** 参数都是nil, Windows会将缓存写回到文件. 这个函数在更新缓存后不管成功还是失败总是返回nil. 
+*** 返回 
+如果成功, 返回配置文件的完整路径. 
+nil 失败时. 
+示例 
+Command: (dos_setini "section1" "entry1" "string1" "filename.ini") 
+"C:\\Program Files\\AutoCAD 2006\\filename.ini" 
+ 
+Command: (dos_setini "section1" "entry2" "string2" "filename.ini") 
+"C:\\Program Files\\AutoCAD 2006\\filename.ini" 
+ 
+Command: (dos_setini "section2" "entry1" "string1" "filename.ini") 
+"C:\\Program Files\\AutoCAD 2006\\filename.ini" 
+ 
+* dos_command
+** (dos_command command [show]) 
+运行内部命令. 内部命令是指那些本地操作系统命令解释器(如. COMMAND.COM or CMD.EXE)中的命令. 
+*** 参数 
+command 
+要运行的命令, 包括*** 参数. 
+ 
+show 
+窗口显示方式. 默认为普通(0). 
+ 
+0
+ 普通. 激活并显示窗口. 如果窗口最小化或最大化, 系统会恢复它原有的尺寸和位置. 应用程序在第一次运行时指定这个标志.
+ 
+1
+ 不激活. 按常规方式显示窗口的大小和位置. 这个值和0类似, 只不过不激活窗口.
+ 
+2
+ 最小化. 激活窗口并将其最小化.
+ 
+3
+ 最小化不激活. 最小化显示窗口. 这个值和2类似, 只不过不激活窗口..
+ 
+4
+ 最大化. 激活窗口并最大化.
+ 
+ 
+*** 返回 
+如果成功, 返回command.
+nil 失败时. 
+示例 
+Command: (dos_command "copy *.dwg c:\temp") 
+"CMD.EXE /C copy *.dwg c:\temp" 
+ 
+* dos_execute
+** (dos_execute command [show]) 
+执行外部程序. 使用PATH环境变量寻找外部程序. 
+*** 参数 
+command 
+运行的命令, 包括*** 参数. 
+ 
+show 
+窗口显示方式. 默认为普通(0). 
+ 
+0
+ 普通. 激活并显示窗口. 如果窗口最小化或最大化, 系统会恢复它原有的尺寸和位置. 应用程序在第一次运行时指定这个标志.
+ 
+1
+ 不激活. 按常规方式显示窗口的大小和位置. 这个值和0类似, 只不过不激活窗口.
+ 
+2
+ 最小化. 激活窗口并将其最小化.
+ 
+3
+ 最小化不激活. 最小化显示窗口. 这个值和2类似, 只不过不激活窗口..
+ 
+4
+ 最大化. 激活窗口并最大化.
+ 
+ 
+*** 返回 
+Returns command if successful. 
+nil on error. 
+ 
+示例 
+Command: (dos_execute "Notepad.exe") 
+"Notepad.exe"
+* dos_exewait
+** (dos_exewait command [show]) 
+执行外部程序, 等它完成后再交还控制权. 
+*** 参数 
+command 
+运行的命令, 包括*** 参数. 
+ 
+show 
+窗口显示方式. 默认为普通(0). 
+ 
+0
+ 普通. 激活并显示窗口. 如果窗口最小化或最大化, 系统会恢复它原有的尺寸和位置. 应用程序在第一次运行时指定这个标志.
+ 
+1
+ 不激活. 按常规方式显示窗口的大小和位置. 这个值和0类似, 只不过不激活窗口.
+ 
+2
+ 最小化. 激活窗口并将其最小化.
+ 
+3
+ 最小化不激活. 最小化显示窗口. 这个值和2类似, 只不过不激活窗口..
+ 
+4
+ 最大化. 激活窗口并最大化.
+ 
+ 
+*** 返回 
+T 如果成功.
+nil 失败时. 
+ 
+示例 
+Command: (dos_exewait "Notepad.exe") 
+Running external process, please wait... 
+T 
+* dos_processes
+** (dos_processes [T]) 
+返回系统中正在运行的进程或任务列表. 
+*** 参数 
+T 
+如果指定该*** 参数则返回进程的完整路径. 否则只返回文件名. 
+*** 返回 
+如果成功, 返回进程列表. 
+nil 失败时. 
+示例 
+Command: (dos_processes)
+("smss.exe" "csrss.exe" "winlogon.exe" "services.exe" "lsass.exe" "Ati2evxx.exe" "svchost.exe" "svchost.exe" "svchost.exe" "S24EvMon.exe" "svchost.exe" "svchost.exe" "ccSetMgr.exe" "SPBBCSvc.exe" "ccEvtMgr.exe" "spoolsv.exe" "DefWatch.exe" "mdm.exe" "RegSrvc.exe" "ZCfgSvc.exe" "Ati2evxx.exe" "svchost.exe" "Rtvscan.exe" "1XConfig.exe" "wdfmgr.exe" "ccApp.exe" "VPTray.exe" "type32.exe" "point32.exe" "ctfmon.exe" "alg.exe" "svchost.exe" "explorer.exe" "devenv.exe" "RoboHTML.exe" "notepad.exe" "mspdbsrv.exe" "hh.exe" "dexplore.exe" "acad.exe" "AdskCleanup.0001" "AdskScSrv.exe" "wmiprvse.exe" "WSCommCntr1.exe")
+* dos_shellexe
+** (dos_shellexe file parameters [operation [show]]) 
+打开或打印指定的文件, 用资源管理器浏览文件夹. 文件可以是可执行文件或文档. 
+*** 参数 
+file 
+要打开或显示的文件, 或是要浏览的文件夹. 这个函数可以打开可执行文件或文档. 也可以显示文档. 
+ 
+parameters 
+传递到应用程序的*** 参数, 比如一个文档. 如果file*** 参数指定的是文档, 请设置这个*** 参数为nil. 
+ 
+operation 
+ 
+0
+ 打开可执行文件或文档. 
+ 
+1
+ 打印文档. 
+ 
+2
+ 用资源管理器浏览文件夹. 
+ 
+ 
+show 
+窗口显示方式. 默认为普通(0). 
+ 
+0
+ 普通. 激活并显示窗口. 如果窗口最小化或最大化, 系统会恢复它原有的尺寸和位置. 应用程序在第一次运行时指定这个标志.
+ 
+1
+ 不激活. 按常规方式显示窗口的大小和位置. 这个值和0类似, 只不过不激活窗口.
+ 
+2
+ 最小化. 激活窗口并将其最小化.
+ 
+3
+ 最小化不激活. 最小化显示窗口. 这个值和2类似, 只不过不激活窗口..
+ 
+4
+ 最大化. 激活窗口并最大化.
+ 
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_shellexe "notepad.exe" "readme.txt") 
+T 
+ 
+(dos_shellexe "www.mcneel.com" nil) 
+T 
+ 
+(dos_shellexe "c:\\drawings\\" nil 2) 
+T 
+ 
+* dos_checklist
+** (dos_checklist title prompt assoc-list [T]) 
+显示一个可缩放的检查列表对话框. 当试图绑定对象或设置的状态时很有用. 
+*** 参数 
+title 
+窗口标题. 
+ 
+prompt 
+提示信息. 
+ 
+assoc-list 
+由字符串和状态所组成的关联表, 1代表开, 0代表关. 
+ 
+T 
+如果指定, 对话框将显示添加按钮(Add...)允许用户在列表中添加新项.
+*** 返回 
+如果成功, 返回用户修改后的状态映射关联表. 
+nil 取消或出错时. 
+示例 
+Command: (setq layer_list '(("Layer1" . 0) ("Layer2" . 0) ("Layer3" . 0))) 
+(("Layer1" . 0) ("Layer2" . 0) ("Layer3" . 0)) 
+ 
+Command: (dos_checklist "Display Layers" "Layers to turn on/off" layer_list) 
+ 
+(("Layer1" . 1) ("Layer2" . 0) ("Layer3" . 1)) 
+* dos_combolist
+** (dos_combolist title prompt list [default]) 
+显示一个可缩放带组合列表的对话框. 当同时需要选择或输入时非常有用. 
+*** 参数 
+title 
+窗口标题. 
+ 
+prompt 
+提示信息. 
+ 
+list 
+字符串列表. 
+ 
+default 
+默认值. 
+*** 返回 
+如果成功, 返回用户选择或输入的内容. 
+nil 取消或出错时. 
+示例
+Command: (dos_combolist "Set Current Layer" "Select a layer" '("Layer1" "Layer2" "Layer3")) 
+* dos_editbox
+** (dos_editbox title prompt [default]) 
+显示一个可缩放带多行编辑控件的对话框. 当需要编辑段落时很有用. 文本可以由外部文件导入. 
+*** 参数 
+title 
+窗口标题. 
+ 
+prompt
+提示信息. 
+ 
+default 
+默认值. 行分隔符可以是newline或'\n'. 
+*** 返回 
+如果成功, 返回字符串. 行分隔符为newline或'\n'. 使用dos_strtokens函数转换并返回字符串列表. 
+nil 取消或出错时. 
+示例
+Command: (dos_editbox "Editor" "Enter some text" "Hockey\nis\nthe\nbest!")
+"I really think \nHockey\nis\nthe\nbest!"
+* dos_editlist
+** (dos_editlist title prompt list) 
+显示一个可缩放带编辑列表的对话框. 表中的项目可以添加或删除, 顺序也可以修改. 
+*** 参数 
+title 
+窗口标题. 
+ 
+prompt 
+提示信息. 
+ 
+list 
+字符串列表. 
+*** 返回 
+如果成功, 返回用户选择的字符串. 注意, 如果表为空则返回一个包含单个nil符号的表.
+nil 取消或出错时. 
+示例 
+Command: (dos_editlist "Edit Items" "Add, remove, or edit items" '("Item1" "Item2" "Item3")) 
+("Item1" "Item2" "Item3" "NewItem4")
+* dos_getcancel
+** (dos_getcancel title message) 
+显示一个非模态带取消按钮的对话框. 因为对话框是非模态的, 可由用户中断, 所以你可能在执行长时间处理的时候用到它. 一旦使用*** 参数呼叫这个函数便开始初始化对话框. 不带*** 参数呼叫检查对话框的状态. 带T*** 参数呼叫关闭对话框. 
+(dos_getcancel T) 
+(dos_getcancel) 
+*** 参数 
+title 
+窗口标题. 
+ 
+message 
+消息. 
+ 
+T 
+关闭对话框. 
+*** 返回 
+当初始化或关闭对话框时返回nil. 
+当检查打开状态时返回, 如果是打开的则返回T, 否则返回nil. 
+示例
+Command: (setq x 0) 
+0 
+ 
+Command: (dos_getcancel "Testing" "Testing, please wait...") 
+nil 
+ 
+Command: (while (and (dos_getcancel) (< x 10000)) (setq x (1+ x))) 
+10000 
+ 
+Command: (if (= x 10000) (dos_getcancel t)) 
+nil 
+* dos_getcolor
+** (dos_getcolor title [default]) 
+显示一个Windows通用颜色选取对话框. 当你需要选择红-绿-蓝(RGB)颜色值时非常有用. 
+*** 参数 
+title 
+窗口标题. 
+ 
+default 
+默认值, AutoCAD可识别的1到255之间的整数, 也可以是描述RGB颜色的三个整数的表. 
+*** 返回 
+如果成功, 返回描述RGB颜色的三个整数的表. 
+nil 失败时. 
+示例
+Command: (dos_getcolor "Select a color" 1) 
+(0 0 255) 
+* dos_getint
+** (dos_getint title prompt [flags [default [max [min]]]]) 
+等价于LISP中getint函数的对话框. ADSRX允许的16位单精度整数范围是+32767到-32768. 
+*** 参数 
+title 
+窗口标题. 
+ 
+prompt 
+提示消息. 
+ 
+flags 
+验证输入的位码整数(可选). 可用位码如下: 
+ 
+0
+ 无验证.
+ 
+1
+ 不允许空.
+ 
+2
+ 不允许0.
+ 
+4
+ 不允许负数.
+ 
+ 
+default 
+默认值(可选). 
+ 
+max 
+允许的最大值(可选). 
+ 
+min 
+允许的最小值(可选). 
+*** 返回 
+如果成功, 返回整数. 
+nil 取消或出错时. 
+示例
+Command: (dos_getint "Copies" "Enter number of copies") 
+2 
+ 
+* dos_getpassword
+** (dos_getpassword title message [default [length]]) 
+等价于LISP中getstring函数. 对话框显示密码编辑框控件. 
+*** 参数 
+title 
+窗口标题. 
+ 
+message 
+提示消息. 
+ 
+default 
+默认值. 
+ 
+length 
+允许最多字符数. 
+*** 返回 
+如果成功, 返回字符串. 
+nil 取消或出错时. 
+示例
+Command: (dos_getpassword "Password" "Enter your password") 
+"password" 
+ 
+* dos_getprogress
+** (dos_getprogress title message maxvalue [T]) 
+显示一个非模态对话框, 由提示消息,进度条和取消按钮(可选)组成. 因为对话框是非模态的, 可由用户中断, 所以你可能在执行长时间处理的时候用到它. 一旦使用*** 参数呼叫这个函数便开始初始化对话框. 然后就可以通过呼叫绝对或相对数字来移动进度条. 不带*** 参数呼叫检查对话框的状态. 带T*** 参数呼叫关闭对话框. 
+(dos_getprogress abs/-rel) 
+(dos_getprogress T) 
+(dos_getprogress) 
+*** 参数 
+title 
+窗口标题. 
+ 
+message 
+提示信息. 
+ 
+maxvalue 
+一个整数, 设定进度条的最大值(从0到最大). 
+ 
+abs/-rel 
+用来移动进度条的绝对值, 或相对值(用负值表示). 
+ 
+T 
+如果在创建对话框时指定这个*** 参数将显示取消按钮. 否则T代表关闭对话框. 
+*** 返回 
+nil 当初始化,增加,关闭对话框时. 
+当检查打开状态时, 如果是打开则返回T, 否则返回nil
+示例
+Command: (setq x 0 y 1000) 
+1000 
+ 
+Command: (dos_getprogress "Testing" "Testing, please wait..." y) 
+nil 
+ 
+Command: (while (< x y) (dos_getprogress -1) (setq x (1+ x))) 
+1000 
+ 
+Command: (dos_getprogress t) 
+nil 
+* dos_getreal
+** (dos_getreal title prompt [flags [default [max [min]]]]) 
+等价于LISP中getreal函数的对话框. 实数是双精度浮点型值, 提供14位的精度. 可以用科学计算法表示, 在e或E后面根随指数(例如, 0.0000041与4.1e-6相等). 
+*** 参数 
+title 
+窗口标题. 
+ 
+prompt 
+提示信息. 
+ 
+flags 
+一个验证用的整数位码(可选). 可用值如下: 
+ 
+0
+ 无验证.
+ 
+1
+ 不允许空.
+ 
+2
+ 不允许0.
+ 
+4
+ 不允许负数.
+ 
+ 
+default 
+默认值(可选). 
+ 
+max 
+允许的最大值(可选). 
+ 
+min 
+允许的最小值(可选). 
+*** 返回 
+如果成功, 返回一个实数. 
+nil 取消或出错时 
+示例 
+Command: (dos_getreal "Distance" "Enter a distance") 
+23.4 
+* dos_getsecret
+** (dos_getsecret prompt [T]) 
+从AutoCAD命令行获取密码字符串. 
+*** 参数 
+prompt 
+提示信息. 
+ 
+T 
+如果指定这个*** 参数, 代表字符串可以包含空格, 这样一来用户必须按<Enter>结束. 否则的话空格和<Enter>都可以终止输入. 
+*** 返回 
+如果成功, 返回字符串. 
+nil 取消或出错时 
+示例 
+Command: (dos_getsecret "Password: ")
+"MySecretPassword"
+* dos_getstring
+** (dos_getstring title prompt [default [length]]) 
+等价于LISP中getstring函数的对话框. 
+*** 参数 
+title 
+窗口标题. 
+ 
+prompt 
+提示信息. 
+ 
+default 
+默认值. 
+ 
+length 
+允许的最大长度. 
+*** 返回 
+如果成功, 返回字符串. 
+nil 取消或出错时 
+示例 
+Command: (dos_getstring "文字" "请输入文字:")
+"www.vitarn.com"
+* dos_htmlbox
+** (dos_htmlbox title address [width height]) 
+显示一个可缩放的展示HTML网页的对话框. 
+*** 参数 
+title 
+窗口标题. 
+ 
+address 
+一个网址(URL)或指向HTML格式文件的路径. 
+ 
+width 
+对话框宽度(可选). 
+ 
+height 
+对话框高度(可选). 
+*** 返回 
+nil. 
+示例
+Command: (dos_htmlbox "ViTarn.com" "www.vitarn.com") 
+nil
+* dos_listbox
+** (dos_listbox title prompt list [default]) 
+显示一个可缩放带单选列表的对话框. 
+*** 参数 
+title 
+窗口标题. 
+ 
+prompt
+提示信息. 
+ 
+list 
+字符串列表. 
+ 
+default 
+默认值. 
+*** 返回 
+如果成功, 返回用户选择的项目. 
+nil 取消或出错时. 
+示例 
+Command: (dos_listbox "Set Current Layer" "Select a layer" '("Layer1" "Layer2" "Layer3")) 
+"Layer1" 
+* dos_msgbox
+** (dos_msgbox text title button icon [duration]) 
+创建, 显示和操作Windows消息框或对话框. 消息框包含应用程序定义的消息和标题, 附加所有预先定义的图标和按钮组合. 可选的持续时间*** 参数允许对话框定时自动关闭. 
+*** 参数 
+text 
+提示消息. 
+ 
+title 
+消息框标题. 
+ 
+button 
+按钮组合格式. 可用值如下: 
+ 
+0
+ 终止, 重试, 忽略
+ 
+1
+ 确定
+ 
+2
+ 确定, 取消
+ 
+3
+ 重试, 取消 
+ 
+4
+ 是, 否
+ 
+5
+ 是, 否, 取消
+ 
+ 
+icon 
+消息框图标. 可用值如下: 
+ 
+0
+ 星号 (i) 
+ 
+1
+ 感叹 (!) 
+ 
+2
+ 帮助 (x) 
+ 
+3
+ 信息 (i) 
+ 
+4
+ 疑问 (?) 
+ 
+5
+ 终止 (x) 
+ 
+ 
+duration 
+持续时间以秒为单位. 注意, 这个*** 参数只有在button*** 参数为1,2,3和5时才有效 
+*** 返回 
+代表用户所按下按钮的位码:: 
+ 
+0
+ 中止
+ 
+1
+ 取消
+ 
+2
+ 忽略
+ 
+3
+ 否
+ 
+4
+ 确定
+ 
+5
+ 重试
+ 
+6
+ 是
+ 
+ 
+nil 出错时. 
+示例 
+Command: (dos_msgbox "Are you sure?" "Save" 4 3) 
+6 
+* dos_msgboxchk
+** (dos_msgboxchk text title button icon default regkey) 
+显示一个消息框, 让用户对以后类似情况做出显示. 如果用户已经选择禁止再显示这个消息框, 这个函数将不显示而是直接返回默认值.
+ 
+注意: 不要把"Do not show this dialog box"和"Remember this answer"搞混. 这个函数不提供"Remember this answer"这类函数. 如果用户选择以后禁止显示这个消息框, 函数将不再保留用户的点击. 取代为开发者提供的默认值.
+*** 参数 
+text 
+对话框消息. 
+ 
+title 
+对话框标题. 
+ 
+button 
+按钮组合格式. 可用值如下: 
+ 
+0
+ 终止, 重试, 忽略
+ 
+1
+ 确定
+ 
+2
+ 确定, 取消
+ 
+3
+ 重试, 取消 
+ 
+4
+ 是, 否
+ 
+5
+ 是, 否, 取消
+ 
+ 
+icon 
+消息框图标. 可用值如下: 
+ 
+0
+ 星号 (i) 
+ 
+1
+ 感叹 (!) 
+ 
+2
+ 帮助 (x) 
+ 
+3
+ 信息 (i) 
+ 
+4
+ 疑问 (?) 
+ 
+5
+ 终止 (x) 
+ 
+ 
+default
+默认值, 如果用户已经选择禁止再显示这个对话框时, 函数返回这个默认值. 如果用户没有选择禁止显示则显示这个消息框并且函数会忽略default. 注意, 默认值必须比-1小或比6大. 
+ 
+regkey
+与这个对话框相关联的独一无二的字符串. 
+*** 返回 
+代表用户所按下按钮的位码:: 
+ 
+0
+ 中止
+ 
+1
+ 取消
+ 
+2
+ 忽略
+ 
+3
+ 否
+ 
+4
+ 确定
+ 
+5
+ 重试
+ 
+6
+ 是
+ 
+ 
+如果用户选择禁止再显示这个对话框, 将返回默认值.
+nil 出错时. 
+示例 
+Command: (dos_msgboxchk "Are you sure?" "Save" 4 3 -2 "MyMsgBox") 
+6 
+ 
+* dos_msgboxex
+** (dos_msgboxex text title button-list icon) 
+创建, 显示并操作一个自定义Windows消息对话框. 消息框包含应用程序定义的消息和标题, 附加所有预先定义的图标和按钮组合. 
+*** 参数 
+text 
+对话框消息. 
+ 
+title 
+对话框标题. 
+ 
+button-list 
+自定义按钮的标签列表. 列表中的字符串对应创建的自定义按钮标签. 最多允许5个按钮. 注意, 默认按钮总是表中的第一个.
+ 
+消息框图标. 可用值如下: 
+ 
+0
+ 星号 (i) 
+ 
+1
+ 感叹 (!) 
+ 
+2
+ 帮助 (x) 
+ 
+3
+ 信息 (i) 
+ 
+4
+ 疑问 (?) 
+ 
+5
+ 终止 (x) 
+ 
+*** 返回 
+代表用户按下按钮的整数: 
+nil 出错时. 
+示例 
+(setq a "Wouldn't it be nice to have a custom message box\n")
+(setq b "function that would accept a list of strings that\n")
+(setq c "identify custom button labels?  Thus, for instance,\n")
+(setq d "you could present a user with three custom buttons.")
+(setq text (strcat a b c d))
+(setq buttons (list "Sometimes" "Never" "What?"))
+(dos_msgboxex text "Question of the Day" buttons 4)
+0
+* dos_multilist
+** (dos_multilist title prompt list [indices]) 
+显示一个可缩放的复选列表框. 
+*** 参数 
+title 
+窗口标题. 
+ 
+prompt
+提示信息. 
+ 
+list 
+字符串列表.
+ 
+indices
+代表默认选中的索引列表. 
+*** 返回 
+如果成功, 返回选中的字符串列表. 
+nil 取消或出错时. 
+示例
+Command: (dos_multilist "Freeze Layers" "Select layers" '("Layer1" "Layer2" "Layer3") '(0 2)) 
+("Layer1" "Layer3") 
+* dos_popupmenu
+** (dos_popupmenu menu-items [item-modes]) 
+显示一个用户定义的上下文类型的弹出菜单. 弹出菜单差不多可以出现在任何地方. 并且可以通过点击左键或右键解除.
+*** 参数 
+menu-items
+定义菜单项的字符串列表. 空字符串或""代表分隔线. 
+ 
+item-modes
+定义对应菜单项显示模式的数字列表. 如果省略则所有菜单项都可用. 注意, 虽然所有菜单项都必须指定该值, 不过对于分隔线是无效的. 可用的显示模式如下:
+ 
+0
+ 可用.
+ 
+1
+ 禁用.
+ 
+2
+ 选中.
+ 
+3
+ 禁用并选中.
+ 
+ 
+*** 返回 
+选取的菜单项索引值. 注意, 菜单分隔线不包括在返回的索引值当中. 
+nil 取消或出错. 
+示例 
+Command: (setq x '("Line" "" "Circle" "Arc")) 
+("Line" "" "Circle" "Arc")
+ 
+Command: (setq y '(0 0 1 2))
+(0 0 1 2)
+ 
+Command: (dos_popupmenu x y)
+0
+ 
+Command: (dos_popupmenu x)
+0
+* dos_proplist
+** (dos_proplist title prompt assoclist) 
+显示一个可缩放带属性编辑的列表对话框. 
+*** 参数 
+title 
+窗口标题. 
+ 
+prompt
+提示信息. 
+ 
+assoclist 
+字符串描述和对应值的关联表. 
+*** 返回 
+如果成功, 返回用户修改后的关联表. 
+nil 取消或出错时. 
+示例 
+Command: (setq x '(("Title" . "Floorplan") ("Project" . "Project A"))) 
+(("Title" . "Floorplan") ("Project" . "Project A")) 
+ 
+Command: (dos_proplist "Drawing Properties" "Modify Properties" x) 
+(("Title" . "Floorplan") ("Project" . "Project B")) 
+ 
+* dos_splash
+** (dos_splash filename duration [T]) 
+显示一个多线程Windows位图徽标屏幕. 位图文件必须是Windows bitmaps (.BMP). 图片可以是24-bit色(16.7 million colors). 
+*** 参数 
+filename 
+Windows位图文件(.BMP). 
+ 
+duration 
+持续时间(秒). 
+ 
+T 
+如果指定, 用户可以通过按键或点击鼠标解除徽标屏幕. 
+*** 返回 
+nil
+示例 
+Command: (dos_splash "mylogo.bmp" 10) 
+nil 
+ 
+* dos_traywnd
+** (dos_traywnd title text width height [operation [duration]]) 
+显示一个弹出式托盘窗口, 类似于MSN Messenger风格的通知.
+*** 参数 
+title
+标题.
+ 
+text
+文字.
+ 
+width
+宽度(像素).
+ 
+height
+高度(像素)
+ 
+operation
+当用户点击标题或文字时执行的操作
+ 
+duration 
+持续时间(毫秒). 
+*** 返回 
+nil
+示例 
+Command: (dos_traywnd "ViTarn" "感谢您的关注!\nwww.ViTarn.com" 200 100 "www.vitarn.com" 7000) 
+nil 
+* dos_waitcursor
+** (dos_waitcursor [T]) 
+切换Windows沙漏光标的状态. 
+*** 参数 
+T 
+如果指定这个*** 参数则显示沙漏. 否则恢复光标. 
+*** 返回 
+T 如果当前显示的是沙漏. 
+nil 如果当前显示的不是沙漏. 
+示例 
+Command: (dos_waitcursor t) 
+T 
+ 
+Command: (dos_waitcursor) 
+nil 
+* dos_strcase
+** (dos_strcase string [T]) 
+转化字符串中字符的大小写. 
+*** 参数 
+string 
+字符串. 
+ 
+T 
+如果指定T, 所有的字母都会转化成小写. 否则转化为大写. 
+*** 返回 
+如果成功, 返回转化后的字符串. 
+nil 失败时. 
+示例 
+Command: (dos_strcase "AutoCAD 2006") 
+"AUTOCAD 2006" 
+ 
+Command: (dos_strcase "AutoCAD 2006" T) 
+"autocad 2006" 
+ 
+* dos_strcat
+** (dos_strcat [string [string] etc ]) 
+连接多个字符串. 
+*** 参数 
+string 
+字符串. 
+*** 返回 
+如果成功, 返回连接后的字符串. 如果未提供*** 参数则返回零宽度字符串(""). 
+nil 失败时. 
+示例 
+Command: (dos_strcat "Hockey " "is " "the " "best.") 
+"Hockey is the best." 
+ 
+* dos_strchar
+** (dos_strchar string index [char]) 
+在给定的位置读取或修改字符. 
+*** 参数 
+string 
+字符串. 
+ 
+index 
+一个以0开始的索引. 索引必须大于或等于0, 小于dos_strlength的返回值. 
+ 
+char 
+要修改的字符(可选). 
+*** 返回 
+如果未指定char, 返回指定位置的字符. 
+如果指定了char, 返回修改后的字符串. 
+nil 失败时. 
+示例 
+Command: (dos_strchar "AutoCAD 2006" 11) 
+"6" 
+ 
+Command: (dos_strchar "AutoCAD 2006" 11 "7") 
+"AutoCAD 2007" 
+ 
+* dos_strcompare
+** (dos_strcompare string1 string2 [T]) 
+比较两个字符串 (可指定是否区分大小写). 
+*** 参数 
+string1 
+第一个字符串. 
+ 
+string2 
+第二个字符串. 
+ 
+T 
+如果指定T则比较过程不区分大小写. 否则区分大小写. 
+*** 返回 
+如果字符串相等返回值为0, 如果字符串1比字符串2小则返回值<0, 如果字符串1比字符串2大则返回值>0. 
+nil 出错时. 
+示例 
+Command: (dos_strcompare "AutoCAD" "AUTOCAD") 
+1 
+ 
+Command: (dos_strcompare "AutoCAD" "AUTOCAD" T) 
+0 
+ 
+* dos_strdelete
+** (dos_strdelete string index count) 
+从字符串中删除字符. 
+*** 参数 
+string 
+字符串. 
+ 
+index 
+以0开始的索引代表删除的开始位置. 
+ 
+count 
+从开始位置向后删除的字符数. 如果index比字符串长度大, 剩余的字符串都将被删除. 
+*** 返回 
+如果成功, 返回修改后的字符串. 
+nil 失败时. 
+示例 
+Command: (setq str "Hockey is the best.") 
+"Hockey is the best." 
+ 
+Command: (dos_strdelete str 6 8) 
+"Hockeybest." 
+ 
+Colder: 
+如果index比字符串长度大, 剩余的字符串都将被删除. 
+If index is longer than the length of string, the remainder of string will be removed. 
+原文如此, 可是我实在没有看懂是什么意思. (dos_strdelete "AutoCAD 2008" 13 3)这样的语句在我的机器上没有什么特别的效果. 
+* dos_strexcluding
+** (dos_strexcluding string charset) 
+返回不包含字符设置中的子串. 
+*** 参数 
+string 
+字符串. 
+ 
+charset 
+字符设置. 
+*** 返回 
+一个子串包含string但不包含charset中的字符, 开始于字符串中的第一个字符, 结束于同时出现在string和charset中的字符 (意思是, 开始于string并且当在string中发现charset时终止). 如果在string中未发现charset将返回整个字符串. 
+nil 失败时.
+示例 
+Command: (dos_strexcluding "1.0,1.0,1.0" ";,-:") 
+"1.0" 
+Colder: 
+说了那么多, 结果更晕了. 其实这个函数的意思就是从字符串的开头截取到字符设置中没出现过的字符为止. 
+还是用例子能解释的更清楚些. 
+Command: (dos_strexcluding "130,138,139," ",;") 
+"130" 
+* dos_strfind
+** (dos_strfind string substring [index]) 
+在长字符串中寻找字符或子串. 
+*** 参数 
+string 
+字符串. 
+ 
+substring 
+要搜索的子串. 
+ 
+index 
+以0开始的索引, 代表开始搜索的位置, 0代表从头开始. 索引之前的字符不在搜索范围内. 这个*** 参数的默认值为0. 
+*** 返回 
+以0开始的索引, 代表在字符串中第一次匹配子串的位置; 如果未找到则返回-1. 
+nil 失败时. 
+示例 
+Command: (dos_strfind "AutoCAD 2006" "C") 
+4 
+ 
+Command: (dos_strfind "The stars are aligned." "e" 5) 
+12 
+ 
+* dos_strfindoneof
+** (dos_strfindoneof string charset) 
+按照设置搜索第一个匹配的字符位置. 
+*** 参数 
+string 
+字符串. 
+ 
+substring 
+待搜索的子串. 
+*** 返回 
+以0开始的索引, 代表第一次出现指定字符的位置; 如果未找到则返回-1. 
+nil 失败时. 
+示例 
+Command: (dos_strfindoneof "abcdefg" "xd") 
+3 
+ 
+* dos_strformat
+** (dos_strformat format arg1 arg2 etc) 
+格式化字符串, 类似于C语言实时运行库函数sprintf. 
+*** 参数 
+format
+字符串, 包含文本格式. 可以选择内置的格式标签按照格式化请求代替接下来指定的arg. arg*** 参数的数量至少要与格式标签的数量相同. 
+ 
+格式标签有如下类型:
+ 
+%[flags][width][.precision][length]specifier 
+ 
+Colder: 
+抱歉再一次破例提前出现, ^_^ 下面一大片糟糕的翻译实在是对不起大家. 
+如果你学过C语言并且知道sprintf的用法, 大可不必再往下看了. 这个函数无非就是照搬C语言的, 功能是很强大, 但同时程序也被搞的不那么LISP了. 而且至今没觉得它有什么用处. 难道你想用它在AutoCAD的命令行里输出和DIR一样的表格么? ~_~ 
+ 
+specifier大多数情况下用来定义类型和解释对应的值*** 参数:
+ 
+Specifier
+ 输出
+ 例子
+ 
+c
+ 字符
+ a
+ 
+d or i
+ 单精度整数
+ 392
+ 
+e
+ 使用字符e(/exponent)的科学记数法
+ 3.9265e+2
+ 
+E
+ 使用字符E的科学记数法
+ 3.9265E+2
+ 
+f
+ 浮点型十进制
+ 392.65
+ 
+g
+ 使用shorter类型 %e %f
+ 392.65
+ 
+G
+ 使用shorter类型 %E %f
+ 392.65
+ 
+o
+ 单精度八进制
+ 610
+ 
+s
+ 字符串
+ sample
+ 
+u
+ 无符号十进制整数
+ 7235
+ 
+x
+ 无符号十六进制整数
+ 7fa
+ 
+X
+ 无符号十六进制整数(大写字母)
+ 7FA
+ 
+n
+ 什么都不显示. 这个*** 参数必须指向单精度整数, 以便字符串中的数字可以保存.
+  
+ 
+%
+ %紧随其它%字符可以输出一个%到字符串.
+  
+ 
+ 
+标签也可以包含标志(flags), 宽度(width), 精度(.precision)修正子属性, 下面这些规范为可选: 
+ 
+Flag
+ 描述
+ 
+-
+ 适应宽度, 内部左对齐; 右侧按默认调整(请看 width sub-specifier).
+ 
++
+ 强制显示正号或负号(+ or -). 默认只有负号才会显示.
+ 
+(space)
+ 如果没有标志可写, 在值的前面插入空格.
+ 
+#
+ 连同o,x或X一起使用结果会冠以0, 0x或0X与0是不同的.
+连同e,E和f一起使用, 强制输出小数, 即便不包含小数部分. 默认情况下如果没有小数部分时自动取整.
+连同g或G一起使用, 结果和e或E类似但不会删除末尾的0.
+ 
+0
+ 左边以0添充(请看 width sub-specifier).
+ 
+ 
+ 
+Width
+ 描述
+ 
+数字
+ 字符的最小输出倍数. 如果实际长度比这个数值小, 输出结果会以空格填充. 如果比它大的话不会截短.
+ 
+*
+ 未指定格式字符串宽度, 但是额外的整数值*** 参数将会按格式*** 参数进行处理.
+ 
+ 
+ 
+Precision
+ 描述
+ 
+number
+ 对于d,i,o,u,x,X): precision指定最小的位数. 如果实际长度比它小, 结果前面会以0填充. 比它大时结果不会断截短. 0的意思是不输出.
+对于e,E和f: 意思是输出的小数位数.
+对于g和Gs: 意思是输出的最大位数.
+对于s: 意思是输出的最大长度. 默认情况下输出所有字符.
+对于c: 没什么效果.
+当未指定precision时, 默认值1. 如果这其间precision指代不清则假定是0.
+ 
+*
+ precision并不是用于指定格式字符串的, 但是*** 参数前面的额外整数值要求必须有格式.
+ 
+ 
+ 
+Length
+ 描述
+ 
+h
+ 用来解释短整数和无符号整数(只能搭配i,d,o,u,x和X使用).
+ 
+l
+ 用来解释长整数和无符号长整数(i, d, o, u, x和X), 同时还可用于宽字符串(c和s).
+ 
+L
+ 用来解释双精度长整型(只能搭配e,E,f,g和G使用). 
+ 
+ 
+substring 
+依赖字符串格式标签, 这个函数期待一个附加*** 参数序列, 每个部分用来替代%-tag所指定的内容. 有一些与这些数字相同的*** 参数作为%-tags期待值. 
+*** 返回 
+如果成功, 返回格式化后的字符串. 
+nil 失败. 
+示例 
+(defun c:test (/ ch string count fp)
+  (setq ch "h")
+  (setq string "computer")
+  (setq count -9234)
+  (setq fp 251.7366)
+  ; Display integers
+  (princ 
+    (dos_strformat 
+      "Integer formats:\n   Decimal: %d  Justified: %.6d  Unsigned: %u\n"
+      count count count 
+    )
+  )
+  ; Display decimals
+  (princ 
+    (dos_strformat   
+      "Decimal %d as:\n   Hex: %Xh  C hex: 0x%x  Octal: %o\n"
+      count count count count
+    )
+  )
+  ; Display characters
+  (princ 
+    (dos_strformat   
+      "Characters in field:\n%10c%5hc%5c%5lc\n"
+      ch ch ch ch
+    )
+  )
+  
+  ; Display strings
+  (princ 
+    (dos_strformat   
+      "Strings in field:\n%25s\n%25.4hs\n   %s%25.3ls\n"
+      string string string string
+    )
+  )
+  ; Display real numbers
+  (princ 
+    (dos_strformat   
+      "Real numbers:\n   %f %.2f %e %E\n"
+      fp fp fp fp
+    )
+  )
+  (princ)
+)
+Output
+Integer formats:
+   Decimal: -9234  Justified: -009234  Unsigned: 4294958062
+Decimal -9234 as:
+   Hex: FFFFDBEEh  C hex: 0xffffdbee  Octal: 37777755756
+Characters in field:
+         h    h    h    h
+Strings in field:
+                 computer
+                        c
+   computer                      com
+Real numbers:
+   251.736600 251.74 2.517366e+002 2.517366E+002
+* dos_strformatcurrency
+** (dos_strformatcurrency number [num_digits [leading_zero [decimal_sep [thousands_sep [currency_sym]]]]]) 
+数字转化成货币. 
+ 
+货币字符串的格式基于控制面板区域和语言选项中的设置. (也就是说, 看这篇文章的人测试文末的例子应该显示的是"￥1,234.56").
+*** 参数 
+number 
+一个数字. 
+ 
+num_digits
+小数位. 必须在0到9之间.
+ 
+leading_zero
+前面是否用0补齐. 该*** 参数只能是0或1.
+ 
+decimal_sep
+十进制区分字符, 最大长度4.
+ 
+thousands_sep
+千位分隔符. 最大长度4.
+ 
+currency_sym
+货币符号. 最大长度6.
+*** 返回 
+如果成功, 返回格式化的货币字符串. 
+nil 失败时.
+示例 
+Command: (dos_strformatcurrency 1234.56)
+"$1,234.56"
+ 
+Command: (dos_strformatcurrency 1234.56 0)
+"$1,235"
+ 
+Command: (dos_strformatcurrency 0.56 2 0)
+"$.56" 
+ 
+Colder: 
+上面的例子还不是很明白. 希望下面我写的例子可以让你搞懂这些*** 参数的意义: 
+命令: (dos_strformatcurrency 1234.5678 2 0 "元" "千零" "人民币: ") 
+"人民币: 1千零234元56" 
+* dos_strformatnumber
+** (dos_strformatnumber number [num_digits [leading_zero [decimal_sep [thousands_sep]]]]) 
+格式化数字字符串. 
+字数字符串的格式基于控制面板区域和语言选项中的设置..
+*** 参数 
+number 
+一个数字. 
+ 
+num_digits
+小数位. 必须在0到9之间.
+ 
+leading_zero
+前面是否用0补齐. 该*** 参数只能是0或1.
+ 
+decimal_sep
+十进制区分字符, 最大长度4.
+ 
+thousands_sep
+千位分隔符. 最大长度4.
+ 
+*** 返回 
+如果成功, 返回格式化的数字字符串. 
+nil 失败时.
+示例 
+Command: (dos_strformatnumber 1234.56)
+"1,234.56"
+ 
+Command: (dos_strformatnumber 1234.56 0)
+"1,235"
+ 
+Command: (dos_strformatnumber 0.56 2 0)
+".56"
+ 
+* dos_strincluding
+** (dos_strincluding string charset) 
+提取仅包含在设置字符中的子串. 
+*** 参数 
+string 
+字符串. 
+ 
+char_set 
+设置字符. 
+*** 返回 
+一个子串, 即要包含于string也要包含于charset, 从string的第一个字符开始搜索到string但不包含于charset的字符为止. 如果第一个字符就不符合条件, dos_strincluding将返回空串. 
+nil 失败时. 
+示例 
+Command: (dos_strincluding "cabbage" "abc") 
+"cabba" 
+ 
+* dos_strinsert
+** (dos_strinsert string index chars) 
+插入字符或子串到给定的索引位置. 
+*** 参数 
+string 
+字符串. 
+ 
+index 
+以0开始的索引, 指定插入位置. 如果index是0则将子串放置在开头. 如果index大于string的长度, 函数将连接子串到末尾. 
+ 
+chars 
+要插入的子串. 
+*** 返回 
+如果成功, 返回修改后的字符串. 
+nil 失败时. 
+示例 
+Command: (setq str "HockeyBest.") 
+"HockeyBest." 
+ 
+Command: (dos_strinsert str 6 " is the ") 
+"Hockey is the Best." 
+ 
+* dos_strischar
+** (dos_strischar [char [bits]]) 
+检验字符是否满足位码所描述的条件. 
+*** 参数 
+char 
+字符. 
+ 
+bits 
+一个整数位码用于描述条件. 可用位码如下: 
+ 
+1
+ 字母和数字. A-Z, a-z, 或0-9. 
+ 
+2
+ 字母. A-Z, a-z.
+ 
+4
+ 十进制数. 0-9.
+ 
+8
+ 可打印字符. 包括空格在内, 0x20-0x7E. 
+ 
+16
+ 标点符号. 所有不是空格,字母,数字的可打印符号. 
+ 
+32
+ 空白符. 0x09-0x0D或0x20. 
+ 
+64
+ 小写字母. a-z. 
+ 
+128
+ 大写字母. A-Z. 
+ 
+256
+ ASCII. 0x00-0x7F. 
+ 
+512
+ 控制字符. 0x00-0x1F或0x7F. 
+ 
+ 
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_strischar "D" 2) 
+T 
+ 
+Command: (dos_strischar "D" 4) 
+nil 
+ 
+Command: (dos_strischar "D" 129) 
+T 
+ 
+* dos_strleft
+** (dos_strleft string count) 
+从左边提取字符串. (类似于Basic语言LEFT$函数). 
+*** 参数 
+string 
+字符串. 
+ 
+count 
+从string左边提取的字符数量. 如果count超出string的长度, 提取整个字符. 
+*** 返回 
+如果成功, 返回提取的字符. 
+nil 失败时. 
+示例 
+Command: (dos_strleft "AutoCAD 2006" 7) 
+"AutoCAD" 
+ 
+* dos_strlength
+** (dos_strlength string) 
+返回字符串的字符数量 (即字符串长度). 
+*** 参数 
+string 
+字符串. 
+*** 返回 
+代表字符串的长度数字. 
+nil 失败时. 
+示例 
+Command: (dos_strlength "AutoCAD 2006") 
+12 
+ 
+* dos_strmatch
+** (dos_strmatch string wildcard) 
+依靠通配符匹配字符串. 
+*** 参数 
+string 
+字符串. 
+ 
+wildcard 
+包含通配符(*和?)的字符串. 
+*** 返回 
+T 如果字符串匹配wildcard. 
+nil 失败时. 
+示例 
+Command: (dos_strmatch "MyLayerName" "My*") 
+T 
+ 
+Command: (dos_strmatch "MyDrawing.dwg" "My*.*") 
+T 
+ 
+ 
+* dos_strmid
+** (dos_strmid string index [count]) 
+提取字符串中的一部分 (类似Basic语言的MID$函数). 
+*** 参数 
+string 
+字符串. 
+ 
+index 
+以0开始的索引, 指定要在string中开始提取的位置. 
+ 
+count 
+提取字符的数量. 如果不提供则提取string的全部剩余部分. 
+*** 返回 
+如果成功, 返回提取的字符串. 
+nil 失败. 
+示例 
+Command: (dos_strmid "AutoCAD 2006" 8) 
+"2006" 
+ 
+Command: (dos_strmid "AutoCAD 2006" 4 3) 
+"CAD" 
+Colder: 
+函数名对不熟悉Basic的人来说很是奇怪, 但说白了其实就是LISP中的substr 
+ 
+* dos_strremove
+** (dos_strremove string char) 
+从字符串中删除指定字符. 
+*** 参数 
+string 
+字符串. 
+ 
+char 
+要删除的字符. 
+*** 返回 
+如果成功, 返回修改后的字符串. 
+nil 失败时. 
+示例 
+Command: (dos_strremove "AutoCAD 2006" "A") 
+"utoCD 2006" 
+ 
+* dos_strreplace
+** (dos_strreplace string oldchars newchars [T]) 
+在字符串中使用指定字符替换已有字符. 
+*** 参数 
+string 
+字符串. 
+ 
+oldchars 
+想要被newchars替换的旧字符. 
+ 
+newchars 
+用于替换oldchars的新字符. 
+ 
+T 
+如果指定T则忽略大小写. 否则区分大小写. 
+*** 返回 
+如果成功, 返回修改后的字符串. 
+nil 失败时. 
+示例 
+Command: (setq str "Everybody likes ice hockey.") 
+"Everybody likes ice hockey." 
+ 
+Command: (dos_strreplace str "hockey" "golf") 
+"Everybody likes ice golf." 
+ 
+* dos_strreverse
+** (dos_strreverse string) 
+倒置字符串. 
+*** 参数 
+string 
+字符串. 
+*** 返回 
+如果成功, 返回修改后的字符串. 
+nil 失败时. 
+示例 
+Command: (dos_strreverse "AutoCAD 2006") 
+"6002 DACotuA" 
+ 
+* dos_strreversefind
+** (dos_strreversefind string char) 
+从后往前寻找字符串中的指定字符. 
+*** 参数 
+string 
+字符串. 
+ 
+substring 
+要搜索的字符. 
+*** 返回 
+以0开始的索引, 如果未找到字符, 将返回最后一个字符的索引. 
+nil 失败时. 
+示例 
+Command: (dos_strreversefind "abcabc" "b") 
+4 
+* dos_strright
+** (dos_strright string count) 
+从右边提取字符串 (类似于Basic语言中的RIGHT$函数). 
+*** 参数 
+string 
+字符串. 
+ 
+count 
+从string右边提取的字符数量. 如果count超出string的长度, 提取整个字符. 
+*** 返回 
+如果成功, 返回提取的字符. 
+nil 失败时. 
+示例 
+Command: (dos_strright "AutoCAD 2004" 4) 
+"2004" 
+ 
+* dos_strtokens
+** (dos_strtokens string tokens [T]) 
+把字符串分割成表. 
+*** 参数 
+string 
+字符串. 
+ 
+tokens 
+定义分界字符. 
+ 
+T 
+如果指定这个*** 参数, 结果将兼容于C/C++运行库的strtok函数. 
+*** 返回 
+如果成功, 返回字符串列表. 
+nil 失败时. 
+示例 
+Command: (dos_strtokens "Hockey is the best." " ") 
+("Hockey" "is" "the" "best.") 
+ 
+Command: (dos_strtokens "A string\tof ,,tokens\nand some more tokens" " ,\t\n" t) 
+("A" "string" "of" "tokens" "and" "some" "more" "tokens") 
+ 
+Command: (dos_strtokens "0,0,,0,0" ",") 
+("0" "0" "" "0" "0") 
+ 
+Command: (dos_strtokens "0,0,,0,0" "," t) 
+("0" "0" "0" "0") 
+ 
+* dos_strtrim
+** (dos_strtrim string [chars]) 
+修剪字符串头部和尾部的指定字符. 
+*** 参数 
+string 
+字符串. 
+ 
+chars 
+要修剪的目标字符. 如果未指定chars则函数删除字符串头部和尾部的换行,空格和TAB. 
+*** 返回 
+如果成功, 返回修改后的字符. 
+nil 失败时. 
+示例 
+Command: (setq str "  Hockey is the best  ")
+"  Hockey is the best  "
+ 
+Command: (dos_strtrim str)
+"Hockey is the best"
+* dos_strtrimleft
+** (dos_strtrimleft string [chars]) 
+修剪字符串头部的指定字符. 
+*** 参数 
+string 
+字符串. 
+ 
+chars 
+要修剪的目标字符. 如果未指定chars则函数删除字符串头部的换行,空格和TAB. 
+*** 返回 
+如果成功, 返回修改后的字符. 
+nil 失败时. 
+示例 
+Command: (setq str "****Hockey is the best") 
+"****Hockey is the best" 
+ 
+Command: (dos_strtrimleft str "*") 
+"Hockey is the best" 
+ 
+Command: (setq str "\t\tHockey is the best") 
+"\t\tHockey is the best" 
+ 
+Command: (dos_strtrimleft str) 
+"Hockey is the best" 
+ 
+* dos_strtrimright
+** (dos_strtrimright string [chars]) 
+修剪字符串尾部的指定字符. 
+*** 参数 
+string 
+字符串. 
+ 
+chars 
+要修剪的目标字符. 如果未指定chars则函数删除字符串尾部的换行,空格和TAB. 
+*** 返回 
+如果成功, 返回修改后的字符. 
+nil 失败时. 
+示例 
+Command: (setq str "Hockey is the best!!!!") 
+"Hockey is the best!!!!" 
+ 
+Command: (dos_strtrimright str "!") 
+"Hockey is the best" 
+ 
+Command: (setq str "Hockey is the best ") 
+"Hockey is the best " 
+ 
+Command: (dos_strtrimright str) 
+"Hockey is the best" 
+ 
+* dos_acadmem
+** (dos_acadmem)
+返回AutoCAD内存统计
+*** 参数
+n/a
+返回
+包括AutoCAD内存统计的列表, 如果成功. 列表包含的元素如下:
+ 
+WorkingSetSize
+ 当前大小 (字节). 
+ 
+PeakWorkingSetSize
+ 峰值大小 (字节).
+ 
+PageFaultCount
+ 页面文件失败次数.
+ 
+PagefileUsage
+ 当前页面文件分配的空间 (字节). 这些页面文件不一定占用内存. 
+ 
+PeakPagefileUsage
+ 页面文件分配的峰值 (字节).
+ 
+QuotaPagedPoolUsage
+ 当前页面文件池 (字节).
+ 
+QuotaPeakPagedPoolUsage
+ 页面文件池的峰值 (字节). 
+ 
+QuotaNonPagedPoolUsage
+ 当前非页面文件池 (字节). 
+ 
+QuotaPeakNonPagedPoolUsage
+ 非页面文件池的峰值 (字节).
+ 
+ 
+nil 出错时.
+示例
+Command: (dos_acadmem)
+(16003072 73891840 43562 57044992 58130432 469140 481864 46140 49708)
+* dos_acitorgb
+** (dos_acitorgb aci-value)
+AutoCAD颜色索引值(ACI)转换成红-绿-蓝(RGB)颜色值.
+*** 参数
+aci-value 
+定义ACI颜色值的1到255之间的整数.
+返回
+如果成功, 返回一个定义RGB颜色的三个元素的表.
+nil 失败时.
+示例 
+Command: (dos_acitorgb 1)
+(255 0 0)
+ 
+Command: (dos_acitorgb 128)
+(0 76 57)
+ 
+* dos_arxlist
+** (dos_arxlist [T])
+返回已经加载的ARX应用程序列表.
+*** 参数
+T 
+如果指定这个*** 参数将返回完整路径. 否则只返回文件名.
+返回
+如果成功, 返回包含ARX应用程序路径的列表.
+nil 失败时.
+示例
+Command: (dos_arxlist)
+("acapp.arx" "acdblclkedit.arx" "acdblclkeditpe.arx" "acdim.arx" "acdwgrecovery.arx" "acdxnotify.arx" "aceplotx.arx" "acetlodr.arx" "acetutil.arx" "achapi16.dbx" "achlnkui.arx" "acidropmgr.arx" "aclayerp.arx" "acmgd.dll" "acobjclassimp.arx" "acocschemautil.arx" "acopm.arx" "acopmext.arx" "acpexctl.arx" "acpi.arx" "acpltstamp.arx" "acprevinput.arx" "acsign.arx" "acsmdwgmine.arx" "acsmnav.arx" "acsmpublishutils.arx" "acspacetrans.arx" "acstd.arx" "actaskbar.arx" "actp.arx" "doslib16.arx" "fscreen.arx" "movebak.arx" "oleaprot.arx" "vl.arx" "whohas.arx" "wscommcntraccon.arx")
+ 
+* dos_cleardbmod
+** (dos_cleardbmod [T]) 
+清除DBMOD绘图修改状态系统变量.
+警告, 清除这个变量之后, 在关闭图形或AutoCAD时不会提醒保存图形.
+*** 参数 
+T 
+如果指定, 所有打开图形的DBMOD系统变量都会清除. 否则只清除当前图形的. 
+*** 返回 
+nil 如果成功. 
+示例 
+Command: (dos_cleardbmod) 
+nil
+Colder: 
+什么是DBMOD? 
+DBMOD是AutoCAD的一个系统变量, 它的作用是标记AutoCAD图形是否有改动, 以此来判断图形关闭的时候是否需要弹出保存对话框. 这是一个只读的系统变量, 我们自己是不能使用setvar进行修改的, 通过DOSLib可以将这个系统变量清零. 
+或许在进行大批量审阅又不想修改图形的时候会有用处 
+ 
+* dos_closeall
+** (dos_closeall) 
+关闭所有AutoCAD打开的图形文件. 
+*** 参数 
+n/a 
+*** 返回 
+n/a
+示例 
+Command: (dos_closeall) 
+ 
+* dos_cmdline
+** (dos_cmdline [T]) 
+返回AutoCAD命令行或历史记录窗口中的文本. 
+*** 参数 
+T 
+如果指定, 将从AutoCAD的历史记录窗口返回文本. 否则只从命令行中返回. 
+*** 返回 
+如果成功, 返回获取的文本. 
+nil 失败时. 
+示例 
+Command: (dos_cmdline) 
+"Command: (dos_cmdline)" 
+
+Colder: 
+这个函数不太方便测试, 你最好先写成.lsp文件再读取来观察效果. 
+*** 参数
+T  是确定是否要从历史记录窗口读取的, 历史记录窗口就是你在AutoCAD中按F2弹出的窗口. 通俗的讲:不加T返回的是一行消息, 加T返回的是所有消息(只是历史记录中的, 不是全部, 大概为最近显示400行左右.)
+ 
+* dos_curvearea
+** (dos_curvearea entity) 
+返回封闭图元的面积. 
+*** 参数 
+entity
+封闭对象的图元名.
+*** 返回 
+如果成功, 返回面积. 
+nil 失败时. 
+示例 
+Command: (dos_curvearea (car (entsel "\nSelect a closed curve:"))) 
+6.43372 
+ 
+* dos_custominfo
+** (dos_custominfo) 
+返回或修改AutoCAD的自定义图形摘要信息, 相当于DWGPROPS的命令行版本. 注意, 这个函数仅仅是操作自定义信息字段. 如果你想要操作摘要字段, 请使用dos_summaryinfo.
+(dos_custominfo nil) 
+(dos_custominfo field_name [field_value]) 
+*** 参数 
+nil
+清除图形的自定义摘要信息.
+ 
+field_name
+要获取信息的文件名. 
+ 
+field_value
+如果指定, 新建字符串值.
+ 
+注意, 如果不指定*** 参数将所有自定义图形信息的关联表. 同时要删除字段, 指定字段值为""或nil.
+*** 返回 
+如果不指定*** 参数则返回所有自定信图形摘要信息的关联表.
+ 
+如果指定nil则清除所有图形自定义摘要信息同时返回T.
+ 
+如果指定了有效的字段名则返回字段值, 成功时会返回该值.
+ 
+如果同时指定了有效的字段名和字段值, 成功时会返回T.
+ 
+nil 失败时. 
+示例 
+Command: (dos_custominfo)
+nil
+ 
+Command: (dos_custominfo "Field1" "Value1")
+T
+ 
+Command: (dos_custominfo "Field2" "Value2")
+T
+ 
+Command: (dos_custominfo)
+(("Field1" . "Value1") ("Field2" . "Value2"))
+ 
+Command: (dos_custominfo "Field2" "Value10")
+T
+ 
+Command: (dos_custominfo)
+(("Field1" . "Value1") ("Field2" . "Value10"))
+ 
+Command: (dos_custominfo "Field2" "")
+T
+ 
+Command: (dos_custominfo)
+(("Field1" . "Value1"))
+* dos_dwgpreview
+** (dos_dwgpreview title path [T]) 
+显示图形文件的列表及它们的缩略预览图的对话框. 这个函数在选择打开图形和插入块时很有用. 
+(dos_dwgpreview title path-list [T]) 
+*** 参数 
+title 
+对话框标题. 
+ 
+path 
+指定路径. 如果指定nil则使用当前路径. 
+ 
+path-list
+包含图形文件完整路径的列表.
+ 
+T 
+在黑与白之间切换预览图的默认背景色. 
+*** 返回 
+选择文件的完整路径. 
+nil 取消或出错时. 
+示例 
+Command: (dos_dwgpreview "Preview a drawing" "c:\\program files\\autocad 2002\\sample") 
+"c:\\program files\\autocad 2002\\sample\\1st floor architectural.dwg" 
+* dos_dwgver
+** (dos_dwgver filename) 
+返回AutoCAD图形文件的版本. 
+*** 参数 
+filename 
+文件名. 
+*** 返回 
+如果成功, 返回图形文件的版本. 
+nil 失败时. 
+示例 
+Command: (dos_dwgver "c:\\program files\\autocad 2002\\drawing1.dwg") 
+"AutoCAD 2000" 
+ 
+* dos_extractpreview
+** (dos_extractpreview filename) 
+从当前激活的文档提取缩略图保存为位图文件.
+*** 参数 
+filename 
+文件名, 或用的扩展名如下:
+ 
+bmp
+ Windows Bitmap
+ 
+jpg or jpeg
+ JFIF Compliant
+ 
+gif
+ Compuserve Graphics Interchange
+ 
+tif或tiff
+ Tagged Image File Format
+ 
+png
+ Portable Network Grapics
+ 
+ 
+*** 返回 
+如果成功, 返回创建图片的路径. 
+nil 失败时. 
+示例 
+Command: (dos_extractpreview "C:\\test.bmp")
+"C:\\test.bmp"
+Colder: 
+比系统自带的输出(export)命令支持更多的图片格式. 
+* dos_hatcharea
+** (dos_hatcharea entity) 
+返回填充图案的面积. 
+*** 参数 
+entity
+填充图案的图元名.
+*** 返回 
+如果成功, 返回面积. 
+nil 失败时. 
+示例 
+Command: (dos_hatcharea (car (entsel "\nSelect a hatch:"))) 
+346.43372 
+ 
+* dos_hideobjects
+** (dos_hideobjects entity-name) 
+隐藏AutoCAD图元. 被隐藏的图元可以使用dos_showobjects反隐藏, 关闭后重新打开文档后隐藏失效.
+(dos_hideobjects selection-set) 
+*** 参数 
+entity-name
+要隐藏的图元名.
+ 
+selection-set
+要隐藏的选择集.
+*** 返回 
+如果成功, 返回隐藏的图元数量. 
+nil 失败时. 
+示例 
+Command: (dos_hideobjects ss)
+3
+Colder: 
+这个函数实现的方式不同于(redraw 图元名 2). 采用(redraw)隐藏的图元是可以被REGEN命令重新显示的. 
+此处被隐藏的图元是通过设置图元数据的60组码来实现的, 使用(entmod (append (entget 图元名) '((60 . 1))))可以实现同样效果. 这种隐藏效果一直持续到图元被重新显示为止, 即便是关闭图形再重新打开, 也不会显示该图元. 
+* dos_hlstorgb
+** (dos_hlstorgb hue luminance saturation) 
+颜色-亮度-饱合度(HLS)颜色值转化成红-绿-蓝(RGB)格式. 
+*** 参数 
+hue 
+HLS的颜色部分. 
+ 
+luminance 
+HLS的亮度部分. 
+ 
+saturation
+HLS的饱合度部分. 
+*** 返回 
+如果成功, 返回包含红-绿-蓝三个元素的列表. 
+nil 失败时. 
+示例 
+Command: (dos_hlstorgb 160 120 240) 
+(0 0 255) 
+ 
+* dos_isbreak
+** (dos_isbreak) 
+查询AutoCAD控制台中断句柄以验证是否用户按下了取消键(ESC). 配合vl-catch-all-apply函数一起使用, 在中断紧密循环时dos_isbreak非常有用.
+*** 参数 
+n/a
+*** 返回 
+如果成功, 返回图形文件列表. 
+nil 失败时. 
+示例 
+(defun c:breaktest ( / msg cnt err)
+(setq msg "User break."
+    cnt -1
+    err (vl-catch-all-apply 'dos_isbreak)
+)
+(while (/= err T)
+  (if (> 10000000000 (setq cnt (1+ cnt)))
+      (setq err (vl-catch-all-apply 'dos_isbreak))
+      (setq msg "Maximum count reached."
+            err T
+      ) 
+  )
+  (princ cnt)
+) 
+(if (vl-catch-all-error-p err)
+  (princ (vl-catch-all-error-msg err))
+  (princ (strcat "\nTerminated loop: " msg))
+)
+(princ)
+)
+Colder: 
+对于这个函数我的理解还很肤浅, 不过真如原文所说的会返回文件列表吗? 
+A list of drawing file names if successful. 
+我实在不敢确定. 
+ 
+* dos_isinsidecurve
+** (dos_isinsidecurve curve point) 
+检验一个点是否在闭合平面曲线内.
+*** 参数 
+curve 
+闭合二维曲线.
+ 
+point
+用于测试的点.
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (setq ent (car (entsel "\nSelect closed curve:"))) 
+<Entity name: 7ef8d048> 
+ 
+Command: (setq pt (getpoint "\nPick a test point:"))
+(31.6951 25.9553 0.0)
+ 
+Command: (dos_isinsidecurve ent pt)
+T
+ 
+* dos_istextscr
+** (dos_istextscr ) 
+检验AutoCAD文本窗口是否打开了. 如果没有打开或处于最小化状态返回nil.
+*** 参数 
+n/a
+*** 返回 
+T 如果打开了 
+nil 如果没打开. 
+示例 
+Command: (dos_istextscr) 
+nil
+ 
+Command: (textscr)
+Command: (dos_istextscr) 
+T 
+ 
+* dos_isvlide
+** (dos_isvlide) 
+检验Visual LISP IDE(系统自带的LISP编辑器)是否打开了. 
+*** 参数 
+n/a
+*** 返回 
+T 如果打开了. 
+nil 如果没打开. 
+示例 
+Command: (dos_isvlide) 
+nil
+ 
+Command: VLIDE
+Command: (dos_isvlide) 
+T 
+ 
+* dos_layerlistbox
+** (dos_layerlistbox title prompt [bits])
+显示可缩放的AutoCAD图层选择对话框.
+*** 参数 
+title 
+对话框标题. 
+ 
+prompt
+提示消息. 
+ 
+bits
+一个整数位码, 描述属性设置. 可用位码如下: 
+ 
+0
+ 显示所有图层 (默认).
+ 
+1
+ 隐藏打开的图层.
+ 
+2
+ 隐藏关闭的图层.
+ 
+4
+ 隐藏解冻的图层.
+ 
+8
+ 隐藏冻结的图层.
+ 
+16
+ 隐藏解锁的图层.
+ 
+32
+ 隐藏锁定的图层.
+ 
+64
+ 隐藏标准的图层.
+ 
+128
+ 隐藏引用的图层.
+ 
+256
+ 允许选择多个.
+ 
+*** 返回 
+如果成功, 返回选择的图层.
+如果允许选择多个, 返回选择的图层列表. 
+nil 取消或出错时. 
+示例 
+Command: (dos_layerlistbox "AutoCAD Layers" "Select one or more layers" 256) 
+("1st floor plan|1F" "1st floor plan|2F" "1st floor plan|Border") 
+* dos_linetypebox
+** (dos_linetypebox [default [T]])
+显示AutoCAD线型选择对话框.
+*** 参数 
+default
+默认线型名称.
+ 
+T
+如果指定, 将会显示"ByBlock"和"ByLayer". 
+*** 返回 
+如果成功, 返回选择的线型The linetype selected from the list if successful.
+nil 取消或出错时. 
+示例 
+Command: (dos_linetypebox "Continuous")
+"HIDDEN"
+* dos_lisplist
+** (dos_lisplist [T]) 
+返回已经加载的AutoLISP/Visual LISP文件. 
+*** 参数 
+T 
+如果指定将返回完整路径. 否则只返回文件名. 
+*** 返回 
+如果成功, 返回已加载的LISP文件列表. 
+nil 失败时. 
+示例 
+Command: (dos_lisplist) 
+("acetutil.fas" "acetauto.LSP" "acettest.fas" "dwfout.lsp" "acad2000.FAS" "acad2000doc.FAS" "acad.mnl" "acetmain.mnl") 
+ 
+* dos_massprops
+** (dos_massprops entity) 
+返回3-D实体图元的常规属性. 
+*** 参数 
+entity
+3-D实体对象的图元名.
+ 
+*** 返回 
+如果成功, 返回实体的定义数据. 返回信息如下: 
+ 
+volume
+ 实体的体积. 
+(The volume of the solid.)
+ 
+centroid
+ 实体的质心. 
+(A list containing the centroid of the solid.)
+ 
+momInertia 
+ 包含X,Y和Z的表, 实体的惯性力矩. 
+(A list containing the X, Y, and Z moments of inertia of the solid.) 
+ 
+prodInertia 
+ 包含X,Y和Z的表, 实体的惯性乘积. 
+(A list containing the X, Y, and Z products of inertia of the solid.) 
+ 
+prinMoments  
+ 包含X,Y和Z的表, 实体的主要力矩. 
+(A list containing the X, Y, and Z principal moments of the solid.) 
+ 
+prinAxes
+ 包含X,Y和Z的表, 实体的主要轴线. 
+(A list containing the X, Y, and Z principal axes of the solid.) 
+ 
+radiiGyration 
+ 包含X,Y和Z的表, 实体的回旋半径. 
+(A list containing the X, Y, and Z radii of gyration of the solid.) 
+ 
+extents 
+ 一个表, 包含实体的范围 (边界立方体). 
+(A list containing the extents (bounding box) of the solid.) 
+ 
+ 
+nil 失败时. 
+示例 
+Command: (dos_massprops (car (entsel "\nSelect a solid:"))) 
+(29.7069 (8.38222 3.97879 2.0) (640.888 2273.47 2597.49) (990.758 236.395 498.02) (51.7765 67.3905 39.9486) ((1.0 0.0 0.0) (0.0 1.0 0.0) (0.0 0.0 1.0)) (4.64475 8.74815 9.35079) ((6.70725 2.87031 0.0) (10.0572 5.08728 4.0))) 
+ 
+* dos_plinecentroid
+** (dos_plinecentroid entity) 
+返回封闭二维多段线图元的质心. 
+*** 参数 
+entity
+封闭二维多段线的图元名.
+*** 返回 
+如果成功, 返回质心. 
+nil 失败时. 
+示例 
+Command: (dos_plinecentroid (car (entsel "\nSelect a closed curve:"))) 
+(35.8886 26.6375 0.0) 
+* dos_progbar
+** (dos_progbar message maxvalue) 
+操作AutoCAD状态栏进度条. 第一次呼叫这个函数初始化进度条. 然后通过呼叫相对值或绝对值来移动进度条. 最后通过不带*** 参数呼叫函数重置状态栏.. 
+(dos_progbar abs/-rel) 
+(dos_progbar) 
+*** 参数 
+message 
+消息字符串. 
+ 
+maxvalue 
+一个整数, 指定进度条的最大范围(在0到最大值之间). 
+ 
+abs/-rel 
+绝对值移动进度条, 相对值(负数)递增进度条. 
+*** 返回 
+T 如果成功 
+nil 失败时. 
+示例 
+Command: (dos_progbar "Wait..." 10) 
+T 
+Command: (dos_progbar -1) 
+T 
+Command: (dos_progbar) 
+nil 
+ 
+* dos_rgbtoaci
+** (dos_rgbtoaci red green blue) 
+红-绿-蓝(RGB)颜色转换成接近AutoCAD颜色索引(ACI)的颜色值. 
+(dos_rgbtoaci rgb) 
+*** 参数 
+red
+RGB的红色部分. 
+ 
+green 
+RGB的绿色部分. 
+ 
+blue
+RGB的蓝色部分. 
+ 
+rgb 
+RGB颜色值. 
+*** 返回 
+如果成功, 返回ACI颜色值. 
+nil 失败时. 
+示例 
+Command: (dos_rgbtoaci 0 0 255) 
+5 
+ 
+Command: (dos_rgbtoaci 16711680) 
+5 
+ 
+* dos_rgbtohls
+** (dos_rgbtohls red green blue) 
+红-绿-蓝(RGB)颜色值转换成颜色-亮度-饱合度(HLS)格式. 
+(dos_rgbtohls rgb) 
+*** 参数 
+red
+RGB的红色部分. 
+ 
+green 
+RGB的绿色部分. 
+ 
+blue
+RGB的蓝色部分. 
+ 
+rgb 
+RGB颜色值. 
+*** 返回 
+如果成功, 返回包含颜色-亮度-饱合度值的表
+nil 失败时. 
+示例 
+Command: (dos_rgbtohls 0 0 255) 
+(160 120 240) 
+ 
+Command: (dos_rgbtohls 16711680) 
+(160 120 240) 
+* dos_saveall
+** (dos_saveall) 
+保存所有AutoCAD打开的图形文件. 
+*** 参数 
+n/a 
+*** 返回 
+nil . 
+示例 
+Command: (dos_saveall) 
+ 
+* dos_show
+** (dos_show method) 
+控制AutoCAD窗口的显示方式. 
+*** 参数 
+method 
+显示方式. 可用值如下: 
+ 
+0
+ 最大化 
+ 
+1
+ 最小化 
+ 
+2
+ 还原 
+ 
+*** 返回 
+nil . 
+示例 
+Command: (dos_show 0) 
+nil 
+ 
+* dos_showobjects
+** (dos_showobjects [entity-name/ss]) 
+显示, 反隐藏AutoCAD图元. 隐藏图元请用dos_hideobjects.
+(dos_showobjects selection-set) 
+(dos_showobjects) 
+*** 参数 
+entity-name
+要显示的图元名.
+ 
+selection-set
+要显示的选择集.
+ 
+注意, 如果不指定*** 参数则显示所有被隐藏的图元.
+*** 返回 
+如果成功, 显示返回图元的数量. 
+nil 失败时. 
+示例 
+Command: (dos_showobjects ss)
+3
+Colder: 
+如果你想准确的显示指定图元, 建议在你的程序使用dos_hideobjects隐藏图元之前, 先记录下被隐藏图元的句柄, 因为图元的句柄不会因为重新打开图形而改变. 
+获取图元句柄的方法为 (cdr (assoc 5 (entget 图元名))) , 是一个十六进制字符串. 
+* dos_summaryinfo
+** (dos_summaryinfo) 
+返回或修改AutoCAD的图形摘要信息, 相当于DWGPROPS的命令行版本.  注意, 这个函数仅仅操作摘要信息字段, 如果你想要操作自定义字段请使用dos_custominfo. 
+(dos_showobjects nil) 
+(dos_showobjects field_id [field_value]) 
+*** 参数 
+nil
+清除所有的图形摘要信息.
+ 
+field_id
+取回字段中的这个标识. 可能的字段标识如下:
+ 
+0
+ 标题
+ 
+1
+ 主题
+ 
+2
+ 作者
+ 
+3
+ 关键字
+ 
+4
+ 注释
+ 
+5
+ 最后编辑者
+ 
+6
+ 修订次数
+ 
+7
+ 超链接基地址
+ 
+ 
+field_value
+如果指定, 更新字段值.
+ 
+注意, 如果不指定*** 参数将返回所有图形摘要信息的关联表. 同时指定""或nil会清除字段.
+*** 返回 
+如果不指定*** 参数, 返回所有图形摘要信息的关联表.
+ 
+如果指定nil, 会清除所有图形摘要信息同时如果成功会返回T.
+ 
+如果指定了有效的字段标识, 成功的话会返回字段值.
+ 
+如果同时指定了有效的字段标识和字段值, 成功后会返回T.
+ 
+nil 失败时. 
+示例 
+Command: (dos_summaryinfo)
+((0 . "3rd Floor Plumbing") (1 . "McNeel Project") (2 . "Dale Fugier") (3 . "McNeel, Plumbing") (4 . "In progress") (5 . "Dale") (6 . "") (7 . "www.mcneel.com"))
+ 
+Command: (dos_summaryinfo 0)
+"3rd Floor Plumbing"
+ 
+Command: (dos_summaryinfo 0 "2nd Floor Plumbing")
+T
+ 
+Command: (dos_summaryinfo 2 "")
+T
+ 
+Command: (dos_summaryinfo)
+((0 . "2nd Floor Plumbing") (1 . "McNeel Project") (2 . "") (3 . "McNeel, Plumbing") (4 . "In progress") (5 . "Dale") (6 . "") (7 . "www.mcneel.com"))
+* dos_xreflist
+** (dos_xreflist [filename]) 
+返回外部参照图形文件列表. 
+*** 参数 
+filename 
+一个AutoCAD图形文件名. 如果未指定则返回当前图形的外部参照图形文件列表. 
+*** 返回 
+如果成功, 返回图形文件列表. 
+nil 失败时. 
+示例 
+Command: (dos_xreflist) 
+("C:\\Program Files\\AutoCAD 2002\\Drawing1.dwg" "C:\\Program Files\\AutoCAD 2002\\Drawing2.dwg") 
+ 
+Command: (dos_xreflist "c:\\program files\\autocad 2002\\sample\\1st floor.dwg") 
+("1st floor plan.dwg" "1st floor architectural.dwg" "1st floor electrical.dwg" "1st floor lighting.dwg") 
+ 
+* dos_about
+** (dos_about)
+显示DOSLib的版本号和版权信息. 
+*** 参数
+n/a 
+*** 返回 
+nil if successful or on error.
+示例 
+Command: (dos_about) 
+nil 
+ 
+* dos_demandload
+** (dos_demandload [val])
+返回或设置DOSLib的按需加载方法.
+*** 参数
+val 
+如果指定T, DOSLib将会在AutoCAD启动时加载. 如果指定nil, DOSLib将会通过命令符加载. 如果未指定*** 参数, 返回当前的按需加载状态.
+*** 返回 
+T 如果是启动时加载. 
+nil 如果是靠命令符加载. 
+示例 
+Command: (dos_demandload T) 
+T 
+ 
+Command: (dos_demandload) 
+T
+ 
+* dos_help
+** (dos_help [function]) 
+显示DOSLib的HTML帮助文件 
+*** 参数 
+function
+要显示帮助的函数名. 如果忽略则显示目录列表.
+*** 返回 
+nil . 
+示例 
+Command: (dos_help)
+nil
+ 
+Command: (dos_help "dos_dir")
+nil
+* dos_version
+** (dos_version)
+返回DOSLib版本号. 
+*** 参数
+n/a
+返回
+如果成功返回一个表, 包含DOSLib的主版本号, 副版本号, 发行服务. 
+nil 失败时. 
+示例 
+Command: (dos_version) 
+(7 0 0) 
+* dos_adminp
+** (dos_adminp) 
+确定当前用户是否具有管理权限. 用于确定本地管理组成员的资格. 
+*** 参数 
+n/a 
+*** 返回 
+T 如果当前用户是管理员的成员. 
+nil 如果不是或出错时. 
+示例 
+Command: (dos_adminp) 
+T 
+ 
+* dos_beep
+** (dos_beep [type]) 
+播放Windows波形音频文件. 波形文件的每一种声音类型都通过注册表指向声音片段. 如果系统不能播放指定的通知音, dos_beep 会播放系统默认的声音. 如果函数不能播放默认的声音, dos_beep会使用计算机扬声器发出标准的(嘟)音. 
+*** 参数 
+type 
+波形文件. 默认类型是标准的(嘟)音(0). 允许值如下: 
+ 
+0
+ 标准鸣音 (Standard Beep)
+ 
+1
+ 星号 (System Asterisk)
+ 
+2
+ 感叹 (System Exclamation)
+ 
+3
+ 帮助 (System Hand) 
+ 
+4
+ 疑问 (System Question)
+ 
+5
+ 默认 (System Default) 
+ 
+ 
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_beep) 
+T 
+ 
+Command: (dos_beep 1) 
+T 
+ 
+* dos_capslock
+** (dos_capslock [T]) 
+切换大小写<Caps Lock>键的状态. 
+*** 参数 
+T 
+如果指定这个*** 参数则打开<Caps Lock>. 否则关闭. 
+*** 返回 
+T 如果打开<Caps Lock>. 
+nil 如果关闭<Caps Lock>. 
+示例 
+Command: (dos_capslock t) 
+T 
+ 
+Command: (dos_capslock) 
+nil 
+ 
+* dos_cdate
+返回包含当前日期和(或)时间的格式化字符串.
+** 
+(dos_cdate format) 
+*** 参数 
+format 
+一个字符串, 包含格式化代码. 非格式化字符会完整保留并返回. 可用的格式化代码如下: 
+ 
+%a
+ 简短的星期名称 
+ 
+%A 
+ 完整的星期名称 
+ 
+%b 
+ 简短的月份名称 
+ 
+%B 
+ 完整的月份名称 
+ 
+%c
+ 适合本地的日期和时间表示法 
+ 
+%d
+ 月中的第几天, 十进制数字(01-31) 
+ 
+%H
+ 24小时格式(00-23) 
+ 
+%I
+ 12小时格式(01-12) 
+ 
+%j
+ 一年中的第几天, 十进制数字(001-366) 
+ 
+%m
+ 月份, 十进制数字 (01-12) 
+ 
+%M
+ 分钟, 十进制 (00-59) 
+ 
+%p
+ 当前本地的12小时表示, 带A.M./P.M.标识 
+ 
+%S
+ 秒, 十进制 (00-59) 
+ 
+%U
+ 一年中的第几个星期, 十进制, 星期日作为每个星期的第一天 (00-53) 
+ 
+%w
+ 星期, 十进制数字 (0-6; 星期日是0)
+ 
+%W
+ 一年中的第几个星期, 十进制, 星期一作为每个星期的第一天 (00-53) 
+ 
+%x
+ 当前本地的日期表示 
+ 
+%X
+ 当前本地的时间表示 
+ 
+%y
+ 年, 不带世纪(前两位), 十进制 (00-99) (译者注: 经典的千年虫问题)
+ 
+%Y
+ 年, 带世纪, 十进制 
+ 
+%z or %Z
+ 时区名或缩写; 如果时区名未知则没有字符.
+ 
+%%
+ 百分号
+ 
+ 
+#标志可以放在任何格式化代码前面. 这种情况下格式化代码会有如下变化: 
+ 
+%#a, %#A, %#b, %#B, %#p, %#X, %#z, %#Z, %#%
+ #标志代表忽略.
+ 
+%#c
+ 适合当前本地的长日期时间表示, 例如: “Tuesday, March 14, 1995, 12:41:29”. 
+ 
+%#x
+ 适合当前本地的长日期表示. 例如: “Tuesday, March 14, 1995” 
+ 
+%#d, %#H, %#I, %#j, %#m, %#M, %#S, %#U, %#w, %#W, %#y, %#Y 
+ 删除前面多余的0. 
+ 
+ 
+*** 返回 
+如果成功, 返回代表当前时间和(或)日期的字符串. 
+nil 失败时. 
+示例 
+Command: (dos_cdate "%m/%d/%y") 
+"01/09/02" 
+ 
+Command: (dos_cdate "%A, %B %d, %Y") 
+"Wednesday, January 09, 2002" 
+ 
+Command: (dos_cdate "Today is %A, day %d of %B in the year %Y.") 
+"Today is Wednesday, day 09 of January in the year 2002." 
+ 
+* dos_clipboard
+** (dos_clipboard [string]) 
+返回或设置Windows剪贴板, 仅限文本字符串. 
+*** 参数 
+string 
+要设置到Windows剪贴板的文本字符串. 
+*** 返回 
+如果成功, 返回字符串. 
+nil 失败时. 
+示例 
+Command: (dos_clipboard "Hello World!") 
+"Hello World!" 
+ 
+Command: (dos_clipboard) 
+"Hello World!" 
+ 
+* dos_cmdargs
+** (dos_cmdargs) 
+获取启动AutoCAD时的命令行*** 参数及开关. 命令行开关是那些你添加到ACAD.EXE命令行让AutoCAD在启动时执行额外操作的参数. 例如, AutoCAD可以启动指定的配置,运行脚本,读取模板图形甚至打开保存的视口. 标准的AutoCAD开关如下:
+ 
+/b - 打开图形并运行脚本. 图形文件名为可选的.
+语法:  path ["drawing file"] /b "script"
+
+/c - 指定要使用的硬件配置文件.
+语法:  path /c "Configuration File"
+ 
+/nologo - 启动AutoCAD时不带徽标屏幕.
+语法:  path  /nologo
+ 
+/p - 启动AutoCAD时使用指定的配置文件. 如果配置文件不存在则使用当前文件.
+语法:  path  /b profile
+ 
+/r - 重置所有AutoCAD默认设置,打印机和系统定点设备.
+语法:  path /r
+/s - 指定额外的支持路径.
+语法:  path /s "Support Paths"
+ 
+/t - 在模板或原型的基础上创建新的图形文件. 图形文件名为可选.
+语法:  path  ["drawing file"] /t "Template File"
+ 
+/v -  按预先设定的视口打开图形文件. 
+语法:  path  ["drawing file"] /v "View Name"
+*** 返回 
+如果成功, 返回包含命令行参数的列表. 
+nil 失败时. 
+* dos_computer
+** (dos_computer [name]) 
+返回或设置当前系统的计算机名. 这个名称是在系统启动时从注册表读取并确立的. 修改的计算机名要在重新启动后才会生效. 
+*** 参数 
+name 
+计算机名. 
+*** 返回 
+如果成功, 返回计算机名. 
+nil 失败时. 
+示例 
+Command: (dos_computer) 
+"ELVIS" 
+ 
+Command: (dos_computer "SPEEDO") 
+"SPEEDO" 
+ 
+* dos_date
+** (dos_date [date]) 
+返回或修改当前系统时间. 
+*** 参数 
+date 
+指定新的年,月,日的数字列表.
+*** 返回 
+如果成功, 返回当前的年,月,日和星期. 
+nil 失败时. 
+示例 
+Command: (dos_date) 
+(2006 7 14 5) 
+ 
+Command: (dos_date '(2007 7 14)) 
+(2007 7 14 6) 
+ 
+* dos_guidgen
+** (dos_guidgen) 
+生成一个独特的128位的GUID. 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回GUID字符串. 
+nil 失败时. 
+示例 
+Command: (dos_guidgen) 
+"947823AD-9F0B-4171-85B9-81C73F46E801" 
+ 
+Colder: 
+M$的软件经常大量使用的东东, 避免注册表中的项发生重复的. 如果你想在注册表里留下难找的内容, 可以试试这个.
+* dos_hostname
+** (dos_hostname) 
+返回系统本地的DNS主机名. 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回包含本地主机名的字符串. 
+nil 失败时. 
+示例 
+Command: (dos_hostname) 
+"ELVIS" 
+ 
+* dos_htmlhelp
+** (dos_htmlhelp filename [index/topic]) 
+打开HTML帮助(HH.exe)传递附加数据, 索引应用程序的帮助请求. 
+*** 参数 
+filename 
+HTML帮助文件名. 
+ 
+index/topic 
+帮助文件中的索引或主题(依赖于帮助文件的设计). 
+*** 返回 
+nil .
+示例 
+Command: (dos_htmlhelp "C:\\Program Files\\AutoCAD 2006\\help\\readme.chm") 
+nil
+ 
+* dos_ipaddress
+** (dos_ipaddress) 
+返回本地IP地址列表. 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回包含本地IP地址和子网掩码的字符串列表. 
+nil 失败时. 
+示例 
+Command: (dos_ipaddress) 
+("204.177.179.67" "255.255.255.0") 
+ 
+* dos_isacad64
+** (dos_isacad64) 
+确定DOSLib所处的AutoCAD是不是64位版本. 
+*** 参数 
+n/a 
+*** 返回 
+T 如果AutoCAD是64位版本. 
+nil 否则. 
+示例 
+Command: (dos_isacad64) 
+nil 
+* dos_ispoweruser
+** (dos_ispoweruser) 
+确定当前用户是否是超级用户. 用于确定本地超级用户组成员的资格. 
+*** 参数 
+n/a 
+*** 返回 
+T 如果当前用户是超级用户组成功. 
+nil 如果不是或出错时. 
+示例 
+Command: (dos_ispoweruser) 
+T 
+* dos_iswin64
+** (dos_iswin64) 
+确定AutoCAD所处的Windows是否是64位版本, 如Windows XP x64或Windows Vista x64. 这个函数不会确定你的AutoCAD是否是64位版本. 
+*** 参数 
+n/a 
+*** 返回 
+T 如果Windows是64位版本. 
+nil 否则. 
+示例 
+Command: (dos_iswin64) 
+T 
+* dos_macaddress
+** (dos_macaddress) 
+返回系统网卡物理地址(MAC). 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回包含本地MAC地址的字符串. 
+nil 失败时. 
+示例 
+Command: (dos_macaddress) 
+"00:00:86:4A:CF:7F" 
+ 
+* dos_mem
+** (dos_mem) 
+返回一个包含当前可用内容信息的列表. 这个函数同时返回物理内存和虚拟内存信息. 使用rtos函数将返回值转换成字符串. 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回一个描述当前内存状态的数字列表. 返回值如下: 
+ 
+Memory Load
+ 内存使用百分比 (整数). 
+ 
+Total Physical
+ 总的物理内存.
+ 
+Available Physical
+ 可用的物理内存.
+ 
+Total Page File
+ 总的页面文件使用.
+ 
+Available Page File
+ 可用的页面文件.
+ 
+Total Virtual
+ 总的用户地址空间.
+ 
+Available Virtual 
+ 可用的用户地址空间.
+ 
+ 
+nil on error. 
+示例 
+Command: (dos_mem) 
+(27 5.3633e+008 3.90562e+008 1.30926e+009 1.18208e+009 2.14735e+009 2.06644e+009) 
+ 
+* dos_numlock
+** (dos_numlock [T]) 
+切换<Num Lock>键的状态. 
+*** 参数 
+T 
+ 如果指定则打开<Num Lock>. 否则关闭. 
+*** 返回 
+T 如果<Num Lock>打开了. 
+nil 如果<Num Lock>关闭了. 
+示例 
+Command: (dos_numlock t) 
+T 
+ 
+Command: (dos_numlock) 
+nil 
+ 
+* dos_pause
+** (dos_pause duration) 
+暂停执行函数或表达式指定的秒数. 
+*** 参数 
+duration 
+持续时间(秒). 
+*** 返回 
+nil . 
+示例 
+Command: (dos_pause 3) 
+nil 
+  
+  
+* dos_random
+** (dos_random) 
+返回一个伪随机数. 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回一个整型伪随机数. 
+nil 失败时. 
+示例 
+Command: (dos_random) 
+4748 
+ 
+Command: (dos_random) 
+13395 
+ 
+Command: (rem (dos_random) 10) 
+4 
+ 
+Command: (rem (dos_random) 10) 
+8 
+ 
+* dos_scrolllock
+** (dos_scrolllock [T]) 
+切换<Scroll Lock>键的状态. 
+*** 参数 
+T 
+如果指定, <Scroll Lock>打开. 否则关闭. 
+*** 返回 
+T 如果<Scroll Lock>打开了. 
+nil 如果<Scroll Lock>关闭了. 
+示例 
+Command: (dos_scrolllock t) 
+T 
+ 
+Command: (dos_scrolllock) 
+nil 
+ 
+* dos_sortlist
+** (dos_sortlist list) 
+排序字符串,实数或整数列表. 字符串排序区分大小写. 
+*** 参数 
+list 
+字符串,实数或整数列表. 
+*** 返回 
+如果成功, 返回排序后的表. 
+nil 失败时. 
+示例 
+Command: (dos_sortlist '(4 3 6 5 1 2 7 9 8)) 
+(1 2 3 4 5 6 7 8 9) 
+ 
+Command: (dos_sortlist (dos_dir "*.dwg")) 
+("1st floor architectural.dwg" "1st floor electrical.dwg" "1st floor lighting.dwg" "1st floor plan.dwg" "1st floor.dwg" "Campus.dwg" "City base map.dwg" "City map.dwg" "City skyway map.dwg" "Colorwh.dwg" "Db_samp.dwg" "EXPO98 base.dwg" "EXPO98 maps.dwg" "Elevation.dwg" "Expo Headquarters model.dwg" "Lineweights.dwg" "MKMPlan.dwg" "Oceanarium.dwg" "Opera.dwg" "Plot Screening and Fill Patterns.dwg" "R300-20.dwg" "Single cavity mold.dwg" "Tablet 2000.dwg" "Truck model.dwg" "TrueType.dwg" "Watch.dwg" "Wilhome.dwg") 
+  
+* dos_speaker
+** (dos_speaker frequency duration) 
+从PC扬声器播放声音. 
+*** 参数 
+frequency 
+频率. 
+ 
+duration 
+持续时间(毫秒). 
+*** 返回 
+nil . 
+示例 
+Command: (dos_speaker 1500 5) 
+nil 
+ 
+Colder: 
+PC扬声器是指电脑机箱主板上连接着的一个小喇叭, 只有硬币大小. 开机时的自检音就是通过这个扬声器发出来的, 新安装的Windows系统在没有声卡驱动之前所有的警告音也都是通过它发出来的. 
+* dos_time
+** (dos_time [time]) 
+返回或修改当前系统的时间. 
+*** 参数 
+time 
+指定新的小时和分钟的24小时格式时间. 秒和毫秒为可选.
+*** 返回 
+如果成功, 返回当前的时,分,秒和毫秒, 接24小时格式. 
+nil 失败时. 
+示例 
+Command: (dos_time) 
+(15 8 15 242) 
+ 
+Command: (dos_time '(16 0 0))
+(16 0 0 10)
+ 
+* dos_username
+** (dos_username) 
+返回当前线程的用户名. 这个用户名是当前登录系统的用户. 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回当前的用户名字符串. 
+nil 失败时. 
+示例 
+Command: (dos_username) 
+"dale" 
+ 
+* dos_ver
+** (dos_ver) 
+返回操作系统版本. 
+*** 参数 
+n/a 
+*** 返回 
+如果成功, 返回包含操作系统版本的字符串. 
+nil 失败时. 
+示例 
+Command: (dos_ver)
+"Microsoft Windows XP Professional Service Pack 2 (Build 2600)" 
+  
+* dos_wav
+** (dos_wav filename) 
+播放Windows波形音频文件. 
+*** 参数 
+filename 
+波形文件名(.WAV). 
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_wav "c:\\windows\\media\\ding.wav")
+T
+* dos_winhelp
+** (dos_winhelp filename [index/topic]) 
+打开Windows帮助(Winhelp.exe)并传递附加数据, 索引应用程序请求的帮助. 
+*** 参数 
+filename 
+Windows帮助文件名. 
+ 
+index/topic 
+帮助文件中的索引数字或主题(依赖帮助文件的设计). 
+*** 返回 
+T 如果成功. 
+nil 失败时. 
+示例 
+Command: (dos_winhelp "c:\\program files\\autocad 2002\\help\\readme.hlp") 
+T 
+ 
