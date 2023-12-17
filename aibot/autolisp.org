@@ -1,35 +1,35 @@
 #+prefix: autolisp
-* -
+* -,相减
 ** (– [number number] &rest)
 将第一个数减去其他数的和并返回差值
-* ~
+* ~,非码
 ** (~ int)
 返回参数的按位非（即 1 的补码）
-* +
+* +,相加
 ** (+ [number number] &rest)
 返回所有数的和
-* =
+* =,相等
 ** (= numstr [numstr] &rest)
 比较参数是否相等
 * 乘积
 ** (* [number number] &rest)
 返回所有数的乘积
-* /
+* /,除以
 ** (/ [number number] &rest)
 将第一个数除以其他数的乘积并返回商
 * 1+
 ** (1+ number)
 将参数加 1
-* <
+* <,小于
 ** (< numstr [numstr] &rest)
 如果每个参数值都小于它右边的参数则返回 T，否则返回 nil
-* <=
+* <=,小于等于,不大于
 ** (<= numstr [numstr] &rest)
 如果每个参数值都小于或等于它右边的参数则返回 T，否则返回 nil
-* >
+* >,大于
 ** (> numstr [numstr] &rest)
 如果每个参数值都大于它右边的参数则返回 T，否则返回 nil
-* >=
+* >=,大于等于,不小于
 ** (>= numstr [numstr] &rest)
 如果每个参数值都大于或等于它右边的参数则返回 T，否则返回 nil
 * abs,绝对值
