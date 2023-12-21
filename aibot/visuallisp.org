@@ -1169,6 +1169,11 @@
 * vla-put-WindowState
 ** (vla-put-WindowState Object value)
 设定应用程序或文档窗口的状态。
+
+*** value:
+acMin: 最小化
+acMax: 最大化
+acNorm: 通常窗口
 * vla-put-WindowLeft
 ** (vla-put-WindowLeft Object value)
 设定应用程序窗口的左边界。
@@ -4186,6 +4191,11 @@ WCS坐标值指定UCS、图块、配置或光栅图像的原点。
 * vlax-curve-getClosestPointToProjection
 ** (vlax-curve-getClosestPointToProjection curve-obj givenPnt normal[extend])
 在将曲线投影到平面上之后，返回曲线上的最近点（在 WCS 上）
+
+*** 参数：
+curve-obj:曲线对象。
+givenPnt:类型list,要在曲线上为其查找最近点的点（在WCS中）。
+normal:类型list,要投影到的平面的法向向量（在WCS中）。
 * vlax-curve-getClosestPointTo
 ** (vlax-curve-getClosestPointTo curve-obj givenPnt [extend])
 返回曲线上离指定点最近的点（在 WCS 上）

@@ -451,7 +451,7 @@ cr : T or nil 控制输入的字符串能否含有空格。
 * handent,句柄
 ** (handent handle)
 根据对象（图元）的句柄返回它的对象（图元）名
-* 函数if,条件分支
+* if,条件分支
 ** (if testexpr thenexpr [elseexpr])
 根据对条件的判断结果，对两个表达式求值
 详见：
@@ -476,7 +476,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * length,求表长度
 ** (length lst)
 以整数形式返回表中元素的数目
-* 函数list
+* list
 ** (list [expr &rest])
 将任意数目的表达式组合成一个表
 详见：
@@ -550,7 +550,7 @@ mode
 * new_dialog
 ** (new_dialog dlgname dcl_id [action [screen-pt]])
 开始一个新的对话框并显示该对话框，而且能指定一个缺省操作
-* 函数not
+* not
 ** (not item)
 检查一个项的求值结果是否为 nil
 * nth
@@ -580,7 +580,7 @@ mode: "r" 读取 "w" 写 "a" 追加
 (setq fp (open (findfile "acad.pgp") "r" "utf8"))
 (read-line fp)
 (close fp)
-* 函数or
+* or
 ** (or [expr &rest])
 返回对表达式进行逻辑或 (OR) 运算的结果
 * 函数osnap
@@ -937,6 +937,9 @@ from to:
 * vl-string->list
 ** (vl-string->list "string")
 将字符串转换为字符代码表
+*  vl-prin1-to-string
+** (vl-prin1-to-string data)
+返回 LISP 数据的字符串表示，就像它是由 prin1 函数输出一样
 * vl-princ-to-string
 ** (vl-princ-to-string data)
 返回 LISP 数据的字符串表示，就象它是由 princ 函数输出的一样

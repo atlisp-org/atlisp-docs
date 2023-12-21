@@ -48,6 +48,9 @@
 * @:debug
 ** (@:debug "|INFO,WARR,ERROR|" "记录内容")
 记录调试信息，可作为显示类别信息，如 INFO WARR ERROR 类等。
+* @:prompt
+** (@:prompt "prompt string")
+提示用户进行操作的说明信息，根据系统设置，可以发出语音提示。
 * _
 ** (_"i10n string")
 将 "i10n string" 标记为可翻译字符串，对照本地化语言包，显示本地语言。
