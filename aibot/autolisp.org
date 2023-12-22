@@ -10,7 +10,7 @@
 返回所有数的和
 * =,相等
 ** (= numstr [numstr] &rest)
-比较参数是否相等
+比较多个数字或字符串参数是否相等。
 * 乘积
 ** (* [number number] &rest)
 返回所有数的乘积
@@ -282,10 +282,11 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 更新对象（图元）的屏幕显示
 * eq
 ** (eq expr1 expr2)
-检测测试两个表达式是否具有相同的约束条件
+检测测试两个表达式是否具有相同的约束条件。
+其指向结果必需相同。如  (eq '(1 2)'(1 2))返回nil（两个表达式的元素相同，但是不是同一个表，所以返回nil）
 * equal,等价
 ** (equal expr1 expr2 [fuzz])
-检测测试两个表达式的值是否相等
+检测测试两个表达式的值是否相等或在一定误差范围内约等。
 * *error*
 ** (*error* "string")
 可由用户定义的错误处理函数
@@ -937,9 +938,6 @@ from to:
 * vl-string->list
 ** (vl-string->list "string")
 将字符串转换为字符代码表
-*  vl-prin1-to-string
-** (vl-prin1-to-string data)
-返回 LISP 数据的字符串表示，就像它是由 prin1 函数输出一样
 * vl-princ-to-string
 ** (vl-princ-to-string data)
 返回 LISP 数据的字符串表示，就象它是由 princ 函数输出的一样
