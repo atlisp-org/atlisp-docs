@@ -1,5 +1,10 @@
-(exit) ; 4个;开头的行为代码片段名，代码片段中的$(n:*)或$n表示光标在片段中跳转位置
+(exit)  
+;;; 说明：
+;;; 4个分号开头的行是每个代码片段的开始，分号后为代码片段的key，
+;;; 代码片段内容为当前key到下一个key之间的内容
+;;; 代码片段中的$(n:*)或$n表示光标在片段中跳转位置
 ;;;;IFP
+;;; if + progn
 (if (${1:TEST}) 
   (progn 
     ;你的程序
@@ -8,6 +13,7 @@
 )
 
 ;;;;RES
+;;; repeat selectset
 (repeat (setq ${1:i} (sslength ${2:SS})) 
   (setq en (ssname ${2} (setq ${1} (1- ${1})))
         obj (vlax-ename->vla-object en)
@@ -20,13 +26,14 @@
 )
 
 ;;;;WHF
-(setq Flag T)
-(while Flag;第一次进入循环
-    (if (TEST);如果条件成立
+;;; loop by flag
+(setq ${1:Flag} T)
+(while $1;第一次进入循环
+    (if (${2:TEST});如果条件成立
         (progn
           ;你的程序
-          $1
-          (setq Flag Nil);退出循环
+          $3
+          (setq $1 Nil);退出循环
         )
     )
 )
