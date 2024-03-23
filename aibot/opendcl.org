@@ -1,3 +1,4 @@
+#+prefix: OpenDCL
 * dcl_MessageBox
 ** (dcl-MessageBox Message [as String] {Title [as String]} {ButtonStyle [as Integer]} {IconStyle [as Integer]} {ShowHelpButton [as Boolean]})
 显示一条警告信息
@@ -7,12 +8,6 @@
 * dcl_project_import
 ** (dcl_project_import '(OpenDCL编译代码))
 OpenDCL与lisp合并
-* dcl_project_load
-** "(dcl_project_load ""文件路径"" T)
-加载OpenDCL文件"
-* dcl_form_show
-** (dcl_form_show 文件名_窗体名)
-显示OpenDCL窗体
 * dcl_Control_GetCurrentSelection
 ** (dcl_Control_GetCurrentSelection FriendlyName_APIName_Type)
 获取OptionList选择的值
@@ -28,7 +23,7 @@ OpenDCL与lisp合并
 这个方法启动一个计时器。在指定的毫秒数过去之后，计时器将等待对话框到达空闲状态，然后触发Form-OnTimer事件。如果毫秒数小于零或未指定，则取消现有的计时器。当窗体关闭时，计时器被取消。
 * dcl-Grid-SetCellImages
 ** (dcl-Grid-SetCellImages NT/Form1/grid1 nRow 1 0)
-nRow:行号,1:图像编号,0:第一列,此方法在指定行和列处设置单元格的单元格图像。ImageIndex是控件的图像列表中的图像，或-1将单元格图像重置为none。可选的AltImageIndex用于样式3的单元格的检查状态(切换图标)。请注意，当没有设置图像时，单元格使用列默认图像作为其列。
+nRow:行号，1:图像编号，0:第一列，此方法在指定行和列处设置单元格的单元格图像。ImageIndex是控件的图像列表中的图像，或-1将单元格图像重置为none。可选的AltImageIndex用于样式3的单元格的检查状态(切换图标)。请注意，当没有设置图像时，单元格使用列默认图像作为其列。
 * dcl-ImageComboBox-SetCurSel
 ** (dcl-ImageComboBox-SetCurSel Grid/Dcl-1/IC-Images 0)
 此方法在图像组合列表框中设置当前选中的项。ItemIndex值为-1将取消当前选择。
@@ -115,7 +110,7 @@ State:
 此方法将一个新项目追加到列表中。 返回值是新项目的索引（基于零）。
 * dcl-Control-GetCurrentSelection
 ** "(dcl-Control-GetCurrentSelection <控件名称>)
-获取Block List, List View, Option List控件当前所选项目的索引。"
+获取Block List， List View， Option List控件当前所选项目的索引。"
 * dcl-Control-GetPicture
 ** (dcl-Control-GetPicture <控件名>)
 获取控件的图标或图片
@@ -143,7 +138,7 @@ State:
 * dcl-Grid-AddString
 ** (dcl-Grid-AddString ODCL表格控件 文本行 {间隔符})
 示例1:(dcl-Grid-AddString ODCL表格控件 \""列1\t列2\t列3\"")
-示例2:(dcl-Grid-AddString ODCL表格控件 \""列1,列2,列3\"" \""，\"" )
+示例2:(dcl-Grid-AddString ODCL表格控件 \""列1，列2，列3\"" \""，\"" )
 在ODCL表格中插入数据行。如果没有指定间隔符，则默认为tab字符（\""\t\""）。返回值是添加的行的索引。
 * dcl-Form-Resize
 ** (dcl-Form-Resize Form Width Height)
@@ -154,15 +149,12 @@ State:
 * dcl_ComboBox_Clear
 ** (dcl_ComboBox_Clear ObjectListName)
 清除列表中的内容
-* ListBox-AddString
-** (dcl-ListBox-AddString 控件变量或名称 NewItem [as String])
-此方法将一个新项目追加到列表中。 返回值是新项目的索引（基于零）。
 * dcl-Control-GetCaption
 ** (dcl-Control-GetCaption 控件变量或名称)
 opendcl函數获取控件的标题或标签文字，返回字符串
 * dcl-TextBox-SetFilter
 ** (dcl-TextBox-SetFilter Lt/Ba/TextBox4 ""0123456789."")
-数据库中没有收录这个函数!请帮助录入,谢谢
+数据库中没有收录这个函数!请帮助录入，谢谢
 * dcl-Form-CloseAll
 ** (dcl-Form-CloseAll [Bit])
 关闭所有opdcl对话框
@@ -192,7 +184,7 @@ DialogTypes 位描述
 此方法设置odcl列表中所有项目。
 * dcl-ListBox-DeleteItem
 ** (dcl-ListBox-DeleteItem 控件变量或名称 ItemIndex [as Long])
-从0开始。,此方法从odcl列表中删除指定项目。
+从0开始。，此方法从odcl列表中删除指定项目。
 * dcl-Control-GetBackColor
 ** (dcl-Control-GetBackColor 控件变量或名称)
 获取odcl 指定控件的背景色
@@ -276,7 +268,7 @@ DialogTypes 位描述
 获取odcl Tree控件-当前选择项的句柄或字符串
 * dcl_Tree_AddChild
 ** (dcl_Tree_AddChild Tree控件变量或名称 数据)
-数据=(list (list 父项名柄 内容 [图像索引int 选择图像索引int 扩大图像索引int],设置odcl Tree控件-添加数据到指定父项中
+数据=(list (list 父项名柄 内容 [图像索引int 选择图像索引int 扩大图像索引int]，设置odcl Tree控件-添加数据到指定父项中
 * dcl_Tree_SetItemData
 ** (dcl_Tree_SetItemData Tree控件变量或名称 父项句柄 数据)
 此方法设置附加到指定项的自定义数据值。
@@ -305,9 +297,6 @@ DialogTypes 位描述
 * dcl-DWGPreview-Clear
 ** (dcl-DWGPreview-Clear DWGPreview控件变量或名称)
 清除ocdl DWGPreview控件的图像
-* dcl_DWGPreview_LoadDwg
-** (dcl_DWGPreview_LoadDwg DWGPreview控件变量或名称 DWG文件路径)
-控制ocdl DWGPreview控件显示DWG预览图
 * dcl_Control_SetTitleBarText
 ** (dcl_Control_SetTitleBarText 窗口变量或名称 字符串)
 设置ocdl 窗口标题
@@ -405,10 +394,10 @@ ItemIndex值为-1时，将取消选择当前选择。
 ItemIndex值为-1时，将取消选择当前选择。
 * dcl-OptionList-SetCurSel
 ** (dcl_OptionList_SetCurSel 0201_Form1_OptionList2 3) 
-初始值3,此方法设置列表中当前选择的选项按钮。
+初始值3，此方法设置列表中当前选择的选项按钮。
 * dcl_OptionList_SetCurSel
 ** (dcl_OptionList_SetCurSel 0201_Form1_OptionList2 3) 
-初始值3,此方法设置列表中当前选择的选项按钮。
+初始值3，此方法设置列表中当前选择的选项按钮。
 * dcl-Project-Unload
 ** (dcl_Project_Unload ""sld"")
 此方法卸载项目，释放其内存。
@@ -536,7 +525,7 @@ SCLlbl1对话框控件名称
 * dcl-sendstring
 ** (dcl-sendstring ""(abc)\n"")
 (princ)
-abc多用于调用子程序。,非模式對話框
+abc多用于调用子程序。，非模式對話框
 要用dcl-sendstring执行命令
 不能使用command命令
 (dcl-sendstring ""(abc)"") 
@@ -571,8 +560,8 @@ OpenDCL与lisp合并
 ** (dcl-Form-Show 文体名_窗体名 {x} {y})
 显示OpenDCL窗体
 * dcl-Project-Load
-** "(dcl-Project-Load ""文件路径"" [T] [NewProjectKey])
-加载OpenDCL文件"
+** (dcl-Project-Load ""文件路径"" [T] [NewProjectKey])
+加载OpenDCL文件
 * dcl-MessageBox
 ** (dcl-MessageBox String {Title [String]} {ButtonStyle [as Integer]} {IconStyle [as Integer]} {ShowHelpButton [as Boolean]})
 显示一个标准的Windows消息框

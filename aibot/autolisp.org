@@ -851,8 +851,6 @@ from to:
 * zerop
 ** (zerop number)
 检查一个数的值是否为 0
-* pi
-3.14159，圆周率
 * bpoly
 ** (bpoly pt [ss vector])
 搜索点附近曲线，生成最小边界

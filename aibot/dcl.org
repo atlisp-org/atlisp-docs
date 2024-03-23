@@ -16,3 +16,8 @@ CAD内部 DCL 常用的框件定义有 32 个。
 * DCL属性
 CAD内部 DCL 框件的属性有 35 个。
 =action=
+* DCL回调变量
+=$key=
+=$value=
+=$data=
+=$reson=
