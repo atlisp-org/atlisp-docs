@@ -9,7 +9,7 @@
 应用程序管理的数据（如果有）是在new_dialog时间之后通过client_data_tile设置的。
 
 此变量适用于所有操作，但$data没有任何意义，除非您的应用程序已经通过调用client_data_tile对其进行了初始化。
-* $reson,DCL回调原因
+* $reason,DCL回调原因
 
 $reason 变量中返回的回调原因指定了操作发生的原因。
 

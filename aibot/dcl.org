@@ -20,4 +20,4 @@ CAD内部 DCL 框件的属性有 35 个。
 =$key=
 =$value=
 =$data=
-=$reson=
+=$reason=
