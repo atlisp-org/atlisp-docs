@@ -1,0 +1,74 @@
+#+title:斐波那契数列算法问题
+#+author:VitalGG
+
+* 定义算法
+
+#+BEGIN_SRC lisp
+(defun fib (n)
+  "斐波那契数列"
+  (cond 
+   ((= n 0) 0)
+   ((= n 1) 1)
+   (t (+ (fib (- n 1))
+         (fib (- n 2))))
+          ))
+ #+END_SRC
+ 
+首先，我们很容易使用递归算法来设计该算法。但是计算出结果是一个指数阶的算法，当n到100的时候，每多算一个斐波那契数需要至少多算一年。
+
+那我们今天就主要介绍一下优化后的算法。
+
+* 线性迭代法
+
+两数辗转相加，每次记录前一项，时间复杂度为O（n），空间复杂度降低到了O（1）。代码如下：
+
+#+BEGIN_SRC lisp
+  (defun fib (n)
+    "迭代法求fibonacci.线性迭代"
+    (fib-iter 1 0 n))
+  (defun fib-iter (a b count)
+    (if (= 0 count)
+        b
+        (fib-iter (+ a b) a (- count 1))))
+#+END_SRC
+
+在这种算法中，我们每次递归都将a+b的值赋给a，把a的值赋给b，通过观察可以发现，从1和0开始将规则反复应用n次，将产生一对数fib(n)和fib(n+1)。
+
+现在将这种规则看成 a = bq + aq + a*p ， b = bp + aq ，其中p=0,q=1把这种变换称为 T 变换。
+
+** T变换
+计算过程中状态变量a 和 b 的变换规则， a = a + b , b = a 。
+
+* 对数阶迭代算法
+Tpq 变换有个特性是 Tpq 的二次方等于Tp‘q’，
+
+p‘ = pp + qq , q' = 2pq + q*q
+
+即：
+a = (bp+aq)p+(bq+aq+ap)q+(bq+aq+ap)p = b(2pq+q^2)+a(p^2+2pq+2q^2)
+
+b = (bp+aq)p+(bq+aq+ap)q = b(p^2+q^2)+a(q^2+2pq)
+
+接下来我们来看看对数阶的斐波那契数列算法。先来看下面这种算法：
+
+#+BEGIN_SRC lisp
+  (defun fib1 (n)
+    "迭代法求fibonacci.对数阶迭代"
+    (fib-iter1 1 0 0 1 n))
+  (defun fib-iter1 (a b p q count)
+    (cond
+      ((= count 0) b)
+      ((m:evenp count)
+       (fib-iter1 a
+                  b
+                  (+ (* p p)(* q q))
+                  (+ (* 2 p q)(* q q))
+                  (/ count 2)))
+      (t (fib-iter1 (+ (* b q)(* a q)(* a p))
+                    (+ (* b p)(* a q))
+                    p
+                    q
+                    (- count 1)))))
+ #+END_SRC
+              
+这样的算法时间复杂度可以达到对数阶。大幅地提高了算法的效率。
