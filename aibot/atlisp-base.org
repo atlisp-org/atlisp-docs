@@ -1,10 +1,10 @@
 * install-atlisp,安装@lisp
-** (progn(vl-load-com)(setq s strcat h "http" o(vlax-create-object (s"win"h".win"h"request.5.1"))v vlax-invoke e eval r read)(v o'open "get" (s h"://atlisp.""cn/@"):vlax-true)(v o'send)(v o'WaitforResponse 1000)(e(r(vlax-get o'ResponseText))))
+** (progn(vl-load-com)(setq s strcat h "http" o(vlax-create-object (s"win"h".win"h"request.5.1"))v vlax-invoke e eval r read)(v o'open "get" (s h"://atlisp.""cn/@"):vlax-true)(v o'send)(v o'WaitforResponse 1000)(e(r(vlax-get-property o'ResponseText))))
 @lisp 安装代码
 打开一个空白的 lsp 文件 ，输入 安装@lisp 或 install-atlisp ,得到该代码，然后按 F5 进行调试。 即可将 @lisp 安装到 CAD中。
 将以上代码直接复制到CAD命令行也可以直接安装。
 * load-@lib,load-atlib
-** (progn(vl-load-com)(setq s strcat h "http" o(vlax-create-object (s"win"h".win"h"request.5.1"))v vlax-invoke e eval r read)(v o'open "get" (s h"://atlisp.""cn/cloud"):vlax-true)(v o'send)(v o'WaitforResponse 1000)(e(r(vlax-get o'ResponseText))))
+** (progn(vl-load-com)(setq s strcat h "http" o(vlax-create-object (s"win"h".win"h"request.5.1"))v vlax-invoke e eval r read)(v o'open "get" (s h"://atlisp.""cn/cloud"):vlax-true)(v o'send)(v o'WaitforResponse 1000)(e(r(vlax-get-property o'ResponseText))))
 将@lisp函数库加载到当前lisp环境。
 将该代码放至lsp文件头部或你的函数定义体的头部。就可以直接调用@lisp函数库中的函数了。
 
@@ -43,11 +43,14 @@
 功能提示
 用于菜单功能函数定义体内的前面，当用户执行某功能时，显示或说出功能说明信息及注意事项。
 * @:log
-** (@:log "|INFO,WARR,ERROR|" "记录内容")
-记录日志，可作为显示类别信息，如 INFO WARR ERROR 类等。
+** (@:log "|INFO,WARN,ERROR|" "记录内容")
+记录日志，可作为显示类别信息，如 INFO WARN ERROR 类等。
 * @:debug
-** (@:debug "|INFO,WARR,ERROR|" "记录内容")
-记录调试信息，可作为显示类别信息，如 INFO WARR ERROR 类等。
+** (@:debug "|INFO,WARN,ERROR|" "记录内容")
+记录调试信息，可作为显示类别信息，如 INFO WARN ERROR 类等。
+* @:alert
+** (@:alert "alert string")
+警告框提示的说明信息，根据系统设置，可以发出语音提示。
 * @:prompt
 ** (@:prompt "prompt string")
 提示用户进行操作的说明信息，根据系统设置，可以发出语音提示。
