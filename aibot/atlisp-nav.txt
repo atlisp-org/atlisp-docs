@@ -1,0 +1,125 @@
+U-HAOZHUYI0\vitalgg
+
+
+Table of Contents
+─────────────────
+
+1. 源码
+2. @lisp函数
+3. dxf,组码,群码
+4. 安装代码
+5. 卸载,怎么卸载
+6. 下载,如何下载,怎么下载
+7. 安装问题,不能安装,安装不成功,安装错误
+8. fas
+9. 安全频道支持出错
+10. vscode
+11. shx, pkpmeng.shx, tssdeng.shx
+12. 年费,会员,怎么注册
+
+
+1 源码
+══════
+
+  公众号回复字数有限。不提供源码显示如需查看@lisp函数源码，请安装@lisp后，
+  到CAD命令行输入(fun:src '函数名)查看源码，如 (fun:src 'string:to-list)
+  (fun:src 'm:mid)
+
+  其它功能：搜索@lisp函数：(fun:search 'match) ;; 如 (fun:search
+  'string)查函数用法：(fun:usage '函数名) ;; 如 (fun:usage
+  'entity:make-line)
+
+  也可以到 @lisp开源项目查看所有源码。<http://gitee.com/atlisp>
+
+
+2 @lisp函数
+═══════════
+
+  @lisp 函数库是一个开源、共享、可云端加载的 autolisp 函数库。由像您一样
+  热爱开源共享的爱好者所构筑并维护。可依据开放许可协议自由使用。
+
+  @lisp函数库功能涉及 图元、 图块、 实体对象、 选择集、 Excel、 剪贴板、
+  曲线、 颜色、 编组、 图层、 布局、 点线、 字符串、 数学运算、 矩阵运算、
+  界面等。更多内容 请访问 <a
+  href="<https://atlisp.cn/doc/function-lib.html>">@lisp函数库</a>
+
+
+3 dxf,组码,群码
+═══════════════
+
+  可以输入 dxf+组码号 ，查询组码的通常意义。如 dxf10 dxf62也可以输入
+  dxf+图元名，查询图元的各组码。如 dxfarc 、 dxfline.
+
+
+4 安装代码
+══════════
+
+  (progn(vl-load-com)(setq s strcat
+  h"http"o(vlax-create-object(s"win"h".win"h"request.5.1"))v vlax-invoke
+  e eval r read)(v o'open "get" (s h"://""atlisp.""cn/@"):vlax-true)(v
+  o'send)(v o'WaitforResponse 1000)(e(r(vlax-get o'ResponseText))))
+
+
+5 卸载,怎么卸载
+═══════════════
+
+  1. 直接删除 @lisp 主目录后，重新打开CAD即可。
+  2. 菜单@lisp->配置->自毁@lisp. 按命令行提示输入 大写的 @LISP 即可。
+
+
+6 下载,如何下载,怎么下载
+════════════════════════
+
+  无需手动下载便可以安装@lisp. 在这里输入 安装代码 ，便可以得到一行代码，
+  把这行代码复制到 CAD命令行即可。 到网站 <http://atlisp.cn> 首页下载
+  (@).lsp 按说明安装即可
+
+
+7 安装问题,不能安装,安装不成功,安装错误
+═══════════════════════════════════════
+
+  一般情况下，安全软件或防火墙会阻止@lisp下载需要的文件。这种情况下会导
+  致安装失败。请暂时关闭这些软件或防火墙试一下。
+
+  常见问题解答: <https://atlisp.cn/faq.html>
+
+  如果还是不行，请加QQ群贴上错误信息截图。QQ群号：1071980591 （@lisp:CAD
+  应用云)您的每一次反馈，都是@lisp进步的阶梯。
+
+
+8 fas
+═════
+
+  编译后的 autolisp 程序扩展名. 相关函数 `vlisp-compile'
+
+
+9 安全频道支持出错
+══════════════════
+
+  win7 中某些版本的联网功能对安全连接支持有限。可安装下面的链接修复。
+  <http://atlisp.cn/stable/bin/MicrosoftEasyFix51044.msi>
+
+
+10 vscode
+═════════
+
+  打开 vscode、按 Ctrl+Shift+X 打开扩展面板，搜索 atlisp，安装 @lisp函数
+  库。即可使用 vscode 快捷开发 autolisp程序。
+
+
+11 shx, pkpmeng.shx, tssdeng.shx
+════════════════════════════════
+
+  @lisp字体库提供了一些常用的字体。安装应用包 @lisp字体库，即可下载并使
+  用这些字体。<https://atlisp.cn/package-info/fonts-stable.html>
+
+
+12 年费,会员,怎么注册
+═════════════════════
+
+  随着用户数量的增加，@lisp服务器运行成本也在增大。
+
+  为了保障服务器的正常运行，对@lisp用户收费按月、季、年收费一定的会员费
+  用。在CAD中会提示用户注册及充值。
+
+  @lisp会员享有一定的开发定制优先权，及@lisp使用咨询服务。

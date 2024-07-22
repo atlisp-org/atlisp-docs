@@ -1,0 +1,3999 @@
+U-HAOZHUYI0\vitalgg
+
+
+Table of Contents
+─────────────────
+
+1. -,相减
+.. 1. (– [number number] &rest)
+2. ~,非码
+.. 1. (~ int)
+3. +,相加
+.. 1. (+ [number number] &rest)
+4. =,相等
+.. 1. (= numstr [numstr] &rest)
+5. 乘积
+.. 1. (* [number number] &rest)
+6. /,除以
+.. 1. (/ [number number] &rest)
+7. 1+
+.. 1. (1+ number)
+8. <,小于
+.. 1. (< numstr [numstr] &rest)
+9. <=,小于等于,不大于
+.. 1. (<= numstr [numstr] &rest)
+10. >,大于
+.. 1. (> numstr [numstr] &rest)
+11. >=,大于等于,不小于
+.. 1. (>= numstr [numstr] &rest)
+12. abs,绝对值
+.. 1. (abs number)
+13. acad_colordlg, 颜色选择对话框
+.. 1. (acad_colordlg colornum [flag])
+14. acad_helpdlg
+.. 1. (acad_helpdlg helpfile topic)
+15. acad_strlsort
+.. 1. (acad_strlsort lst)
+16. action_tile
+.. 1. (action_tile "key" "action-expression")
+17. add_list
+.. 1. (add_list "string")
+18. ads
+.. 1. (ads)
+19. alert,警告框
+.. 1. (alert "string")
+20. alloc
+.. 1. (alloc n-alloc)
+21. 函数and
+.. 1. (and [expr &rest])
+22. angle,弧度
+.. 1. (angle pt1 pt2)
+23. angtof,角度转实数
+.. 1. (angtof "string" [units])
+24. angtos,角度转字符串
+.. 1. (angtos angle [unit [precision]])
+25. append,组合表
+.. 1. (append [lst &rest])
+26. apply
+.. 1. (apply 'function lst)
+27. 函数arx
+.. 1. (arx)
+28. arxload
+.. 1. (arxload application [onfailure])
+29. arxunload
+.. 1. (arxunload application [onfailure])
+30. ascii
+.. 1. (ascii "string")
+31. assoc
+.. 1. (assoc element alist)
+32. atan,反正切值
+.. 1. (atan num1 [num2])
+33. atof,字符串转实数
+.. 1. (atof "string")
+34. atoi,字符串转整数
+.. 1. (atoi "string")
+35. atom
+.. 1. (atom item)
+36. atoms-family
+.. 1. (atoms-family |0,1| [symlist])
+37. autoarxload
+.. 1. (autoarxload filename cmdlist)
+38. autoload
+.. 1. (autoload filename cmdlist)
+39. autoxload
+.. 1. (autoxload filename cmdlist)
+40. /=
+.. 1. (/= numstr [numstr] &rest)
+41. boole,布尔运算
+.. 1. (Boole |operator,1,6,7,8| int1 [int2&rest])
+..... 1. operator
+..... 2. int1, int2…
+..... 3. Boole function bit values
+42. boundp
+.. 1. (boundp sym)
+43. car
+.. 1. (car lst)
+44. cdr
+.. 1. (cdr lst)
+45. chr
+.. 1. (chr integer)
+46. client_data_tile
+.. 1. (client_data_tile key clientdata)
+47. 函数close
+.. 1. (close file-desc)
+48. command
+.. 1. (command [arguments] &rest)
+49. command-s
+.. 1. (command [arguments] &rest)
+50. cond
+.. 1. (cond [(test result &rest) &rest])
+51. cons
+.. 1. (cons new-first-element list-or-atom)
+52. cos,余弦值
+.. 1. (cos ang)
+53. cvunit,单位转换
+.. 1. (cvunit value from-unit to-unit)
+54. defun,定义函数
+.. 1. (defun NAME (arguments / private-variables) "函数功能说明" "函数返回值" exprs)
+55. defun-q,将函数定义为列表形式
+.. 1. (defun-q NAME (arguments / private-variables) "函数功能说明" "函数返回值" exprs)
+56. defun-q-list-ref,显示使用defun-q定义的函数的列表结构
+.. 1. (defun-q-list-ref 'function)
+57. defun-q-list-set,将符号的值设置为列表定义的函数
+.. 1. (defun-q-list-set 'sym list)
+58. defvar
+.. 1. (defvar *sym* value)
+59. defparameter
+.. 1. (defparameter *sym* value)
+60. defconstant
+.. 1. (defconstant +sym+ value)
+61. dictadd
+.. 1. (dictadd ename symbol newobj)
+62. dictnext
+.. 1. (dictnext ename [rewind])
+63. dictremove
+.. 1. (dictremove ename symbol)
+64. dictrename
+.. 1. (dictrename ename oldsym newsym)
+65. dictsearch
+.. 1. (dictsearch ename symbol [setnext])
+66. dimx_tile
+.. 1. (dimx_tile key)
+67. dimy_tile
+.. 1. (dimy_tile key)
+68. 函数distance
+.. 1. (distance pt1 pt2)
+69. distof
+.. 1. (distof "string" [mode])
+70. done_dialog
+.. 1. (done_dialog [status])
+71. end_image
+.. 1. (end_image)
+72. end_list
+.. 1. (end_list)
+73. entdel,删除图元
+.. 1. (entdel ename)
+74. entget
+.. 1. (entget ename [applist])
+75. entlast
+.. 1. (entlast)
+76. entmake,创建图元
+.. 1. (entmake [elist])
+77. entmakex
+.. 1. (entmakex [elist])
+78. entmod,修改图元
+.. 1. (entmod elist)
+79. entnext
+.. 1. (entnext [ename])
+80. entsel,选择图元
+.. 1. (entsel "[msg]")
+81. entupd,更新图元
+.. 1. (entupd ename)
+82. eq
+.. 1. (eq expr1 expr2)
+83. equal,等价
+.. 1. (equal expr1 expr2 [fuzz])
+84. *error*
+.. 1. (*error* "string")
+85. eval,求值
+.. 1. (eval expr)
+86. exit
+.. 1. (exit)
+87. exp,自然反对数
+.. 1. (exp num)
+88. expand
+.. 1. (expand n-expand)
+89. expt,求幂,求平方,求立方
+.. 1. (expt number power)
+90. fill_image
+.. 1. (fill_image x1 y1 width height color)
+91. findfile,搜索文件
+.. 1. (findfile filename)
+92. fix,取整
+.. 1. (fix number)
+93. float,转浮点数
+.. 1. (float number)
+94. foreach
+.. 1. (foreach name lst [exprs])
+95. function
+.. 1. (function |symbol,lambda-expr|)
+96. gc
+.. 1. (gc)
+97. gcd,最大公约数
+.. 1. (gcd int1 int2)
+98. getangle
+.. 1. (getangle [pt] "[msg]")
+99. get_attr
+.. 1. (get_attr key attribute)
+100. getcfg
+.. 1. (getcfg cfgname)
+101. getcname
+.. 1. (getcname cname)
+102. getcorner
+.. 1. (getcorner pt "[msg]")
+103. getdist
+.. 1. (getdist [pt] "[msg]")
+104. getenv
+.. 1. (getenv "variable-name")
+105. getfiled
+.. 1. (getfiled "title" "default-path" "ext" flags)
+.. 2. 示例
+106. getint
+.. 1. (getint "[msg]")
+107. getkword
+.. 1. (getkword "[msg]")
+108. getorient
+.. 1. (getorient [pt] "[msg]")
+109. getpoint
+.. 1. (getpoint [pt] "[msg]")
+110. getreal
+.. 1. (getreal "[msg]")
+111. getstring
+.. 1. (getstring [cr] "[msg]")
+112. get_tile
+.. 1. (get_tile key)
+113. getvar
+.. 1. (getvar "varname")
+114. 函数graphscr
+.. 1. (graphscr)
+115. grclear
+.. 1. (grclear)
+116. grdraw
+.. 1. (grdraw from to color [highlight])
+117. grread
+.. 1. (grread [track] [allkeys [curtype]])
+..... 1. track
+..... 2. allkeys
+..... 3. curtype
+118. grtext
+.. 1. (grtext [box text [highlight]])
+119. grvecs
+.. 1. (grvecs vlist [trans])
+120. handent,句柄
+.. 1. (handent handle)
+121. if,条件分支
+.. 1. (if testexpr thenexpr [elseexpr])
+122. initcommandversion
+.. 1. (initcommandversion [version])
+123. initdia
+.. 1. (initdia [dialogflag])
+124. initget
+.. 1. (initget [bits] "[string]")
+125. inters,求交点
+.. 1. (inters pt1 pt2 pt3 pt4 [onseg])
+126. itoa,整数转字符串
+.. 1. (itoa int)
+127. lambda,匿名函数
+.. 1. (lambda arguments expr &rest)
+128. last
+.. 1. (last lst)
+129. length,求表长度
+.. 1. (length lst)
+130. list
+.. 1. (list [expr &rest])
+131. listp
+.. 1. (listp item)
+132. load
+.. 1. (load filename [onfailure])
+133. load_dialog
+.. 1. (load_dialog dclfile)
+134. log,求自然对数
+.. 1. (log num)
+135. logand,逻辑与
+.. 1. (logand [int int &rest])
+136. logior,逻辑或
+.. 1. (logior [int int &rest])
+137. lsh,逻辑移位
+.. 1. (lsh int numbits)
+138. mapcar
+.. 1. (mapcar 'function list1 &rest listn)
+139. max
+.. 1. (max [number number &rest])
+140. mem
+.. 1. (mem)
+141. member
+.. 1. (member expr lst)
+142. menucmd
+.. 1. (menucmd "string")
+143. menugroup
+.. 1. (menugroup groupname)
+144. min
+.. 1. (min [number number &rest])
+145. minusp,检查负数
+.. 1. (minusp num)
+146. mode_tile
+.. 1. (mode_tile "key" |mode,0,1,2,3,4|)
+147. namedobjdict
+.. 1. (namedobjdict)
+148. nentsel
+.. 1. (nentsel "[msg]")
+149. nentselp
+.. 1. (nentselp "[msg]" [pt])
+150. new_dialog
+.. 1. (new_dialog dlgname dcl_id [action [screen-pt]])
+151. not
+.. 1. (not item)
+152. nth
+.. 1. (nth n lst)
+153. null
+.. 1. (null item)
+154. numberp
+.. 1. (numberp item)
+155. 函数open,打开文件
+.. 1. (open filename "|r,w,a|")
+.. 2. 示例
+156. openutf8,打开utf8文件
+.. 1. (open filename "|r,w,a|" "utf8")
+.. 2. 示例
+157. or
+.. 1. (or [expr &rest])
+158. 函数osnap
+.. 1. (osnap pt mode)
+159. polar
+.. 1. (polar pt ang dist)
+160. prin1,原样输出
+.. 1. (prin1 [expr [file-desc]])
+161. princ,输出
+.. 1. (princ [expr [file-desc]])
+162. print
+.. 1. (print [expr [file-desc]])
+163. progn
+.. 1. (progn [expr] &rest)
+164. prompt,屏幕提示
+.. 1. (prompt msg)
+165. 函数quit
+.. 1. (quit)
+166. quote
+.. 1. (quote expr)
+167. read
+.. 1. (read "[string]")
+168. read-line
+.. 1. (read-line [file-desc])
+169. 函数redraw
+.. 1. (redraw [ename [mode]])
+170. regapp
+.. 1. (regapp application)
+171. rem,求余数
+.. 1. (rem [number number &rest])
+172. repeat,循环指定次数
+.. 1. (repeat int [expr &rest])
+173. 函数reverse
+.. 1. (reverse lst)
+174. rtos,数字转字符串
+.. 1. (rtos number [mode [precision]])
+175. set,赋值到符号
+.. 1. (set 'sym expr)
+176. setcfg
+.. 1. (setcfg cfgname cfgval)
+177. setfunhelp
+.. 1. (setfunhelp c:fname [helpfile [topic [command]]])
+178. setq,赋值
+.. 1. (setq sym expr)
+179. set_tile
+.. 1. (set_tile "key" "value")
+180. 函数setvar
+.. 1. (setvar "varname" value)
+181. setview
+.. 1. (setview view_descriptor [vport_id])
+182. sin,正弦
+.. 1. (sin ang)
+183. slide_image
+.. 1. (slide_image x1 y1 width height "sldname")
+184. snvalid
+.. 1. (snvalid sym_name [flag])
+185. sqrt,平方根
+.. 1. (sqrt num)
+186. ssadd
+.. 1. (ssadd [ename [ss]])
+187. ssdel
+.. 1. (ssdel ename ss)
+188. ssget,生成选择集
+.. 1. (ssget "|[method],c,w,cp,wp,x,l,i,p,:E,:S,:S:E,:D,:L|" [pt1 [pt2]] [pt-list] [filter-list])
+.. 2. 用法
+..... 1. 两点参数:c 反选 w 正选
+..... 2. 点列表参数:多边形cp wp，f栏选
+..... 3. 无点参数的选择模式
+189. ssgetfirst
+.. 1. (ssgetfirst)
+190. sslength
+.. 1. (sslength ss)
+191. ssmemb
+.. 1. (ssmemb ename ss)
+192. ssname
+.. 1. (ssname ss index)
+193. ssnamex
+.. 1. (ssnamex ss [index])
+194. sssetfirst
+.. 1. (sssetfirst gripset [pickset])
+195. startapp,启动外部程序
+.. 1. (startapp appcmd [file])
+196. start_dialog,显示对话框
+.. 1. (start_dialog)
+197. start_image
+.. 1. (start_image key)
+198. start_list
+.. 1. (start_list key [operation [index]])
+199. strcase,字母转大写,字母转小写
+.. 1. (strcase "string" [lcase])
+200. strcat,组合字符串
+.. 1. (strcat "string" "[strings]")
+201. strlen,字符串长度
+.. 1. (strlen "[string]" &rest)
+202. subst,替换表项,替换表元素
+.. 1. (subst newitem olditem lst)
+203. substr,求子串
+.. 1. (substr "string" start [length])
+204. 函数tablet
+.. 1. (tablet code [row1 row2 row3 direction])
+205. tblnext
+.. 1. (tblnext "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" [rewind])
+206. tblobjname
+.. 1. (tblobjname "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" symbol)
+207. tblsearch
+.. 1. (tblsearch "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" symbol [setnext])
+208. term_dialog
+.. 1. (term_dialog)
+209. terpri
+.. 1. (terpri)
+210. textbox
+.. 1. (textbox elist)
+211. textpage
+.. 1. (textpage)
+212. 函数textscr
+.. 1. (textscr)
+213. trace,调试跟踪
+.. 1. (trace [function &rest])
+214. trans,坐标换算,坐标转换
+.. 1. (trans pt from to [disp])
+215. 函数type
+.. 1. (type item)
+216. unload_dialog
+.. 1. (unload_dialog dcl_id)
+217. untrace,清除跟踪
+.. 1. (untrace [function &rest])
+218. vector_image
+.. 1. (vector_image x1 y1 x2 y2 color)
+219. 函数ver
+.. 1. (ver)
+220. 函数vports
+.. 1. (vports)
+221. wcmatch,字符匹配,通配符
+.. 1. (wcmatch "string" pattern)
+.. 2. 通配符
+222. while
+.. 1. (while testexpr [expr &rest])
+223. write-char
+.. 1. (write-char num [file-desc])
+224. write-line
+.. 1. (write-line "string" [file-desc])
+225. xdroom
+.. 1. (xdroom ename)
+226. xdsize
+.. 1. (xdsize lst)
+227. xload
+.. 1. (xload application [onfailure])
+228. xunload
+.. 1. (xunload application [onfailure])
+229. zerop
+.. 1. (zerop number)
+230. bpoly
+.. 1. (bpoly pt [ss vector])
+231. cddr
+.. 1. (cddr lst)
+232. cdddr
+.. 1. (cdddr lst)
+233. cddddr
+.. 1. (cddddr lst)
+234. cdddar
+.. 1. (cdddar lst)
+235. cddar
+.. 1. (cddar lst)
+236. cddadr
+.. 1. (cddadr lst)
+237. cddaar
+.. 1. (cddaar lst)
+238. cdar
+.. 1. (cdar lst)
+239. cdadr
+.. 1. (cdadr lst)
+240. cdaddr
+.. 1. (cdaddr lst)
+241. cdadar
+.. 1. (cdadar lst)
+242. cdaar
+.. 1. (cdaar lst)
+243. cdaadr
+.. 1. (cdaadr lst)
+244. cdaaar
+.. 1. (cdaaar lst)
+245. cadddr
+.. 1. (cadddr lst)
+246. caddar
+.. 1. (caddar lst)
+247. cadar
+.. 1. (cadar lst)
+248. cadadr
+.. 1. (cadadr lst)
+249. cadaar
+.. 1. (cadaar lst)
+250. caar
+.. 1. (caar lst)
+251. caadr
+.. 1. (caadr lst)
+252. caaddr
+.. 1. (caaddr lst)
+253. caadar
+.. 1. (caadar lst)
+254. caaar
+.. 1. (caaar lst)
+255. caaadr
+.. 1. (caaadr lst)
+256. caaaar
+.. 1. (caaaar lst)
+257. vl-string->list
+.. 1. (vl-string->list "string")
+258. vl-princ-to-string
+.. 1. (vl-princ-to-string data)
+259. vl-mkdir,创建目录
+.. 1. (vl-mkdir directoryname)
+260. vl-list-loaded-vlx
+.. 1. (vl-list-loaded-vlx)
+261. vl-filename-directory
+.. 1. (vl-filename-directory filename)
+262. vl-list*
+.. 1. (vl-list* object [object] &rest)
+263. _vl-times
+.. 1. (_vl-times)
+264. vl-infp
+.. 1. (vl-infp num)
+265. vl-bt
+.. 1. (vl-bt)
+266. vl-acad-defun
+.. 1. (vl-acad-defun 'symbol)
+267. vl-acad-undefun
+.. 1. (vl-acad-undefun 'symbol)
+268. vl-arx-import
+.. 1. (vl-arx-import [function-or-application])
+269. vl-bb-ref
+.. 1. (vl-bb-ref 'variable)
+270. vl-bb-set
+.. 1. (vl-bb-set 'symbol value)
+271. vl-catch-all-apply
+.. 1. (vl-catch-all-apply 'function lst)
+272. vl-catch-all-error-message
+.. 1. (vl-catch-all-error-message error-obj)
+273. vl-catch-all-error-p
+.. 1. (vl-catch-all-error-p arg)
+274. vl-cmdf
+.. 1. (vl-cmdf [arguments] &rest)
+275. vl-consp
+.. 1. (vl-consp list-variable)
+276. vl-directory-files
+.. 1. (vl-directory-files "directory" "|pattern,*.*,*.dwg|" |directories,-1,0,1|)
+277. vl-doc-export
+.. 1. (vl-doc-export 'function)
+278. vl-doc-import
+.. 1. (vl-doc-import application [’function &rest])
+279. vl-doc-ref
+.. 1. (vl-doc-ref 'symbol)
+280. vl-doc-set
+.. 1. (vl-doc-set 'symbol value)
+281. vl-every
+.. 1. (vl-every predicate-function lst [lst] &rest)
+282. vl-exit-with-error
+.. 1. (vl-exit-with-error msg)
+283. vl-exit-with-value
+.. 1. (vl-exit-with-value value)
+284. vl-file-copy
+.. 1. (vl-file-copy source-file destination-file [append])
+285. vl-file-delete
+.. 1. (vl-file-delete filename)
+286. vl-file-directory-p
+.. 1. (vl-file-directory-p path)
+287. vl-filename-base
+.. 1. (vl-filename-base filename)
+288. vl-filename-extension
+.. 1. (vl-filename-extension filename)
+289. vl-filename-mktemp
+.. 1. (vl-filename-mktemp [pattern directory extension])
+290. vl-file-rename
+.. 1. (vl-file-rename old-filename new-filename)
+291. vl-file-size
+.. 1. (vl-file-size filename)
+292. vl-file-systime
+.. 1. (vl-file-systime filename)
+293. vl-get-resource
+.. 1. (vl-get-resource text-file)
+294. vl-list-exported-functions
+.. 1. (vl-list-exported-functions [appname])
+295. vl-list-length
+.. 1. (vl-list-length list-or-cons-object)
+296. vl-list->string
+.. 1. (vl-list->string char-codes-list)
+297. vl-load-all
+.. 1. (vl-load-all filename)
+298. vl-load-com
+.. 1. (vl-load-com)
+299. vl-load-reactors
+.. 1. (vl-load-reactors)
+300. vl-member-if
+.. 1. (vl-member-if predicate-function lst)
+301. vl-member-if-not
+.. 1. (vl-member-if-not predicate-function lst)
+302. vl-position
+.. 1. (vl-position symbol lst)
+303. vl-prin1-to-string
+.. 1. (vl-prin1-to-string data)
+304. vl-propagate
+.. 1. (vl-propagate 'symbol)
+305. vl-registry-delete
+.. 1. (vl-registry-delete reg-key [val-name])
+306. vl-registry-descendents
+.. 1. (vl-registry-descendents reg-key [val-names])
+307. vl-registry-read
+.. 1. (vl-registry-read reg-key [val-name])
+308. vl-registry-write
+.. 1. (vl-registry-write reg-key [val-name val-data])
+309. vl-remove
+.. 1. (vl-remove element-to-remove lst)
+310. vl-remove-if
+.. 1. (vl-remove-if predicate-function lst)
+311. vl-remove-if-not
+.. 1. (vl-remove-if-not predicate-function lst)
+312. vl-some
+.. 1. (vl-some predicate-functionlist [list] &rest)
+313. vl-sort
+.. 1. (vl-sort lst comparison-function)
+314. vl-sort-i
+.. 1. (vl-sort-i lst comparison-function)
+315. vl-string-elt
+.. 1. (vl-string-elt "string" position)
+316. vl-string-left-trim
+.. 1. (vl-string-left-trim char-set "string")
+317. vl-string-mismatch
+.. 1. (vl-string-mismatch str1 str2 [pos1 pos2 ignore-case-p])
+318. vl-string-position
+.. 1. (vl-string-position char-code str [start-pos [from-end-p]])
+319. vl-string-right-trim
+.. 1. (vl-string-right-trim char-set "string")
+320. vl-string-search
+.. 1. (vl-string-search pattern "string" [start-pos])
+321. vl-string-subst
+.. 1. (vl-string-subst new-str pattern "string" [start-pos])
+322. vl-string-translate
+.. 1. (vl-string-translate source-set dest-set str)
+323. vl-string-trim
+.. 1. (vl-string-trim char-set str)
+324. vl-symbol-name
+.. 1. (vl-symbol-name symbol)
+325. vl-symbolp
+.. 1. (vl-symbolp obj)
+326. vl-symbol-value
+.. 1. (vl-symbol-value symbol)
+327. vl-unload-vlx
+.. 1. (vl-unload-vlx appname)
+328. vl-vbaload
+.. 1. (vl-vbaload filename)
+329. vl-vbarun
+.. 1. (vl-vbarun macroname)
+330. vl-vlx-loaded-p
+.. 1. (vl-vlx-loaded-p appname)
+331. vlisp-compile
+.. 1. (vlisp-compile 'mode filename [output-filename])
+332. error,自定义错误处理
+.. 1. (*error* msg)
+333. pop-error-mode,恢复错误模式
+.. 1. (*pop-error-mode*)
+334. push-error-using-command
+.. 1. (*push-error-using-command*)
+335. push-error-using-stack
+.. 1. (*push-error-using-stack*)
+
+
+1 -,相减
+════════
+
+1.1 (– [number number] &rest)
+─────────────────────────────
+
+  将第一个数减去其他数的和并返回差值
+
+
+2 ~,非码
+════════
+
+2.1 (~ int)
+───────────
+
+  返回参数的按位非（即 1 的补码）
+
+
+3 +,相加
+════════
+
+3.1 (+ [number number] &rest)
+─────────────────────────────
+
+  返回所有数的和
+
+
+4 =,相等
+════════
+
+4.1 (= numstr [numstr] &rest)
+─────────────────────────────
+
+  比较多个数字或字符串参数是否相等。
+
+
+5 乘积
+══════
+
+5.1 (* [number number] &rest)
+─────────────────────────────
+
+  返回所有数的乘积
+
+
+6 /,除以
+════════
+
+6.1 (/ [number number] &rest)
+─────────────────────────────
+
+  将第一个数除以其他数的乘积并返回商
+
+
+7 1+
+════
+
+7.1 (1+ number)
+───────────────
+
+  将参数加 1
+
+
+8 <,小于
+════════
+
+8.1 (< numstr [numstr] &rest)
+─────────────────────────────
+
+  如果每个参数值都小于它右边的参数则返回 T，否则返回 nil
+
+
+9 <=,小于等于,不大于
+════════════════════
+
+9.1 (<= numstr [numstr] &rest)
+──────────────────────────────
+
+  如果每个参数值都小于或等于它右边的参数则返回 T，否则返回 nil
+
+
+10 >,大于
+═════════
+
+10.1 (> numstr [numstr] &rest)
+──────────────────────────────
+
+  如果每个参数值都大于它右边的参数则返回 T，否则返回 nil
+
+
+11 >=,大于等于,不小于
+═════════════════════
+
+11.1 (>= numstr [numstr] &rest)
+───────────────────────────────
+
+  如果每个参数值都大于或等于它右边的参数则返回 T，否则返回 nil
+
+
+12 abs,绝对值
+═════════════
+
+12.1 (abs number)
+─────────────────
+
+  返回参数的绝对值
+
+
+13 acad_colordlg, 颜色选择对话框
+════════════════════════════════
+
+13.1 (acad_colordlg colornum [flag])
+────────────────────────────────────
+
+  显示标准的 AutoCAD 颜色选择对话框
+
+
+14 acad_helpdlg
+═══════════════
+
+14.1 (acad_helpdlg helpfile topic)
+──────────────────────────────────
+
+  启动帮助工具（已废弃）
+
+
+15 acad_strlsort
+════════════════
+
+15.1 (acad_strlsort lst)
+────────────────────────
+
+  以ASCII码字母顺序对字符串表进行排序
+
+
+16 action_tile
+══════════════
+
+16.1 (action_tile "key" "action-expression")
+────────────────────────────────────────────
+
+  为某一对话框控件指定一个动作表达式，用户在对话框中选中这个控件时，就会
+  执行该动作表达式.  action_tile指定的操作将取代对话框的默认操作（由
+  new_dialog指定）或 Tile 的操作属性（如果已指定）。表达式
+  action-expression 中可以将 Tile 的当前值称为$value，将其名称称为$key，
+  将其特定于应用程序的数据（由client_data_tile设置）称为$data，将其回调
+  原因称为$reason，将其图像坐标（如果磁贴是图像按钮）称为 $x和$y。注意:
+  不能用 action_tile 调用 autolisp 的 command 函数。
+
+
+17 add_list
+═══════════
+
+17.1 (add_list "string")
+────────────────────────
+
+  在当前激活的对话框的列表框中增加一个字符串或修改其中的一个字符串
+
+
+18 ads
+══════
+
+18.1 (ads)
+──────────
+
+  此函数将返回一串目前装入的AutoCAD高级开发系统(ADS)应用程序。每一个应用
+  程序和它的路径在这个表中都是一个以引号括起来的字符串。
+
+
+19 alert,警告框
+═══════════════
+
+19.1 (alert "string")
+─────────────────────
+
+  显示一个警告框，其中显示一条出错或警告信息
+
+
+20 alloc
+════════
+
+20.1 (alloc n-alloc)
+────────────────────
+
+  设置段长度以供 expand 函数使用
+
+
+21 函数and
+══════════
+
+21.1 (and [expr &rest])
+───────────────────────
+
+  返回表达式的逻辑与 (AND) 运算结果
+
+
+22 angle,弧度
+═════════════
+
+22.1 (angle pt1 pt2)
+────────────────────
+
+  以弧度为单位返回两点之间连线与当前 UCS 下 X 轴之间的夹角
+
+
+23 angtof,角度转实数
+════════════════════
+
+23.1 (angtof "string" [units])
+──────────────────────────────
+
+  将表示角度的字符串转换为实数（浮点数）形式的弧度值
+
+
+24 angtos,角度转字符串
+══════════════════════
+
+24.1 (angtos angle [unit [precision]])
+──────────────────────────────────────
+
+  将一个以弧度为单位的角度值转换成字符串
+
+
+25 append,组合表
+════════════════
+
+25.1 (append [lst &rest])
+─────────────────────────
+
+  将任意多个表组合成一个表
+
+
+26 apply
+════════
+
+26.1 (apply 'function lst)
+──────────────────────────
+
+  传递一个列表作为指定函数的参数，并执行该函数详见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E8%BF%9B%E9%98%B6/lisp.org>
+
+
+27 函数arx
+══════════
+
+27.1 (arx)
+──────────
+
+  此函数将返回一个目前已装入的 ARX 应用程序的表。
+
+
+28 arxload
+══════════
+
+28.1 (arxload application [onfailure])
+──────────────────────────────────────
+
+  加载 ObjectARX 应用程序
+
+
+29 arxunload
+════════════
+
+29.1 (arxunload application [onfailure])
+────────────────────────────────────────
+
+  卸载 ObjectARX 应用程序
+
+
+30 ascii
+════════
+
+30.1 (ascii "string")
+─────────────────────
+
+  将字符串中的第一个字符转换成其 ASCII 码(整数)后返回
+
+
+31 assoc
+════════
+
+31.1 (assoc element alist)
+──────────────────────────
+
+  从关联表中搜索一个元素，如果找到则返回该关联表条目详见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org>
+
+
+32 atan,反正切值
+════════════════
+
+32.1 (atan num1 [num2])
+───────────────────────
+
+  返回一个数的反正切值（以弧度为单位）
+
+
+33 atof,字符串转实数
+════════════════════
+
+33.1 (atof "string")
+────────────────────
+
+  将一个字符串转换成实数
+
+
+34 atoi,字符串转整数
+════════════════════
+
+34.1 (atoi "string")
+────────────────────
+
+  将一个字符串转换成整数
+
+
+35 atom
+═══════
+
+35.1 (atom item)
+────────────────
+
+  验证一个项是否是原子
+
+
+36 atoms-family
+═══════════════
+
+36.1 (atoms-family |0,1| [symlist])
+───────────────────────────────────
+
+  返回当前系统中已定义的符号的列表0 返回符号, 1 返回符号的字符串名
+  symlist: 字符串列表，用于指定要搜索的atoms族的符号名称。
+
+
+37 autoarxload
+══════════════
+
+37.1 (autoarxload filename cmdlist)
+───────────────────────────────────
+
+  预定义可自动加载某相关 ObjectARX 应用程序的命令名
+
+
+38 autoload
+═══════════
+
+38.1 (autoload filename cmdlist)
+────────────────────────────────
+
+  预定义可自动加载某相关 AutoLISP 应用程序的命令名
+
+
+39 autoxload
+════════════
+
+39.1 (autoxload filename cmdlist)
+─────────────────────────────────
+
+  此函数是事先定义命令名称来装入一已连接的 ADS 应用程序。
+
+
+40 /=
+═════
+
+40.1 (/= numstr [numstr] &rest)
+───────────────────────────────
+
+  比较参数是否值不相等
+
+
+41 boole,布尔运算
+═════════════════
+
+41.1 (Boole |operator,1,6,7,8| int1 [int2&rest])
+────────────────────────────────────────────────
+
+  用作一个通用的按位逻辑运算函数
+
+
+41.1.1 operator
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Type: Integer 0 - 15 之间的整数
+
+
+41.1.2 int1, int2…
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Type: Integer A numeric value. 注意:boole will accept a single integer
+  argument, but the result is unpredictable.
+
+
+41.1.3 Boole function bit values
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Operator Operation Resulting bit is 1 if 1 AND Both input bits are 1 6
+  XOR Only one of the two input bits is 1 7 OR Either or both of the
+  input bits are 1 8 NOR Both input bits are 0 (1's complement)
+
+  您可以使用运算符的其他值来执行没有标准名称的其他布尔运算。例如，如果运
+  算符为4，则如果相应的位设置在int2而不是int1中，则设置结果位.
+
+
+42 boundp
+═════════
+
+42.1 (boundp sym)
+─────────────────
+
+  检验符号是否被设置为某个值
+
+
+43 car
+══════
+
+43.1 (car lst)
+──────────────
+
+  返回表的第一个元素
+
+
+44 cdr
+══════
+
+44.1 (cdr lst)
+──────────────
+
+  返回去掉了第一个元素的表或点对表的第二个元素
+
+
+45 chr
+══════
+
+45.1 (chr integer)
+──────────────────
+
+  将代表字符 ASCII 码的整数转换成包含相应的单一字符的字符串
+
+
+46 client_data_tile
+═══════════════════
+
+46.1 (client_data_tile key clientdata)
+──────────────────────────────────────
+
+  将特定应用数据与一个对话框控件相关联
+
+
+47 函数close
+════════════
+
+47.1 (close file-desc)
+──────────────────────
+
+  关闭一个已打开的文件
+
+
+48 command
+══════════
+
+48.1 (command [arguments] &rest)
+────────────────────────────────
+
+  执行一条 AutoCAD 命令
+
+
+49 command-s
+════════════
+
+49.1 (command [arguments] &rest)
+────────────────────────────────
+
+  执行一条 AutoCAD 命令，可用于*error*中。
+
+
+50 cond
+═══════
+
+50.1 (cond [(test result &rest) &rest])
+───────────────────────────────────────
+
+  多条件、多处理结果函数详见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org>
+
+
+51 cons
+═══════
+
+51.1 (cons new-first-element list-or-atom)
+──────────────────────────────────────────
+
+  向表的头部添加一个元素，或构造一个点对详见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org>
+
+
+52 cos,余弦值
+═════════════
+
+52.1 (cos ang)
+──────────────
+
+  返回弧度角度的余弦值
+
+
+53 cvunit,单位转换
+══════════════════
+
+53.1 (cvunit value from-unit to-unit)
+─────────────────────────────────────
+
+  在不同测量单位之间进行换算
+
+
+54 defun,定义函数
+═════════════════
+
+54.1 (defun NAME (arguments / private-variables) "函数功能说明" "函数返回值" exprs)
+───────────────────────────────────────────────────────────────────────────────────
+
+  定义函数详见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org>
+
+
+55 defun-q,将函数定义为列表形式
+═══════════════════════════════
+
+55.1 (defun-q NAME (arguments / private-variables) "函数功能说明" "函数返回值" exprs)
+─────────────────────────────────────────────────────────────────────────────────────
+
+  将函数定义为列表形式，可以明文查看函数的定义。
+
+
+56 defun-q-list-ref,显示使用defun-q定义的函数的列表结构
+═══════════════════════════════════════════════════════
+
+56.1 (defun-q-list-ref 'function)
+─────────────────────────────────
+
+  显示使用defun-q定义的函数的列表结构
+
+
+57 defun-q-list-set,将符号的值设置为列表定义的函数
+══════════════════════════════════════════════════
+
+57.1 (defun-q-list-set 'sym list)
+─────────────────────────────────
+
+  将符号的值设置为列表定义的函数
+
+
+58 defvar
+═════════
+
+58.1 (defvar *sym* value)
+─────────────────────────
+
+  定义全局变量。习惯上一般以 * 号包围名字，使用 defvar 设置的变量，可以
+  显示在 vscode 的大纲中，需要@lisp支持。在 cl 中，只有 sym 为 nil 时，
+  才会赋值。
+
+
+59 defparameter
+═══════════════
+
+59.1 (defparameter *sym* value)
+───────────────────────────────
+
+  定义全局变量。习惯上一般以 * 号包围名字，使用 defparameter 设置的变量，
+  可以显示在 vscode 的大纲中，需要@lisp支持。在 cl 中，不同于 defvar, 该
+  函数总是将 value 赋值给 sym 。
+
+
+60 defconstant
+══════════════
+
+60.1 (defconstant +sym+ value)
+──────────────────────────────
+
+  设置变量。习惯上一般以 + 号包围名字，使用 defparameter 设置的变量，可
+  以显示在 vscode 的大纲中，需要@lisp支持。在 cl 中，不同于 defvar, 该函
+  数总是将 value 赋值给 sym 。
+
+
+61 dictadd
+══════════
+
+61.1 (dictadd ename symbol newobj)
+──────────────────────────────────
+
+  在指定词典内添加非图形对象
+
+
+62 dictnext
+═══════════
+
+62.1 (dictnext ename [rewind])
+──────────────────────────────
+
+  查找词典中的下一个条目
+
+
+63 dictremove
+═════════════
+
+63.1 (dictremove ename symbol)
+──────────────────────────────
+
+  从指定词典中删除一个条目
+
+
+64 dictrename
+═════════════
+
+64.1 (dictrename ename oldsym newsym)
+─────────────────────────────────────
+
+  重命名词典条目
+
+
+65 dictsearch
+═════════════
+
+65.1 (dictsearch ename symbol [setnext])
+────────────────────────────────────────
+
+  在词典中搜索某个项
+
+
+66 dimx_tile
+════════════
+
+66.1 (dimx_tile key)
+────────────────────
+
+  返回控件的宽度
+
+
+67 dimy_tile
+════════════
+
+67.1 (dimy_tile key)
+────────────────────
+
+  返回控件的高度
+
+
+68 函数distance
+═══════════════
+
+68.1 (distance pt1 pt2)
+───────────────────────
+
+  返回两个点之间的距离
+
+
+69 distof
+═════════
+
+69.1 (distof "string" [mode])
+─────────────────────────────
+
+  将一个表示实（浮点）数的字符串转换成一个实数
+
+
+70 done_dialog
+══════════════
+
+70.1 (done_dialog [status])
+───────────────────────────
+
+  中断对话框
+
+
+71 end_image
+════════════
+
+71.1 (end_image)
+────────────────
+
+  结束当前激活的对话框图像控件的操作
+
+
+72 end_list
+═══════════
+
+72.1 (end_list)
+───────────────
+
+  结束对当前激活的对话框列表的操作
+
+
+73 entdel,删除图元
+══════════════════
+
+73.1 (entdel ename)
+───────────────────
+
+  删除对象（图元）或恢复先前删除的对象
+
+
+74 entget
+═════════
+
+74.1 (entget ename [applist])
+─────────────────────────────
+
+  获得对象（图元）的定义数据
+
+
+75 entlast
+══════════
+
+75.1 (entlast)
+──────────────
+
+  返回图形中最后那个未删除的主对象（图元）名称
+
+
+76 entmake,创建图元
+═══════════════════
+
+76.1 (entmake [elist])
+──────────────────────
+
+  在图形中创建一个新图元
+
+
+77 entmakex
+═══════════
+
+77.1 (entmakex [elist])
+───────────────────────
+
+  创建一个新对象或图元，赋给它一个句柄和图元名（但不指定所有者)并返回新
+  图元的名称
+
+
+78 entmod,修改图元
+══════════════════
+
+78.1 (entmod elist)
+───────────────────
+
+  修改对象（图元）的定义数据
+
+
+79 entnext
+══════════
+
+79.1 (entnext [ename])
+──────────────────────
+
+  如果调用entnext时没有参数，则返回数据库中第一个未删除实体的实体名。如
+  果向entnext提供了一个ename参数，则函数返回数据库中ename后面第一个未删
+  除实体的实体名。如果数据库中没有下一个实体，则返回nil。entnext函数返回
+  主实体和子实体。
+
+
+80 entsel,选择图元
+══════════════════
+
+80.1 (entsel "[msg]")
+─────────────────────
+
+  提示用户通过指定一个点来选择单个对象（图元）
+
+
+81 entupd,更新图元
+══════════════════
+
+81.1 (entupd ename)
+───────────────────
+
+  更新对象（图元）的屏幕显示
+
+
+82 eq
+═════
+
+82.1 (eq expr1 expr2)
+─────────────────────
+
+  检测测试两个表达式是否具有相同的约束条件。其指向结果必需相同。如 (eq
+  '(1 2)'(1 2))返回nil（两个表达式的元素相同，但是不是同一个表，所以返回
+  nil）
+
+
+83 equal,等价
+═════════════
+
+83.1 (equal expr1 expr2 [fuzz])
+───────────────────────────────
+
+  检测测试两个表达式的值是否相等或在一定误差范围内约等。
+
+
+84 *error*
+══════════
+
+84.1 (*error* "string")
+───────────────────────
+
+  可由用户定义的错误处理函数
+
+
+85 eval,求值
+════════════
+
+85.1 (eval expr)
+────────────────
+
+  返回 AutoLISP 表达式的求值结果
+
+
+86 exit
+═══════
+
+86.1 (exit)
+───────────
+
+  强行使当前应用程序退出
+
+
+87 exp,自然反对数
+═════════════════
+
+87.1 (exp num)
+──────────────
+
+  返回常数 e (2.718282…) 的指定次幂（自然反对数）
+
+
+88 expand
+═════════
+
+88.1 (expand n-expand)
+──────────────────────
+
+  为 AutoLISP 分配附加空间
+
+
+89 expt,求幂,求平方,求立方
+══════════════════════════
+
+89.1 (expt number power)
+────────────────────────
+
+  返回以某指定数为底数的若干次幂的值. 平方: (expt number 2)立方: (expt
+  number 3)
+
+
+90 fill_image
+═════════════
+
+90.1 (fill_image x1 y1 width height color)
+──────────────────────────────────────────
+
+  在当前激活的对话框图像控件中画一个填充矩形
+
+
+91 findfile,搜索文件
+════════════════════
+
+91.1 (findfile filename)
+────────────────────────
+
+  在 AutoCAD 库路径中搜索指定文件或目录
+
+
+92 fix,取整
+═══════════
+
+92.1 (fix number)
+─────────────────
+
+  截去实数的小数部分，将它转换成整数后返回该整数
+
+
+93 float,转浮点数
+═════════════════
+
+93.1 (float number)
+───────────────────
+
+  将一个数转换为实数后返回
+
+
+94 foreach
+══════════
+
+94.1 (foreach name lst [exprs])
+───────────────────────────────
+
+  将表中的所有成员以指定变量的身份带入表达式求值
+
+
+95 function
+═══════════
+
+95.1 (function |symbol,lambda-expr|)
+────────────────────────────────────
+
+  告诉Visual LISP编译器链接和优化参数，就像它是内置函数一样. 将函数函数
+  添加到表达式后，编译器可以优化lambda表达式。例如：(mapcar (function
+  (lambda(x)(* x x))) '(1 2 3))
+
+
+96 gc
+═════
+
+96.1 (gc)
+─────────
+
+  强制收集无用数据，释放不再使用的节点
+
+
+97 gcd,最大公约数
+═════════════════
+
+97.1 (gcd int1 int2)
+────────────────────
+
+  返回两个整数的最大公约数
+
+
+98 getangle
+═══════════
+
+98.1 (getangle [pt] "[msg]")
+────────────────────────────
+
+  暂停以等待用户输入角度，然后以弧度形式返回该角度
+
+
+99 get_attr
+═══════════
+
+99.1 (get_attr key attribute)
+─────────────────────────────
+
+  获取对话框指定控件的某个属性值
+
+
+100 getcfg
+══════════
+
+100.1 (getcfg cfgname)
+──────────────────────
+
+  从 acad.cfg 文件的 AppData 段中检索应用数据
+
+
+101 getcname
+════════════
+
+101.1 (getcname cname)
+──────────────────────
+
+  获取 AutoCAD 命令的本地化名或英文名
+
+
+102 getcorner
+═════════════
+
+102.1 (getcorner pt "[msg]")
+────────────────────────────
+
+  暂停等待用户输入矩形第二个角点的坐标
+
+
+103 getdist
+═══════════
+
+103.1 (getdist [pt] "[msg]")
+────────────────────────────
+
+  暂停以等待用户输入距离
+
+
+104 getenv
+══════════
+
+104.1 (getenv "variable-name")
+──────────────────────────────
+
+  以字符串方式返回指定的环境变量的值
+
+
+105 getfiled
+════════════
+
+105.1 (getfiled "title" "default-path" "ext" flags)
+───────────────────────────────────────────────────
+
+  用标准的 AutoCAD 文件对话框提示用户输入一个文件名，并返回该文件名。
+  default: 默认路径ext:扩展表。不含 .  flags:控制对话框行为的整数值（位
+  编码字段）。要一次设置多个条件，请将这些值相加，以创建一个介于0和15之
+  间的标志值。getfield可以识别以下标志参数：
+
+  1（位0）–提示输入要创建的新文件的名称。当提示打开现有文件的名称时，不
+  要设置此位。在后一种情况下，如果用户输入不存在的文件名，对话框将在底部
+  显示错误消息。如果设置了此位，并且用户选择了一个已经存在的文件，
+  AutoCAD将显示一个警告框，并提供继续或取消操作的选择。
+
+  4（位2）–让用户输入任意文件扩展名，或者根本不输入扩展名。如果未设置此
+  位，getfield只接受ext参数中指定的扩展名，如果用户未在file文本框中输入
+  扩展名，则将此扩展名附加到文件名。
+
+  8（位3）——如果设置了该位，而未设置位0，getfield将对输入的文件名执行库
+  搜索。如果它在库搜索路径中找到文件及其目录，则会删除路径并仅返回文件名。
+  （如果发现同名文件位于不同的目录中，则不会删除路径名。）如果未设置该位，
+  getfield将返回整个文件名，包括路径名。如果使用对话框打开要在图形（或其
+  他数据库）中保存其名称的现有文件，请设置此位。
+
+  16（位4）–如果设置了此位，或者默认参数以路径分隔符结尾，则该参数仅被解
+  释为路径名。getfield函数假定没有默认文件名。它在“查找范围：”行中显示路
+  径，并将“文件名”框留空。
+
+  32（位5）–如果设置了此位，并且设置了位0（表示正在指定一个新文件），则
+  用户将不会收到覆盖现有文件的警告。不会显示警告用户已存在同名文件的警告
+  框；旧文件将被替换。
+
+  64（位6）–如果用户指定了URL，则不要传输远程文件。
+
+  128（位7）–根本不允许URL。
+
+
+105.2 示例
+──────────
+
+  (getfield "指定图片文件" "D:\\" "png" 8)
+
+
+106 getint
+══════════
+
+106.1 (getint "[msg]")
+──────────────────────
+
+  暂停以等待用户输入一个整数并返回该整数
+
+
+107 getkword
+════════════
+
+107.1 (getkword "[msg]")
+────────────────────────
+
+  暂停以等待用户输入一个关键字并返回该关键字
+
+
+108 getorient
+═════════════
+
+108.1 (getorient [pt] "[msg]")
+──────────────────────────────
+
+  暂停以等待用户输入角度，并返回该角度pt 相对点
+
+
+109 getpoint
+════════════
+
+109.1 (getpoint [pt] "[msg]")
+─────────────────────────────
+
+  暂停以等待用户输入点，并返回该点pt 相对点
+
+
+110 getreal
+═══════════
+
+110.1 (getreal "[msg]")
+───────────────────────
+
+  暂停以让用户输入一个实数并返回该实数
+
+
+111 getstring
+═════════════
+
+111.1 (getstring [cr] "[msg]")
+──────────────────────────────
+
+  暂停以等待用户输入字符串，并返回该字符串cr : T or nil 控制输入的字符串
+  能否含有空格。
+
+
+112 get_tile
+════════════
+
+112.1 (get_tile key)
+────────────────────
+
+  获取对话框指定控件的当前运行时的值
+
+
+113 getvar
+══════════
+
+113.1 (getvar "varname")
+────────────────────────
+
+  获取一个 AutoCAD 系统变量的值
+
+
+114 函数graphscr
+════════════════
+
+114.1 (graphscr)
+────────────────
+
+  显示 AutoCAD 图形屏幕
+
+
+115 grclear
+═══════════
+
+115.1 (grclear)
+───────────────
+
+  清除当前视口（已废弃）
+
+
+116 grdraw
+══════════
+
+116.1 (grdraw from to color [highlight])
+────────────────────────────────────────
+
+  在当前视口中的两个点之间显示一条矢量线
+
+
+117 grread
+══════════
+
+117.1 (grread [track] [allkeys [curtype]])
+──────────────────────────────────────────
+
+  从 AutoCAD 的任何一种输入设备中读取数值
+
+
+117.1.1 track
+╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  类型:t or nil如果提供而不是nil，则此参数允许在移动定点设备时从定点设备
+  返回坐标。
+
+
+117.1.2 allkeys
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  类型：Integer
+
+  告诉grread要执行哪些函数的代码。可以将allkeys位代码值添加在一起以实现
+  组合功能。可以指定以下值：
+
+  1（位0）–返回拖动模式坐标。如果设置了此位，并且用户移动定点设备而不是
+  选择按钮或按键，grread将返回一个列表，其中第一个成员是类型5，第二个成
+  员是当前定点设备（鼠标或数字化仪）位置的（X，Y）坐标。AutoCAD就是这样
+  实现拖动的。
+
+  2（位1）——返回所有键值，包括功能和光标键代码，并且在用户按下光标键时不
+  移动光标。
+
+  4（第2位）–使用curtype参数中传递的值来控制光标的显示。
+
+  8（第3位）–当用户按下Esc时，不显示错误：控制台中断消息。
+
+
+117.1.3 curtype
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  一个整数，指示要显示的光标类型。必须设置位2的allkeys值才能使curtype值
+  生效。curtype参数在当前grread函数调用期间仅影响游标类型。您可以为
+  curtype指定以下值之一：
+
+  0 显示普通十字光标。
+
+  1 不显示光标（无十字光标）。
+
+  2 显示对象选择“目标”光标。
+
+
+118 grtext
+══════════
+
+118.1 (grtext [box text [highlight]])
+─────────────────────────────────────
+
+  将文本写到状态行或屏幕菜单区
+
+
+119 grvecs
+══════════
+
+119.1 (grvecs vlist [trans])
+────────────────────────────
+
+  在图形屏幕上绘制多个矢量
+
+
+120 handent,句柄
+════════════════
+
+120.1 (handent handle)
+──────────────────────
+
+  根据对象（图元）的句柄返回它的对象（图元）名
+
+
+121 if,条件分支
+═══════════════
+
+121.1 (if testexpr thenexpr [elseexpr])
+───────────────────────────────────────
+
+  根据对条件的判断结果，对两个表达式求值详见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org>
+
+
+122 initcommandversion
+══════════════════════
+
+122.1 (initcommandversion [version])
+────────────────────────────────────
+
+  强制使用指定的版本运行下一个命令.version的值为1或2.
+
+  此参数指定要使用的命令的版本。如果不存在此参数，则支持的命令的下次使用
+  （仅限下次使用）将初始化为最新版本。
+
+  通过此函数，可以强制支持的命令执行特定行为，而不管该命令是如何运行的。
+  这只会影响已更新为支持命令版本的命令。在这样的命令中，初始化的命令版本
+  的测试将替换从AutoLISP还是脚本运行命令的传统测试。手动运行支持的命令时，
+  默认版本为2（或最新版本）。从自动化运行命令时，默认版本为1。
+
+
+123 initdia
+═══════════
+
+123.1 (initdia [dialogflag])
+────────────────────────────
+
+  dialogflag:数值。如果此参数不存在或存在且非零，则下次使用（仅限下次使
+  用）命令时将显示该命令的对话框，而不是命令行提示。
+
+  如果dialogflag为零，则会清除以前对此函数的任何调用，从而恢复显示命令行
+  界面的默认行为。
+
+
+124 initget
+═══════════
+
+124.1 (initget [bits] "[string]")
+─────────────────────────────────
+
+  为随后的用户输入函数调用创建关键字
+
+
+125 inters,求交点
+═════════════════
+
+125.1 (inters pt1 pt2 pt3 pt4 [onseg])
+──────────────────────────────────────
+
+  求两条直线的交点
+
+
+126 itoa,整数转字符串
+═════════════════════
+
+126.1 (itoa int)
+────────────────
+
+  将整数转换成字符串，并返回转换结果
+
+
+127 lambda,匿名函数
+═══════════════════
+
+127.1 (lambda arguments expr &rest)
+───────────────────────────────────
+
+  定义无名函数详见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E8%BF%9B%E9%98%B6/lisp.org>
+
+
+128 last
+════════
+
+128.1 (last lst)
+────────────────
+
+  返回表的最后一个元素
+
+
+129 length,求表长度
+═══════════════════
+
+129.1 (length lst)
+──────────────────
+
+  以整数形式返回表中元素的数目
+
+
+130 list
+════════
+
+130.1 (list [expr &rest])
+─────────────────────────
+
+  将任意数目的表达式组合成一个表详见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org>
+
+
+131 listp
+═════════
+
+131.1 (listp item)
+──────────────────
+
+  检查某个项是否是表
+
+
+132 load
+════════
+
+132.1 (load filename [onfailure])
+─────────────────────────────────
+
+  此函数将装入一个包含AutoLISP表达式的文件， 同时判别这些表达式。
+  filename是一个代表文件名称的字符串， 而且不须加上扩展名(因为扩展名.lsp
+  是自动设定)。
+
+
+133 load_dialog
+═══════════════
+
+133.1 (load_dialog dclfile)
+───────────────────────────
+
+  加载 DCL 文件
+
+
+134 log,求自然对数
+══════════════════
+
+134.1 (log num)
+───────────────
+
+  返回一个实数的自然对数
+
+
+135 logand,逻辑与
+═════════════════
+
+135.1 (logand [int int &rest])
+──────────────────────────────
+
+  返回一个整数表中的各数按位逻辑与 (AND) 的结果
+
+
+136 logior,逻辑或
+═════════════════
+
+136.1 (logior [int int &rest])
+──────────────────────────────
+
+  返回一个整数表中的各数按位逻辑或 (OR) 的结果
+
+
+137 lsh,逻辑移位
+════════════════
+
+137.1 (lsh int numbits)
+───────────────────────
+
+  返回某整数作指定次逻辑移位后的结果
+
+
+138 mapcar
+══════════
+
+138.1 (mapcar 'function list1 &rest listn)
+──────────────────────────────────────────
+
+  循环取list1至listn相同位置的元素同时作为function的参数进行求值，并将求
+  值结果构成的表返回详见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E8%BF%9B%E9%98%B6/lisp.org>
+
+
+139 max
+═══════
+
+139.1 (max [number number &rest])
+─────────────────────────────────
+
+  返回给定各数中的最大者
+
+
+140 mem
+═══════
+
+140.1 (mem)
+───────────
+
+  显示 AutoLISP 内存的当前状态
+
+
+141 member
+══════════
+
+141.1 (member expr lst)
+───────────────────────
+
+  搜索表中是否包含某表达式，并从该表达式的第一次出现处返回表的其余部分详
+  见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org>
+
+
+142 menucmd
+═══════════
+
+142.1 (menucmd "string")
+────────────────────────
+
+  发出菜单命令，或设置并检索菜单项状态
+
+
+143 menugroup
+═════════════
+
+143.1 (menugroup groupname)
+───────────────────────────
+
+  检查是否加载了指定的菜单组
+
+
+144 min
+═══════
+
+144.1 (min [number number &rest])
+─────────────────────────────────
+
+  返回给定各数中的最小者
+
+
+145 minusp,检查负数
+═══════════════════
+
+145.1 (minusp num)
+──────────────────
+
+  检查某个数是否是负数
+
+
+146 mode_tile
+═════════════
+
+146.1 (mode_tile "key" |mode,0,1,2,3,4|)
+────────────────────────────────────────
+
+  设置对话框控件的状态mode 0 – 使框件可用1 – 不可用2 – 获得焦点3 – 选择
+  编辑框内容4 – 点击图像高亮与否
+
+
+147 namedobjdict
+════════════════
+
+147.1 (namedobjdict)
+────────────────────
+
+  返回当前图形的命名对象词典的图元名，它是所有非图形对象的根
+
+
+148 nentsel
+═══════════
+
+148.1 (nentsel "[msg]")
+───────────────────────
+
+  提示用户指定点来选择对象（图元），得到这个对象所指片段的对象名
+
+
+149 nentselp
+════════════
+
+149.1 (nentselp "[msg]" [pt])
+─────────────────────────────
+
+  在没有用户输入的情况下，本函数的功能与 nentsel 函数类似
+
+
+150 new_dialog
+══════════════
+
+150.1 (new_dialog dlgname dcl_id [action [screen-pt]])
+──────────────────────────────────────────────────────
+
+  开始一个新的对话框并显示该对话框，而且能指定一个缺省操作
+
+
+151 not
+═══════
+
+151.1 (not item)
+────────────────
+
+  检查一个项的求值结果是否为 nil
+
+
+152 nth
+═══════
+
+152.1 (nth n lst)
+─────────────────
+
+  返回表中的第 n 个元素，n为自然数（非负整数）。
+
+
+153 null
+════════
+
+153.1 (null item)
+─────────────────
+
+  检查某项的值是否设置为 nil
+
+
+154 numberp
+═══════════
+
+154.1 (numberp item)
+────────────────────
+
+  检查某个项是否是实数或整数
+
+
+155 函数open,打开文件
+═════════════════════
+
+155.1 (open filename "|r,w,a|")
+───────────────────────────────
+
+  打开一个文件，供其他 AutoLISP I/O 函数访问mode: "r" 读取 "w" 写 "a" 追
+  加
+
+
+155.2 示例
+──────────
+
+  (setq fp (open (findfile "acad.pgp") "r")) (read-line fp) (close fp)
+
+
+156 openutf8,打开utf8文件
+═════════════════════════
+
+156.1 (open filename "|r,w,a|" "utf8")
+──────────────────────────────────────
+
+  打开一个utf8编码文件，供其他 AutoLISP I/O 函数访问
+
+  需CAD2021及以后的版本，且 lispsys = 1 或 2 mode: "r" 读取 "w" 写 "a"
+  追加
+
+
+156.2 示例
+──────────
+
+  (setq fp (open (findfile "acad.pgp") "r" "utf8")) (read-line fp)
+  (close fp)
+
+
+157 or
+══════
+
+157.1 (or [expr &rest])
+───────────────────────
+
+  返回对表达式进行逻辑或 (OR) 运算的结果
+
+
+158 函数osnap
+═════════════
+
+158.1 (osnap pt mode)
+─────────────────────
+
+  将某种对象捕捉模式作用于指定点而获得一个点，并返回该点
+
+
+159 polar
+═════════
+
+159.1 (polar pt ang dist)
+─────────────────────────
+
+  在 UCS 坐标系下，求某点的指定角度和指定距离处的点，并返回该点
+
+
+160 prin1,原样输出
+══════════════════
+
+160.1 (prin1 [expr [file-desc]])
+────────────────────────────────
+
+  在命令行打印表达式，或将表达式写入已打开的文件中，其结果可用 read 读入。
+
+
+161 princ,输出
+══════════════
+
+161.1 (princ [expr [file-desc]])
+────────────────────────────────
+
+  在命令行打印表达式，或将表达式写入已打开的文件中，处理转义。
+
+
+162 print
+═════════
+
+162.1 (print [expr [file-desc]])
+────────────────────────────────
+
+  在命令行打印表达式，或将表达式写入已打开的文件中，原样输出。
+
+
+163 progn
+═════════
+
+163.1 (progn [expr] &rest)
+──────────────────────────
+
+  顺序地对每一个表达式进行求值，并返回最后那个表达式的值详见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E8%BF%9B%E9%98%B6/lisp.org>
+
+
+164 prompt,屏幕提示
+═══════════════════
+
+164.1 (prompt msg)
+──────────────────
+
+  在屏幕提示区显示一个字符串
+
+
+165 函数quit
+════════════
+
+165.1 (quit)
+────────────
+
+  强制退出当前应用程序
+
+
+166 quote
+═════════
+
+166.1 (quote expr)
+──────────────────
+
+  返回表达式而不对其求值详见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org>
+
+
+167 read
+════════
+
+167.1 (read "[string]")
+───────────────────────
+
+  返回字符串中的第一个表或第一个原子
+
+
+168 read-line
+═════════════
+
+168.1 (read-line [file-desc])
+─────────────────────────────
+
+  从键盘或已打开文件中读取行结束符前的字符串
+
+
+169 函数redraw
+══════════════
+
+169.1 (redraw [ename [mode]])
+─────────────────────────────
+
+  重画当前视口或当前视口中的一个指定对象（图元）mode <Integer> 1 – 显示2
+  – 隐藏(blank it out) 3 – 亮显4 – 不亮显The use of entity highlighting
+  (mode 3) must be balanced with entity unhighlighting (mode 4).
+
+
+170 regapp
+══════════
+
+170.1 (regapp application)
+──────────────────────────
+
+  为当前 AutoCAD 图形注册一个应用名，为使用扩展对象数据作准备
+
+
+171 rem,求余数
+══════════════
+
+171.1 (rem [number number &rest])
+─────────────────────────────────
+
+  将第一个数除以第二个数，并返回余数
+
+
+172 repeat,循环指定次数
+═══════════════════════
+
+172.1 (repeat int [expr &rest])
+───────────────────────────────
+
+  对循环体中的每一个表达式进行指定次数的求值计算，并返回最后一个表达式的
+  值
+
+
+173 函数reverse
+═══════════════
+
+173.1 (reverse lst)
+───────────────────
+
+  将表的元素顺序倒置后返回
+
+
+174 rtos,数字转字符串
+═════════════════════
+
+174.1 (rtos number [mode [precision]])
+──────────────────────────────────────
+
+  将数字转换成字符串
+
+
+175 set,赋值到符号
+══════════════════
+
+175.1 (set 'sym expr)
+─────────────────────
+
+  将引号中的符号名的值设置成一个表达式的值
+
+
+176 setcfg
+══════════
+
+176.1 (setcfg cfgname cfgval)
+─────────────────────────────
+
+  将应用数据写到 acad.cfg 文件的 AppData 段中
+
+
+177 setfunhelp
+══════════════
+
+177.1 (setfunhelp c:fname [helpfile [topic [command]]])
+───────────────────────────────────────────────────────
+
+  给帮助工具注册一个用户定义函数，这样，用户在请求该命令的帮助时，就会调
+  用正确的帮助文件和主题
+
+
+178 setq,赋值
+═════════════
+
+178.1 (setq sym expr)
+─────────────────────
+
+  将一个或多个符号的值设置为相应表达式的值[sym expr] 可以重复，以实现多
+  个赋值
+
+
+179 set_tile
+════════════
+
+179.1 (set_tile "key" "value")
+──────────────────────────────
+
+  设置对话框控件的值
+
+
+180 函数setvar
+══════════════
+
+180.1 (setvar "varname" value)
+──────────────────────────────
+
+  设置 AutoCAD 系统变量为指定值，varname 为只读时会提示被拒。value值的类
+  型需与 varname 所需的类型一致。
+
+
+181 setview
+═══════════
+
+181.1 (setview view_descriptor [vport_id])
+──────────────────────────────────────────
+
+  为指定视口建立一个视图
+
+
+182 sin,正弦
+════════════
+
+182.1 (sin ang)
+───────────────
+
+  以实数形式返回角度的正弦值（以弧度为单位）
+
+
+183 slide_image
+═══════════════
+
+183.1 (slide_image x1 y1 width height "sldname")
+────────────────────────────────────────────────
+
+  在当前激活的对话框图像控件中显示 AutoCAD 幻灯片
+
+
+184 snvalid
+═══════════
+
+184.1 (snvalid sym_name [flag])
+───────────────────────────────
+
+  检查组成符号表名的各字符的有效性
+
+
+185 sqrt,平方根
+═══════════════
+
+185.1 (sqrt num)
+────────────────
+
+  以实数形式返回一个数的平方根
+
+
+186 ssadd
+═════════
+
+186.1 (ssadd [ename [ss]])
+──────────────────────────
+
+  将对象（图元）加入到选择集中，或创建新的选择集
+
+
+187 ssdel
+═════════
+
+187.1 (ssdel ename ss)
+──────────────────────
+
+  从选择集中撤消对象（图元）
+
+
+188 ssget,生成选择集
+════════════════════
+
+188.1 (ssget "|[method],c,w,cp,wp,x,l,i,p,:E,:S,:S:E,:D,:L|" [pt1 [pt2]] [pt-list] [filter-list])
+─────────────────────────────────────────────────────────────────────────────────────────────────
+
+  根据选定对象创建选择集
+
+
+188.2 用法
+──────────
+
+188.2.1 两点参数:c 反选 w 正选
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  (ssget "c" pt1 pt2 [filter-list])
+
+
+188.2.2 点列表参数:多边形cp wp，f栏选
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  (ssget "cp" pt-list [filter-list])
+
+
+188.2.3 无点参数的选择模式
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  (ssget "p" [filter-list]) ;; 上一个选择集l 最后创建的 (entlast) i 隐含
+  选择，先选择后执行x 整个文件:E 用鼠标拾取框选择对象:S 点选一次:S:E :D
+  可重复:L 不选择锁定图层对象
+
+  详：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/AutoLisp/ssget.org>
+
+
+189 ssgetfirst
+══════════════
+
+189.1 (ssgetfirst)
+──────────────────
+
+  判断哪些对象是被选取的和被夹取的，使用该函数可以实现先选择后执行。
+
+
+190 sslength
+════════════
+
+190.1 (sslength ss)
+───────────────────
+
+  求出一个选择集中的对象（图元）数目，并将其作为一个整数返回
+
+
+191 ssmemb
+══════════
+
+191.1 (ssmemb ename ss)
+───────────────────────
+
+  测试某对象（图元）是否是选择集的成员
+
+
+192 ssname
+══════════
+
+192.1 (ssname ss index)
+───────────────────────
+
+  返回选择集中由序号指定的那个对象（图元）的图元名
+
+
+193 ssnamex
+═══════════
+
+193.1 (ssnamex ss [index])
+──────────────────────────
+
+  获取关于选择集创建方式的信息
+
+
+194 sssetfirst
+══════════════
+
+194.1 (sssetfirst gripset [pickset])
+────────────────────────────────────
+
+  设置哪些对象既是被选取的又是被夹取的。gripset: 一般为 nil.
+
+
+195 startapp,启动外部程序
+═════════════════════════
+
+195.1 (startapp appcmd [file])
+──────────────────────────────
+
+  启动 Windows 应用程序
+
+
+196 start_dialog,显示对话框
+═══════════════════════════
+
+196.1 (start_dialog)
+────────────────────
+
+  显示对话框并将控制交给对话框
+
+
+197 start_image
+═══════════════
+
+197.1 (start_image key)
+───────────────────────
+
+  开始对对话框控件中的一个图像控件进行操作
+
+
+198 start_list
+══════════════
+
+198.1 (start_list key [operation [index]])
+──────────────────────────────────────────
+
+  开始处理对话框中的列表框或弹出式列表框中的列表
+
+
+199 strcase,字母转大写,字母转小写
+═════════════════════════════════
+
+199.1 (strcase "string" [lcase])
+────────────────────────────────
+
+  返回所有字母大写的字符串(如果 lcase 不为 nil 则小写)
+
+
+200 strcat,组合字符串
+═════════════════════
+
+200.1 (strcat "string" "[strings]")
+───────────────────────────────────
+
+  返回从左到右拼接后的字符串
+
+
+201 strlen,字符串长度
+═════════════════════
+
+201.1 (strlen "[string]" &rest)
+───────────────────────────────
+
+  以整数形式返回一个字符串中字符的个数(不一定是字节长度) unicode版本每个
+  字的长度为 1.
+
+
+202 subst,替换表项,替换表元素
+═════════════════════════════
+
+202.1 (subst newitem olditem lst)
+─────────────────────────────────
+
+  在表中搜索某旧项，并将表中出现的每一个旧项用新项代替，然后返回修改后所
+  得的表详见：
+  <https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org>
+
+
+203 substr,求子串
+═════════════════
+
+203.1 (substr "string" start [length])
+──────────────────────────────────────
+
+  返回字符串中的一个子字符串，字符串中的第一个字符的位置为 1
+
+
+204 函数tablet
+══════════════
+
+204.1 (tablet code [row1 row2 row3 direction])
+──────────────────────────────────────────────
+
+  获取和设置数字化仪校准
+
+
+205 tblnext
+═══════════
+
+205.1 (tblnext "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" [rewind])
+──────────────────────────────────────────────────────────────────────────────────
+
+  在符号表中查找下一项。当 rewind 为 t 时，指向符号表的第一项。
+
+
+206 tblobjname
+══════════════
+
+206.1 (tblobjname "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" symbol)
+───────────────────────────────────────────────────────────────────────────────────
+
+  返回指定符号表条目的图元名
+
+
+207 tblsearch
+═════════════
+
+207.1 (tblsearch "|block,dimstyle,layer,ltype,style,ucs,view,vport,appid|" symbol [setnext])
+────────────────────────────────────────────────────────────────────────────────────────────
+
+  在指定的符号表中搜索符号名
+
+
+208 term_dialog
+═══════════════
+
+208.1 (term_dialog)
+───────────────────
+
+  终止当前所有的对话框，就象用户取消了它们一样
+
+
+209 terpri
+══════════
+
+209.1 (terpri)
+──────────────
+
+  在命令行上输出一个换行符
+
+
+210 textbox
+═══════════
+
+210.1 (textbox elist)
+─────────────────────
+
+  测量一个指定文本对象的尺寸，并返回围住该文本的一个矩形框的对角坐标
+
+
+211 textpage
+════════════
+
+211.1 (textpage)
+────────────────
+
+  从图形屏幕切换至文本屏幕
+
+
+212 函数textscr
+═══════════════
+
+212.1 (textscr)
+───────────────
+
+  切换至文本屏幕（相当于 AutoCAD Flip Screen 功能键）
+
+
+213 trace,调试跟踪
+══════════════════
+
+213.1 (trace [function &rest])
+──────────────────────────────
+
+  调试 AutoLISP 程序时的辅助函数
+
+
+214 trans,坐标换算,坐标转换
+═══════════════════════════
+
+214.1 (trans pt from to [disp])
+───────────────────────────────
+
+  将 pt 坐标(3维点)从坐标系换算到坐标系disp:
+
+  非 nil 则以3维位移量的转换模式来换算 pt from to: 0 表示 WCS 1 表示当前
+  UCS 2 搭配码 0 1 时，表示当前视口的显示坐标系 DCS搭配码 3 时，表示当前
+  模型空间视口的 DCS 3 图纸空间 DCS，仅搭配码 2
+
+
+215 函数type
+════════════
+
+215.1 (type item)
+─────────────────
+
+  返回指定项的数据类型
+
+
+216 unload_dialog
+═════════════════
+
+216.1 (unload_dialog dcl_id)
+────────────────────────────
+
+  卸载 DCL 文件
+
+
+217 untrace,清除跟踪
+════════════════════
+
+217.1 (untrace [function &rest])
+────────────────────────────────
+
+  清除指定函数的跟踪标志
+
+
+218 vector_image
+════════════════
+
+218.1 (vector_image x1 y1 x2 y2 color)
+──────────────────────────────────────
+
+  在当前激活的对话框图像控件上显示一个矢量线
+
+
+219 函数ver
+═══════════
+
+219.1 (ver)
+───────────
+
+  返回当前 AutoLISP 版本号的字符串
+
+
+220 函数vports
+══════════════
+
+220.1 (vports)
+──────────────
+
+  返回表示当前视口配置的视口描述符表
+
+
+221 wcmatch,字符匹配,通配符
+═══════════════════════════
+
+221.1 (wcmatch "string" pattern)
+────────────────────────────────
+
+  将模式字符串与某指定的字符串进行匹配比较
+
+
+221.2 通配符
+────────────
+
+  #（pound） 匹配任何单个数字。@（at） 匹配任何单个字母字符。.（period）
+  匹配任何单个非字母数字字符。*（星号） 匹配任何字符序列，包括空字符序列，
+  它可以在搜索模式中的任何位置使用：在开头、中间或结尾。? (问号) 匹配任
+  何单个字符。`（波浪号）如果它是模式中的第一个字符，那么它将匹配除模式
+  之外的任何字符。[...]  匹配包含的任何一个字符。['…]  匹配任何未括起来
+  的单个字符。-（连字符）在括号内用于指定单个字符的范围。，（逗号） 分隔
+  两个匹配模式。`（反引号）转义特殊字符（逐字读取下一个字符）。
+
+
+222 while
+═════════
+
+222.1 (while testexpr [expr &rest])
+───────────────────────────────────
+
+  对测试表达式进行求值，如果它不是 nil，则执行循环体中的表达式，重复这个
+  过程，直到测试表达式的求值结果为 nil
+
+
+223 write-char
+══════════════
+
+223.1 (write-char num [file-desc])
+──────────────────────────────────
+
+  将一个字符写到屏幕上或一个已打开的文件中
+
+
+224 write-line
+══════════════
+
+224.1 (write-line "string" [file-desc])
+───────────────────────────────────────
+
+  将字符串写到屏幕上或一个已打开的文件中
+
+
+225 xdroom
+══════════
+
+225.1 (xdroom ename)
+────────────────────
+
+  返回对象可供使用的扩展数据 (Xdata) 空间的大小
+
+
+226 xdsize
+══════════
+
+226.1 (xdsize lst)
+──────────────────
+
+  返回一个表作为扩展数据连接到对象（图元）上时所占用的空间大小（以字节表
+  示）
+
+
+227 xload
+═════════
+
+227.1 (xload application [onfailure])
+─────────────────────────────────────
+
+  这个函数将装入一个AutoCAD高级开发系统(ADS)的应用程序。
+
+
+228 xunload
+═══════════
+
+228.1 (xunload application [onfailure])
+───────────────────────────────────────
+
+  此函数将卸载一个ADS应用程序。如果应用程序被成功地卸下。那么， 应用程序
+  的名称将被返回。否则， 一个错误信息将被发出。
+
+
+229 zerop
+═════════
+
+229.1 (zerop number)
+────────────────────
+
+  检查一个数的值是否为 0
+
+
+230 bpoly
+═════════
+
+230.1 (bpoly pt [ss vector])
+────────────────────────────
+
+  搜索点附近曲线，生成最小边界
+
+
+231 cddr
+════════
+
+231.1 (cddr lst)
+────────────────
+
+  返回去掉了前两个元素的表
+
+
+232 cdddr
+═════════
+
+232.1 (cdddr lst)
+─────────────────
+
+  返回去掉了前三个元素的表
+
+
+233 cddddr
+══════════
+
+233.1 (cddddr lst)
+──────────────────
+
+  返回去掉了前四个元素的表
+
+
+234 cdddar
+══════════
+
+234.1 (cdddar lst)
+──────────────────
+
+  返回表内第一个表，并去掉前三个元素。
+
+
+235 cddar
+═════════
+
+235.1 (cddar lst)
+─────────────────
+
+  返回表内第一个表，并去掉前两个元素
+
+
+236 cddadr
+══════════
+
+236.1 (cddadr lst)
+──────────────────
+
+  取坐标用1
+
+
+237 cddaar
+══════════
+
+237.1 (cddaar lst)
+──────────────────
+
+  取坐标用2
+
+
+238 cdar
+════════
+
+238.1 (cdar lst)
+────────────────
+
+  返回表内第一个表中去掉了第一个元素的表
+
+
+239 cdadr
+═════════
+
+239.1 (cdadr lst)
+─────────────────
+
+  获取表第二个元素，然后再去除第一个元素
+
+
+240 cdaddr
+══════════
+
+240.1 (cdaddr lst)
+──────────────────
+
+  取坐标用3
+
+
+241 cdadar
+══════════
+
+241.1 (cdadar lst)
+──────────────────
+
+  返回表内第一个子表的第二个子表，且去掉第一个元素！
+
+
+242 cdaar
+═════════
+
+242.1 (cdaar lst)
+─────────────────
+
+  返回三层表以上，一层第1项，二层第1项，三层除掉第1项数据
+
+
+243 cdaadr
+══════════
+
+243.1 (cdaadr lst)
+──────────────────
+
+  数据库中没有收录这个函数!
+
+
+244 cdaaar
+══════════
+
+244.1 (cdaaar lst)
+──────────────────
+
+  返回4层表，一层第1项，二层第1项，三层第1项，四层去掉第一项数据
+
+
+245 cadddr
+══════════
+
+245.1 (cadddr lst)
+──────────────────
+
+  返回表的第四个元素（易云网络）
+
+
+246 caddar
+══════════
+
+246.1 (caddar lst)
+──────────────────
+
+  返回表内第一个表的第三个元素。
+
+
+247 cadar
+═════════
+
+247.1 (cadar lst)
+─────────────────
+
+  返回表内第一个表的第二个值
+
+
+248 cadadr
+══════════
+
+248.1 (cadadr lst)
+──────────────────
+
+  返回表内第二个表的第二个值
+
+
+249 cadaar
+══════════
+
+249.1 (cadaar lst)
+──────────────────
+
+  返回第三个内表里面的第一个值
+
+
+250 caar
+════════
+
+250.1 (caar lst)
+────────────────
+
+  返回表内的第一个子表的第一个值
+
+
+251 caadr
+═════════
+
+251.1 (caadr lst)
+─────────────────
+
+  反回表内第二个表的第一个值
+
+
+252 caaddr
+══════════
+
+252.1 (caaddr lst)
+──────────────────
+
+  反回表内第三个表的第一个值
+
+
+253 caadar
+══════════
+
+253.1 (caadar lst)
+──────────────────
+
+  相当于(car(car(cdr(car lst))))
+
+
+254 caaar
+═════════
+
+254.1 (caaar lst)
+─────────────────
+
+  第3级子表的第一个元素相当于(car(car(car lst)))
+
+
+255 caaadr
+══════════
+
+255.1 (caaadr lst)
+──────────────────
+
+  相当于(car(car(car(cdr lst))))的简写
+
+
+256 caaaar
+══════════
+
+256.1 (caaaar lst)
+──────────────────
+
+  第4级子表的第一个元素
+
+
+257 vl-string->list
+═══════════════════
+
+257.1 (vl-string->list "string")
+────────────────────────────────
+
+  将字符串转换为字符代码表
+
+
+258 vl-princ-to-string
+══════════════════════
+
+258.1 (vl-princ-to-string data)
+───────────────────────────────
+
+  返回 LISP 数据的字符串表示，就象它是由 princ 函数输出的一样
+
+
+259 vl-mkdir,创建目录
+═════════════════════
+
+259.1 (vl-mkdir directoryname)
+──────────────────────────────
+
+  创建目录
+
+
+260 vl-list-loaded-vlx
+══════════════════════
+
+260.1 (vl-list-loaded-vlx)
+──────────────────────────
+
+  返回与当前文档相关联的所有独立名称空间 VLX 文件
+
+
+261 vl-filename-directory
+═════════════════════════
+
+261.1 (vl-filename-directory filename)
+──────────────────────────────────────
+
+  去掉文件的名称和扩展名，返回文件的路径。
+
+
+262 vl-list*
+════════════
+
+262.1 (vl-list* object [object] &rest)
+──────────────────────────────────────
+
+  构造并返回表
+
+
+263 _vl-times
+═════════════
+
+263.1 (_vl-times)
+─────────────────
+
+  下面是用法(setq start (car (_vl-times))) ;测试代码(/(-(car
+  (_vl-times))start)1000.) 计时器函数，可用于计算程序运行效率
+
+
+264 vl-infp
+═══════════
+
+264.1 (vl-infp num)
+───────────────────
+
+  (vl-infp 333) 返回nil (vl-infp 1e2222) 返回T，判断一个数是否无穷大
+
+
+265 vl-bt
+═════════
+
+265.1 (vl-bt)
+─────────────
+
+  错误跟踪
+
+
+266 vl-acad-defun
+═════════════════
+
+266.1 (vl-acad-defun 'symbol)
+─────────────────────────────
+
+  将 Visual LISP 函数符号定义为外部子例程
+
+
+267 vl-acad-undefun
+═══════════════════
+
+267.1 (vl-acad-undefun 'symbol)
+───────────────────────────────
+
+  取消对 Visual LISP 函数符号的定义，使 ObjectARX 应用程序不能再使用它。
+
+
+268 vl-arx-import
+═════════════════
+
+268.1 (vl-arx-import [function-or-application])
+───────────────────────────────────────────────
+
+  将 ObjectARX/ADSRX 函数输入到独立名称空间 VLX
+
+
+269 vl-bb-ref
+═════════════
+
+269.1 (vl-bb-ref 'variable)
+───────────────────────────
+
+  返回黑板名称空间中变量的值
+
+
+270 vl-bb-set
+═════════════
+
+270.1 (vl-bb-set 'symbol value)
+───────────────────────────────
+
+  设置黑板名称空间中的变量
+
+
+271 vl-catch-all-apply
+══════════════════════
+
+271.1 (vl-catch-all-apply 'function lst)
+────────────────────────────────────────
+
+  将参数表传递给指定函数并截取错误
+
+
+272 vl-catch-all-error-message
+══════════════════════════════
+
+272.1 (vl-catch-all-error-message error-obj)
+────────────────────────────────────────────
+
+  从错误对象返回字符串
+
+
+273 vl-catch-all-error-p
+════════════════════════
+
+273.1 (vl-catch-all-error-p arg)
+────────────────────────────────
+
+  检测测试参数是否是 vl-catch-all-apply 返回的错误对象
+
+
+274 vl-cmdf
+═══════════
+
+274.1 (vl-cmdf [arguments] &rest)
+─────────────────────────────────
+
+  执行 AutoCAD 命令
+
+
+275 vl-consp
+════════════
+
+275.1 (vl-consp list-variable)
+──────────────────────────────
+
+  检测测试表是否不为 nil
+
+
+276 vl-directory-files
+══════════════════════
+
+276.1 (vl-directory-files "directory" "|pattern,*.*,*.dwg|" |directories,-1,0,1|)
+─────────────────────────────────────────────────────────────────────────────────
+
+  获取指定目录中的所有文件列表，三个参数均可省略。directory : 指定的目录,默
+  认为当前 dwg文件所在目录pattern : 匹配字符串 当为 nil时,等同于"*.*"
+  directorys: -1 只列出目录，0 列出目录和文件，1 只列出文件
+
+  返回值:列表 或 nil
+
+
+277 vl-doc-export
+═════════════════
+
+277.1 (vl-doc-export 'function)
+───────────────────────────────
+
+  使函数在当前文档中可用
+
+
+278 vl-doc-import
+═════════════════
+
+278.1 (vl-doc-import application [’function &rest])
+───────────────────────────────────────────────────
+
+  将早先输出的函数输入到 VLX 名称空间
+
+
+279 vl-doc-ref
+══════════════
+
+279.1 (vl-doc-ref 'symbol)
+──────────────────────────
+
+  从当前文档名称空间中获取变量的值
+
+
+280 vl-doc-set
+══════════════
+
+280.1 (vl-doc-set 'symbol value)
+────────────────────────────────
+
+  设置当前文档名称空间中变量的值
+
+
+281 vl-every
+════════════
+
+281.1 (vl-every predicate-function lst [lst] &rest)
+───────────────────────────────────────────────────
+
+  检查论断结合每个元素后是否均为真
+
+
+282 vl-exit-with-error
+══════════════════════
+
+282.1 (vl-exit-with-error msg)
+──────────────────────────────
+
+  将控制从 VLX 错误处理器传递给调用它的名称空间的 *error* 函数
+
+
+283 vl-exit-with-value
+══════════════════════
+
+283.1 (vl-exit-with-value value)
+────────────────────────────────
+
+  将值返回到从其他名称空间调用 VLX 的函数
+
+
+284 vl-file-copy
+════════════════
+
+284.1 (vl-file-copy source-file destination-file [append])
+──────────────────────────────────────────────────────────
+
+  将一个文件的内容复制或附加到另一个文件
+
+
+285 vl-file-delete
+══════════════════
+
+285.1 (vl-file-delete filename)
+───────────────────────────────
+
+  删除文件
+
+
+286 vl-file-directory-p
+═══════════════════════
+
+286.1 (vl-file-directory-p path)
+────────────────────────────────
+
+  判断文件夹是否存在
+
+
+287 vl-filename-base
+════════════════════
+
+287.1 (vl-filename-base filename)
+─────────────────────────────────
+
+  去掉文件的路径和扩展名，返回文件的名称
+
+
+288 vl-filename-extension
+═════════════════════════
+
+288.1 (vl-filename-extension filename)
+──────────────────────────────────────
+
+  返回文件的扩展名，而去掉文件名中的其他部分
+
+
+289 vl-filename-mktemp
+══════════════════════
+
+289.1 (vl-filename-mktemp [pattern directory extension])
+────────────────────────────────────────────────────────
+
+  为临时文件计算唯一的文件名
+
+
+290 vl-file-rename
+══════════════════
+
+290.1 (vl-file-rename old-filename new-filename)
+────────────────────────────────────────────────
+
+  重命名文件
+
+
+291 vl-file-size
+════════════════
+
+291.1 (vl-file-size filename)
+─────────────────────────────
+
+  获取文件的大小（字节）
+
+
+292 vl-file-systime
+═══════════════════
+
+292.1 (vl-file-systime filename)
+────────────────────────────────
+
+  返回指定文件的上一次修改时间
+
+
+293 vl-get-resource
+═══════════════════
+
+293.1 (vl-get-resource text-file)
+─────────────────────────────────
+
+  返回 VLX 中保存的 .txt 文件中的文字
+
+
+294 vl-list-exported-functions
+══════════════════════════════
+
+294.1 (vl-list-exported-functions [appname])
+────────────────────────────────────────────
+
+  列出输出的函数，appname为已加载的vlx应用，不包含.vlx扩展名。
+
+
+295 vl-list-length
+══════════════════
+
+295.1 (vl-list-length list-or-cons-object)
+──────────────────────────────────────────
+
+  计算表的长度
+
+
+296 vl-list->string
+═══════════════════
+
+296.1 (vl-list->string char-codes-list)
+───────────────────────────────────────
+
+  将一系列与整数表相关联的字符组合成字符串 。
+
+
+297 vl-load-all
+═══════════════
+
+297.1 (vl-load-all filename)
+────────────────────────────
+
+  将文件加载到所有打开的 AutoCAD 文档中，以及在当前 AutoCAD 任务中后续打
+  开的任何文档中
+
+
+298 vl-load-com
+═══════════════
+
+298.1 (vl-load-com)
+───────────────────
+
+  将 Visual LISP 扩展功能加载到 * false，false
+
+
+299 vl-load-reactors
+════════════════════
+
+299.1 (vl-load-reactors)
+────────────────────────
+
+  加载反应器支持函数
+
+
+300 vl-member-if
+════════════════
+
+300.1 (vl-member-if predicate-function lst)
+───────────────────────────────────────────
+
+  检测测试每一个表成员都符合给定的测试函数
+
+
+301 vl-member-if-not
+════════════════════
+
+301.1 (vl-member-if-not predicate-function lst)
+───────────────────────────────────────────────
+
+  检测测试论断是否对表成员中的一个为 nil
+
+
+302 vl-position
+═══════════════
+
+302.1 (vl-position symbol lst)
+──────────────────────────────
+
+  返回指定表项目的索引
+
+
+303 vl-prin1-to-string
+══════════════════════
+
+303.1 (vl-prin1-to-string data)
+───────────────────────────────
+
+  返回 LISP 数据的字符串表示，就象它是由 prin1 函数输出的一样
+
+
+304 vl-propagate
+════════════════
+
+304.1 (vl-propagate 'symbol)
+────────────────────────────
+
+  将变量的值复制到所有打开的文档名称空间（并在当前 AutoCAD 任务中打开的
+  所有后续图形中设置它的值）
+
+
+305 vl-registry-delete
+══════════════════════
+
+305.1 (vl-registry-delete reg-key [val-name])
+─────────────────────────────────────────────
+
+  从 Winows 注册表中删除指定的主键或值
+
+
+306 vl-registry-descendents
+═══════════════════════════
+
+306.1 (vl-registry-descendents reg-key [val-names])
+───────────────────────────────────────────────────
+
+  返回指定注册表键的子键或值名称的列表
+
+
+307 vl-registry-read
+════════════════════
+
+307.1 (vl-registry-read reg-key [val-name])
+───────────────────────────────────────────
+
+  对于指定的主键/值对，返回 Winodws 注册表存储的数据
+
+
+308 vl-registry-write
+═════════════════════
+
+308.1 (vl-registry-write reg-key [val-name val-data])
+─────────────────────────────────────────────────────
+
+  在 Windows 注册表中创建主键
+
+
+309 vl-remove
+═════════════
+
+309.1 (vl-remove element-to-remove lst)
+───────────────────────────────────────
+
+  删除表中的元素
+
+
+310 vl-remove-if
+════════════════
+
+310.1 (vl-remove-if predicate-function lst)
+───────────────────────────────────────────
+
+  返回由所提供表中的所有不满足测试函数的元素组成的表
+
+
+311 vl-remove-if-not
+════════════════════
+
+311.1 (vl-remove-if-not predicate-function lst)
+───────────────────────────────────────────────
+
+  返回由所提供表中的所有能通过测试函数的元素组成的表
+
+
+312 vl-some
+═══════════
+
+312.1 (vl-some predicate-functionlist [list] &rest)
+───────────────────────────────────────────────────
+
+  检查论断是否对某个元素组合不为 nil
+
+
+313 vl-sort
+═══════════
+
+313.1 (vl-sort lst comparison-function)
+───────────────────────────────────────
+
+  根据给定的比较函数来对表中的元素排序
+
+
+314 vl-sort-i
+═════════════
+
+314.1 (vl-sort-i lst comparison-function)
+─────────────────────────────────────────
+
+  根据给定的比较函数对表中的元素排序，并返回元素的索引号
+
+
+315 vl-string-elt
+═════════════════
+
+315.1 (vl-string-elt "string" position)
+───────────────────────────────────────
+
+  返回字符串中指定位置字符的 ASCII 表示
+
+
+316 vl-string-left-trim
+═══════════════════════
+
+316.1 (vl-string-left-trim char-set "string")
+─────────────────────────────────────────────
+
+  返回从源字符串首端开始，挨个删除所提供的字符集中的字符(遇到不属于字符
+  集中的则结束)后的字符串
+
+
+317 vl-string-mismatch
+══════════════════════
+
+317.1 (vl-string-mismatch str1 str2 [pos1 pos2 ignore-case-p])
+──────────────────────────────────────────────────────────────
+
+  返回两个字符串中从指定位置开始，最长的共同前缀的长度
+
+
+318 vl-string-position
+══════════════════════
+
+318.1 (vl-string-position char-code str [start-pos [from-end-p]])
+─────────────────────────────────────────────────────────────────
+
+  在字符串中查找具有指定 ASCII 码的字符
+
+
+319 vl-string-right-trim
+════════════════════════
+
+319.1 (vl-string-right-trim char-set "string")
+──────────────────────────────────────────────
+
+  返回从源字符串尾端开始，挨个删除所提供的字符集中的字符(遇到不属于字符
+  集中的则结束)后的字符串
+
+
+320 vl-string-search
+════════════════════
+
+320.1 (vl-string-search pattern "string" [start-pos])
+─────────────────────────────────────────────────────
+
+  在字符串中搜索指定子串
+
+
+321 vl-string-subst
+═══════════════════
+
+321.1 (vl-string-subst new-str pattern "string" [start-pos])
+────────────────────────────────────────────────────────────
+
+  返回从头起或从指定位置起，替换一次子字符串后的字符串
+
+
+322 vl-string-translate
+═══════════════════════
+
+322.1 (vl-string-translate source-set dest-set str)
+───────────────────────────────────────────────────
+
+  在字符串中替换字符
+
+
+323 vl-string-trim
+══════════════════
+
+323.1 (vl-string-trim char-set str)
+───────────────────────────────────
+
+  返回从源字符串首端和尾端开始，分别挨个删除所提供的字符集中的字符(分别
+  遇到不属于字符集中的则分别结束)后的字符串
+
+
+324 vl-symbol-name
+══════════════════
+
+324.1 (vl-symbol-name symbol)
+─────────────────────────────
+
+  返回包含某符号名的字符串
+
+
+325 vl-symbolp
+══════════════
+
+325.1 (vl-symbolp obj)
+──────────────────────
+
+  检测测试指定对象是否为符号
+
+
+326 vl-symbol-value
+═══════════════════
+
+326.1 (vl-symbol-value symbol)
+──────────────────────────────
+
+  返回当前绑定到符号的值
+
+
+327 vl-unload-vlx
+═════════════════
+
+327.1 (vl-unload-vlx appname)
+─────────────────────────────
+
+  卸载已经加载到自己的名称空间的 VLX 应用程序
+
+
+328 vl-vbaload
+══════════════
+
+328.1 (vl-vbaload filename)
+───────────────────────────
+
+  加载 Visual Basic 工程
+
+
+329 vl-vbarun
+═════════════
+
+329.1 (vl-vbarun macroname)
+───────────────────────────
+
+  运行 Visual Basic 宏
+
+
+330 vl-vlx-loaded-p
+═══════════════════
+
+330.1 (vl-vlx-loaded-p appname)
+───────────────────────────────
+
+  检测测试某独立名称空间当前是否加载
+
+
+331 vlisp-compile
+═════════════════
+
+331.1 (vlisp-compile 'mode filename [output-filename])
+──────────────────────────────────────────────────────
+
+  将 AutoLISP 源代码编译到 FAS 文件支持的平台：仅 Windows参数：'mode 类
+  型：符号编译器模式，可以是以下符号之一：
+
+  st 标准版本模式 - 生成最小的输出文件，适合包含单个文件的程序。
+
+  lsm间接优化和链接 - 优化编译后的文件，但不创建对编译代码中编译函数的直
+  接引用。
+
+  lsa直接优化和链接 - 优化编译后的文件，并创建对编译代码中编译函数的直接
+  引用（而不是创建对函数符号的直接引用）。
+
+  注意:这两个优化选项最适合大型和复杂程序。优化的基本功能如下：链接函数
+  调用可创建对编译代码中编译函数的直接引用，而不是函数符号。此功能可提高
+  编译代码的性能，并在运行时保护代码以防止函数重定义。删除函数名称以提高
+  编译代码的安全性并减少程序大小和加载时间。删除所有局部变量的名称并直接
+  链接其引用。这还使编译的代码更加安全，并减少程序大小和加载时间。
+
+  filename类型：字符串AutoLISP 源文件名。如果源文件位于 AutoCAD 支持文件
+  搜索路径中，则指定文件名时可以省略路径。如果省略文件扩展名，则假定使用
+  .lsp。
+
+  output-filename类型：字符串编译的输出文件名。如果未指定输出文件，
+  vlisp-compile将使用与输入文件相同的名称命名输出，但将扩展名替换为 .fas。
+
+  注意:如果指定输出文件名但未指定输入或输出文件的路径名，vlisp-compile
+  会将输出文件放置在 AutoCAD 安装目录中。
+
+  返回值类型：T 或 nil如果编译成功，则为 T；否则为 nil。
+
+
+332 error,自定义错误处理
+════════════════════════
+
+332.1 (*error* msg)
+───────────────────
+
+  用户定义的错误处理函数。
+
+
+333 pop-error-mode,恢复错误模式
+═══════════════════════════════
+
+333.1 (*pop-error-mode*)
+────────────────────────
+
+  错误处理函数，使用 *push-error-using-command* 或
+  *push-error-using-stack* 的前一次调用
+
+  返回T值。
+
+  在用之前定义的 *error*处理程序替换自定义的*error*处理程序函数后，应调
+  用*pop-error-mode*。
+
+
+  注意:在*error*处理程序中使用command-s函数时，不需要此函数。
+
+
+334 push-error-using-command
+════════════════════════════
+
+334.1 (*push-error-using-command*)
+──────────────────────────────────
+
+  错误处理函数，指示在自定义*Error*处理程序中使用命令函数返回T值。
+
+  在定义包含命令函数用法的自定义*error*处理程序函数后，应使用command*调
+  用*push error。
+
+  使用命令*push-error-using-command*时，您只能访问全局变量，而不能访问自
+  定义*error*处理程序中发生错误的函数中定义的任何局部变量。如果需要访问
+  局部变量，请将命令函数的任何实例替换为command-s函数，并使用
+  *push-error-using-stack*代替。
+
+  注意:在本地自定义*error*处理程序中使用命令函数时，无法使用此函数。
+
+
+335 push-error-using-stack
+══════════════════════════
+
+335.1 (*push-error-using-stack*)
+────────────────────────────────
+
+  错误处理函数，指示在自定义*Error*处理程序中使用AutoLISP堆栈中的变量
+
+  Remarks Allows access to the local AutoLISP variables on the stack
+  defined within the function where the error occurred from your custom
+  *error* handler. A call to the *push-error-using-stack* function
+  overrides a previous call to *push-error-using-command*.
+
+  If *push-error-using-command* or *push-error-using-stack* are not
+  called, by default AutoLISP works as if *push-error-using-stack* was
+  called.
+
+  注意:This function cannot be used when the command function is used
+  within the local custom *error* handler.

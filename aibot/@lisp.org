@@ -1,64 +1,96 @@
-#+prefix: @lisp
-* @lisp,atlisp
-@lisp CAD应用云（服务端） ：提供 CAD插件、二次开发程序的应用市场，CAD 云计算服务(IaaS Paas SaaS) 的一站式服务平台。
+#+prefix: @lisp使用指南
 
-@lisp（客户端）是一个运行于 AutoCAD、中望CAD、浩辰CAD及类似兼容的CAD系统中的应用管理器。用于管理 AutoLisp 程序的网络下载安装、加载、卸载、查询等。可方便地实现 autolisp 程序的云管理。
+* 使用指南,@lisp使用指南
+@lisp 全称 *CAD应用云*。这是一组@lisp使用介绍。
 
-=@lisp函数=
+* @lisp是什么
+@lisp 全称 *CAD应用云* ，是一个运行于 AutoCAD、中望CAD、浩辰CAD及类似兼容的CAD系统中的应用管理器。用于管理 AutoLisp 程序的网络下载安装、加载、卸载、查询等。可方便地实现 autolisp 程序的云管理。
 
-* @:add-menu,添加菜单
-** (@:add-menu "类别" "功能名称" 'expr)
-向 @lisp 添加菜单 、 命令面板项。
-** 示例
-(@:add-menu "大绘图" "附着签名" '(@:attach-sign))
-* @:add-menus,添加多个菜单
-** (@:add-menus lst)
-向 @lisp 添加菜单组 、 命令面板项。
-** 示例
-(@:add-menus
-   '("类别"
-     ("功能1" (expr1)) ; 本身在 quote 中，不用重复 quote
-     ("功能2" (expr2))
-     ("功能3" (expr3))))
-;; 多个类别，多个功能
-(@:add-menus
-   '(("类别1"
-      ("功能1" (expr1))
-      ("功能2" (expr2))
-      ("功能3" (expr3)))
-     ("类别2"
-      ("功能4" (expr6))
-      ("功能5" (expr5))
-      ("功能6" (expr4)))))
-* @:define-hotkey,定义加速键
-** (@:define-hotkey "SHORT"  'expr)
-* @:define-config
-#+BEGIN_SRC lisp 
-(@:define-config 'test:projects-output "D:\\Output" "本地PDF输出目录")
+* 安装@lisp
+*大道至简*
+将以下代码复制到 CAD 命令行内，回车即可开始安装 @lisp kernel。@lisp kernel（内核）包含 @lisp函数库 及 @lisp应用云 的基本管理功能。
+
+(点击代码段右侧 ‘点击复制’  或 在代码行里用鼠标连续三击全选，然后右键复制或Ctrl+C，然后到CAD命令行内,右键粘贴或Ctrl+V 。)
+
+#+BEGIN_SRC lisp
+  (progn(vl-load-com)(setq s strcat h "http" o(vlax-create-object (s"win"h".win"h"request.5.1"))v vlax-invoke e eval r read)(v o'open "get" (s h"://atlisp.""cn/@"):vlax-true)(v o'send)(v o'WaitforResponse 1000)(e(r(vlax-get-property o'ResponseText))))
 #+END_SRC
-* @:define-configs
 
-#+BEGIN_SRC lisp 
-  (@:define-configs
-      '(test:projects-output "D:\\Output" "本地PDF输出目录"))
+安装完成后会出现 @lisp(A) 菜单。并弹出一个使用提示。
 
-  (@:define-configs
-      '((test:projects-output "D:\\Output" "本地PDF输出目录")
-        (test:option1 5  "配置项1")
-        (test:option2 "str"  "配置项2")
-        (test:option3 3.14  "配置项3")
-        ))
-#+END_SRC
-* @:set-config,设置@lisp变量及修改值
-#+begin_src lisp
-  (@:set-config 可供用户修改的变量名(符号)  用户设定值)
-#+end_src
-* @:get-config,变量读值
-#+begin_src lisp
-   (@:get-config 可供用户修改的变量名(符号)  )
-#+end_src  
-* 翻译函数_
-i18n ，将英文翻译成您的本地语言
-#+begin_src lisp
-  (_"Help") ;;=> "帮助"
-#+end_src 
+* 安装教程
+不出户 知天下 不窥牖 见天道
+
+
+* 使用@lisp
+@lisp 基本功能菜单都在 @lisp -> 配置 菜单下。
+* 重新加载或功能提示
+命令:@
+重新加载 @lisp , 如果 @lisp 不完整，多次运行可自行修补完整 。
+
+在命令行输入 @ ，有些CAD软件会呈现一系列相关功能命令，可以按上下箭头选择需要的功能命令。
+   
+* 命令面板
+命令:@@
+显示 *@lisp* 命令面板。面板功能按钮与菜单是一一对应的，操作更快捷一点。
+
+在智能命令框内输入中文短语并回车，可以弹出与这些短语相关的功能按钮。选择相应的功能按钮，就会下载并执行这个功能。
+* 对话
+命令:@C
+chat, 与@lisp服务对话。有两种对话模式， study 模式用于查询命令、变量、@lisp功能以及开发函数的用法； free 模式可以自由聊天。
+* 修复
+命令:@F
+修复@lisp，当@lisp无法启动、升级失败时，可以使用 @F 命令修复你的@lisp系统。
+* 关于@lisp
+命令:@H
+显示CAD命令及用法。
+
+* 应用管理
+命令:@P
+图形界面的应用包管理器，用于管理 '应用包'的安装、加载、卸载。
+
+当 *勾选* 了某个或某些应用后，@lisp 系统会在加载 *@lisp* 时，同时加载这些应用。
+
+如果本地没有这个应用的副本， *@lisp* 会从网站下载一个副本到你的硬盘。 
+
+如果本地的副本版本较低， *@lisp* 会从网站下载一个新版本的副本到你的硬盘，也就是升级。
+
+* 命令行安装
+命令:@I
+行方式安装应用包。输入 @I 并回车或空格，然后输入应用包名(英文名).就可以完成这个应用包的安装。
+
+* 配置管理
+命令:@S
+设置系统变量的值。
+
+* 命令行显示已安装的包
+命令:@L
+在命令行显示已安装的应用包列表。
+
+* 重建菜单
+命令:@M
+重新生成菜单。如果 @lisp 菜单与现有的环境不匹配，可运行此命令。
+
+* 命令行移除包,命令行卸载包
+命令:@R
+remove,命令行工具 移除应用包。在应用管理器中，取消 ‘勾选’ 后的功能相同。
+
+* 升级系统
+命令:@U
+update，手动更新 @lisp 系统及已安装的包。
+* 访问@lisp网站
+命令:@W
+www，访问 @lisp 网站。查询 @lisp 新动态及新增应用包。
+* 全部功能
+命令:@X
+@lisp全部功能，对于autocad 2016+以选项板的形式显示，其它cad以命令面板的形式显示。
+
+* @lisp主目录
+打开本地@lisp的主目录，所有@lisp应用都存放在这个目录下。
+
+* 自毁@lisp
+删除@lisp主文件和菜单文件。再次打开CAD后，就不加载@lisp了。
+
+@lisp目录一其它文件可保留，以便于以后再次安装时使用原来的配置。
+
+如果不需要，可以手动删除@lisp目录及以下的所有文件。
