@@ -260,7 +260,8 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 获得对象（图元）的定义数据
 * entlast
 ** (entlast)
-返回图形中最后那个未删除的主对象（图元）名称
+返回图形中最后那个未删除的主对象（图元名）
+主对象意思是如果是一个属性块，将返回这个属性块参照，而不是与之相关的属性值图元。
 * entmake,创建图元
 ** (entmake [elist])
 在图形中创建一个新图元
@@ -277,6 +278,8 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * entsel,选择图元
 ** (entsel "[msg]")
 提示用户通过指定一个点来选择单个对象（图元）
+返回值: 由图元名和点击位置坐标组成的表。
+一般用(car(entsel))取得这个图元名。
 * entupd,更新图元
 ** (entupd ename)
 更新对象（图元）的屏幕显示
