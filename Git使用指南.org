@@ -127,9 +127,9 @@ B --> | git clone | C(本地仓库 atlisp-lib);
 
     克隆并设置上游仓库
 #+BEGIN_SRC 
-git clone git@gitee.com:yourname/atlisp-lib.git
+git clone http://gitee.com/atlisp/atlisp-lib.git
 cd atlisp-lib
-git remote add upstream http://gitee.com/atlisp/atlisp-lib.git
+git remote add upstream git@gitee.com:yourname/atlisp-lib.git
 #+END_SRC
 
 *** 持续交付到远程仓库
