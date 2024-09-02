@@ -125,11 +125,11 @@ A[Gitee:atlisp/atlisp-lib]-->|fork|B[Gitee:yourname/atlisp-lib]
 B --> | git clone | C(本地仓库 atlisp-lib);
 #+END_SRC
 
-    克隆并设置上游仓库
+克隆并设置上游仓库,将推送改为 ssh 方式。
 #+BEGIN_SRC 
 git clone http://gitee.com/atlisp/atlisp-lib.git
 cd atlisp-lib
-git remote add upstream git@gitee.com:yourname/atlisp-lib.git
+git remote set-url --push origin git@gitee.com:yourname/atlisp-lib.git
 #+END_SRC
 
 *** 持续交付到远程仓库
