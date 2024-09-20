@@ -1,5 +1,5 @@
 #+title: 从 autolisp 到 commonlisp
-* 必要说明
+* 命名空间
 common lisp 中函数与符号是不同用命名空间。
 ' 是 quote 的简写（语法糖）,不能用于函数前缀。
 #‘ 是 function 的简写（语法糖）
@@ -28,6 +28,17 @@ al 写法:
   - apply
   - sort(对应al中的vl-sort)
   - remove-if,remove-if-not(对应al中的vl-remove-if,vl-remove-if-not等
+
+** 函数与变量
+因为在cl中函数与变量在不同的命名空间，所以同名的函数和变量不冲突
+如
+#+begin_src lisp
+  (defun a() 5)
+  (defvar a 9) ;;相当于
+  (setq a 8)
+  (a);;返回 5
+  a ;;返回 8
+#+end_src
 
 * 局部变量
 cl中用 let 定义局部变量
