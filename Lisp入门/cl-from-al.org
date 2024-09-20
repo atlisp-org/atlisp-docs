@@ -1,5 +1,23 @@
-#+title: 从autolisp到commonlisp
+#+title: 从 autolisp 到 commonlisp
+* 必要说明
+common lisp 中函数与符号是不同用命名空间。
+' 是 quote 的简写（语法糖）,不能用于函数前缀。
+#‘ 是 function 的简写（语法糖）
+#+begin_src lisp
+  (mapcar #'+ (list 1 2)(list 3 4))
+  (mapcar #'(lambda(x y)(+ x y)) (list 1 2)(list 3 4))
+  (mapcar (quote +) (list 1 2)(list 3 4)) ;;这种写法是错的
+  (mapcar (function (lambda(x y)(+ x y))) (list 1 2)(list 3 4))
+#+end_src
+#+begin_src autolisp
+  (mapcar '+ (list 1 2)(list 3 4))
+  (mapcar '(lambda(x y)(+ x y)) (list 1 2)(list 3 4))
+  (mapcar (quote +) (list 1 2)(list 3 4))
+  (mapcar (function (lambda(x y)(+ x y))) (list 1 2)(list 3 4))
+#+end_src
+
 * 局部变量
+cl中用 let 定义局部变量
 #+begin_src lisp
   (defun foobar ()
     (let ((a 5)
