@@ -3,12 +3,15 @@
 common lisp 中函数与符号是不同用命名空间。
 ' 是 quote 的简写（语法糖）,不能用于函数前缀。
 #‘ 是 function 的简写（语法糖）
+
+cl 写法:
 #+begin_src lisp
   (mapcar #'+ (list 1 2)(list 3 4))
   (mapcar #'(lambda(x y)(+ x y)) (list 1 2)(list 3 4))
   (mapcar (quote +) (list 1 2)(list 3 4)) ;;这种写法是错的
   (mapcar (function (lambda(x y)(+ x y))) (list 1 2)(list 3 4))
 #+end_src
+al 写法:
 #+begin_src autolisp
   (mapcar '+ (list 1 2)(list 3 4))
   (mapcar '(lambda(x y)(+ x y)) (list 1 2)(list 3 4))
@@ -18,12 +21,16 @@ common lisp 中函数与符号是不同用命名空间。
 
 * 局部变量
 cl中用 let 定义局部变量
+
+cl 写法:
 #+begin_src lisp
   (defun foobar ()
     (let ((a 5)
-	  (b 6))
+          (b 6))
       (+ a b)))
 #+end_src
+
+al 写法:
 #+begin_src autolisp
   (defun foobar (/ a b)
     (setq a 5 b 6)
