@@ -8,8 +8,13 @@ cl 写法:
 #+begin_src lisp
   (mapcar #'+ (list 1 2)(list 3 4))
   (mapcar #'(lambda(x y)(+ x y)) (list 1 2)(list 3 4))
-  (mapcar (quote +) (list 1 2)(list 3 4)) ;;这种写法是错的
   (mapcar (function (lambda(x y)(+ x y))) (list 1 2)(list 3 4))
+
+  ;;以下是错误的写法
+  (mapcar '+ (list 1 2)(list 3 4))
+  (mapcar '(lambda(x y)(+ x y)) (list 1 2)(list 3 4))
+  (mapcar (quote +) (list 1 2)(list 3 4))
+  
 #+end_src
 al 写法:
 #+begin_src autolisp
@@ -18,6 +23,11 @@ al 写法:
   (mapcar (quote +) (list 1 2)(list 3 4))
   (mapcar (function (lambda(x y)(+ x y))) (list 1 2)(list 3 4))
 #+end_src
+
+同样有区别的还有
+  - apply
+  - sort(对应al中的vl-sort)
+  - remove-if,remove-if-not(对应al中的vl-remove-if,vl-remove-if-not等
 
 * 局部变量
 cl中用 let 定义局部变量
