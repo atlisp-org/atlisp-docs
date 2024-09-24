@@ -1,4 +1,25 @@
 #+prefix: DCL框件
+* tile,框件
+tile基类
+定义:
+tile {
+      layout          = horizontal;
+      is_enabled      = true;
+}
+
+衍生
+- text
+- image
+- button
+  + image_button
+- toggle
+- radio_button
+- list_box
+- edit_box
+- popup_list
+- slider
+- spacer
+
 * boxed_column,带框竖向框集
 分组框件，用于将组框件组织为一列，列周围有边框。
 * boxed_radio_column,带框单选竖向框集
@@ -11,24 +32,47 @@
 DCL 按钮。
 * clusters,框集,dcl框集
 您可以将框件分组为复合行或列（统称为框集）。
+定义:
+cluster {
+      layout          = horizontal;
+}
+
 出于布局目的，框集被视为单个框件。可以使用可选标签将行或列装箱（没有方框的框集不能标记）。
 用户无法选择框集，只能选择框集中的单个框件。除了单选行和单选列之外，不能为框集分配操作。以下框件定义了框集：
-- boxed_column
-- dialog
-- boxed_radio_column
-- radio_column
-- boxed_radio_row
-- radio_row
-- boxed_row
-- row
-- column
- 
+子框件：
+ - row
+ - column
+ - boxed_row
+ - boxed_column
+ - concatenation
+ - paragraph
+
+* radio_cluster
+无线框集
+定义：
+radio_cluster {
+      layout          = horizontal;
+      is_enabled      = true;
+}
+子框件:
+ - radio_row
+ - radio_column
+ - boxed_radio_row
+ - boxed_radio_column
+
+
 * column,竖向框集
 分组磁贴，用于将磁贴组织为一列，而列周围没有边框。
 * concatenation
 串联是由多个串联的文本块组成的一行文本。
 * dialog,对话框
 dialog 是定义对话框的框件。
+定义:
+dialog {
+      layout          = vertical;
+      is_enabled      = false;
+}
+
 * edit_box,编辑框
 编辑框是允许用户输入或编辑单行文本的字段。
 * errtile,错误信息框件
@@ -91,7 +135,7 @@ spacer_1 : spacer {
     horizontal_margin = none;
     vertical_margin = none;
 }
-* text Tile,文本框件
+* text_Tile,文本框件
 文本本框件显示用于标题或信息目的的文本字符串。
 因为大多数图块都有自己的标签属性用于标题，所以您并不总是需要使用文本图块。但是，通常保持空白的文本块是显示有关用户操作、错误消息或警告的反馈的有用方法。
 
@@ -105,6 +149,12 @@ spacer_1 : spacer {
 * text_part,文本片断框件
 文本部分是一块较大文本的一部分的文本框件。
 text_part的边距被抑制，因此它可以与其他text_part组合成一个连接或段落图块。
+定义:
+text_part : text {
+    horizontal_margin = none;
+    vertical_margin = none;
+}
+
 
 * toggle,开关框件,复选框件
 切换显示为一个小框，框右侧有一个可选标签。
