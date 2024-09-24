@@ -1031,8 +1031,14 @@
 ** (vla-CopyObjects Object Objects [Owner] [IDPairs])
 复制多个对象(完全克隆)。
 * vla-Bind
-** (vla-Bind objece bPrefixName)
-将外部引用（xref)并入到图形中
+** (vla-Bind obj-block bPrefixName)
+将外部引用（xref)并入到图形中。
+参数:
+obj-block:块对象,
+bPrefixName:类型Boolean,vlax-true/vlax-false
+   True: Symbol names are not prefixed.
+   False: Symbol names are prefixed with <blockname>$x$.
+
 * vla-ArrayRectangular
 ** (vla-ArrayRectangular Object NumberOfRows NumberOfColumns NumberOfLevels DistBetweenRows DistBetweenColumns DistBetweenLevels)
 创建对象的二维或三维矩形阵列。
