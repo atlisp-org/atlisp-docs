@@ -1,17 +1,32 @@
 #+prefix: DCL回调变量
+* DCL回调变量
+DCL回调变量是用于在 DCL 回调表达式及回调函数中使用的变量。
 
+共有4个， $key、$value、 $data、 $reason。
+
+DCL定义文件中的写法 action="(princ $key)"
+
+回调函数中的写法
+(action_tile "a1" "(cb1)")
+(defun cb1 ()
+  (princ $key)
+  (princ $data))
+  
 * $key
-所选磁贴的关键属性。此变量适用于所有操作。
+所选磁贴的唯一标识名。此变量适用于所有操作。
+可以 action 回调 表达式中使用。
+
 * $value
 框件当前值的字符串形式，例如编辑框中的字符串，或切换中的“1”或“0”。
 此变量适用于所有操作。
+
 * $data
 应用程序管理的数据（如果有）是在new_dialog时间之后通过client_data_tile设置的。
 
 此变量适用于所有操作，但$data没有任何意义，除非您的应用程序已经通过调用client_data_tile对其进行了初始化。
-* $reason,DCL回调原因
+* $reason,DCL回调理由
 
-$reason 变量中返回的回调原因指定了操作发生的原因。
+$reason 变量中返回的回调原因，指定了操作发生的原因。
 
 变量的值是为任何类型的操作设置的，但只有当操作与edit_box、list_box、image_button或滑块相关联时，才需要检查它。以下概述了每个回调原因代码的值：
 ** 代码1

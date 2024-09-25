@@ -1,23 +1,21 @@
 #+prefix: DCL
 * DCL
-** 术语
+** DCL 术语
 *** tile,框件
 在 DCL 中的组成对话框中的最小显示部件
-=boxed_column=
-*** clusters,框集
-用于容纳框件 tile 的上级框件。
+如 button,text,image等
+*** cluster,框集
+容器类部件，用于容纳框件 tile 的上级框件。
 ** 框件
-=boxed_column=
+=tile=
 ** 属性
 =action=
+** =DCL回调变量=
+
 * DCL框件
 CAD内部 DCL 常用的框件定义有 32 个。
+你也可以自定义来扩展框件。
 =boxed_column=
 * DCL属性
 CAD内部 DCL 框件的属性有 35 个。
 =action=
-* DCL回调变量
-=$key=
-=$value=
-=$data=
-=$reason=
