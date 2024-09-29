@@ -110,7 +110,9 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 将一个字符串转换成整数
 * atom
 ** (atom item)
-验证一个项是否是原子
+验证一个项是否是原子，lisp中原子的概念为不可再分的数据类型，如数值，字符串，符号(这里的符号仅指符号本身，不指符号指向的值，符号的值可以是数值、字符串和表等)
+autolisp中其它的非列表的数据类型，也可以称为原子，如 图元ename ,选择集 pickset,对象 vla-object 等。
+
 * atoms-family
 ** (atoms-family |0,1| [symlist])
 返回当前系统中已定义的符号的列表
@@ -293,7 +295,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * *error*
 ** (*error* "string")
 可由用户定义的错误处理函数
-* eval,求值
+* eval
 ** (eval expr)
 返回 AutoLISP 表达式的求值结果
 * exit

@@ -1,11 +1,11 @@
 #+prefix: DCL框件
-* tile,框件
+* tile,框件,磁贴,控件
 在 DCL 中的组成对话框中的最小显示部件
 DCL中的基本
 定义:
 tile {
-      layout          = horizontal;
-      is_enabled      = true;
+     layout     = horizontal;
+     is_enabled = true;
 }
 
 子框件
@@ -31,6 +31,14 @@ tile {
 分组框件，用于将组框件组织为一行，行周围有边框。
 * button,按钮
 DCL 按钮框件。
+可用action定义回调表达式。当点击按钮时执行回调表达式（lisp中称为求值）。
+用法：
+dcl中: button{label="b1";key="b1";action="(cb-b1)"}
+lisp中:
+(action_tile "b1" "(cb-b1)")
+(defun cb-b1 ()
+  (princ $value))
+
 * clusters,框集,dcl框集
 您可以将框件分组为复合行或列（统称为框集）。
 定义:
