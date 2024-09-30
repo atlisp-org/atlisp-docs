@@ -1,0 +1,44 @@
+#+prefix: 开发指引
+* 开发指引
+** =术语=
+术语阐明了最基础的lisp概念。内容不多，须完全理解。
+QQ需回复 '术语' 继续。
+** 基本函数
+- car cdr cons list
+- member assoc subst
+- quote
+- atom listp
+- progn setq
+- if cond
+- while foreach repeat
+- defun
+
+以上函数须熟练运用。
+* al开发指引
+了解dxf组码的用法及autolisp用组码查询，创建、更新和删除图元的方法。
+相关函数
+- ssget entsel
+- entmake  entmod entdel entupd
+  
+* vl开发指引
+了解CAD的对象系统，以及面向对象的基本概念，对象、属性、方法。
+Visual lisp 的核心是面向对象的 lisp， 就是为了操作 ActiveX 对象的属性和方法。
+知道对象的属性和方法，就可以操作ActiveX对象了。
+** 执行对象方法:
+(vla-方法 对象 参数 …)
+(vlax-invoke 对象 方法 参数 …)
+(vlax-invoke-method 对象 方法 参数 …)
+** 取对象属性:
+(vla-get-属性 对象)
+(vlax-get 对象 属性)
+(vlax-get-property 对象 属性)
+** 设置对象属性
+(vla-put-属性 对象 属性值)
+(vlax-put 对象 属性 属性值)
+(vlax-put-property 对象 属性 属性值)
+
+vl开发基本就这三个形式。
+
+前面说的 autolisp 是面向函数的，也就是函数式编程，一切皆函数。主要跟 dxf 组码打交道。
+visuallisp 是面向对象编程， 一切皆对象。当不知道怎么编程了，查查对象的属性和方法都有哪些就可以编程了。
+
