@@ -25,15 +25,23 @@ QQ需回复 '术语' 继续。
 Visual lisp 的核心是面向对象的 lisp， 就是为了操作 ActiveX 对象的属性和方法。
 知道对象的属性和方法，就可以操作ActiveX对象了。
 ** 执行对象方法:
-(vla-方法 对象 参数 …)
+(vla-方法 对象 参数 …) ;; 用于CAD内部对象
 (vlax-invoke 对象 方法 参数 …)
 (vlax-invoke-method 对象 方法 参数 …)
+
+*** vlax-invoke 与 vlax-invoke-method  的区别
+vlax-invoke 在调用 ActiveX对象方法时，支持多态参数。
+vlax-invoke-method 在调用 ActiveX对象方法时,需要给出所有参数，ActiveX对象的参数默认值可以用 nil 代替。
+示例：
+(vlax-invoke adodb 'open) 
+(vlax-invoke-method adodb 'open nil nil nil nil nil)
+ 
 ** 取对象属性:
-(vla-get-属性 对象)
+(vla-get-属性 对象);; 用于CAD内部对象
 (vlax-get 对象 属性)
 (vlax-get-property 对象 属性)
 ** 设置对象属性
-(vla-put-属性 对象 属性值)
+(vla-put-属性 对象 属性值) ;; 用于CAD内部对象
 (vlax-put 对象 属性 属性值)
 (vlax-put-property 对象 属性 属性值)
 
