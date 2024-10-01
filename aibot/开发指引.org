@@ -28,9 +28,8 @@ Visual lisp 的核心是面向对象的 lisp， 就是为了操作 ActiveX 对�
 (vla-方法 对象 参数 …) ;; 用于CAD内部对象
 (vlax-invoke 对象 方法 参数 …)
 (vlax-invoke-method 对象 方法 参数 …)
-
 *** vlax-invoke 与 vlax-invoke-method  的区别
-vlax-invoke 在调用 ActiveX对象方法时，支持多态参数。
+vlax-invoke 在调用 ActiveX对象方法时，支持多态参数(函数重载)。
 vlax-invoke-method 在调用 ActiveX对象方法时,需要给出所有参数，ActiveX对象的参数默认值可以用 nil 代替。
 示例：
 (vlax-invoke adodb 'open) 
@@ -44,8 +43,6 @@ vlax-invoke-method 在调用 ActiveX对象方法时,需要给出所有参数，A
 (vla-put-属性 对象 属性值) ;; 用于CAD内部对象
 (vlax-put 对象 属性 属性值)
 (vlax-put-property 对象 属性 属性值)
-
-vl开发基本就这三个形式。
 
 前面说的 autolisp 是面向函数的，也就是函数式编程，一切皆函数。主要跟 dxf 组码打交道。
 visuallisp 是面向对象编程， 一切皆对象。当不知道怎么编程了，查查对象的属性和方法都有哪些就可以编程了。
