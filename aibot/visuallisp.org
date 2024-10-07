@@ -4157,7 +4157,7 @@ WCS坐标值指定UCS、图块、配置或光栅图像的原点。
 设置 ActiveX 对象的特性
 * vlax-get
 ** (vlax-get object property)
-检索 VLA 对象的特性
+获取 VLA 对象的特性
 * vlax-safearray-fill
 ** (vlax-safearray-fill var 'element-values)
 在 SafeArray 的元素中存储数据
@@ -4278,7 +4278,7 @@ boundpair 为索引的上下界点对表，如'(0 . 2)，表示这一维有 0~2 
 从类型库中输出信息
 * vlax-get-property
 ** (vlax-get-property object property)
-检索 VLA 对象的特性
+获取 VLA 对象的特性
 * vlax-get-or-create-object
 ** (vlax-get-or-create-object prog-id)
 返回应用程序对象的运行实例。如果应用程序当前未运行，则创建新实例
@@ -4287,7 +4287,7 @@ boundpair 为索引的上下界点对表，如'(0 . 2)，表示这一维有 0~2 
 返回应用程序对象的运行实例
 * vlax-get-acad-object
 ** (vlax-get-acad-object)
-检索当前 AutoCAD 任务中的顶层 AutoCAD 应用程序对象
+获取当前CAD的顶层应用程序对象
 * vlax-for
 ** (vlax-for symbol collection [expression1 [expression2]])
 遍历对象集，对每个表达式进行求值

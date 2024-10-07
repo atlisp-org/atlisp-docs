@@ -80,3 +80,52 @@
 ** (confirm "string")
 显示确认对话框
 
+* *acad*
+当前acad应用程序对象。
+(vlax-get-acad-object)的返回值
+* *DOC*
+当前激活的dwg文档
+(vla-get-activedocument *acad*)
+* *docs*
+当前应用程序打开的所有文档集对象
+(vla-get-documents *acad*)
+*  *ms*
+当前dwg文档的模型空间对象
+(vla-get-modelspace *doc*)
+* *ps*
+当前dwg文档的图纸空间对象
+(vla-get-paperspace *doc*)
+* *blks*
+当前dwg文档的块集对象
+(vla-get-blocks *doc*)
+* *lays*
+当前dwg文档的图层集对象
+(vla-get-layers *doc*)
+* *lts*
+当前dwg文档的线型集对象
+(vla-get-linetypes *doc*)
+* *sts*
+当前dwg文档的文字样式集对象
+(vla-get-textstyles *doc*)
+* *grps*
+当前dwg文档的组对象集对象
+(vla-get-groups *doc*)
+* *dims*
+当前dwg文档的标注样式集对象
+(vla-get-dimstyles *doc*)
+
+* *vps*
+当前dwg文档的视口集对象
+(vla-get-viewports *doc*)
+* *vs*
+当前dwg文档的视图集对象
+(vla-get-views *doc*)
+* *dics*
+当前dwg文档的字典集对象
+(vla-get-dictionaries *doc*)
+* *layouts*,*louts*
+当前dwg文档的布局集对象
+(vla-get-layouts *doc*)
+* *DISPLAY*
+当前CAD应用程序的选项中的显示配置对象
+(vla-get-display (vla-get-preferences (vla-get-application *acad*)))
