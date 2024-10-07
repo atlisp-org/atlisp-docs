@@ -119,7 +119,7 @@ APP：视口标识号
 64 = 定义是被引用的外部参照（输入时
 被忽略）
 * 71-78
-整数值，例如重复计数、标志位或模式
+dxf71-78 整数值，例如重复计数、标志位或模式
 * 90-91,93-99
 dword 32 位整数值
 * 92
@@ -158,7 +158,7 @@ DXF：拉伸方向的 Y 值和 Z 值
 * 270-279
 16 位整数值
 * 280-283,285-289
-16 位整数值
+dxf280-283，dxf285-289，16 位整数值
 * 284
 阴影模式
 0 = 投射和接收阴影
@@ -683,7 +683,7 @@ DXF：X 轴方向矢量的 Y 值和 Z 值（在 WCS 中）
 背景填充颜色的透明度（未实现）
 * BODY
 ** 100
-子类标记 (AcDbModelerGeometry)
+body子类标记 (AcDbModelerGeometry)
 ** 70
 建模格式版本号（当前值 = 1）
 ** 1
@@ -791,6 +791,119 @@ DXF：X 值；APP：三维矢量
 DXF：拉伸方向的 Y 值和 Z 值（可选）
 ** 3
 标注样式名
+* aligneddimension,对齐标注,线性标注,转角标注
+** 100
+子类标记 (AcDbAlignedDimension)
+** 12
+标注复制的插入点 — 基线和连续（在 OCS 中）
+DXF：X 值；APP：三维点
+
+** 22, 32
+DXF：标注复制的插入点的 Y 值和 Z 值 — 基线和连续（在 OCS 中）
+
+** 13
+线性标注和角度标注的定义点（在 WCS 中）
+DXF：X 值；APP：三维点
+
+** 23, 33
+DXF：线性标注和角度标注的定义点的 Y 值和 Z 值（在 WCS 中）
+
+** 14
+线性标注和角度标注的定义点（在 WCS 中）
+DXF：X 值；APP：三维点
+
+** 24, 34
+DXF：线性标注和角度标注的定义点的 Y 值和 Z 值（在 WCS 中）
+
+** 50
+转角标注、水平标注或垂直标注的角度
+
+** 52
+带倾斜角的线性标注类型有可选组码 52。当添加到线性标注的旋转角度（组码 50）时，将给出尺寸界线的角度。
+
+** 100
+子类标记 (AcDbRotatedDimension)
+* AngularDimension,角度标注
+** 100
+子类标记 (AcDb3PointAngularDimension)
+** 13
+线性标注和角度标注的定义点（在 WCS 中）
+DXF：X 值；APP：三维点
+
+** 23, 33
+DXF：线性标注和角度标注的定义点的 Y 值和 Z 值（在 WCS 中）
+
+** 14
+线性标注和角度标注的定义点（在 WCS 中）
+DXF：X 值；APP：三维点
+
+** 24, 34
+DXF：线性标注和角度标注的定义点的 Y 值和 Z 值（在 WCS 中）
+
+** 15
+直径标注、半径标注和角度标注的定义点（在 WCS 中）DXF：X 值；APP：三维点
+
+** 25, 35
+DXF：直径标注、半径标注和角度标注的定义点的 Y 值和 Z 值（在 WCS 中）
+** 16
+定义角度标注的标注圆弧的点（在 OCS 中）
+DXF：X 值；APP：三维点
+
+** 26, 36
+DXF：为角度标注定义标注圆弧的点的 Y 值和 Z 值（在 OCS 中）
+* OrdinateDimension,坐标标注
+** 100
+子类标记 (AcDbOrdinateDimension)
+
+** 13
+线性标注和角度标注的定义点（在 WCS 中）
+DXF：X 值；APP：三维点
+
+** 23, 33
+DXF：线性标注和角度标注的定义点的 Y 值和 Z 值（在 WCS 中）
+
+** 14
+线性标注和角度标注的定义点（在 WCS 中）
+DXF：X 值；APP：三维点
+
+** 24, 34
+DXF：线性标注和角度标注的定义点的 Y 值和 Z 值（在 WCS 中）
+
+* RadialDimension,半径标注
+** 100
+子类标记 AcDbRadialDimension
+
+** 15
+直径标注、半径标注和角度标注的定义点（在 WCS 中）
+DXF：X 值；APP：三维点
+
+** 25, 35
+DXF：直径标注、半径标注和角度标注的定义点的 Y 值和 Z 值（在 WCS 中）
+
+** 40
+半径标注和直径标注的引线长度
+* DiametricDimension,直径标注
+** 100
+子类标记 AcDbDiametricDimension
+
+** 15
+直径标注、半径标注和角度标注的定义点（在 WCS 中）
+DXF：X 值；APP：三维点
+
+** 25, 35
+DXF：直径标注、半径标注和角度标注的定义点的 Y 值和 Z 值（在 WCS 中）
+
+** 40
+半径标注和直径标注的引线长度
+* 标注样式替代
+标注样式替代可适用于标注、引线和公差图元。适用于这些图元的所有替代都将作为扩展数据存储在图元中。替代标注变量组码和相关值包含在组 1002 控制字符串中。下例显示 DIMTOL 和 DIMCLRE 变量已被替代的标注图元的扩展数据。
+内容示例:
+(-3 ("ACAD" Start of the ACAD APPID section of xdata
+  (1000 . "DSTYLE") (1002 . "{") Beginning of the dimstyle subsection
+  (1070 . 177) (1070 . 3) The DIMCLRE (code 177) override + value (3)
+  (1070 . 71) (1070 . 1) The DIMTOL (code 71) override + value (1)
+  (1002 . "}") )) End dimstyle subsection and ACAD section
+  
 * ELLIPSE, 椭圆
 ** 100
 子类标记 (AcDbEllipse)
@@ -1748,7 +1861,7 @@ DXF：X 值；APP：三维矢量
 DXF：单位方向矢量的 Y 值和 Z 值（在 WCS 中）
 * region
 ** 100
-子类标记 (AcDbModelerGeometry)
+region子类标记 (AcDbModelerGeometry)
 ** 70
 建模格式版本号（当前值 = 1）
 ** 1
@@ -1924,7 +2037,7 @@ DXF：拟合点的 Y 值和 Z 值（在 WCS 中）；每个拟合点一个条目
 阴影柔和度
 * surface,表面
 ** 100
-子类标记 (AcDbModelerGeometry)
+surface子类标记 (AcDbModelerGeometry)
 ** 70
 建模格式版本号（当前值 = 1）
 ** 1

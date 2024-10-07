@@ -4,3 +4,7 @@
 * 如何使用自带的编译器
 对于autocad 2021 及以后的版本，默认 vscode 作为 visual lisp 编辑器及调试器。
 如果想使用旧的 vlide ， 可以将变量 lispsys 设为 0。然后重启 CAD ,即可。
+* not found visualisp env
+有些精简版的CAD或CAD LT版本，删除了 visuallisp环境。这些版本不支持@lisp的安装和运行。
+
+如果想要使用 @lisp，请安装支持vl的CAD版本。
