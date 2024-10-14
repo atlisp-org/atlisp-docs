@@ -10,6 +10,9 @@ tile {
 
 子框件
 - text
+  + errtile
+  + paragraph
+  + text_part  
 - image
 - button
   + image_button
@@ -20,7 +23,19 @@ tile {
 - popup_list
 - slider
 - spacer
-
+* active tile,All active tiles
+可以focus聚焦的框件。
+除text spacer 及其子框件，以及框集外，基本都是可以focus聚焦的框件。
+如
+- image
+- button
+  + image_button
+- toggle
+- radio_button
+- list_box
+- edit_box
+- popup_list
+- slider
 * boxed_column,带框竖向框集
 分组框件，用于将组框件组织为一列，列周围有边框。
 * boxed_radio_column,带框单选竖向框集
