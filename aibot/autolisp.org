@@ -97,6 +97,9 @@ action_tile指定的操作将取代对话框的默认操作（由new_dialog指�
 * assoc
 ** (assoc element alist)
 从关联表中搜索一个元素，如果找到则返回该关联表条目
+示例
+(assoc 'a '((a . 1)(b . 2))) ;; => (a . 1)
+(assoc 'a '((a 1 2)(b 32))) ;; => (a 1 2)
 详见：
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * atan,反正切值
