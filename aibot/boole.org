@@ -1,6 +1,6 @@
 #+title: lisp 位运算
+本文主要涉及的autolisp函数: boole logand logior。~
 * 位运算
-
 ** and
 两个相应的位的值都是1时，返回1，否则返回0
 #+begin_src lisp
@@ -21,7 +21,7 @@
 两个相应的位的值有一个以上是1，返回1，否则返回0
 #+begin_src lisp
 (boole 7 int1 int2)
-(logand int1 int2)
+(logior int1 int2)
 #+end_src
 ** nor
 两个输入位都是 0 ，返回 1，否则返回0
@@ -29,6 +29,11 @@
 NOR运算的结果是OR运算的反面。
 #+begin_src lisp
 (boole 8 int1 int2)
+#+end_src
+** not
+按位取反
+#+begin_src lisp
+(~ int1)
 #+end_src
 * boole 位运算函数
 位运算是对于整数的运算，其结果也是整数。cad中整数的范围是-2147483648~2147483647。即32位的有符号整数。
@@ -40,20 +45,31 @@ CAD中与位相关的变量如 osmode 最大值为 16383。即14个控制位。
 
 位运算的数位是32位。当操作时会影响最高位即符号位。所以可能会出现正负整数的结果。
 osmode 的默认值为 4133。
-
-命令: (m:dec2base 4133 2)
-"1000000100101"
+#+begin_src lisp
+  (m:dec2base 4133 2)
+  ;; "1000000100101"
+  (m:dec2base 512 2)
+  ;; "1000000000"
+#+end_src
 
 以下以设置第9位为例(从0开始数位)
+#+begin_src lisp
 (setq 0b1000000000 512)
+#+end_src
 ** or 置1
+#+begin_src lisp
 (boole 7 4133 0b1000000000) ;; 第9位，置1，返回值 4645
+#+end_src
 ** 置0
 为保证不影响其它位值，可先置1，再减。
+#+begin_src lisp
 (- (boole 7 4645 0b1000000000) 0b1000000000) ;; 第9位,置0,
 (- (boole 7 4133 0b1000000000) 0b1000000000) ;; 不管原来的第9位是否为0，最后均返回 4133。
+#+end_src
 ** 反转
+#+begin_src lisp
 (boole 6 4133 0b1000000000)
+#+end_src
 * 禁用对象捕捉
 即第14位，置1
 #+begin_src lisp
