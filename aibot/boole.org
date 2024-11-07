@@ -1,0 +1,79 @@
+#+title: lisp 位运算
+* 位运算
+
+** and
+两个相应的位的值都是1时，返回1，否则返回0
+#+begin_src lisp
+(boole 1 int1 int2)
+(logand int1 int2)
+#+end_src
+** xor
+两个相应的位的值只有一个是1，则返回 1，否则返回0。
+
+自反性：任何值与自身异或的结果为0，任何值与 0 异或的结果为其本身。
+
+异或也叫半加运算，其运算法则相当于不带进位的二进制加法：二进制下用1 表示真，0 表示假，这些法则与加法是相同的，只是不带进位，所以异或常被认作不进位加法。
+
+#+begin_src lisp
+(boole 6 int1 int2)
+#+end_src
+** or
+两个相应的位的值有一个以上是1，返回1，否则返回0
+#+begin_src lisp
+(boole 7 int1 int2)
+(logand int1 int2)
+#+end_src
+** nor
+两个输入位都是 0 ，返回 1，否则返回0
+
+NOR运算的结果是OR运算的反面。
+#+begin_src lisp
+(boole 8 int1 int2)
+#+end_src
+* boole 位运算函数
+位运算是对于整数的运算，其结果也是整数。cad中整数的范围是-2147483648~2147483647。即32位的有符号整数。
+-2147483648 的二进制为 0b1000 0000 0000 0000 0000 0000 0000 0000
+2147483647 的二进制为 0b0111 1111 1111 1111 1111 1111 1111 1111
+
+CAD中与位相关的变量如 osmode 最大值为 16383。即14个控制位。
+其实还有个第14位（从0开始计数），禁用位即 16384。
+
+位运算的数位是32位。当操作时会影响最高位即符号位。所以可能会出现正负整数的结果。
+osmode 的默认值为 4133。
+
+命令: (m:dec2base 4133 2)
+"1000000100101"
+
+以下以设置第9位为例(从0开始数位)
+(setq 0b1000000000 512)
+** or 置1
+(boole 7 4133 0b1000000000) ;; 第9位，置1，返回值 4645
+** 置0
+为保证不影响其它位值，可先置1，再减。
+(- (boole 7 4645 0b1000000000) 0b1000000000) ;; 第9位,置0,
+(- (boole 7 4133 0b1000000000) 0b1000000000) ;; 不管原来的第9位是否为0，最后均返回 4133。
+** 反转
+(boole 6 4133 0b1000000000)
+* 禁用对象捕捉
+即第14位，置1
+#+begin_src lisp
+(setvar "osmode" (boole 7 (getvar  "osmode") 16384))
+#+end_src
+* 启用对象捕捉
+即第14位，置0
+#+begin_src lisp
+(setvar "osmode" (- (boole 7 (getvar  "osmode") 16384) 16384))
+#+end_src
+也可以判断osmode是否大于16384然后做减法
+#+begin_src lisp
+  (setvar "osmode" (boole 7 (getvar  "osmode") 16384))
+  (if (>= (getvar "osmode") 16384)
+    (setvar "osmode" (- (getvar "osmode") 16384)))
+#+end_src
+
+* 反转对象捕捉
+相当于按下 F3 。
+#+begin_src lisp
+ (setvar "osmode" (boole 6 (getvar  "osmode")  16384))
+#+end_src
+ 

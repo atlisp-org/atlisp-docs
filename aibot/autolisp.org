@@ -279,6 +279,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 修改对象（图元）的定义数据
 * entnext
 ** (entnext [ename])
+返回给定图元ename后面的图元
 如果调用entnext时没有参数，则返回数据库中第一个未删除实体的实体名。如果向entnext提供了一个ename参数，则函数返回数据库中ename后面第一个未删除实体的实体名。如果数据库中没有下一个实体，则返回nil。entnext函数返回主实体和子实体。
 * entsel,选择图元
 ** (entsel "[msg]")
