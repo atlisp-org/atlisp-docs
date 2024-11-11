@@ -1,0 +1,383 @@
+#+prefix: asilisp
+
+* asi_alloc
+** (asi_alloc stm_dsc cursor_name [[[cursor_scrollability] cursor_updatability] cursor_insensitivity])
+通过以下方式分配SQL游标：<分配游标声明>
+
+此函数通过<allocate cursor statement>分配SQL游标。stm_dsc是SQL语句描述符。如果它标识游标规范以外的语句，则异常条件揚重新编写的SQL语句不是游标规范？这是提高。cursor_name是SQL游标名称。<preparable update:positioned>和<preparable delete:positioned>语句可以使用游标名称来引用游标中的当前行位置，以便对其进行更新或删除。
+
+可选参数cursor_scrollability指定光标是否应可滚动。可滚动光标意味着可以在任何方向提取其行。不可滚动的光标只能在前进方向上获取。此参数的可能值为滚动或非滚动。如果此参数不可用抰 已指定，已分配不可滚动的游标。
+第二个可选参数cursor_updateability指定游标是只读的还是可更新的。此参数的可能值为只读、可更新或nil，其中nil表示未知值。
+最后一个可选参数是cursor_insensitivity，它指定光标是否不敏感。不敏感游标意味着，如果当前事务不是通过该游标更改数据，则在关闭该游标之前，该更改的效果将不通过该游标可见。单个可能值不敏感。如果指定了此参数，则应分配不敏感的游标。如果游标被声明为不敏感或滚动，则假定它不可更新。可以通过（asi_StateCSr）函数找到已分配的游标的状态。此函数在成功的情况下返回SQL游标描述符，否则返回nil。
+
+* asi_close
+** (asi_close csr_dsc)
+通过动态关闭语句关闭打开的SQL游标
+
+此函数用于将光标置于关闭状态。csr_dsc参数是SQL游标描述符。如果它标识光标未处于打开状态，则引发异常条件“无效光标状态”。如果成功，此函数返回T，否则返回nil。
+
+* asi_cmpident
+** (asi_cmpident first_ident second_ident)
+
+比较两个SQL标识符
+
+如果标识符相等，则此函数返回T；如果标识符不相等，则返回nil。
+
+* asi_coldsc
+** (asi_coldsc obj_dsc [column_list])
+获取列的描述
+
+obj_dsc参数是SQL游标或SQL语句描述符。可选参数column_list指定要返回其说明的列。列列表应按以下形式指定：
+列列表：
+(column_name 或者 column_number ..),要么传入列的名字，要么传入行号，如果不传入任何值，将返回整个表的所有列名信息
+column_list如果输入 '(0 2) ，代表返回第一行和第三行数据
+列名称部分是名称，列编号是列的序列号（从0开始）。如果未指定可选参数，此函数将返回所有列的说明。如果发生错误，此函数将返回nil。
+
+* asi_connect
+** (asi_connect data_link_file [[user_name] password])
+通过实现connect语句连接到SQL环境
+
+加载OLEDB数据提供程序并连接到数据库，该数据库可通过CONNECT语句通过该提供程序访问。data_link_file是Microsoft数据链接（MDL）文件的名称。如果未指定扩展名。假设使用mdl。使用以下规则搜索文件：
+按完整路径名（如果指定）
+在当前目录中
+在AutoCAD目录中
+在PATH环境变量指定的目录中。
+（asi_connect）函数自动初始化运行此SQL连接的驱动程序。可选参数<user_name>和<password>分别是用户名和密码。连接建立后，可通过(asi_feature)功能检查加载的数据提供程序支持SQL功能的可能性。此函数在成功的情况下返回SQL会话描述符，否则返回nil。
+以下示例连接到Microsoft数据链接文件“MODBC_DB3.UDL”中定义的数据源，该文件保存在AutoCAD目录下的“数据链接”目录中。
+(asi_connect "data links/modbc_db3" "" "")
+
+* asi_databases
+** (asi_databases provider_name)
+获取指向数据库表的游标
+该函数将光标移到数据库表，可以通过给定的OLEDB数据提供程序访问该表。provider_name是ASI支持的一个提供程序的名称。
+
+* asi_dbms
+获取DBMS名称
+** (asi_dbms obj_dsc)
+obj_dsc参数是通用SQL对象描述符。如果出现错误，此函数将返回nil。
+
+* asi_deallocstm
+** (asi_deallocstm stm_dsc)
+通过deallocate prepared语句取消分配准备好的SQL语句
+
+stm_dsc参数是SQL语句描述符。如果调用了此函数，并且某个语句是与处于打开状态的游标关联的游标规范，则会引发异常条件“无效游标状态”，并且不会取消分配该语句。此函数用于取消分配未打开游标的所有相关描述符。如果成功，此函数返回T，否则返回nil。
+
+* asi_delete
+** (asi_delete csr_dsc)
+通过动态删除语句：positioned删除SQL游标中的当前行
+
+此函数可用于在获取查询结果时删除光标的当前行（定位删除）。如果光标为只读，则引发异常条件“无效光标状态”。如果光标未定位在行上，则引发异常条件“无效光标状态”。如果删除了最后一行，光标将位于最后一行之后。否则，光标将位于下一行之前。csr_dsc参数是SQL游标描述符。如果它确定光标未处于打开状态，则会引发异常条件“无效光标状态”。此函数在成功的情况下返回T，否则返回nil。
+
+* asi_diag
+** (asi_diag err_depth [diag_parameter_names_list])
+从错误诊断区域获取数据
+
+err_depth参数指定诊断区域中错误条目的深度。可选参数diag_parameter_names_list是应返回的诊断参数名称列表。此函数返回点对列表，如下所示：
+((diag_par_name . diag_par_value) ...)
+diag_par_value部分是诊断参数的字符串值。有关诊断参数名称，请参阅AutoLISP ASI错误诊断。如果出现错误，此函数将返回nil。
+
+* asi_disconnect
+** (asi_disconnect env_dsc)
+通过实现disconnect语句断开与SQL环境的连接，并终止连接
+env_dsc参数是SQL会话描述符。如果与指定连接关联的任何SQL事务处于活动状态，则会引发异常条件“事务状态无效”，并且连接不会终止。此函数用于取消分配所有从属语句描述符和未打开游标的所有描述符。如果成功，此函数返回T，否则返回nil。
+
+* asi_errqty
+** (asi_errqty)
+获取错误诊断区域的条数
+如果没有错误条目，则此函数返回0。
+另见AutoLISP ASI错误诊断。
+
+* asi_execute
+** (asi_execute stm_dsc [input_parameters_list])
+通过实现execute_语句来执行准备好的SQL语句
+stm_dsc参数是SQL语句描述符。可选参数input_parameters_list是指定输入参数值的列表，其顺序与SQL语句字符串中使用的顺序相同。对于单行select语句，此函数返回输出SQL参数的列表。对于其他语句类型，如果成功则返回T，否则返回nil。
+执行update语句：<searched，delete语句：searched>和<insert statement>后，可以使用asi_rowqty函数检索处理过的大量行。
+
+* asi_feature
+** (asi_feature obj_dsc feature_codes_list)
+** (asi_feature obj_dsc '(30))
+检查DBMS是否支持SQL功能
+obj_dsc参数是通用SQL对象描述符，feature_codes_list参数是要在ASI驱动程序中检查的SQL功能代码列表。下表描述了可能的功能部件代码和名称。如果指定的任何功能不受支持或出现错误，此函数将返回nil
+feature code                 feature name
+-------------------------------------------------------------------------------------------------------------
+1                             Catalog feature
+2                             Schema feature
+3                             Time zone
+4                             Character set names
+5                             Translations
+6                             Information schema facility
+7                             Catalog definition/drop catalog
+8                             Schema definition/drop schema
+9                             Table definition/drop table
+10                            View definition/drop view
+11                            Index definition/drop index
+12                            Translation definition/drop translation
+13                            Create assertion/drop assertion
+14                            Character set definition/drop character set
+15                            Collation definition/drop collation
+16                            Domain definition/drop domain
+17                            Alter domain
+18                            Alter table
+19                            Grant/revoke privileges
+20                            Commit work/Rollback work
+21                            Set transaction
+22                            Set constraint
+23                            Cursor manipulation (open, close, fetch next)
+24                            Fetches Prior, First, Last, Absolute, Relative
+25                            Select statement: single row
+26                            Delete: positioned
+27                            Update: positioned
+28                            Delete: searched
+29                            Update: searched
+30                            Insert
+
+* asi_fetch
+** (asi_fetch csr_dsc [fetch_orientation [position_number]])
+通过动态fetch语句获取SQL游标中的当前位置
+
+csr_dsc参数是SQL游标描述符。如果指定一个未打开的游标，则引发异常条件“无效游标状态”。如果要提取到的行不存在，则会引发异常条件“无数据”。可选参数fetch_orientation指定提取方向。参数的可能值如下所示：
+获取方向值
+Value                      Description
+NEXT                      FETCH NEXT statement.
+PRIOR                     PRIOR statement.
+FIRST                     FIRST statement.
+LAST                      LAST statement.
+ABSOLUTE                  ABSOLUTE statement.
+RELATIVE                  RELATIVE statement. It positions the cursor by the following expression: <current_row>+<position_number>.
+
+* asi_iexecute
+** (asi_iexecute env_dsc sql_statement)
+通过实现executeimmediate语句立即执行SQL语句
+env_dsc参数是SQL会话描述符，SQL_语句是SQL语句。如果源SQL语句不包含参数，则可以调用此函数，而不是asi_prepare和asi_execute。与asi_prepare和asi_execute相关的所有注意事项均适用于此函数。无法立即执行游标规范。在这种情况下，是一个异常条件揷ursor规范无法执行？这是提高。如果成功，此函数返回T，否则返回nil。
+
+* asi_infschema
+** (asi_infschema env rowset_name)
+获取指向其中一个信息架构系统表的游标
+该函数将光标移到信息架构的一个系统表。env是SQL会话描述符，rowset_name是预定义的模式行集之一（请参阅OLE DB 程序员参考手册，附录B，Schema Rowsets）。
+
+* asi_lispversion
+** (asi_lispversion)
+返回AutoLISP ASI版本字符串
+
+* asi_msg
+** (asi_msg obj_dsc)
+从DBMS获取消息
+obj_dsc参数是通用SQL对象描述符。如果发生错误，此函数将返回nil。
+
+* asi_nexecute
+** (asi_nexecute env_dsc native_statement)
+执行本机DBMS语句
+env_dsc参数是SQL会话描述符，native_statement是特定于DBMS的本机语句字符串。如果成功，此函数返回T，否则返回nil。
+
+* asi_objlist
+** (asi_objlist [obj_dsc])
+获取有效的从属SQL对象的列表
+如果未指定obj_dsc参数，则返回SQL会话列表。如果输入参数是SQL游标描述符，或者输入参数无效，则此函数返回nil。
+
+* asi_objname
+** (asi_objname obj_dsc)
+获取SQL对象名称作为字符串。
+obj_dsc参数是通用SQL对象描述符。如果描述符无效，此函数将返回nil。
+
+* asi_objp
+** (asi_objp obj_dsc)
+检查SQL描述符验证
+obj_dsc参数是通用SQL对象描述符。如果指定的描述符有效，则此函数返回T，否则返回nil。
+
+* asi_open
+** (asi_open csr_dsc [input_parameters_list])
+通过动态open语句打开SQL游标
+此函数将光标置于打开状态，并将其放置在结果表的第一行之前。csr_dsc参数是SQL游标描述符。如果它标识处于打开状态的游标，则引发异常条件“无效游标状态”。可选参数input_parameters_list是按与SQL语句字符串中使用的顺序相同的顺序指定的输入参数值列表。如果成功，此函数返回T，否则返回nil。
+
+* asi_pardsc
+** (asi_pardsc obj_dsc [parameter_list])
+获取SQL输入/输出参数的说明
+obj_dsc参数是SQL游标或SQL语句描述符。可选参数parameter_list指定要返回其说明的参数。参数列表应按以下形式指定：
+参数列表：
+(parameter_name 或者 parameter_number ..)
+parameter_name部分是名称，parameter_number是在准备的语句字符串中使用的参数的序列号（从0开始）。如果未指定可选参数，此函数将返回所有参数的说明。如果发生错误，此函数将返回nil。
+另见
+AutoLISP ASI Column/Parameter Description
+
+* asi_prepare
+** (asi_prepare env_dsc sql_statement [sql_statement_name])
+通过prepare语句的实现来准备SQL语句
+env_dsc参数是SQL会话描述符，sql_statement参数是SQL语句。可选参数sql_statement_name是与分配的sql语句描述符关联的字符串，可以使用asi_objname函数作为sql对象名检索该字符串。如果未指定此参数，则将空字符串视为SQL语句名称。
+SQL语句必须符合SQL ISO语法。可以准备以下SQL语句：
+SQL模式语句
+SQL事务语句
+SQL会话语句
+可以准备以下SQL数据语句：
+临时表格声明
+删除语句：已搜索
+删除语句：定位
+插入语句
+游标规范
+select语句：单行
+更新语句：已搜索
+更新语句：已定位
+SQL语句由ASI预处理并传递给DBMS驱动程序（SQL语句可以传递给驱动程序而无需任何转换）。驱动程序负责语句语义和安全测试。
+如果检测到语法错误，将引发ASI异常“语法错误”。在这种情况下，诊断参数ASILISP_SYNTAX_POS包含语法错误位置。
+使用asi_stmtype函数成功完成asi_prepare后，可以检索准备好的SQL语句的类型。
+如果原始SQL语句包含对输入参数的引用，则可以使用asi_pardsc函数检索它们的描述符。如果准备了游标规范或单行select语句，则可以使用asi_coldsc函数检索结果表列的描述符。
+如果成功，此函数将返回语句描述符，否则返回nil。
+
+* asi_providers
+** (asi_providers)
+获取指向数据提供程序系统表的游标（获取提供商信息）
+该函数用于将光标移到ASI支持的OLEDB数据提供程序的系统表。
+
+* asi_rowqty
+** (asi_rowqty obj_dsc)
+返回SQL数据操作语句处理的行数。
+执行<update:searched>、<delete:searched>和<insert>后，此函数返回受影响的行数。在其他情况下，返回结果未定义。obj_dsc参数是通用SQL对象描述符。如果发生错误，此函数将返回nil。
+
+* asi_sql
+** (asi_sql obj_dsc)
+检索SQL实现字符串
+SQL ISO标准第3.4节描述了SQL对象标识符的格式。obj_dsc参数是通用SQL对象描述符。如果发生错误，此函数将返回nil。
+
+* asi_statecsr
+** (asi_statecsr csr_dsc)
+
+检索已分配SQL游标的状态
+
+csr_dsc参数是SQL游标描述符。如果成功，此函数将返回一个整数值作为以下基本游标状态值之和，否则返回nil。
+返回值
+Integer values                       Meaning
+2                                    游标打开
+4                                    游标是可更新的
+8                                    游标不敏感
+16                                   光标是可滚动的
+
+* asi_stmtype
+** (asi_stmtype obj_dsc)
+将准备好的SQL语句的类型检索为字符串
+
+obj_dsc参数是通用SQL对象描述符。如果发生错误，请参阅AutoLISP ASI SQL语句标识。对于返回值，此函数返回nil。
+
+* asi_update
+** (asi_update csr_dsc column_list)
+
+通过实现动态更新语句：positioned更新SQL游标中的当前行
+
+此函数可用于在获取查询结果时更新光标的当前行（定位更新）。如果无法更新光标，则会出现异常情况攊nvalid游标状态？这是提高。csr_dsc参数是SQL游标描述符。如果指定光标未处于打开状态或未定位在行上，则引发异常条件“无效光标状态”。column_list参数指定要更新的列以及以下格式的新值：
+列列表：
+((column_name | column_number column_value) ..)
+column_name参数是要更新的列的名称。column_number参数是要更新的列的序列号；第一列的数字为0。column_value参数指定列的新值。如果成功，此函数返回T，否则返回nil。
+
+* asi_version
+** (asi_version)
+返回ASI版本字符串
+
+* asilisp说明
+ 
+ (if (null asi_connect)
+    (arxload "asilisp")
+  )
+;|----------------------------------------Udl文件创建步骤---------------------------------------------------------------------------
+      1  文件夹空白处右键>【新建W】>【文本文档】，创建一个后缀为txt的文件
+      2  修改txt文件的名字为您自己的名字，例如：test.udl，注意：后缀必须是udl
+      3  双击test.udl
+      4  切换最上面的选项卡到【提供程序】
+      5  点击Microsoft OLE DB Provider for ODBC Drivers
+      6  点击右下角的【下一步(N)>>】按钮进入到【连接】选项卡
+      7  点击【使用连接字符串】这个单选项
+      8  点击右边的【编译】按钮
+      9  弹出的界面最上面点击【机器数据源】选项卡
+      10 在中间列表中点击【SQLite3 Datasource】
+      11 点击左下角的【确定】按钮
+      12 弹出界面右边点击【Browse...】按钮
+      13 选择您的db库文件
+      14 点击界面上的【ok】按钮
+      15 点击界面右下角的【测试连接(T)】
+      16 点击最下面的【确定】按钮
+----------------------------------------Udl文件创建步骤---------------------------------------------------------------------------|;
+(vl-catch-all-apply 'arxunload(list "asilisp"))
+(if (null asi_connect)
+  (arxload "asilisp")
+)                    ;加载arx函数库
+(SETQ udl-n "test.udl")
+(SETQ Link-F (FINDFILE "UserDataCache"))
+(SETQ UDL-P (STRCAT Link-F "\\Data Links\\" udl-n)) ;udl路径
+(if (findfile UDL-P)
+  ()
+  (progn (alert "udl文件找不到了") (exit))
+)
+;;;(setq sql "update [test] set `姓名` = '张三' where id = '1'")
+(setq sql "select * from test")
+(setq env_dsc (ASI_connect UDL-P))    ;连通数据库，这里不传入用户名和密码，因为udl里面是通过编译法设置的
+(setq obj_dsc (asi_prepare env_dsc sql)) ;准备sql语句object
+
+
+
+
+(asi_objp obj_dsc)            ;验证sql语句是否合法
+(setq csr_dsc (asi_alloc obj_dsc "loc" 't)) ;分配游标
+
+
+
+
+(setq coldsc (asi_coldsc obj_dsc))    ;获取列的描述信息（设计表、表信息）
+(asi_dbms obj_dsc)            ;获取供应商信息
+(asi_msg obj_dsc)            ;获取供应商的dll信息
+(asi_rowqty obj_dsc)            ;查看一下sql语句影响行数，如果是select的话，可能是0行数；update、delete、insert这三个函数才会有影响行数大于1的返回
+(asi_sql obj_dsc)            ;sql字串描述
+(asi_stmtype obj_dsc)            ;返回的是乱码
+(asi_feature obj_dsc '(30))        ;查询供应商是否支持对应函数(27 update;30 insert 18 Alter table)
+(asi_open csr_dsc)            ;打开游标
+(asi_statecsr csr_dsc)            ;检查游标状态
+
+
+;;;(SETQ csr_dsc (asi_infschema env_dsc "CHARACTER_SETS"));information_schema英语单次的缩写(LIST "SCHEMATA" "TABLES" "COLUMNS" "STATISTICS" "USER_PRIVILEGES" "SCHEMA_PRIVILEGES" "TABLE_PRIVILEGES" "COLUMN_PRIVILEGES" "CHARACTER_SETS" "COLLATIONS" "COLLATION_CHARACTER_SET_APPLICABILITY" "TABLE_CONSTRAINTS" "KEY_COLUMN_USAGE" "ROUTINES" "VIEWS" "TRIGGERS")
+
+
+(asi_execute obj_dsc)        ;执行sql语句(这个函数没有成功)
+;(asi_iexecute env_dsc sql)        ;执行sql语句
+
+
+                    ;(asi_pardsc csr_dsc);这个执行后arx错误
+
+
+(asi_fetch csr_dsc "next")        ;游标往下
+(setq d1 (asi_coldsc csr_dsc))
+(setq d2(asi_coldsc obj_dsc))
+
+
+
+
+                    ;(asi_providers)                ;执行一次返回一个游标，每次都不同，好奇怪
+(asi_close csr_dsc)            ;关闭游标
+
+
+
+
+(asi_objlist)                ;返回所有执行过的sql语句描述
+(asi_objname obj_dsc)            ;返回的是空引号，好奇怪
+(asi_nexecute env_dsc sql)        ;执行本机语句，不知道是不是这么用的(不知道是不是为事务法准备的函数)，目前我传入了一条sql语句也返回T了
+
+
+(vl-catch-all-apply 'asi_deallocstm(list obj_dsc))        ;取消分配的sql语句（后面其他函数可能会出错，因为sql语句已经取消了）
+(progn
+  (setq obj_dsc nil)
+  (setq env_dsc nil)
+  (vl-catch-all-apply
+    (function (lambda (a)
+        (asi_disconnect (list "SQLSESSION" a)) ;断开连接
+          )
+    )
+    (list 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0)
+  )
+  (setq csr_dsc nil)
+  (setq obj_dsc nil)
+  (setq env_dsc nil)
+)
+(arxunload "asilisp")
+
+===============================================
+;经过初步分析，执行过程如下：
+1 ASI_connect、ASI_objp、ASI_dbms、ASI_sql、ASI_msg
+2 ASI_objp、ASI_objlist
+3 ASI_objp、ASI_dbms、ASI_disconnect
+4 ASI_errqty、ASI_diag
+===============================================
