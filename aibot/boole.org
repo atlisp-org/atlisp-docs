@@ -1,5 +1,9 @@
 #+title: lisp 位运算
-本文主要涉及的autolisp函数: boole logand logior。~
+本文主要涉及的autolisp函数:
+ - boole
+ - logand
+ - logior
+ - ~
 * 位运算
 ** and
 两个相应的位的值都是1时，返回1，否则返回0
