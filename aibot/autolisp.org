@@ -299,9 +299,15 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * *error*
 ** (*error* "string")
 可由用户定义的错误处理函数
-* eval
+* eval,求值函数
 ** (eval expr)
-返回 AutoLISP 表达式的求值结果
+返回 AutoLISP 表达式的求值结果。
+当一段表达式被 lisp 解释器读入的时候，解释器就会对这段表达式求值，求值就相当于运行程序。
+就像当小学生看见一个 数学公式 时，就要对它进行计算一样。
+所以 lisp 程序的运行过程，就是这些表达式集合的求值过程.
+表达式能被求值的前提条件是 *表达式列表的第一个符号必须是函数*
+如果表达式是一个符号，那么求值就返回符号的值。
+如果表达式是一个数值或字符串，求值就是返回这个数值或字符串本身。
 * exit
 ** (exit)
 强行使当前应用程序退出
@@ -633,7 +639,16 @@ mode: "r" 读取 "w" 写 "a" 追加
 强制退出当前应用程序
 * quote
 ** (quote expr)
-返回表达式而不对其求值
+返回表达式而不对其求值，简记为 ’ 。
+有了 quote 和 eval 就可以控制 表达式求值 的过程和节拍。
+#+begin_src lisp
+  (+ 1 2)  ;; 我们输入一个表达式，结果是 3 ,也就是对这个表达式求值了。
+  (quote (+ 1 2)) ;; 返回结果 仍然是 (+ 1 2) 也就是保持原样。quote 阻止了求值。
+  '(+ 1 2) ;; 与上面的表达式相同
+  (setq a 5) ;; 给符号 a 赋值 为 5
+  (quote a)  ;; 返回符号 a ,而不是 5
+  
+#+end_src
 详见：
 https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * read

@@ -34,6 +34,7 @@
 获取所有可用的打印样式表名称。
 * vla-SetBackgroundColor
 ** (vla-GetContentColor object rowTypes pColor)
+设置背景颜色。
 1/acDataRow -> 数据行
 2/acTitleRow -> 标题行
 4/acHeaderRow -> 表头,设置指定行类型的背景颜色值。
@@ -1422,7 +1423,7 @@ acNorm: 通常窗口
 设定用于对象样式。
 * vla-put-StoreSQLIndex
 ** (vla-put-StoreSQLIndex Object value)
-设定用于对象样式。
+设置属性未说明
 * vla-put-StartTangent
 ** (vla-put-StartTangent Object value )
 设定样条曲线的起始相切点。
@@ -1489,9 +1490,6 @@ acNorm: 通常窗口
 * vla-get-show
 ** (vla-get-show obj)
 获取对象的显示状态
-* vla-get-XEffectiveScaleFactor
-** (vla-get-XEffectiveScaleFactor obj)
-指定块的有效 X 比例因子。
 * vla-put-FlowDirection
 ** (vla-put-FlowDirection object mode)
 acTableTopToBottom / 0 -> 从上到下
@@ -1534,7 +1532,7 @@ acTableBottomToTop / 1 -> 从下到上。设置表格方向
 指定块的有效 Y 比例因子
 * vla-get-XEffectiveScaleFactor
 ** (vla-get-XEffectiveScaleFactor obj)
-指定块的有效X比例因子。
+获取块的有效X比例因子。
 * vla-get-file
 ** (vla-get-file obj)
 返回 obj 的 file property
@@ -1753,40 +1751,40 @@ vla-intersectwith函数的参数，指明延伸基本对象（函数中第一个
 ** (vla-intersectwith obj1 obj2 acextendnone)
 vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 * vla-get-ActiveDimStyle
-** (vla-get-ActiveDimStyle Object)
+** (vla-get-ActiveDimStyle *DOC*)
 取得激活的标注样式。
 * vla-get-ActiveDocument
-** (vla-get-ActiveDocument Object)
+** (vla-get-ActiveDocument *ACAD*)
 取得激活的文件（图形文件）。
 * vla-get-ActiveLayer
-** (vla-get-ActiveLayer Object)
+** (vla-get-ActiveLayer *DOC*)
 取得激活的图层。
 * vla-get-ActiveLayout
-** (vla-get-ActiveLayout Object)
+** (vla-get-ActiveLayout *DOC*)
 取得激活的布局。
 * vla-get-ActiveLinetype
-** (vla-get-ActiveLinetype Object)
+** (vla-get-ActiveLinetype *DOC*)
 取得图形的激活的线型。
 * vla-get-ActiveProfile
-** (vla-get-ActiveProfile Object)
+** (vla-get-ActiveProfile *ACAD*)
 取得AutoCAD工作任务的激活配置。
 * vla-get-ActivePViewport
-** (vla-get-ActivePViewport Object)
+** (vla-get-ActivePViewport *DOC*)
 取得图形的激活的图纸空间的视口。
 * vla-get-ActiveSelectionSet
-** (vla-get-ActiveSelectionSet Object)
+** (vla-get-ActiveSelectionSet *DOC*)
 取得图形激活的选择集。
 * vla-get-ActiveSpace
-** (vla-get-ActiveSpace Object)
+** (vla-get-ActiveSpace *DOC*)
 在图纸空间与模型空间之间切换激活的空间。
 * vla-get-ActiveTextStyle
-** (vla-get-ActiveTextStyle Object)
-取得图形激活的 文字样式。
+** (vla-get-ActiveTextStyle *DOC*)
+取得图形的当前文字样式。
 * vla-get-ActiveUCS
-** (vla-get-ActiveUCS Object)
+** (vla-get-ActiveUCS *DOC*)
 取得图形激活的UCS。
 * vla-get-ActiveViewport
-** (vla-get-ActiveViewport Object)
+** (vla-get-ActiveViewport *DOC*)
 取得图形激活的视口。
 * vla-get-ADCInsertUnitsDefaultSource
 ** (vla-get-ADCInsertUnitsDefaultSource Object)
@@ -1963,7 +1961,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 ** (vla-get-Block Object)
 取得与布局关联的图块。
 * vla-get-Blocks
-** (vla-get-Blocks Object)
+** (vla-get-Blocks *DOC*)
 取得图形的Blocks集合。
 * vla-get-Brightness
 ** (vla-get-Brightness Object)
@@ -2092,7 +2090,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 ** (vla-get-Diameter Object)
 取得圆的直径。
 * vla-get-Dictionaries
-** (vla-get-Dictionaries Object)
+** (vla-get-Dictionaries *DOC*)
 取得文件的Dictionaries集合。
 * vla-get-DimensionLineColor
 ** (vla-get-DimensionLineColor Object)
@@ -2116,7 +2114,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 ** (vla-get-DimLineSuppress Object)
 判断是否禁止半径标注的标注线。
 * vla-get-DimStyles
-** (vla-get-DimStyles Object)
+** (vla-get-DimStyles *DOC*)
 取得文件的DimStyles集合。
 * vla-get-Direction
 ** (vla-get-Direction Object)
@@ -2305,7 +2303,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 ** (vla-get-GripSize Object)
 取得夹点的尺寸。
 * vla-get-Groups
-** (vla-get-Groups Object)
+** (vla-get-Groups *DOC*)
 取得文件的Groups集合。
 * vla-get-Handle
 ** (vla-get-Handle Object)
@@ -3291,34 +3289,34 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 ** (vla-get-ZScaleFactor Object )
 取得块或XRef的Z比例系数。
 * vla-put-ActiveDimStyle
-** (vla-put-ActiveDimStyle Object Value)
+** (vla-put-ActiveDimStyle *DOC* Value)
 设定激活的标注样式。
 * vla-put-ActiveLayer
-** (vla-put-ActiveLayer Object Value)
+** (vla-put-ActiveLayer *DOC* Value)
 设定激活的图层。
 * vla-put-ActiveLayout
-** (vla-put-ActiveLayout Object Value)
+** (vla-put-ActiveLayout *DOC* Value)
 设定激活的布局。
 * vla-put-ActiveLinetype
-** (vla-put-ActiveLinetype Object Value)
+** (vla-put-ActiveLinetype *DOC* Value)
 设定图形的激活的线型。
 * vla-put-ActiveProfile
-** (vla-put-ActiveProfile Object Value)
+** (vla-put-ActiveProfile *ACAD* Value)
 设定AutoCAD任务的激活配置。
 * vla-put-ActivePViewport
-** (vla-put-ActivePViewport Object Value)
+** (vla-put-ActivePViewport *DOC* Value)
 设定图形的激活的图纸空间的视口。
 * vla-put-ActiveSpace
-** (vla-put-ActiveSpace Object Value)
+** (vla-put-ActiveSpace *DOC* Value)
 在图纸空间与模型空间之间切换激活的空间。
 * vla-put-ActiveTextStyle
-** (vla-put-ActiveTextStyle Object Value)
-设定图形激活的字型。
+** (vla-put-ActiveTextStyle *DOC* Value)
+设定图形的当前文字样式。
 * vla-put-ActiveUCS
-** (vla-put-ActiveUCS Object Value)
+** (vla-put-ActiveUCS *DOC* Value)
 设定图形激活的UCS。
 * vla-put-ActiveViewport
-** (vla-put-ActiveViewport Object Value)
+** (vla-put-ActiveViewport *DOC* Value)
 设定图形激活的视口。
 * vla-put-ADCInsertUnitsDefaultSource
 ** (vla-put-ADCInsertUnitsDefaultSource Object Value)

@@ -31,6 +31,21 @@
 * vlr-object-reactor,对象反应器
 ** (vlr-object-reactor owners data callbacks)
 构造对象反应器对象
+** 事件
+*** :vlr-cancelled
+*** :vlr-copied
+*** :vlr-erased
+*** :vlr-unerased
+*** :vlr-goodbye
+*** :vlr-openedForModify
+*** :vlr-modified
+*** :vlr-subObjModified
+*** :vlr-modifyUndone
+*** :vlr-modifiedXData
+*** :vlr-unappended
+*** :vlr-reappended
+*** :vlr-objectClosed
+
 * vlr-data-set
 ** (vlr-data-set objdata)
 覆盖与反应器相关的应用程序特定数据
@@ -197,4 +212,3 @@
 
 ** 永久反应器
 vlr-pers-* 相关函数
-
