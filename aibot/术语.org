@@ -28,8 +28,11 @@ autolisp中其它的非列表的数据类型，也可以称为原子，如 图�
 如果你只输入数字，LISP会认为你输入了一个整数而不是符号。符号不分大小写 ， abc 和 Abc 、 ABC .被认为是同一个符号。
 * 自解析符号
 对符号进行求值，其值就是符号本身，这种符号称为自解析符号。
-常用的如 t nil :vlax-true :vlax-false
-以及其它的以 : 开头的符号。
+在 autolisp 中，如 :vlax-true  :vlax-false :vlax-null 以及:vlr-* 系列为自解析符号，在编程时不能用数值代替。
+
+在visuallisp中，当dump 一个对象时，:vlax-true 可能会显示 为 -1。但是在lisp代码中，不能用-1代替 :vlax-true 。这与autolisp中定义的以 ac开头的常量值不同。需注意区分。
+
+在用户环境中，我们自己定义的以：开头的符号不遵守这个约定。如(setq :abc 5) ,:abc 不是自解析符号。
 
 * nil
 有两个比较特别的符号就是 t 跟 nil 。

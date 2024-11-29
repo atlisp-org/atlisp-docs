@@ -1,3 +1,4 @@
+#+prefix: FAQ
 * 修复单色显示,单色显示修复
 点击CAD菜单 文件/页面设置管理器，打开页面设置管理器后，点击修改，去掉显示打印样式前的 对勾 即可。
 
@@ -8,3 +9,26 @@
 有些精简版的CAD或CAD LT版本，删除了 visuallisp环境。这些版本不支持@lisp的安装和运行。
 
 如果想要使用 @lisp，请安装支持vl的CAD版本。
+* 乱码,汉字乱码
+对于低于2021版本或 lispsys=0的 CAD， 记事本中 保存时 改为 GB2312 或 ANSI 编码。
+
+2021版本以上的，可以用vscode编辑lsp源码，源码可采用 utf8 编码。
+
+建议 lispsys 设为 2，这样编译的fas文件可以用在低版本的CAD中。
+* 双击不能编辑文字
+1 两个变量会影响双击文字的编辑。
+  - =DBLCLKEDIT=
+  - =pickfirst=
+2 鼠标双击反应器影响。执行下面的代码查看有没有 :VLR-beginDoubleClick字样。
+#+begin_src lisp
+(foreach reaction (vlr-reactors)(princ (vlr-reactions  (cadr reaction))))
+#+end_src
+
+* 移除双击反应器
+#+begin_src lisp
+  (foreach
+   reactor (vlr-reactors)
+   (if (and (eq :vlr-mouse-reactor(car reactor))
+            (assoc :VLR-beginDoubleClick (vlr-reactions (cadr reactor))))
+       (vlr-remove (cadr reactor))))
+#+end_src
