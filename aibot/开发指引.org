@@ -23,7 +23,7 @@ S-表达式
 - ssget entsel
 - entmake  entmod entdel entupd
   
-* vl开发指引
+* vl开发指引,visuallisp
 了解CAD的对象系统，以及面向对象的基本概念，对象、属性、方法。
 Visual lisp 的核心是面向对象的 lisp， 就是为了操作 ActiveX 对象的属性和方法。
 知道对象的属性和方法，就可以操作ActiveX对象了。
