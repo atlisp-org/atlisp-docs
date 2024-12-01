@@ -78,8 +78,8 @@
 显示有关产品的信息。
 
 * ACADINFO
-(Express Tool)
 创建一个文件，该文件存储有关 AutoCAD 安装和当前设置的信息。
+(Express Tool)
 
 * ACISIN
 输入 ACIS (SAT) 文件并创建三维实体、体或面域对象。
@@ -121,15 +121,15 @@
 调整选定参考底图（DWF、DWFx、PDF 或 DGN）或图像的淡入度、对比度和单色设置。
 
 * ALIASEDIT
-(Express Tool)
 创建、修改和删除 AutoCAD 命令别名。
+(Express Tool)
 
 * ALIGN
 在二维和三维空间中将对象与其他对象对齐。
 
 * ALIGNSPACE
-(Express Tool)
 基于在模型空间和图纸空间中指定的对齐点，在布局视口中调整视图的平移和缩放因子。
+(Express Tool)
 
 * AMECONVERT
 将 AME 实体模型转换为 AutoCAD 实体对象。
@@ -167,15 +167,15 @@
 * APPSTORE
 打开 Autodesk App Store 网站。
 
-* ARC, 圆弧
+* ARC, 圆弧,弧
 创建圆弧。
 
 * ARCHIVE
 将当前图纸集文件打包存储。
 
 * ARCTEXT
-(Express Tool)
 沿圆弧放置文字。
+(Express Tool)
 
 * AREA,面积
 计算对象或所定义区域的面积和周长。
@@ -223,15 +223,15 @@
 将与块关联的属性数据、文字信息提取到文件中。
 
 * ATTIN
-(Express Tool)
 从外部制表符分隔的 ASCII 文件输入块属性值。
+(Express Tool)
 
 * ATTIPEDIT
 更改块中属性的文本内容。
 
 * ATTOUT
-(Express Tool)
 将块属性值输出为以制表符分隔的 ASCII 格式的外部文件。
+(Express Tool)
 
 * ATTREDEF
 重定义块并更新关联属性。
@@ -288,8 +288,8 @@
 将块几何图形转换为可能会隐藏或显示的构造几何图形。
 
 * BCOUNT
-(Express Tool)
 为选择集或整个图形中的每个块，创建实例数的报告。
+(Express Tool)
 
 * BCPARAMETER
 将约束参数应用于选定的对象，或将标注约束转换为参数约束。
@@ -304,8 +304,8 @@
 显示“块编辑器设置”对话框。
 
 * BEXTEND
-(Express Tool)
 将对象扩展为块。
+(Express Tool)
 
 * BGRIPSET
 创建、删除或重置与参数相关联的夹点。
@@ -317,15 +317,15 @@
 从选定的对象中创建一个块定义。
 
 * BLOCK?
-(Express Tool)
 在块定义中列出对象。
+(Express Tool)
 
 * BLOCKICON
 为 AutoCAD 设计中心中显示的块生成预览图像。
 
 * BLOCKREPLACE
-(Express Tool)
 将指定块的所有实例替换为不同的块。
+(Express Tool)
 
 * BLOCKSPALETTE
 显示“块”选项板，可用于将块和图形插入到当前图形中。
@@ -334,8 +334,8 @@
 关闭“块”选项板。
 
 * BLOCKTOXREF
-(Express Tool)
 将指定块的所有实例替换为外部参照。
+(Express Tool)
 
 * BLOOKUPTABLE
 为动态块定义显示或创建查寻表。
@@ -359,8 +359,8 @@
 在指定点处将选定对象打断为两个对象。
 
 * BREAKLINE
-(Express Tool)
 创建特征线，以及包含特征线符号的多段线。
+(Express Tool)
 
 * BREP
 删除三维实体和复合实体的历史记录以及曲面的关联性。
@@ -375,8 +375,8 @@
 用新名称保存当前块定义的副本。
 
 * BSCALE
-(Express Tool)
 相对于其插入点缩放块参照。
+(Express Tool)
 
 * BTABLE
 将块的变量存储在块特性表中。
@@ -385,12 +385,12 @@
 在块编辑器内显示一个窗口，以测试动态块。
 
 * BTRIM
-(Express Tool)
 将对象修剪为块。
+(Express Tool)
 
 * BURST
-(Express Tool)
 分解选定的块，同时保留块图层，并将属性值转换为文字对象。
+(Express Tool)
 
 * BVHIDE
 使对象在动态块定义中的当前可见性状态下不可见，或在所有可见性状态下均不可见。
@@ -408,8 +408,8 @@
 设置相机位置和目标位置，以创建并保存对象的三维透视视图。
 
 * CDORDER
-(Express Tool)
 按选定对象的颜色编号排列其绘图顺序。
+(Express Tool)
 
 * CENTERDISASSOCIATE
 从中心标记或中心线定义的对象中删除其关联性。
@@ -445,8 +445,8 @@
 在布局上，在模型空间和图纸空间之间传输选定对象。
 
 * CHURLS
-(Express Tool)
 提供一种方法，用来编辑以前为选定对象附着的 URL。
+(Express Tool)
 
 * CIRCLE,圆
 创建圆。
@@ -476,8 +476,8 @@
 将选定对象（如块、外部参照、图像、视口和参考底图）修剪到指定的边界。
 
 * CLIPIT
-(Express Tool)
 使用直线和曲线剪裁外部参照或图像。
+(Express Tool)
 
 * CLOSE
 关闭当前图形。
@@ -570,8 +570,8 @@
 将当前视图复制到剪贴板中以便链接到其他 OLE 应用程序。
 
 * COPYM
-(Express Tool)
 使用“重复”、“阵列”、“定数等分”和“定距等分”选项复制多个对象。
+(Express Tool)
 
 * COPYTOLAYER
 将一个或多个对象复制到其他图层。
@@ -775,12 +775,12 @@
 编辑标注文字和尺寸界线。
 
 * DIMEX
-(Express Tool)
 将命名标注样式及其设置输出到外部文件。
+(Express Tool)
 
 * DIMIM
-(Express Tool)
 从外部文件中输入命名标注样式及其设置。
+(Express Tool)
 
 * DIMINSPECT
 为选定的标注添加或删除检验信息。
@@ -804,8 +804,8 @@
 为圆或圆弧创建半径标注。
 
 * DIMREASSOC
-(Express Tool)
 将测量值恢复为替代或修改的标注文字。
+(Express Tool)
 
 * DIMREASSOCIATE
 将选定的标注关联或重新关联至对象或对象上的点。
@@ -856,8 +856,8 @@
 设置栅格和捕捉、极轴和对象捕捉追踪、对象捕捉模式、动态输入和快捷特性。
 
 * DUMPSHX
-(Express Tool)
 将现有 SHX（已编译）文件转换为等效的 SHP（已反编译）文件
+(Express Tool)
 
 * DVIEW
 使用相机和目标来定义平行投影或透视视图。
@@ -887,8 +887,8 @@
 关闭“图形历史”选项板。
 
 * DWGLOG
-(Express Tool)
 在访问每个图形文件时，为其创建和维护单个日志文件。
+(Express Tool)
 
 * DWGPROPS
 设置和显示当前图形的文件特性。
@@ -912,8 +912,8 @@
 以运动或不运动方式编辑保存的命名视图。
 
 * EDITTIME
-(Express Tool)
 跟踪图形的活动编辑时长。
+(Express Tool)
 
 * ELEV
 设置新对象的标高和拉伸厚度。
@@ -928,12 +928,12 @@
 将一组文件打包以进行 Internet 传递。
 
 * EXOFFSET
-(Express Tool)
 偏移选定的对象。
+(Express Tool)
 
 * EXPLAN
-(Express Tool)
 显示指定 UCS 的 XY 平面的正交视图，而不改变视图的放大。
+(Express Tool)
 
 * EXPLODE
 将复合对象分解为其组件对象。
@@ -960,12 +960,12 @@
 创建可以在产品（如 AutoCAD）中打开的 AEC 文件的版本。
 
 * EXPRESSMENU
-(Express Tool)
 加载 AutoCAD Express Tools 菜单并在菜单栏上显示 Express 菜单。
+(Express Tool)
 
 * EXPRESSTOOLS
-(Express Tool)
 加载 AutoCAD Express Tools 库，将 Express 文件夹放置在搜索路径中，并在菜单栏上加载并放置 Express 菜单。
+(Express Tool)
 
 * EXTEND
 扩展对象以与其他对象的边相接。
@@ -977,8 +977,8 @@
 关闭“外部参照”选项板。
 
 * EXTRIM
-(Express Tool)
 修剪由选定的多段线、直线、圆、圆弧、椭圆、文字、多行文字或属性定义指定的剪切边上的所有对象。
+(Express Tool)
 
 * EXTRUDE
 从封闭区域的对象创建三维实体，或从具有开口的对象创建三维曲面。
@@ -1011,8 +1011,8 @@
 基于当前视图创建所有三维对象的二维表示。
 
 * FLATTEN
-(Express Tool)
 将三维几何图形转换为投影的二维表示。
+(Express Tool)
 
 * FREESPOT
 创建自由聚光灯（未指定目标的聚光灯）。
@@ -1021,12 +1021,12 @@
 创建自由光域灯光（未指定目标的光域灯光）。
 
 * FS
-(Express Tool)
 创建接触选定对象的所有对象的选择集。
+(Express Tool)
 
 * GATTE
-(Express Tool)
 全局更改用于指定块的全部实例的属性值。
+(Express Tool)
 
 * GCCOINCIDENT
 约束两个点使其重合，或者约束一个点使其位于曲线（或曲线的延长线）上。
@@ -1101,8 +1101,8 @@
 更改模型空间中地理标记的北向和位置，而不更改其纬度和经度。
 
 * GETSEL
-(Express Tool)
 基于图层和对象类型过滤器，创建对象的选择集。
+(Express Tool)
 
 * GOTOSTART
 从当前图形切换到“开始”选项卡。
@@ -1188,8 +1188,9 @@
 * IMAGEADJUST
 控制图像的亮度、对比度和淡入度值。
 
-* IMAGEAPP (Express Tool)
+* IMAGEAPP
 为 IMAGEEDIT 指定图像编辑程序。
+(Express Tool)
 
 * IMAGEATTACH
 将参照插入图像文件中。
@@ -1198,8 +1199,8 @@
 根据指定边界修剪选定图像的显示。
 
 * IMAGEEDIT
-(Express Tool)
 启动通过 IMAGEAPP 为选定图像指定的图像编辑程序。
+(Express Tool)
 
 * IMAGEQUALITY
 控制图像的显示质量。
@@ -1241,8 +1242,8 @@
 将选定对象以 JPEG 文件格式保存到文件中。
 
 * JULIAN
-(Express Tool)
 包含 DATE 工具和多个 AutoCAD 公历日期和日历日期转化例程。
+(Express Tool)
 
 * JUSTIFYTEXT
 更改选定文字对象的对正点而不更改其位置。
@@ -1302,8 +1303,8 @@
 创建和修改图形布局。
 
 * LAYOUTMERGE
-(Express Tool)
 将指定的布局组合为单个布局。
+(Express Tool)
 
 * LAYOUTWIZARD
 创建新的布局选项卡并指定页面和打印设置。
@@ -1369,12 +1370,12 @@
 将命令历史记录的内容写入到文件中。
 
 * LSP
-(Express Tool)
 显示所有可用 AutoLISP 命令、函数和变量的列表。
+(Express Tool)
 
 * LSPSURF
-(Express Tool)
 按单个函数显示 AutoLISP 文件的内容。
+(Express Tool)
 
 * LTSCALE命令
 设定全局线型比例因子。
@@ -1494,12 +1495,12 @@
 创建镜像平面上选定三维对象的镜像副本。
 
 * MKLTYPE
-(Express Tool)
 基于选定对象创建线型定义，并将它们存储在指定的线型定义 (LIN) 文件中。
+(Express Tool)
 
 * MKSHAPE
-(Express Tool)
 基于选定对象创建形状定义。
+(Express Tool)
 
 * MLEADER
 创建多重引线对象。
@@ -1526,8 +1527,8 @@
 创建、修改和管理多线样式。
 
 * MOCORO
-(Express Tool)
 使用单个命令移动、复制、旋转和缩放选定的对象。
+(Express Tool)
 
 * MODEL
 从命名的布局选项卡切换到“模型”选项卡。
@@ -1536,12 +1537,12 @@
 在指定方向上按指定距离移动对象。
 
 * MOVEBAK
-(Express Tool)
 更改图形备份 (BAK) 文件的目标文件夹。
+(Express Tool)
 
 * MPEDIT
-(Express Tool)
 编辑多个多段线；还将多个直线和圆弧对象转换为多段线对象。
+(Express Tool)
 
 * MREDO
 恢复之前几个用 UNDO 或 U 命令放弃的效果。
@@ -1553,8 +1554,8 @@
 在布局中，从图纸空间切换到布局视口中的模型空间。
 
 * MSTRETCH
-(Express Tool)
 拉伸具有多个交叉窗口和交叉多边形的对象。
+(Express Tool)
 
 * MTEDIT
 编辑多行文字。
@@ -1749,8 +1750,8 @@
 显示绘图仪管理器，从中可以添加或编辑绘图仪配置。
 
 * PLT2DWG
-(Express Tool)
 将传统 HPGL 文件输入到当前图形中，并保留所有颜色。
+(Express Tool)
 
 * PMTOGGLE
 控制性能录制器处于打开还是关闭状态。
@@ -1810,12 +1811,12 @@
 关闭“特性”选项板。
 
 * PROPULATE
-(Express Tool)
 更新、列出或清除“图形特性”数据。
+(Express Tool)
 
 * PSBSCALE
-(Express Tool)
 指定或更新块对象相对于图纸空间的比例。
+(Express Tool)
 
 * PSETUPIN
 将用户定义的页面设置输入到新的图形布局中。
@@ -1827,8 +1828,8 @@
 在布局中，从布局视口中的模型空间切换到图纸空间。
 
 * PSTSCALE
-(Express Tool)
 指定或更新文字对象相对于图纸空间的比例。
+(Express Tool)
 
 * PTYPE
 指定点对象的显示样式及大小。
@@ -1858,16 +1859,16 @@
 从选定对象快速创建一系列标注。
 
 * QLATTACH
-(Express Tool)
 将引线附着到多行文字、公差或块参照对象。
+(Express Tool)
 
 * QLATTACHSET
-(Express Tool)
 将引线全局附着到多行文字、公差或块参照对象。
+(Express Tool)
 
 * QLDETACHSET
-(Express Tool)
 从多行文字、公差或块参照对象拆离引线。
+(Express Tool)
 
 * QLEADER
 创建引线和引线注释。
@@ -1876,8 +1877,8 @@
 从指定的图形样板文件启动新图形。
 
 * QQUIT
-(Express Tool)
 关闭所有打开的图形，然后退出。
+(Express Tool)
 
 * QSAVE
 使用指定的默认文件格式保存当前图形。
@@ -1928,12 +1929,12 @@
 恢复被 UNDEFINE 替代的 AutoCAD 内部命令。
 
 * REDIR
-(Express Tool)
 重定义外部参照、图像、形状、样式和 rtext 中硬编码的路径。
+(Express Tool)
 
 * REDIRMODE
-(Express Tool)
 通过指定包含哪些对象类型，设置 REDIR Express Tool 的选项。
+(Express Tool)
 
 * REDO
 恢复上一个用 UNDO 或 U 命令放弃的效果。
@@ -2011,8 +2012,8 @@
 关闭“渲染”窗口。
 
 * REPURLS
-(Express Tool)
 在附着到所有选定对象的超链接中使用的 URL 中，查找和替换指定的文本字符串。
+(Express Tool)
 
 * RESETBLOCK
 将一个或多个动态块参照重置为块定义的默认值。
@@ -2030,8 +2031,8 @@
 反转选定直线、多段线、样条曲线和螺旋的顶点，对于具有包含文字的线型或具有不同起点宽度和端点宽度的宽多段线，此操作非常有用。
 
 * REVERT
-(Express Tool)
 关闭并重新打开当前图形。
+(Express Tool)
 
 * REVOLVE
 通过绕轴扫掠对象创建三维实体或曲面。
@@ -2061,16 +2062,16 @@
 重复执行脚本文件。
 
 * RTEDIT
-(Express Tool)
 编辑现有的远程文字 (rtext) 对象。
+(Express Tool)
 
 * RTEXT
-(Express Tool)
 创建远程文字 (rtext) 对象。
+(Express Tool)
 
 * RTUCS
-(Express Tool)
 使用定点设备动态旋转 UCS。
+(Express Tool)
 
 * RULESURF
 创建用于表示两条直线或曲线之间的曲面的网格。
@@ -2079,8 +2080,8 @@
 使用不同的文件名或位置保存当前图形，而不更改当前图形文件。
 
 * SAVEALL
-(Express Tool)
 保存所有打开的图形。
+(Express Tool)
 
 * SAVEAS
 使用新文件名或位置保存当前图形的副本。
@@ -2174,12 +2175,12 @@
 显示在 Autodesk 帐户中渲染和存储的图像。
 
 * SHOWURLS
-(Express Tool)
 显示包含在图形中的所有附着的 URL，并允许对它们进行编辑。
+(Express Tool)
 
 * SHP2BLK
-(Express Tool)
 使用等效的块转换选定形状对象的所有实例。
+(Express Tool)
 
 * SIGVALIDATE
 显示有关附着到图形文件的数字签名的信息。
@@ -2227,8 +2228,8 @@
 创建可发射定向圆锥形光柱的聚光灯。
 
 * SSX
-(Express Tool)
 基于选定的对象创建选择集。
+(Express Tool)
 
 * STANDARDS
 管理标准文件与图形之间的关联性
@@ -2258,8 +2259,8 @@
 关闭“阳光特性”选项板
 
 * SUPERHATCH
-(Express Tool)
 使用选定的图像、块、外部参照或区域覆盖对象对区域进行图案填充。
+(Express Tool)
 
 * SURFBLEND
 在两个现有曲面之间创建连续的过渡曲面。
@@ -2298,8 +2299,8 @@
 监视系统变量的列表，并在列表中任何一个系统变量发生更改时发送通知。
 
 * SYSVDLG
-(Express Tool)
 允许您查看、编辑、保存和恢复系统变量设置。
+(Express Tool)
 
 * SYSWINDOWS
 应用程序窗口与外部应用程序共享时，排列窗口和图标。
@@ -2329,16 +2330,16 @@
 控制多个打开的图形在 Windows 任务栏上是单独显示还是被编组。
 
 * TCASE
-(Express Tool)
 更改选定文字、多行文字、属性和标注文字的大小写。
+(Express Tool)
 
 * TCIRCLE
-(Express Tool)
 围绕每个选定的文字或多行文字对象创建圆、长孔形或矩形。
+(Express Tool)
 
 * TCOUNT
-(Express Tool)
 将连续编号作为前缀、后缀或替换文字添加到文字和多行文字对象。
+(Express Tool)
 
 * TEXT
 创建单行文字对象。
@@ -2350,12 +2351,12 @@
 编辑选定的多行文字或单行文字对象，或标注对象上的文字。
 
 * TEXTFIT
-(Express Tool)
 基于新的起点和终点，展开或收拢文字对象的宽度。
+(Express Tool)
 
 * TEXTMASK
-(Express Tool)
 在选定文字或多行文字对象的后面创建空白区域。
+(Express Tool)
 
 * TEXTSCR
 打开一个文本窗口，该窗口将显示当前任务的提示和命令行条目的历史记录。
@@ -2364,12 +2365,12 @@
 将文字、引线和标注置于图形中的其他所有对象之前。
 
 * TEXTUNMASK
-(Express Tool)
 从通过 TEXTMASK 进行遮罩的选定文字或多行文字中删除遮罩。
+(Express Tool)
 
 * TFRAMES
-(Express Tool)
 切换所有区域覆盖和图像对象的边框显示。
+(Express Tool)
 
 * THICKEN
 以指定的厚度将曲面转换为三维实体。
@@ -2384,8 +2385,8 @@
 将块插入到表格单元中。
 
 * TJUST
-(Express Tool)
 更改文字对象的对正点而不移动文字。使用文字、多行文字和属性定义对象。
+(Express Tool)
 
 * TOLERANCE
 创建包含在特征控制框中的形位公差。
@@ -2400,8 +2401,8 @@
 关闭“工具选项板”窗口
 
 * TORIENT
-(Express Tool)
 旋转文字、多行文字、属性定义和具有属性的块，以提高可读性。
+(Express Tool)
 
 * TORUS
 创建圆环形的三维实体。
@@ -2434,22 +2435,22 @@
 显示有关图形当前空间索引的信息。
 
 * TREX
-(Express Tool)
 结合 TRIM 和 EXTEND 命令。
+(Express Tool)
 
 * TRIM
 修剪对象以与其他对象的边相接。
 
 * TSCALE
-(Express Tool)
 缩放文字、多行文字、属性和属性定义。
+(Express Tool)
 
 * TXT2MTXT
 将单行或多行文字对象转换或者合并为一个或多个多行文字对象。
 
 * TXTEXP
-(Express Tool)
 将文字或多行文字对象分解为多段线对象。
+(Express Tool)
 
 * U,撤销
 撤销最近一次操作。
@@ -2599,12 +2600,12 @@
 在模型空间或布局（图纸空间）中创建多个视口。
 
 * VPSCALE
-(Express Tool)
 在布局中，显示当前视口或选定的布局视口的比例。
+(Express Tool)
 
 * VPSYNC
-(Express Tool)
 将一个或多个相邻的布局视口中的视图与主布局视口对齐。
+(Express Tool)
 
 * VSCURRENT
 设置当前视口的视觉样式。
@@ -2679,12 +2680,12 @@
 缩放到外部参照比较结果的上一更改集。
 
 * XDATA
-(Express Tool)
 将扩展对象数据 (xdata) 附着到选定对象。
+(Express Tool)
 
 * XDLIST
-(Express Tool)
 列出附着到对象的扩展数据。
+(Express Tool)
 
 * XEDGES
 从三维实体、曲面、网格、面域或子对象的边创建线框几何图形。
@@ -2693,8 +2694,8 @@
 创建无限长的构造线。
 
 * XLIST
-(Express Tool)
 列出块或外部参照中嵌套对象的类型、块名称、图层名称、颜色和线型。
+(Express Tool)
 
 * XOPEN
 在新窗口中打开选定的图形参照（外部参照）。

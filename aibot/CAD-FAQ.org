@@ -32,3 +32,9 @@
             (assoc :VLR-beginDoubleClick (vlr-reactions (cadr reactor))))
        (vlr-remove (cadr reactor))))
 #+end_src
+* 改变CAD背景色,CAD底色怎么将黑色变更白色
+命令 op，或菜单工具-选项，打开选项对话框。
+点击 ‘显示’ 栏，然后点击颜色。
+上下文：二维模型空间，界面元素：统一背景。颜色选白色或你希望的颜色。
+最后点确定。
+
