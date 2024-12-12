@@ -288,6 +288,8 @@
 * vla-Explode
 ** (vla-Explode object)
 将复合对象分解为子图元。
+返回值: variant 8201 分解后的图元对象的集合。
+可以用 =vla:get-value= 将集合转为对象的表。
 * vla-GetReal
 ** (vla-GetReal Object [Prompt])
 从用户获取双精度实数值。
@@ -1244,7 +1246,7 @@ acNorm: 通常窗口
 设定Hyperlink对象的URL。
 * vla-put-UpsideDown
 ** (vla-put-UpsideDown Object value )
-设定文字的方向。
+设定文字的颠倒方向。
 * vla-put-UnitsFormat
 ** (vla-put-UnitsFormat Object value)
 设定所有标注（不含角度）的所有单位格式。
@@ -1280,10 +1282,10 @@ acNorm: 通常窗口
 设定标注文字的最大公差上限。
 * vla-put-ToleranceSuppressZeroInches
 ** (vla-put-ToleranceSuppressZeroInches Object value)
-设定不输出公差值中的零英寸测量单位。
+设定不输出公差值中的零英寸量单位。
 * vla-put-ToleranceSuppressZeroFeet
 ** (vla-put-ToleranceSuppressZeroFeet Object value)
-设定不输出公差值中的零英寸测量单位。
+设定不输出公差值中的零英尺测量单位。
 * vla-put-ToleranceSuppressTrailingZeros
 ** (vla-put-ToleranceSuppressTrailingZeros Object value)
 设定不输出标注值中的结尾零。
@@ -1409,7 +1411,7 @@ acNorm: 通常窗口
 设定是否禁止标注值中的零英寸测量单位。
 * vla-put-SuppressZeroFeet
 ** (vla-put-SuppressZeroFeet Object value)
-设定是否禁止标注值中的零英寸测量单位。
+设定是否禁止标注值中的零英尺测量单位。
 * vla-put-SuppressTrailingZeros
 ** (vla-put-SuppressTrailingZeros Object value)
 设定是否禁止标注值中的结尾零。
@@ -1439,13 +1441,13 @@ acNorm: 通常窗口
 设定弧、线、或椭圆的起始点。
 * vla-put-StartParameter
 ** (vla-put-StartParameter Object value)
-设定弧、线、或椭圆的起始点。
+设定弧、线、或椭圆的起始参数。
 * vla-put-StartAngle
 ** (vla-put-StartParameter Object value)
 设定弧与椭圆的起始角度。
 * vla-put-StandardScale
 ** (vla-put-StandardScale Object value)
-设定弧与椭圆的起始角度。
+设定弧与椭圆的起始毕缩放值。
 * vla-put-SolidFill
 ** (vla-put-SolidFill Object value)
 设定多行文字、等线宽、实体、所有的剖面线（含有实体填充）以及宽多段线是否要填充。
@@ -1733,7 +1735,7 @@ i为行数，j为列数
 设置表格水平单元格间距
 * vla-get-Active
 ** (vla-get-Active SecurityParams)
-指定在图形中要执行的与安全相关的操作
+获取在图形中要执行的与安全相关的操作
 * vla-put-Action
 ** (vla-put-Action SecurityParams Action)
 指定在图形中要执行的与安全相关的操作
@@ -1787,7 +1789,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得图形激活的选择集。
 * vla-get-ActiveSpace
 ** (vla-get-ActiveSpace *DOC*)
-在图纸空间与模型空间之间切换激活的空间。
+获取当前激活的空间。
 * vla-get-ActiveTextStyle
 ** (vla-get-ActiveTextStyle *DOC*)
 取得图形的当前文字样式。
@@ -1844,7 +1846,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得所有标注中的公差值 精度。
 * vla-get-AltToleranceSuppressLeadingZeros
 ** (vla-get-AltToleranceSuppressLeadingZeros Object)
-判断是否在替代标注值中禁止前导零。
+判断是否在替代标注值中禁止前导0。
 * vla-get-AltToleranceSuppressTrailingZeros
 ** (vla-get-AltToleranceSuppressTrailingZeros Object)
 判断是否在替代公差值中 禁止结尾零。
@@ -1922,7 +1924,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得在进行DXFIN或DXBIN交换命令的着色后是否要执行 核查。
 * vla-get-AutoSaveInterval
 ** (vla-get-AutoSaveInterval Object)
-以分钟数指定自动储存的间隔时间。
+取得以分钟数指定自动储存的间隔时间值。
 * vla-get-AutoSavePath
 ** (vla-get-AutoSavePath Object)
 取得在使用AutoSaveInterval属性打开自动储存时建立 的文件的路径。
@@ -1931,7 +1933,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 切换AutoSnap锁点框的显示。
 * vla-get-AutoSnapApertureSize
 ** (vla-get-AutoSnapApertureSize Object)
-切换AutoSnap捕捉点框的尺寸。
+取得AutoSnap捕捉点框的尺寸。
 * vla-get-AutoSnapMagnet
 ** (vla-get-AutoSnapMagnet Object)
 切换AutoSnap磁吸。
@@ -2018,7 +2020,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得图元或图层的颜色。
 * vla-get-Columns
 ** (vla-get-Columns Object)
-取得图块阵列中的行数。
+取得图块阵列中的列数。
 * vla-get-ColumnSpacing
 ** (vla-get-ColumnSpacing Object)
 取得图块阵列中的行的间距。
@@ -2150,7 +2152,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得视口是否被锁定。
 * vla-get-DisplayOLEScale
 ** (vla-get-DisplayOLEScale Object)
-判断OLE对象插入到图形时，是否显示OLE调整比例对话框。
+取得OLE对象插入到图形时，是否显示OLE调整比例对话框。
 * vla-get-DisplayScreenMenu
 ** (vla-get-DisplayScreenMenu Object)
 判断是否将屏幕菜单显示在图形窗口的右端。
@@ -2159,7 +2161,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 判断是否在屏幕窗口的底端及右边显示滚动条。
 * vla-get-DisplaySilhouette
 ** (vla-get-DisplaySilhouette Object)
-控制在线框模式下是否显示实体对象的轮廓曲线。
+取得控制在线框模式下是否显示实体对象的轮廓曲线。
 * vla-get-DockedVisibleLines
 ** (vla-get-DockedVisibleLines Object)
 取得命令窗口中显示的行数。
@@ -2264,7 +2266,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得样条曲线的拟合点。
 * vla-get-FitTolerance
 ** (vla-get-FitTolerance Object)
-以新的公差值在已有的点重新拟合样条曲线。
+取得以新的公差值在已有的点重新拟合样条曲线的设定值。
 * vla-get-FloatingRows
 ** (vla-get-FloatingRows Object)
 取得浮动工具栏的列数。
@@ -2294,7 +2296,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得应用程序或文件的名称，包括路径在内。
 * vla-get-FullScreenTrackingVector
 ** (vla-get-FullScreenTrackingVector Object)
-切换全屏幕追踪矢量的显示。
+取得切换全屏幕追踪矢量的显示控制值。
 * vla-get-GraphicsWinLayoutBackgrndColor
 ** (vla-get-GraphicsWinLayoutBackgrndColor Object)
 取得图纸空间布局的背景颜色。
@@ -2350,10 +2352,10 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得文件窗口框的窗口句柄。
 * vla-get-HyperlinkDisplayCursor
 ** (vla-get-HyperlinkDisplayCursor Object)
-切换超链接光标快捷键菜单的显示。
+取切换超链接光标快捷键菜单的显示控制值。
 * vla-get-HyperlinkDisplayTooltip
 ** (vla-get-HyperlinkDisplayTooltip Object)
-切换超链接工具提示的显示。
+取得切换超链接工具提示的显示控制设置。
 * vla-get-Hyperlinks
 ** (vla-get-Hyperlinks Object)
 取得图元的Hyperlinks集合。
@@ -2599,13 +2601,13 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得要出现在[文件]菜单中的最近使用的文件的数目。
 * vla-get-MSpace
 ** (vla-get-MSpace Object )
-允许从浮动图纸空间视口编辑模型。
+取得允许从浮动图纸空间视口编辑模型的设置值。
 * vla-get-MVertexCount
 ** (vla-get-MVertexCount Object )
 取得PolygonMesh在M方向的顶点。
 * vla-get-Name
 ** (vla-get-Name Object )
-取得没有下划线符号的弹出菜单名称。
+取得弹出菜单名称。
 * vla-get-NameNoMnemonic
 ** (vla-get-NameNoMnemonic Object )
 取得没有下划线符号的弹出菜单名称。
@@ -2701,7 +2703,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得文件的PaperSpace集合。
 * vla-get-PaperUnits
 ** (vla-get-PaperUnits Object )
-取得文件、应用程序、或外部参考的路径。
+取得对象的图纸单位。
 * vla-get-Parent
 ** (vla-get-Parent Object )
 取得对象的来源。
@@ -2734,7 +2736,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 判断对象是否要使用Shift键加入选集中。
 * vla-get-PickAuto
 ** (vla-get-PickAuto Object )
-在[对象选择]提示下控制自动视窗。
+取得在[对象选择]提示下控制自动视窗的控制值。
 * vla-get-PickBoxSize
 ** (vla-get-PickBoxSize Object )
 取得对象选择目标的大小。
@@ -2881,7 +2883,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得标注型式单位的舍入。
 * vla-get-Rows
 ** (vla-get-Rows Object )
-取得图块阵列中的行数。
+取得图块阵列或其它对象中的行数。
 * vla-get-RowSpacing
 ** (vla-get-RowSpacing Object )
 取得一个块阵列中的行间距。
@@ -2902,7 +2904,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得当打印布局时线宽是否要和其余的元素一起调整比例。
 * vla-get-SCMCommandMode
 ** (vla-get-SCMCommandMode Object )
-判断命令模式下（正在执行命令）在绘图区中按一下鼠标右键的功能。
+取得判断命令模式下（正在执行命令）在绘图区中按一下鼠标右键的功能的控制设置值。
 * vla-get-SCMDefaultMode
 ** (vla-get-SCMDefaultMode Object )
 取得[默认]模式（未选择任何对象以及没有任何命令在执行中）下在绘图区中按一下鼠标右键的功能。
@@ -2959,13 +2961,13 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得多行文字、等线宽、实体、所有的剖面线（含有实体填充）以及宽多段线是否要填充。
 * vla-get-StandardScale
 ** (vla-get-StandardScale Object )
-取得弧与椭圆的起始角度。
+取得弧与椭圆的起始缩放值。
 * vla-get-StartAngle
 ** (vla-get-StartParameter Object )
 取得弧与椭圆的起始角度。
 * vla-get-StartParameter
 ** (vla-get-StartParameter Object )
-取得弧、线、或椭圆的起始点。
+取得弧、线、或椭圆的起始参数。
 * vla-get-StartPoint
 ** (vla-get-StartPoint Object )
 取得弧、线、或椭圆的起始点。
@@ -2998,7 +3000,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 判断是否禁止标注值中的结尾零。
 * vla-get-SuppressZeroFeet
 ** (vla-get-SuppressZeroFeet Object )
-判断是否禁止标注值中的零英寸测量单位。
+判断是否禁止标注值中的零英尺测量单位。
 * vla-get-SuppressZeroInches
 ** (vla-get-SuppressZeroInches Object )
 判断是否禁止标注值中的零英寸测量单位。
@@ -3127,10 +3129,10 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 判断是否输出公差值中的前导零。
 * vla-get-ToleranceSuppressTrailingZeros
 ** (vla-get-ToleranceSuppressTrailingZeros Object )
-判断是否输出公差值中的前导零。
+判断是否输出公差值中的尾随零。
 * vla-get-ToleranceSuppressZeroFeet
 ** (vla-get-ToleranceSuppressZeroFeet Object )
-判断是否输出公差值中的零英寸测量单位。
+判断是否输出公差值中的零英尺测量单位。
 * vla-get-ToleranceSuppressZeroInches
 ** (vla-get-ToleranceSuppressZeroInches Object )
 判断是否输出公差值中的零英寸测量单位。
@@ -3178,7 +3180,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 取得当前激活视口的右上角。
 * vla-get-UpsideDown
 ** (vla-get-UpsideDown Object )
-取得文字的方向。
+取得文字的颠倒方向。
 * vla-get-URL
 ** (vla-get-URL Object )
 取得Hyperlink对象的URL。
@@ -3376,10 +3378,10 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 设定所有标注中的公差值 精度。
 * vla-put-AltToleranceSuppressLeadingZeros
 ** (vla-put-AltToleranceSuppressLeadingZeros Object Value)
-设定是否禁止替代标注值中的前导零。
+设定是否禁止替代标注值中的前导0。
 * vla-put-AltToleranceSuppressTrailingZeros
 ** (vla-put-AltToleranceSuppressTrailingZeros Object Value)
-设定是否禁止替代公差值中的结尾零。
+设定是否禁止替代公差值中的结尾0。
 * vla-put-AltToleranceSuppressZeroFeet
 ** (vla-put-AltToleranceSuppressZeroFeet Object Value)
 设定是否禁止替代公差值中的零英尺测量单位。
@@ -3439,7 +3441,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 设定当您进行DXFIN或DXBIN交换命令的着色后是否要执行 核查。
 * vla-put-AutoSaveInterval
 ** (vla-put-AutoSaveInterval Object Value)
-以分钟数指定自动储存的间隔时间。
+设定以分钟数指定自动储存的间隔时间。
 * vla-put-AutoSavePath
 ** (vla-put-AutoSavePath Object Value)
 设定当使用AutoSaveInterval属性打开自动储存时建立文件的路径。
@@ -3520,10 +3522,10 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 设定图元或图层的颜色。
 * vla-put-Columns
 ** (vla-put-Columns Object Value)
-设定图块阵列中的行数。
+设定图块阵列中的列数。
 * vla-put-ColumnSpacing
 ** (vla-put-ColumnSpacing Object Value)
-设定图块阵列中的行的间距。
+设定图块阵列中的列的间距。
 * vla-put-ConfigName
 ** (vla-put-ConfigName Object Value)
 设定打印机配置名称。
@@ -3628,7 +3630,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 设定视口是否被锁定。
 * vla-put-DisplayOLEScale
 ** (vla-put-DisplayOLEScale Object Value)
-判断OLE对象插入到图形时，是否显示OLE调整比例对话框。
+设置OLE对象插入到图形时，是否显示OLE调整比例对话框。
 * vla-put-DisplayScreenMenu
 ** (vla-put-DisplayScreenMenu Object Value)
 设定是否将屏幕菜单显示在图形窗口的右端。
@@ -3727,7 +3729,7 @@ vla-intersectwith函数的参数，指明两个对象不延伸来得到交点。
 设定样条曲线的拟合点。
 * vla-put-FitTolerance
 ** (vla-put-FitTolerance Object Value)
-以新的公差值在已有的点重新拟合样条曲线。
+设定是否以新的公差值在已有的点重新拟合样条曲线。
 * vla-put-FloatingRows
 ** (vla-put-FloatingRows Object Value)
 设定浮动工具栏的列数。
@@ -4120,7 +4122,7 @@ WCS坐标值指定UCS、图块、配置或光栅图像的原点。
 设定椭圆的主要轴与次轴的比。
 * vla-put-RegisteredApplications
 ** (vla-put-RegisteredApplications Object value)
-设定隐藏线是否要打印到图纸空间视口。
+设定已注册的应用。
 * vla-PutRemoteFile
 ** (vla-PutRemoteFile Object URL LocalFile)
 将文件上传到URL指定的远端位置。
@@ -4156,16 +4158,23 @@ WCS坐标值指定UCS、图块、配置或光栅图像的原点。
 设定当打印布局时线宽是否要和其余的元素一起调整比例。
 * vla-put-SCMCommandMode
 ** (vla-put-SCMCommandMode Object value)
-判断命令模式下（正在执行命令）在绘图区中按一下鼠标右键的功能。
+设定判断命令模式下（正在执行命令）在绘图区中按一下鼠标右键的功能。
 
 * vlax-invoke
 ** (vlax-invoke obj method [args])
-调用指定的 ActiveX 方法。
-* vlax-put
+调用指定的 ActiveX 方法。（用于ACAD2000）
+vlax-invoke 在调用 ActiveX对象方法时，支持多态参数。
+* vlax-invoke-method
+** (vlax-invoke-method obj method arg [args])
+调用指定的 ActiveX 方法，在调用 ActiveX对象方法时，需要给出所有参数，ActiveX对象的参数默认值可以用 nil 代替。
+
+* vlax-put,vlax-put-property
 ** (vlax-put obj property arg)
+** (vlax-put-property obj property arg)
 设置 ActiveX 对象的特性
-* vlax-get
+* vlax-get,vlax-get-property
 ** (vlax-get object property)
+** (vlax-get-property object property)
 获取 VLA 对象的特性
 * vlax-safearray-fill
 ** (vlax-safearray-fill var 'element-values)
@@ -4179,9 +4188,6 @@ WCS坐标值指定UCS、图块、配置或光栅图像的原点。
 * vlax-read-enabled-p
 ** (vlax-read-enabled-p obj)
 确定对象是否可读
-* vlax-put-property
-** (vlax-put-property obj property arg)
-设置 ActiveX 对象的特性
 * vlax-property-available-p
 ** (vlax-property-available-p obj prop [check-modify])
 确定对象是否具有指定特性
@@ -4278,15 +4284,10 @@ boundpair 为索引的上下界点对表，如'(0 . 2)，表示这一维有 0~2 
 * vlax-ldata-delete
 ** (vlax-ldata-delete dict key [private])
 从图形词典中删除 LISP 数据
-* vlax-invoke-method
-** (vlax-invoke-method obj method arg [args])
-调用指定的 ActiveX 方法
+
 * vlax-import-type-library
 ** (vlax-import-type-library :tlb-filename filename [:methods-prefix mprefix :properties-prefix pprefix :constants-prefix cprefix])
 从类型库中输出信息
-* vlax-get-property
-** (vlax-get-property object property)
-获取 VLA 对象的特性
 * vlax-get-or-create-object
 ** (vlax-get-or-create-object prog-id)
 返回应用程序对象的运行实例。如果应用程序当前未运行，则创建新实例
@@ -4316,7 +4317,7 @@ boundpair 为索引的上下界点对表，如'(0 . 2)，表示这一维有 0~2 
 确定指定曲线是否在各个方向上都是无限的，同时存在一个周期值 dT，使得对于任何参数 u，都有曲线上的点 (u + dT) = 点 (u) 成立
 * vlax-curve-isClosePointToProjection
 ** (vlax-curve-getClosestPointToProjection curve-obj givenPnt normal [extend])
-在将曲线投影到平面上之后，返回曲线上的最近点（在 WCS 上）
+判断在将曲线投影到平面上之后，返回曲线上的最近点（在 WCS 上）
 * vlax-curve-isClosed
 ** (vlax-curve-isClosed curve-obj)
 确定指定曲线是否闭合（即起点与端点是否重合）
@@ -4370,4 +4371,24 @@ boundpair 为索引的上下界点对表，如'(0 . 2)，表示这一维有 0~2 
 ** (vlax-machine-product-key)
 返回AutoCAD在HKEY_LOCAL_MACHINE下的Windows注册表路径。
 注：仅AutoCAD 2013以上版本支持。
-此函数用来替换vlax-product-key函数。
+
+* vlax-vbEmpty
+表示未初始化的类型，值为0
+* vlax-vbNull
+空值类型，值为1
+* vlax-vbInteger
+整数类型，值为2
+* vlax-vbLong
+长整型，值为3
+* vlax-vbSingle
+单精度浮点数类型，值为4
+* vlax-vbDouble
+双精度浮点数类型，值为5
+* vlax-vbString
+字符串类型，值为8
+* vlax-vbObject
+对象类型，值为9
+* vlax-vbBoolean
+布尔/逻辑型类型，值为11
+* vlax-vbArray
+安全数组类型，值为8192+n,n为单个的vb类型值。

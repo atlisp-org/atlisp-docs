@@ -50,3 +50,21 @@ vlax-invoke-method 在调用 ActiveX对象方法时,需要给出所有参数，A
 前面说的 autolisp 是面向函数的，也就是函数式编程，一切皆函数。主要跟 dxf 组码打交道。
 visuallisp 是面向对象编程，一切皆对象。当不知道怎么编程了，查查对象的属性和方法都有哪些就可以编程了。
 
+* variant,变体
+包含数据类型的变量。
+值 类型
+0 -- 未初始化 vlax-vbEmpty
+1 -- 无效数值 vlax-vbNull
+2 -- 整数 (vlax-vbInteger)
+3 -- 长整型 (vlax-vbLong)
+4 -- 单精度浮点数 (vlax-vbSingle)
+5 -- 双精度浮点数 (vlax-vbDouble)
+8 -- 字符串 (vlax-vbString)
+9 -- 对象 (vlax-vbObject)
+11 -- 布尔/逻辑型 (vlax-vbBoolean)
+8192+n -- 安全数组(vlax-vbArray) n为上面的类型值。
+
+e.g. 8192+9 = 8201 这个就是对象的数组。
+* Safearray,安全数组
+安全数组的类型只能是一种。
+e.g. 8192+9 = 8201 这个就是对象的数组。8192+8 = 8200 这个就是字符串的数组。
