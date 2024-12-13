@@ -57,10 +57,12 @@ http://atlisp.cn/stable/bin/MicrosoftEasyFix51044.msi
 * shx, pkpmeng.shx, tssdeng.shx
 @lisp字体库提供了一些常用的字体。安装应用包 @lisp字体库，即可下载并使用这些字体。
 https://atlisp.cn/package-info/fonts-stable.html
-* 年费,会员,怎么注册
+* 年费,会员,怎么注册,免费,收费
+@lisp提供了大量的可免费使用的基础操作功能，如块、图层、颜色、文本相关的功能。
+
 随着用户数量的增加，@lisp服务器运行成本也在增大。
 
-为了保障服务器的正常运行，对@lisp用户收费按月、季、年收费一定的会员费用。在CAD中会提示用户注册及充值。
+为了保障服务器的正常运行，对@lisp高级功能按月、季、年收取一定的会员费用。在CAD中会提示用户注册及充值。
 
-@lisp会员享有一定的开发定制优先权，及@lisp使用咨询服务。
+@lisp会员享有一定的开发定制优先权，及@lisp使用及咨询服务。
 
