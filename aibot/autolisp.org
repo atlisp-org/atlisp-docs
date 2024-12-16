@@ -756,6 +756,20 @@ x 整个文件
 * ssnamex
 ** (ssnamex ss [index])
 获取关于选择集创建方式的信息
+返回: ((sel_id1 enname1 (data))(sel_id2 enname1 (data))...)
+
+sel_id
+0 | 非特定，如最后选择的，上次选择的
+1 | pick ，拾取
+2 | window or wpolygon,窗选或围区
+3 | Crossing or CPolygen,叉选或
+4 | Fence 围栏
+
+点ID说明
+0 | 无限长线
+1 | Ray 射线
+2 | 线段
+
 * sssetfirst
 ** (sssetfirst gripset [pickset])
 设置哪些对象既是被选取的又是被夹取的。
