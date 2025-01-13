@@ -368,7 +368,8 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 暂停以等待用户输入距离
 * getenv
 ** (getenv "variable-name")
-以字符串方式返回指定的环境变量的值
+以字符串方式返回指定的环境变量的值。
+该环境变量，指windows 系统的环境变量。 CAD 启动时也会初始化一些环境变量，如ACAD。
 * getfiled
 ** (getfiled "title" "default-path" "ext" flags)
 用标准的 AutoCAD 文件对话框提示用户输入一个文件名，并返回该文件名。
