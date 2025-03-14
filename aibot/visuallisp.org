@@ -545,6 +545,13 @@
 * vla-Export
 ** (vla-Export Document FileName Extension SelectionSet)
 将图形或一组保存的图层设置输出到文件
+
+参数：
+- Extension
+ .wmf, .sat, .eps, .dxf, or .bmp.
+  
+- SelectionSet 
+  对于WMF、SAT和BMP格式，选择集指定要导出的对象。对于EPS和DXF格式，选择集将被忽略，整个图形将被导出。
 * vla-SetSnapSpacing
 ** (vla-SetSnapSpacing Object XSpacing YSpacing)
 设置视口的捕捉间距。

@@ -1,0 +1,14 @@
+#+title: 用Git LFS管理CAD文件
+
+* 背景
+当前设计人员使用CAD进行设计时，方案设计稿经常需要多次调整。
+
+很多设计人采用日期方式进行管理。导致文件夹下一串以日期结尾的dwg文件。
+
+
+
+* 安装 git
+#+begin_src
+winget install --id Git.Git -e --source winget
+#+end_src
+* 安装 Git LFS
