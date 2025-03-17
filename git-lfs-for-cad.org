@@ -6,9 +6,8 @@
 很多设计人采用日期方式进行管理。导致文件夹下一串以日期结尾的dwg文件。
 
 
-
-* 安装 git
+* 安装 git 和 Git LFS
 #+begin_src
-winget install --id Git.Git -e --source winget
+winget install Git.Git Github.GitLFS
 #+end_src
-* 安装 Git LFS
+
