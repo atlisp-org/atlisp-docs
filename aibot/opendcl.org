@@ -18,14 +18,22 @@ OpenDCL与lisp合并
 ** (dcl_Control_SetText FriendlyName_APIName_Type string)
 设置textbox、combox的text值.
 * dcl-Form-StartTimer
-** 取消:(dcl-Form-StartTimer NTDCL/Form1)
+** (dcl-Form-StartTimer NTDCL/Form1)
 300毫秒后启动:(dcl-Form-StartTimer NTDCL/Form1 300)
-这个方法启动一个计时器。在指定的毫秒数过去之后，计时器将等待对话框到达空闲状态，然后触发Form-OnTimer事件。如果毫秒数小于零或未指定，则取消现有的计时器。当窗体关闭时，计时器被取消。
+这个方法启动一个计时器。
+在指定的毫秒数过去之后，计时器将等待对话框到达空闲状态，然后触发Form-OnTimer事件。
+如果毫秒数小于零或未指定，则取消现有的计时器。当窗体关闭时，计时器被取消。
 * dcl-Grid-SetCellImages
-** (dcl-Grid-SetCellImages NT/Form1/grid1 nRow 1 0)
-nRow:行号，1:图像编号，0:第一列，此方法在指定行和列处设置单元格的单元格图像。ImageIndex是控件的图像列表中的图像，或-1将单元格图像重置为none。可选的AltImageIndex用于样式3的单元格的检查状态(切换图标)。请注意，当没有设置图像时，单元格使用列默认图像作为其列。
+** (dcl-Grid-SetCellImages NT/Form1/grid1 nRow nOrder nColumn)
+nRow:行号，nOrder:图像编号，nColumn:第一列，
+
+此方法在指定行和列处设置单元格的单元格图像。
+
+ImageIndex是控件的图像列表中的图像，或-1将单元格图像重置为none。
+
+可选的AltImageIndex用于样式3的单元格的检查状态(切换图标)。请注意，当没有设置图像时，单元格使用列默认图像作为其列。
 * dcl-ImageComboBox-SetCurSel
-** (dcl-ImageComboBox-SetCurSel Grid/Dcl-1/IC-Images 0)
+** (dcl-ImageComboBox-SetCurSel Grid/Dcl-1/IC-Images ItemIndex)
 此方法在图像组合列表框中设置当前选中的项。ItemIndex值为-1将取消当前选择。
 * dcl-Control-SetAllowResizing
 ** (dcl-Control-SetAllowResizing <控件名> NewValue [as Boolean])
@@ -67,8 +75,11 @@ State:
 ** (dcl-ListBox-GetSelectedNths <控件名称>)
 该方法返回一个包含选定项目的索引的列表。
 * dcl-ListView-AddString
-** "(dcl-ListView-AddString <控件名称> ItemLabels [as String] {Delimiter [as String]})
-该方法将一个新的项目添加到列表中。ItemLabels参数是一个分隔符字符串，包含新项目的每一列的标签文本。Delimiter是分隔符；如果没有指定分隔符，则假定使用tab字符（""\t""）。新项目中的每一列都会被填充指定的标签文本。如果没有指定列的标签文本，则保持为空。返回值是新项目的索引（基于零）。"
+** (dcl-ListView-AddString <控件名称> ItemLabels [as String] {Delimiter [as String]})
+该方法将一个新的项目添加到列表中。
+ItemLabels参数是一个分隔符字符串，包含新项目的每一列的标签文本。
+Delimiter是分隔符；如果没有指定分隔符，则假定使用tab字符（\t）。
+新项目中的每一列都会被填充指定的标签文本。如果没有指定列的标签文本，则保持为空。返回值是新项目的索引（基于零）。
 * dcl-Control-GetPos
 ** (dcl-Control-GetPos <控件名称>)
 该方法返回窗体或控件的位置。如果控件是子窗口，返回的坐标是相对于父窗口的客户端区域左上角的坐标；否则就是屏幕坐标。
@@ -94,10 +105,10 @@ State:
 ** (dcl-Grid-SetCellStyle <表格控件> Row [as Long] Column [as Long] Style [as Integer])
 该方法为指定的行和列设置单元格的单元格样式。注意，当样式设置为-1时，单元格继承了列的默认样式。
 * dcl-Grid-AddRow
-** (dcl-Grid-AddRow <表格控件> {Column0ImageIndex [as Integer]} Column0Label [as String] {Column1Label [as String] Column2Label [as String]} ...)
+** (dcl-Grid-AddRow <表格控件> {Column0ImageIndex [as Integer]} Column0Label [as String] {Column1Label [as String] Column2Label [as String]} etc)
 在表格控件中插入新行
 * dcl-Grid-AddColumns
-** (dcl-Grid-AddColumns <表格控件> NewColumns [as List of Lists as ((Caption [as String] {Justification [as Integer]} {ColumnWidth [as Long]} {ColumnImageIndex [as Integer]}) ...)])
+** (dcl-Grid-AddColumns <表格控件> NewColumns [as List of Lists as ((Caption [as String] {Justification [as Integer]} {ColumnWidth [as Long]} {ColumnImageIndex [as Integer]}) etc)])
 在表格控件中插入新列
 * dcl-ComboBox-SelectString
 ** (dcl-ComboBox-SelectString <组合框列表> Search [as String] {StartAfter [as Long]})
@@ -109,8 +120,8 @@ State:
 ** (dcl-ListBox-AddString 控件变量或名称 NewItem [as String])
 此方法将一个新项目追加到列表中。 返回值是新项目的索引（基于零）。
 * dcl-Control-GetCurrentSelection
-** "(dcl-Control-GetCurrentSelection <控件名称>)
-获取Block List， List View， Option List控件当前所选项目的索引。"
+** (dcl-Control-GetCurrentSelection <控件名称>)
+获取Block List， List View， Option List控件当前所选项目的索引。
 * dcl-Control-GetPicture
 ** (dcl-Control-GetPicture <控件名>)
 获取控件的图标或图片
@@ -118,8 +129,8 @@ State:
 ** (dcl-Control-SetPicture <控件名称> NewValue [as PictureID])
 设置控件要显示的图标或图片，-1表示什么也不显示。
 * dcl-SelectFiles
-** "(dcl-SelectFiles {FileTypes [as List of Strings]} {Title [as String]} {DefaultDirectory [as String]})
-选择一个或多个文件;(dcl-SelectFiles '(\""*.dwg\"" \""*.dxf\"") \""test\"")"
+** (dcl-SelectFiles {FileTypes [as List of Strings]} {Title [as String]} {DefaultDirectory [as String]})
+选择一个或多个文件;(dcl-SelectFiles '(\""*.dwg\"" \""*.dxf\"") \""test\"")
 * dcl-Control-SetTitleBarText
 ** (dcl-Control-SetTitleBarText <控件名> NewValue [as String])
 设置标题栏文字
@@ -153,7 +164,7 @@ State:
 ** (dcl-Control-GetCaption 控件变量或名称)
 opendcl函數获取控件的标题或标签文字，返回字符串
 * dcl-TextBox-SetFilter
-** (dcl-TextBox-SetFilter Lt/Ba/TextBox4 ""0123456789."")
+** (dcl-TextBox-SetFilter Lt/Ba/TextBox4 nstring)
 数据库中没有收录这个函数!请帮助录入，谢谢
 * dcl-Form-CloseAll
 ** (dcl-Form-CloseAll [Bit])
@@ -319,7 +330,7 @@ DialogTypes 位描述
 ** (dcl_Control_SetProperty 控件变量或名称 控件属性 值)
 设置odcl控件属性
 * dcl-ListView-AddItem
-** (dcl-ListView-AddItem 文件名_窗体名_列表控件名 Col_1 Col_2 Col_3...)
+** (dcl-ListView-AddItem 文件名_窗体名_列表控件名 Col_1 Col_2 Col_3 etc)
 给OpenDCL的ListView控件表格添加子项(行)
 * dcl-ListView-AddColumns
 ** (dcl-ListView-AddColumns 文件名_窗体名_列表控件名 )
@@ -393,11 +404,11 @@ ItemIndex值为-1时，将取消选择当前选择。
 此方法在组合列表框中设置当前选定的项目。
 ItemIndex值为-1时，将取消选择当前选择。
 * dcl-OptionList-SetCurSel
-** (dcl_OptionList_SetCurSel 0201_Form1_OptionList2 3) 
-初始值3，此方法设置列表中当前选择的选项按钮。
+** (dcl_OptionList_SetCurSel 0201_Form1_OptionList2 defaultvar) 
+初始值defaultvar ，此方法设置列表中当前选择的选项按钮。
 * dcl_OptionList_SetCurSel
-** (dcl_OptionList_SetCurSel 0201_Form1_OptionList2 3) 
-初始值3，此方法设置列表中当前选择的选项按钮。
+** (dcl_OptionList_SetCurSel 0201_Form1_OptionList2 defaultvar) 
+初始值defaultvar，此方法设置列表中当前选择的选项按钮。
 * dcl-Project-Unload
 ** (dcl_Project_Unload ""sld"")
 此方法卸载项目，释放其内存。
@@ -413,7 +424,11 @@ ItemIndex值为-1时，将取消选择当前选择。
 ** (dcl-PictureBox-DrawLine 变量 (List 起点X 起点Y 终点X 终点Y 颜色))
 
 (defun c:sld_Form1_TextButton1_OnClicked (/)
-(setq a1 (list (atoi (dcl_Control_GetText sld_Form1_TextBox1))						 (atoi (dcl_Control_GetText sld_Form1_TextBox2))						 (atoi (dcl_Control_GetText sld_Form1_TextBox6))	 						 (atoi (dcl_Control_GetText sld_Form1_TextBox7))						 (atoi (dcl_Control_GetText sld_Form1_TextBox5))					 ))
+(setq a1 (list (atoi (dcl_Control_GetText sld_Form1_TextBox1))
+(atoi (dcl_Control_GetText sld_Form1_TextBox2))
+(atoi (dcl_Control_GetText sld_Form1_TextBox6))
+(atoi (dcl_Control_GetText sld_Form1_TextBox7))
+(atoi (dcl_Control_GetText sld_Form1_TextBox5))					 ))
 (dcl_PictureBox_DrawLine sld_Form1_PictureBox1 (list a1))
 )
 此方法绘制图框上的一行或多行，从StartX，StartY到EndX，EndY。之后颜色， 所有点都在客户端坐标中指定（以像素为单位，相对于控件的左上角）。
@@ -485,16 +500,22 @@ ItemIndex值为-1时，将取消选择当前选择。
 ** (dcl-PictureBox-DrawLine 变量 (List 起点X 起点Y 终点X 终点Y 颜色))
 
 (defun c:sld_Form1_TextButton1_OnClicked (/)
-(setq a1 (list (atoi (dcl_Control_GetText sld_Form1_TextBox1))						 (atoi (dcl_Control_GetText sld_Form1_TextBox2))						 (atoi (dcl_Control_GetText sld_Form1_TextBox6))	 						 (atoi (dcl_Control_GetText sld_Form1_TextBox7))						 (atoi (dcl_Control_GetText sld_Form1_TextBox5))					 ))
+(setq a1 (list (atoi (dcl_Control_GetText sld_Form1_TextBox1))
+(atoi (dcl_Control_GetText sld_Form1_TextBox2))
+(atoi (dcl_Control_GetText sld_Form1_TextBox6))
+(atoi (dcl_Control_GetText sld_Form1_TextBox7))
+(atoi (dcl_Control_GetText sld_Form1_TextBox5)) ))
 (dcl_PictureBox_DrawLine sld_Form1_PictureBox1 (list a1))
 )
 此方法绘制图框上的一行或多行，从StartX，StartY到EndX，EndY。之后颜色， 所有点都在客户端坐标中指定（以像素为单位，相对于控件的左上角）。
 * dcl_Control_SetCaption
-** (defun c:MyProject/MyForm#OnInitialize (/)
+** (dcl-Control-SetCaption SCLlbl1 str))
+设置控件的标题或标签文字。 
+(defun c:MyProject/MyForm#OnInitialize (/)
 (dcl-Control-SetCaption MyProject/MyForm/Label1 ""Hello World!"")
 (dcl-Control-SetCaption SCLlbl1 (rtos dist 2 8))
 )
-设置控件的标题或标签文字。 
+
 (dcl-Control-SetCaption SCLlbl1 (rtos dist 2 8))
 SCLlbl1对话框控件名称
 (rtos dist 2 8)控件只能显示字符串
