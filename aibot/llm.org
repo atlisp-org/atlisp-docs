@@ -1,0 +1,52 @@
+#+prefix: LLM
+* LLM
+关于大模型的相关知识
+
+* 本地部署大模型
+分4步
+- 安装ollama
+- 拉取模型
+- 运行模型
+- 交流
+* 安装Ollama
+windows 命令行(cmd)或powershell中运行
+```
+winget install ollama.ollama
+```
+这是用winget下载安装ollama.因为是从github下载的。有些网络可能太慢或根本不通。
+
+可以从群文件中下载ollamasetup.exe手动安装
+
+* 拉取模型
+
+```
+ollama pull deepseek-r1:1.5b
+```
+* 运行模型
+```
+ollama run deepseek-r1:1.5b
+```
+当加载完成后就可以在命令行与模型进行交流了。
+
+* 常用模型
+- gemma3: 1b,4b,12b,27b
+- qwq:32b
+- deepseek-r1:1.5b,7b,8b,14b,32b,70b,671b
+- mistral-small3.1:24b
+- llama3.3:70b
+- phi4:14b
+- llama3.2:1b,3b
+- mistral:7b
+- qwen2.5:0.5b,1.5b,3b,7b,14b,32b,72b
+- llava:7b,13b,34b
+- qwen2.5-coder:0.5b,1.5b,3b,7b,14b,32b
+- wqen:0.5b,1.8b,4b,7b,14b,32b,17b,110b
+- codellama:7b,13b,34b,70b
+- starcoder2:3b,7b,15b
+- bge-m3:567m
+- olmo2:7b,13b
+- deepseek-coder-v2:16b,236b
+- codegeex4:9b
+
+* 更改模型路径
+ollama默认模型存放位置为用户文件夹下的.ollama文件夹。

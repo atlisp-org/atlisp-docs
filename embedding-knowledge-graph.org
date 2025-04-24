@@ -1,0 +1,105 @@
+#+title: embeding-knowledge-graph
+
+你有没有遇到过这种情况：工作中需要快速查找资料，结果花了大把时间在一堆无关信息中苦苦挣扎？或者说，你公司里的数据海量，却无法高效地找到所需的关键知识？其实，你可能已经掌握了一项强大的工具——知识图谱（Knowledge Graph），而你还不知道如何用它提高效率。
+
+今天我们就来聊聊如何使用 Ollama 和 Embeddings 这两个工具，来搭建自己的知识图谱，快速解决复杂问题。而且，这套方案不仅适合技术大牛，同样也适合技术小白，简单易上手。
+
+知识图谱到底是啥？为什么你应该关心？
+先别急，我们先把“知识图谱”这个听起来很高级的词拆解一下。简单来说，知识图谱就是将信息以点和线的方式连接起来，把它们之间的关系直观地展示出来。比如，你想了解“苹果公司”和“乔布斯”的关系，知识图谱会把这两者关联起来，并展示它们之间的联系。
+
+这有什么用呢？想象一下，假设你要做一个项目，涉及到很多领域的知识点。如果没有一个系统的方式整理这些信息，你可能得翻阅大量文档，花上几个小时甚至几天去理清所有的关系。而有了知识图谱，你只需要输入一个关键词，系统就会帮你把相关的知识点都串联起来，像网一样展开所有的信息。
+
+而 Ollama 和 Embeddings 的结合，恰恰让知识图谱变得不再那么高深莫测。你可以用它们快速建立自己的知识库，并且通过智能查询迅速找到答案。
+
+* 为什么选择 Ollama 和 Embeddings？
+你可能会问，为什么是这两个工具？市面上不是还有很多其他的工具可以搭建知识图谱吗？
+
+** Ollama：轻松创建知识节点
+Ollama 是一个相对简单的工具，帮助你快速构建和管理知识图谱。你不需要复杂的配置或者深厚的技术背景，只需通过一些简单的命令，就可以开始建立自己的知识节点。这就像搭积木一样，逐渐构建出属于自己的知识大厦。它有点类似于传统的数据库，但它的优势在于更能体现信息之间的复杂关系。
+
+** Embeddings：让机器懂得理解你的问题
+光有知识节点还不够，你还得让机器能够理解你的查询请求。Embeddings 正是在这个时候派上用场的。它的作用是将自然语言转换成一种机器可以理解的形式，并且能够通过这些形式找到与你查询最相关的信息。你可以把 Embeddings 理解为一种“翻译器”，它帮助机器理解你说的是什么，并找到正确的答案。
+
+想象一下，你问机器“乔布斯是苹果公司的创始人吗？”，Embeddings 会帮你将这个问题翻译成机器能够理解的“向量”，然后 Ollama 的知识节点就会迅速找出与乔布斯和苹果公司相关的所有信息，给你一个详细的回答。
+
+* 如何用 Ollama 和 Embeddings 搭建知识图谱？
+到这你可能已经有点跃跃欲试了，那我们接下来看看如何操作。
+
+** 准备好你的数据
+首先，你需要整理好你的数据。不用太复杂，甚至你可以从一个简单的 Excel 表格开始，里面列出你想要包含的知识点及其相关信息，比如关键人物、事件、日期等。
+#+begin_src python
+def create_database():
+    conn = sqlite3.connect('embeddings.db')
+    c = conn.cursor()
+    c.execute('''CREATE TABLE IF NOT EXISTS embeddings
+                 (id INTEGER PRIMARY KEY, text TEXT, embedding BLOB, is_question INTEGER)''')
+    conn.commit()
+    return conn
+
+def insert_data(conn, text, embedding, is_question):
+    c = conn.cursor()
+    c.execute("INSERT INTO embeddings (text, embedding, is_question) VALUES (?, ?, ?)",
+              (text, sqlite3.Binary(np.array(embedding).tobytes()), is_question))
+    conn.commit()
+#+end_src
+** 利用 Ollama 构建基础图谱
+通过 Ollama 的简单命令，你可以将这些知识点变成一个个节点。比如说，你可以创建“乔布斯”、“苹果公司”这样的节点，然后用线条连接它们，表示它们之间的关系。这一步非常简单，不需要你写太多代码。
+#+begin_src python
+# Annoy index functions
+def build_annoy_index(conn, vector_size=4096, n_trees=10):
+    c = conn.cursor()
+    c.execute("SELECT COUNT(*) FROM embeddings")
+    total_vectors = c.fetchone()[0]
+    
+    annoy_index = AnnoyIndex(vector_size, 'angular')
+    c.execute("SELECT id, embedding FROM embeddings")
+    
+    for i, (id, embedding_blob) in enumerate(c.fetchall()):
+        embedding = np.frombuffer(embedding_blob, dtype=np.float32)
+        if len(embedding) != vector_size:
+            print(f"Warning: Embedding size mismatch. Expected {vector_size}, got {len(embedding)}. Skipping this vector.")
+            continue
+        annoy_index.add_item(id - 1, embedding)
+    
+    print("Building index...")
+    annoy_index.build(n_trees)
+    annoy_index.save('embeddings.ann')
+    print("Index built and saved")
+#+end_src
+
+** 用 Embeddings 实现智能查询
+接下来，当你想从知识图谱中提取信息时，Embeddings 就会发挥它的作用了。它会帮你理解复杂的查询请求，并在知识图谱中找到最匹配的答案。假设你问“苹果公司什么时候成立的？”，系统就会自动解析你的问题，并返回确切的答案。
+#+begin_src python
+# Function to get embeddings from the API
+def get_embedding(text):
+    headers = {'Content-Type': 'application/json'}
+    data = json.dumps({"model": "llama3.1:8b", "input": text})
+    response = requests.post('http://localhost:11434/api/embed', headers=headers, data=data)
+    
+    if response.status_code != 200:
+        raise Exception(f"API request failed with status code {response.status_code}: {response.text}")
+    
+    response_data = response.json()
+    
+    if 'embedding' in response_data:
+        return np.array(response_data['embedding'], dtype=np.float32)
+    elif 'embeddings' in response_data and response_data['embeddings']:
+        return np.array(response_data['embeddings'][0], dtype=np.float32)
+    else:
+        raise KeyError(f"No embedding found in API response. Response: {response_data}")
+#+end_src
+* 如何让你的知识图谱更智能？
+** 定期更新数据
+知识图谱不是一成不变的，它应该像你的大脑一样，随着时间的推移不断更新和扩展。每当你学到新知识，或有了新的资料，都可以及时更新进图谱，这样它才能帮你更好地解答问题。
+**  建立多层次的关系
+不要仅仅停留在简单的节点和关系上，试着建立多层次的知识网络。比如，除了“乔布斯”和“苹果公司”的关系，你还可以添加更多的维度，如“乔布斯”和“其他科技公司的关系”。多维度的知识图谱可以帮助你获得更全面的理解。
+* 为什么这对你有用？
+这套工具不仅能节省你整理和查询信息的时间，更能提高你的工作效率。无论你是做科研的、还是搞技术开发的，甚至是做市场营销的，都可以从中受益。想象一下，在项目中遇到问题时，你只需要轻轻一查，知识图谱立刻帮你理清思路，给出明确的方向，而不是苦苦翻找文档或者冥思苦想。
+
+对于企业来说，这套系统还可以帮助他们搭建自己的内部知识库，把散落在各个部门的信息有效地汇集起来，形成一张“大网”，从而快速找到公司内部的最佳答案。
+
+* 思考
+知识图谱曾经听起来高深莫测，但通过 Ollama 和 Embeddings 的结合，我们可以把这个复杂的概念变得简单、实用。无论你是想提升个人工作效率，还是帮助企业建立内部知识库，这都是一条值得尝试的路径。
+
+从今天开始，试着动手创建属于你自己的知识图谱吧！你会发现，信息整理和查询从未如此简单。
+
