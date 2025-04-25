@@ -263,6 +263,7 @@ https://gitee.com/atlisp/atlisp-docs/blob/main/Lisp%E5%85%A5%E9%97%A8/1-lisp.org
 * entget
 ** (entget ename [applist])
 获得对象（图元）的定义数据
+applist 为扩展名表，如果没有将不会输出扩展数据，也可以用(list "*")输出所有扩展数据。
 * entlast
 ** (entlast)
 返回图形中最后那个未删除的主对象（图元名）

@@ -4,7 +4,7 @@
 
 * 本地部署大模型
 分4步
-- 安装ollama
+- 安装Ollama
 - 拉取模型
 - 运行模型
 - 交流
@@ -50,3 +50,5 @@ ollama run deepseek-r1:1.5b
 
 * 更改模型路径
 ollama默认模型存放位置为用户文件夹下的.ollama文件夹。
+可以使用 mklink 建立目录链接到其它位置。
+也可以设置变量 OLLAMA_MODELS 指定LLM的存放位置

@@ -1354,7 +1354,7 @@
 * LINETYPE
 加载、设置和修改线型。
 
-* LIST
+* 命令LIST
 为选定对象显示特性数据。
 
 * LIVESECTION
@@ -1944,6 +1944,8 @@
 
 * REDRAW
 刷新当前视口中的显示。
+另见:
+=函数redraw=
 
 * REDRAWALL
 刷新所有视口中的显示。

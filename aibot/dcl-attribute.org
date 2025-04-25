@@ -166,10 +166,12 @@ AutoLISP action expression
 ** Text, active tiles (except buttons and image buttons)
 框件的初始值
 指定框件的初始值。可能的值是带引号的字符串。
+示例：tile{value="abc";}
 
 * width
 ** All tiles
 框件的宽度
 指定框件的宽度。
+示例：tile{width=200;height=100;}
 
 
