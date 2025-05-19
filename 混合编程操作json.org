@@ -63,12 +63,16 @@ jsonserver.py 内容：
 
 #+begin_src lisp
   (@::postjson "http://localhost:5000/api/json" "{\"k1\":\"v1\",\"k2\":\"v2\",\"k3\":\"v3\"}")
+  ;;返回：
+  "{\"k1\": \"v1\", \"k2\": \"v2\", \"k3\": \"v3\"}"
 #+end_src
 
 ** 修改json对象的某个键值
 
 #+begin_src lisp
   (@::postjson "http://localhost:5000/api/json_set" "{\"k1\":\"aaa\"}")
+  
+  (@::postjson "http://localhost:5000/api/json_set" "{\"k1\":\"mmm\",\"k2\":\"中文\"}")
 #+end_src
 
 ** 获取 json的序列化结果
@@ -78,4 +82,20 @@ jsonserver.py 内容：
 #+end_src
 
 
+* 测试结果
+#+begin_src lisp
+命令: (@::@get "http://localhost:5000/api/json")
+"{}"
 
+命令: (@::postjson "http://localhost:5000/api/json" "{\"k1\":\"v1\",\"k2\":\"v2\",\"k3\":\"v3\"}")
+"{\"k1\": \"v1\", \"k2\": \"v2\", \"k3\": \"v3\"}"
+
+命令: (@::postjson "http://localhost:5000/api/json_set" "{\"k1\":\"mmm\",\"k2\":\"中文\"}")
+"{\"k1\": \"mmm\", \"k2\": \"\\u4e2d\\u6587\", \"k3\": \"v3\"}"
+
+命令: (@::postjson "http://localhost:5000/api/json_set" "{\"k1\":\"aaa\"}")
+"{\"k1\": \"aaa\", \"k2\": \"\\u4e2d\\u6587\", \"k3\": \"v3\"}"
+
+命令: (@::@get "http://localhost:5000/api/json")
+"{\"k1\": \"aaa\", \"k2\": \"\\u4e2d\\u6587\", \"k3\": \"v3\"}"
+#+end_src
