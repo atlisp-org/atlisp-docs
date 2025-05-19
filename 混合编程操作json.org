@@ -1,0 +1,81 @@
+#+title:混合编程操作json数据
+
+* 背景
+
+JSON数据格式已成为大多数编程语言的内置的数据格式。它可以方便地在所使用的语言中的对象及数据和字符串之间进行转化。
+
+autolisp本身没有对象。但是有点对表，列表。这种格式与json非常相似。但是Autolisp中的整数和浮点数精度及范围有限，在相互转化时数值类型的数据会失真。
+
+为了保持数据的一致性。我们可以调用外部程序进行处理，如python。
+
+windows下的大多数CAD支持visuallisp,现在就用 winhttp.httprequest 做为中介让autolisp与python进行交互编程。
+
+* 服务端
+
+jsonserver.py 内容：
+#+begin_src python
+    from flask import  Flask,jsonify,request
+    import json
+    jsonobj = {};
+    app = Flask(__name__)
+    @app.route('/api/json',methods=['GET'])
+    def get_json():
+        global jsonobj
+        return json.dumps(jsonobj)
+
+    @app.route('/api/json',methods=['POST'])
+    def init_json():
+        global jsonobj
+        jsonobj = request.json;
+    
+        return json.dumps(jsonobj)
+
+    @app.route('/api/json_set',methods=['POST'])
+    def set_json():
+        global jsonobj
+        data = request.json;
+        for key in data:
+            jsonobj[key] = data[key]
+        return json.dumps(jsonobj)
+
+    if __name__ == '__main__':
+        app.run(debug=True)
+
+#+end_src
+
+安装python及需要的包
+#+begin_src shell
+  pip install flask
+#+end_src
+
+运行服务端
+#+begin_src shell
+  python jsonserver.py
+#+end_src
+
+* 客户端
+
+@lisp 内置了 http 交互函数，可以用 @::@get , @::postjson 与服务端进行交互。
+
+默认端口是5000,你也可以修改，只要保证服务端与客户端一致就可以了。
+
+** 初始化json对象
+
+#+begin_src lisp
+  (@::postjson "http://localhost:5000/api/json" "{\"k1\":\"v1\",\"k2\":\"v2\",\"k3\":\"v3\"}")
+#+end_src
+
+** 修改json对象的某个键值
+
+#+begin_src lisp
+  (@::postjson "http://localhost:5000/api/json_set" "{\"k1\":\"aaa\"}")
+#+end_src
+
+** 获取 json的序列化结果
+
+#+begin_src lisp
+  (@::@get "http://localhost:5000/api/json")
+#+end_src
+
+
+
