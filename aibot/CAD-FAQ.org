@@ -102,3 +102,30 @@ DWG文件的打开方式应该设为AutoCAD DWG Launcher。
 1. 首先用修复打开文件，一定要用修复；
 2. 插入类似“TCH_PR"的块，那就是TCH_PROTECT_ENTITY锁住的东西，可以编辑。
 3. 分解此块。
+
+* netload问题
+命令: netload
+无法加载程序集。错误详细信息: System.BadImageFormatException: 
+未能加载文件或程序集“file:///C:\Users\vitalgg\@lisp\packages\at-sidebar\net\at-sidebar-Aut
+oCAD.dll”或它的某一个依赖项。生成此程序集的运行时比当前加载的运行时新，无法加载此程序集。
+文件名:“file:///C:\Users\vitalgg\@lisp\packages\at-sidebar\net\at-sidebar-AutoCAD.d
+ll”
+   在 System.Reflection.Assembly._nLoad(AssemblyName fileName, String codeBase, 
+Evidence assemblySecurity, Assembly locationHint, StackCrawlMark& stackMark, 
+Boolean throwOnFileNotFound, Boolean forIntrospection)
+   在 System.Reflection.Assembly.nLoad(AssemblyName fileName, String codeBase, 
+Evidence assemblySecurity, Assembly locationHint, StackCrawlMark& stackMark, 
+Boolean throwOnFileNotFound, Boolean forIntrospection)
+   在 System.Reflection.Assembly.InternalLoad(AssemblyName assemblyRef, Evidence 
+assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   在 System.Reflection.Assembly.InternalLoadFrom(String assemblyFile, Evidence 
+securityEvidence, Byte[] hashValue, AssemblyHashAlgorithm hashAlgorithm, 
+Boolean forIntrospection, StackCrawlMark& stackMark)
+   在 System.Reflection.Assembly.LoadFrom(String assemblyFile)
+   在 Autodesk.AutoCAD.Runtime.ExtensionLoader.Load(String fileName)
+   在 loadmgd()
+
+警告: 程序集绑定日志记录被关闭。
+要启用程序集绑定失败日志记录，请将注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD)设置为 1。
+注意: 会有一些与程序集绑定失败日志记录关联的性能损失。
+要关闭此功能，请移除注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog]。
