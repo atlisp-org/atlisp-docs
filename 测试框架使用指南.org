@@ -1,0 +1,262 @@
+#+TITLE: @lisp 测试框架使用指南
+#+AUTHOR: VitalGG
+#+DATE: 2026-05-12
+
+* 简介
+
+@test-framework 是 @lisp 提供的单元测试框架，用于对 AutoLISP 函数进行自动化测试。
+
+** 功能特性
+
+- 支持创建多个测试套件
+- 支持浮点数容差比较
+- 支持列表递归比较
+- 安全的错误捕获机制
+- 清晰的测试报告输出
+
+* 为什么AutoLisp需要测试框架
+
+** 1. 发现隐藏的 Bug
+
+在本次对 =src/point/= 和 =src/m/= 目录的测试中，我们发现了多个严重问题：
+
+| 文件 | 问题描述 |
+|------|---------|
+| =div.lsp= | 递归调用缺少命名空间前缀 → =div= 应为 =point:div= |
+| =factorial.lsp= | 使用斯特林公式近似而非真实阶乘 → 5! 返回 118 而非 120 |
+| =fast-expt.lsp= | 内部递归调用缺少命名空间 → =fast-expt= 应为 =m:fast-expt= |
+| =dec2hex.lsp= | 调用不存在的函数 → =m:dec->base= 应为 =m:dec2base= |
+| =length.lsp= | 依赖未定义的 =vector:norm= 函数 |
+
+这些 bug 在日常使用中可能不易察觉，但通过系统化测试可以快速定位。
+
+** 2. 防止回归
+
+每次修改代码后，运行测试套件可以确保：
+- 新增功能没有破坏已有功能
+- 修复 bug 没有引入新 bug
+- 代码重构后行为一致
+
+** 3. 提高代码质量
+
+编写测试的过程本身就是一种代码审查：
+- 迫使开发者思考函数的正确行为
+- 明确输入输出的边界条件
+- 促使代码职责单一、接口清晰
+
+** 4. 自动化验证
+
+相比手动测试，框架优势明显：
+- 可重复执行，结果一致
+- 批量运行，一次测试所有用例
+- 快速反馈，无需人工判断对错
+
+** 5. AutoLISP 特有的挑战
+
+AutoLISP 作为 CAD 脚本语言，有其特殊性：
+- 无原生测试框架，社区方案稀少
+- 浮点数精度问题需要特殊处理
+- 依赖 CAD 环境，部分函数需要文档支持
+
+因此，为 @lisp 编写专用的测试框架尤为重要。
+
+* 快速开始
+
+** 1. 加载测试框架
+
+#+BEGIN_SRC lisp
+;; 加载测试框架
+(load "C:/Users/vitalgg/atlisp/lib/src/fun/test-framework.lsp")
+
+;; 加载被测试的函数
+(load "C:/Users/vitalgg/atlisp/lib/src/m/gcd.lsp")
+#+END_SRC
+
+** 2. 创建测试套件
+
+#+BEGIN_SRC lisp
+;; 创建名为 math 的测试套件
+(test:suite 'math)
+#+END_SRC
+
+** 3. 添加测试用例
+
+#+BEGIN_SRC lisp
+;; 添加测试用例: 测试名称为 gcd，期望结果为 4
+(test:add-case 'math 'gcd '((lambda () (m:gcd 12 8))) 4)
+#+END_SRC
+
+** 4. 运行测试
+
+#+BEGIN_SRC lisp
+;; 运行所有测试套件
+(test:run-all)
+
+;; 运行指定套件
+(test:run-suite 'math)
+#+END_SRC
+
+* API 参考
+
+** test:suite
+
+创建测试套件。
+
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| name | 符号 | 套件名称 |
+
+#+BEGIN_SRC lisp
+(test:suite 'my-suite)
+#+END_SRC
+
+** test:add-case
+
+添加测试用例到套件。
+
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| suite-name | 符号 | 测试套件名称 |
+| test-name | 符号 | 测试用例名称 |
+| test-fn | 列表 | 测试函数 (lambda) |
+| expected | 任意 | 期望的返回值 |
+
+#+BEGIN_SRC lisp
+;; 基本用法
+(test:add-case 'suite 'test-name '(lambda () ... ) expected)
+
+;; 示例
+(test:add-case 'math 'add '((lambda () (+ 1 2))) 3)
+(test:add-case 'math 'gcd '((lambda () (m:gcd 12 8))) 4)
+#+END_SRC
+
+** test:run-all
+
+运行所有测试套件并输出报告。
+
+返回: t (全部通过) 或 nil (有失败)
+
+** test:run-suite
+
+运行指定测试套件。
+
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| suite-name | 符号 | 要运行的套件名称 |
+
+** test:clear
+
+清空所有测试数据，重置计数器。
+
+** test:summary
+
+输出测试统计摘要。
+
+* 断言函数
+
+框架提供了多种断言函数，用于验证测试结果：
+
+** test:assert-equal
+
+断言两个值相等，支持浮点数容差和列表递归比较。
+
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| expected | 任意 | 期望值 |
+| actual | 任意 | 实际值 |
+| fuzz | 实数 | 浮点数比较容差 (默认 1e-6) |
+
+#+BEGIN_SRC lisp
+;; 浮点数容差比较
+(test:assert-equal 1.0 1.00001 1e-4)  ;; 通过
+
+;; 列表递归比较
+(test:assert-equal '(1 2 3) '(1 2 3) 1e-6)  ;; 通过
+#+END_SRC
+
+** test:assert-nil
+
+断言值为 nil。
+
+** test:assert-t
+
+断言值为 t (非 nil)。
+
+** test:assert-throw
+
+断言函数抛出异常。
+
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| fn | 函数 | 要调用的函数 |
+| args | 列表 | 函数参数列表 |
+| expected-error | 任意 | 期望的错误 (暂未使用) |
+
+* 完整示例
+
+** 测试数学函数
+
+#+BEGIN_SRC lisp
+;;; 测试 m:gcd 函数
+(load "C:/Users/vitalgg/atlisp/lib/src/fun/test-framework.lsp")
+(load "C:/Users/vitalgg/atlisp/lib/src/m/gcd.lsp")
+
+;; 创建测试套件
+(test:suite 'math)
+
+;; 添加测试用例
+(test:add-case 'math 'gcd-48-18 '((lambda () (m:gcd 48 18))) 6)
+(test:add-case 'math 'gcd-12-8 '((lambda () (m:gcd 12 8))) 4)
+(test:add-case 'math 'gcd-100-25 '((lambda () (m:gcd 100 25))) 25)
+
+;; 运行测试
+(test:run-all)
+#+END_SRC
+
+** 测试结果
+
+#+BEGIN_EXAMPLE
+========================================
+         Test Framework Report
+========================================
+
+=== Running Suite: math ===
+[PASS] gcd-48-18
+[PASS] gcd-12-8
+[PASS] gcd-100-25
+
+--- Summary ---
+Passed: 3, Failed: 0, Total: 3
+
+All tests passed! ✓
+#+END_EXAMPLE
+
+** 测试列表函数
+
+#+BEGIN_SRC lisp
+;;; 测试 point:mid 函数
+(load "C:/Users/vitalgg/atlisp/lib/src/fun/test-framework.lsp")
+(load "C:/Users/vitalgg/atlisp/lib/src/point/mid.lsp")
+
+(test:suite 'point)
+
+;; 测试中点计算
+(test:add-case 'point 'mid-0-10 '((lambda () (point:mid '(0 0) '(10 10)))) '(5.0 5.0))
+
+;; 运行测试
+(test:run-all)
+#+END_SRC
+
+* 注意事项
+
+1. 测试函数使用 =lambda= 封装，需用列表形式传入
+2. 浮点数比较使用容差，默认 1e-6
+3. 测试会自动捕获错误，错误视为测试失败
+4. 每次运行前可调用 =(test:clear)= 重置测试数据
+
+* 最佳实践
+
+- 一个文件对应一个测试套件
+- 测试用例命名清晰，如 =function-arg1-arg2=
+- 重要函数编写多个测试用例覆盖边界条件
+- 定期运行测试确保代码质量
